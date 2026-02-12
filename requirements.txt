@@ -1,0 +1,8 @@
+requests
+beautifulsoup4
+aiohttp
+openai
+numpy
+pytest
+pytest-asyncio
+pytest-cov

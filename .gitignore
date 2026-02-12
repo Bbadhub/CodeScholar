@@ -1,0 +1,7 @@
+node_modules/
+vectra-index/
+data/unified_library.json
+__pycache__/
+*.pyc
+.env
+.DS_Store

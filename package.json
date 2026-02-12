@@ -1,0 +1,28 @@
+{
+  "name": "codescholar",
+  "version": "0.1.0",
+  "description": "Context-aware academic research MCP server - analyzes codebases and links them to relevant academic papers",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build-index": "node build-vectra-index.js",
+    "test": "pytest scripts/tests/ -v"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "vectra": "^0.12.3"
+  },
+  "keywords": [
+    "mcp",
+    "academic",
+    "research",
+    "papers",
+    "code-analysis",
+    "vector-search"
+  ],
+  "license": "MIT"
+}
