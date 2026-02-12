@@ -1,0 +1,37 @@
+{
+  "problem_name": "Downscaling Regional Weather Forecasts",
+  "description": "Downscaling regional weather forecasts involves refining coarse weather predictions to provide more localized and accurate forecasts. This is particularly important for applications like renewable energy, where precise local conditions are crucial.",
+  "you_have_this_if": [
+    "You are working with coarse numerical weather prediction (NWP) data.",
+    "You have access to high-resolution observational data.",
+    "You need to enhance the accuracy of local wind forecasts.",
+    "You want to incorporate domain knowledge into your weather prediction models.",
+    "You are facing challenges with the spatial resolution of existing forecasts."
+  ],
+  "approaches": [
+    {
+      "technique": "Domain-informed CNN architectures",
+      "best_for": "When you need to improve local wind forecasts for renewable energy applications and have access to both coarse NWP data and high-resolution observational data.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This approach leverages domain knowledge but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Domain-informed CNN architectures",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have both coarse and high-resolution data and need to enhance local weather predictions."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is to use Domain-informed CNN architectures, as it effectively utilizes both coarse and high-resolution data to improve local forecasts.",
+  "related_problems": [
+    "Spatial interpolation of weather data",
+    "Statistical downscaling methods",
+    "Ensemble forecasting techniques",
+    "Machine learning for weather prediction"
+  ]
+}

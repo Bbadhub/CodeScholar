@@ -1,0 +1,94 @@
+{
+  "summary": "The paper presents a Three-Stage Heuristic (3SH) for optimizing container relocations in maritime container terminals, addressing the NP-hard Container Relocation Problem (CRP). Engineers should care because this approach significantly reduces the number of relocation operations, leading to cost savings in terminal operations.",
+  "key_contribution": "The introduction of a three-stage heuristic that optimizes the relocation of multiple blocking containers simultaneously, outperforming existing methods.",
+  "problem_type": "container relocation optimization",
+  "problem_description": "The need to minimize relocation operations in maritime container terminals to improve efficiency and reduce operational costs.",
+  "domain": "Optimization & Operations Research",
+  "sub_domain": "Logistics optimization",
+  "technique_name": "Three-Stage Heuristic (3SH)",
+  "technique_category": "optimization_algorithm",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The 3SH method operates in three stages: first, it assigns blocking containers to stacks without causing additional relocations; second, it completes the assignment for remaining containers that will cause relocations; and third, it adjusts the assignments to further optimize the arrangement.",
+    "algorithm_steps": [
+      "1. Identify blocking containers above the target container.",
+      "2. In the first stage, assign containers to stacks without causing additional relocations.",
+      "3. In the second stage, assign remaining containers using an enhanced Virtual Relocation Index (VRI).",
+      "4. In the last stage, adjust assignments to optimize the relocation of blocking containers."
+    ],
+    "input": "Data on container stacks, their heights, and the priority of containers for retrieval.",
+    "output": "An optimized arrangement of containers in stacks that minimizes the number of relocations.",
+    "key_parameters": [
+      "S: number of stacks",
+      "H: maximum height limit",
+      "N: number of containers"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Instances from Wu & Ting (2010)",
+      "Instances from Caserta et al. (2011)",
+      "Instances from Zhu et al. (2012)"
+    ],
+    "metrics": [
+      "Average number of relocations",
+      "Average computation time in milliseconds"
+    ],
+    "baselines": [
+      "Min-Max heuristic by Caserta et al. (2012)",
+      "PR4 heuristic by Zhu et al. (2012)",
+      "Chain heuristic by Jovanovic & Vo\u00df (2014)",
+      "VRH by Ting & Wu (2017)"
+    ],
+    "improvement": "3SH outperformed existing heuristics, winning 35 out of 48 groups in tests."
+  },
+  "concepts": [
+    "blocking containers",
+    "LIFO constraint",
+    "priority values",
+    "Virtual Relocation Index (VRI)"
+  ],
+  "use_this_when": [
+    "Optimizing container retrieval in maritime terminals with high container volumes.",
+    "Reducing operational costs associated with container relocations.",
+    "Improving efficiency in logistics and supply chain management."
+  ],
+  "dont_use_when": [
+    "Dealing with small-scale instances where traditional heuristics perform adequately.",
+    "When real-time decision-making is required and computational time is critical."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Stacks to represent container storage",
+      "Priority queues for managing container retrieval order"
+    ],
+    "dependencies": [
+      "Java for implementation of the heuristic",
+      "Libraries for numerical computations (if needed)"
+    ],
+    "pseudocode_hint": "for each blocking container c: assign destination stack based on VRI; adjust assignments in last stage.",
+    "gotchas": [
+      "Ensure LIFO constraints are respected during relocations.",
+      "Monitor the impact of each relocation on future retrievals."
+    ]
+  },
+  "connects_to": [
+    "Integer programming formulations for CRP",
+    "Branch-and-bound algorithms for optimization",
+    "Other heuristics like genetic algorithms and ant colony optimization"
+  ],
+  "prerequisites": [
+    "Understanding of optimization problems",
+    "Familiarity with heuristic algorithms",
+    "Knowledge of logistics and container management systems"
+  ],
+  "limitations": [
+    "Performance may degrade on small-scale instances.",
+    "Complexity increases with the number of containers and stacks."
+  ],
+  "open_questions": [
+    "How can the heuristic be adapted for real-time decision-making?",
+    "What are the implications of varying stack heights and container priorities?"
+  ]
+}

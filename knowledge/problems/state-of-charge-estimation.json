@@ -1,0 +1,37 @@
+{
+  "problem_name": "State of Charge Estimation",
+  "description": "State of charge (SoC) estimation is crucial for battery management systems, as it determines the current energy level of a battery. Accurate SoC estimation helps in optimizing battery performance, ensuring safety, and prolonging battery life.",
+  "you_have_this_if": [
+    "You need to monitor battery performance in real-time.",
+    "You are developing applications that rely on battery longevity.",
+    "You encounter issues with battery safety and reliability.",
+    "You require accurate readings under varying environmental conditions.",
+    "You are working with advanced battery technologies like solid-state batteries."
+  ],
+  "approaches": [
+    {
+      "technique": "Electrochemical Impedance Spectroscopy (EIS) based SoC estimation",
+      "best_for": "when developing battery management systems for solid-state batteries or safety-critical applications in aerospace.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Provides high accuracy but may require complex setup and calibration."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Electrochemical Impedance Spectroscopy (EIS) based SoC estimation",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You need precise SoC estimation in applications where safety and performance are critical."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is to use EIS-based SoC estimation due to its high accuracy, especially in applications involving solid-state batteries and safety-critical systems.",
+  "related_problems": [
+    "Battery health monitoring",
+    "Battery lifecycle analysis",
+    "Energy management in electric vehicles",
+    "Thermal management in battery systems"
+  ]
+}

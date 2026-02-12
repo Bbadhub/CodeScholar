@@ -1,0 +1,36 @@
+{
+  "problem_name": "Biomass Estimation",
+  "description": "Biomass estimation involves quantifying the amount of organic material in a given area, which is crucial for understanding ecosystem health and productivity. This problem is particularly relevant in ecological studies where accurate measurements can inform conservation and management practices.",
+  "you_have_this_if": [
+    "You need to assess the health of a grassland ecosystem.",
+    "You are conducting research on vegetation biomass.",
+    "You require detailed 3D models of plant structures.",
+    "You are analyzing litter accumulation in a specific area."
+  ],
+  "approaches": [
+    {
+      "technique": "Structure from Motion (SfM)",
+      "best_for": "Estimating biomass in dense grassland ecosystems and creating detailed 3D models for ecological studies.",
+      "paper_count": 1,
+      "max_citations": 4,
+      "key_tradeoff": "While SfM provides high accuracy, it may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Structure from Motion (SfM)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need detailed 3D models and accurate biomass estimates in complex vegetation."
+    }
+  ],
+  "start_here": "Start with Structure from Motion (SfM) as it offers a robust method for estimating biomass in dense ecosystems, providing both accuracy and detailed modeling capabilities.",
+  "related_problems": [
+    "Vegetation Mapping",
+    "Carbon Stock Assessment",
+    "Ecosystem Modeling",
+    "Litter Decomposition Studies"
+  ]
+}

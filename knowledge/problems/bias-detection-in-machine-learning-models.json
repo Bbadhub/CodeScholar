@@ -1,0 +1,37 @@
+{
+  "problem_name": "Bias Detection in Machine Learning Models",
+  "description": "Bias detection in machine learning models involves identifying and mitigating unfair biases that may affect the performance and outcomes of AI systems. This is particularly crucial in sensitive applications such as healthcare, where biased models can lead to unequal treatment and outcomes for different groups.",
+  "you_have_this_if": [
+    "Your model's predictions vary significantly across different demographic groups.",
+    "You are developing AI applications that impact decision-making in sensitive areas.",
+    "You have observed unexpected behavior in your model's outputs.",
+    "You are receiving feedback indicating potential bias from users or stakeholders.",
+    "You are required to comply with regulations or ethical guidelines regarding fairness in AI."
+  ],
+  "approaches": [
+    {
+      "technique": "Systematic Review of Bias in LLMs",
+      "best_for": "When developing AI applications in healthcare that utilize LLMs or evaluating existing LLMs for bias before deployment.",
+      "paper_count": 1,
+      "max_citations": 43,
+      "key_tradeoff": "This approach provides a comprehensive overview of bias but may require significant time to analyze findings."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Systematic Review of Bias in LLMs",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a thorough understanding of bias in LLMs before deploying them in critical applications."
+    }
+  ],
+  "start_here": "Start with the Systematic Review of Bias in LLMs, as it offers a detailed examination of existing literature and findings that can inform your bias detection strategies.",
+  "related_problems": [
+    "Fairness in AI",
+    "Algorithmic Bias in Decision Making",
+    "Ethical AI Development",
+    "Model Interpretability"
+  ]
+}

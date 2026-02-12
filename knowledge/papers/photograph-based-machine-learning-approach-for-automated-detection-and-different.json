@@ -1,0 +1,99 @@
+{
+  "summary": "This paper presents a machine learning approach for the automated detection and differentiation of aerial blight disease in soybean crops using smartphone imagery. Engineers should care because it offers a scalable solution to a significant agricultural problem, enhancing crop management and minimizing yield losses.",
+  "key_contribution": "The study demonstrates the effectiveness of various machine learning algorithms, particularly ResNet-34 with data augmentation, achieving a classification accuracy of 95.64%.",
+  "problem_type": "multi-class classification",
+  "problem_description": "The work is motivated by the need for timely identification and management of aerial blight disease in soybean crops to prevent substantial yield losses.",
+  "domain": "Machine Learning & AI",
+  "sub_domain": "Image Classification",
+  "technique_name": "ResNet-34",
+  "technique_category": "classification_model",
+  "technique_type": "comparison",
+  "method": {
+    "approach": "The method involves capturing images of soybean leaves, preprocessing them to remove noise, applying data augmentation techniques, and then classifying the images using various machine learning algorithms. The focus is on classifying diseases rather than segmenting lesions.",
+    "algorithm_steps": [
+      "1. Capture images of soybean leaves using smartphones.",
+      "2. Preprocess images to remove noise and enhance quality.",
+      "3. Apply data augmentation techniques such as rotation, flipping, and zooming.",
+      "4. Split the dataset into training (80%), validation (15%), and testing (5%) sets.",
+      "5. Train various classifiers including Logistic Regression, SVM, VGG-16, ResNet-18, and ResNet-34.",
+      "6. Evaluate model performance using the test set.",
+      "7. Select the best-performing model based on accuracy."
+    ],
+    "input": "Images of soybean leaves categorized into eight classes: healthy leaves, bacterial pustules, insect attacked, multiple diseases leaf, rhizoctonia aerial blight, severe rhizoctonia aerial blight, viral diseases, and bacterial blight.",
+    "output": "Classified disease type for each input image.",
+    "key_parameters": [
+      "image_size: 224x224 pixels (Logistic Regression, SVM, VGG-16)",
+      "image_size: 299x299 pixels (ResNet-18)",
+      "augmentation: random rotation, flipping, zooming (up to 10%)"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Images collected from soybean fields at Crop Research Centre, G.B. Pant University of Agriculture & Technology."
+    ],
+    "metrics": [
+      "accuracy: 95.64% (ResNet-34 with data augmentation)",
+      "accuracy: 66.77% (Logistic Regression)"
+    ],
+    "baselines": [
+      "Logistic Regression, Support Vector Machine (SVM), VGG-16, ResNet-18, ResNet-34"
+    ],
+    "improvement": "ResNet-34 with data augmentation achieved a 28.87% improvement over Logistic Regression."
+  },
+  "concepts": [
+    "data augmentation",
+    "image preprocessing",
+    "convolutional neural networks",
+    "classification algorithms",
+    "machine learning",
+    "disease detection",
+    "smartphone imaging"
+  ],
+  "use_this_when": [
+    "You need to classify plant diseases from images.",
+    "You have access to smartphone imagery for data collection.",
+    "You are dealing with imbalanced datasets in agricultural applications."
+  ],
+  "dont_use_when": [
+    "You require precise lesion segmentation rather than classification.",
+    "You have limited computational resources for deep learning models.",
+    "You need real-time processing capabilities."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Image arrays",
+      "Label arrays for classification"
+    ],
+    "dependencies": [
+      "TensorFlow",
+      "Keras",
+      "OpenCV"
+    ],
+    "pseudocode_hint": "model.fit(training_data, training_labels); predictions = model.predict(test_data)",
+    "gotchas": [
+      "Ensure images are preprocessed to remove noise.",
+      "Be cautious of class imbalance; it may affect model performance.",
+      "Data augmentation should be carefully applied to avoid overfitting."
+    ]
+  },
+  "connects_to": [
+    "Transfer Learning",
+    "Image Segmentation",
+    "Data Augmentation Techniques"
+  ],
+  "prerequisites": [
+    "Understanding of machine learning concepts",
+    "Familiarity with convolutional neural networks",
+    "Basic knowledge of image processing"
+  ],
+  "limitations": [
+    "The model may struggle with generalization across different environmental conditions.",
+    "Dependency on high-quality images for accurate classification.",
+    "Limited to the specific diseases and conditions studied."
+  ],
+  "open_questions": [
+    "How can the model be adapted for other crops and diseases?",
+    "What additional features could improve classification accuracy?"
+  ]
+}

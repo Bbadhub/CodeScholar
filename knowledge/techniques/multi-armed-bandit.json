@@ -1,0 +1,80 @@
+{
+  "technique_name": "Multi-Armed Bandit",
+  "aliases": [
+    "Bandit Algorithm",
+    "Stochastic Bandit"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "A strategy for resource allocation that balances exploration and exploitation based on performance feedback.",
+  "how_it_works": "The Multi-Armed Bandit technique dynamically allocates resources by selecting options based on their performance. It uses a balance of exploration, where new configurations are tested, and exploitation, where known effective configurations are utilized. Over time, the algorithm refines its resource allocation strategy to optimize overall system performance.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize resource options and their associated rewards.",
+      "2. For each time step, select a resource option based on a balance of exploration and exploitation.",
+      "3. Allocate resources accordingly and monitor performance.",
+      "4. Update the reward estimates based on the observed performance.",
+      "5. Repeat the process to continuously refine resource allocation."
+    ],
+    "core_equation": "output = select(resource_options) based on exploration_exploitation_balance()",
+    "input_format": "Resource options and their initial performance metrics.",
+    "output_format": "Optimized resource allocation strategy with expected performance improvements."
+  },
+  "parameters": [
+    {
+      "name": "exploration_rate",
+      "typical_value": "0.1",
+      "effect": "Higher values increase exploration, potentially improving performance but may reduce short-term gains."
+    },
+    {
+      "name": "num_iterations",
+      "typical_value": "1000",
+      "effect": "More iterations allow for better performance estimates but increase computation time."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)",
+    "practical_note": "Real-world performance may vary based on the number of resource options and the dynamics of the environment."
+  },
+  "use_when": [
+    "You need to dynamically allocate resources in a computing environment.",
+    "You want to optimize performance based on uncertain outcomes.",
+    "You are working with Near Memory Processing architectures."
+  ],
+  "avoid_when": [
+    "The resource options are deterministic and known.",
+    "You have a fixed resource allocation without the need for optimization.",
+    "The overhead of exploration is too high compared to potential gains."
+  ],
+  "implementation_skeleton": "def multi_armed_bandit(resource_options: List[Resource], num_iterations: int, exploration_rate: float) -> Allocation:\n    rewards = initialize_rewards(resource_options)\n    for t in range(num_iterations):\n        option = select_option(resource_options, rewards, exploration_rate)\n        performance = allocate_and_monitor(option)\n        update_rewards(rewards, option, performance)\n    return optimize_allocation(rewards)",
+  "common_mistakes": [
+    "Neglecting to properly balance exploration and exploitation.",
+    "Failing to update reward estimates accurately.",
+    "Overlooking the impact of the exploration rate on performance."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Adapts to changing environments and performance metrics.",
+      "Can significantly improve resource utilization.",
+      "Effective in scenarios with uncertain outcomes."
+    ],
+    "weaknesses": [
+      "May require significant iterations to converge on optimal solutions.",
+      "Exploration can lead to suboptimal performance in the short term.",
+      "Overhead of exploration may not be justified in all contexts."
+    ],
+    "compared_to": [
+      {
+        "technique": "Static Resource Allocation",
+        "verdict": "Use Multi-Armed Bandit when performance is uncertain and dynamic; use static when conditions are stable."
+      }
+    ]
+  },
+  "connects_to": [
+    "Reinforcement Learning",
+    "Thompson Sampling",
+    "Epsilon-Greedy Algorithm",
+    "Contextual Bandits"
+  ],
+  "maturity": "proven"
+}

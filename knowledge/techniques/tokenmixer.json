@@ -1,0 +1,88 @@
+{
+  "technique_name": "TokenMixer",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "TokenMixer is a hybrid architecture that combines CNNs and Vision Transformers for efficient classification of histopathology images.",
+  "how_it_works": "TokenMixer processes histopathology images by first extracting features using convolutional layers. It then tokenizes these features and passes them through a Vision Transformer (ViT) for enhanced classification accuracy. This method is particularly effective for tasks like breast cancer diagnosis, where both feature extraction and classification are critical.",
+  "algorithm": {
+    "steps": [
+      "1. Preprocess histopathology images by resizing to 224x224 pixels.",
+      "2. Split data into training, validation, and test sets.",
+      "3. Use data augmentation techniques such as rotation and zoom.",
+      "4. Extract features using TokenLearner and ConvMixer.",
+      "5. Combine features in TokenMixer and pass through ViT for classification.",
+      "6. Output predictions for binary and multi-class classification."
+    ],
+    "core_equation": "output = ViT(TokenMixer(features))",
+    "input_format": "Histopathology images resized to 224x224 pixels.",
+    "output_format": "Predictions for binary (Benign/Malignant) and multi-class (eight tumor subtypes) classification."
+  },
+  "parameters": [
+    {
+      "name": "patch_size",
+      "typical_value": "14x14",
+      "effect": "Changing this affects the granularity of feature extraction."
+    },
+    {
+      "name": "number_of_layers",
+      "typical_value": "8",
+      "effect": "Increasing layers can improve accuracy but may increase computation."
+    },
+    {
+      "name": "learning_rate",
+      "typical_value": "not stated",
+      "effect": "Affects convergence speed and model performance."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "not stated",
+      "effect": "Impacts training stability and resource usage."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on dataset size and model configuration."
+  },
+  "use_when": [
+    "You need to classify histopathology images for breast cancer diagnosis.",
+    "You want to reduce computational resources while maintaining high accuracy.",
+    "You are working with limited training data and need an efficient model."
+  ],
+  "avoid_when": [
+    "You require real-time processing with extremely low latency.",
+    "You have access to abundant computational resources and prefer using pure ViTs or CNNs.",
+    "You are dealing with non-image data."
+  ],
+  "implementation_skeleton": "def token_mixer_model(input_image: np.ndarray) -> np.ndarray:\n    resized_image = preprocess(input_image)\n    features = extract_features(resized_image)\n    combined_features = combine_features(features)\n    predictions = classify_with_vit(combined_features)\n    return predictions",
+  "common_mistakes": [
+    "Neglecting proper data augmentation, which can lead to overfitting.",
+    "Using inappropriate patch sizes that do not suit the image characteristics.",
+    "Failing to split data correctly into training, validation, and test sets."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy in classifying histopathology images.",
+      "Efficient use of computational resources compared to pure ViTs.",
+      "Effective for limited training data scenarios."
+    ],
+    "weaknesses": [
+      "Not suitable for real-time applications due to decision time.",
+      "May require tuning of multiple hyperparameters.",
+      "Performance can degrade with non-image data."
+    ],
+    "compared_to": [
+      {
+        "technique": "ViT",
+        "verdict": "Use TokenMixer when computational resources are limited; use ViT for maximum accuracy with ample resources."
+      }
+    ]
+  },
+  "connects_to": [
+    "Convolutional Neural Networks (CNNs)",
+    "Vision Transformers (ViTs)",
+    "Data Augmentation Techniques",
+    "Feature Extraction Methods"
+  ],
+  "maturity": "proven (widely used in production)"
+}

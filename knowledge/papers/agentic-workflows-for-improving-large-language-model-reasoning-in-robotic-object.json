@@ -1,0 +1,94 @@
+{
+  "summary": "This paper presents agentic workflows to enhance the reasoning capabilities of Large Language Models (LLMs) in robotic object-centered planning, addressing the limitations of single-step LLM prompts that struggle with complex queries. Engineers should care because these workflows improve response quality and reliability in robotic applications, particularly in environments requiring nuanced understanding and reasoning.",
+  "key_contribution": "The introduction of three agentic workflows\u2014Self-Reflection, Multi-Agent Reflection, and LLM Ensemble\u2014to improve LLM reasoning in robotic planning tasks.",
+  "problem_type": "object-centered planning",
+  "problem_description": "The challenge of accurately identifying relevant objects in a robotic environment based on natural language queries, especially when queries introduce ambiguity or require reasoning about object functions.",
+  "domain": "Robotics & Control Systems",
+  "sub_domain": "Robotic Planning with LLMs",
+  "technique_name": "Agentic Workflows",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves integrating LLMs with structured workflows that guide the model's output through iterative feedback and refinement. This allows for improved reasoning and reduced hallucinations in responses.",
+    "algorithm_steps": [
+      "1. Input a semantic map and a natural language query to the LLM.",
+      "2. Generate an initial response listing relevant objects.",
+      "3. Apply the Self-Reflection workflow to evaluate the response based on correctness, relevance, and clarity.",
+      "4. Generate feedback and refine the initial response based on this feedback.",
+      "5. Optionally repeat the reflection and refinement steps for improved accuracy."
+    ],
+    "input": "A semantic map in JSON format and a natural language query.",
+    "output": "A ranked list of relevant object identifiers from the semantic map.",
+    "key_parameters": [
+      "max_iterations: 5",
+      "feedback_threshold: 0.8"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "ScanNet",
+      "SceneNN"
+    ],
+    "metrics": [
+      "object retrieval performance: average improvement of 10% over baseline"
+    ],
+    "baselines": [
+      "Single-step LLM prompt approach"
+    ],
+    "improvement": "10% improvement for Self-Reflection, 9.67% for Multi-Agent Reflection, and 4.67% for LLM Ensemble."
+  },
+  "concepts": [
+    "semantic maps",
+    "LLM reasoning",
+    "reflection",
+    "multi-agent systems",
+    "object-centered planning",
+    "feedback loops"
+  ],
+  "use_this_when": [
+    "You need to improve the accuracy of object identification in robotic systems.",
+    "Your application involves complex queries that require reasoning about object functions.",
+    "You want to mitigate hallucinations in LLM outputs for robotic tasks."
+  ],
+  "dont_use_when": [
+    "The task requires real-time responses with minimal processing time.",
+    "The environment is static and does not require complex reasoning.",
+    "You have a limited computational budget that cannot support multiple LLMs."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "JSON representation of semantic maps",
+      "Lists for storing object identifiers"
+    ],
+    "dependencies": [
+      "Transformers library for LLMs",
+      "Voxeland for semantic map generation"
+    ],
+    "pseudocode_hint": "response = LLM(semantic_map, query); feedback = LLM(reflect_prompt, response); refined_response = LLM(refine_prompt, response, feedback);",
+    "gotchas": [
+      "Ensure the semantic map is correctly formatted in JSON.",
+      "Monitor the number of iterations to avoid excessive processing time.",
+      "Be cautious of LLM hallucinations even after refinement."
+    ]
+  },
+  "connects_to": [
+    "Chain-of-Thought prompting",
+    "Tool Use workflows",
+    "Multi-Agent frameworks"
+  ],
+  "prerequisites": [
+    "Understanding of LLMs and their limitations.",
+    "Familiarity with semantic mapping techniques.",
+    "Knowledge of robotic planning concepts."
+  ],
+  "limitations": [
+    "Performance degrades with larger semantic maps due to context length saturation.",
+    "Requires significant computational resources for multiple LLMs.",
+    "Still prone to hallucinations despite refinements."
+  ],
+  "open_questions": [
+    "How can these workflows be adapted for real-time applications?",
+    "What are the best practices for integrating external resources into agentic workflows?"
+  ]
+}

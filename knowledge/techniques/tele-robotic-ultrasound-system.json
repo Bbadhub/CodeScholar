@@ -1,0 +1,81 @@
+{
+  "technique_name": "Tele-robotic Ultrasound System",
+  "aliases": [
+    "Remote Ultrasound System",
+    "Robotic Ultrasound Examination"
+  ],
+  "category": "medical_technology",
+  "one_liner": "A tele-robotic ultrasound system enables remote ultrasound examinations via a robotic arm controlled over a 5G network.",
+  "how_it_works": "The tele-robotic ultrasound system allows a radiologist to control a robotic arm that applies ultrasound probes to a patient remotely. The system captures ultrasound images in real-time and displays them to the radiologist, who can communicate with an assistant on-site. This setup facilitates examinations in locations where direct access to radiologists is limited, ensuring timely medical assessments.",
+  "algorithm": {
+    "steps": [
+      "1. Patient is positioned appropriately for the ultrasound examination.",
+      "2. The radiologist remotely controls the robotic arm using a console.",
+      "3. The robotic arm applies ultrasound probes to the patient's body.",
+      "4. Ultrasound images are captured and displayed in real-time.",
+      "5. The radiologist communicates with an assistant at the patient site for support.",
+      "6. The examination is completed, and findings are recorded."
+    ],
+    "core_equation": "output = ultrasound_images + diagnostic_findings",
+    "input_format": "Patient demographic data, ultrasound examination requests, and real-time imaging data.",
+    "output_format": "Ultrasound images and diagnostic findings."
+  },
+  "parameters": [
+    {
+      "name": "robotic_arm_force_range",
+      "typical_value": "3-40 N",
+      "effect": "Adjusting the force can impact the comfort and effectiveness of the ultrasound application."
+    },
+    {
+      "name": "minimum_training_patients",
+      "typical_value": "20 for abdominal US",
+      "effect": "More training patients improve the accuracy and efficiency of the examinations."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance metrics show no significant differences between tele-robotic and standard ultrasound after adequate training."
+  },
+  "use_when": [
+    "Access to radiologists is limited due to geographic constraints.",
+    "There is a need for remote medical examinations in rural areas.",
+    "A rapid deployment of ultrasound services is required."
+  ],
+  "avoid_when": [
+    "High precision imaging is critical and cannot be compromised.",
+    "Patients have severe mobility issues that prevent proper positioning.",
+    "The technology is not yet validated for specific medical conditions."
+  ],
+  "implementation_skeleton": "def tele_robotic_ultrasound(patient_data: Dict[str, Any]) -> Tuple[List[Image], Dict[str, Any]]:\n    # Step 1: Position patient\n    position_patient(patient_data)\n    # Step 2: Control robotic arm remotely\n    robotic_arm = connect_to_robotic_arm()\n    # Step 3: Apply ultrasound probes\n    apply_probes(robotic_arm)\n    # Step 4: Capture images\n    images = capture_ultrasound_images(robotic_arm)\n    # Step 5: Communicate with assistant\n    communicate_with_assistant()\n    # Step 6: Record findings\n    findings = record_findings(images)\n    return images, findings",
+  "common_mistakes": [
+    "Underestimating the importance of proper patient positioning.",
+    "Neglecting to train radiologists adequately on the system.",
+    "Failing to ensure reliable communication between the radiologist and on-site assistant."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Enables remote access to ultrasound examinations.",
+      "Facilitates medical services in underserved areas.",
+      "Real-time image display enhances diagnostic capabilities."
+    ],
+    "weaknesses": [
+      "May not achieve the same precision as standard ultrasound systems.",
+      "Dependent on reliable internet connectivity.",
+      "Limited validation for certain medical conditions."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard Ultrasound System",
+        "verdict": "Use tele-robotic systems for remote access; standard systems for high precision needs."
+      }
+    ]
+  },
+  "connects_to": [
+    "Telemedicine",
+    "Robotic Surgery Systems",
+    "Remote Patient Monitoring",
+    "5G Communication Technologies"
+  ],
+  "maturity": "proven (widely used in production)"
+}

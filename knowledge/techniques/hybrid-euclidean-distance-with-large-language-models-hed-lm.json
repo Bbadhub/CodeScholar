@@ -1,0 +1,89 @@
+{
+  "technique_name": "Hybrid Euclidean Distance with Large Language Models (HED-LM)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "HED-LM optimizes example selection for few-shot learning by combining Euclidean distance filtering with contextual evaluation from large language models.",
+  "how_it_works": "HED-LM begins by preprocessing sensor data to extract relevant features. It then filters examples based on numerical similarity using Euclidean distance. Afterward, large language models assess the contextual relevance of the selected examples. Finally, the technique constructs prompts for classification based on the re-ranked examples, enhancing the model's performance in few-shot scenarios.",
+  "algorithm": {
+    "steps": [
+      "1. Acquire accelerometer data and assign labels (fatigue/non-fatigue).",
+      "2. Preprocess data: segment signals, apply low-pass filtering, and normalize.",
+      "3. Extract features from preprocessed signals to form structured representations.",
+      "4. Filter examples using Euclidean distance to find numerically similar instances.",
+      "5. Score selected examples using LLMs for contextual relevance.",
+      "6. Re-rank examples based on scores and construct prompts.",
+      "7. Use the constructed prompts for classification of new inputs."
+    ],
+    "core_equation": "output = classify(prompts)",
+    "input_format": "Accelerometer data represented as 1D vectors of 180 values per instance.",
+    "output_format": "Predicted labels for fatigue or non-fatigue based on selected examples."
+  },
+  "parameters": [
+    {
+      "name": "fcutoff",
+      "typical_value": "30 Hz",
+      "effect": "Affects the filtering of high-frequency noise in the sensor data."
+    },
+    {
+      "name": "sampling_frequency",
+      "typical_value": "256 Hz",
+      "effect": "Determines the resolution of the accelerometer data."
+    },
+    {
+      "name": "window_size",
+      "typical_value": "60 samples",
+      "effect": "Defines the segment length for feature extraction."
+    },
+    {
+      "name": "feature_vector_dimension",
+      "typical_value": "30",
+      "effect": "Controls the number of features extracted per segment."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on the size of the dataset and the complexity of the LLM used."
+  },
+  "use_when": [
+    "You have limited labeled data for sensor-based classification tasks.",
+    "You need to improve model performance in high-variability environments.",
+    "You require a robust example selection strategy for nuanced classification problems."
+  ],
+  "avoid_when": [
+    "You have a large labeled dataset available for training.",
+    "The task does not involve sensor data or few-shot learning.",
+    "Real-time processing is critical and computational resources are limited."
+  ],
+  "implementation_skeleton": "def hed_lm_classification(data: List[float]) -> str:\n    # Step 1: Preprocess data\n    preprocessed_data = preprocess(data)\n    # Step 2: Extract features\n    features = extract_features(preprocessed_data)\n    # Step 3: Filter examples\n    similar_examples = filter_by_distance(features)\n    # Step 4: Score examples with LLM\n    scores = score_with_llm(similar_examples)\n    # Step 5: Construct prompts\n    prompts = construct_prompts(scores)\n    # Step 6: Classify\n    return classify(prompts)",
+  "common_mistakes": [
+    "Neglecting to properly preprocess the sensor data, leading to poor feature extraction.",
+    "Using inappropriate parameters for filtering, which can reduce the quality of selected examples.",
+    "Over-relying on LLM scores without considering the numerical similarity aspect."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves classification performance in few-shot scenarios.",
+      "Combines numerical and contextual evaluation for better example selection.",
+      "Effective in high-variability environments."
+    ],
+    "weaknesses": [
+      "May not perform well with large labeled datasets.",
+      "Computationally intensive due to LLM usage.",
+      "Requires careful tuning of parameters for optimal performance."
+    ],
+    "compared_to": [
+      {
+        "technique": "Distance-only filtering",
+        "verdict": "Use HED-LM when contextual relevance is crucial for classification."
+      }
+    ]
+  },
+  "connects_to": [
+    "Few-shot learning",
+    "Sensor data classification",
+    "Feature extraction techniques",
+    "Large language models"
+  ],
+  "maturity": "emerging"
+}

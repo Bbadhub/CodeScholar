@@ -1,0 +1,36 @@
+{
+  "problem_name": "Hybrid Cyberattack Defense",
+  "description": "Hybrid cyberattacks involve multiple attack vectors, such as false data injection and direct load-altering attacks, targeting systems like smart grids. Defending against these attacks requires advanced techniques that can adapt to both the dynamic nature of the threats and the decentralized nature of the systems being protected.",
+  "you_have_this_if": [
+    "You are managing a smart grid with distributed energy resources.",
+    "You are facing challenges in securing communication channels against attacks.",
+    "You need to implement security measures that can adapt to evolving threats.",
+    "You are dealing with both data integrity and operational disruption risks."
+  ],
+  "approaches": [
+    {
+      "technique": "Mean Field Deep Deterministic Policy Gradients (MF-DDPG)",
+      "best_for": "When implementing security measures for smart grids with high penetration of distributed energy resources and addressing hybrid cyber threats.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "While MF-DDPG can effectively manage complex scenarios, it may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Mean Field Deep Deterministic Policy Gradients (MF-DDPG)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a robust defense mechanism that can adapt to hybrid threats in a decentralized environment."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is to implement MF-DDPG, as it provides a strong framework for addressing the complexities of hybrid cyber threats in smart grids.",
+  "related_problems": [
+    "Distributed Denial of Service (DDoS) Attack Mitigation",
+    "Data Integrity in IoT Systems",
+    "Decentralized Security Protocols",
+    "Resilience in Smart Grid Systems"
+  ]
+}

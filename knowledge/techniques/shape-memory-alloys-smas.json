@@ -1,0 +1,84 @@
+{
+  "technique_name": "Shape Memory Alloys (SMAs)",
+  "aliases": [
+    "SMAs"
+  ],
+  "category": "material_technology",
+  "one_liner": "Shape Memory Alloys are materials that can change shape in response to stimuli, enabling soft actuators that mimic biological movements.",
+  "how_it_works": "Shape Memory Alloys undergo a phase transformation when subjected to specific temperatures, allowing them to return to a predetermined shape. This property is harnessed to create soft actuators that can flex and move in ways similar to biological organisms. By controlling the temperature, these actuators can be activated to perform complex movements, making them suitable for various applications in soft robotics.",
+  "algorithm": {
+    "steps": [
+      "Identify the biological movement to mimic.",
+      "Select appropriate materials (e.g., SMAs).",
+      "Design actuator geometry based on desired movement.",
+      "Implement control methods to activate the actuator.",
+      "Test and refine the actuator performance."
+    ],
+    "core_equation": "output = movement of the soft robot mimicking biological motion",
+    "input_format": "Design specifications, material properties, control signals.",
+    "output_format": "Movement of the soft robot mimicking biological motion."
+  },
+  "parameters": [
+    {
+      "name": "temperature_threshold",
+      "typical_value": "60\u00b0C",
+      "effect": "Changing this affects the activation point of the SMA."
+    },
+    {
+      "name": "actuator_length",
+      "typical_value": "variable",
+      "effect": "Altering length changes the range of motion."
+    },
+    {
+      "name": "force_output",
+      "typical_value": "5N",
+      "effect": "Increasing this enhances the actuator's strength."
+    }
+  ],
+  "complexity": {
+    "time": "O(1) for activation, but design complexity varies.",
+    "space": "O(1) for actuator storage, but design space can be large.",
+    "practical_note": "Real-world performance can vary based on environmental conditions and material quality."
+  },
+  "use_when": [
+    "Developing soft robots for medical applications",
+    "Creating flexible robotic systems for search and rescue",
+    "Designing wearable technology that requires soft movement"
+  ],
+  "avoid_when": [
+    "High precision tasks requiring rigid structures",
+    "Applications where high load-bearing capacity is essential",
+    "Environments with extreme temperatures affecting material properties"
+  ],
+  "implementation_skeleton": "def activate_sma(actuator_length: float, temperature: float) -> str:\n    if temperature >= 60:\n        return 'Actuator activated, mimicking movement'\n    else:\n        return 'Actuator not activated'",
+  "common_mistakes": [
+    "Neglecting the temperature range for activation.",
+    "Overlooking the actuator's response time in design.",
+    "Failing to test the actuator under expected environmental conditions."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High flexibility and adaptability compared to rigid actuators.",
+      "Ability to mimic complex biological movements.",
+      "Lightweight and compact design."
+    ],
+    "weaknesses": [
+      "Limited load-bearing capacity.",
+      "Temperature sensitivity can affect performance.",
+      "Potential for fatigue over repeated cycles."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional rigid actuators",
+        "verdict": "Use SMAs for flexibility; use rigid actuators for precision and load-bearing."
+      }
+    ]
+  },
+  "connects_to": [
+    "Soft robotics",
+    "Bioinspired design",
+    "Actuator technology",
+    "Material science"
+  ],
+  "maturity": "emerging"
+}

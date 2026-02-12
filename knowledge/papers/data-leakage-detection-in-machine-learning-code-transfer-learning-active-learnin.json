@@ -1,0 +1,96 @@
+{
+  "summary": "The paper presents methods for detecting data leakage in machine learning code using transfer learning, active learning, and low-shot prompting. Engineers should care because data leakage can lead to misleading performance metrics, and the proposed methods can automate the detection process, improving code quality and reliability.",
+  "key_contribution": "Introduction of ML-based approaches for detecting data leakage in ML code using limited annotated datasets.",
+  "problem_type": "data leakage detection",
+  "problem_description": "Data leakage occurs when information from the test set inadvertently influences the training process, leading to inflated performance metrics that do not generalize well to new data.",
+  "domain": "Software Engineering",
+  "sub_domain": "Machine Learning Code Quality",
+  "technique_name": "Transfer Learning, Active Learning, Low-shot Prompting",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves training models using transfer learning, active learning, and low-shot prompting to detect data leakage in ML code. The models are trained on a dataset of code snippets labeled for data leakage.",
+    "algorithm_steps": [
+      "1. Collect and annotate a dataset of Python ML code snippets.",
+      "2. Identify types of data leakage (overlap, multi-test, preprocessing).",
+      "3. Map leakage types to ML pipeline phases.",
+      "4. Filter code snippets to include only those associated with potential leakage.",
+      "5. Train models using transfer learning, active learning, or low-shot prompting.",
+      "6. Evaluate model performance using metrics like F2-score."
+    ],
+    "input": "Python code snippets labeled as having data leakage or not.",
+    "output": "Predictions indicating whether a code snippet contains data leakage.",
+    "key_parameters": [
+      "learning_rate: 0.001",
+      "number_of_samples: 698 (after active learning)",
+      "dataset_size: 1,904 samples"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Custom dataset of 1,904 labeled Python code snippets"
+    ],
+    "metrics": [
+      "F2-score: 0.72",
+      "Precision and Recall (not specified)"
+    ],
+    "baselines": [
+      "Manual detection methods, code analysis approaches"
+    ],
+    "improvement": "Active learning reduced the number of needed annotated samples from 1,523 to 698."
+  },
+  "concepts": [
+    "data leakage",
+    "transfer learning",
+    "active learning",
+    "low-shot prompting"
+  ],
+  "use_this_when": [
+    "You need to automate the detection of data leakage in ML code.",
+    "You have limited annotated datasets for training models.",
+    "You want to improve the quality of ML code in production."
+  ],
+  "dont_use_when": [
+    "You have a large annotated dataset available for training.",
+    "You require real-time detection with minimal latency.",
+    "You are working in a domain where data leakage is not a concern."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Dataset of labeled code snippets",
+      "Mapping table for leakage types"
+    ],
+    "dependencies": [
+      "CodeBERT",
+      "GPT",
+      "Python libraries for ML"
+    ],
+    "pseudocode_hint": "model.train(data) # Train model on filtered code snippets",
+    "gotchas": [
+      "Ensure proper labeling of data to avoid false positives.",
+      "Be cautious of the imbalance in the dataset.",
+      "Monitor model performance to avoid overfitting."
+    ]
+  },
+  "connects_to": [
+    "CodeBERT",
+    "GPT",
+    "Static code analysis",
+    "Dynamic code analysis"
+  ],
+  "prerequisites": [
+    "Understanding of ML code quality issues",
+    "Familiarity with transfer learning techniques",
+    "Knowledge of active learning strategies"
+  ],
+  "limitations": [
+    "Performance may vary based on the quality of the labeled dataset.",
+    "May not generalize well to all types of data leakage.",
+    "Requires careful tuning of parameters for optimal performance."
+  ],
+  "open_questions": [
+    "How can these methods be adapted for other programming languages?",
+    "What additional features could improve the detection of complex data leakage scenarios?"
+  ]
+}

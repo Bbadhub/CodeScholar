@@ -1,0 +1,37 @@
+{
+  "problem_name": "Facial Recognition",
+  "description": "Facial recognition is a technology that identifies or verifies a person from a digital image or video frame. It is widely used in security, user authentication, and surveillance applications.",
+  "you_have_this_if": [
+    "You need to identify individuals in images or videos.",
+    "You are developing a security system that requires user verification.",
+    "You want to implement real-time monitoring features.",
+    "You are working on a mobile application that requires user authentication.",
+    "You have a dataset of facial images for training a model."
+  ],
+  "approaches": [
+    {
+      "technique": "GSO-CNN",
+      "best_for": "Building a facial recognition system for security applications and real-time user authentication.",
+      "paper_count": 1,
+      "max_citations": 9,
+      "key_tradeoff": "While GSO-CNN provides high accuracy, it may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "GSO-CNN",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a robust facial recognition system with high accuracy for security or authentication."
+    }
+  ],
+  "start_here": "Start with GSO-CNN as it is specifically designed for facial recognition tasks and has shown promising results in relevant applications.",
+  "related_problems": [
+    "Object detection",
+    "Image classification",
+    "Emotion recognition",
+    "Gesture recognition"
+  ]
+}

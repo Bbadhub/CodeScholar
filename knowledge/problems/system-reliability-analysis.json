@@ -1,0 +1,37 @@
+{
+  "problem_name": "System Reliability Analysis",
+  "description": "System reliability analysis involves assessing the dependability of a system in terms of its ability to perform its required functions under stated conditions for a specified period. This is crucial for ensuring that systems can withstand failures and continue to operate effectively.",
+  "you_have_this_if": [
+    "You are experiencing frequent system failures.",
+    "Your system's performance degrades under load.",
+    "You need to ensure high availability for critical applications.",
+    "You are implementing a new distributed system architecture.",
+    "You are evaluating the reliability of a multi-component system."
+  ],
+  "approaches": [
+    {
+      "technique": "Reduction Method with Gumbel\u2013Hougaard Copula",
+      "best_for": "Designing fault-tolerant distributed systems that require high reliability.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This method provides a statistical framework for reliability analysis but may require complex mathematical understanding."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Reduction Method with Gumbel\u2013Hougaard Copula",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You need a robust statistical approach to analyze the reliability of complex systems."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Reduction Method with Gumbel\u2013Hougaard Copula, as it provides a comprehensive framework for analyzing system reliability in fault-tolerant designs.",
+  "related_problems": [
+    "Fault Tolerance Analysis",
+    "Performance Evaluation of Distributed Systems",
+    "Reliability Engineering",
+    "Event Stream Processing Reliability"
+  ]
+}

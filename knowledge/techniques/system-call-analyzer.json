@@ -1,0 +1,92 @@
+{
+  "technique_name": "System Call Analyzer",
+  "aliases": [
+    "Syscall Monitor",
+    "Container Syscall Analyzer"
+  ],
+  "category": "monitoring_tool",
+  "one_liner": "A tool for intercepting and analyzing system calls made by applications in Linux containers.",
+  "how_it_works": "The System Call Analyzer uses ptrace and eBPF to intercept system calls from applications running in Linux containers. It initializes a detector that communicates with the kernel to monitor these calls. The intercepted data is filtered and analyzed based on predefined criteria, and the results are sent to a server for processing and storage, allowing for real-time monitoring and analysis.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize the detector and set up eBPF for system call interception.",
+      "2. Launch the target container using Podman.",
+      "3. Monitor system calls made by the container using ptrace or eBPF.",
+      "4. Filter and analyze the intercepted system calls based on predefined criteria.",
+      "5. Send the analyzed data to the server for processing.",
+      "6. Store the results in a database for further analysis.",
+      "7. Provide a web interface for users to interact with the system."
+    ],
+    "core_equation": "output = analyzed_data(system_calls)",
+    "input_format": "Containerized application running in a Linux environment.",
+    "output_format": "Analyzed data on system calls, including details about their parameters and return values."
+  },
+  "parameters": [
+    {
+      "name": "eBPF_program_size",
+      "typical_value": "1MB",
+      "effect": "Larger sizes may affect loading times."
+    },
+    {
+      "name": "max_system_calls",
+      "typical_value": "1000",
+      "effect": "Higher limits allow for more extensive monitoring."
+    },
+    {
+      "name": "filter_criteria",
+      "typical_value": "{ syscall_type: 'open', 'read', 'write' }",
+      "effect": "Changing criteria alters which syscalls are monitored."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated.",
+    "space": "Not stated.",
+    "practical_note": "Performance impact on container is less than 5% overhead."
+  },
+  "use_when": [
+    "You need to monitor system calls from untrusted third-party libraries in a container.",
+    "You want to enhance security by analyzing syscall behavior in production environments.",
+    "You require real-time monitoring of containerized applications for compliance."
+  ],
+  "avoid_when": [
+    "The application does not require syscall monitoring.",
+    "You are working in a non-Linux environment.",
+    "Performance overhead is a critical concern and must be minimized."
+  ],
+  "implementation_skeleton": "def syscall_analyzer(container_id: str) -> None:\n    initialize_detector()\n    setup_eBPF()\n    launch_container(container_id)\n    while True:\n        syscall_data = monitor_syscalls()\n        analyzed_data = analyze_syscalls(syscall_data)\n        send_to_server(analyzed_data)\n        store_results(analyzed_data)\n    provide_web_interface()",
+  "common_mistakes": [
+    "Neglecting to set appropriate filter criteria, leading to excessive data collection.",
+    "Failing to handle errors during syscall interception.",
+    "Overlooking the performance impact on the containerized application."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy in syscall detection (98%).",
+      "Low performance overhead (<5%).",
+      "Real-time monitoring capabilities."
+    ],
+    "weaknesses": [
+      "Limited to Linux environments.",
+      "Potential complexity in setup and configuration.",
+      "May require tuning for optimal performance."
+    ],
+    "compared_to": [
+      {
+        "technique": "strace",
+        "verdict": "Use System Call Analyzer for real-time monitoring and lower overhead."
+      },
+      {
+        "technique": "auditd",
+        "verdict": "System Call Analyzer provides more detailed syscall analysis."
+      }
+    ]
+  },
+  "connects_to": [
+    "ptrace",
+    "eBPF",
+    "Linux Containers",
+    "Security Monitoring Tools",
+    "Compliance Monitoring"
+  ],
+  "maturity": "proven (widely used in production)"
+}

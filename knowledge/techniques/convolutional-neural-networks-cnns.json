@@ -1,0 +1,87 @@
+{
+  "technique_name": "Convolutional Neural Networks (CNNs)",
+  "aliases": [
+    "ConvNets"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "CNNs are a class of deep learning algorithms primarily used for processing structured grid data such as images.",
+  "how_it_works": "CNNs utilize a series of convolutional layers to automatically learn spatial hierarchies of features from input images. They apply filters to the input data to create feature maps, which are then downsampled using pooling layers. This process allows CNNs to effectively capture patterns and anomalies, making them suitable for tasks like image recognition and anomaly detection in network flows.",
+  "algorithm": {
+    "steps": [
+      "1. Collect network flow data.",
+      "2. Convert the flow data into image representations.",
+      "3. Preprocess the images for CNN input.",
+      "4. Train a CNN model on the image data.",
+      "5. Evaluate the model on test data.",
+      "6. Use the trained model for real-time intrusion detection."
+    ],
+    "core_equation": "output = activation(convolution(input, filter))",
+    "input_format": "Network flow data in a structured format (e.g., CSV, JSON).",
+    "output_format": "Anomaly detection results indicating potential intrusions."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A higher learning rate may speed up training but can lead to instability."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Larger batch sizes can improve training speed but may require more memory."
+    },
+    {
+      "name": "num_epochs",
+      "typical_value": "50",
+      "effect": "More epochs can lead to better model performance but may risk overfitting."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m * k^2)",
+    "where n is the number of images, m is the number of filters, and k is the filter size (assuming a simple convolution operation).": "O(n * m * k^2)",
+    "space": "O(n * m * p)",
+    "where p is the number of parameters in the model.": "O(n * m * p)",
+    "practical_note": "The actual performance may vary based on hardware and model architecture."
+  },
+  "use_when": [
+    "You need to detect intrusions in network traffic.",
+    "You want to leverage image processing techniques for cybersecurity.",
+    "Existing methods are not providing satisfactory results."
+  ],
+  "avoid_when": [
+    "The network flow data is not available or too noisy.",
+    "Real-time processing is required with minimal latency.",
+    "You need a lightweight solution for resource-constrained environments."
+  ],
+  "implementation_skeleton": "def train_cnn_model(data: List[Image], labels: List[int]) -> Model:\n    model = create_cnn()  # Define CNN architecture\n    model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])\n    model.fit(data, labels, batch_size=32, epochs=50)\n    return model",
+  "common_mistakes": [
+    "Not preprocessing images correctly before feeding them into the CNN.",
+    "Using inappropriate learning rates leading to poor convergence.",
+    "Neglecting to validate the model on a separate test set."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy in detecting complex patterns.",
+      "Ability to learn features automatically from raw data.",
+      "Robustness to variations in input data."
+    ],
+    "weaknesses": [
+      "Requires substantial computational resources.",
+      "Can be prone to overfitting without proper regularization.",
+      "Not suitable for real-time processing in all scenarios."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional anomaly detection methods",
+        "verdict": "CNNs generally outperform traditional methods in accuracy but require more resources."
+      }
+    ]
+  },
+  "connects_to": [
+    "Image Processing Techniques",
+    "Recurrent Neural Networks (RNNs)",
+    "Transfer Learning",
+    "Data Augmentation"
+  ],
+  "maturity": "proven (widely used in production)"
+}

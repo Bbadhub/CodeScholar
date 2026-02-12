@@ -1,0 +1,81 @@
+{
+  "technique_name": "Knowledge Distillation",
+  "aliases": [
+    "Model Distillation",
+    "Teacher-Student Learning"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "Knowledge distillation is a technique for transferring knowledge from a complex model (teacher) to a simpler model (student) to improve efficiency without sacrificing accuracy.",
+  "how_it_works": "In knowledge distillation, a high-capacity teacher model is first trained on a dataset to learn complex patterns. The student model, which is typically smaller and more efficient, is then trained using the outputs of the teacher model rather than the original labels. This process allows the student to learn from the teacher's knowledge, enabling it to achieve competitive performance with reduced computational requirements.",
+  "algorithm": {
+    "steps": [
+      "1. Prepare the dataset with augmented input data.",
+      "2. Train the teacher model on the full-resolution data.",
+      "3. Train the student model on downsampled data.",
+      "4. Compute the distillation loss using Kullback-Leibler divergence.",
+      "5. Compute the cross-entropy loss for the student model.",
+      "6. Combine the losses to form the global loss and backpropagate."
+    ],
+    "core_equation": "global_loss = lambda * cross_entropy_loss + (1 - lambda) * KL_divergence_loss",
+    "input_format": "Video streams of indoor activities, augmented with operations like random rotation, resizing, or cropping.",
+    "output_format": "Predictions of actions performed by individuals in the video streams."
+  },
+  "parameters": [
+    {
+      "name": "temperature",
+      "typical_value": "\u03c4 \u2208 [1, 9]",
+      "effect": "Higher temperature smooths the output probabilities, making it easier for the student to learn."
+    },
+    {
+      "name": "distillation weight",
+      "typical_value": "\u03bb = 0.1",
+      "effect": "Adjusting this weight balances the contribution of the distillation loss and the cross-entropy loss."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m) where n is the number of training samples and m is the number of parameters in the model.",
+    "space": "O(m) for storing model parameters.",
+    "practical_note": "Real-world performance can vary based on the model architecture and dataset used."
+  },
+  "use_when": [
+    "Deploying AI models on resource-constrained edge devices.",
+    "Real-time monitoring of activities in healthcare settings.",
+    "Optimizing deep learning models for efficiency without significant accuracy loss."
+  ],
+  "avoid_when": [
+    "High computational resources are available for model training and inference.",
+    "The application does not require real-time processing.",
+    "The dataset is not suitable for knowledge distillation techniques."
+  ],
+  "implementation_skeleton": "def knowledge_distillation(teacher_model: Model, student_model: Model, data: DataLoader) -> None:\n    for inputs, labels in data:\n        teacher_outputs = teacher_model(inputs)\n        student_outputs = student_model(inputs)\n        distillation_loss = compute_kl_divergence(teacher_outputs, student_outputs)\n        cross_entropy_loss = compute_cross_entropy(student_outputs, labels)\n        global_loss = lambda * cross_entropy_loss + (1 - lambda) * distillation_loss\n        backpropagate(global_loss)",
+  "common_mistakes": [
+    "Not tuning the temperature parameter, which can significantly affect performance.",
+    "Using a student model that is too complex, negating the benefits of distillation.",
+    "Failing to properly balance the distillation weight, leading to suboptimal training."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Reduces the model size and inference time.",
+      "Maintains competitive accuracy compared to larger models.",
+      "Facilitates deployment on edge devices."
+    ],
+    "weaknesses": [
+      "Requires careful tuning of hyperparameters.",
+      "May not work well if the teacher model is poorly trained.",
+      "Can lead to overfitting if the student model is too simple."
+    ],
+    "compared_to": [
+      {
+        "technique": "Model Compression",
+        "verdict": "Use knowledge distillation when you need to maintain accuracy while reducing model size; use model compression when you want to reduce size without necessarily preserving accuracy."
+      }
+    ]
+  },
+  "connects_to": [
+    "Model Compression",
+    "Transfer Learning",
+    "Ensemble Learning",
+    "Pruning Techniques"
+  ],
+  "maturity": "proven (widely used in production)"
+}

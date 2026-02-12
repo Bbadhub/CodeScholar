@@ -1,0 +1,79 @@
+{
+  "technique_name": "Capability Maturity Model Integration (CMMI) with DevOps practices",
+  "aliases": [
+    "CMMI-DevOps Integration"
+  ],
+  "category": "process_improvement",
+  "one_liner": "A framework for integrating DevOps practices with CMMI to enhance software development team capabilities.",
+  "how_it_works": "This technique involves a systematic review of existing literature to identify how DevOps practices can be integrated with the Capability Maturity Model Integration (CMMI). It establishes a mapping framework that outlines key capabilities and maturity levels for software development teams. The framework is validated through expert feedback and provides guidelines for implementation, ensuring a structured approach to adopting DevOps within the CMMI context.",
+  "algorithm": {
+    "steps": [
+      "1. Conduct a systematic literature review on DevOps and CMMI.",
+      "2. Identify key practices and capabilities from both domains.",
+      "3. Develop a mapping framework that integrates these practices.",
+      "4. Validate the framework through expert feedback.",
+      "5. Propose guidelines for implementation."
+    ],
+    "core_equation": "output = framework for evaluating software development team capabilities",
+    "input_format": "Literature on DevOps practices and CMMI",
+    "output_format": "A framework for evaluating software development team capabilities"
+  },
+  "parameters": [
+    {
+      "name": "maturity_levels",
+      "typical_value": "1-5",
+      "effect": "Defines the maturity stage of the team."
+    },
+    {
+      "name": "evaluation_criteria",
+      "typical_value": "defined practices",
+      "effect": "Guides the assessment of team capabilities."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Real-world performance may vary based on team size and existing processes."
+  },
+  "use_when": [
+    "You need to assess the capabilities of a software development team before awarding a contract.",
+    "You want to implement DevOps practices in a structured manner.",
+    "You are looking to improve project outcomes through better team evaluations."
+  ],
+  "avoid_when": [
+    "You have a well-established evaluation process that does not require changes.",
+    "The team is already highly mature and performing well.",
+    "You are working in a domain where CMMI is not applicable."
+  ],
+  "implementation_skeleton": "def integrate_devops_with_cmmi(literature: List[str]) -> Framework:\n    # Step 1: Conduct literature review\n    key_practices = identify_key_practices(literature)\n    # Step 2: Develop mapping framework\n    framework = develop_mapping_framework(key_practices)\n    # Step 3: Validate framework\n    validate_framework(framework)\n    return framework",
+  "common_mistakes": [
+    "Failing to adequately validate the framework with expert feedback.",
+    "Neglecting to define clear evaluation criteria.",
+    "Overlooking the specific needs of the team being assessed."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a structured approach to integrating DevOps with CMMI.",
+      "Enhances team capability assessments.",
+      "Facilitates improved project outcomes."
+    ],
+    "weaknesses": [
+      "May require significant changes to existing processes.",
+      "Not suitable for all domains.",
+      "Implementation can be resource-intensive."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional CMMI",
+        "verdict": "Use CMMI for standard assessments; use CMMI-DevOps for integrating modern practices."
+      }
+    ]
+  },
+  "connects_to": [
+    "Agile methodologies",
+    "Lean software development",
+    "Continuous integration/continuous deployment (CI/CD)",
+    "Software process improvement models"
+  ],
+  "maturity": "proven (widely used in production)"
+}

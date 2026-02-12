@@ -1,0 +1,37 @@
+{
+  "problem_name": "AI-assisted Experimental Planning and Operation",
+  "description": "This problem involves leveraging artificial intelligence to enhance the planning and execution of experiments in scientific facilities. It aims to streamline operations, assist users, and automate processes to improve efficiency and accuracy in complex environments.",
+  "you_have_this_if": [
+    "You are working in a scientific facility with complex experimental setups.",
+    "You need to assist new users in understanding how to navigate the facility.",
+    "You are looking to automate instrument operations based on user inputs.",
+    "You are facing challenges in designing experiments due to the complexity of the environment.",
+    "You want to improve the efficiency of experimental workflows."
+  ],
+  "approaches": [
+    {
+      "technique": "Context-Aware Language Model for Science (CALMS)",
+      "best_for": "When designing experiments in complex scientific environments and assisting users.",
+      "paper_count": 1,
+      "max_citations": 42,
+      "key_tradeoff": "Provides intelligent assistance but may require significant setup and training."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Context-Aware Language Model for Science (CALMS)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to automate and assist in complex experimental setups while ensuring user-friendly interactions."
+    }
+  ],
+  "start_here": "Begin with the Context-Aware Language Model for Science (CALMS) as it provides a robust framework for addressing the complexities of experimental planning and operation in scientific facilities.",
+  "related_problems": [
+    "Automated Experimentation Systems",
+    "User Assistance in Scientific Software",
+    "Data-Driven Experimental Design",
+    "Intelligent Instrument Control"
+  ]
+}

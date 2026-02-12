@@ -1,0 +1,37 @@
+{
+  "problem_name": "Force Control in Robotic Manipulation",
+  "description": "Force control in robotic manipulation involves regulating the force exerted by a robot to interact safely and effectively with objects. This is particularly important in tasks that require precision and care, such as handling delicate materials or packaging.",
+  "you_have_this_if": [
+    "You are working with robotic systems that need to handle fragile items.",
+    "Your application involves automating packaging processes.",
+    "You need to ensure consistent force application during manipulation tasks.",
+    "You are facing challenges with material deformation or damage during handling.",
+    "Your project requires integration of robotics in logistics or supply chain operations."
+  ],
+  "approaches": [
+    {
+      "technique": "Learning Force Control for Paper Wrapping",
+      "best_for": "when automating packaging processes and dealing with delicate materials",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This approach may require extensive training data but can adapt to various material properties."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Learning Force Control for Paper Wrapping",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to automate a packaging task with delicate materials and require adaptive force control."
+    }
+  ],
+  "start_here": "Start with the Learning Force Control for Paper Wrapping technique, as it is specifically designed for delicate handling and packaging tasks, ensuring both safety and efficiency.",
+  "related_problems": [
+    "Impedance Control in Robotics",
+    "Adaptive Control for Robotic Manipulation",
+    "Force Sensing in Robotic Systems",
+    "Robotic Grasping and Manipulation"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Named Entity Recognition for De-identification",
+  "description": "Named Entity Recognition (NER) for de-identification involves identifying and redacting sensitive information, such as names, from text data. This is particularly important in fields like healthcare, where patient privacy must be maintained while still allowing for data analysis.",
+  "you_have_this_if": [
+    "You are working with clinical narratives that contain sensitive information.",
+    "You need to comply with regulations regarding patient data privacy.",
+    "You want to analyze text data without exposing personally identifiable information.",
+    "You are dealing with unstructured text that requires entity recognition.",
+    "You have a need to maintain the context of the text while anonymizing it."
+  ],
+  "approaches": [
+    {
+      "technique": "BERT (Bidirectional Encoder Representations from Transformers)",
+      "best_for": "when you need to redact names in clinical narratives while preserving context.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "BERT provides high accuracy in recognizing entities but requires significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "BERT",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have access to sufficient computational resources and need high accuracy in entity recognition."
+    }
+  ],
+  "start_here": "Start with BERT if you are focused on high accuracy and can manage the computational demands, especially in clinical settings.",
+  "related_problems": [
+    "Text Classification",
+    "Sentiment Analysis",
+    "Information Extraction",
+    "Data Privacy and Security"
+  ]
+}

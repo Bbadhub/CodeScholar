@@ -1,0 +1,80 @@
+{
+  "technique_name": "Petri nets",
+  "aliases": [
+    "Petri net models",
+    "Petri net coordination"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "Petri nets are a mathematical modeling tool used for describing and analyzing the behavior of concurrent systems.",
+  "how_it_works": "Petri nets model the coordination among concurrently executing components by representing states and transitions as places and events. They allow for the separation of event firing and handling, enabling distributed deployment across multiple robots. This ensures that real-time execution is maintained while coordinating actions based on the current state of the system.",
+  "algorithm": {
+    "steps": [
+      "Define the shared resources and the events that trigger coordination.",
+      "Model the coordination logic using a Petri net.",
+      "Implement finite state machines for individual robot behaviors.",
+      "Establish a protocol for communication between the coordinator and robots.",
+      "Handle events and update the Petri net state based on robot actions.",
+      "Ensure data consistency using circular buffers for event handling."
+    ],
+    "core_equation": "output = coordinated actions based on Petri net state",
+    "input_format": "Event data from robot sensors and state information from finite state machines.",
+    "output_format": "Coordinated actions for each robot based on the current state of the Petri net."
+  },
+  "parameters": [
+    {
+      "name": "max_tokens_per_place",
+      "typical_value": "1 (for safe Petri nets)",
+      "effect": "Ensures that no more than one event can occur simultaneously in a place."
+    },
+    {
+      "name": "event_buffer_size",
+      "typical_value": "configurable based on system requirements",
+      "effect": "Affects the responsiveness and efficiency of event handling."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Real-world performance may vary based on the complexity of the Petri net and the number of concurrent events."
+  },
+  "use_when": [
+    "Developing multi-robot systems that require real-time coordination.",
+    "Implementing task sharing among autonomous robots in dynamic environments.",
+    "Designing systems where resource sharing is critical for safety and efficiency."
+  ],
+  "avoid_when": [
+    "Single-robot applications where coordination is not required.",
+    "Systems with very low latency requirements that cannot tolerate the overhead of coordination mechanisms."
+  ],
+  "implementation_skeleton": "def petri_net_coordination(event_data: List[Event], state_info: List[State]) -> List[Action]:\n    # Initialize Petri net\n    petri_net = initialize_petri_net()\n    # Process events\n    for event in event_data:\n        update_petri_net(petri_net, event)\n    # Generate coordinated actions\n    actions = generate_actions(petri_net, state_info)\n    return actions",
+  "common_mistakes": [
+    "Neglecting to define clear event triggers for coordination.",
+    "Overcomplicating the Petri net model, making it difficult to manage.",
+    "Failing to ensure data consistency in event handling."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Enables real-time coordination among multiple robots.",
+      "Supports complex event-driven behaviors.",
+      "Facilitates distributed system design."
+    ],
+    "weaknesses": [
+      "Can introduce overhead in coordination mechanisms.",
+      "May not be suitable for very low-latency applications.",
+      "Requires careful modeling to avoid complexity."
+    ],
+    "compared_to": [
+      {
+        "technique": "Finite State Machines",
+        "verdict": "Use Petri nets for complex coordination; use FSMs for simpler, linear behaviors."
+      }
+    ]
+  },
+  "connects_to": [
+    "Finite State Machines",
+    "Event-Driven Architecture",
+    "Multi-Agent Systems",
+    "Real-Time Systems"
+  ],
+  "maturity": "proven (widely used in production)"
+}

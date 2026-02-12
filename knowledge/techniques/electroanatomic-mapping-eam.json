@@ -1,0 +1,76 @@
+{
+  "technique_name": "Electroanatomic Mapping (EAM)",
+  "aliases": [],
+  "category": "diagnostic_method",
+  "one_liner": "Electroanatomic mapping is a technique used to assess the electrical activity of the heart to diagnose arrhythmogenic cardiomyopathy.",
+  "how_it_works": "Electroanatomic mapping utilizes a multielectrode catheter to collect electrophysiological data from the heart. It identifies areas of low-voltage and fractionated electrograms that indicate myocardial abnormalities. This information helps in diagnosing conditions like arrhythmogenic cardiomyopathy, particularly when traditional imaging methods are inconclusive.",
+  "algorithm": {
+    "steps": [
+      "1. Insert a multielectrode catheter into the heart.",
+      "2. Perform endocardial high-density substrate bipolar voltage mapping.",
+      "3. Identify areas with low-voltage and fractionated electrograms.",
+      "4. Target specific PVC morphologies for ablation.",
+      "5. Confirm findings with genetic testing if necessary."
+    ],
+    "core_equation": "output = identify_low_voltage_areas(electrophysiological_data)",
+    "input_format": "Electrophysiological data from the heart, including voltage measurements from the mapping catheter.",
+    "output_format": "Identification of abnormal electrical substrates and potential diagnosis of arrhythmogenic cardiomyopathy."
+  },
+  "parameters": [
+    {
+      "name": "bipolar voltage threshold",
+      "typical_value": "<0.5 mV",
+      "effect": "Lowering the threshold increases sensitivity for detecting low-voltage areas."
+    },
+    {
+      "name": "unipolar voltage threshold",
+      "typical_value": "<0.5 mV",
+      "effect": "Lowering the threshold increases sensitivity for detecting low-voltage areas."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) where n is the number of data points collected",
+    "space": "O(n) for storing the collected data",
+    "practical_note": "Real-world performance can vary based on the quality of the catheter and the operator's experience."
+  },
+  "use_when": [
+    "Diagnosing patients with frequent PVCs and inconclusive imaging results.",
+    "Assessing patients with suspected arrhythmogenic cardiomyopathy.",
+    "Evaluating patients who have undergone previous catheter ablation without clear diagnosis."
+  ],
+  "avoid_when": [
+    "When clear structural abnormalities are evident on imaging.",
+    "In patients without significant arrhythmias or symptoms."
+  ],
+  "implementation_skeleton": "def electroanatomic_mapping(data: List[float]) -> List[Tuple[float, float]]:\n    # Step 1: Insert multielectrode catheter\n    # Step 2: Perform mapping\n    low_voltage_areas = identify_low_voltage_areas(data)\n    # Step 3: Target PVC morphologies\n    return low_voltage_areas",
+  "common_mistakes": [
+    "Failing to properly calibrate the mapping catheter.",
+    "Overlooking the importance of patient selection criteria.",
+    "Not correlating findings with clinical symptoms."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Increases sensitivity for detecting arrhythmogenic cardiomyopathy compared to imaging alone.",
+      "Provides detailed mapping of electrical activity.",
+      "Can guide targeted ablation procedures."
+    ],
+    "weaknesses": [
+      "Requires specialized equipment and training.",
+      "Invasive procedure with associated risks.",
+      "May not provide clear results in all patients."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional imaging techniques (e.g., echocardiography, cardiac MRI)",
+        "verdict": "Use EAM when imaging is inconclusive; imaging is better for structural abnormalities."
+      }
+    ]
+  },
+  "connects_to": [
+    "Electrophysiological studies",
+    "Catheter ablation techniques",
+    "Cardiac MRI",
+    "Echocardiography"
+  ],
+  "maturity": "proven"
+}

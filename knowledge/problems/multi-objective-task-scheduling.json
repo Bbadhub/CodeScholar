@@ -1,0 +1,36 @@
+{
+  "problem_name": "Multi-Objective Task Scheduling",
+  "description": "Multi-objective task scheduling involves optimizing the allocation of tasks to resources while considering multiple conflicting objectives. This problem is common in various domains, such as satellite operations and project management, where trade-offs between objectives must be carefully managed.",
+  "you_have_this_if": [
+    "You need to allocate multiple tasks to limited resources.",
+    "You are facing conflicting objectives in task prioritization.",
+    "You require efficient scheduling under resource constraints.",
+    "You are working on optimization problems in a dynamic environment."
+  ],
+  "approaches": [
+    {
+      "technique": "Non-Dominated Sorting Student Psychology Based Optimization Algorithm",
+      "best_for": "when you need to optimize task scheduling for satellite operations and other multi-objective optimization problems.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach balances multiple objectives but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Non-Dominated Sorting Student Psychology Based Optimization Algorithm",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to optimize scheduling with multiple objectives and can afford moderate computational resources."
+    }
+  ],
+  "start_here": "Start with the Non-Dominated Sorting Student Psychology Based Optimization Algorithm, as it is specifically designed for multi-objective task scheduling and has been applied successfully in relevant scenarios.",
+  "related_problems": [
+    "Single-Objective Task Scheduling",
+    "Resource Allocation Problems",
+    "Dynamic Task Scheduling",
+    "Multi-Criteria Decision Making"
+  ]
+}

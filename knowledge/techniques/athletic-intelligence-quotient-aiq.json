@@ -1,0 +1,76 @@
+{
+  "technique_name": "Athletic Intelligence Quotient (AIQ)",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "AIQ measures cognitive abilities relevant to athletic performance and predicts outcomes based on these metrics.",
+  "how_it_works": "The AIQ is assessed through various cognitive subtests that evaluate skills like reaction time and decision-making. These scores are then correlated with performance metrics from NFL games, such as passing yards and quarterback ratings. By performing regression analysis, the predictive power of these cognitive abilities on athletic performance can be quantified, allowing teams to make informed decisions about player prospects.",
+  "algorithm": {
+    "steps": [
+      "1. Administer the AIQ to NFL quarterback draftees.",
+      "2. Collect performance metrics from NFL games.",
+      "3. Perform regression analysis to evaluate the relationship between AIQ subscales and performance metrics.",
+      "4. Control for draft pick in the analysis.",
+      "5. Report significant predictors and their contributions to performance variance."
+    ],
+    "core_equation": "performance_metric = \u03b20 + \u03b21 * Reaction_Time + \u03b22 * Visual_Spatial_Processing + \u03b23 * Decision_Making + \u03b24 * Learning_Efficiency + \u03b5",
+    "input_format": "AIQ scores from cognitive assessments and NFL performance metrics (e.g., passing yards, QB rating).",
+    "output_format": "Regression coefficients indicating the predictive power of cognitive abilities on quarterback performance."
+  },
+  "parameters": [
+    {
+      "name": "AIQ subscales",
+      "typical_value": "Reaction Time, Visual Spatial Processing, Decision Making, Learning Efficiency",
+      "effect": "Changing these subscales affects the predictive power of the model."
+    },
+    {
+      "name": "Draft Pick",
+      "typical_value": "categorical variable representing player selection order",
+      "effect": "Controlling for draft pick helps isolate the impact of cognitive abilities on performance."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for regression analysis",
+    "space": "O(n) for storing performance metrics",
+    "practical_note": "Real-world performance may vary based on the quality of cognitive assessments and the accuracy of performance metrics."
+  },
+  "use_when": [
+    "Developing predictive models for athlete performance based on cognitive assessments.",
+    "Evaluating quarterback prospects for NFL teams using cognitive metrics.",
+    "Integrating cognitive data into sports analytics platforms."
+  ],
+  "avoid_when": [
+    "When focusing solely on physical performance metrics without cognitive considerations.",
+    "In contexts where cognitive assessments are not feasible or acceptable."
+  ],
+  "implementation_skeleton": "def aiq_regression(aiq_scores: List[float], performance_metrics: List[float]) -> Dict[str, float]:\n    # Perform regression analysis\n    coefficients = perform_regression(aiq_scores, performance_metrics)\n    return coefficients",
+  "common_mistakes": [
+    "Neglecting to control for draft pick when analyzing performance.",
+    "Using inadequate sample sizes for regression analysis.",
+    "Failing to validate the predictive model with separate test data."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a quantitative measure of cognitive abilities relevant to performance.",
+      "Can enhance player evaluation processes for teams.",
+      "Integrates cognitive factors into traditional performance metrics."
+    ],
+    "weaknesses": [
+      "May not fully capture the complexities of athletic performance.",
+      "Relies on the accuracy of cognitive assessments.",
+      "Could be influenced by external factors not accounted for in the model."
+    ],
+    "compared_to": [
+      {
+        "technique": "Physical Performance Metrics",
+        "verdict": "Use AIQ when cognitive factors are important; use physical metrics for purely physical evaluations."
+      }
+    ]
+  },
+  "connects_to": [
+    "Cognitive Assessment Techniques",
+    "Sports Analytics",
+    "Performance Metrics in Sports",
+    "Regression Analysis"
+  ],
+  "maturity": "emerging"
+}

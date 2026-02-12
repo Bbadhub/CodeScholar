@@ -1,0 +1,97 @@
+{
+  "technique_name": "YOLOv8n (Nano) and YOLOv8m (Medium)",
+  "aliases": [
+    "You Only Look Once version 8 Nano",
+    "You Only Look Once version 8 Medium"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "YOLOv8n and YOLOv8m are lightweight deep learning models designed for real-time object detection, particularly in resource-constrained environments.",
+  "how_it_works": "YOLOv8n is a smaller version of the YOLOv8m model, trained using knowledge distillation. The larger YOLOv8m model acts as a teacher, providing soft targets to the smaller YOLOv8n student model. This approach allows the smaller model to achieve competitive accuracy while being suitable for deployment on edge devices like Raspberry Pi.",
+  "algorithm": {
+    "steps": [
+      "1. Collect a comprehensive dataset of fire images.",
+      "2. Train the YOLOv8m model as the teacher model on the dataset.",
+      "3. Use the trained YOLOv8m to generate soft targets for the YOLOv8n student model.",
+      "4. Train the YOLOv8n model using the soft targets from the teacher model.",
+      "5. Deploy the YOLOv8n model on a Raspberry Pi 5 microcontroller.",
+      "6. Integrate the model with a drone for real-time fire detection."
+    ],
+    "core_equation": "output = YOLOv8n(image)",
+    "input_format": "Images of fire and non-fire scenarios (e.g., forest, vehicle, industrial, accidental, residential fires).",
+    "output_format": "Real-time detection of fire incidents with accuracy metrics."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.01",
+      "effect": "Higher values may lead to faster convergence but risk overshooting minima."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Larger batch sizes can stabilize training but require more memory."
+    },
+    {
+      "name": "epochs",
+      "typical_value": "50",
+      "effect": "More epochs can improve accuracy but may lead to overfitting."
+    },
+    {
+      "name": "IoU",
+      "typical_value": "0.7 for YOLOv8, 0.8 for DETR",
+      "effect": "Higher IoU thresholds can reduce false positives but may miss some detections."
+    },
+    {
+      "name": "weight_decay",
+      "typical_value": "0.0005 for YOLOv8, 1 \u00d7 10^-4 for DETR",
+      "effect": "Increased weight decay can help prevent overfitting."
+    }
+  ],
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(m)",
+    "practical_note": "Real-world performance is highly dependent on the hardware used for deployment."
+  },
+  "use_when": [
+    "You need to implement a fire detection system in remote areas.",
+    "You require a lightweight model for deployment on edge devices.",
+    "Real-time processing of visual data is essential for your application."
+  ],
+  "avoid_when": [
+    "High computational resources are available for processing.",
+    "The application does not require real-time detection.",
+    "The environment is not constrained by power or processing limitations."
+  ],
+  "implementation_skeleton": "def train_yolo_nano(teacher_model: Model, dataset: Dataset) -> Model:\n    # Step 1: Train teacher model\n    teacher_model.train(dataset)\n    # Step 2: Generate soft targets\n    soft_targets = teacher_model.predict(dataset)\n    # Step 3: Train student model\n    student_model = YOLOv8n()\n    student_model.train(soft_targets)\n    return student_model",
+  "common_mistakes": [
+    "Not properly tuning the learning rate, leading to poor convergence.",
+    "Ignoring the importance of data augmentation for better generalization.",
+    "Failing to validate the model on a separate dataset, risking overfitting."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Lightweight and suitable for edge devices.",
+      "High detection accuracy in real-time applications.",
+      "Effective knowledge distillation improves performance."
+    ],
+    "weaknesses": [
+      "May not perform as well as larger models in complex scenarios.",
+      "Limited by the computational power of edge devices.",
+      "Requires careful tuning of hyperparameters."
+    ],
+    "compared_to": [
+      {
+        "technique": "DETR",
+        "verdict": "Use YOLOv8n for real-time applications with limited resources; use DETR for tasks requiring higher accuracy and computational resources."
+      }
+    ]
+  },
+  "connects_to": [
+    "Knowledge Distillation",
+    "Object Detection",
+    "Real-Time Processing",
+    "Edge Computing",
+    "Deep Learning Frameworks"
+  ],
+  "maturity": "proven"
+}

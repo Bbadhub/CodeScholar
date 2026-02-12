@@ -1,0 +1,37 @@
+{
+  "problem_name": "Feature Selection for Classification Models",
+  "description": "Feature selection is the process of identifying and selecting a subset of relevant features for building a classification model. This is crucial in high-dimensional datasets to improve model performance and interpretability while reducing overfitting.",
+  "you_have_this_if": [
+    "You are working with a dataset that has a large number of features compared to the number of observations.",
+    "Your model is performing poorly due to irrelevant or redundant features.",
+    "You need to improve the interpretability of your model.",
+    "You are experiencing overfitting issues in your classification model.",
+    "You want to enhance the predictive performance of your model."
+  ],
+  "approaches": [
+    {
+      "technique": "SA-FDR",
+      "best_for": "When working with high-dimensional datasets where feature selection is critical and a balance between interpretability and performance is needed.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This technique offers a good balance between feature selection and model interpretability but may require careful tuning."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "SA-FDR",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have a high-dimensional dataset and need to select features while maintaining model performance."
+    }
+  ],
+  "start_here": "Start with the SA-FDR technique as it is specifically designed for high-dimensional datasets and balances interpretability with predictive performance.",
+  "related_problems": [
+    "Dimensionality Reduction",
+    "Overfitting in Machine Learning Models",
+    "Model Interpretability",
+    "Feature Engineering"
+  ]
+}

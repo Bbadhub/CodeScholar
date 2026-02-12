@@ -1,0 +1,83 @@
+{
+  "technique_name": "Computational Pragmatics Approach",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "This technique analyzes conversational implicature to classify sentiments in indirect language cues.",
+  "how_it_works": "The Computational Pragmatics Approach focuses on identifying indirect language cues and their associated sentiments within conversational data. It combines linguistic rules with machine learning techniques to extract implicatures from text. By preprocessing the data and applying these rules, the approach classifies sentiments effectively, particularly in contexts like investor communications.",
+  "algorithm": {
+    "steps": [
+      "1. Collect conversational data from investor communications.",
+      "2. Preprocess the text to identify indirect language and politeness markers.",
+      "3. Apply linguistic rules to extract implicatures.",
+      "4. Use machine learning models to classify the sentiment of the extracted implicatures.",
+      "5. Validate the model against a labeled dataset.",
+      "6. Output sentiment scores and classifications."
+    ],
+    "core_equation": "output = sentiment classification based on extracted implicatures",
+    "input_format": "Text data from investor communications, including emails, reports, and transcripts.",
+    "output_format": "Sentiment scores and classifications for each piece of communication."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.01",
+      "effect": "Affects the speed of convergence during training."
+    },
+    {
+      "name": "max_iterations",
+      "typical_value": "1000",
+      "effect": "Limits the number of training cycles."
+    },
+    {
+      "name": "embedding_dimension",
+      "typical_value": "300",
+      "effect": "Determines the size of the vector representation for words."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)",
+    "practical_note": "The approach is efficient for processing large datasets typical in financial communications."
+  },
+  "use_when": [
+    "Analyzing investor communications for sentiment insights.",
+    "Building tools for automated decision-making in finance.",
+    "Developing chatbots that require understanding of indirect language."
+  ],
+  "avoid_when": [
+    "Working with direct and straightforward language.",
+    "Analyzing non-financial conversational data.",
+    "When high accuracy is not critical."
+  ],
+  "implementation_skeleton": "def analyze_sentiment(data: List[str]) -> List[Tuple[str, float]]:\n    # Step 1: Preprocess data\n    preprocessed_data = preprocess(data)\n    # Step 2: Extract implicatures\n    implicatures = extract_implicatures(preprocessed_data)\n    # Step 3: Classify sentiment\n    sentiment_scores = classify_sentiment(implicatures)\n    return sentiment_scores",
+  "common_mistakes": [
+    "Neglecting to preprocess data adequately, leading to poor model performance.",
+    "Overfitting the model by using too many iterations.",
+    "Failing to validate the model against a diverse dataset."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively captures sentiment in indirect language.",
+      "Combines linguistic insights with machine learning.",
+      "Demonstrates significant improvement over traditional methods."
+    ],
+    "weaknesses": [
+      "May struggle with direct language.",
+      "Requires substantial labeled data for training.",
+      "Complexity in tuning parameters for optimal performance."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Sentiment Analysis",
+        "verdict": "Use Computational Pragmatics for indirect language; traditional methods for direct language."
+      }
+    ]
+  },
+  "connects_to": [
+    "Natural Language Processing (NLP)",
+    "Sentiment Analysis",
+    "Conversational AI",
+    "Machine Learning"
+  ],
+  "maturity": "emerging"
+}

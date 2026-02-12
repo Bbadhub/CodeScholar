@@ -1,0 +1,81 @@
+{
+  "technique_name": "DNA Cryptography",
+  "aliases": [
+    "DNA-based encryption",
+    "Biological cryptography"
+  ],
+  "category": "data_storage, cryptography",
+  "one_liner": "DNA Cryptography encodes data into DNA sequences for secure and durable storage.",
+  "how_it_works": "DNA Cryptography involves converting data into binary format and then encoding it into DNA sequences using a predefined mapping. The synthesized DNA can be stored in a suitable medium, and to retrieve the data, the stored DNA is sequenced and decoded back into its original binary format. This method leverages the high storage density and durability of DNA as a medium for data storage.",
+  "algorithm": {
+    "steps": [
+      "1. Convert data into binary format.",
+      "2. Encode binary data into DNA sequences using a predefined mapping.",
+      "3. Synthesize the DNA sequences for storage.",
+      "4. Store the synthesized DNA in a suitable medium.",
+      "5. To retrieve, sequence the stored DNA.",
+      "6. Decode the sequenced DNA back into binary format."
+    ],
+    "core_equation": "output = decode(sequenced_DNA)",
+    "input_format": "Data in binary format.",
+    "output_format": "Data retrieved in its original format."
+  },
+  "parameters": [
+    {
+      "name": "encoding_scheme",
+      "typical_value": "custom mapping",
+      "effect": "Affects how efficiently data is encoded into DNA."
+    },
+    {
+      "name": "synthesis_cost",
+      "typical_value": "variable based on technology",
+      "effect": "Higher costs may limit practical applications."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Real-world performance can vary significantly based on synthesis technology and data size."
+  },
+  "use_when": [
+    "You need a highly durable storage solution for large datasets.",
+    "You are working on secure data transmission methods.",
+    "You want to explore innovative data storage technologies."
+  ],
+  "avoid_when": [
+    "You require immediate access to data with low latency.",
+    "The cost of DNA synthesis is prohibitive for your application.",
+    "You are dealing with small amounts of data that can be easily stored using traditional methods."
+  ],
+  "implementation_skeleton": "def dna_encrypt(data: bytes) -> str:\n    binary_data = convert_to_binary(data)\n    dna_sequence = encode_to_dna(binary_data)\n    store_dna(dna_sequence)\n\ndef dna_decrypt(dna_sequence: str) -> bytes:\n    sequenced_dna = sequence_dna(dna_sequence)\n    return decode_from_binary(sequenced_dna)",
+  "common_mistakes": [
+    "Using an inefficient encoding scheme that increases data size.",
+    "Not considering the cost of DNA synthesis in the overall budget.",
+    "Overlooking the need for proper storage conditions for synthesized DNA."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High storage density compared to traditional methods.",
+      "Durability and longevity of DNA as a storage medium.",
+      "Potential for secure data transmission."
+    ],
+    "weaknesses": [
+      "High cost of DNA synthesis.",
+      "Complexity of encoding and decoding processes.",
+      "Latency in data retrieval compared to electronic storage."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional storage methods",
+        "verdict": "Use DNA Cryptography for long-term storage and security; use traditional methods for speed and cost-effectiveness."
+      }
+    ]
+  },
+  "connects_to": [
+    "Data encoding techniques",
+    "Cryptographic methods",
+    "Biological data storage",
+    "Synthetic biology applications"
+  ],
+  "maturity": "emerging"
+}

@@ -1,0 +1,80 @@
+{
+  "technique_name": "Graphene-based membranes",
+  "aliases": [
+    "Graphene membranes",
+    "Nanochannel membranes"
+  ],
+  "category": "material_technology",
+  "one_liner": "Graphene-based membranes utilize engineered nanochannels and nanopores for advanced filtration and separation tasks.",
+  "how_it_works": "Graphene-based membranes are synthesized by creating nanochannels and nanopores in graphene oxide or reduced graphene oxide. These membranes take advantage of graphene's unique properties, such as high permeability and selectivity, making them suitable for various filtration applications. The membranes are characterized and tested to ensure they meet performance benchmarks in terms of permeability and selectivity.",
+  "algorithm": {
+    "steps": [
+      "1. Synthesize graphene oxide.",
+      "2. Reduce graphene oxide to obtain reduced graphene oxide.",
+      "3. Create nanochannels and nanopores through chemical etching or templating.",
+      "4. Characterize the membrane properties using techniques like SEM and AFM.",
+      "5. Test the membrane performance in filtration applications."
+    ],
+    "core_equation": "output = graphene_membrane_with_nanochannels_and_nanopores",
+    "input_format": "Graphene oxide or reduced graphene oxide material.",
+    "output_format": "Graphene-based membranes with nanochannels and nanopores."
+  },
+  "parameters": [
+    {
+      "name": "channel_diameter",
+      "typical_value": "1-10 nm",
+      "effect": "Changing the diameter affects the selectivity and permeability of the membrane."
+    },
+    {
+      "name": "membrane_thickness",
+      "typical_value": "1 atom layer",
+      "effect": "Thinner membranes generally enhance permeability but may compromise mechanical strength."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) for synthesis and characterization processes",
+    "space": "O(1) for the membrane material itself",
+    "practical_note": "Real-world performance can vary based on synthesis methods and application conditions."
+  },
+  "use_when": [
+    "You need high-performance filtration solutions.",
+    "You are working on energy storage applications.",
+    "You require materials with specific permeability and selectivity."
+  ],
+  "avoid_when": [
+    "The application does not require nanoscale precision.",
+    "Cost is a major constraint.",
+    "The material must be biodegradable."
+  ],
+  "implementation_skeleton": "def synthesize_graphene_membrane() -> GrapheneMembrane:\n    graphene_oxide = synthesize_graphene_oxide()\n    reduced_graphene_oxide = reduce_graphene_oxide(graphene_oxide)\n    membrane = create_nanochannels_and_nanopores(reduced_graphene_oxide)\n    characterize_membrane(membrane)\n    return membrane",
+  "common_mistakes": [
+    "Not optimizing the synthesis process for desired membrane properties.",
+    "Overlooking the importance of thorough characterization.",
+    "Failing to test the membrane performance under realistic conditions."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High permeability and selectivity compared to conventional membranes.",
+      "Versatile applications in filtration and separation.",
+      "Potential for energy-efficient processes."
+    ],
+    "weaknesses": [
+      "High production costs compared to traditional materials.",
+      "Challenges in scalability for commercial applications.",
+      "Limited biodegradability."
+    ],
+    "compared_to": [
+      {
+        "technique": "Conventional polymer membranes",
+        "verdict": "Use graphene membranes for superior performance in demanding applications."
+      }
+    ]
+  },
+  "connects_to": [
+    "Nanomaterials synthesis",
+    "Membrane technology",
+    "Filtration systems",
+    "Energy storage materials"
+  ],
+  "maturity": "emerging"
+}

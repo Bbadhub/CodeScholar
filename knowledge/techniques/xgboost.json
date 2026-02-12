@@ -1,0 +1,91 @@
+{
+  "technique_name": "XGBoost",
+  "aliases": [
+    "Extreme Gradient Boosting"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "XGBoost is an efficient and scalable implementation of gradient boosting framework designed for speed and performance.",
+  "how_it_works": "XGBoost builds an ensemble of decision trees in a sequential manner, where each new tree corrects the errors made by the previous ones. It uses a gradient descent algorithm to minimize the loss function, which allows it to optimize both the model's accuracy and computational efficiency. Additionally, it includes regularization techniques to prevent overfitting and improve generalization.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize predictions with a constant value.",
+      "2. For each boosting round, compute the gradient and hessian of the loss function.",
+      "3. Fit a decision tree to the computed gradients.",
+      "4. Update the predictions by adding the new tree's predictions scaled by a learning rate.",
+      "5. Repeat steps 2-4 for a specified number of rounds or until convergence."
+    ],
+    "core_equation": "output = previous_output + learning_rate * new_tree_prediction",
+    "input_format": "Data frame with features and target variable, typically numerical and categorical data.",
+    "output_format": "Predicted values based on the input features."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.1",
+      "effect": "Lower values make the model more robust but require more trees."
+    },
+    {
+      "name": "max_depth",
+      "typical_value": "6",
+      "effect": "Increased depth allows the model to capture more complex patterns but risks overfitting."
+    },
+    {
+      "name": "n_estimators",
+      "typical_value": "100",
+      "effect": "More estimators can improve accuracy but increase computation time."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)",
+    "practical_note": "XGBoost is optimized for speed and can handle large datasets efficiently."
+  },
+  "use_when": [
+    "You need to predict rental prices based on property features.",
+    "You want to analyze the impact of immunological markers on health outcomes.",
+    "You are developing a user-friendly platform for tenants and landlords.",
+    "You need to predict cardiovascular aging in elderly patients.",
+    "You are working in a market with limited prediction tools."
+  ],
+  "avoid_when": [
+    "You require real-time predictions with minimal data.",
+    "You have a small dataset with fewer than 50 samples.",
+    "You need a model that interprets results in a straightforward manner."
+  ],
+  "implementation_skeleton": "def xgboost_model(X: pd.DataFrame, y: pd.Series) -> np.ndarray:\n    model = XGBRegressor(learning_rate=0.1, max_depth=6, n_estimators=100)\n    model.fit(X, y)\n    predictions = model.predict(X)\n    return predictions",
+  "common_mistakes": [
+    "Neglecting to tune hyperparameters, which can lead to suboptimal performance.",
+    "Using too many trees without proper regularization, resulting in overfitting.",
+    "Failing to preprocess data correctly, especially handling missing values."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High predictive accuracy and performance.",
+      "Handles missing data well.",
+      "Supports parallel processing for faster training."
+    ],
+    "weaknesses": [
+      "Can be complex to tune due to many hyperparameters.",
+      "Less interpretable than simpler models like linear regression.",
+      "May require more computational resources than simpler algorithms."
+    ],
+    "compared_to": [
+      {
+        "technique": "Random Forest",
+        "verdict": "Use XGBoost for better performance on structured data, but Random Forest is easier to interpret."
+      },
+      {
+        "technique": "Linear Regression",
+        "verdict": "Use XGBoost for non-linear relationships, but Linear Regression is simpler and faster for linear data."
+      }
+    ]
+  },
+  "connects_to": [
+    "Gradient Boosting",
+    "Random Forest",
+    "LightGBM",
+    "CatBoost",
+    "Support Vector Regression"
+  ],
+  "maturity": "proven (widely used in production)"
+}

@@ -1,0 +1,85 @@
+{
+  "technique_name": "Physics-informed Variational Autoencoder",
+  "aliases": [
+    "PIVAE"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "A variational autoencoder that integrates physics-based knowledge with data-driven learning for improved interpretability and performance.",
+  "how_it_works": "The Physics-informed Variational Autoencoder (PIVAE) separates the latent space into physics-based and data-driven components. The encoder captures known physical relationships while the decoder reconstructs outputs by integrating both components. Adversarial training is employed to ensure that the data-driven components do not compromise the interpretability of the physics-based variables.",
+  "algorithm": {
+    "steps": [
+      "1. Define the physics-based model and collect response measurements, domain, and class variables.",
+      "2. Partition the latent space into physically meaningful variables and data-driven variables.",
+      "3. Train the encoder to map inputs to a posterior distribution over latent variables.",
+      "4. Train the decoder to reconstruct the response while integrating both physics-based and data-driven components.",
+      "5. Apply adversarial training to constrain the data-driven components and maintain the interpretability of the physics-based variables.",
+      "6. Evaluate the model on new measurements to infer latent variables and predict domain and class variables."
+    ],
+    "core_equation": "output = f(physics_latent, data_latent)",
+    "input_format": "Response measurements, domain variables, and class variables (e.g., tensors of shape [batch_size, features])",
+    "output_format": "Disentangled latent variables and reconstructed response measurements (e.g., tensors of shape [batch_size, latent_dim])"
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A higher learning rate may speed up training but can lead to instability."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "64",
+      "effect": "Larger batch sizes can improve gradient estimates but require more memory."
+    },
+    {
+      "name": "number_of_epochs",
+      "typical_value": "100",
+      "effect": "More epochs can improve convergence but may lead to overfitting."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m * d) where n is the number of samples, m is the number of epochs, and d is the dimensionality of the latent space.",
+    "space": "O(n * d) for storing latent variables and model parameters.",
+    "practical_note": "Performance may vary based on the complexity of the physics model and the amount of data available."
+  },
+  "use_when": [
+    "You need to model complex physical systems with limited data.",
+    "You want to integrate domain knowledge with machine learning for better interpretability.",
+    "You are dealing with confounding influences in your measurements."
+  ],
+  "avoid_when": [
+    "You have abundant high-quality data that can be modeled purely with data-driven approaches.",
+    "The physical model is well-defined and does not require adjustments based on data.",
+    "You need real-time predictions without the overhead of complex model training."
+  ],
+  "implementation_skeleton": "def train_pivae(data: np.ndarray, epochs: int = 100, batch_size: int = 64) -> Tuple[np.ndarray, np.ndarray]:\n    # Initialize encoder and decoder\n    for epoch in range(epochs):\n        for batch in get_batches(data, batch_size):\n            # Train encoder and decoder\n            pass\n    return reconstructed_data, latent_variables",
+  "common_mistakes": [
+    "Neglecting to properly partition the latent space, leading to poor interpretability.",
+    "Overfitting the model due to insufficient regularization during adversarial training.",
+    "Failing to validate the model on unseen data, which can lead to misleading performance metrics."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Combines physics-based insights with data-driven learning for enhanced interpretability.",
+      "Improves performance in scenarios with limited data by leveraging domain knowledge.",
+      "Facilitates uncertainty quantification in predictions."
+    ],
+    "weaknesses": [
+      "Requires a well-defined physics model, which may not always be available.",
+      "Can be computationally intensive due to adversarial training.",
+      "May not perform well if the physics model is inaccurate."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard Variational Autoencoder",
+        "verdict": "Use PIVAE when domain knowledge is crucial for interpretability; otherwise, a standard VAE may suffice."
+      }
+    ]
+  },
+  "connects_to": [
+    "Variational Autoencoder",
+    "Physics-informed Neural Networks",
+    "Generative Adversarial Networks",
+    "Bayesian Neural Networks"
+  ],
+  "maturity": "emerging"
+}

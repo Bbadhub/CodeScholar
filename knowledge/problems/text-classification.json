@@ -1,0 +1,52 @@
+{
+  "problem_name": "Text Classification",
+  "description": "Text classification is the task of assigning predefined categories to text documents based on their content. This is commonly used in various applications such as sentiment analysis, spam detection, and topic labeling.",
+  "you_have_this_if": [
+    "You have a large dataset of text documents.",
+    "You need to categorize text into specific labels.",
+    "You are dealing with unstructured text data.",
+    "You require automated processing of textual information.",
+    "You want to improve user experience based on text feedback."
+  ],
+  "approaches": [
+    {
+      "technique": "Text Mining for Crime Classification",
+      "best_for": "When you need to classify crime types from narrative text and have access to restricted police reports.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "Effective for specific legal contexts but may not generalize well to other domains."
+    },
+    {
+      "technique": "RoBERTa",
+      "best_for": "When you need a robust NLP model to analyze user feedback for bug detection in mobile games.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "High accuracy and flexibility but requires significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Text Mining for Crime Classification",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You have specific crime-related text data and need to classify it accurately."
+    },
+    {
+      "technique": "RoBERTa",
+      "speed": "slow",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You require a sophisticated model for classifying diverse user feedback in applications."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is to use RoBERTa due to its robustness and high accuracy in handling various text classification tasks, especially in user feedback analysis.",
+  "related_problems": [
+    "Sentiment Analysis",
+    "Spam Detection",
+    "Topic Modeling",
+    "Named Entity Recognition"
+  ]
+}

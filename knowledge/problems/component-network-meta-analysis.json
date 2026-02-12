@@ -1,0 +1,37 @@
+{
+  "problem_name": "Component Network Meta-Analysis",
+  "description": "Component network meta-analysis (CNMA) is a statistical method used to evaluate the effects of multiple treatments that may be combined in various ways. It helps researchers understand how different components of interventions contribute to overall treatment effects, especially in complex scenarios.",
+  "you_have_this_if": [
+    "You are dealing with multicomponent treatment data.",
+    "You need to assess the individual contributions of various treatment comparisons.",
+    "You are looking for a method to improve the interpretability of your meta-analysis results.",
+    "Your data includes complex interventions with overlapping treatment components.",
+    "You require a robust statistical approach to analyze treatment effects."
+  ],
+  "approaches": [
+    {
+      "technique": "Leave-one-out algorithm",
+      "best_for": "when you need to analyze the contribution of individual treatment comparisons in complex interventions.",
+      "paper_count": 1,
+      "max_citations": 3,
+      "key_tradeoff": "While it provides robust insights into individual treatment effects, it may require substantial computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Leave-one-out algorithm",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to disentangle the effects of individual components in a complex treatment network."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Leave-one-out algorithm, as it effectively isolates the impact of individual treatment components, enhancing the clarity of your CNMA results.",
+  "related_problems": [
+    "Network Meta-Analysis",
+    "Bayesian Meta-Analysis",
+    "Multivariate Meta-Analysis",
+    "Hierarchical Meta-Analysis"
+  ]
+}

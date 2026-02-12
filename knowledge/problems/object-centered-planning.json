@@ -1,0 +1,37 @@
+{
+  "problem_name": "Object-Centered Planning",
+  "description": "Object-centered planning involves organizing and managing tasks around specific objects in a system, particularly in robotics. This approach is crucial for improving the efficiency and accuracy of robotic operations, especially when dealing with complex environments and tasks.",
+  "you_have_this_if": [
+    "You are working on a robotic system that requires precise object identification.",
+    "Your application involves complex queries related to object functions.",
+    "You are experiencing issues with hallucinations in outputs from language models used in robotic tasks.",
+    "You need to enhance the reasoning capabilities of your robotic system.",
+    "Your project involves multiple interacting objects that require coordinated planning."
+  ],
+  "approaches": [
+    {
+      "technique": "Agentic Workflows",
+      "best_for": "When you need to improve the accuracy of object identification and reasoning in robotic systems.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach may require more computational resources but significantly enhances accuracy."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Agentic Workflows",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to manage complex interactions between multiple objects in a robotic environment."
+    }
+  ],
+  "start_here": "Begin with Agentic Workflows as it directly addresses the challenges of object identification and reasoning in robotic systems, making it a suitable first approach.",
+  "related_problems": [
+    "Task Planning in Robotics",
+    "Object Recognition Challenges",
+    "Multi-Agent Coordination",
+    "Complex Query Processing in AI"
+  ]
+}

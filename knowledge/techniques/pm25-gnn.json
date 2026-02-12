@@ -1,0 +1,97 @@
+{
+  "technique_name": "PM2.5-GNN",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "PM2.5-GNN predicts PM2.5 concentrations using a graph neural network approach, integrating meteorological and fire-related data.",
+  "how_it_works": "The PM2.5-GNN model operates in two main steps. First, it forecasts total PM2.5 concentrations by training on historical data, incorporating meteorological and fire data. Second, it estimates the contributions of ambient sources to isolate the impact of prescribed fires on air quality.",
+  "algorithm": {
+    "steps": [
+      "1. Collect PM2.5, meteorological, and fire data.",
+      "2. Train the PM2.5-GNN model using historical PM2.5 observations.",
+      "3. Predict total PM2.5 concentrations using the trained model.",
+      "4. Train a second PM2.5-GNN model to predict ambient PM2.5 concentrations.",
+      "5. Subtract ambient PM2.5 predictions from total PM2.5 predictions to estimate fire-specific PM2.5 contributions.",
+      "6. Simulate prescribed fires and input data into the PM2.5-GNN model to forecast air quality impact."
+    ],
+    "core_equation": "output = total_PM2.5 - ambient_PM2.5",
+    "input_format": "PM2.5 concentrations, meteorological data (wind speed, temperature, precipitation), fire data (fire radiative power, number of fires)",
+    "output_format": "Predicted PM2.5 concentrations at specified sensor locations"
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "Affects the speed of convergence during training."
+    },
+    {
+      "name": "number_of_epochs",
+      "typical_value": "100",
+      "effect": "Determines how many times the model will see the training data."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Influences the stability of the training process."
+    },
+    {
+      "name": "window_size",
+      "typical_value": "240 hours",
+      "effect": "Defines the historical data range used for predictions."
+    },
+    {
+      "name": "prediction_window",
+      "typical_value": "48 hours",
+      "effect": "Specifies how far into the future predictions are made."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on the size of the input data and model architecture."
+  },
+  "use_when": [
+    "You need to forecast air quality impacts from prescribed fires.",
+    "You require real-time PM2.5 predictions for emergency management.",
+    "You want to analyze the trade-offs of prescribed fire implementation."
+  ],
+  "avoid_when": [
+    "You have access to high-resolution PM2.5 data without the need for modeling.",
+    "You require predictions in a different geographical region not covered by the model.",
+    "You need a simpler model without the complexity of GNNs."
+  ],
+  "implementation_skeleton": "def pm25_gnn_predict(data: Dict[str, Any]) -> np.ndarray:\n    # Step 1: Collect data\n    pm25_data = data['pm25']\n    met_data = data['meteorological']\n    fire_data = data['fire']\n    \n    # Step 2: Train the model (pseudo)\n    model = train_pm25_gnn(pm25_data, met_data, fire_data)\n    \n    # Step 3: Predict total PM2.5\n    total_pm25 = model.predict(pm25_data)\n    \n    # Step 4: Train ambient model\n    ambient_model = train_pm25_gnn_ambient(pm25_data, met_data)\n    \n    # Step 5: Predict ambient PM2.5\n    ambient_pm25 = ambient_model.predict(pm25_data)\n    \n    # Step 6: Calculate fire-specific PM2.5\n    fire_pm25 = total_pm25 - ambient_pm25\n    return fire_pm25",
+  "common_mistakes": [
+    "Neglecting to preprocess the input data properly.",
+    "Overfitting the model by using too many epochs.",
+    "Failing to validate the model on unseen data."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Integrates multiple data sources for improved accuracy.",
+      "Outperforms traditional models like Random Forest and LSTM.",
+      "Provides insights into the impact of prescribed fires on air quality."
+    ],
+    "weaknesses": [
+      "Requires significant computational resources for training.",
+      "Complexity may deter users needing simpler solutions.",
+      "Performance heavily depends on the quality of input data."
+    ],
+    "compared_to": [
+      {
+        "technique": "Random Forest",
+        "verdict": "Use PM2.5-GNN for better accuracy with complex data relationships."
+      },
+      {
+        "technique": "LSTM",
+        "verdict": "Choose PM2.5-GNN for spatial data integration."
+      }
+    ]
+  },
+  "connects_to": [
+    "Graph Neural Networks (GNN)",
+    "Air Quality Modeling",
+    "Time Series Forecasting",
+    "Environmental Data Analysis"
+  ],
+  "maturity": "emerging"
+}

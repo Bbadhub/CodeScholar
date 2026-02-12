@@ -1,0 +1,104 @@
+{
+  "technique_name": "Structural Contrastive Learning (SCL)",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "SCL is a framework for unsupervised fake news detection that learns representations from augmented views of news propagation structures.",
+  "how_it_works": "SCL employs a twin-network architecture to process augmented views of news propagation trees. By using random cropping, it generates positive instances that are fed into graph convolutional networks (GCNs) for feature encoding. The outputs from the online and target networks are then compared using a contrastive loss, which helps in learning effective representations for distinguishing between fake and real news.",
+  "algorithm": {
+    "steps": [
+      "1. Perform data augmentation on the news propagation tree using random cropping.",
+      "2. Input the two positive instances into the online and target networks.",
+      "3. Use GCN to encode the structure features of the news propagation tree.",
+      "4. Apply a nonlinear projection to obtain low-dimensional representations.",
+      "5. Compute the contrastive loss between the online and target network outputs.",
+      "6. Optimize the online network parameters using gradient descent.",
+      "7. Update the target network parameters based on a momentum function."
+    ],
+    "core_equation": "loss = contrastive_loss(output_online, output_target)",
+    "input_format": "News propagation trees represented as graphs with nodes and edges.",
+    "output_format": "Predictions of whether news is fake or real."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A higher learning rate may speed up training but can lead to instability."
+    },
+    {
+      "name": "momentum_decay_rate",
+      "typical_value": "0.996",
+      "effect": "Adjusting this affects how quickly the target network updates."
+    },
+    {
+      "name": "random_cropping_rate",
+      "typical_value": "0.1/0.2/0.3/0.4/0.5",
+      "effect": "Higher rates may create more diverse positive instances."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "128",
+      "effect": "Larger batch sizes can stabilize training but require more memory."
+    },
+    {
+      "name": "hidden_size_of_GCN",
+      "typical_value": "128",
+      "effect": "Increasing this can capture more complex features but may lead to overfitting."
+    },
+    {
+      "name": "output_dimension_of_projection_head",
+      "typical_value": "128",
+      "effect": "Higher dimensions can improve representation capacity but increase computational cost."
+    },
+    {
+      "name": "output_dimension_of_prediction_head",
+      "typical_value": "128",
+      "effect": "Similar to projection head, affects the model's capacity."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the complexity of the news propagation structures."
+  },
+  "use_when": [
+    "You need to detect fake news without labeled datasets.",
+    "You want to leverage the propagation structure of news for detection.",
+    "You are working with social media data that is rapidly generated."
+  ],
+  "avoid_when": [
+    "You have access to large labeled datasets for supervised learning.",
+    "You require real-time detection with minimal latency.",
+    "You need a method that is easily interpretable."
+  ],
+  "implementation_skeleton": "def structural_contrastive_learning(data: Graph, learning_rate: float) -> Model:\n    online_net = initialize_network()\n    target_net = initialize_network()\n    for batch in data:\n        pos_instance1, pos_instance2 = augment_data(batch)\n        features1 = gcn_encode(online_net, pos_instance1)\n        features2 = gcn_encode(target_net, pos_instance2)\n        loss = compute_contrastive_loss(features1, features2)\n        update_network(online_net, loss, learning_rate)\n        update_target_network(target_net)\n    return online_net",
+  "common_mistakes": [
+    "Neglecting to properly tune the random cropping rate, which can affect the quality of positive instances.",
+    "Failing to update the target network correctly, leading to suboptimal performance.",
+    "Overfitting due to too complex GCN architectures without proper regularization."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effective in unsupervised settings without labeled data.",
+      "Utilizes the structure of news propagation for better feature extraction.",
+      "Improves performance significantly over traditional methods."
+    ],
+    "weaknesses": [
+      "May require extensive tuning of hyperparameters.",
+      "Not suitable for real-time applications due to potential latency.",
+      "Interpretability of the model can be challenging."
+    ],
+    "compared_to": [
+      {
+        "technique": "Supervised Learning",
+        "verdict": "Use SCL when labeled data is unavailable; otherwise, supervised methods may yield better results."
+      }
+    ]
+  },
+  "connects_to": [
+    "Graph Neural Networks",
+    "Contrastive Learning",
+    "Unsupervised Learning Techniques",
+    "Fake News Detection Methods"
+  ],
+  "maturity": "emerging"
+}

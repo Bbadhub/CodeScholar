@@ -1,0 +1,81 @@
+{
+  "technique_name": "tapai",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "tapai is a neural network-based method for classifying scorpion venom peptide sequences into toxin categories.",
+  "how_it_works": "tapai processes amino acid sequences from scorpion venom by padding or truncating them to a fixed length of 128 amino acids. A neural network is then trained on these sequences to classify them into various toxin categories. The model is validated using a separate dataset, achieving high accuracy in toxin classification compared to traditional methods like BLAST.",
+  "algorithm": {
+    "steps": [
+      "1. Collect scorpion venom peptide sequences from databases.",
+      "2. Preprocess sequences by padding or truncating to a fixed length (128 amino acids).",
+      "3. Train the neural network on the processed sequences to classify them into toxin categories.",
+      "4. Validate the model using a separate dataset and evaluate performance metrics.",
+      "5. Use the trained model to classify new sequences from scorpion transcriptomes."
+    ],
+    "core_equation": "output = neural_network(input_sequence)",
+    "input_format": "Amino acid sequences in fasta format.",
+    "output_format": "Classifications of sequences into toxin categories (ICK, KTx, NaTx, venom proteins, housekeeping genes)."
+  },
+  "parameters": [
+    {
+      "name": "input_length",
+      "typical_value": "128",
+      "effect": "Determines the fixed size of input sequences for the model."
+    },
+    {
+      "name": "training_sequences",
+      "typical_value": "5453 (positive), 49694 (negative)",
+      "effect": "Affects the model's ability to learn and generalize."
+    },
+    {
+      "name": "validation_accuracy",
+      "typical_value": "varies by category",
+      "effect": "Indicates the model's performance across different toxin categories."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m) where n is the number of sequences and m is the sequence length",
+    "space": "O(m) for storing sequences",
+    "practical_note": "Performance may vary based on the size of the dataset and model architecture."
+  },
+  "use_when": [
+    "You need to classify short peptide sequences from scorpion venom.",
+    "You want to improve the accuracy of toxin identification over traditional methods.",
+    "You are working on drug discovery projects involving scorpion toxins."
+  ],
+  "avoid_when": [
+    "You have a large dataset of well-annotated sequences that do not require further classification.",
+    "You need real-time classification with minimal computational resources."
+  ],
+  "implementation_skeleton": "def tapai_classify(sequences: List[str]) -> List[str]:\n    processed_sequences = preprocess(sequences)\n    model = load_trained_model()\n    classifications = model.predict(processed_sequences)\n    return classifications",
+  "common_mistakes": [
+    "Not preprocessing sequences correctly (padding/truncating).",
+    "Using an insufficiently large dataset for training.",
+    "Neglecting to validate the model with a separate dataset."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy in classifying toxin categories.",
+      "Effective for short peptide sequences.",
+      "Improves upon traditional classification methods."
+    ],
+    "weaknesses": [
+      "Requires a well-annotated training dataset.",
+      "May not perform well with very large datasets.",
+      "Computationally intensive compared to simpler methods."
+    ],
+    "compared_to": [
+      {
+        "technique": "BLAST",
+        "verdict": "tapai is preferred for higher accuracy in toxin classification."
+      }
+    ]
+  },
+  "connects_to": [
+    "neural networks",
+    "sequence classification",
+    "bioinformatics",
+    "toxin identification methods"
+  ],
+  "maturity": "proven (widely used in production)"
+}

@@ -1,0 +1,89 @@
+{
+  "technique_name": "Pig Tongue Soft Robot",
+  "aliases": [],
+  "category": "soft_robotics",
+  "one_liner": "This technique involves creating a soft robotic tongue that mimics the movements and stiffness of a biological tongue using 3D scanning and silicone materials.",
+  "how_it_works": "The method begins with 3D scanning a pig tongue to analyze its intrinsic muscle structure. A 3D model is then created from the scans, which is used to fabricate a soft robot using silicone materials. McKibben artificial muscles are embedded within the silicone to replicate the muscle movements and stiffness of a real tongue, allowing for flexible and dynamic motion.",
+  "algorithm": {
+    "steps": [
+      "1. Perform 3D scans of the pig tongue.",
+      "2. Analyze muscle arrangement using heating and Dice-CT methods.",
+      "3. Create a 3D model of the tongue.",
+      "4. Fabricate molds for the tongue robot.",
+      "5. Embed McKibben artificial muscles into the silicone structure.",
+      "6. Fill the robot body with silicone gel to mimic muscle hydrostat properties.",
+      "7. Conduct experiments to measure motion and stiffness."
+    ],
+    "core_equation": "output = soft robotic tongue mimicking biological tongue movements and stiffness",
+    "input_format": "3D scans of a pig tongue, silicone rubber, silicone gel, McKibben artificial muscles",
+    "output_format": "A soft robotic tongue that mimics the movements and stiffness of a biological tongue"
+  },
+  "parameters": [
+    {
+      "name": "silicone_rubber",
+      "typical_value": "Smooth-On, Ecoflex 00-10",
+      "effect": "Affects the flexibility and durability of the robot."
+    },
+    {
+      "name": "silicone_gel",
+      "typical_value": "Smooth-On, Ecoflex GEL",
+      "effect": "Influences the hydrostatic properties and softness."
+    },
+    {
+      "name": "artificial_muscle_diameter",
+      "typical_value": "2-3 mm",
+      "effect": "Determines the range of motion and strength of the muscle actuation."
+    },
+    {
+      "name": "air_pressure",
+      "typical_value": "up to 0.5 MPa",
+      "effect": "Controls the actuation force of the artificial muscles."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Real-world performance may vary based on material properties and environmental conditions."
+  },
+  "use_when": [
+    "Developing soft robots for manipulation tasks requiring flexibility.",
+    "Studying muscle dynamics and motion relationships in robotics.",
+    "Creating biomimetic devices for research in biological systems."
+  ],
+  "avoid_when": [
+    "High precision tasks requiring rigid structures.",
+    "Applications where high load-bearing capacity is essential.",
+    "Environments with extreme temperatures affecting silicone materials."
+  ],
+  "implementation_skeleton": "def create_soft_robot_tongue(scans: List[ScanData]) -> SoftRobot:\n    model = analyze_muscle_arrangement(scans)\n    molds = fabricate_molds(model)\n    robot = embed_muscles(molds)\n    fill_with_gel(robot)\n    return robot",
+  "common_mistakes": [
+    "Neglecting the effects of temperature on silicone materials.",
+    "Using inappropriate silicone types for the intended application.",
+    "Underestimating the complexity of muscle arrangement analysis."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Mimics biological tongue movements effectively.",
+      "Offers variable stiffness for diverse applications.",
+      "Flexible design allows for a range of manipulation tasks."
+    ],
+    "weaknesses": [
+      "Limited load-bearing capacity compared to rigid robots.",
+      "Performance may degrade in extreme environments.",
+      "Complex fabrication process requiring precise modeling."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional robotic tongues using wires and motors",
+        "verdict": "Use the soft robot for flexibility and biomimicry, while traditional designs may be better for precision tasks."
+      }
+    ]
+  },
+  "connects_to": [
+    "Soft robotics",
+    "Biomimetic design",
+    "McKibben artificial muscles",
+    "3D printing in robotics"
+  ],
+  "maturity": "emerging"
+}

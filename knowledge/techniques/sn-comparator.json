@@ -1,0 +1,77 @@
+{
+  "technique_name": "SN-Comparator",
+  "aliases": [],
+  "category": "visualization_tool",
+  "one_liner": "SN-Comparator is a tool for visualizing and comparing the agreement of multiple text embedding models in similarity calculations.",
+  "how_it_works": "SN-Comparator constructs similarity networks from various text embedding models to assess their agreement on text similarity. It processes text documents to generate embeddings, builds similarity networks based on these embeddings, and analyzes the networks for model agreement. The results are visualized to help users understand the continuous similarity distribution captured by different models.",
+  "algorithm": {
+    "steps": [
+      "1. Select multiple text embedding models (e.g., USE, BERT, SPECTER).",
+      "2. Process the text documents to generate embeddings using the selected models.",
+      "3. Construct similarity networks based on the embeddings.",
+      "4. Analyze the networks to assess the level of agreement/disagreement between models.",
+      "5. Visualize the results using the SN-Comparator tool."
+    ],
+    "core_equation": "Not applicable (focuses on network visualization rather than a specific equation).",
+    "input_format": "Text documents in various formats (e.g., abstracts, news articles, question pairs).",
+    "output_format": "Visual representation of similarity networks and model agreement metrics."
+  },
+  "parameters": [
+    {
+      "name": "embedding_model",
+      "typical_value": "USE, BERT, SPECTER",
+      "effect": "Different models may yield varying levels of agreement."
+    },
+    {
+      "name": "data_set",
+      "typical_value": "IEEE VIS abstracts, CNN news articles, Quora question pairs",
+      "effect": "The choice of dataset influences the similarity results and model performance."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated.",
+    "space": "Not stated.",
+    "practical_note": "Performance may vary based on the number of models and size of the dataset."
+  },
+  "use_when": [
+    "You need to compare multiple text embedding models for similarity.",
+    "You want to visualize the agreement/disagreement of models in text similarity tasks.",
+    "You are working on applications like recommender systems or plagiarism detection."
+  ],
+  "avoid_when": [
+    "You require a single definitive similarity score for text pairs.",
+    "Your application does not involve comparing multiple models."
+  ],
+  "implementation_skeleton": "def sn_comparator(models: List[str], documents: List[str]) -> Visualization:\n    embeddings = [generate_embedding(model, documents) for model in models]\n    similarity_networks = [construct_similarity_network(embedding) for embedding in embeddings]\n    agreement_metrics = analyze_agreement(similarity_networks)\n    return visualize_results(agreement_metrics)",
+  "common_mistakes": [
+    "Not selecting a diverse range of embedding models.",
+    "Overlooking the importance of dataset choice on results.",
+    "Failing to properly interpret the visualized agreement metrics."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a visual representation of model agreement.",
+      "Facilitates comparison across multiple embedding models.",
+      "Helps identify discrepancies in similarity calculations."
+    ],
+    "weaknesses": [
+      "Does not provide a single similarity score.",
+      "May require significant computational resources for large datasets.",
+      "Interpretation of visual results can be subjective."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional similarity scoring methods",
+        "verdict": "Use SN-Comparator for model comparison; use traditional methods for definitive scores."
+      }
+    ]
+  },
+  "connects_to": [
+    "Text embedding models (e.g., BERT, USE)",
+    "Similarity metrics (e.g., cosine similarity)",
+    "Visual analytics tools",
+    "Recommender systems",
+    "Plagiarism detection systems"
+  ],
+  "maturity": "emerging"
+}

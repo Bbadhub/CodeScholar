@@ -1,0 +1,108 @@
+{
+  "technique_name": "Semi-decentralized Variational Equilibrium-based Planner (SVEP)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "SVEP optimizes trajectories for connected and autonomous vehicles (CAVs) while ensuring safety and interaction fairness through shared information.",
+  "how_it_works": "SVEP formulates the trajectory planning problem as a game with coupled safety constraints. Each CAV optimizes its trajectory based on information from neighboring vehicles using Vehicle-to-Everything (V2X) communication. A roadside unit (RSU) updates multipliers for collision avoidance constraints, ensuring that all CAVs converge to the same variational equilibrium over time. This iterative process continues for each time step in the prediction horizon.",
+  "algorithm": {
+    "steps": [
+      "1. Model the trajectory planning problem as a game with coupled constraints.",
+      "2. Define interaction fairness and variational equilibrium for the trajectories.",
+      "3. Each CAV optimizes its trajectory based on information from neighboring CAVs.",
+      "4. The RSU updates multipliers for collision avoidance constraints.",
+      "5. Ensure convergence to the same variational equilibrium among CAVs.",
+      "6. Repeat the process for each time step in the prediction horizon."
+    ],
+    "core_equation": "Optimized trajectory = f(state_info, control_info)",
+    "input_format": "State and control information of neighboring CAVs, including trajectories and velocities.",
+    "output_format": "Optimized trajectories for each CAV that ensure safety and efficiency."
+  },
+  "parameters": [
+    {
+      "name": "T",
+      "typical_value": "Discrete prediction horizon",
+      "effect": "Longer horizons may improve planning but increase computational load."
+    },
+    {
+      "name": "Ts",
+      "typical_value": "Discrete period in the prediction horizon",
+      "effect": "Smaller periods allow for more frequent updates but require more computation."
+    },
+    {
+      "name": "vi,min",
+      "typical_value": "Minimum velocity constraint",
+      "effect": "Lowering this value may increase risk of collisions."
+    },
+    {
+      "name": "vi,max",
+      "typical_value": "Maximum velocity constraint",
+      "effect": "Higher values may lead to unsafe driving conditions."
+    },
+    {
+      "name": "ai,min",
+      "typical_value": "Minimum acceleration constraint",
+      "effect": "Restricting this may limit maneuverability."
+    },
+    {
+      "name": "ai,max",
+      "typical_value": "Maximum acceleration constraint",
+      "effect": "Higher values can lead to aggressive driving."
+    },
+    {
+      "name": "\u03b4i,min",
+      "typical_value": "Minimum steering angle constraint",
+      "effect": "Tighter constraints may limit turning capabilities."
+    },
+    {
+      "name": "\u03b4i,max",
+      "typical_value": "Maximum steering angle constraint",
+      "effect": "Wider angles may improve agility but increase risk."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated.",
+    "space": "Not explicitly stated.",
+    "practical_note": "Performance may vary based on the number of vehicles and the complexity of the environment."
+  },
+  "use_when": [
+    "Designing trajectory planners for autonomous vehicles in connected traffic environments.",
+    "Implementing systems that require real-time decision-making for multiple interacting agents.",
+    "Developing applications that utilize V2X communication for enhanced safety and efficiency."
+  ],
+  "avoid_when": [
+    "Operating in environments with low penetration rates of connected vehicles.",
+    "When computational resources are severely limited and cannot support the required communication.",
+    "In scenarios where vehicle interactions are minimal or predictable."
+  ],
+  "implementation_skeleton": "def svp_planner(neighbor_states: List[State], prediction_horizon: int) -> List[Trajectory]:\n    for t in range(prediction_horizon):\n        for c in neighbor_states:\n            optimize_trajectory(c)\n        update_collision_constraints()\n    return optimized_trajectories",
+  "common_mistakes": [
+    "Neglecting the impact of communication delays on trajectory optimization.",
+    "Failing to account for all safety constraints during optimization.",
+    "Overlooking the importance of interaction fairness in multi-agent scenarios."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves safety through shared information and collision avoidance.",
+      "Enhances computational efficiency compared to traditional methods.",
+      "Facilitates real-time decision-making in dynamic environments."
+    ],
+    "weaknesses": [
+      "Relies heavily on V2X communication, which may not be available in all scenarios.",
+      "Computational demands may be high in complex environments.",
+      "May not perform well in low-density traffic situations."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional trajectory planning algorithms",
+        "verdict": "SVEP is preferable in connected environments with high vehicle interaction."
+      }
+    ]
+  },
+  "connects_to": [
+    "Vehicle-to-Everything (V2X) communication",
+    "Game theory in multi-agent systems",
+    "Collision avoidance algorithms",
+    "Dynamic trajectory planning"
+  ],
+  "maturity": "emerging"
+}

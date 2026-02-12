@@ -1,0 +1,94 @@
+{
+  "technique_name": "Imperative Genetic Programming",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "Imperative Genetic Programming evolves imperative programs using a combination of tree and linear genetic programming paradigms.",
+  "how_it_works": "This technique initializes a population of random programs and evaluates their fitness based on how well they perform against a set of input/output pairs. It selects programs for genetic operations using a linear ranking system, applies crossover and mutation to create new program variants, and iteratively refines the population over multiple generations. The goal is to evolve programs that meet specified output criteria while ensuring syntactic correctness in Python code.",
+  "algorithm": {
+    "steps": [
+      "Initialize population of random programs.",
+      "Evaluate fitness of each program using least squares method.",
+      "Select programs for genetic operations using linear ranking.",
+      "Perform crossover between selected programs based on a probability.",
+      "Mutate the offspring programs based on a mutation probability.",
+      "Calculate fitness for the new generation of programs.",
+      "Repeat for a set number of generations or until stopping criteria are met."
+    ],
+    "core_equation": "fitness = least_squares(predicted_output, actual_output)",
+    "input_format": "Training data in the form of input/output pairs for the target program.",
+    "output_format": "Evolved Python programs that meet the specified output criteria."
+  },
+  "parameters": [
+    {
+      "name": "population_size",
+      "typical_value": "1000",
+      "effect": "Larger populations may explore the solution space more thoroughly."
+    },
+    {
+      "name": "number_of_generations",
+      "typical_value": "2000",
+      "effect": "More generations allow for deeper evolution but increase computation time."
+    },
+    {
+      "name": "mutation_probability",
+      "typical_value": "0.5",
+      "effect": "Higher mutation rates can introduce more diversity but may disrupt good solutions."
+    },
+    {
+      "name": "line_crossover_probability",
+      "typical_value": "0.3",
+      "effect": "Affects the likelihood of combining features from parent programs."
+    },
+    {
+      "name": "maximum_loop_iterations",
+      "typical_value": "100",
+      "effect": "Limits the complexity of generated programs."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated, but generally depends on population size and number of generations.",
+    "space": "Not explicitly stated, but related to the storage of program representations.",
+    "practical_note": "Performance can vary significantly based on the problem complexity and parameter settings."
+  },
+  "use_when": [
+    "You need to evolve complex imperative programs without prior knowledge of their structure.",
+    "You want to explore the capabilities of genetic programming in generating real software.",
+    "You are working on problems that require optimization of program logic."
+  ],
+  "avoid_when": [
+    "The problem domain is strictly functional programming.",
+    "You require deterministic program generation without evolutionary processes.",
+    "The computational resources are severely limited."
+  ],
+  "implementation_skeleton": "def evolve_programs(training_data: List[Tuple], population_size: int = 1000) -> List[str]:\n    population = initialize_population(population_size)\n    for generation in range(2000):\n        fitness_scores = evaluate_fitness(population, training_data)\n        selected = select_programs(population, fitness_scores)\n        offspring = crossover_and_mutate(selected)\n        population = offspring\n    return population",
+  "common_mistakes": [
+    "Neglecting to properly evaluate the fitness function, leading to poor program quality.",
+    "Setting mutation rates too high, which can disrupt the evolution of good solutions.",
+    "Failing to balance exploration and exploitation in the genetic algorithm."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Can generate complex programs without explicit programming.",
+      "Explores a wide solution space through evolutionary processes.",
+      "Adapts to varying problem complexities effectively."
+    ],
+    "weaknesses": [
+      "May require significant computational resources.",
+      "Results can be unpredictable and non-deterministic.",
+      "Performance heavily depends on parameter tuning."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard Genetic Programming",
+        "verdict": "Use Imperative Genetic Programming for imperative tasks requiring syntactic correctness."
+      }
+    ]
+  },
+  "connects_to": [
+    "Genetic Programming",
+    "Evolutionary Algorithms",
+    "Machine Learning Optimization Techniques",
+    "Program Synthesis"
+  ],
+  "maturity": "emerging"
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Diagnostic Tool for Arrhythmogenic Cardiomyopathy",
+  "description": "Arrhythmogenic cardiomyopathy is a heart condition that can lead to abnormal heart rhythms. Diagnosing this condition can be challenging, especially when imaging results are inconclusive or when patients have a history of frequent premature ventricular contractions (PVCs).",
+  "you_have_this_if": [
+    "Patients present with frequent PVCs.",
+    "Imaging results are inconclusive.",
+    "Previous catheter ablation procedures have not provided a clear diagnosis.",
+    "There is a family history of arrhythmogenic cardiomyopathy.",
+    "Patients exhibit symptoms like palpitations or syncope."
+  ],
+  "approaches": [
+    {
+      "technique": "Electroanatomic Mapping (EAM)",
+      "best_for": "When diagnosing patients with frequent PVCs and inconclusive imaging results.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "EAM provides detailed mapping but may require specialized equipment and expertise."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Electroanatomic Mapping (EAM)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You need a precise diagnosis for patients with inconclusive imaging and frequent PVCs."
+    }
+  ],
+  "start_here": "Start with Electroanatomic Mapping (EAM) as it provides detailed insights for diagnosing arrhythmogenic cardiomyopathy, especially in complex cases.",
+  "related_problems": [
+    "Ventricular Tachycardia Diagnosis",
+    "Cardiac Imaging Challenges",
+    "Premature Ventricular Contractions Management",
+    "Inherited Cardiac Conditions"
+  ]
+}

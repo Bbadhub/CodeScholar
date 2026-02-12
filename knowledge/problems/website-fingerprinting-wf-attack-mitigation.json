@@ -1,0 +1,37 @@
+{
+  "problem_name": "Website Fingerprinting Attack Mitigation",
+  "description": "Website Fingerprinting (WF) attacks involve an adversary analyzing encrypted traffic to infer which websites a user is visiting. This poses significant privacy risks, especially for users relying on anonymity networks like Tor.",
+  "you_have_this_if": [
+    "You notice unusual patterns in encrypted traffic.",
+    "Users report privacy concerns while using your application.",
+    "Existing defenses against WF attacks are failing.",
+    "You require a solution that minimizes bandwidth usage.",
+    "You are implementing or maintaining a privacy-focused application."
+  ],
+  "approaches": [
+    {
+      "technique": "Break-Pad",
+      "best_for": "when you need to enhance user privacy in applications using the Tor network and face challenges with existing WF defenses.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While effective in reducing WF attack risks, it may introduce some complexity in implementation."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Break-Pad",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a robust solution for WF attacks without significantly increasing bandwidth overhead."
+    }
+  ],
+  "start_here": "Start with the Break-Pad technique as it is specifically designed to address the challenges of WF attacks in Tor applications while balancing privacy and performance.",
+  "related_problems": [
+    "Traffic Analysis Attacks",
+    "Anonymity Network Security",
+    "Privacy Preservation in Web Applications",
+    "Traffic Obfuscation Techniques"
+  ]
+}

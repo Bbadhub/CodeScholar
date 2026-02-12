@@ -1,0 +1,37 @@
+{
+  "problem_name": "Multi-Attribute Decision-Making",
+  "description": "Multi-attribute decision-making involves evaluating and selecting options based on multiple criteria, often with conflicting objectives. This problem is common in fields like healthcare, urban planning, and resource allocation, where decisions must be made under uncertainty and varying attribute importance.",
+  "you_have_this_if": [
+    "You need to evaluate multiple options based on different criteria.",
+    "You are facing uncertainty in the attributes of the options.",
+    "You have conflicting objectives that need to be balanced.",
+    "You require a systematic approach to decision-making.",
+    "You are working in a domain like healthcare or urban planning."
+  ],
+  "approaches": [
+    {
+      "technique": "Complex Single-Valued Neutrosophic Soft Sets",
+      "best_for": "When selecting options with uncertain attributes and multiple criteria, particularly in healthcare and urban planning.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This technique provides a nuanced approach to uncertainty but may require more complex calculations."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Complex Single-Valued Neutrosophic Soft Sets",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to make decisions involving uncertain attributes and multiple criteria, especially in complex environments."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is to use Complex Single-Valued Neutrosophic Soft Sets, as it effectively handles uncertainty and multiple criteria, making it suitable for complex decision-making scenarios.",
+  "related_problems": [
+    "Multi-Criteria Decision Analysis",
+    "Fuzzy Decision-Making",
+    "Risk Assessment in Decision-Making",
+    "Resource Allocation Problems"
+  ]
+}

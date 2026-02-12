@@ -1,0 +1,87 @@
+{
+  "summary": "The paper conducts a comprehensive life-cycle assessment of a newly developed neighborhood in Copenhagen, quantifying embodied CO2 equivalent emissions from buildings, infrastructure, landscape, and major earthworks. Engineers should care because it provides a framework for assessing the environmental impact of urban development, which is increasingly critical in sustainable design.",
+  "key_contribution": "A novel methodology for quantifying embodied carbon emissions in urban development projects.",
+  "problem_type": "life-cycle assessment of embodied carbon emissions",
+  "problem_description": "The need to understand the carbon footprint of urban development to inform sustainable building practices.",
+  "domain": "Optimization & Operations Research",
+  "sub_domain": "Sustainability assessment",
+  "technique_name": "Life-Cycle Assessment (LCA)",
+  "technique_category": "statistical_method",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves collecting data on materials, construction processes, and energy use throughout the life cycle of the neighborhood. This data is then analyzed to calculate the total embodied CO2 emissions associated with the project.",
+    "algorithm_steps": [
+      "1. Define the scope of the assessment including boundaries and functional units.",
+      "2. Collect data on materials used, construction methods, and energy consumption.",
+      "3. Calculate the carbon emissions associated with each material and process.",
+      "4. Aggregate the emissions data to obtain total embodied CO2 emissions.",
+      "5. Analyze results to identify key areas for improvement."
+    ],
+    "input": "Data on materials, construction processes, and energy use.",
+    "output": "Total embodied CO2 equivalent emissions for the neighborhood.",
+    "key_parameters": [
+      "material_emission_factor: varies by material type",
+      "construction_energy_use: specific to construction methods"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Data from the Copenhagen neighborhood case study"
+    ],
+    "metrics": [
+      "embodied CO2 emissions: specific values not stated"
+    ],
+    "baselines": [
+      "Previous assessments of similar urban developments"
+    ],
+    "improvement": "not stated"
+  },
+  "concepts": [
+    "life-cycle assessment",
+    "embodied carbon",
+    "urban development",
+    "sustainability metrics"
+  ],
+  "use_this_when": [
+    "Assessing the environmental impact of new urban developments.",
+    "Designing sustainable building practices.",
+    "Evaluating compliance with carbon reduction targets."
+  ],
+  "dont_use_when": [
+    "The project scope does not include carbon emissions assessment.",
+    "Data on materials and processes is unavailable."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Database for material properties",
+      "Data collection forms for construction processes"
+    ],
+    "dependencies": [
+      "LCA software tools",
+      "Environmental impact databases"
+    ],
+    "pseudocode_hint": "total_emissions = sum(material_emission * quantity for each material)",
+    "gotchas": [
+      "Ensure accurate data collection to avoid underestimating emissions.",
+      "Consider regional variations in material emissions."
+    ]
+  },
+  "connects_to": [
+    "Sustainable building design",
+    "Environmental impact assessment",
+    "Carbon footprint analysis"
+  ],
+  "prerequisites": [
+    "Understanding of life-cycle assessment principles",
+    "Knowledge of carbon accounting methods"
+  ],
+  "limitations": [
+    "Data availability may limit assessment accuracy",
+    "Focus on embodied carbon may overlook operational emissions"
+  ],
+  "open_questions": [
+    "How to standardize LCA methodologies across different regions?",
+    "What are the long-term impacts of embodied carbon on climate change?"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "technique_name": "Feed-Forward Neural Network",
+  "aliases": [
+    "FFNN",
+    "Feedforward Neural Network"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "A feed-forward neural network processes inputs through layers to produce outputs without feedback loops.",
+  "how_it_works": "A feed-forward neural network consists of an input layer, one or more hidden layers, and an output layer. Data flows in one direction from input to output, with each layer applying weights and activation functions to transform the data. The network learns by adjusting these weights based on the error of its predictions during training, allowing it to generalize from the training data to make predictions on new data.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize the neural network with a specified number of input and hidden neurons.",
+      "2. Connect the input neurons to the hidden layer using weights.",
+      "3. Feed input data into the input layer.",
+      "4. Apply an activation function to the hidden layer neurons.",
+      "5. Generate output signals based on the hidden layer's activations.",
+      "6. Use output signals to perform the desired task."
+    ],
+    "core_equation": "output = activation_function(weights \u00b7 input)",
+    "input_format": "Binary signals from sensors (e.g., shape: [4])",
+    "output_format": "Control signals for the system (e.g., shape: [1])"
+  },
+  "parameters": [
+    {
+      "name": "hidden_layer_size",
+      "typical_value": "10",
+      "effect": "Increasing size can improve learning capacity but may lead to overfitting."
+    },
+    {
+      "name": "activation_function",
+      "typical_value": "satlins",
+      "effect": "Different functions can affect the network's ability to learn complex patterns."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m * p) where n is the number of inputs, m is the number of hidden neurons, and p is the number of outputs.",
+    "space": "O(m + p) for storing weights and activations.",
+    "practical_note": "Performance can vary based on the architecture and the complexity of the task."
+  },
+  "use_when": [
+    "Building real-time control systems without an OS",
+    "Implementing hardware-level control for escalators",
+    "Developing efficient embedded systems"
+  ],
+  "avoid_when": [
+    "Need for complex processing beyond simple control",
+    "When using existing microcontroller solutions is more feasible",
+    "In scenarios requiring extensive software libraries"
+  ],
+  "implementation_skeleton": "def feed_forward_nn(input: List[float]) -> List[float]:\n    hidden_layer = apply_activation(weights_hidden @ input)\n    output = weights_output @ hidden_layer\n    return output",
+  "common_mistakes": [
+    "Not normalizing input data, leading to poor performance.",
+    "Choosing inappropriate activation functions for the task.",
+    "Failing to properly initialize weights, which can hinder learning."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Simple architecture that is easy to implement.",
+      "Effective for a wide range of tasks.",
+      "Fast inference time due to the lack of feedback loops."
+    ],
+    "weaknesses": [
+      "Limited to problems that can be solved with a single pass of data.",
+      "Can struggle with complex patterns requiring memory of past inputs.",
+      "Prone to overfitting with too many hidden neurons."
+    ],
+    "compared_to": [
+      {
+        "technique": "Recurrent Neural Network",
+        "verdict": "Use RNNs for tasks requiring memory of previous inputs, like time series."
+      }
+    ]
+  },
+  "connects_to": [
+    "Convolutional Neural Network",
+    "Recurrent Neural Network",
+    "Support Vector Machine",
+    "Decision Trees"
+  ],
+  "maturity": "proven"
+}

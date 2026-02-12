@@ -1,0 +1,36 @@
+{
+  "problem_name": "Swarm Programming",
+  "description": "Swarm programming involves the collaboration of multiple agents or programmers to solve problems collectively. It is inspired by the behavior of social organisms and aims to leverage the collective intelligence of a group to enhance problem-solving capabilities.",
+  "you_have_this_if": [
+    "You are working on decentralized systems.",
+    "Your project involves multiple interacting agents.",
+    "You need to implement complex behaviors like flocking.",
+    "Your application requires resilience to changes in the environment."
+  ],
+  "approaches": [
+    {
+      "technique": "MacroSwarm",
+      "best_for": "Designing decentralized systems with multiple interacting agents.",
+      "paper_count": 1,
+      "max_citations": 17,
+      "key_tradeoff": "While MacroSwarm provides robust solutions for complex behaviors, it may require significant initial setup and understanding of swarm dynamics."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "MacroSwarm",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to implement a system that can adapt to changing environments and requires collaboration among agents."
+    }
+  ],
+  "start_here": "Begin with MacroSwarm as it is specifically designed for decentralized systems and can effectively manage complex swarm behaviors, making it a suitable choice for your needs.",
+  "related_problems": [
+    "Multi-Agent Systems",
+    "Distributed Computing",
+    "Collaborative Software Development",
+    "Agent-Based Modeling"
+  ]
+}

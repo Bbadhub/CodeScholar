@@ -1,0 +1,91 @@
+{
+  "technique_name": "Evolutionary Game Theory Model",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "This technique models the strategic interactions among multiple decision-makers over time using evolutionary principles.",
+  "how_it_works": "Evolutionary Game Theory (EGT) analyzes how players adapt their strategies based on the outcomes of their decisions and the decisions of others. Each player in the model has a set of strategies and utility functions that determine their payoffs. The model uses replicator dynamics to simulate how strategies evolve over time, allowing for the identification of stable strategies that can withstand competition from alternative strategies.",
+  "algorithm": {
+    "steps": [
+      "Define the players involved in the game.",
+      "Establish the strategies available to each player.",
+      "Formulate utility functions for each player based on their strategies.",
+      "Derive replicator dynamics equations to model strategy evolution.",
+      "Simulate the model under various scenarios to analyze outcomes."
+    ],
+    "core_equation": "ESS = argmax(Utility(strategy))",
+    "input_format": "Probabilities of strategies (x for Japan, y for other countries, z for Fisheries Association), costs and benefits associated with each strategy.",
+    "output_format": "Evolutionarily stable strategies (ESS) and their expected utilities for each player."
+  },
+  "parameters": [
+    {
+      "name": "x",
+      "typical_value": "0 to 1",
+      "effect": "Probability of Japan choosing to discharge."
+    },
+    {
+      "name": "y",
+      "typical_value": "0 to 1",
+      "effect": "Probability of other countries choosing to sanction."
+    },
+    {
+      "name": "z",
+      "typical_value": "0 to 1",
+      "effect": "Probability of Fisheries Association opposing discharge."
+    },
+    {
+      "name": "CDJ",
+      "typical_value": "cost value",
+      "effect": "Cost of Japanese discharge."
+    },
+    {
+      "name": "CSJ",
+      "typical_value": "cost value",
+      "effect": "Cost of storing nuclear wastewater."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "The model's complexity can vary significantly based on the number of players and strategies."
+  },
+  "use_when": [
+    "Modeling strategic interactions in environmental policy decisions.",
+    "Analyzing multi-agent decision-making scenarios.",
+    "Evaluating the impact of stakeholder strategies on environmental outcomes."
+  ],
+  "avoid_when": [
+    "The problem does not involve multiple stakeholders with conflicting interests.",
+    "The decision-making process is based on perfect information and rationality."
+  ],
+  "implementation_skeleton": "def evolutionary_game_theory(players: List[Player], strategies: List[Strategy]) -> List[ESS]:\n    # Initialize utility functions\n    # Calculate initial probabilities\n    # Simulate replicator dynamics\n    # Return evolutionarily stable strategies\n    pass",
+  "common_mistakes": [
+    "Neglecting to define clear utility functions for each player.",
+    "Assuming static strategies when players can adapt over time.",
+    "Overlooking the importance of initial conditions in simulations."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Captures the dynamics of strategic interactions over time.",
+      "Allows for the modeling of complex multi-agent scenarios.",
+      "Provides insights into the stability of strategies."
+    ],
+    "weaknesses": [
+      "Can be computationally intensive depending on the number of players and strategies.",
+      "May require extensive data for accurate utility function formulation.",
+      "Assumes players adapt based on past outcomes, which may not always be realistic."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Game Theory",
+        "verdict": "Use EGT when strategies evolve over time; use traditional game theory for static scenarios."
+      }
+    ]
+  },
+  "connects_to": [
+    "Multi-Agent Systems",
+    "Reinforcement Learning",
+    "Behavioral Game Theory",
+    "Agent-Based Modeling"
+  ],
+  "maturity": "emerging"
+}

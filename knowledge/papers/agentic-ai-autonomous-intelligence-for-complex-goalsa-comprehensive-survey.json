@@ -1,0 +1,93 @@
+{
+  "summary": "The paper presents a comprehensive survey of Agentic AI, which distinguishes itself from classical AI by managing loosely specified goals and adapting to new information autonomously. Engineers should care because this approach enables the development of intelligent systems that can initiate actions and modify strategies independently, enhancing automation in complex environments.",
+  "key_contribution": "Introduction of Agentic AI as a distinct paradigm characterized by autonomy, adaptability, and goal-centered operation.",
+  "problem_type": "goal management in autonomous systems",
+  "problem_description": "The need for intelligent systems that can autonomously manage complex and dynamically changing goals without constant human intervention.",
+  "domain": "Machine Learning & AI",
+  "sub_domain": "Autonomous Systems",
+  "technique_name": "Agentic AI",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "Agentic AI systems operate by autonomously defining and managing goals that may change over time. They adapt their strategies based on new information and can initiate actions without external prompts.",
+    "algorithm_steps": [
+      "1. Define initial goals based on user input or environmental context.",
+      "2. Continuously monitor the environment for changes or new information.",
+      "3. Reassess goals and strategies based on new data.",
+      "4. Initiate actions to achieve the defined goals autonomously.",
+      "5. Allocate resources dynamically as needed.",
+      "6. Modify strategies in response to feedback or changing conditions."
+    ],
+    "input": "Initial goals, environmental data, and user context.",
+    "output": "Autonomous actions and resource allocations aimed at achieving the defined goals.",
+    "key_parameters": [
+      "goal_definition: dynamic",
+      "adaptability_threshold: configurable"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Simulated environments for goal management tasks, real-world scenarios requiring adaptive decision-making."
+    ],
+    "metrics": [
+      "goal achievement rate, adaptability score"
+    ],
+    "baselines": [
+      "Classical AI systems, rule-based systems"
+    ],
+    "improvement": "Demonstrated significant improvements in goal achievement rates compared to classical AI."
+  },
+  "concepts": [
+    "autonomy",
+    "adaptability",
+    "goal-centered operation",
+    "dynamic resource allocation"
+  ],
+  "use_this_when": [
+    "Developing systems that require autonomous decision-making in dynamic environments",
+    "Creating applications that need to adapt to changing user needs",
+    "Building intelligent agents for complex task management"
+  ],
+  "dont_use_when": [
+    "Tasks are strictly defined with no need for adaptation",
+    "Real-time human supervision is required for every decision",
+    "The environment is static and predictable"
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Goal representation structures",
+      "Resource allocation models",
+      "Environmental state models"
+    ],
+    "dependencies": [
+      "Machine learning libraries (e.g., TensorFlow, PyTorch)",
+      "Simulation environments for testing"
+    ],
+    "pseudocode_hint": "if new_information: reassess_goals_and_strategies(); initiate_actions();",
+    "gotchas": [
+      "Ensuring the system can handle unexpected changes in the environment",
+      "Balancing autonomy with user control",
+      "Defining clear metrics for success"
+    ]
+  },
+  "connects_to": [
+    "Reinforcement Learning",
+    "Multi-Agent Systems",
+    "Dynamic Programming"
+  ],
+  "prerequisites": [
+    "Understanding of AI and machine learning principles",
+    "Familiarity with goal-oriented programming",
+    "Knowledge of adaptive systems"
+  ],
+  "limitations": [
+    "Potential for misalignment between system goals and user intentions",
+    "Complexity in defining adaptable goals",
+    "Resource-intensive due to continuous monitoring and adaptation"
+  ],
+  "open_questions": [
+    "How to effectively measure the adaptability of Agentic AI systems?",
+    "What are the ethical implications of fully autonomous decision-making?"
+  ]
+}

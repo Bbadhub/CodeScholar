@@ -1,0 +1,37 @@
+{
+  "problem_name": "Microservices Design",
+  "description": "Microservices design involves creating a software architecture that consists of small, independent services that communicate over a network. This approach allows for greater flexibility, scalability, and maintainability in software development.",
+  "you_have_this_if": [
+    "You are building a new application that requires modular components.",
+    "Your existing monolithic application needs to be refactored into smaller services.",
+    "You are facing challenges in scaling your application efficiently.",
+    "You need to improve deployment frequency and reduce time to market.",
+    "Your team is struggling with service identification and decomposition."
+  ],
+  "approaches": [
+    {
+      "technique": "AI-driven tools for microservices design",
+      "best_for": "Designing new microservices from scratch in complex domains.",
+      "paper_count": 1,
+      "max_citations": 9,
+      "key_tradeoff": "While AI-driven tools can automate and enhance design processes, they may require initial setup and learning time."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "AI-driven tools for microservices design",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to automate service identification and decomposition in a complex domain."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is to explore AI-driven tools for microservices design, as they can significantly streamline the design process and improve architectural validation.",
+  "related_problems": [
+    "Monolithic application refactoring",
+    "Service orchestration and choreography",
+    "API management and design",
+    "Cloud-native application development"
+  ]
+}

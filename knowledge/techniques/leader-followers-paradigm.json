@@ -1,0 +1,92 @@
+{
+  "technique_name": "Leader-Followers Paradigm",
+  "aliases": [
+    "Leader-Follower Control",
+    "Swarm Robotics"
+  ],
+  "category": "autonomous_systems",
+  "one_liner": "A decentralized approach for coordinating multiple UAVs where leaders guide followers in mission execution.",
+  "how_it_works": "In the Leader-Followers paradigm, UAVs are organized into leaders and followers to enhance mission efficiency. Leaders are responsible for task allocation and navigation, while followers execute tasks based on the leaders' guidance. This structure allows for autonomous operation and fault tolerance, as followers can adapt to changes in the mission or leader status. Communication among UAVs is crucial for maintaining coordination and ensuring successful mission completion.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize UAVs with ROS nodes.",
+      "2. Designate leader and follower roles.",
+      "3. Establish communication links among UAVs.",
+      "4. Partition the exploration area into subareas for task allocation.",
+      "5. Execute tasks collaboratively based on consensus control.",
+      "6. Monitor UAV status for fault detection.",
+      "7. Implement recovery procedures in case of UAV failure."
+    ],
+    "core_equation": "output = completed mission objectives + UAV status reports",
+    "input_format": "Mission parameters, UAV specifications, environmental data.",
+    "output_format": "Completed mission objectives, UAV status reports."
+  },
+  "parameters": [
+    {
+      "name": "number_of_UAVs",
+      "typical_value": "6",
+      "effect": "More UAVs can improve coverage but increase complexity."
+    },
+    {
+      "name": "number_of_leaders",
+      "typical_value": "2",
+      "effect": "More leaders can enhance coordination but may lead to conflicts."
+    },
+    {
+      "name": "communication_range",
+      "typical_value": "100 meters",
+      "effect": "Increasing range improves connectivity but may require more energy."
+    },
+    {
+      "name": "energy_consumption_threshold",
+      "typical_value": "20%",
+      "effect": "Lowering this threshold can lead to more conservative mission planning."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on the number of UAVs and environmental factors."
+  },
+  "use_when": [
+    "You need to deploy multiple UAVs for area coverage quickly.",
+    "You require a resilient system that can handle UAV failures.",
+    "You want to optimize energy consumption during missions."
+  ],
+  "avoid_when": [
+    "The mission requires centralized control and supervision.",
+    "You have a very small number of UAVs (e.g., 1-2).",
+    "The operational environment is highly dynamic and unpredictable."
+  ],
+  "implementation_skeleton": "def leader_followers_mission(mission_params: Dict, uav_specs: List[Dict]) -> Tuple[Dict, List[Dict]]:\n    initialize_uavs(uav_specs)\n    designate_roles()\n    establish_communication()\n    partition_area(mission_params)\n    while not mission_complete:\n        execute_tasks()\n        monitor_uav_status()\n        handle_failures()\n    return mission_results, uav_status_reports",
+  "common_mistakes": [
+    "Failing to establish robust communication links among UAVs.",
+    "Not properly partitioning the exploration area, leading to task overlap.",
+    "Ignoring fault detection and recovery procedures, risking mission failure."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improved mission efficiency through decentralized control.",
+      "Enhanced resilience to UAV failures.",
+      "Optimized energy consumption during operations."
+    ],
+    "weaknesses": [
+      "Increased complexity in coordination among UAVs.",
+      "Potential for conflicts in task allocation among leaders.",
+      "Limited effectiveness in highly dynamic environments."
+    ],
+    "compared_to": [
+      {
+        "technique": "Centralized Control Systems",
+        "verdict": "Use Leader-Followers for decentralized and resilient operations; use centralized for simpler, smaller missions."
+      }
+    ]
+  },
+  "connects_to": [
+    "Swarm Intelligence",
+    "Multi-Agent Systems",
+    "Decentralized Control",
+    "Task Allocation Algorithms"
+  ],
+  "maturity": "proven (widely used in production)"
+}

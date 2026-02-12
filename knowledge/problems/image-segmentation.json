@@ -1,0 +1,52 @@
+{
+  "problem_name": "Image Segmentation",
+  "description": "Image segmentation is the process of partitioning an image into multiple segments to simplify its representation and make it more meaningful. This technique is crucial for various applications, including medical imaging, object detection, and scene understanding.",
+  "you_have_this_if": [
+    "You need to identify and separate objects within an image.",
+    "You are working with images that require precise delineation of boundaries.",
+    "You have a dataset that varies in size and complexity.",
+    "You require real-time processing of image data.",
+    "You are dealing with medical images and need high accuracy."
+  ],
+  "approaches": [
+    {
+      "technique": "Enhanced Swarm-based Fuzzy Clustering",
+      "best_for": "When working with monochromatic images in low-resource environments.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Offers efficient processing but may lack precision in complex images."
+    },
+    {
+      "technique": "3D U-Net",
+      "best_for": "When you have a small dataset of medical images requiring high accuracy.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "Provides high accuracy but may overfit on small datasets."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Enhanced Swarm-based Fuzzy Clustering",
+      "speed": "fast",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to process large volumes of monochromatic images quickly."
+    },
+    {
+      "technique": "3D U-Net",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You are working with a small dataset of medical images and require precise segmentation."
+    }
+  ],
+  "start_here": "Start with Enhanced Swarm-based Fuzzy Clustering for real-time processing of monochromatic images, especially in low-resource environments, as it balances speed and memory usage effectively.",
+  "related_problems": [
+    "Object Detection",
+    "Image Classification",
+    "Semantic Segmentation",
+    "Instance Segmentation"
+  ]
+}

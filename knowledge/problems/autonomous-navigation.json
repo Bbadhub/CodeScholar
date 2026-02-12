@@ -1,0 +1,37 @@
+{
+  "problem_name": "Autonomous Navigation",
+  "description": "Autonomous navigation involves the ability of a vehicle or robot to navigate and make decisions in an environment without human intervention. This problem encompasses various challenges, including path planning, obstacle avoidance, and real-time decision-making.",
+  "you_have_this_if": [
+    "You are developing an autonomous vehicle.",
+    "You need to simulate driving algorithms.",
+    "You are focused on improving safety features in navigation systems.",
+    "You require human-like decision-making capabilities in your system.",
+    "You are dealing with dynamic environments that require real-time adjustments."
+  ],
+  "approaches": [
+    {
+      "technique": "Reinforcement Learning for Autonomous Navigation",
+      "best_for": "When developing autonomous vehicles that require human-like decision-making.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "This approach can provide high adaptability but may require extensive training data and computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Reinforcement Learning for Autonomous Navigation",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a system that learns from interactions in a complex environment."
+    }
+  ],
+  "start_here": "Start with Reinforcement Learning for Autonomous Navigation, as it allows for adaptive learning and decision-making in dynamic environments, which is crucial for autonomous systems.",
+  "related_problems": [
+    "Path Planning",
+    "Obstacle Avoidance",
+    "Simultaneous Localization and Mapping (SLAM)",
+    "Multi-Agent Coordination"
+  ]
+}

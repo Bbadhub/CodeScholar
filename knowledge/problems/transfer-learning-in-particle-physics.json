@@ -1,0 +1,34 @@
+{
+  "problem_name": "Transfer Learning in Particle Physics",
+  "description": "Transfer learning in particle physics involves using knowledge gained from large datasets to improve model performance on smaller datasets. This is particularly useful in scenarios where collecting data is expensive or time-consuming, such as in particle physics experiments.",
+  "you_have_this_if": [
+    "You have access to large datasets from particle physics experiments.",
+    "You need to generate synthetic data for jet physics.",
+    "You want to leverage transfer learning to improve model performance on small datasets."
+  ],
+  "approaches": [
+    {
+      "technique": "OMNIJET-\u03b1",
+      "best_for": "When you need to enhance model performance on small datasets using knowledge from larger datasets.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While effective for small datasets, it requires substantial initial data for training."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "OMNIJET-\u03b1",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have large datasets available and need to improve performance on a smaller dataset."
+    }
+  ],
+  "start_here": "Start with OMNIJET-\u03b1 as it is specifically designed for leveraging large datasets to enhance performance on smaller datasets in particle physics.",
+  "related_problems": [
+    "Data augmentation in particle physics",
+    "Domain adaptation in machine learning",
+    "Synthetic data generation for scientific experiments"
+  ]
+}

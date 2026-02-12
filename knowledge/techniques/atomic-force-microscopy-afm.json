@@ -1,0 +1,87 @@
+{
+  "technique_name": "Atomic Force Microscopy (AFM)",
+  "aliases": [],
+  "category": "measurement_technique",
+  "one_liner": "AFM is a high-resolution imaging technique used to characterize the surface properties of materials at the nanoscale.",
+  "how_it_works": "AFM employs a cantilever with a sharp tip that scans the surface of a sample. As the tip moves across the surface, it measures the forces between the tip and the sample, allowing for the creation of detailed topographical maps. This technique is particularly effective for characterizing micro- and nanoplastics, providing quantitative data on their mechanical properties.",
+  "algorithm": {
+    "steps": [
+      "1. Prepare the sample containing micro- and nanoplastics.",
+      "2. Mount the sample on the AFM stage.",
+      "3. Use the AFM cantilever to scan the sample surface.",
+      "4. Measure the forces between the tip and the sample.",
+      "5. Generate topographical maps and analyze mechanical properties.",
+      "6. Compare results with known standards for validation."
+    ],
+    "core_equation": "output = topographical map + mechanical properties",
+    "input_format": "Sample containing micro- and nanoplastics mounted on an AFM stage.",
+    "output_format": "Topographical maps and quantitative mechanical properties of the micro- and nanoplastics."
+  },
+  "parameters": [
+    {
+      "name": "scan_speed",
+      "typical_value": "1 Hz",
+      "effect": "Higher speeds may reduce resolution."
+    },
+    {
+      "name": "tip_radius",
+      "typical_value": "10 nm",
+      "effect": "Smaller tip radius allows for higher resolution imaging."
+    },
+    {
+      "name": "force_setpoint",
+      "typical_value": "0.5 nN",
+      "effect": "Adjusting the force can affect the interaction with the sample surface."
+    }
+  ],
+  "complexity": {
+    "time": "O(n^2) for scanning a surface of size n x n",
+    "space": "O(n^2) for storing topographical data",
+    "practical_note": "Real-world performance can vary based on sample type and AFM settings."
+  },
+  "use_when": [
+    "You need to characterize micro- and nanoplastics in environmental samples.",
+    "Existing spectroscopic techniques fail to provide accurate measurements.",
+    "High-resolution topographical data is required."
+  ],
+  "avoid_when": [
+    "The sample contains larger particles that do not require nanomechanical characterization.",
+    "Cost and complexity of AFM setup are prohibitive.",
+    "Rapid screening of large sample sizes is needed."
+  ],
+  "implementation_skeleton": "def perform_afm_analysis(sample: Sample) -> Tuple[TopographicalMap, MechanicalProperties]:\n    mount_sample(sample)\n    scan_surface()\n    forces = measure_forces()\n    topographical_map = generate_topographical_map(forces)\n    mechanical_properties = analyze_mechanical_properties()\n    return topographical_map, mechanical_properties",
+  "common_mistakes": [
+    "Not properly calibrating the AFM before use.",
+    "Using a tip that is too large for the desired resolution.",
+    "Failing to account for environmental factors that can affect measurements."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High-resolution imaging capabilities.",
+      "Ability to measure mechanical properties at the nanoscale.",
+      "Versatile for various types of samples."
+    ],
+    "weaknesses": [
+      "High cost and complexity of setup.",
+      "Limited throughput for large sample sizes.",
+      "Sensitivity to environmental conditions."
+    ],
+    "compared_to": [
+      {
+        "technique": "Raman spectroscopy",
+        "verdict": "Use AFM for high-resolution topographical data; use Raman for chemical composition analysis."
+      },
+      {
+        "technique": "Fourier Transform Infrared Spectroscopy",
+        "verdict": "AFM is better for mechanical characterization; FTIR is better for molecular identification."
+      }
+    ]
+  },
+  "connects_to": [
+    "Scanning Tunneling Microscopy (STM)",
+    "Raman Spectroscopy",
+    "Fourier Transform Infrared Spectroscopy",
+    "Laser Direct Infrared"
+  ],
+  "maturity": "proven"
+}

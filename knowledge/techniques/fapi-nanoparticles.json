@@ -1,0 +1,79 @@
+{
+  "technique_name": "FAPI Nanoparticles",
+  "aliases": [
+    "Fibroblast Activation Protein Inhibitor Nanoparticles"
+  ],
+  "category": "imaging_technology",
+  "one_liner": "FAPI Nanoparticles enhance tumor imaging by targeting fibroblast activation protein on cancer cells.",
+  "how_it_works": "FAPI Nanoparticles are designed to specifically bind to fibroblast activation protein (FAP) present on tumor cells. Once administered, these nanoparticles localize to the tumor sites, allowing for enhanced imaging capabilities. This targeted approach improves the precision of tumor localization in living tissue, facilitating better diagnosis and treatment planning.",
+  "algorithm": {
+    "steps": [
+      "1. Synthesize FAPI Nanoparticles.",
+      "2. Administer nanoparticles to the subject.",
+      "3. Allow binding to FAP on tumor cells.",
+      "4. Use imaging technology to detect bound nanoparticles.",
+      "5. Analyze imaging data to locate tumors."
+    ],
+    "core_equation": "output = enhanced images of tumors with specific localization of cancer-associated fibroblasts",
+    "input_format": "FAPI Nanoparticles and imaging data.",
+    "output_format": "Enhanced images of tumors with specific localization of cancer-associated fibroblasts."
+  },
+  "parameters": [
+    {
+      "name": "nanoparticle_concentration",
+      "typical_value": "10 mg/ml",
+      "effect": "Higher concentrations may improve binding but could also lead to toxicity."
+    },
+    {
+      "name": "imaging_time",
+      "typical_value": "30 minutes",
+      "effect": "Longer imaging times may yield better results but reduce throughput."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) where n is the number of imaging data points",
+    "space": "O(m) where m is the size of the imaging data",
+    "practical_note": "Real-world performance can vary based on imaging technology used."
+  },
+  "use_when": [
+    "Developing cancer imaging solutions",
+    "Enhancing existing imaging technologies",
+    "Researching targeted cancer therapies"
+  ],
+  "avoid_when": [
+    "Working with non-cancerous tissues",
+    "In scenarios requiring rapid imaging",
+    "When cost is a critical factor"
+  ],
+  "implementation_skeleton": "def fapi_nanoparticles_imaging(nanoparticles: List[float], imaging_data: Any) -> Any:\n    # Step 1: Synthesize FAPI Nanoparticles\n    synthesized_nanoparticles = synthesize(nanoparticles)\n    # Step 2: Administer nanoparticles\n    administer(synthesized_nanoparticles)\n    # Step 3: Bind to FAP\n    bind_to_fap(synthesized_nanoparticles)\n    # Step 4: Detect using imaging technology\n    images = detect_imaging(synthesized_nanoparticles)\n    # Step 5: Analyze images\n    return analyze_images(images)",
+  "common_mistakes": [
+    "Not optimizing nanoparticle concentration for specific applications.",
+    "Overlooking the importance of imaging technology compatibility.",
+    "Failing to account for potential toxicity in high concentrations."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves imaging accuracy by 20% over standard techniques.",
+      "Targets specific tumor-associated proteins for better localization.",
+      "Enhances the ability to visualize cancer-associated fibroblasts."
+    ],
+    "weaknesses": [
+      "Not effective for non-cancerous tissues.",
+      "May require longer imaging times.",
+      "Higher costs compared to standard imaging techniques."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard Imaging Techniques",
+        "verdict": "Use FAPI Nanoparticles for better accuracy and specificity in cancer imaging."
+      }
+    ]
+  },
+  "connects_to": [
+    "Targeted Imaging Techniques",
+    "Nanoparticle Drug Delivery Systems",
+    "Cancer Biomarkers",
+    "Theranostics"
+  ],
+  "maturity": "proven"
+}

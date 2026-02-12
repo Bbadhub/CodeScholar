@@ -1,0 +1,36 @@
+{
+  "problem_name": "Navigation Strategy Analysis",
+  "description": "Navigation strategy analysis involves evaluating how users interact with a system to find information or complete tasks. This can include understanding user behavior patterns and optimizing the navigation structure to enhance user experience.",
+  "you_have_this_if": [
+    "Users frequently struggle to find information within your application.",
+    "There are high drop-off rates at certain navigation points.",
+    "User feedback indicates confusion about how to navigate the system.",
+    "Analytics show low engagement with certain features due to navigation issues."
+  ],
+  "approaches": [
+    {
+      "technique": "DeepWalk",
+      "best_for": "When analyzing user behavior in navigation-heavy applications to optimize information retrieval.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "DeepWalk provides insights into user navigation patterns but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "DeepWalk",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to analyze complex user navigation patterns in a large dataset."
+    }
+  ],
+  "start_here": "Start with DeepWalk if you are focused on understanding user navigation behavior in detail, as it can reveal hidden patterns in user interactions.",
+  "related_problems": [
+    "User Experience Optimization",
+    "Information Retrieval Systems",
+    "User Behavior Analysis",
+    "Navigation Structure Design"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "technique_name": "YOLOv8",
+  "aliases": [
+    "You Only Look Once version 8"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "YOLOv8 is a lightweight object detection algorithm optimized for real-time performance on low-powered hardware.",
+  "how_it_works": "YOLOv8 adapts the YOLO architecture to reduce computational requirements while maintaining detection accuracy. It processes live video feeds to detect and track moving targets in real-time. The model is initialized with lightweight configurations, allowing it to operate efficiently on devices with limited resources.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize the YOLOv8 model with lightweight configurations.",
+      "2. Capture live video feed from the camera.",
+      "3. Preprocess the video frames for input into the model.",
+      "4. Run the model on each frame to detect moving targets.",
+      "5. Post-process the detection results to filter and trigger actions.",
+      "6. Send triggers to the system based on detected actions."
+    ],
+    "core_equation": "output = detect(targets, frames)",
+    "input_format": "Live video feed from cameras.",
+    "output_format": "Detected targets with their positions and actions, along with trigger signals."
+  },
+  "parameters": [
+    {
+      "name": "input_size",
+      "typical_value": "640x640",
+      "effect": "Changing this affects the model's ability to detect smaller objects."
+    },
+    {
+      "name": "confidence_threshold",
+      "typical_value": "0.5",
+      "effect": "Lowering this may increase false positives."
+    },
+    {
+      "name": "nms_threshold",
+      "typical_value": "0.4",
+      "effect": "Adjusting this changes how overlapping detections are handled."
+    }
+  ],
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)",
+    "practical_note": "Inference time is approximately 30ms per frame, making it suitable for real-time applications."
+  },
+  "use_when": [
+    "You need to deploy a detection system on low-powered hardware.",
+    "Real-time processing of video feeds is required.",
+    "You want to minimize latency in detection tasks."
+  ],
+  "avoid_when": [
+    "High accuracy is critical and resources are not constrained.",
+    "You need to process large volumes of data in the cloud.",
+    "The application requires complex scene understanding beyond simple detection."
+  ],
+  "implementation_skeleton": "def yolo_v8_detection(video_feed: str) -> List[DetectedObject]:\n    model = initialize_yolo_v8(lightweight=True)\n    for frame in capture_video(video_feed):\n        preprocessed_frame = preprocess(frame)\n        detections = model.detect(preprocessed_frame)\n        filtered_detections = post_process(detections)\n        trigger_actions(filtered_detections)\n    return filtered_detections",
+  "common_mistakes": [
+    "Neglecting to optimize input size for specific hardware capabilities.",
+    "Setting the confidence threshold too low, leading to excessive false positives.",
+    "Failing to properly preprocess video frames before feeding them into the model."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Optimized for real-time performance on low-powered devices.",
+      "Improved mAP by 10% over previous YOLO versions.",
+      "Lightweight architecture reduces computational load."
+    ],
+    "weaknesses": [
+      "May not achieve the same accuracy as heavier models on complex tasks.",
+      "Limited capability for detailed scene understanding.",
+      "Performance may degrade with high-resolution inputs."
+    ],
+    "compared_to": [
+      {
+        "technique": "YOLOv5",
+        "verdict": "Use YOLOv8 for lower latency and resource-constrained environments; use YOLOv5 for higher accuracy when resources allow."
+      }
+    ]
+  },
+  "connects_to": [
+    "YOLOv5",
+    "YOLOv7",
+    "SSD (Single Shot MultiBox Detector)",
+    "Faster R-CNN",
+    "MobileNet"
+  ],
+  "maturity": "proven (widely used in production)"
+}

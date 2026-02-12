@@ -1,0 +1,37 @@
+{
+  "problem_name": "6D Object Pose Estimation",
+  "description": "6D object pose estimation involves determining the position and orientation of an object in three-dimensional space. This is crucial for applications like robotics, augmented reality, and autonomous vehicles where accurate interaction with objects is required.",
+  "you_have_this_if": [
+    "You need to manipulate objects in a robotic system.",
+    "You are developing an augmented reality application.",
+    "You are working on an autonomous vehicle that interacts with its environment.",
+    "You require high precision in object localization and orientation.",
+    "You are facing challenges with existing pose estimation methods."
+  ],
+  "approaches": [
+    {
+      "technique": "DBF-Net",
+      "best_for": "When building robotic systems that require precise object manipulation or developing applications in augmented reality.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "DBF-Net provides high accuracy but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "DBF-Net",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a robust solution for precise object pose estimation in complex environments."
+    }
+  ],
+  "start_here": "Start with DBF-Net as it is specifically designed for high accuracy in 6D object pose estimation, making it suitable for applications requiring precise object manipulation.",
+  "related_problems": [
+    "2D Object Detection",
+    "3D Object Reconstruction",
+    "Simultaneous Localization and Mapping (SLAM)",
+    "Visual Odometry"
+  ]
+}

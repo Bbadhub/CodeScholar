@@ -1,0 +1,35 @@
+{
+  "problem_name": "Diagnostic Assessment of Mitochondrial and Vascular Function",
+  "description": "This problem involves evaluating the functionality of mitochondria and blood vessels to diagnose various health conditions. It is crucial for understanding cardiovascular health, metabolic disorders, and overall physiological performance.",
+  "you_have_this_if": [
+    "You are assessing patients for cardiovascular diseases or diabetes.",
+    "You need to monitor metabolic health in athletes.",
+    "You are evaluating microcirculatory dysfunction in chronic diseases."
+  ],
+  "approaches": [
+    {
+      "technique": "Flow Mediated Skin Fluorescence (FMSF)",
+      "best_for": "When assessing vascular function and mitochondrial activity in patients with specific health conditions.",
+      "paper_count": 1,
+      "max_citations": 3,
+      "key_tradeoff": "While effective for specific assessments, it may not provide a comprehensive view of all vascular and mitochondrial functions."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Flow Mediated Skin Fluorescence (FMSF)",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a reliable method to assess vascular and mitochondrial function in patients with known cardiovascular or metabolic issues."
+    }
+  ],
+  "start_here": "Begin with Flow Mediated Skin Fluorescence (FMSF) as it is specifically designed for assessing vascular and mitochondrial function in relevant patient populations.",
+  "related_problems": [
+    "Assessment of cardiovascular health",
+    "Evaluation of metabolic disorders",
+    "Microcirculatory dysfunction analysis",
+    "Monitoring athletic performance"
+  ]
+}

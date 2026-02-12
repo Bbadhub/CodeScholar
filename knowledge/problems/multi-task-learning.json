@@ -1,0 +1,37 @@
+{
+  "problem_name": "Multi-Task Learning",
+  "description": "Multi-task learning involves training a model on multiple tasks simultaneously to improve generalization and performance. This approach can help leverage shared information across tasks, but it may also lead to challenges such as shortcut learning and conflicting objectives.",
+  "you_have_this_if": [
+    "You are working on a model that needs to perform well on several related tasks.",
+    "You notice that your model is overfitting to one task while neglecting others.",
+    "You are trying to optimize performance across different but related objectives.",
+    "You are facing difficulties in balancing the trade-offs between tasks.",
+    "You require a model that can adapt to new tasks without retraining from scratch."
+  ],
+  "approaches": [
+    {
+      "technique": "Decoupled Learning for IVF",
+      "best_for": "when you need to improve embryo-ranking accuracy in IVF or face shortcut learning issues in multi-task models.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach allows for optimizing separate objectives but may require more complex implementation."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Decoupled Learning for IVF",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You need to enhance the accuracy of a specific task while managing multiple objectives in a healthcare application."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is Decoupled Learning for IVF, as it specifically addresses the challenges of shortcut learning and optimizing separate objectives in multi-task settings.",
+  "related_problems": [
+    "Transfer Learning",
+    "Domain Adaptation",
+    "Multi-Label Classification",
+    "Hierarchical Learning"
+  ]
+}

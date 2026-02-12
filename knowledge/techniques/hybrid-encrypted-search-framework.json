@@ -1,0 +1,81 @@
+{
+  "technique_name": "Hybrid Encrypted Search Framework",
+  "aliases": [
+    "Encrypted Search Method",
+    "Secure Multi-Keyword Search"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "This technique enables secure multi-keyword searches on encrypted data without decryption.",
+  "how_it_works": "The Hybrid Encrypted Search Framework combines an improved TF-IDF weighting scheme with the Apriori algorithm for semantic keyword expansion. It allows users to perform searches on encrypted data while maintaining confidentiality. By generating obscured keyword indices, it resists potential attacks and ensures high recall in search results.",
+  "algorithm": {
+    "steps": [
+      "1. Input encrypted data and keywords.",
+      "2. Apply TF-IDF weighting to the keywords.",
+      "3. Use the Apriori algorithm to expand keywords semantically.",
+      "4. Generate obscured keyword indices to resist attacks.",
+      "5. Perform the search on the encrypted data using the obscured indices.",
+      "6. Return ranked results based on the TF-IDF scores."
+    ],
+    "core_equation": "output = ranked_results(TF-IDF(keywords) + Apriori(expanded_keywords))",
+    "input_format": "Encrypted data (binary) and a set of keywords (string array).",
+    "output_format": "Ranked list of search results (string array)."
+  },
+  "parameters": [
+    {
+      "name": "tfidf_weighting_scheme",
+      "typical_value": "improved version",
+      "effect": "Affects the ranking of keywords based on their importance."
+    },
+    {
+      "name": "apriori_min_support",
+      "typical_value": "0.5",
+      "effect": "Determines the minimum support for keyword expansion."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the size of the dataset and the complexity of the encryption."
+  },
+  "use_when": [
+    "You need to perform secure searches on sensitive data in the cloud.",
+    "High recall in search results is a priority.",
+    "You want to maintain data confidentiality while allowing multi-keyword searches."
+  ],
+  "avoid_when": [
+    "The search does not require encryption.",
+    "Performance is more critical than security.",
+    "The dataset is small and can be handled without encryption."
+  ],
+  "implementation_skeleton": "def hybrid_encrypted_search(encrypted_data: bytes, keywords: List[str]) -> List[str]:\n    tfidf_scores = apply_tfidf(keywords)\n    expanded_keywords = apriori_expand(keywords)\n    obscured_indices = generate_obscured_indices(expanded_keywords)\n    results = search_encrypted_data(encrypted_data, obscured_indices)\n    ranked_results = rank_results(results, tfidf_scores)\n    return ranked_results",
+  "common_mistakes": [
+    "Neglecting to properly secure the keyword indices.",
+    "Using an inadequate TF-IDF weighting scheme.",
+    "Failing to validate the performance of the search against baseline methods."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Maintains data confidentiality during searches.",
+      "High recall and precision in search results.",
+      "Allows for semantic keyword expansion."
+    ],
+    "weaknesses": [
+      "Complex implementation compared to standard search methods.",
+      "Potential performance overhead due to encryption.",
+      "Not suitable for non-sensitive data."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard TF-IDF Search",
+        "verdict": "Use Hybrid Encrypted Search when security is required; otherwise, standard methods are faster."
+      }
+    ]
+  },
+  "connects_to": [
+    "Homomorphic Encryption",
+    "Secure Multi-Party Computation",
+    "Keyword Search on Encrypted Data",
+    "Data Confidentiality Techniques"
+  ],
+  "maturity": "emerging"
+}

@@ -1,0 +1,92 @@
+{
+  "summary": "This paper reviews the modeling of supply chain risk events by identifying and analyzing contributing events that lead to disruptions. Engineers should care because understanding these upstream conditions can improve risk management strategies and enhance supply chain resilience.",
+  "key_contribution": "A systematic framework for modeling supply chain risk events by considering their contributing events.",
+  "problem_type": "supply chain risk modeling",
+  "problem_description": "The need to understand how upstream conditions contribute to supply chain disruptions.",
+  "domain": "Optimization & Operations Research",
+  "sub_domain": "Supply Chain Management",
+  "technique_name": "Contributing Events Framework",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves identifying contributing events that lead to risk events in supply chains. By systematically analyzing these upstream conditions, the framework aims to provide a more comprehensive understanding of risk dynamics.",
+    "algorithm_steps": [
+      "1. Identify potential risk events in the supply chain.",
+      "2. Gather data on historical disruptions and their contributing events.",
+      "3. Analyze the relationships between contributing events and risk events.",
+      "4. Develop a model that incorporates these relationships.",
+      "5. Validate the model with real-world data.",
+      "6. Use the model to predict potential disruptions."
+    ],
+    "input": "Historical data on supply chain disruptions and contributing events.",
+    "output": "A predictive model that identifies potential risk events based on contributing factors.",
+    "key_parameters": [
+      "data_source: historical disruption data",
+      "analysis_method: statistical correlation"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Historical supply chain disruption data from various industries."
+    ],
+    "metrics": [
+      "accuracy of predictions, reduction in disruption impact"
+    ],
+    "baselines": [
+      "Traditional risk assessment models that do not consider contributing events."
+    ],
+    "improvement": "Expected to provide more accurate predictions than traditional models."
+  },
+  "concepts": [
+    "risk events",
+    "contributing events",
+    "supply chain resilience",
+    "predictive modeling"
+  ],
+  "use_this_when": [
+    "You need to model complex supply chain disruptions.",
+    "You want to improve risk management strategies.",
+    "You are analyzing historical supply chain data."
+  ],
+  "dont_use_when": [
+    "The supply chain is simple with few variables.",
+    "Real-time decision-making is required without historical data.",
+    "Immediate responses to disruptions are needed."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Graphs to represent relationships between events",
+      "Databases for storing historical data"
+    ],
+    "dependencies": [
+      "Data analysis libraries (e.g., Pandas, NumPy)",
+      "Statistical modeling tools (e.g., R, Python's StatsModels)"
+    ],
+    "pseudocode_hint": "model = create_model(historical_data); predictions = model.predict(new_data)",
+    "gotchas": [
+      "Ensure data quality and completeness.",
+      "Be cautious of overfitting the model to historical data.",
+      "Consider external factors that may not be captured in the data."
+    ]
+  },
+  "connects_to": [
+    "Risk assessment frameworks",
+    "Predictive analytics",
+    "Supply chain optimization techniques"
+  ],
+  "prerequisites": [
+    "Understanding of supply chain dynamics",
+    "Familiarity with statistical modeling",
+    "Knowledge of data analysis techniques"
+  ],
+  "limitations": [
+    "May require extensive historical data.",
+    "Complexity in accurately identifying contributing events.",
+    "Potential for model bias based on data selection."
+  ],
+  "open_questions": [
+    "How to effectively quantify the impact of contributing events?",
+    "What are the best practices for real-time risk assessment?"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Data Amplification",
+  "description": "Data amplification refers to the process of generating synthetic data to enhance existing datasets, particularly in scenarios where data is scarce. This is crucial in fields like particle physics and medical applications, where obtaining real data can be expensive or impractical.",
+  "you_have_this_if": [
+    "You have a limited dataset that is insufficient for training models.",
+    "You need to simulate scenarios that require more data points.",
+    "You are facing challenges in data collection due to resource constraints.",
+    "You want to maintain the integrity of the original data while expanding your dataset.",
+    "You are working in a domain where data privacy is a concern, and synthetic data is preferred."
+  ],
+  "approaches": [
+    {
+      "technique": "GANplification",
+      "best_for": "When you need to generate synthetic datasets for simulations in particle physics or medical applications.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "While GANplification can effectively amplify datasets, it may require careful tuning to ensure data quality."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "GANplification",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to create a larger dataset while preserving the characteristics of the original data."
+    }
+  ],
+  "start_here": "Start with GANplification as it provides a robust framework for generating synthetic data while maintaining data integrity, especially in specialized fields.",
+  "related_problems": [
+    "Data Imbalance",
+    "Synthetic Data Generation",
+    "Data Augmentation",
+    "Data Privacy Preservation"
+  ]
+}

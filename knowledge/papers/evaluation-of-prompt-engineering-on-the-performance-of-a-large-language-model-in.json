@@ -1,0 +1,105 @@
+{
+  "summary": "The paper presents a prompt-based key information extraction (KIE) pipeline that integrates large language models (LLMs) with Amazon Textract for efficient document information extraction from heterogeneous formats like invoices. Engineers should care because it offers a low-cost, high-accuracy solution for automating data extraction, which is crucial for processing large volumes of documents in real-world applications.",
+  "key_contribution": "A novel applied KIE pipeline that combines OCR with LLMs to automate and enhance document information extraction accuracy.",
+  "problem_type": "document information extraction",
+  "problem_description": "The need to automate the extraction of key information from diverse and unstructured document formats, such as invoices, which are challenging to process manually.",
+  "domain": "Machine Learning & AI",
+  "sub_domain": "Prompt Engineering, Document Processing",
+  "technique_name": "Applied Key Information Extraction (KIE)",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method utilizes Amazon Textract for initial OCR processing to extract text and layout data from documents. This data is then structured using user-defined prompts and processed through an LLM to produce a final structured JSON output.",
+    "algorithm_steps": [
+      "Input a PDF document and prompt instruction.",
+      "Use Amazon Textract to extract textual and structural data.",
+      "Create a configuration table for field schema, unit definitions, and special formats.",
+      "Process the OCR-extracted content with a user-defined prompt to structure the data.",
+      "Feed the structured prompt into an LLM for final JSON output.",
+      "Implement a rule-based post-processing module for specific fields.",
+      "Filter results and calculate confidence scores.",
+      "Handle user queries to extract targeted information."
+    ],
+    "input": "PDF document containing heterogeneous data (e.g., invoices).",
+    "output": "Structured JSON output containing extracted key information.",
+    "key_parameters": [
+      "OCR tool: Amazon Textract",
+      "Anonymization package: anonymizedf (version 1.0.1)",
+      "Field schema: user-defined",
+      "Confidence score calculation: predefined formula"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "SROIE dataset",
+      "Invoice dataset from a Taiwanese shipping company"
+    ],
+    "metrics": [
+      "average precision: 95.5% on SROIE",
+      "document information extraction accuracy: 91.5% on SROIE",
+      "average precision: 97.15% on Taiwanese invoice dataset",
+      "document information extraction accuracy: 85.29% on Taiwanese invoice dataset"
+    ],
+    "baselines": [
+      "Standard OCR methods",
+      "NER-based methods"
+    ],
+    "improvement": "Significant improvement in accuracy compared to traditional methods."
+  },
+  "concepts": [
+    "prompt engineering",
+    "key information extraction",
+    "Optical Character Recognition",
+    "large language models",
+    "data normalization",
+    "JSON structuring"
+  ],
+  "use_this_when": [
+    "You need to automate data extraction from invoices or receipts.",
+    "You are dealing with heterogeneous document formats.",
+    "You require high accuracy in information extraction with minimal training data."
+  ],
+  "dont_use_when": [
+    "You have a fixed format for all documents.",
+    "You require real-time processing without any preprocessing.",
+    "You need to extract information from highly structured documents."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "JSON for structured output",
+      "Configuration table for field definitions"
+    ],
+    "dependencies": [
+      "Amazon Textract",
+      "Python package: anonymizedf"
+    ],
+    "pseudocode_hint": "output_json = LLM.process(prompt + OCR_output)",
+    "gotchas": [
+      "Ensure proper configuration of field schemas to match document formats.",
+      "Handle OCR noise effectively to improve extraction accuracy.",
+      "Be cautious with sensitive data and ensure anonymization is applied."
+    ]
+  },
+  "connects_to": [
+    "Optical Character Recognition (OCR)",
+    "Natural Language Processing (NLP)",
+    "Data Normalization Techniques",
+    "Large Language Models (LLMs)",
+    "Information Retrieval Systems"
+  ],
+  "prerequisites": [
+    "Understanding of OCR technologies",
+    "Familiarity with JSON data structures",
+    "Knowledge of prompt engineering techniques"
+  ],
+  "limitations": [
+    "Performance may degrade with highly noisy or poorly formatted documents.",
+    "Requires initial setup and configuration for different document types.",
+    "May not perform well with documents that have fixed formats."
+  ],
+  "open_questions": [
+    "How can the system be adapted for real-time processing?",
+    "What additional features can enhance the robustness of the extraction process?"
+  ]
+}

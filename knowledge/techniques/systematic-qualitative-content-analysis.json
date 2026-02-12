@@ -1,0 +1,77 @@
+{
+  "technique_name": "Systematic Qualitative Content Analysis",
+  "aliases": [],
+  "category": "qualitative_analysis",
+  "one_liner": "This technique analyzes textual data to identify patterns and categorize content based on specific criteria.",
+  "how_it_works": "Systematic qualitative content analysis involves collecting textual submissions and coding them based on predefined categories. The coded data is then subjected to clustering techniques to reveal underlying patterns and insights. This method is particularly useful for understanding diverse perspectives and policy preferences in complex issues like environmental treaties.",
+  "algorithm": {
+    "steps": [
+      "1. Collect pre-session submissions from countries.",
+      "2. Code submissions based on proposed measures and targets.",
+      "3. Perform cluster analysis using K-modes algorithm to categorize submissions.",
+      "4. Analyze political-economic factors influencing clustering.",
+      "5. Map the distribution of measures across the plastics value chain."
+    ],
+    "core_equation": "N/A",
+    "input_format": "Pre-session submissions from countries regarding plastic pollution measures (textual data).",
+    "output_format": "Categorized clusters of policy approaches and insights into political-economic factors."
+  },
+  "parameters": [
+    {
+      "name": "K (number of clusters)",
+      "typical_value": "4",
+      "effect": "Changing K alters the granularity of the clustering."
+    },
+    {
+      "name": "Coding categories",
+      "typical_value": "regulatory measures, economic measures, soft measures, targets",
+      "effect": "Modifying categories can change the focus of the analysis."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for clustering, where n is the number of submissions.",
+    "space": "O(n) for storing coded submissions.",
+    "practical_note": "Performance may vary based on the complexity of the submissions and the number of clusters."
+  },
+  "use_when": [
+    "You need to understand the diverse policy preferences of countries regarding environmental treaties.",
+    "You are involved in developing strategies for international negotiations on plastic pollution.",
+    "You want to analyze the impact of economic interests on environmental policy."
+  ],
+  "avoid_when": [
+    "You require a quantitative model for predicting environmental outcomes.",
+    "You are looking for a specific algorithm for machine learning applications.",
+    "You need immediate solutions for plastic waste management without policy considerations."
+  ],
+  "implementation_skeleton": "def systematic_qualitative_analysis(submissions: List[str]) -> Dict[str, Any]:\n    coded_data = code_submissions(submissions)\n    clusters = perform_cluster_analysis(coded_data, k=4)\n    insights = analyze_factors(clusters)\n    return insights",
+  "common_mistakes": [
+    "Failing to define clear coding categories before analysis.",
+    "Overlooking the importance of political-economic context in clustering.",
+    "Neglecting to validate the clustering results with domain experts."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides deep insights into qualitative data.",
+      "Facilitates understanding of complex policy landscapes.",
+      "Can reveal hidden patterns in submissions."
+    ],
+    "weaknesses": [
+      "May not yield quantitative predictions.",
+      "Requires careful definition of coding categories.",
+      "Can be time-consuming depending on data volume."
+    ],
+    "compared_to": [
+      {
+        "technique": "Quantitative Content Analysis",
+        "verdict": "Use systematic qualitative content analysis for in-depth understanding, while quantitative analysis is better for statistical validation."
+      }
+    ]
+  },
+  "connects_to": [
+    "Thematic Analysis",
+    "Grounded Theory",
+    "Cluster Analysis",
+    "Content Analysis"
+  ],
+  "maturity": "established"
+}

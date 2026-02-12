@@ -1,0 +1,36 @@
+{
+  "problem_name": "Intention Recognition",
+  "description": "Intention recognition involves understanding a user's intended actions based on their interactions with devices or environments. This is particularly important in applications like prosthetics, where accurate interpretation of user intentions can significantly enhance functionality and user experience.",
+  "you_have_this_if": [
+    "You are developing assistive technologies like bionic prostheses.",
+    "You need to recognize user intentions in real-time.",
+    "You are integrating machine learning for object identification.",
+    "You require high accuracy in grip type recognition for prosthetics."
+  ],
+  "approaches": [
+    {
+      "technique": "FOMO (MobileNetV2)",
+      "best_for": "When developing low-cost bionic prostheses that require object shape recognition.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Offers a balance between performance and resource efficiency, but may require fine-tuning for specific applications."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "FOMO (MobileNetV2)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a reliable method for real-time intention recognition in prosthetic devices."
+    }
+  ],
+  "start_here": "Start with FOMO (MobileNetV2) as it provides a good balance of performance and efficiency for intention recognition in prosthetics.",
+  "related_problems": [
+    "Gesture Recognition",
+    "Object Detection",
+    "User Interaction Modeling",
+    "Assistive Technology Development"
+  ]
+}

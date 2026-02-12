@@ -1,0 +1,37 @@
+{
+  "problem_name": "Cancer Progression Modeling",
+  "description": "Cancer progression modeling involves understanding how cancer develops and progresses over time. This can help in developing targeted therapies and understanding the underlying mechanisms of tumor growth.",
+  "you_have_this_if": [
+    "You are studying the mechanisms of cancer development.",
+    "You need to evaluate the effectiveness of new cancer therapies.",
+    "You are investigating the relationship between cancer and other diseases.",
+    "You require a model to simulate tumor growth and progression.",
+    "You are focused on specific proteins or genetic factors influencing cancer."
+  ],
+  "approaches": [
+    {
+      "technique": "TG3 Snca knockout mouse model",
+      "best_for": "Developing therapies targeting DNA damage response in melanoma and studying specific proteins in tumor growth.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach provides a controlled experimental model but may not fully replicate human cancer complexity."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "TG3 Snca knockout mouse model",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a reliable model to study specific genetic factors in cancer progression."
+    }
+  ],
+  "start_here": "The TG3 Snca knockout mouse model is recommended as the first approach for studying cancer progression due to its ability to simulate specific genetic alterations relevant to tumor growth.",
+  "related_problems": [
+    "Tumor microenvironment modeling",
+    "Metastasis modeling",
+    "Drug resistance in cancer",
+    "Cancer genomics"
+  ]
+}

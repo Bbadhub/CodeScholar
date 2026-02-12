@@ -1,0 +1,86 @@
+{
+  "technique_name": "Single Image Super-Resolution (SISR) Architectures",
+  "aliases": [
+    "SISR",
+    "Image Resolution Enhancement"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "SISR architectures enhance the resolution of low-quality images using various neural network designs.",
+  "how_it_works": "SISR architectures analyze low-resolution images and apply learned transformations to generate high-resolution outputs. Different architectures are trained on datasets of low-resolution images, allowing them to learn the mapping from low to high resolution. The effectiveness of each architecture is evaluated using metrics such as PSNR and SSIM to determine which model performs best in enhancing image quality.",
+  "algorithm": {
+    "steps": [
+      "1. Collect a dataset of low-resolution images.",
+      "2. Select various SISR architectures for comparison.",
+      "3. Train each architecture on the dataset.",
+      "4. Generate high-resolution images from the low-resolution inputs.",
+      "5. Evaluate the output images using performance metrics.",
+      "6. Compare the results to determine the best-performing architecture."
+    ],
+    "core_equation": "output = f(low_resolution_image; parameters)",
+    "input_format": "Low-resolution images in standard formats (e.g., JPEG, PNG).",
+    "output_format": "Enhanced high-resolution images."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "Affects the speed of convergence during training."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Impacts the stability of training and memory usage."
+    },
+    {
+      "name": "num_epochs",
+      "typical_value": "100",
+      "effect": "Determines how long the model learns from the data."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m)",
+    "space": "O(n)",
+    "practical_note": "Performance can vary significantly based on the architecture and dataset used."
+  },
+  "use_when": [
+    "You need to enhance low-resolution images for analysis.",
+    "You are developing applications in surveillance or medical imaging.",
+    "You want to improve image quality in digital media."
+  ],
+  "avoid_when": [
+    "Real-time processing is critical and cannot tolerate latency.",
+    "The application requires processing of video streams rather than single images.",
+    "Resources are extremely limited (e.g., low-end hardware)."
+  ],
+  "implementation_skeleton": "def train_sisr_model(data: List[Image]) -> Model:\n    model = initialize_model()\n    for epoch in range(num_epochs):\n        for batch in create_batches(data, batch_size):\n            loss = compute_loss(model, batch)\n            update_model(model, loss, learning_rate)\n    return model",
+  "common_mistakes": [
+    "Not properly normalizing input images before training.",
+    "Overfitting the model to the training dataset without validation.",
+    "Neglecting to evaluate performance on multiple metrics."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Can significantly improve image quality compared to traditional methods.",
+      "Flexible architectures can be tailored for specific applications.",
+      "State-of-the-art performance on benchmark datasets."
+    ],
+    "weaknesses": [
+      "Training can be computationally expensive and time-consuming.",
+      "May require large amounts of high-quality training data.",
+      "Not suitable for real-time applications due to processing time."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Interpolation Methods",
+        "verdict": "Use SISR for better quality; traditional methods are faster but less effective."
+      }
+    ]
+  },
+  "connects_to": [
+    "Convolutional Neural Networks (CNNs)",
+    "Generative Adversarial Networks (GANs)",
+    "Image Denoising Techniques",
+    "Image Restoration Methods"
+  ],
+  "maturity": "proven"
+}

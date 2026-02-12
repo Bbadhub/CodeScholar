@@ -1,0 +1,37 @@
+{
+  "problem_name": "Robotics & Control Systems",
+  "description": "Robotics and control systems involve the design and implementation of algorithms that enable robots to perform tasks autonomously. This includes navigation, path planning, and real-time adjustments based on environmental feedback.",
+  "you_have_this_if": [
+    "You are developing a robotic system that requires real-time navigation.",
+    "You need to implement visual feedback for path adjustment.",
+    "You are working on assistive technologies that require precise control.",
+    "You are facing challenges in integrating sensory data for navigation.",
+    "You need to optimize the performance of a robotic system in dynamic environments."
+  ],
+  "approaches": [
+    {
+      "technique": "Lightweight Gaussian Process Visual Servoing",
+      "best_for": "When building navigation systems for autonomous wheelchairs or assistive technologies.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Offers a balance between computational efficiency and accuracy in real-time applications."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Lightweight Gaussian Process Visual Servoing",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a reliable method for real-time path adjustment in robotics with visual feedback."
+    }
+  ],
+  "start_here": "Start with Lightweight Gaussian Process Visual Servoing as it provides a robust framework for real-time navigation and control in robotics, especially in assistive technologies.",
+  "related_problems": [
+    "Path Planning in Robotics",
+    "Sensor Fusion for Autonomous Systems",
+    "Visual Odometry for Mobile Robots",
+    "Dynamic Obstacle Avoidance in Robotics"
+  ]
+}

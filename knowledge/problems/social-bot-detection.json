@@ -1,0 +1,37 @@
+{
+  "problem_name": "Social Bot Detection",
+  "description": "Social bot detection involves identifying automated accounts on social media that mimic human behavior. These bots can manipulate public opinion, spread misinformation, or engage in spammy activities, making their detection crucial for maintaining the integrity of online interactions.",
+  "you_have_this_if": [
+    "You notice unusual patterns of engagement on social media posts.",
+    "There are accounts that post similar content at high frequencies.",
+    "User interactions seem automated or lack genuine human responses.",
+    "You observe accounts with little to no personal information or history.",
+    "There is a sudden spike in followers or interactions that seem unnatural."
+  ],
+  "approaches": [
+    {
+      "technique": "MM-HGT-Bot",
+      "best_for": "when you need to detect social bots in social media platforms and analyze user content alongside social relationships.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This approach provides a robust model but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "MM-HGT-Bot",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a comprehensive analysis of user interactions and content to identify social bots effectively."
+    }
+  ],
+  "start_here": "Start with the MM-HGT-Bot technique as it offers a robust framework for detecting social bots by integrating multiple data modalities, making it suitable for complex social media environments.",
+  "related_problems": [
+    "Fake account detection",
+    "Spam detection in social media",
+    "Misinformation spread analysis",
+    "User behavior analysis"
+  ]
+}

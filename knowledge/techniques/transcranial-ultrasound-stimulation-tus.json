@@ -1,0 +1,97 @@
+{
+  "technique_name": "Transcranial Ultrasound Stimulation (TUS)",
+  "aliases": [],
+  "category": "neuromodulation",
+  "one_liner": "TUS is a non-invasive technique that uses ultrasound waves to modulate neuronal activity in deep brain structures.",
+  "how_it_works": "TUS employs a 256-element transducer array to deliver focused ultrasound waves to specific brain regions. By adjusting parameters such as frequency and pulse duration, it can precisely modulate neuronal activity. Real-time fMRI monitoring allows researchers to observe the effects of stimulation and adjust parameters accordingly for optimal results.",
+  "algorithm": {
+    "steps": [
+      "1. Position participant using a custom-designed stereotactic mask.",
+      "2. Use low-dose CT scans to derive participant-specific skull and brain properties.",
+      "3. Compute driving parameters for each transducer element using a full-wave acoustic model.",
+      "4. Apply TUS to the target area with specified pulse parameters.",
+      "5. Monitor brain activity using fMRI during and after stimulation.",
+      "6. Adjust stimulation parameters in real-time based on feedback."
+    ],
+    "core_equation": "output = modulated neuronal activity in targeted brain regions",
+    "input_format": "Participant-specific anatomical data from CT scans and fMRI imaging.",
+    "output_format": "Modulated neuronal activity in targeted brain regions, observed through fMRI."
+  },
+  "parameters": [
+    {
+      "name": "frequency",
+      "typical_value": "555 kHz",
+      "effect": "Higher frequencies may enhance spatial resolution but could also increase tissue heating."
+    },
+    {
+      "name": "target pressure",
+      "typical_value": "775 kPa",
+      "effect": "Increasing pressure may enhance stimulation effects but risks damaging tissue."
+    },
+    {
+      "name": "pulse duration",
+      "typical_value": "300 ms",
+      "effect": "Longer pulse durations may lead to stronger modulation but could also cause discomfort."
+    },
+    {
+      "name": "pulse interval",
+      "typical_value": "3 s",
+      "effect": "Shorter intervals may increase stimulation frequency but could lead to fatigue."
+    },
+    {
+      "name": "theta burst stimulation duration",
+      "typical_value": "80 s",
+      "effect": "Longer durations may enhance cumulative effects but risk overstimulation."
+    },
+    {
+      "name": "theta burst frequency",
+      "typical_value": "5 Hz",
+      "effect": "Higher frequencies may lead to more rapid modulation but could also reduce precision."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) where n is the number of transducer elements",
+    "space": "O(m) where m is the size of the anatomical data",
+    "practical_note": "Real-world performance may vary based on individual anatomical differences."
+  },
+  "use_when": [
+    "You need to target deep brain structures non-invasively.",
+    "You want to study the effects of neuromodulation on brain function.",
+    "You are developing therapies for neurological disorders."
+  ],
+  "avoid_when": [
+    "You require immediate invasive intervention.",
+    "You are targeting superficial cortical regions with high angles of incidence."
+  ],
+  "implementation_skeleton": "def apply_tus(ct_data: CTData, fMRI_data: fMRIData) -> NeuronalActivity:\n    position_participant(ct_data)\n    derive_skull_properties(ct_data)\n    compute_transducer_parameters()\n    apply_ultrasound_stimulation()\n    monitor_brain_activity(fMRI_data)\n    adjust_parameters_real_time()\n    return modulated_activity",
+  "common_mistakes": [
+    "Not accounting for individual anatomical variations in skull and brain structure.",
+    "Using inappropriate stimulation parameters that do not match the target area.",
+    "Failing to monitor real-time feedback during stimulation."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Non-invasive method for deep brain stimulation.",
+      "High spatial precision targeting.",
+      "Ability to monitor effects in real-time using fMRI."
+    ],
+    "weaknesses": [
+      "Limited to deep brain structures; less effective for superficial areas.",
+      "Potential for discomfort or adverse effects if not properly calibrated.",
+      "Requires sophisticated equipment and expertise."
+    ],
+    "compared_to": [
+      {
+        "technique": "Transcranial Magnetic Stimulation (TMS)",
+        "verdict": "Use TUS for deeper brain structures; use TMS for superficial areas."
+      }
+    ]
+  },
+  "connects_to": [
+    "Transcranial Magnetic Stimulation (TMS)",
+    "Functional Magnetic Resonance Imaging (fMRI)",
+    "Deep Brain Stimulation (DBS)",
+    "Neurofeedback Techniques"
+  ],
+  "maturity": "emerging"
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Disentangled Representation Learning",
+  "description": "Disentangled representation learning aims to separate the underlying factors of variation in data, allowing for better interpretability and manipulation of learned representations. This is particularly useful in scenarios where complex relationships exist within the data, such as in physical systems.",
+  "you_have_this_if": [
+    "You are working with high-dimensional data.",
+    "Your model's performance is hindered by confounding factors.",
+    "You require interpretable models that can leverage domain knowledge.",
+    "You have limited labeled data but need to model complex relationships.",
+    "You are interested in understanding the causal relationships in your data."
+  ],
+  "approaches": [
+    {
+      "technique": "Physics-informed Variational Autoencoder",
+      "best_for": "when you need to model complex physical systems with limited data and want to integrate domain knowledge.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This approach provides better interpretability but may require more domain expertise to implement effectively."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Physics-informed Variational Autoencoder",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have a complex physical system to model and need to incorporate domain knowledge."
+    }
+  ],
+  "start_here": "Start with the Physics-informed Variational Autoencoder if you are dealing with complex physical systems and require a model that integrates domain knowledge for better interpretability.",
+  "related_problems": [
+    "Causal Inference",
+    "Generative Adversarial Networks",
+    "Representation Learning",
+    "Transfer Learning"
+  ]
+}

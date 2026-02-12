@@ -1,0 +1,37 @@
+{
+  "problem_name": "Educational Assessment in Programming",
+  "description": "This problem involves evaluating the effectiveness of programming education tools and methods. It focuses on how to assess students' coding skills and understanding through various techniques, including the use of AI and machine learning.",
+  "you_have_this_if": [
+    "You are developing or improving a programming education tool.",
+    "You need to evaluate student performance in coding tasks.",
+    "You are looking for innovative ways to assess programming skills.",
+    "You are interested in integrating AI into educational assessments.",
+    "You are researching trends in educational technology."
+  ],
+  "approaches": [
+    {
+      "technique": "Large Language Models (LLMs)",
+      "best_for": "when you want to enhance programming education tools with AI.",
+      "paper_count": 1,
+      "max_citations": 10,
+      "key_tradeoff": "While LLMs can provide personalized feedback, they may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Large Language Models (LLMs)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to provide real-time feedback and assessment in programming education."
+    }
+  ],
+  "start_here": "Start with Large Language Models (LLMs) as they can significantly enhance the assessment process by providing personalized feedback and adapting to individual student needs.",
+  "related_problems": [
+    "Automated Grading Systems",
+    "Adaptive Learning Technologies",
+    "Student Engagement in Programming",
+    "Curriculum Development for Programming Education"
+  ]
+}

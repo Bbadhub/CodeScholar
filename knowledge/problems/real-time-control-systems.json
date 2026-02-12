@@ -1,0 +1,37 @@
+{
+  "problem_name": "Real-Time Control Systems",
+  "description": "Real-time control systems are designed to provide immediate responses to inputs, ensuring that operations occur within a strict time frame. These systems are crucial in applications such as robotics, automotive control, and industrial automation, where delays can lead to failures or safety hazards.",
+  "you_have_this_if": [
+    "You need to process inputs and outputs in real-time.",
+    "Your application requires immediate feedback and control.",
+    "You are working with hardware that demands low-latency responses.",
+    "You are developing systems that operate without a traditional operating system.",
+    "You need to ensure high reliability and performance in embedded systems."
+  ],
+  "approaches": [
+    {
+      "technique": "Feed-Forward Neural Network",
+      "best_for": "Building real-time control systems without an OS and implementing hardware-level control.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "While effective for specific applications, it may require extensive training data and tuning."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Feed-Forward Neural Network",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to implement a control system that requires learning from past data and operates in real-time."
+    }
+  ],
+  "start_here": "Start with Feed-Forward Neural Networks if you are developing a real-time control system that does not rely on an operating system, as it can effectively manage hardware-level control tasks.",
+  "related_problems": [
+    "Embedded Systems Design",
+    "Robotics Control Systems",
+    "Automated Industrial Control",
+    "Real-Time Data Processing"
+  ]
+}

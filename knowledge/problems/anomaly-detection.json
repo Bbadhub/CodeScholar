@@ -1,0 +1,67 @@
+{
+  "problem_name": "Anomaly Detection",
+  "description": "Anomaly detection involves identifying patterns in data that do not conform to expected behavior. This is crucial in various applications, such as fraud detection, network security, and health monitoring, where unusual patterns may indicate critical issues.",
+  "you_have_this_if": [
+    "You notice unexpected behavior in your system or data.",
+    "You have a dataset with normal operational data but few or no labeled anomalies.",
+    "You need to monitor systems continuously for irregularities.",
+    "You are dealing with high-dimensional data where traditional methods fail.",
+    "You require real-time analysis of incoming data streams."
+  ],
+  "approaches": [
+    {
+      "technique": "One-class classifiers",
+      "best_for": "When you need to monitor robotic systems for software anomalies without labeled anomalous data.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Effective for scenarios with normal data but may struggle with diverse anomaly types."
+    },
+    {
+      "technique": "ResNet-LSTM",
+      "best_for": "When implementing real-time monitoring systems for physiological signals.",
+      "paper_count": 1,
+      "max_citations": 10,
+      "key_tradeoff": "High accuracy in specific domains but requires significant computational resources."
+    },
+    {
+      "technique": "Convolutional Neural Networks (CNNs)",
+      "best_for": "When detecting intrusions in network traffic using image processing techniques.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "Good for image-based data but may not generalize well to non-image data."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "One-class classifiers",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You have normal operational data and need to detect anomalies without labeled examples."
+    },
+    {
+      "technique": "ResNet-LSTM",
+      "speed": "slow",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You require accurate real-time monitoring of physiological signals."
+    },
+    {
+      "technique": "Convolutional Neural Networks (CNNs)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to analyze image data for intrusion detection."
+    }
+  ],
+  "start_here": "Begin with One-class classifiers if you have normal data and no labeled anomalies, as they are designed for such scenarios and are easier to implement.",
+  "related_problems": [
+    "Fraud detection",
+    "Network intrusion detection",
+    "Health monitoring",
+    "Quality control in manufacturing"
+  ]
+}

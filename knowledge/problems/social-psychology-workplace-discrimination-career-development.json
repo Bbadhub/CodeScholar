@@ -1,0 +1,37 @@
+{
+  "problem_name": "Workplace Discrimination and Career Development",
+  "description": "This problem involves understanding how workplace discrimination affects employee performance and career advancement, particularly for marginalized groups. It seeks to identify the psychological factors that contribute to disparities in career development opportunities.",
+  "you_have_this_if": [
+    "You notice a lack of diversity in leadership positions.",
+    "Employees report feeling undervalued or overlooked for promotions.",
+    "There are noticeable performance discrepancies among different demographic groups.",
+    "Feedback from employees indicates experiences of discrimination or bias.",
+    "You are developing initiatives to promote equality and inclusivity in the workplace."
+  ],
+  "approaches": [
+    {
+      "technique": "Moderated Serial Mediation Model",
+      "best_for": "when you need to analyze the impact of workplace discrimination on employee performance and career advancement.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This model provides a detailed analysis but may require complex data and assumptions."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Moderated Serial Mediation Model",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You have access to comprehensive data on employee demographics and performance metrics."
+    }
+  ],
+  "start_here": "The recommended first approach is the Moderated Serial Mediation Model, as it allows for a nuanced understanding of the interplay between discrimination and career outcomes, which is essential for developing effective interventions.",
+  "related_problems": [
+    "Gender Inequality in the Workplace",
+    "Racial Discrimination in Employment",
+    "Employee Retention and Turnover",
+    "Organizational Culture and Inclusion"
+  ]
+}

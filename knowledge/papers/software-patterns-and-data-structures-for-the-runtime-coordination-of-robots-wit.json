@@ -1,0 +1,96 @@
+{
+  "summary": "This paper presents software patterns and data structures for the runtime coordination of robots, focusing on real-time execution performance. Engineers should care because it provides a structured approach to improve the predictability and efficiency of multi-robot systems, which is critical for applications like autonomous taxis.",
+  "key_contribution": "Introduction of software patterns and data structures, including Petri nets and finite state machines, for coordinated execution in robotic systems.",
+  "problem_type": "multi-robot coordination",
+  "problem_description": "The need for improved coordination among multiple robots to ensure efficient and safe operation in shared environments.",
+  "domain": "Robotics & Control Systems",
+  "sub_domain": "Multi-robot systems",
+  "technique_name": "Petri nets",
+  "technique_category": "data_structure",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves using Petri nets as a declarative model for coordination among concurrently executing robot components. It separates event firing and handling to enable distributed deployment across multiple robots, ensuring real-time execution.",
+    "algorithm_steps": [
+      "Define the shared resources and the events that trigger coordination.",
+      "Model the coordination logic using a Petri net.",
+      "Implement finite state machines for individual robot behaviors.",
+      "Establish a protocol for communication between the coordinator and robots.",
+      "Handle events and update the Petri net state based on robot actions.",
+      "Ensure data consistency using circular buffers for event handling."
+    ],
+    "input": "Event data from robot sensors and state information from the finite state machines.",
+    "output": "Coordinated actions for each robot based on the current state of the Petri net.",
+    "key_parameters": [
+      "max_tokens_per_place: 1 (for safe Petri nets)",
+      "event_buffer_size: configurable based on system requirements"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Simulated multi-robot environments for task execution and navigation."
+    ],
+    "metrics": [
+      "Real-time execution performance, coordination efficiency."
+    ],
+    "baselines": [
+      "Traditional single-threaded coordination methods."
+    ],
+    "improvement": "Demonstrated improved real-time performance and coordination efficiency compared to baseline methods."
+  },
+  "concepts": [
+    "Petri nets",
+    "finite state machines",
+    "event handling",
+    "protocol arrays",
+    "circular buffers",
+    "real-time execution",
+    "multi-robot systems"
+  ],
+  "use_this_when": [
+    "Developing multi-robot systems that require real-time coordination.",
+    "Implementing task sharing among autonomous robots in dynamic environments.",
+    "Designing systems where resource sharing is critical for safety and efficiency."
+  ],
+  "dont_use_when": [
+    "Single-robot applications where coordination is not required.",
+    "Systems with very low latency requirements that cannot tolerate the overhead of coordination mechanisms."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Petri nets",
+      "finite state machines",
+      "protocol arrays",
+      "event circular buffers"
+    ],
+    "dependencies": [
+      "Robotics frameworks (e.g., ROS)",
+      "Concurrency libraries for event handling"
+    ],
+    "pseudocode_hint": "while True: if event_received: update_petri_net(); execute_robot_actions();",
+    "gotchas": [
+      "Ensure proper synchronization when accessing shared resources.",
+      "Monitor event buffer sizes to prevent overflow.",
+      "Test coordination logic thoroughly to avoid deadlocks."
+    ]
+  },
+  "connects_to": [
+    "Finite state machines",
+    "Event-driven programming",
+    "Multi-threading in robotics"
+  ],
+  "prerequisites": [
+    "Understanding of Petri nets",
+    "Basic knowledge of finite state machines",
+    "Concurrency concepts"
+  ],
+  "limitations": [
+    "Complexity increases with the number of robots",
+    "Real-time performance may be affected by system architecture",
+    "Requires careful design to avoid race conditions"
+  ],
+  "open_questions": [
+    "How to optimize Petri net implementations for specific hardware?",
+    "What are the best practices for scaling coordination in larger robot fleets?"
+  ]
+}

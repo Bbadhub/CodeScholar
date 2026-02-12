@@ -1,0 +1,37 @@
+{
+  "problem_name": "Video Identification in Encrypted Traffic",
+  "description": "This problem involves identifying video content that is being shared through encrypted channels, such as instant messaging applications. The challenge lies in maintaining user privacy while effectively analyzing the traffic for security assessments.",
+  "you_have_this_if": [
+    "You are analyzing network traffic and suspect video content is being shared.",
+    "You need to ensure compliance with privacy regulations while monitoring data.",
+    "You are facing challenges in detecting video content due to encryption.",
+    "You want to prevent data leakage of sensitive video content.",
+    "You are tasked with enhancing security assessments of encrypted communications."
+  ],
+  "approaches": [
+    {
+      "technique": "Video Fingerprint Matching Framework",
+      "best_for": "When you need to identify video content shared via IM software while ensuring user privacy.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This technique balances the need for privacy with the ability to detect video content."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Video Fingerprint Matching Framework",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to identify video content in real-time while maintaining user privacy."
+    }
+  ],
+  "start_here": "The Video Fingerprint Matching Framework is the recommended first approach for identifying video content in encrypted traffic due to its focus on privacy and effectiveness in detection.",
+  "related_problems": [
+    "Content Identification in Encrypted Traffic",
+    "Data Leakage Prevention in Encrypted Communications",
+    "Video Content Analysis for Security Assessments",
+    "Privacy-Preserving Data Analysis"
+  ]
+}

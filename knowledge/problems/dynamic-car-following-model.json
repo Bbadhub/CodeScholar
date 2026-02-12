@@ -1,0 +1,36 @@
+{
+  "problem_name": "Dynamic Car-Following Model",
+  "description": "The dynamic car-following model addresses how vehicles adjust their speed and distance relative to the vehicle in front of them. This is crucial for ensuring safety and efficiency in traffic flow, especially in autonomous driving systems.",
+  "you_have_this_if": [
+    "You are developing an autonomous driving system.",
+    "You need to optimize vehicle spacing in traffic.",
+    "You are focused on passenger comfort in vehicle control.",
+    "You are working on traffic management solutions."
+  ],
+  "approaches": [
+    {
+      "technique": "Dynamic Car-Following Model with Jerk Suppression",
+      "best_for": "when implementing autonomous driving systems for highway scenarios or designing vehicle control algorithms that prioritize passenger comfort.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach balances comfort and safety but may require more computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Dynamic Car-Following Model with Jerk Suppression",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to ensure smooth driving behavior while maintaining safe distances between vehicles."
+    }
+  ],
+  "start_here": "The recommended first approach is the Dynamic Car-Following Model with Jerk Suppression, as it effectively addresses both safety and comfort in vehicle control.",
+  "related_problems": [
+    "Traffic flow optimization",
+    "Vehicle-to-vehicle communication",
+    "Adaptive cruise control systems",
+    "Lane-keeping assistance systems"
+  ]
+}

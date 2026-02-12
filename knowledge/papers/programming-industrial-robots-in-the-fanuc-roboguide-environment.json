@@ -1,0 +1,98 @@
+{
+  "summary": "The paper presents a methodology for programming industrial robots using the Fanuc ROBOGUIDE environment, emphasizing the steps involved in offline programming and simulation. Engineers should care because this approach streamlines the process of creating control programs for industrial robots, enhancing efficiency in manufacturing.",
+  "key_contribution": "A comprehensive methodology for offline programming of industrial robots in the Fanuc ROBOGUIDE environment.",
+  "problem_type": "offline programming of industrial robots",
+  "problem_description": "The need to automate and optimize the programming of industrial robots for manufacturing processes.",
+  "domain": "Robotics & Control Systems",
+  "sub_domain": "Industrial Robot Programming",
+  "technique_name": "Fanuc ROBOGUIDE",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The methodology involves selecting an industrial robot and controller, choosing end-effectors and additional equipment, developing a control program, simulating the program, and implementing it on the robot. This structured approach minimizes errors and enhances the efficiency of robot programming.",
+    "algorithm_steps": [
+      "1. Select an industrial robot and controller from the library.",
+      "2. Choose an end-effector compatible with the robot.",
+      "3. Add additional equipment to the 3D model in the graphic area.",
+      "4. Develop the control program using the 3D model.",
+      "5. Simulate the developed program to detect issues.",
+      "6. Implement the program on the actual robot."
+    ],
+    "input": "3D models of industrial robots, end-effectors, and additional equipment.",
+    "output": "Control program for the industrial robot, executable by the robot's controller.",
+    "key_parameters": [
+      "robot_model: Fanuc LR Mate 200 iD/7L",
+      "end_effector: vacuum gripper",
+      "payload: 5 kg",
+      "conveyor_dimensions: 150 x 150 x 150 mm"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Fanuc LR Mate 200 iD/7L robot simulations"
+    ],
+    "metrics": [
+      "collision detection: none found",
+      "execution time: optimized"
+    ],
+    "baselines": [
+      "manual programming methods"
+    ],
+    "improvement": "Significant reduction in programming time and errors compared to manual methods."
+  },
+  "concepts": [
+    "offline programming",
+    "robot simulation",
+    "3D modeling",
+    "control programming",
+    "collision detection",
+    "robotic systems design"
+  ],
+  "use_this_when": [
+    "You need to program an industrial robot for a specific task.",
+    "You want to simulate robot operations before implementation.",
+    "You are designing a robotic cell with multiple components."
+  ],
+  "dont_use_when": [
+    "You require real-time programming adjustments.",
+    "The robot's tasks are highly dynamic and unpredictable.",
+    "You lack access to the Fanuc ROBOGUIDE environment."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "3D models of robots and equipment",
+      "control program scripts"
+    ],
+    "dependencies": [
+      "Fanuc ROBOGUIDE software"
+    ],
+    "pseudocode_hint": "robot = select_robot('Fanuc LR Mate 200 iD/7L'); program = create_program(robot, 'Pick and Place'); simulate(program); execute(program);",
+    "gotchas": [
+      "Ensure compatibility of end-effectors with the robot's controller.",
+      "Accurate positioning of 3D models is crucial to avoid collisions.",
+      "Post-processing may be required for code execution."
+    ]
+  },
+  "connects_to": [
+    "KUKA Sim",
+    "Robot Studio",
+    "DELMIA ROBOTICS",
+    "Tecnomatix Robotics",
+    "Robot Interface Robo DK"
+  ],
+  "prerequisites": [
+    "Understanding of industrial robot mechanics",
+    "Familiarity with CAD software",
+    "Basic programming knowledge"
+  ],
+  "limitations": [
+    "Limited to Fanuc robots and compatible controllers.",
+    "Requires specific software licenses for ROBOGUIDE.",
+    "May not account for all real-world variables in simulation."
+  ],
+  "open_questions": [
+    "How can this methodology be adapted for other robot manufacturers?",
+    "What improvements can be made to enhance simulation accuracy?"
+  ]
+}

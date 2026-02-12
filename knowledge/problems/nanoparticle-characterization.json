@@ -1,0 +1,37 @@
+{
+  "problem_name": "Nanoparticle Characterization",
+  "description": "Nanoparticle characterization involves the measurement and analysis of nanoparticles to understand their properties and behavior. This is crucial for applications in fields such as environmental science, materials science, and nanotechnology.",
+  "you_have_this_if": [
+    "You are working with micro- and nanoplastics in environmental samples.",
+    "Existing spectroscopic techniques are not providing accurate measurements.",
+    "You require high-resolution topographical data of nanoparticles.",
+    "You need to analyze the surface properties of nanoparticles.",
+    "You are facing challenges in distinguishing between different types of nanoparticles."
+  ],
+  "approaches": [
+    {
+      "technique": "Atomic Force Microscopy (AFM)",
+      "best_for": "when high-resolution topographical data is essential and other techniques are inadequate.",
+      "paper_count": 1,
+      "max_citations": 11,
+      "key_tradeoff": "AFM provides detailed surface information but may have limitations in speed and sample size."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Atomic Force Microscopy (AFM)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need precise surface characterization of nanoparticles in complex samples."
+    }
+  ],
+  "start_here": "Start with Atomic Force Microscopy (AFM) for nanoparticle characterization, especially when other techniques fail to deliver the required resolution and accuracy.",
+  "related_problems": [
+    "Particle Size Analysis",
+    "Surface Area Measurement",
+    "Nanoparticle Dispersion Stability",
+    "Chemical Composition Analysis of Nanoparticles"
+  ]
+}

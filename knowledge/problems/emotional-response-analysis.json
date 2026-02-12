@@ -1,0 +1,36 @@
+{
+  "problem_name": "Emotional Response Analysis",
+  "description": "Emotional response analysis involves understanding and quantifying how individuals react emotionally to various stimuli, such as music, images, or other multimedia content. This analysis can be crucial for designing applications that aim to engage users on an emotional level or for therapeutic purposes.",
+  "you_have_this_if": [
+    "You are developing applications that aim to evoke specific emotional responses.",
+    "You are conducting research on how different stimuli affect emotions.",
+    "You need to analyze user feedback related to emotional engagement.",
+    "You are interested in creating therapeutic tools that leverage emotional responses."
+  ],
+  "approaches": [
+    {
+      "technique": "Weighted Phase Lag Index (WPLI)",
+      "best_for": "When analyzing emotional responses to multimedia stimuli, particularly in therapeutic or engagement-focused applications.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While WPLI provides a robust statistical method for analyzing emotional responses, it may require a deep understanding of signal processing."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Weighted Phase Lag Index (WPLI)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a reliable method to quantify emotional responses in a controlled research or application setting."
+    }
+  ],
+  "start_here": "Start with the Weighted Phase Lag Index (WPLI) if you are looking to analyze emotional responses in a structured manner, as it provides a solid statistical foundation for understanding user engagement.",
+  "related_problems": [
+    "Sentiment Analysis",
+    "User Experience Evaluation",
+    "Affective Computing",
+    "Psychological Impact Assessment"
+  ]
+}

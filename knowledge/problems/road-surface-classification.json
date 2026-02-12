@@ -1,0 +1,37 @@
+{
+  "problem_name": "Road Surface Classification",
+  "description": "Road surface classification involves identifying the type of surface on which a vehicle is traveling, such as asphalt, gravel, or dirt. This classification is crucial for developing advanced driving assistance systems that enhance safety and navigation for vehicles, particularly motorcycles.",
+  "you_have_this_if": [
+    "You are working on an advanced driving assistance system.",
+    "Your application requires real-time road surface recognition.",
+    "You need to enhance navigation based on varying road conditions.",
+    "You are developing features specifically for electric motorcycles.",
+    "You are collecting data on road conditions for analysis."
+  ],
+  "approaches": [
+    {
+      "technique": "Deep Learning Model for Road Surface Classification",
+      "best_for": "When developing applications that require high accuracy in recognizing different road surfaces.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "While deep learning models can achieve high accuracy, they often require significant computational resources and training data."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Deep Learning Model for Road Surface Classification",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to classify road surfaces with high accuracy and have access to sufficient data and computational resources."
+    }
+  ],
+  "start_here": "Start with the Deep Learning Model for Road Surface Classification, as it provides the best accuracy for recognizing various road surfaces, which is essential for safety and navigation applications.",
+  "related_problems": [
+    "Terrain Classification",
+    "Obstacle Detection",
+    "Vehicle Localization",
+    "Road Condition Monitoring"
+  ]
+}

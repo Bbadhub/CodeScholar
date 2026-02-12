@@ -1,0 +1,37 @@
+{
+  "problem_name": "Lead Qualification",
+  "description": "Lead qualification is the process of determining which potential customers are most likely to convert into paying customers. This involves analyzing historical data and applying models to prioritize leads based on their likelihood of engagement and purchase.",
+  "you_have_this_if": [
+    "You have a large volume of leads to manage.",
+    "Your sales team is spending too much time on unqualified leads.",
+    "You have historical data on lead interactions and conversions.",
+    "You want to improve the efficiency of your sales process.",
+    "You are looking to implement automation in your CRM system."
+  ],
+  "approaches": [
+    {
+      "technique": "Lead Qualification Model",
+      "best_for": "when you need to automate lead qualification in a CRM system and have historical lead data to train a model.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach can significantly improve sales efficiency but requires quality historical data for training."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Lead Qualification Model",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have sufficient historical data and need to automate the qualification process to enhance sales efficiency."
+    }
+  ],
+  "start_here": "The recommended first approach is to implement the Lead Qualification Model, as it leverages historical data to automate and improve lead management effectively.",
+  "related_problems": [
+    "Customer Segmentation",
+    "Sales Forecasting",
+    "Churn Prediction",
+    "Lead Scoring"
+  ]
+}

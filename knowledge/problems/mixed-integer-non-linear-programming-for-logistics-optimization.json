@@ -1,0 +1,37 @@
+{
+  "problem_name": "Mixed-Integer Non-Linear Programming for Logistics Optimization",
+  "description": "This problem involves optimizing logistics operations where decisions include both continuous and discrete variables, such as quantities of products to transport and routes to take. It is particularly challenging due to the non-linear relationships between variables and the need to satisfy various constraints.",
+  "you_have_this_if": [
+    "You are trying to minimize transportation costs while considering multiple products.",
+    "You have complex constraints related to delivery times and capacities.",
+    "You need to make decisions that include both integer (e.g., number of trucks) and continuous (e.g., amount of goods) variables.",
+    "You are facing difficulties in finding optimal solutions using linear programming methods.",
+    "You require a solution that balances cost, time, and resource allocation."
+  ],
+  "approaches": [
+    {
+      "technique": "Quadratically Constrained Mixed-Integer Non-Linear Programming (QC-MINLP)",
+      "best_for": "when you need to optimize distribution logistics for multiple products with complex constraints.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This method can provide more accurate solutions but may require significantly more computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Quadratically Constrained Mixed-Integer Non-Linear Programming (QC-MINLP)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have a complex logistics problem with multiple products and constraints that cannot be simplified to linear relationships."
+    }
+  ],
+  "start_here": "Start with Quadratically Constrained Mixed-Integer Non-Linear Programming (QC-MINLP) as it is specifically designed to handle the complexities of logistics optimization with both integer and continuous variables.",
+  "related_problems": [
+    "Linear Programming for Logistics Optimization",
+    "Integer Programming for Supply Chain Management",
+    "Non-Linear Programming for Resource Allocation",
+    "Dynamic Programming for Route Optimization"
+  ]
+}

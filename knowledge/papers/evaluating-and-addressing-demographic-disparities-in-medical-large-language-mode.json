@@ -1,0 +1,99 @@
+{
+  "summary": "This paper systematically reviews demographic biases in large language models (LLMs) used in healthcare, identifying prevalent bias types and evaluating mitigation strategies. Engineers should care because understanding and addressing these biases is crucial for developing fair AI systems that impact medical decision-making.",
+  "key_contribution": "The identification and analysis of demographic biases in medical LLMs, along with proposed mitigation strategies such as prompt engineering and debiasing algorithms.",
+  "problem_type": "bias detection in machine learning models",
+  "problem_description": "The work is motivated by the need to understand how biases in LLMs can lead to unequal outcomes in clinical practice, particularly affecting underrepresented demographic groups.",
+  "domain": "Machine Learning & AI",
+  "sub_domain": "Natural Language Processing",
+  "technique_name": "Systematic Review of Bias in LLMs",
+  "technique_category": "statistical_method",
+  "technique_type": "comparison",
+  "method": {
+    "approach": "The method involves a systematic review of existing literature on demographic biases in LLMs, focusing on studies that evaluate these biases in medical contexts. The review synthesizes findings on bias types, measurement methods, and mitigation strategies.",
+    "algorithm_steps": [
+      "1. Define inclusion criteria for studies evaluating demographic biases in LLMs.",
+      "2. Conduct a literature search across multiple databases from January 2018 to July 2024.",
+      "3. Screen titles and abstracts for relevance using Rayyan software.",
+      "4. Extract data from included studies regarding bias types and mitigation strategies.",
+      "5. Assess the quality of studies using JBI Critical Appraisal Tools.",
+      "6. Synthesize findings narratively and categorize by bias type and mitigation method."
+    ],
+    "input": "Peer-reviewed studies evaluating demographic biases in LLMs applied to medical tasks.",
+    "output": "A comprehensive overview of bias types, measurement methods, and mitigation strategies in medical LLMs.",
+    "key_parameters": [
+      "search_date_range: January 2018 - July 2024",
+      "included_studies: 24",
+      "bias_types: gender, racial, ethnic, age, disability, socioeconomic"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Studies published between 2021 and 2024 from various countries including the USA, Germany, Netherlands, Spain, and Turkey."
+    ],
+    "metrics": [
+      "Bias detection rates: 91.7% of studies identified biases.",
+      "Gender bias reported in 93.7% of studies focused on gender.",
+      "Racial/ethnic bias observed in 90.9% of studies focused on race."
+    ],
+    "baselines": [
+      "Previous studies on bias in LLMs without systematic review."
+    ],
+    "improvement": "Mitigation strategies showed improved fairness, with 6 out of 7 studies reporting reduced disparities."
+  },
+  "concepts": [
+    "demographic bias",
+    "large language models",
+    "mitigation strategies",
+    "prompt engineering",
+    "debiasing algorithms",
+    "systematic review",
+    "healthcare applications"
+  ],
+  "use_this_when": [
+    "Developing AI applications in healthcare that utilize LLMs.",
+    "Evaluating existing LLMs for bias before deployment in clinical settings.",
+    "Implementing mitigation strategies to reduce bias in AI outputs."
+  ],
+  "dont_use_when": [
+    "Working with LLMs in non-medical domains where bias is less critical.",
+    "When the application context does not involve demographic considerations."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Data extraction forms for systematic review.",
+      "Quality assessment checklists."
+    ],
+    "dependencies": [
+      "Rayyan software for study screening.",
+      "JBI Critical Appraisal Tools for quality assessment."
+    ],
+    "pseudocode_hint": "def systematic_review(): search_studies(); screen_titles(); extract_data(); assess_quality(); synthesize_results()",
+    "gotchas": [
+      "Ensure comprehensive search strategy to avoid missing relevant studies.",
+      "Be aware of potential publication bias affecting the results.",
+      "Consider the context of bias when interpreting findings."
+    ]
+  },
+  "connects_to": [
+    "Bias detection algorithms",
+    "Fairness in AI",
+    "Ethical AI development",
+    "Prompt engineering techniques",
+    "Debiasing methods in NLP"
+  ],
+  "prerequisites": [
+    "Understanding of machine learning and NLP concepts.",
+    "Familiarity with systematic review methodologies.",
+    "Knowledge of bias and fairness in AI."
+  ],
+  "limitations": [
+    "Limited to peer-reviewed studies, potentially excluding relevant grey literature.",
+    "Focus on specific demographic factors may overlook intersectional biases.",
+    "Mitigation strategies are still developing and may not be universally effective."
+  ],
+  "open_questions": [
+    "How can bias mitigation strategies be standardized across different LLM applications?",
+    "What are the long-term impacts of bias in LLMs on healthcare outcomes?"
+  ]
+}

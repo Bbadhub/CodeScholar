@@ -1,0 +1,84 @@
+{
+  "technique_name": "Semisolid Extrusion Additive Manufacturing",
+  "aliases": [
+    "3D Printing of Semisolid Formulations"
+  ],
+  "category": "additive_manufacturing",
+  "one_liner": "This technique allows for the creation of custom-dosed tablets using a 3D printer to extrude semisolid formulations.",
+  "how_it_works": "Semisolid extrusion additive manufacturing involves preparing a semisolid formulation of a drug, such as metoprolol tartrate, and loading it into a 3D printer. The printer then extrudes the formulation according to specified dosage parameters, allowing for the production of tablets tailored to individual patient needs. Once printed, the tablets are allowed to solidify before packaging for distribution.",
+  "algorithm": {
+    "steps": [
+      "1. Prepare the semisolid formulation of metoprolol tartrate.",
+      "2. Load the formulation into the 3D printer.",
+      "3. Set the desired dosage parameters for the patient.",
+      "4. Initiate the printing process to create the custom tablet.",
+      "5. Allow the tablet to solidify and package for distribution."
+    ],
+    "core_equation": "output = custom tablet based on dosage parameters",
+    "input_format": "Semisolid formulation of metoprolol tartrate and dosage parameters.",
+    "output_format": "Custom-dosed metoprolol tartrate tablets."
+  },
+  "parameters": [
+    {
+      "name": "extrusion_speed",
+      "typical_value": "5 mm/s",
+      "effect": "Affects the rate at which the formulation is extruded, influencing tablet consistency."
+    },
+    {
+      "name": "temperature",
+      "typical_value": "60\u00b0C",
+      "effect": "Impacts the viscosity of the semisolid formulation, affecting extrusion quality."
+    },
+    {
+      "name": "tablet_weight",
+      "typical_value": "100 mg",
+      "effect": "Determines the final weight of the tablet, which is crucial for dosage accuracy."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) where n is the number of tablets printed",
+    "space": "O(1) for the formulation storage",
+    "practical_note": "Real-world performance can vary based on printer capabilities and formulation properties."
+  },
+  "use_when": [
+    "Developing personalized medication solutions for pediatric patients.",
+    "Creating custom dosages for patients with specific health conditions.",
+    "Implementing on-demand medication manufacturing in clinical settings."
+  ],
+  "avoid_when": [
+    "Standard dosages are sufficient and available.",
+    "High-volume production of uniform tablets is required.",
+    "Regulatory approval for 3D printed medications is not established."
+  ],
+  "implementation_skeleton": "def print_tablet(formulation: Semisolid, dosage: float) -> Tablet:\n    load_printer(formulation)\n    set_dosage_parameters(dosage)\n    start_printing()\n    solidify_tablet()\n    return packaged_tablet",
+  "common_mistakes": [
+    "Not calibrating the printer for different formulations.",
+    "Ignoring the impact of temperature on formulation viscosity.",
+    "Failing to validate dosage accuracy post-printing."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Allows for personalized medication tailored to individual patient needs.",
+      "Reduces the need for off-label dosing.",
+      "Improves medication adherence through custom dosages."
+    ],
+    "weaknesses": [
+      "Not suitable for high-volume production.",
+      "Regulatory hurdles for 3D printed medications.",
+      "Potential variability in tablet quality."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Tablet Manufacturing",
+        "verdict": "Use semisolid extrusion for personalized solutions; use traditional methods for mass production."
+      }
+    ]
+  },
+  "connects_to": [
+    "3D Printing",
+    "Personalized Medicine",
+    "Pharmaceutical Manufacturing",
+    "Additive Manufacturing Techniques"
+  ],
+  "maturity": "emerging"
+}

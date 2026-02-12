@@ -1,0 +1,77 @@
+{
+  "technique_name": "Complex Single-Valued Neutrosophic Soft Sets",
+  "aliases": [],
+  "category": "decision_making",
+  "one_liner": "This technique manages uncertainty in multi-attribute decision-making contexts using complex single-valued neutrosophic soft sets.",
+  "how_it_works": "Complex single-valued neutrosophic soft sets provide a framework for representing uncertainty in decision-making scenarios. By combining set theory operations with decision criteria, this technique evaluates multiple attributes relevant to a specific context, such as hospital site selection. The overall scores for potential options are calculated based on these attributes, allowing for a ranked list of choices based on their suitability.",
+  "algorithm": {
+    "steps": [
+      "Define the decision-making criteria and attributes for hospital site selection.",
+      "Represent each attribute using complex sv-neutrosophic soft sets.",
+      "Apply set operations (union, intersection) to evaluate the relationships between attributes.",
+      "Calculate the overall score for each potential site based on the defined criteria.",
+      "Rank the sites based on their scores to identify the optimal location."
+    ],
+    "core_equation": "score = f(attributes, weights)",
+    "input_format": "Attributes of potential hospital sites represented as complex sv-neutrosophic soft sets.",
+    "output_format": "A ranked list of hospital sites based on their suitability."
+  },
+  "parameters": [
+    {
+      "name": "threshold_value",
+      "typical_value": "0.5",
+      "effect": "Adjusting this value can influence the sensitivity of the decision-making process."
+    },
+    {
+      "name": "attribute_weighting",
+      "typical_value": "[0.2, 0.3, 0.5]",
+      "effect": "Changing these weights alters the importance of each attribute in the final score."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the complexity of the attributes and the number of sites evaluated."
+  },
+  "use_when": [
+    "Selecting hospital sites with uncertain attributes",
+    "Evaluating multiple criteria in healthcare infrastructure",
+    "Making decisions under uncertainty in urban planning"
+  ],
+  "avoid_when": [
+    "Data is fully deterministic",
+    "Criteria are not multi-attribute",
+    "Rapid decision-making is required without extensive analysis"
+  ],
+  "implementation_skeleton": "def complex_sv_neutrosophic_soft_sets(attributes: List[ComplexSet], weights: List[float]) -> List[Site]:\n    # Step 1: Define criteria\n    # Step 2: Represent attributes\n    # Step 3: Apply set operations\n    # Step 4: Calculate scores\n    # Step 5: Rank sites\n    return ranked_sites",
+  "common_mistakes": [
+    "Neglecting to properly define the decision-making criteria.",
+    "Overlooking the importance of attribute weighting.",
+    "Failing to account for the uncertainty in the attributes."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively manages uncertainty in decision-making.",
+      "Allows for multi-attribute evaluation.",
+      "Improves decision accuracy over traditional methods."
+    ],
+    "weaknesses": [
+      "Complexity in implementation and understanding.",
+      "May require extensive data for accurate results.",
+      "Not suitable for deterministic scenarios."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional multi-criteria decision-making methods",
+        "verdict": "Use complex sv-neutrosophic soft sets when uncertainty is present; otherwise, traditional methods may suffice."
+      }
+    ]
+  },
+  "connects_to": [
+    "Fuzzy Sets",
+    "Multi-Criteria Decision Analysis",
+    "Neutrosophic Logic",
+    "Set Theory Operations"
+  ],
+  "maturity": "emerging"
+}

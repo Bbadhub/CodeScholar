@@ -1,0 +1,85 @@
+{
+  "technique_name": "Pharmacokinetic modeling",
+  "aliases": [
+    "PK modeling"
+  ],
+  "category": "statistical_method",
+  "one_liner": "Pharmacokinetic modeling analyzes how drugs are absorbed, distributed, metabolized, and excreted in the body.",
+  "how_it_works": "Pharmacokinetic modeling involves collecting data on drug concentrations in the bloodstream over time after administration. This data is used to calculate key pharmacokinetic parameters such as Cmax (maximum concentration) and AUC (area under the curve), which help evaluate the bioavailability of different drug formulations. The results inform decisions on optimal dosing strategies and safety assessments in clinical settings.",
+  "algorithm": {
+    "steps": [
+      "1. Recruit healthy volunteers and obtain informed consent.",
+      "2. Randomly assign subjects to receive either IV or oral formulations of the drugs.",
+      "3. Administer the drugs and collect blood samples at specified time intervals.",
+      "4. Measure plasma concentrations of the drugs.",
+      "5. Calculate pharmacokinetic parameters (Cmax, AUC) for each formulation.",
+      "6. Analyze data using ANOVA to compare bioavailability between routes.",
+      "7. Assess safety and tolerability of the drug combinations."
+    ],
+    "core_equation": "Cmax and AUC are calculated from the concentration-time data.",
+    "input_format": "Healthy volunteers, blood samples for pharmacokinetic analysis.",
+    "output_format": "Pharmacokinetic parameters including Cmax, AUC, and bioavailability."
+  },
+  "parameters": [
+    {
+      "name": "Ibuprofen dose",
+      "typical_value": "400 mg",
+      "effect": "Higher doses may increase Cmax."
+    },
+    {
+      "name": "Tramadol doses",
+      "typical_value": "30 mg to 37.5 mg",
+      "effect": "Variations can affect bioavailability."
+    },
+    {
+      "name": "Sample size",
+      "typical_value": "12 subjects",
+      "effect": "Larger samples improve statistical power."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for data analysis",
+    "space": "O(n) for storing concentration data",
+    "practical_note": "Real-world performance may vary based on subject variability."
+  },
+  "use_when": [
+    "Designing new pain management protocols that require optimized dosing strategies.",
+    "Evaluating the pharmacokinetics of drug combinations in clinical trials.",
+    "Assessing the safety and efficacy of fixed-dose combination medications."
+  ],
+  "avoid_when": [
+    "The study population does not include patients with comorbidities.",
+    "When the oral route of administration is not feasible."
+  ],
+  "implementation_skeleton": "def pharmacokinetic_modeling(volunteers: List[Volunteer], doses: Dict[str, float]) -> Dict[str, float]:\n    # Step 1: Collect blood samples\n    # Step 2: Measure plasma concentrations\n    # Step 3: Calculate Cmax and AUC\n    return {'Cmax': cmax, 'AUC': auc}",
+  "common_mistakes": [
+    "Neglecting to control for subject variability.",
+    "Using inappropriate statistical methods for analysis.",
+    "Failing to account for drug interactions."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides critical insights into drug behavior in the body.",
+      "Helps optimize dosing regimens for better efficacy.",
+      "Facilitates safety assessments in clinical trials."
+    ],
+    "weaknesses": [
+      "Requires extensive data collection and analysis.",
+      "Can be influenced by individual patient factors.",
+      "May not account for all pharmacodynamic interactions."
+    ],
+    "compared_to": [
+      {
+        "technique": "Pharmacodynamic modeling",
+        "verdict": "Use pharmacokinetic modeling for absorption and distribution, and pharmacodynamic modeling for effects and responses."
+      }
+    ]
+  },
+  "connects_to": [
+    "Pharmacodynamic modeling",
+    "Clinical trial design",
+    "Bioavailability studies",
+    "Dose-response modeling"
+  ],
+  "maturity": "proven (widely used in production)"
+}

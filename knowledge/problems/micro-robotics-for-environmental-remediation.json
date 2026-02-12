@@ -1,0 +1,37 @@
+{
+  "problem_name": "Micro-Robotics for Environmental Remediation",
+  "description": "Micro-robotics for environmental remediation involves the use of tiny robots to clean up pollutants from the environment, particularly in water bodies. This technology aims to provide efficient and targeted solutions for environmental cleanup, especially in cases of contamination.",
+  "you_have_this_if": [
+    "You are facing challenges with water pollution.",
+    "You need innovative solutions for environmental cleanup.",
+    "You are dealing with specific contaminants like antibiotics.",
+    "You require targeted approaches for water purification.",
+    "You are exploring the use of robotics in environmental applications."
+  ],
+  "approaches": [
+    {
+      "technique": "g-C3N4 microrobots",
+      "best_for": "When dealing with antibiotic contamination in water bodies and needing targeted environmental cleanup solutions.",
+      "paper_count": 1,
+      "max_citations": 8,
+      "key_tradeoff": "While effective for specific contaminants, this approach may require specialized knowledge and resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "g-C3N4 microrobots",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a targeted solution for antibiotic contamination in water."
+    }
+  ],
+  "start_here": "The recommended first approach is to explore g-C3N4 microrobots, as they have shown promise in addressing antibiotic contamination and provide a targeted cleanup method.",
+  "related_problems": [
+    "Nanotechnology for pollution control",
+    "Bioremediation techniques",
+    "Chemical methods for water purification",
+    "Robotic systems for hazardous waste management"
+  ]
+}

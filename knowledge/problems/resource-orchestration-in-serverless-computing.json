@@ -1,0 +1,35 @@
+{
+  "problem_name": "Resource Orchestration in Serverless Computing",
+  "description": "Resource orchestration in serverless computing involves managing and optimizing the allocation of resources for serverless applications to ensure efficient performance and cost-effectiveness. This problem is particularly relevant in scenarios where latency, cold starts, and service level agreements (SLAs) are critical factors.",
+  "you_have_this_if": [
+    "You are experiencing high latency in your serverless functions.",
+    "Your serverless application is frequently exceeding budget constraints.",
+    "You notice performance degradation during peak usage times.",
+    "You are struggling to maintain SLA compliance in your serverless deployments."
+  ],
+  "approaches": [
+    {
+      "technique": "Proximal Policy Optimization (PPO)",
+      "best_for": "when you need to optimize resource usage in a serverless application and address latency issues.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "While PPO can effectively optimize resource allocation, it may require significant computational resources for training."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Proximal Policy Optimization (PPO)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to balance resource usage and performance in a serverless environment with strict SLA requirements."
+    }
+  ],
+  "start_here": "Start with Proximal Policy Optimization (PPO) as it provides a structured approach to optimize resource orchestration in serverless computing while addressing common issues like latency and SLA compliance.",
+  "related_problems": [
+    "Cold Start Latency in Serverless Functions",
+    "Cost Optimization in Cloud Computing",
+    "Dynamic Resource Allocation in Distributed Systems"
+  ]
+}

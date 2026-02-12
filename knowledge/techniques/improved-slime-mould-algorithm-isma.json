@@ -1,0 +1,99 @@
+{
+  "technique_name": "Improved Slime Mould Algorithm (ISMA)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "ISMA is an optimization technique designed to enhance trajectory planning for robotic arms by minimizing time and impact forces.",
+  "how_it_works": "ISMA optimizes robotic arm trajectories by constructing interpolation curves using non-uniform B-spline functions. It enhances population diversity through Bernoulli chaotic mapping and employs an artificial bee colony strategy to guide the search for optimal solutions. The algorithm iteratively updates positions based on feedback factors and proximity to food sources until convergence criteria are met.",
+  "algorithm": {
+    "steps": [
+      "Initialize population using Bernoulli chaotic mapping.",
+      "Evaluate fitness of each individual in the population.",
+      "Update positions based on proximity to food and feedback factors.",
+      "Apply crossover operator to enhance diversity.",
+      "Use artificial bee colony strategy to guide search towards global optimum.",
+      "Optimize trajectory using B-spline interpolation.",
+      "Repeat until convergence criteria are met."
+    ],
+    "core_equation": "output = optimized trajectory minimizing time and impact forces",
+    "input_format": "Joint position and time series data for the robotic arm.",
+    "output_format": "Optimized trajectory for the robotic arm minimizing time and impact forces."
+  },
+  "parameters": [
+    {
+      "name": "Kt (time coefficient)",
+      "typical_value": "0.4",
+      "effect": "Affects the emphasis on minimizing movement time."
+    },
+    {
+      "name": "Kj (impact coefficient)",
+      "typical_value": "0.6",
+      "effect": "Influences the focus on reducing joint impacts."
+    },
+    {
+      "name": "Kp (penalty coefficient)",
+      "typical_value": "0.5",
+      "effect": "Controls the penalty for deviations from optimal paths."
+    },
+    {
+      "name": "Maximum iterations",
+      "typical_value": "5000",
+      "effect": "Limits the number of iterations for convergence."
+    },
+    {
+      "name": "Adjustment factor k",
+      "typical_value": "4",
+      "effect": "Modulates the feedback mechanism in the algorithm."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the complexity of the robotic environment and the chosen parameters."
+  },
+  "use_when": [
+    "You need to optimize robotic arm movements in industrial applications.",
+    "Minimizing vibration and wear during robotic operations is critical.",
+    "You require a method that adapts to complex environments for trajectory planning."
+  ],
+  "avoid_when": [
+    "The robotic arm operates in a simple, predictable environment.",
+    "Real-time trajectory adjustments are necessary.",
+    "Computational resources are extremely limited."
+  ],
+  "implementation_skeleton": "def improved_slime_mould_algorithm(data: List[float], max_iterations: int = 5000) -> List[float]:\n    population = initialize_population(data)\n    for iteration in range(max_iterations):\n        fitness = evaluate_fitness(population)\n        population = update_positions(population, fitness)\n        population = apply_crossover(population)\n        population = artificial_bee_colony(population)\n    return optimize_trajectory(population)",
+  "common_mistakes": [
+    "Neglecting to properly tune the coefficients (Kt, Kj, Kp) for specific applications.",
+    "Failing to initialize the population effectively, leading to poor convergence.",
+    "Overlooking the importance of the feedback factors in position updates."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Significantly reduces movement time and joint impacts.",
+      "Adapts well to complex environments.",
+      "Incorporates diverse strategies for improved convergence."
+    ],
+    "weaknesses": [
+      "May require extensive computational resources.",
+      "Not suitable for real-time adjustments.",
+      "Performance can degrade in simple environments."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard Slime Mould Algorithm (SMA)",
+        "verdict": "ISMA offers better performance in terms of convergence and optimization."
+      },
+      {
+        "technique": "Butterfly Optimization Algorithm (BOA)",
+        "verdict": "ISMA may outperform BOA in trajectory planning for robotic arms."
+      }
+    ]
+  },
+  "connects_to": [
+    "Slime Mould Algorithm (SMA)",
+    "Artificial Bee Colony Algorithm",
+    "B-spline Interpolation",
+    "Genetic Algorithms",
+    "Particle Swarm Optimization"
+  ],
+  "maturity": "emerging"
+}

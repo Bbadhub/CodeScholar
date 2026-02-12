@@ -1,0 +1,37 @@
+{
+  "problem_name": "Genome Editing for Agricultural Improvement",
+  "description": "Genome editing aims to modify the genetic material of crops to enhance their traits, such as resistance to pests and environmental stressors. This technology can significantly improve agricultural productivity and sustainability.",
+  "you_have_this_if": [
+    "You are facing challenges with crop yield due to environmental factors.",
+    "You need to enhance the nutritional value of crops.",
+    "You are working under strict regulations regarding genetic modifications.",
+    "You are looking for sustainable solutions to agricultural problems.",
+    "You want to develop crops that require fewer chemical inputs."
+  ],
+  "approaches": [
+    {
+      "technique": "CRISPR/Cas",
+      "best_for": "Developing crops with enhanced resistance to drought and pests, and improving nutritional content within regulatory frameworks.",
+      "paper_count": 1,
+      "max_citations": 3,
+      "key_tradeoff": "While CRISPR/Cas is highly effective, it may face regulatory hurdles depending on the region."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "CRISPR/Cas",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to quickly develop crops with specific traits while navigating regulatory constraints."
+    }
+  ],
+  "start_here": "Start with CRISPR/Cas as it offers a precise and efficient method for genome editing in crops, especially when regulatory compliance is necessary.",
+  "related_problems": [
+    "Traditional breeding methods for crop improvement",
+    "Transgenic crop development",
+    "Plant tissue culture techniques",
+    "Marker-assisted selection in breeding"
+  ]
+}

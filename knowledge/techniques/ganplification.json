@@ -1,0 +1,81 @@
+{
+  "technique_name": "GANplification",
+  "aliases": [],
+  "category": "data_generation",
+  "one_liner": "GANplification is a technique that uses Generative Adversarial Networks (GANs) to amplify datasets while preserving their statistical properties.",
+  "how_it_works": "GANplification involves training a GAN on a dataset of N events to generate GN synthetic events. The process ensures that the generated data maintains the same probability distribution as the training data by analyzing it through the lens of information theory. This method is particularly useful for creating larger datasets from smaller ones without losing the integrity of the original data.",
+  "algorithm": {
+    "steps": [
+      "1. Simulate N random points from a specific probability distribution (e.g., Normal or Log-Normal).",
+      "2. Bin the values using a calculated bin width based on Shannon entropy.",
+      "3. Generate randomized copies of the training data to create a larger dataset.",
+      "4. Concatenate G copies to form the final generated dataset."
+    ],
+    "core_equation": "output = concatenate(G copies of training data)",
+    "input_format": "N random points from a specific probability distribution (e.g., Normal or Log-Normal)",
+    "output_format": "GN synthetic data points generated from the training data"
+  },
+  "parameters": [
+    {
+      "name": "N",
+      "typical_value": "2000",
+      "effect": "Increasing N provides a more reliable training set."
+    },
+    {
+      "name": "G",
+      "typical_value": "G >= 1",
+      "effect": "Higher G results in more synthetic data points."
+    },
+    {
+      "name": "M",
+      "typical_value": "2 <= M <= 3",
+      "effect": "M affects the quality of the generated data."
+    }
+  ],
+  "complexity": {
+    "time": "Not specified",
+    "space": "Not specified",
+    "practical_note": "Performance may vary based on the complexity of the original dataset."
+  },
+  "use_when": [
+    "You need to generate synthetic datasets for simulations in particle physics or medical applications.",
+    "You require a method to amplify datasets without losing information integrity.",
+    "You want to reduce computational resources for data generation tasks."
+  ],
+  "avoid_when": [
+    "The original dataset is too small to provide a reliable training set.",
+    "High fidelity of the tails of the distribution is critical and cannot be compromised.",
+    "You need to amplify data multiple times, as the method does not support repeated amplification."
+  ],
+  "implementation_skeleton": "def ganplification(data: List[float], G: int, M: float) -> List[float]:\n    # Step 1: Simulate N random points\n    N = len(data)\n    # Step 2: Bin values based on Shannon entropy\n    bin_width = calculate_bin_width(data)\n    # Step 3: Generate randomized copies\n    synthetic_data = generate_random_copies(data, G)\n    # Step 4: Concatenate copies\n    return concatenate(synthetic_data)",
+  "common_mistakes": [
+    "Using too small a dataset for training, leading to poor quality synthetic data.",
+    "Neglecting to validate the statistical properties of the generated data.",
+    "Failing to adjust the gain factor G appropriately for the desired output size."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively amplifies datasets while preserving statistical properties.",
+      "Reduces the need for extensive computational resources.",
+      "Can be applied to various fields such as particle physics and medical research."
+    ],
+    "weaknesses": [
+      "Not suitable for very small original datasets.",
+      "May compromise the fidelity of the tails of the distribution.",
+      "Limited to single amplification without repeated applications."
+    ],
+    "compared_to": [
+      {
+        "technique": "Monte Carlo simulations",
+        "verdict": "Use GANplification for better data integrity; use Monte Carlo for broader sampling."
+      }
+    ]
+  },
+  "connects_to": [
+    "Generative Adversarial Networks (GANs)",
+    "Data Augmentation Techniques",
+    "Synthetic Data Generation",
+    "Information Theory in Data Analysis"
+  ],
+  "maturity": "emerging"
+}

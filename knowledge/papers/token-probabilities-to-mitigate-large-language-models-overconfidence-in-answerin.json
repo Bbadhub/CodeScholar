@@ -1,0 +1,102 @@
+{
+  "summary": "This study evaluates the predictive capabilities of token probabilities versus expressed confidence in large language models (LLMs) when answering medical questions. Engineers should care because it provides insights into improving the reliability of chatbot responses in clinical settings by leveraging internal probability metrics.",
+  "key_contribution": "Token probabilities significantly outperform expressed confidence in predicting the accuracy of LLM responses to medical questions.",
+  "problem_type": "confidence estimation in natural language processing",
+  "problem_description": "The overconfidence of chatbots in providing medical answers can lead to misinformation and potential health risks.",
+  "domain": "Natural Language Processing",
+  "sub_domain": "Large Language Models",
+  "technique_name": "Token Probability Analysis",
+  "technique_category": "statistical_method",
+  "technique_type": "comparison",
+  "method": {
+    "approach": "The method involves prompting various LLMs to answer medical questions while extracting both their expressed confidence and the token probabilities of their responses. The predictive performance of these metrics is then evaluated against actual response accuracy.",
+    "algorithm_steps": [
+      "Select a set of LLMs that provide access to internal probabilities.",
+      "Prompt each model with a medical question and request a confidence rating.",
+      "Extract the token probability for the chosen answer from the model's output.",
+      "Evaluate the accuracy of the model's response.",
+      "Compare the predictive performance of expressed confidence and token probabilities using statistical metrics."
+    ],
+    "input": "Medical questions from datasets such as the USMLE MedQA database.",
+    "output": "Predicted accuracy of responses based on token probabilities and expressed confidence.",
+    "key_parameters": [
+      "temperature: 0 (to mitigate variability)",
+      "prompting_strategy: vanilla prompting",
+      "confidence_scale: 0 to 100"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "USMLE MedQA (n=2522)",
+      "MedMCQA (n=2797)",
+      "MedQA Mainland China (n=3413)",
+      "MedQA Taiwan (n=2808)",
+      "FrMedMCQA (n=1079)"
+    ],
+    "metrics": [
+      "accuracy: ranged from 56.5% (Phi-3-Mini) to 89% (GPT-4o)",
+      "AUROC for expressed confidence: ranged from 0.52 (Phi-3-Mini) to 0.68 (GPT-4o)",
+      "AUROC for token probability: ranged from 0.71 (Phi-3-Mini) to 0.87 (GPT-4o)"
+    ],
+    "baselines": [
+      "Expressed confidence levels of the models",
+      "Previous studies on confidence estimation"
+    ],
+    "improvement": "Token probabilities showed a marked improvement over expressed confidence, with AUROCs significantly higher (all P<.001)."
+  },
+  "concepts": [
+    "token probabilities",
+    "expressed confidence",
+    "receiver operating characteristic",
+    "calibration error",
+    "Brier score",
+    "sensitivity analysis"
+  ],
+  "use_this_when": [
+    "Building medical chatbots that require reliable confidence estimation.",
+    "Evaluating the performance of LLMs in clinical settings.",
+    "Improving decision-making processes in healthcare applications."
+  ],
+  "dont_use_when": [
+    "The application does not require high-stakes decision-making.",
+    "When using models that do not provide access to internal probabilities.",
+    "In scenarios where expressed confidence is sufficient."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Data structures to store model responses and their corresponding probabilities.",
+      "Statistical data structures for performance evaluation."
+    ],
+    "dependencies": [
+      "OpenAI API for accessing GPT models",
+      "Microsoft Azure API for accessing other models",
+      "Statistical libraries in R and Python for analysis"
+    ],
+    "pseudocode_hint": "response = model.predict(question); confidence = model.get_confidence(); token_prob = model.get_token_probability(response); evaluate_accuracy(response, correct_answer)",
+    "gotchas": [
+      "Ensure models used provide access to log probabilities.",
+      "Be cautious of overconfidence in smaller models.",
+      "Sensitivity analyses may yield varying results based on prompting strategies."
+    ]
+  },
+  "connects_to": [
+    "Confidence calibration techniques",
+    "Other metrics for evaluating model performance",
+    "Statistical methods for predictive analysis"
+  ],
+  "prerequisites": [
+    "Understanding of LLMs and their architectures.",
+    "Familiarity with statistical evaluation metrics.",
+    "Knowledge of natural language processing techniques."
+  ],
+  "limitations": [
+    "Models may still exhibit overconfidence despite using token probabilities.",
+    "Performance may vary across different languages and datasets.",
+    "Limited generalizability to non-medical domains."
+  ],
+  "open_questions": [
+    "How can token probabilities be further refined for better calibration?",
+    "What are the implications of these findings for non-medical applications of LLMs?"
+  ]
+}

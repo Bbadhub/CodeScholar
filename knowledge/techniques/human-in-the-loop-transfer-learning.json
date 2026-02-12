@@ -1,0 +1,83 @@
+{
+  "technique_name": "Human-in-the-loop transfer learning",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "This technique enhances reinforcement learning models by integrating human feedback into the training process for improved decision-making.",
+  "how_it_works": "Human-in-the-loop transfer learning combines traditional reinforcement learning with human feedback to refine the model's decision-making capabilities. Initially, a reinforcement learning model is trained on simulated scenarios. Human feedback is collected on potential actions, which is then incorporated into the training dataset. This iterative process allows the model to align its actions more closely with human preferences, particularly in dynamic environments where obstacles may vary.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize the reinforcement learning model.",
+      "2. Collect human feedback on potential actions in various scenarios.",
+      "3. Incorporate this feedback into the model's training dataset.",
+      "4. Train the model using both traditional reinforcement learning and the human feedback.",
+      "5. Evaluate the model's performance in collision avoidance tasks.",
+      "6. Iterate by refining feedback based on model performance."
+    ],
+    "core_equation": "output = trained_model(actions + human_feedback)",
+    "input_format": "Training scenarios with potential obstacles and human feedback on actions.",
+    "output_format": "A trained model capable of effectively avoiding collisions based on human preferences."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.01",
+      "effect": "Affects the speed of convergence during training."
+    },
+    {
+      "name": "feedback_frequency",
+      "typical_value": "5 episodes",
+      "effect": "Determines how often human feedback is incorporated into training."
+    },
+    {
+      "name": "reward_scale",
+      "typical_value": "1.0",
+      "effect": "Influences the importance of rewards in the learning process."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m) where n is the number of training episodes and m is the number of feedback instances.",
+    "space": "O(k) where k is the size of the model parameters.",
+    "practical_note": "Real-world performance may vary based on the complexity of the environment and the quality of human feedback."
+  },
+  "use_when": [
+    "Developing autonomous robots that operate in dynamic environments.",
+    "Need for rapid adaptation to new obstacles not present in training data.",
+    "Seeking to improve user alignment in robotic decision-making."
+  ],
+  "avoid_when": [
+    "Working with static environments where all obstacles are known.",
+    "Resources are limited for collecting human feedback.",
+    "The application does not require real-time decision-making."
+  ],
+  "implementation_skeleton": "def train_model(scenarios: List[Scenario], feedback: List[Feedback]) -> Model:\n    model = initialize_model()\n    for episode in range(num_episodes):\n        actions = model.predict(scenarios[episode])\n        human_feedback = collect_human_feedback(actions)\n        model.update(actions, human_feedback)\n    return model",
+  "common_mistakes": [
+    "Neglecting to collect diverse human feedback across scenarios.",
+    "Overfitting the model to specific feedback instances.",
+    "Failing to iterate on feedback based on model performance."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves model alignment with human preferences.",
+      "Enhances adaptability to new and unforeseen scenarios.",
+      "Can lead to better performance in complex environments."
+    ],
+    "weaknesses": [
+      "Requires continuous human involvement, which can be resource-intensive.",
+      "Performance may degrade if feedback is inconsistent or biased.",
+      "Not suitable for all types of environments, especially static ones."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional reinforcement learning",
+        "verdict": "Use human-in-the-loop when human preferences are critical for decision-making."
+      }
+    ]
+  },
+  "connects_to": [
+    "Reinforcement learning",
+    "Active learning",
+    "Human-centered AI",
+    "Transfer learning"
+  ],
+  "maturity": "emerging"
+}

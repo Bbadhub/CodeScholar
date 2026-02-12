@@ -1,0 +1,96 @@
+{
+  "summary": "This study explores individual navigation strategies in the knowledge space using a Wikipedia navigation game, revealing significant differences in how people navigate based on demographic factors. Engineers should care because understanding these strategies can inform the design of better information systems and enhance user experience in digital environments.",
+  "key_contribution": "Identification of hub-driven and proximity-driven navigation strategies in knowledge space based on individual differences.",
+  "problem_type": "navigation strategy analysis",
+  "problem_description": "The challenge of efficiently navigating through vast amounts of information online, particularly in knowledge networks like Wikipedia.",
+  "domain": "Machine Learning & AI",
+  "sub_domain": "Graph embedding, Navigation strategies",
+  "technique_name": "DeepWalk",
+  "technique_category": "statistical_method",
+  "technique_type": "adaptation",
+  "method": {
+    "approach": "Participants navigated from one Wikipedia page to another using hyperlinks, and their navigation paths were analyzed to identify strategies. A graph embedding was trained on the Wikipedia network to quantify distances and hierarchical scores of articles.",
+    "algorithm_steps": [
+      "1. Participants play the Wikipedia navigation game.",
+      "2. Record the sequence of visited articles.",
+      "3. Calculate the closeness score using cosine similarity.",
+      "4. Calculate the hierarchical score based on in-degree and out-degree.",
+      "5. Classify navigation paths as hub-driven or proximity-driven.",
+      "6. Analyze the impact of demographic factors on navigation strategies."
+    ],
+    "input": "Participants' navigation paths on Wikipedia and demographic information.",
+    "output": "Classification of navigation strategies (hub-driven or proximity-driven) and performance metrics.",
+    "key_parameters": [
+      "embedding_dimension: 64",
+      "time_limit: 150 seconds (Speed-race game)",
+      "max_clicks: 7 (Least-clicks game)"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "English Wikipedia (20190820 Wiki Dump)"
+    ],
+    "metrics": [
+      "time saved (seconds)",
+      "steps saved"
+    ],
+    "baselines": [
+      "Previous navigation studies on Wikipedia"
+    ],
+    "improvement": "Hub-driven strategy improved performance in timed games, while proximity-driven strategy was less effective."
+  },
+  "concepts": [
+    "graph embedding",
+    "navigation strategies",
+    "hub-driven",
+    "proximity-driven",
+    "Wikipedia navigation",
+    "individual differences"
+  ],
+  "use_this_when": [
+    "Designing educational tools that require efficient information retrieval.",
+    "Creating user interfaces for knowledge-based applications.",
+    "Analyzing user behavior in navigation-heavy applications."
+  ],
+  "dont_use_when": [
+    "The application does not involve knowledge networks.",
+    "Real-time navigation is not a priority.",
+    "User demographics are not relevant to the navigation strategy."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Graph structure of Wikipedia articles",
+      "User navigation paths"
+    ],
+    "dependencies": [
+      "DeepWalk implementation",
+      "Data processing libraries (e.g., NumPy, Pandas)"
+    ],
+    "pseudocode_hint": "for each path in navigation_paths: calculate_hub_proximity_scores(path)",
+    "gotchas": [
+      "Ensure accurate mapping of Wikipedia articles to their hierarchical scores.",
+      "Consider demographic factors when analyzing navigation strategies.",
+      "Account for potential biases in user navigation behavior."
+    ]
+  },
+  "connects_to": [
+    "social navigation theory",
+    "information retrieval systems",
+    "user experience design"
+  ],
+  "prerequisites": [
+    "Understanding of graph theory",
+    "Familiarity with navigation algorithms",
+    "Knowledge of user behavior analysis"
+  ],
+  "limitations": [
+    "Results may not generalize beyond Wikipedia",
+    "Demographic factors may not capture all individual differences",
+    "Limited to online navigation scenarios"
+  ],
+  "open_questions": [
+    "How do different cultures influence navigation strategies?",
+    "What are the implications for AI-driven navigation systems?"
+  ]
+}

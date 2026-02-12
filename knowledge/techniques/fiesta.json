@@ -1,0 +1,82 @@
+{
+  "technique_name": "FIESTA",
+  "aliases": [],
+  "category": "fault_injection_analysis",
+  "one_liner": "FIESTA evaluates hardware circuits under random fault models to analyze their resilience against fault injection attacks.",
+  "how_it_works": "FIESTA employs a non-exhaustive approach to assess the vulnerability of hardware circuits by simulating random faults. It generates a subset of gates to be faulted based on a defined probability distribution and evaluates the circuit's response to these faults. The results yield success probability bounds, indicating the effectiveness of potential fault injection attacks on the design.",
+  "algorithm": {
+    "steps": [
+      "1. Define the circuit under test and its parameters.",
+      "2. Specify the fault model and the probability distribution of faults.",
+      "3. Generate a randomized subset of gates to be faulted based on the defined model.",
+      "4. Simulate the circuit with the injected faults.",
+      "5. Analyze the output to determine if the faults were effective.",
+      "6. Report the success probability bounds based on the analysis."
+    ],
+    "core_equation": "success_probability_bounds = (\u03bc\u2113, \u03bcu)",
+    "input_format": "A circuit design represented in a suitable format (e.g., GDSII file) and a defined probability distribution for faults.",
+    "output_format": "Success probability bounds indicating the effectiveness of fault injection attacks on the circuit."
+  },
+  "parameters": [
+    {
+      "name": "error_probability",
+      "typical_value": "\u03b1 > 0",
+      "effect": "Affects the likelihood of faults being injected."
+    },
+    {
+      "name": "fault_probability_distribution",
+      "typical_value": "user-defined",
+      "effect": "Determines how faults are distributed across the circuit."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "FIESTA is designed to evaluate larger designs in less time compared to traditional exhaustive methods."
+  },
+  "use_when": [
+    "Evaluating the security of large cryptographic hardware designs against fault injection attacks.",
+    "Needing a framework that supports various adversary models for customized resistance analysis.",
+    "Conducting pre-fabrication security assessments of hardware implementations."
+  ],
+  "avoid_when": [
+    "Working with very small circuits where exhaustive verification is feasible.",
+    "When precise fault injection techniques are required that FIESTA does not support.",
+    "If the application does not involve cryptographic hardware."
+  ],
+  "implementation_skeleton": "def fiesta_evaluation(circuit: str, fault_model: str, fault_distribution: dict) -> tuple:\n    # Step 1: Define the circuit and parameters\n    # Step 2: Specify the fault model\n    # Step 3: Generate randomized faults\n    # Step 4: Simulate circuit with faults\n    # Step 5: Analyze output\n    # Step 6: Return success probability bounds\n    return success_probability_bounds",
+  "common_mistakes": [
+    "Neglecting to define an appropriate fault model for the circuit.",
+    "Using an inadequate probability distribution that does not reflect real-world scenarios.",
+    "Failing to analyze the output correctly to determine fault effectiveness."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Allows for the evaluation of larger designs without exhaustive simulation.",
+      "Supports various adversary models for tailored security assessments.",
+      "Provides probabilistic bounds on fault injection success."
+    ],
+    "weaknesses": [
+      "Not suitable for very small circuits where exhaustive methods are feasible.",
+      "May not support precise fault injection techniques.",
+      "Limited to applications involving cryptographic hardware."
+    ],
+    "compared_to": [
+      {
+        "technique": "VERICA+",
+        "verdict": "Use FIESTA for larger designs; VERICA+ may be better for smaller circuits."
+      },
+      {
+        "technique": "IronMask+",
+        "verdict": "FIESTA is faster for larger designs, while IronMask+ may provide more detailed analysis."
+      }
+    ]
+  },
+  "connects_to": [
+    "Fault Injection Testing",
+    "Hardware Security Analysis",
+    "Cryptographic Hardware Evaluation",
+    "Adversarial Machine Learning"
+  ],
+  "maturity": "emerging"
+}

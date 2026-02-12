@@ -1,0 +1,37 @@
+{
+  "problem_name": "Clustering Analysis",
+  "description": "Clustering analysis is a technique used to group a set of objects in such a way that objects in the same group (or cluster) are more similar to each other than to those in other groups. This is often used in data analysis to identify patterns or structures within data sets.",
+  "you_have_this_if": [
+    "You have a dataset with multiple features.",
+    "You want to identify natural groupings in your data.",
+    "You are unsure of the number of clusters in advance.",
+    "You need to visualize the relationships between data points.",
+    "You are dealing with high-dimensional data."
+  ],
+  "approaches": [
+    {
+      "technique": "Hierarchical Clustering",
+      "best_for": "when you need to group individuals based on similar characteristics or analyze survey data for patterns.",
+      "paper_count": 1,
+      "max_citations": 4,
+      "key_tradeoff": "Hierarchical clustering can provide a detailed tree structure of clusters but may be computationally intensive for large datasets."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Hierarchical Clustering",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have a moderate-sized dataset and need to explore the relationships between data points."
+    }
+  ],
+  "start_here": "Start with Hierarchical Clustering if you have a dataset where you want to explore natural groupings and can afford the computational resources.",
+  "related_problems": [
+    "K-Means Clustering",
+    "DBSCAN Clustering",
+    "Gaussian Mixture Models",
+    "Dimensionality Reduction"
+  ]
+}

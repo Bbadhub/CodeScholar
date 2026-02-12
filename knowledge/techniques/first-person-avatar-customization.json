@@ -1,0 +1,78 @@
+{
+  "technique_name": "First-Person Avatar Customization",
+  "aliases": [],
+  "category": "virtual_reality",
+  "one_liner": "This technique allows users to customize their avatars from a first-person perspective to enhance embodiment and reduce biases.",
+  "how_it_works": "Users don a VR headset and use controllers to interact with their avatars directly. In first-person mode, they can grab and pull their avatar to resize it, creating a more immersive experience. This method contrasts with third-person customization, where users adjust sliders. The technique aims to improve the user's sense of embodiment and potentially reduce implicit biases through more engaging interactions.",
+  "algorithm": {
+    "steps": [
+      "1. User dons VR headset and controllers.",
+      "2. User selects avatar customization mode (first-person or third-person).",
+      "3. In first-person mode, user grabs their avatar and pulls to resize it.",
+      "4. In third-person mode, user adjusts sliders to modify avatar size.",
+      "5. User engages in a game to enhance embodiment.",
+      "6. User completes questionnaires to assess embodiment and implicit bias."
+    ],
+    "core_equation": "output = customized_avatar(avatar_parameters)",
+    "input_format": "User's interactions with the avatar (grabbing and pulling or slider adjustments), and the avatar's blend shape parameters.",
+    "output_format": "Customized avatar with modified embodiment levels and implicit bias measurements."
+  },
+  "parameters": [
+    {
+      "name": "upper_body_size",
+      "typical_value": "[0, 1]",
+      "effect": "Adjusting this parameter changes the size of the avatar's upper body."
+    },
+    {
+      "name": "lower_body_size",
+      "typical_value": "[0, 1]",
+      "effect": "Adjusting this parameter changes the size of the avatar's lower body."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on the complexity of avatar models and user interactions."
+  },
+  "use_when": [
+    "Developing VR applications focused on user representation and identity.",
+    "Creating training simulations that require high levels of user engagement.",
+    "Designing social VR platforms that aim to reduce biases."
+  ],
+  "avoid_when": [
+    "The application does not require a strong sense of presence or embodiment.",
+    "The target audience is not engaged in social interactions.",
+    "Customization complexity is not feasible for the intended user base."
+  ],
+  "implementation_skeleton": "def customize_avatar(user_input: dict) -> Avatar:\n    if user_input['mode'] == 'first-person':\n        avatar = grab_and_pull(user_input['avatar'])\n    else:\n        avatar = adjust_sliders(user_input['avatar'], user_input['slider_values'])\n    return avatar",
+  "common_mistakes": [
+    "Neglecting to test the embodiment effects of customization on different user demographics.",
+    "Overcomplicating the customization process, leading to user frustration.",
+    "Failing to provide adequate instructions for avatar customization."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Increases user engagement and immersion in VR environments.",
+      "Potentially reduces implicit biases through personalized representation.",
+      "Enhances the sense of embodiment compared to traditional methods."
+    ],
+    "weaknesses": [
+      "May require more complex user interfaces and interactions.",
+      "Not suitable for all types of VR applications.",
+      "Can lead to user fatigue if customization is overly complex."
+    ],
+    "compared_to": [
+      {
+        "technique": "Third-Person Avatar Customization",
+        "verdict": "Use first-person for higher embodiment; use third-person for simpler interactions."
+      }
+    ]
+  },
+  "connects_to": [
+    "Virtual Reality Interaction Techniques",
+    "User Experience Design in VR",
+    "Avatar Representation Studies",
+    "Implicit Bias Research"
+  ],
+  "maturity": "emerging"
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Complex Knowledge Base Question Answering",
+  "description": "This problem involves answering intricate questions that require accessing and reasoning over a large knowledge base. It often necessitates breaking down questions into smaller, manageable sub-questions to derive accurate answers.",
+  "you_have_this_if": [
+    "You are dealing with multi-part questions.",
+    "Your knowledge base is extensive and complex.",
+    "You need to improve the accuracy of your current question answering system.",
+    "You encounter frequent logical dependencies in questions.",
+    "You require a structured approach to answer generation."
+  ],
+  "approaches": [
+    {
+      "technique": "Hereditary Attentive Template-based Approach",
+      "best_for": "when you need to answer complex questions from a large knowledge base and improve accuracy.",
+      "paper_count": 1,
+      "max_citations": 26,
+      "key_tradeoff": "This approach may require more initial setup and understanding of templates but yields higher accuracy."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Hereditary Attentive Template-based Approach",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have a complex question that can be logically decomposed into sub-questions."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Hereditary Attentive Template-based Approach, as it effectively handles the complexity of the questions and improves accuracy in responses.",
+  "related_problems": [
+    "Simple Question Answering",
+    "Information Retrieval",
+    "Natural Language Understanding",
+    "Logical Reasoning in AI"
+  ]
+}

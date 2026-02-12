@@ -1,0 +1,77 @@
+{
+  "technique_name": "Agentic Workflows",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "Agentic Workflows enhance large language model reasoning through structured iterative feedback in robotic object-centered planning.",
+  "how_it_works": "Agentic Workflows integrate large language models (LLMs) with structured workflows to improve reasoning and reduce inaccuracies in outputs. The process begins with inputting a semantic map and a natural language query into the LLM. An initial response is generated, which is then evaluated and refined through a self-reflection mechanism, allowing for iterative feedback. This approach helps in achieving more accurate object identification and reduces hallucinations in the model's responses.",
+  "algorithm": {
+    "steps": [
+      "1. Input a semantic map and a natural language query to the LLM.",
+      "2. Generate an initial response listing relevant objects.",
+      "3. Apply the Self-Reflection workflow to evaluate the response based on correctness, relevance, and clarity.",
+      "4. Generate feedback and refine the initial response based on this feedback.",
+      "5. Optionally repeat the reflection and refinement steps for improved accuracy."
+    ],
+    "core_equation": "output = refined_response(initial_response, feedback)",
+    "input_format": "A semantic map in JSON format and a natural language query.",
+    "output_format": "A ranked list of relevant object identifiers from the semantic map."
+  },
+  "parameters": [
+    {
+      "name": "max_iterations",
+      "typical_value": "5",
+      "effect": "Limits the number of refinement cycles, impacting the thoroughness of the output."
+    },
+    {
+      "name": "feedback_threshold",
+      "typical_value": "0.8",
+      "effect": "Determines the minimum feedback score required to trigger further refinement."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the complexity of the input queries and the size of the semantic map."
+  },
+  "use_when": [
+    "You need to improve the accuracy of object identification in robotic systems.",
+    "Your application involves complex queries that require reasoning about object functions.",
+    "You want to mitigate hallucinations in LLM outputs for robotic tasks."
+  ],
+  "avoid_when": [
+    "The task requires real-time responses with minimal processing time.",
+    "The environment is static and does not require complex reasoning.",
+    "You have a limited computational budget that cannot support multiple LLMs."
+  ],
+  "implementation_skeleton": "def agentic_workflow(semantic_map: dict, query: str) -> list:\n    initial_response = generate_initial_response(semantic_map, query)\n    feedback = evaluate_response(initial_response)\n    refined_response = refine_response(initial_response, feedback)\n    return refined_response",
+  "common_mistakes": [
+    "Neglecting to set appropriate feedback thresholds, leading to ineffective refinements.",
+    "Failing to iterate sufficiently, resulting in suboptimal outputs.",
+    "Overlooking the importance of the semantic map's quality in generating accurate responses."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves reasoning capabilities of LLMs in complex tasks.",
+      "Reduces hallucinations in model outputs.",
+      "Facilitates iterative learning and refinement."
+    ],
+    "weaknesses": [
+      "May require significant computational resources.",
+      "Not suitable for real-time applications.",
+      "Complexity in implementation may deter some users."
+    ],
+    "compared_to": [
+      {
+        "technique": "Single-step LLM prompt approach",
+        "verdict": "Use Agentic Workflows for improved accuracy and reasoning in complex scenarios."
+      }
+    ]
+  },
+  "connects_to": [
+    "Reinforcement Learning",
+    "Self-Reflection Mechanisms",
+    "Multi-Agent Systems",
+    "Natural Language Processing"
+  ],
+  "maturity": "emerging"
+}

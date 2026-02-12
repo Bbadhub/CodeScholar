@@ -1,0 +1,37 @@
+{
+  "problem_name": "Binary Image Classification",
+  "description": "Binary image classification involves categorizing images into one of two classes. This is commonly used in applications such as medical imaging, where distinguishing between healthy and unhealthy images is crucial.",
+  "you_have_this_if": [
+    "You are working with images that need to be classified into two categories.",
+    "You have a dataset of labeled images for training.",
+    "You require high accuracy in your classification results.",
+    "You are dealing with a time-sensitive project where training time is a concern.",
+    "You are considering using pre-trained models to improve performance."
+  ],
+  "approaches": [
+    {
+      "technique": "DenseNet",
+      "best_for": "when you need to classify medical images for pneumonia detection or similar tasks.",
+      "paper_count": 1,
+      "max_citations": 11,
+      "key_tradeoff": "DenseNet provides high accuracy but may require more computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "DenseNet",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have access to a good dataset and need to achieve high accuracy quickly."
+    }
+  ],
+  "start_here": "Start with DenseNet if you are looking for a balance between accuracy and implementation complexity, especially in medical image classification tasks.",
+  "related_problems": [
+    "Multi-class image classification",
+    "Object detection in images",
+    "Image segmentation",
+    "Image retrieval systems"
+  ]
+}

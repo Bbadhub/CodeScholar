@@ -1,0 +1,79 @@
+{
+  "technique_name": "Hierarchical Clustering",
+  "aliases": [
+    "Agglomerative Clustering"
+  ],
+  "category": "clustering_algorithm",
+  "one_liner": "Hierarchical clustering groups data points into a tree of clusters based on their similarities.",
+  "how_it_works": "Hierarchical clustering starts with each data point as its own cluster and iteratively merges the closest clusters based on a similarity measure. This process continues until all data points are combined into a single cluster or until a specified number of clusters is reached. The result is a dendrogram that illustrates the arrangement of clusters and their relationships.",
+  "algorithm": {
+    "steps": [
+      "Start with each observation as a separate cluster.",
+      "Calculate the similarity between all clusters.",
+      "Identify the two most similar clusters.",
+      "Merge these clusters into a new cluster.",
+      "Repeat the process until all observations are in one cluster."
+    ],
+    "core_equation": "similarity = distance(clusterA, clusterB)",
+    "input_format": "A dataset containing individual health literacy responses from the HLQ.",
+    "output_format": "A hierarchical structure of clusters representing different health literacy profiles."
+  },
+  "parameters": [
+    {
+      "name": "similarity_threshold",
+      "typical_value": "0.5",
+      "effect": "Adjusting this value changes the sensitivity of cluster merging."
+    },
+    {
+      "name": "max_clusters",
+      "typical_value": "10",
+      "effect": "Limits the number of clusters formed, affecting granularity."
+    }
+  ],
+  "complexity": {
+    "time": "O(n\u00b2)",
+    "space": "O(n)",
+    "practical_note": "While computationally intensive for large datasets, it provides a comprehensive view of data relationships."
+  },
+  "use_when": [
+    "You need to group individuals based on similar characteristics.",
+    "You want to analyze survey data for patterns.",
+    "You are working on public health interventions."
+  ],
+  "avoid_when": [
+    "The dataset is too small for meaningful clustering.",
+    "You require real-time clustering updates.",
+    "Data is highly dimensional without proper preprocessing."
+  ],
+  "implementation_skeleton": "def hierarchical_clustering(data: List[List[float]], similarity_threshold: float, max_clusters: int) -> List[List[int]]:\n    clusters = [[i] for i in range(len(data))]\n    while len(clusters) > 1:\n        # Calculate similarities\n        # Find two closest clusters\n        # Merge clusters\n        pass\n    return clusters",
+  "common_mistakes": [
+    "Not normalizing data before clustering.",
+    "Choosing an inappropriate similarity measure.",
+    "Failing to visualize the dendrogram for interpretation."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Produces a comprehensive hierarchical structure.",
+      "No need to specify the number of clusters in advance.",
+      "Can reveal nested clusters."
+    ],
+    "weaknesses": [
+      "Computationally expensive for large datasets.",
+      "Sensitive to noise and outliers.",
+      "Difficult to interpret results without visualization."
+    ],
+    "compared_to": [
+      {
+        "technique": "K-means clustering",
+        "verdict": "Use K-means for larger datasets with a known number of clusters; use hierarchical clustering for detailed relationships."
+      }
+    ]
+  },
+  "connects_to": [
+    "K-means Clustering",
+    "DBSCAN",
+    "Principal Component Analysis",
+    "Agglomerative Clustering"
+  ],
+  "maturity": "proven"
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Memory Leak Detection",
+  "description": "Memory leak detection is the process of identifying areas in a program where memory is allocated but not properly released, leading to wasted resources and potential application crashes. This issue is particularly critical in languages like C and C++ where manual memory management is required.",
+  "you_have_this_if": [
+    "Your application is consuming more memory over time without releasing it.",
+    "You experience performance degradation or crashes after prolonged use.",
+    "You are using tools that report memory usage but do not pinpoint leaks.",
+    "You have a large codebase with complex memory management.",
+    "You are receiving reports of unexpected behavior related to memory."
+  ],
+  "approaches": [
+    {
+      "technique": "Hybrid Memory Leak Detection",
+      "best_for": "when you need to detect memory leaks in large C/C++ codebases and improve the accuracy of existing tools.",
+      "paper_count": 1,
+      "max_citations": 5,
+      "key_tradeoff": "This technique offers improved accuracy but may require more resources compared to simpler methods."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Hybrid Memory Leak Detection",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You are working on a large C/C++ project with critical memory management needs."
+    }
+  ],
+  "start_here": "Start with Hybrid Memory Leak Detection as it provides a balanced approach for accuracy and resource management in complex codebases.",
+  "related_problems": [
+    "Memory management optimization",
+    "Resource leak detection",
+    "Performance profiling",
+    "Garbage collection tuning"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "technique_name": "Sleep Extension Protocol",
+  "aliases": [],
+  "category": "health_intervention",
+  "one_liner": "A method to enhance physical and cognitive performance by extending sleep duration.",
+  "how_it_works": "The Sleep Extension Protocol involves adjusting bedtimes to increase total sleep time for participants. By comparing performance metrics under normal sleep and extended sleep conditions, the protocol assesses the impact of additional sleep on physical and cognitive tasks. This method is particularly useful for physically active individuals looking to optimize their performance through better sleep management.",
+  "algorithm": {
+    "steps": [
+      "1. Recruit participants and ensure they meet inclusion criteria.",
+      "2. Randomly assign participants to normal sleep and sleep extension conditions with a washout period.",
+      "3. Monitor sleep using wrist actigraphy to measure total sleep time.",
+      "4. Conduct performance assessments at specified times (8 PM, 8 AM, 4 PM).",
+      "5. Compare performance metrics between conditions."
+    ],
+    "core_equation": "output = performance metrics under sleep extension - performance metrics under normal sleep",
+    "input_format": "Participant sleep data (wrist actigraphy), performance test results.",
+    "output_format": "Performance metrics (e.g., shuttle-run distance, reaction times) under different sleep conditions."
+  },
+  "parameters": [
+    {
+      "name": "bedtime",
+      "typical_value": "21:00 (sleep extension), 22:30 (normal sleep)",
+      "effect": "Earlier bedtime increases total sleep time."
+    },
+    {
+      "name": "wake time",
+      "typical_value": "07:00 (both conditions)",
+      "effect": "Consistent wake time maintains daily schedule."
+    },
+    {
+      "name": "total sleep time",
+      "typical_value": "531.3 \u00b1 56.8 min (extension), 476.5 \u00b1 64.2 min (normal)",
+      "effect": "Increased total sleep time correlates with improved performance."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) for performance assessments",
+    "space": "O(1) for sleep monitoring data",
+    "practical_note": "The protocol is straightforward but requires careful monitoring of sleep and performance metrics."
+  },
+  "use_when": [
+    "Designing interventions to enhance athletic performance through sleep management.",
+    "Developing health applications focused on sleep tracking and optimization.",
+    "Creating training programs for physically active individuals aiming to improve performance."
+  ],
+  "avoid_when": [
+    "When working with individuals who have chronic sleep disorders.",
+    "In scenarios where sleep duration cannot be manipulated due to lifestyle constraints.",
+    "For populations that do not engage in regular physical activity."
+  ],
+  "implementation_skeleton": "def sleep_extension_protocol(participants: List[Participant]) -> Dict[str, Any]:\n    for participant in participants:\n        assign_to_conditions(participant)\n        monitor_sleep(participant)\n        performance_metrics = assess_performance(participant)\n    return performance_metrics",
+  "common_mistakes": [
+    "Failing to adequately monitor sleep duration and quality.",
+    "Not accounting for individual differences in sleep needs.",
+    "Overlooking the importance of a washout period between conditions."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Can lead to significant improvements in physical and cognitive performance.",
+      "Relatively simple to implement with minimal equipment.",
+      "Applicable to a wide range of physically active individuals."
+    ],
+    "weaknesses": [
+      "Not suitable for individuals with chronic sleep issues.",
+      "Requires participants to adjust their sleep schedules, which may not be feasible for everyone.",
+      "Effectiveness may vary based on individual sleep needs."
+    ],
+    "compared_to": [
+      {
+        "technique": "Cognitive Behavioral Therapy for Insomnia",
+        "verdict": "Use CBT-I for chronic sleep issues; use Sleep Extension Protocol for performance enhancement."
+      }
+    ]
+  },
+  "connects_to": [
+    "Sleep Hygiene Practices",
+    "Cognitive Behavioral Therapy for Insomnia",
+    "Sleep Tracking Technologies",
+    "Physical Performance Training Programs"
+  ],
+  "maturity": "emerging"
+}

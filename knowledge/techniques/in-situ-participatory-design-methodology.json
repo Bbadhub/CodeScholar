@@ -1,0 +1,87 @@
+{
+  "technique_name": "In-situ Participatory Design Methodology",
+  "aliases": [
+    "Participatory Design",
+    "Co-design Methodology"
+  ],
+  "category": "design_methodology",
+  "one_liner": "A collaborative approach to design that involves stakeholders directly in the development process to ensure the final product meets their needs.",
+  "how_it_works": "This methodology consists of three main phases: observation and inspiration, in-situ co-design through prototyping, and longitudinal evaluation. Initially, researchers observe and interview users to gather insights about their needs. Then, low-fidelity prototypes are developed and refined through collaborative sessions with stakeholders, allowing for iterative feedback. Finally, the prototypes are deployed in real-world settings to evaluate their effectiveness and gather further user feedback for refinement.",
+  "algorithm": {
+    "steps": [
+      "1. Conduct initial observations and interviews to understand user needs.",
+      "2. Develop a low-fidelity prototype based on initial insights.",
+      "3. Engage stakeholders in co-design sessions to define functionalities and interactions.",
+      "4. Iterate on the prototype based on user feedback.",
+      "5. Deploy the prototype in a real-world setting for evaluation.",
+      "6. Collect user feedback and performance data during the deployment.",
+      "7. Refine the design based on longitudinal evaluation results."
+    ],
+    "core_equation": "output = refined_design(user_feedback, performance_data)",
+    "input_format": "User requirements, environmental context, low-fidelity prototypes.",
+    "output_format": "Refined assistive robot design and functionality tailored to user needs."
+  },
+  "parameters": [
+    {
+      "name": "iteration_count",
+      "typical_value": "variable (depends on user feedback)",
+      "effect": "More iterations can lead to better alignment with user needs."
+    },
+    {
+      "name": "deployment_duration",
+      "typical_value": "2 months",
+      "effect": "Longer deployment allows for more comprehensive feedback."
+    },
+    {
+      "name": "evaluation_duration",
+      "typical_value": "10 months total (8 months design + 2 months evaluation)",
+      "effect": "Extended evaluation provides deeper insights into user adoption and satisfaction."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "The methodology is resource-intensive due to the need for stakeholder involvement and iterative processes."
+  },
+  "use_when": [
+    "Designing assistive robots for healthcare settings.",
+    "Engaging with stakeholders who have limited experience with robotic technologies.",
+    "Seeking to align robotic functionalities with real-world user needs."
+  ],
+  "avoid_when": [
+    "The user group has extensive prior experience with robotic systems.",
+    "Rapid prototyping is required without stakeholder involvement.",
+    "The project timeline does not allow for iterative feedback."
+  ],
+  "implementation_skeleton": "def participatory_design(user_needs: List[str], context: str) -> str:\n    prototype = develop_prototype(user_needs)\n    feedback = []\n    for stakeholder in engage_stakeholders():\n        feedback.append(co_design_session(prototype, stakeholder))\n    refined_design = iterate_prototype(prototype, feedback)\n    deploy(refined_design)\n    return evaluate_design(refined_design)",
+  "common_mistakes": [
+    "Neglecting to involve all relevant stakeholders in the design process.",
+    "Rushing through the prototyping phase without adequate feedback.",
+    "Failing to adapt the design based on user feedback during evaluation."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Ensures the final product is closely aligned with user needs.",
+      "Encourages stakeholder buy-in and satisfaction.",
+      "Facilitates the discovery of diverse user perspectives."
+    ],
+    "weaknesses": [
+      "Can be time-consuming and resource-intensive.",
+      "May lead to scope creep if not managed properly.",
+      "Requires skilled facilitation to manage stakeholder interactions."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Design Methodologies",
+        "verdict": "Use participatory design when user involvement is critical for success."
+      }
+    ]
+  },
+  "connects_to": [
+    "User-Centered Design",
+    "Agile Development",
+    "Design Thinking",
+    "Co-Creation"
+  ],
+  "maturity": "emerging"
+}

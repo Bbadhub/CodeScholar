@@ -1,0 +1,37 @@
+{
+  "problem_name": "Package Selection",
+  "description": "Package selection involves choosing the right software packages or libraries that best meet the requirements of a project. This can be challenging due to the vast number of available options and the need for relevant, high-quality recommendations.",
+  "you_have_this_if": [
+    "You are overwhelmed by the number of available packages.",
+    "You receive irrelevant results from traditional search engines.",
+    "You need to recommend packages based on specific developer queries.",
+    "You want to improve the explainability of your package recommendations.",
+    "You are facing difficulties in evaluating the quality of packages."
+  ],
+  "approaches": [
+    {
+      "technique": "Retrieval Augmented Generation (RAG)",
+      "best_for": "When you need to recommend JavaScript packages based on developer queries and improve explainability.",
+      "paper_count": 1,
+      "max_citations": 4,
+      "key_tradeoff": "While RAG improves relevance and explainability, it may require more resources than traditional methods."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Retrieval Augmented Generation (RAG)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need accurate package recommendations and are dealing with complex queries."
+    }
+  ],
+  "start_here": "Start with Retrieval Augmented Generation (RAG) as it provides a balance of accuracy and explainability for package recommendations.",
+  "related_problems": [
+    "Dependency Management",
+    "Library Compatibility",
+    "Version Control",
+    "Search Engine Optimization for Software Packages"
+  ]
+}

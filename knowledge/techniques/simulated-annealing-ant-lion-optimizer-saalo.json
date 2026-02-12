@@ -1,0 +1,93 @@
+{
+  "technique_name": "Simulated Annealing Ant Lion Optimizer (SAALO)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "SAALO combines Ant Lion Optimization with simulated annealing to effectively resolve integer ambiguities in GNSS applications.",
+  "how_it_works": "SAALO enhances the Ant Lion Optimization strategy by incorporating simulated annealing to improve convergence and escape local optima. It initializes a population of ants and ant lions, where ants wander within the traps of their respective ant lions. The algorithm iteratively updates the positions of ants based on their wandering and the best ant lion found. Simulated annealing is then applied to decide whether to accept new positions, allowing for a more robust search in complex solution spaces.",
+  "algorithm": {
+    "steps": [
+      "Initialize ants and ant lions randomly in the solution space.",
+      "Calculate the trap size for each ant lion based on the current iteration.",
+      "Ants wander randomly within the trap of their chosen ant lion.",
+      "Update the position of ants based on their random wandering and the best ant lion.",
+      "Select the best ant lion as the elite solution.",
+      "Apply simulated annealing to determine if the new ant lion position should be accepted."
+    ],
+    "core_equation": "output = resolved integer ambiguities based on ant positions and best ant lion",
+    "input_format": "Carrier phase observations from GNSS systems (e.g., arrays of floating-point numbers)",
+    "output_format": "Resolved integer ambiguities for high-precision positioning (e.g., integers)"
+  },
+  "parameters": [
+    {
+      "name": "max_iterations",
+      "typical_value": "1000",
+      "effect": "Increases the number of iterations for better convergence."
+    },
+    {
+      "name": "population_size",
+      "typical_value": "50",
+      "effect": "Larger populations may explore the solution space more thoroughly."
+    },
+    {
+      "name": "initial_temperature",
+      "typical_value": "100",
+      "effect": "Higher temperatures allow for more exploration initially."
+    },
+    {
+      "name": "cooling_rate",
+      "typical_value": "0.95",
+      "effect": "Affects the rate at which the temperature decreases, influencing convergence."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated, but generally polynomial in relation to population size and iterations.",
+    "space": "Not explicitly stated, but depends on the population size and dimensionality of the problem.",
+    "practical_note": "Performance may vary based on the complexity of the problem and the parameter settings."
+  },
+  "use_when": [
+    "You need to resolve integer ambiguities in GNSS applications.",
+    "You require high-precision positioning with a success rate above 98%.",
+    "You are dealing with high-dimensional optimization problems."
+  ],
+  "avoid_when": [
+    "The problem space is small and can be solved with simpler methods.",
+    "Real-time processing is critical and cannot accommodate the algorithm's complexity.",
+    "You need guaranteed optimal solutions without the risk of local optima."
+  ],
+  "implementation_skeleton": "def saalo(input_data: List[float]) -> List[int]:\n    initialize_ants_and_lions()\n    for iteration in range(max_iterations):\n        calculate_trap_sizes()\n        for ant in ants:\n            wander_within_trap(ant)\n            update_position(ant)\n        best_lion = select_best_lion()\n        if accept_new_position(best_lion):\n            update_lion_position(best_lion)\n    return resolved_ambiguities",
+  "common_mistakes": [
+    "Not tuning the cooling rate properly, leading to poor convergence.",
+    "Using too small a population size, which may result in suboptimal solutions.",
+    "Failing to properly initialize the positions of ants and lions, affecting the search process."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High success rate (>98%) for resolving integer ambiguities.",
+      "Effective in high-dimensional optimization problems.",
+      "Combines exploration and exploitation through simulated annealing."
+    ],
+    "weaknesses": [
+      "May not be suitable for small problem spaces.",
+      "Complexity may hinder real-time applications.",
+      "Risk of getting trapped in local optima without careful parameter tuning."
+    ],
+    "compared_to": [
+      {
+        "technique": "Ant Lion Optimization (ALO)",
+        "verdict": "SAALO is preferred for more complex problems requiring better convergence."
+      },
+      {
+        "technique": "LAMBDA algorithm",
+        "verdict": "SAALO offers a higher success rate in integer ambiguity resolution."
+      }
+    ]
+  },
+  "connects_to": [
+    "Ant Lion Optimization",
+    "Simulated Annealing",
+    "Genetic Algorithms",
+    "Particle Swarm Optimization",
+    "Integer Programming"
+  ],
+  "maturity": "emerging"
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Regression Analysis for Rental Price Prediction",
+  "description": "This problem involves predicting rental prices based on various property features such as location, size, and amenities. Accurate predictions can help tenants find suitable housing and assist landlords in setting competitive prices.",
+  "you_have_this_if": [
+    "You are analyzing rental price trends in a specific area.",
+    "You have access to data on property features and historical rental prices.",
+    "You need to provide insights for potential tenants or landlords.",
+    "You are facing challenges in accurately pricing rental properties.",
+    "You want to leverage machine learning techniques for better predictions."
+  ],
+  "approaches": [
+    {
+      "technique": "XGBoost",
+      "best_for": "when you need to predict rental prices based on property features.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "XGBoost provides high accuracy but may require careful tuning of hyperparameters."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "XGBoost",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have a well-defined dataset with multiple features influencing rental prices."
+    }
+  ],
+  "start_here": "Start with XGBoost as it offers a robust framework for handling complex datasets and can yield high accuracy in rental price predictions.",
+  "related_problems": [
+    "Time series forecasting for rental prices",
+    "Classification of rental property types",
+    "Market trend analysis for real estate",
+    "Price elasticity analysis in rental markets"
+  ]
+}

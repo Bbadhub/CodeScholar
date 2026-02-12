@@ -1,0 +1,52 @@
+{
+  "problem_name": "Fraud Detection",
+  "description": "Fraud detection involves identifying deceptive activities, such as fraudulent transactions, within a dataset. This problem is critical for financial institutions and e-commerce platforms to prevent losses and maintain trust.",
+  "you_have_this_if": [
+    "You notice an unusual pattern in transaction data.",
+    "There are spikes in transaction volume that seem suspicious.",
+    "Users report unauthorized transactions on their accounts.",
+    "You have a high rate of chargebacks or refunds.",
+    "Your analytics show discrepancies in user behavior."
+  ],
+  "approaches": [
+    {
+      "technique": "Temporal Graph Network (TGN)",
+      "best_for": "when you need to detect fraudulent transactions in a dynamic environment and leverage relationships between entities.",
+      "paper_count": 1,
+      "max_citations": 4,
+      "key_tradeoff": "Offers strong relational insights but may require complex data preprocessing."
+    },
+    {
+      "technique": "Multi-Modal Behavioral Transformer (MMBT)",
+      "best_for": "when you need real-time fraud detection in e-commerce using detailed user behavior data.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Provides low-latency detection but may require extensive user data and monitoring."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Temporal Graph Network (TGN)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have access to time-stamped transaction data and need to analyze relationships between entities."
+    },
+    {
+      "technique": "Multi-Modal Behavioral Transformer (MMBT)",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "hard",
+      "best_when": "You require a real-time system and have detailed user behavior data available."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Temporal Graph Network (TGN) due to its ability to analyze dynamic relationships in transaction data, which is crucial for effective fraud detection.",
+  "related_problems": [
+    "Anomaly Detection",
+    "Credit Card Fraud Detection",
+    "Identity Theft Prevention",
+    "Transaction Monitoring"
+  ]
+}

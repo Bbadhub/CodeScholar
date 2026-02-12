@@ -1,0 +1,86 @@
+{
+  "technique_name": "Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs)",
+  "aliases": [
+    "GANs",
+    "VAEs"
+  ],
+  "category": "generative_model",
+  "one_liner": "Generative models that create new data instances similar to a given dataset.",
+  "how_it_works": "GANs consist of two neural networks, a generator and a discriminator, that compete against each other to produce realistic data. VAEs, on the other hand, encode input data into a latent space and then decode it back to generate new instances. Together, they can be used to simulate complex scenarios, such as wildfire spread, by learning from multimodal geospatial data.",
+  "algorithm": {
+    "steps": [
+      "1. Collect multimodal geospatial data (satellite imagery, meteorological data, etc.).",
+      "2. Preprocess the data to ensure compatibility and quality.",
+      "3. Train generative AI models (GANs, VAEs) on the preprocessed data.",
+      "4. Generate realistic wildfire scenarios using the trained models.",
+      "5. Validate the predictions against historical wildfire data.",
+      "6. Implement real-time updates to the model as new data becomes available."
+    ],
+    "core_equation": "output = generator(latent_vector)",
+    "input_format": "Multimodal geospatial data including 2D GIS data, 3D models, meteorological data, and historical fire data.",
+    "output_format": "Predicted wildfire spread scenarios in both 2D and 3D formats."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "Higher values may lead to unstable training, while lower values may slow convergence."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Larger batch sizes can improve training stability but require more memory."
+    },
+    {
+      "name": "number_of_epochs",
+      "typical_value": "100",
+      "effect": "More epochs can improve model performance but may lead to overfitting."
+    }
+  ],
+  "complexity": {
+    "time": "O(n^2) for training depending on model architecture and data size",
+    "space": "O(n) for storing model parameters and training data",
+    "practical_note": "Training GANs and VAEs can be resource-intensive, requiring significant computational power."
+  },
+  "use_when": [
+    "You need to predict wildfire spread in real-time using diverse data sources.",
+    "Existing models fail to capture the complexity of wildfire dynamics.",
+    "You require high-resolution predictions for emergency response planning."
+  ],
+  "avoid_when": [
+    "Data availability is extremely limited or of poor quality.",
+    "The computational resources are insufficient for training large generative models.",
+    "You need immediate predictions without the time for model training."
+  ],
+  "implementation_skeleton": "def train_generative_model(data: List[DataType]) -> ModelType:\n    preprocess(data)\n    model = initialize_model()\n    for epoch in range(num_epochs):\n        for batch in get_batches(data, batch_size):\n            train_on_batch(model, batch)\n    return model",
+  "common_mistakes": [
+    "Neglecting data preprocessing, which can lead to poor model performance.",
+    "Overfitting the model by training for too many epochs without validation.",
+    "Ignoring the balance between generator and discriminator training in GANs."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Ability to generate high-quality, realistic data.",
+      "Flexibility to model complex distributions.",
+      "Improved predictive accuracy over traditional models."
+    ],
+    "weaknesses": [
+      "Training can be computationally expensive and time-consuming.",
+      "Sensitive to hyperparameter tuning.",
+      "May require large amounts of data for effective training."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Physics-Based Models",
+        "verdict": "Use GANs/VAEs when data is rich and complex; use traditional models for simpler scenarios."
+      }
+    ]
+  },
+  "connects_to": [
+    "Convolutional Neural Networks (CNNs)",
+    "Recurrent Neural Networks (RNNs)",
+    "Autoencoders",
+    "Reinforcement Learning"
+  ],
+  "maturity": "proven (widely used in production)"
+}

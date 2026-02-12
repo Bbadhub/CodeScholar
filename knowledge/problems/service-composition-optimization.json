@@ -1,0 +1,37 @@
+{
+  "problem_name": "Service Composition Optimization",
+  "description": "Service composition optimization involves selecting and arranging services to achieve desired outcomes while considering various constraints and quality attributes. This problem is particularly relevant in environments like cloud manufacturing, where service states can be uncertain and dynamic.",
+  "you_have_this_if": [
+    "You are dealing with multiple services that need to be combined for a specific task.",
+    "You notice performance issues due to suboptimal service arrangements.",
+    "You have varying quality of service (QoS) attributes for different services.",
+    "You require flexibility in your service composition to adapt to changing conditions.",
+    "You are working in a cloud environment with a large repository of services."
+  ],
+  "approaches": [
+    {
+      "technique": "Whale-Goshawk Optimization Algorithm (WGO)",
+      "best_for": "when you need to optimize service composition in a cloud manufacturing environment with uncertain service states.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "WGO offers flexibility and adaptability but may require more computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Whale-Goshawk Optimization Algorithm (WGO)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to optimize service composition with dynamic service conditions and varying QoS attributes."
+    }
+  ],
+  "start_here": "Start with the Whale-Goshawk Optimization Algorithm (WGO) as it is specifically designed for optimizing service compositions in uncertain environments, providing a balance of flexibility and accuracy.",
+  "related_problems": [
+    "Service Selection Optimization",
+    "Dynamic Service Composition",
+    "Quality of Service (QoS) Management",
+    "Cloud Resource Allocation"
+  ]
+}

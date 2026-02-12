@@ -1,0 +1,89 @@
+{
+  "technique_name": "RASCAL (Reconstruction by AnalogS of ClimatologicAL time series)",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "RASCAL reconstructs climatological time series by leveraging analog days with similar atmospheric conditions.",
+  "how_it_works": "RASCAL identifies historical days that share similar large-scale atmospheric conditions to the target day. It preprocesses observational and reanalysis data, selects relevant predictor variables, and applies Principal Component Analysis (PCA) to reduce dimensionality. By finding and averaging the most relevant analog days, it reconstructs the target climatological time series, potentially applying bias reduction techniques for improved accuracy.",
+  "algorithm": {
+    "steps": [
+      "1. Preprocess observational and reanalysis data.",
+      "2. Select predictor variables based on atmospheric dynamics.",
+      "3. Perform PCA on the predictor field to obtain principal components.",
+      "4. Identify N historical days with similar predictors to the target day.",
+      "5. Use weighted averaging of the analogs to reconstruct the target day.",
+      "6. Apply bias reduction techniques if necessary.",
+      "7. Evaluate the reconstruction performance using skill metrics."
+    ],
+    "core_equation": "output = weighted_average(analog_days)",
+    "input_format": "Homogeneous time series of observational data and reanalysis dataset covering the reconstruction period.",
+    "output_format": "Reconstructed climatological time series with statistical properties resembling observations."
+  },
+  "parameters": [
+    {
+      "name": "pool_size",
+      "typical_value": "10",
+      "effect": "Increasing this value may improve reconstruction accuracy by providing more analogs."
+    },
+    {
+      "name": "vw_size",
+      "typical_value": "1",
+      "effect": "Excluding more days may reduce noise but could also limit the analog pool."
+    },
+    {
+      "name": "N",
+      "typical_value": "5",
+      "effect": "More principal components can capture more variance but may lead to overfitting."
+    },
+    {
+      "name": "scaling",
+      "typical_value": "0-2",
+      "effect": "Different scaling options can affect the PCA results and subsequent analog selection."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the density of input data and the number of analogs considered."
+  },
+  "use_when": [
+    "You need to reconstruct missing climate data in regions with limited observations.",
+    "You are working on climate variability analyses in mountainous or urbanized areas.",
+    "You want to extend short-term climate forecasts using historical data."
+  ],
+  "avoid_when": [
+    "You have a dense network of reliable in situ observations.",
+    "You require real-time weather predictions.",
+    "You are working in regions with significant land use changes affecting data homogeneity."
+  ],
+  "implementation_skeleton": "def rascal_reconstruction(observational_data: np.ndarray, reanalysis_data: np.ndarray, pool_size: int, vw_size: int, N: int, scaling: int) -> np.ndarray:\n    # Step 1: Preprocess data\n    # Step 2: Select predictor variables\n    # Step 3: Perform PCA\n    # Step 4: Identify analog days\n    # Step 5: Weighted averaging\n    # Step 6: Apply bias reduction\n    # Step 7: Evaluate performance\n    return reconstructed_series",
+  "common_mistakes": [
+    "Neglecting to preprocess data adequately, leading to poor analog selection.",
+    "Choosing an inappropriate pool size that either overfits or underfits the data.",
+    "Failing to evaluate the reconstruction performance, resulting in unvalidated results."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively reconstructs missing climate data in sparse regions.",
+      "Utilizes historical data to improve short-term forecasts.",
+      "Combines analog methods with PCA for better accuracy."
+    ],
+    "weaknesses": [
+      "Performance can degrade in areas with significant land use changes.",
+      "Not suitable for real-time predictions.",
+      "Requires careful selection of parameters for optimal results."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional interpolation methods",
+        "verdict": "RASCAL is preferable when historical analogs provide better context for reconstruction."
+      }
+    ]
+  },
+  "connects_to": [
+    "Principal Component Analysis (PCA)",
+    "Time Series Analysis",
+    "Analog Methods in Meteorology",
+    "Statistical Downscaling Techniques"
+  ],
+  "maturity": "emerging"
+}

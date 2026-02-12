@@ -1,0 +1,86 @@
+{
+  "technique_name": "Deep Learning-based Power Analysis",
+  "aliases": [
+    "DPA with Deep Learning",
+    "Deep Learning Power Analysis"
+  ],
+  "category": "security_analysis",
+  "one_liner": "This technique uses deep learning to analyze power consumption data to infer secret keys from cryptographic operations.",
+  "how_it_works": "Deep Learning-based Power Analysis involves training models to recognize patterns in power consumption data that correlate with specific cryptographic operations. By collecting power traces during these operations, the data is preprocessed to extract relevant features. The model is then trained to classify these patterns, allowing it to infer secret keys from new power consumption data without direct access to the encrypted information.",
+  "algorithm": {
+    "steps": [
+      "Collect power consumption data during cryptographic operations.",
+      "Preprocess the data to extract relevant features.",
+      "Split the data into training and testing sets.",
+      "Train a deep learning model on the training set to classify power consumption patterns.",
+      "Evaluate the model's performance on the testing set.",
+      "Use the trained model to infer secret keys from new power consumption data."
+    ],
+    "core_equation": "output = model.predict(power_traces)",
+    "input_format": "Power consumption traces from microcontroller operations during cryptographic processes (e.g., time series data).",
+    "output_format": "Inferred secret keys or information about cryptographic operations."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A higher learning rate may speed up training but can lead to instability."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Larger batch sizes can improve training speed but may require more memory."
+    },
+    {
+      "name": "num_epochs",
+      "typical_value": "50",
+      "effect": "More epochs can improve accuracy but may lead to overfitting."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated, but generally O(n) for training where n is the number of training samples.",
+    "space": "Depends on the model architecture and size of the dataset.",
+    "practical_note": "Performance can vary based on the complexity of the model and the quality of the power traces."
+  },
+  "use_when": [
+    "You need to assess the security of cryptographic implementations in microcontrollers.",
+    "You are developing countermeasures against advanced side-channel attacks.",
+    "You want to understand vulnerabilities in power consumption patterns."
+  ],
+  "avoid_when": [
+    "The system does not involve cryptographic operations.",
+    "You are working with non-embedded systems where power analysis is not applicable.",
+    "You require real-time security measures that cannot tolerate processing delays."
+  ],
+  "implementation_skeleton": "def train_model(power_traces: List[float]) -> Model:\n    # Preprocess data\n    features = preprocess(power_traces)\n    # Split data\n    train_set, test_set = split_data(features)\n    # Initialize model\n    model = DeepLearningModel()\n    # Train model\n    model.fit(train_set)\n    return model\n\n\ndef infer_keys(model: Model, new_traces: List[float]) -> List[SecretKey]:\n    return model.predict(new_traces)",
+  "common_mistakes": [
+    "Neglecting to preprocess power traces properly, leading to poor model performance.",
+    "Using an inappropriate model architecture for the complexity of the data.",
+    "Not splitting the dataset correctly, which can lead to overfitting."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy in inferring secret keys (up to 95%).",
+      "Ability to learn complex patterns in data.",
+      "Improves upon traditional power analysis methods by 20%."
+    ],
+    "weaknesses": [
+      "Requires significant computational resources for training.",
+      "Performance heavily depends on the quality of the power traces.",
+      "May not be suitable for real-time applications due to processing delays."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional SPA and DPA techniques",
+        "verdict": "Use deep learning when you need higher accuracy and can afford computational overhead."
+      }
+    ]
+  },
+  "connects_to": [
+    "Side-Channel Analysis",
+    "Cryptographic Security",
+    "Machine Learning for Security",
+    "Embedded Systems Security"
+  ],
+  "maturity": "emerging"
+}

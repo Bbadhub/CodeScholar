@@ -1,0 +1,37 @@
+{
+  "problem_name": "Feature Selection for Intrusion Detection Systems",
+  "description": "Feature selection for intrusion detection systems involves identifying the most relevant features from a dataset to improve the performance of the system. This process is crucial for enhancing detection accuracy while minimizing computational costs, especially when dealing with large datasets.",
+  "you_have_this_if": [
+    "Your intrusion detection system is underperforming.",
+    "You are working with a large volume of network traffic data.",
+    "You notice high computational costs during feature processing.",
+    "You want to reduce the number of features without losing significant information.",
+    "You are looking for a method to balance accuracy and efficiency."
+  ],
+  "approaches": [
+    {
+      "technique": "2P-FSID",
+      "best_for": "when you need to improve the performance of an existing intrusion detection system while managing large datasets.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This approach balances feature relevance with computational efficiency."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "2P-FSID",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have a large dataset and need to efficiently select features to enhance the performance of your intrusion detection system."
+    }
+  ],
+  "start_here": "Start with the 2P-FSID technique as it is specifically designed for improving performance in intrusion detection systems while handling large datasets efficiently.",
+  "related_problems": [
+    "Feature selection for machine learning models",
+    "Anomaly detection in network traffic",
+    "Data preprocessing for cybersecurity applications",
+    "Dimensionality reduction techniques"
+  ]
+}

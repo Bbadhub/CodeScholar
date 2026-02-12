@@ -1,0 +1,37 @@
+{
+  "problem_name": "Optimal Experimental Design in Spectroscopy",
+  "description": "Optimal experimental design in spectroscopy involves determining the best measurement conditions to obtain the most informative data from spectroscopic experiments. This is crucial for improving the efficiency and accuracy of material characterization processes.",
+  "you_have_this_if": [
+    "You are conducting spectroscopic experiments.",
+    "You need to optimize measurement conditions.",
+    "You want to automate data acquisition.",
+    "You have access to a standard spectral database.",
+    "You are facing challenges in data interpretation due to suboptimal experimental setups."
+  ],
+  "approaches": [
+    {
+      "technique": "Bayesian experimental design for spectroscopy",
+      "best_for": "When you need to optimize measurement conditions in spectroscopic experiments.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach provides a systematic way to optimize experiments but may require a deeper understanding of Bayesian statistics."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Bayesian experimental design for spectroscopy",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have a well-defined experimental setup and access to prior data for informed decision-making."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is Bayesian experimental design for spectroscopy, as it allows for systematic optimization based on existing data and can significantly enhance the quality of experimental outcomes.",
+  "related_problems": [
+    "Experimental design in chemical analysis",
+    "Data acquisition optimization in material science",
+    "Spectral data interpretation challenges",
+    "Automated measurement systems in spectroscopy"
+  ]
+}

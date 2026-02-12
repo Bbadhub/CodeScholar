@@ -1,0 +1,84 @@
+{
+  "technique_name": "Visuospatial Sequence Learning Task",
+  "aliases": [],
+  "category": "training_method, cognitive_assessment",
+  "one_liner": "This technique evaluates performance and cognitive load in a VR environment through a sequence of actions under stress conditions.",
+  "how_it_works": "Participants engage in a virtual reality (VR) environment where they memorize and execute a sequence of actions. The task is designed to simulate emergency scenarios, and performance is assessed based on accuracy and time taken. Eye-tracking data is collected to analyze cognitive load and stress effects during the task, providing insights into how stress impacts performance in high-pressure situations.",
+  "algorithm": {
+    "steps": [
+      "1. Participants enter the VR environment and undergo a calibration phase.",
+      "2. Familiarization with the task is conducted using visual cues.",
+      "3. Participants perform the task without cues to memorize the sequence.",
+      "4. Stressors are introduced in the training phase for the stress group.",
+      "5. Performance is measured based on accuracy and operation time.",
+      "6. Eye-tracking data is collected throughout the task.",
+      "7. Retrieval tasks are conducted under both control and stress conditions."
+    ],
+    "core_equation": "performance_metrics = (accuracy, operation_time, gaze_entropy, pupil_dilation)",
+    "input_format": "VR environment with a sequence of valves to be closed, eye-tracking data from Tobii Pro integrated with HTC VIVE.",
+    "output_format": "Performance metrics (accuracy and operation time), gaze entropy, pupil dilation data, and subjective workload scores."
+  },
+  "parameters": [
+    {
+      "name": "time_limit_per_trial",
+      "typical_value": "60 seconds",
+      "effect": "Longer time limits may allow for better performance but could alter stress levels."
+    },
+    {
+      "name": "eye_tracking_frequency",
+      "typical_value": "90 Hz",
+      "effect": "Higher frequency may provide more detailed cognitive load insights."
+    },
+    {
+      "name": "number_of_trials",
+      "typical_value": "8",
+      "effect": "More trials can improve reliability of performance metrics."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "The complexity of the task is influenced by the VR setup and the cognitive load imposed by stressors."
+  },
+  "use_when": [
+    "Developing training programs for emergency responders using VR.",
+    "Assessing cognitive load and performance under stress in training environments.",
+    "Creating adaptive training paradigms based on eye-tracking data."
+  ],
+  "avoid_when": [
+    "Training scenarios do not involve high-stress environments.",
+    "Resources for VR setup and eye-tracking technology are unavailable.",
+    "Participants are not comfortable with VR technology."
+  ],
+  "implementation_skeleton": "def visuospatial_sequence_learning_task(vr_env: VR, eye_tracker: EyeTracker, trials: int) -> PerformanceMetrics:\n    calibrate(vr_env)\n    for trial in range(trials):\n        familiarize_with_task(vr_env)\n        sequence = memorize_sequence(vr_env)\n        introduce_stressors(vr_env)\n        performance = measure_performance(vr_env)\n        eye_data = collect_eye_tracking_data(eye_tracker)\n    return performance, eye_data",
+  "common_mistakes": [
+    "Neglecting to calibrate the VR environment properly before trials.",
+    "Failing to account for individual differences in stress response.",
+    "Overloading participants with too many trials without breaks."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a realistic training environment for emergency responders.",
+      "Offers insights into cognitive load and performance under stress.",
+      "Utilizes advanced technology for data collection and analysis."
+    ],
+    "weaknesses": [
+      "Requires significant resources for VR and eye-tracking setup.",
+      "May not be suitable for all participants due to VR discomfort.",
+      "Performance can be heavily influenced by stress, complicating assessments."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional training methods",
+        "verdict": "Use VR for more immersive and realistic training scenarios."
+      }
+    ]
+  },
+  "connects_to": [
+    "Cognitive load theory",
+    "Virtual reality training",
+    "Eye-tracking technology",
+    "Emergency response training"
+  ],
+  "maturity": "emerging"
+}

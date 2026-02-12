@@ -1,0 +1,83 @@
+{
+  "technique_name": "Hive",
+  "aliases": [],
+  "category": "distributed_systems",
+  "one_liner": "Hive is a framework for secure and scalable inference across multiple Ollama instances.",
+  "how_it_works": "Hive integrates multiple Ollama instances to provide a cohesive framework for inference. It abstracts the complexities of load balancing and model targeting based on the availability of resources across distributed nodes. By monitoring the health and load of each instance, Hive routes inference requests to the optimal instance, ensuring secure communication and efficient resource management.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize Hive framework.",
+      "2. Register all available Ollama instances with their respective capabilities.",
+      "3. Monitor the health and load of each instance.",
+      "4. Route inference requests to the optimal instance based on load and model availability.",
+      "5. Ensure secure communication between instances and clients.",
+      "6. Scale instances up or down based on workload demands."
+    ],
+    "core_equation": "output = inference_request routed to optimal instance",
+    "input_format": "Inference requests formatted according to the Ollama API.",
+    "output_format": "Inference results from the selected Ollama instance."
+  },
+  "parameters": [
+    {
+      "name": "max_instances",
+      "typical_value": "10",
+      "effect": "Limits the number of concurrent Ollama instances."
+    },
+    {
+      "name": "timeout",
+      "typical_value": "500ms",
+      "effect": "Defines the maximum wait time for an inference request."
+    },
+    {
+      "name": "load_balancing_strategy",
+      "typical_value": "'round_robin'",
+      "effect": "Determines how requests are distributed among instances."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance metrics indicate a 30% reduction in latency compared to single-instance deployments."
+  },
+  "use_when": [
+    "You need to deploy multiple Ollama instances across different locations.",
+    "You require secure access to distributed models without exposing public IPs.",
+    "You want to efficiently manage workload distribution among available resources."
+  ],
+  "avoid_when": [
+    "You are only running a single instance of Ollama.",
+    "Your application does not require high availability or scalability.",
+    "You have a simple local setup without distributed resources."
+  ],
+  "implementation_skeleton": "def hive_inference(request: OllamaRequest) -> OllamaResponse:\n    initialize_hive()\n    register_instances()\n    monitor_health()\n    optimal_instance = route_request(request)\n    return send_request(optimal_instance, request)",
+  "common_mistakes": [
+    "Neglecting to monitor the health of instances, leading to routing errors.",
+    "Setting max_instances too high, causing resource contention.",
+    "Failing to secure communication channels, exposing sensitive data."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Enables secure and scalable inference across multiple instances.",
+      "Improves latency and throughput compared to single-instance setups.",
+      "Automates load balancing and resource management."
+    ],
+    "weaknesses": [
+      "Increased complexity in setup and maintenance.",
+      "Potential overhead from monitoring and scaling operations.",
+      "Requires a robust network infrastructure."
+    ],
+    "compared_to": [
+      {
+        "technique": "Single-instance deployment",
+        "verdict": "Use Hive for scalability and security; single-instance is simpler but less flexible."
+      }
+    ]
+  },
+  "connects_to": [
+    "Load Balancing Algorithms",
+    "Distributed Systems",
+    "Microservices Architecture",
+    "Ollama API"
+  ],
+  "maturity": "proven (widely used in production)"
+}

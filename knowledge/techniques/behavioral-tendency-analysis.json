@@ -1,0 +1,80 @@
+{
+  "technique_name": "Behavioral Tendency Analysis",
+  "aliases": [
+    "Behavioral Analysis",
+    "Attitude Analysis"
+  ],
+  "category": "statistical_method",
+  "one_liner": "This technique analyzes behavioral data to identify patterns and correlations in attitudes towards specific groups, such as individuals with invisible disabilities.",
+  "how_it_works": "Behavioral tendency analysis involves collecting data through surveys and observational studies to assess attitudes towards a particular subject. The collected data is then analyzed using statistical methods to uncover patterns and correlations. This analysis helps in understanding how different groups are perceived and can inform design and policy decisions.",
+  "algorithm": {
+    "steps": [
+      "1. Design survey to assess attitudes towards invisible disabilities.",
+      "2. Collect behavioral data in public spaces.",
+      "3. Analyze data using statistical methods.",
+      "4. Identify key patterns in attitudes and behaviors.",
+      "5. Report findings and implications for design."
+    ],
+    "core_equation": "output = statistical_analysis(survey_responses, observational_data)",
+    "input_format": "Survey responses and observational data on public interactions.",
+    "output_format": "Statistical analysis results highlighting behavioral tendencies and attitudes."
+  },
+  "parameters": [
+    {
+      "name": "sample_size",
+      "typical_value": "100-500",
+      "effect": "Larger sample sizes can improve the reliability of the findings."
+    },
+    {
+      "name": "confidence_level",
+      "typical_value": "95%",
+      "effect": "Higher confidence levels reduce the risk of Type I errors."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)",
+    "practical_note": "The time complexity is primarily due to the statistical analysis performed on the data."
+  },
+  "use_when": [
+    "Designing public spaces for inclusivity",
+    "Creating awareness campaigns about disabilities",
+    "Developing user-centered applications for disabled individuals"
+  ],
+  "avoid_when": [
+    "Addressing visible disabilities exclusively",
+    "When quantitative data is not required",
+    "In highly specialized medical contexts"
+  ],
+  "implementation_skeleton": "def behavioral_tendency_analysis(survey_data: List[Dict[str, Any]], observational_data: List[Dict[str, Any]]) -> Dict[str, Any]:\n    # Step 1: Analyze survey data\n    survey_results = analyze_survey(survey_data)\n    # Step 2: Analyze observational data\n    observation_results = analyze_observations(observational_data)\n    # Step 3: Combine results\n    combined_results = combine_results(survey_results, observation_results)\n    return combined_results",
+  "common_mistakes": [
+    "Neglecting to ensure a representative sample size.",
+    "Failing to account for biases in survey responses.",
+    "Overlooking the importance of context in behavioral observations."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides insights into public attitudes and behaviors.",
+      "Can inform design and policy decisions for inclusivity.",
+      "Utilizes both qualitative and quantitative data."
+    ],
+    "weaknesses": [
+      "May not capture the full complexity of individual attitudes.",
+      "Results can be influenced by survey design and question phrasing.",
+      "Requires careful interpretation of statistical results."
+    ],
+    "compared_to": [
+      {
+        "technique": "Qualitative Interviews",
+        "verdict": "Use qualitative interviews for deeper insights into individual experiences, while behavioral tendency analysis is better for broader trends."
+      }
+    ]
+  },
+  "connects_to": [
+    "Survey Design",
+    "Statistical Analysis",
+    "User-Centered Design",
+    "Behavioral Psychology"
+  ],
+  "maturity": "proven (widely used in production)"
+}

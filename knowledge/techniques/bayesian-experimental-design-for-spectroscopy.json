@@ -1,0 +1,83 @@
+{
+  "technique_name": "Bayesian Experimental Design for Spectroscopy",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "This technique optimizes measurement points in spectroscopic experiments using a Bayesian framework.",
+  "how_it_works": "The method leverages prior information from a standard spectral database to define an evaluation function based on expected loss. By minimizing this function, it determines the optimal measurement points and their quantity before conducting the experiment. This approach allows for efficient data acquisition while maintaining accuracy.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize measurement points.",
+      "2. For each iteration, calculate the expected loss for potential new measurement points.",
+      "3. Select the point that minimizes the expected loss.",
+      "4. Add the selected point to the measurement set.",
+      "5. Repeat until the desired number of points is reached.",
+      "6. Return the optimal measurement points."
+    ],
+    "core_equation": "output = minimize(expected_loss(measurement_points))",
+    "input_format": "Spectral data from a standard spectral database, initial measurement points, and desired accuracy.",
+    "output_format": "Optimal measurement points for spectroscopic measurements."
+  },
+  "parameters": [
+    {
+      "name": "M",
+      "typical_value": "Number of measurement points",
+      "effect": "Increasing M allows for more detailed measurements but requires more resources."
+    },
+    {
+      "name": "c",
+      "typical_value": "4.35 eV",
+      "effect": "Adjusting c influences the correlation distance and can affect the selection of measurement points."
+    },
+    {
+      "name": "\u03c3",
+      "typical_value": "Standard deviation of measurement noise",
+      "effect": "Higher \u03c3 may lead to less reliable measurements."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "The method is efficient in reducing the number of measurement points while maintaining accuracy."
+  },
+  "use_when": [
+    "You need to optimize measurement conditions in spectroscopic experiments.",
+    "You want to automate data acquisition in material characterization.",
+    "You have access to a standard spectral database."
+  ],
+  "avoid_when": [
+    "You lack a reliable spectral database.",
+    "Your measurements are not Gaussian-distributed.",
+    "You require real-time adaptive measurement adjustments."
+  ],
+  "implementation_skeleton": "def bayesian_experimental_design(spectral_data: List[float], initial_points: List[float], desired_accuracy: float) -> List[float]:\n    measurement_points = initial_points\n    while len(measurement_points) < desired_number:\n        expected_losses = calculate_expected_loss(measurement_points)\n        new_point = select_minimum_loss_point(expected_losses)\n        measurement_points.append(new_point)\n    return measurement_points",
+  "common_mistakes": [
+    "Not using a reliable spectral database, leading to suboptimal measurement points.",
+    "Failing to account for measurement noise, which can skew results.",
+    "Overlooking the importance of the correlation distance parameter."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Reduces the number of measurement points needed while maintaining accuracy.",
+      "Automates the data acquisition process.",
+      "Utilizes prior knowledge effectively."
+    ],
+    "weaknesses": [
+      "Requires access to a reliable spectral database.",
+      "May not perform well with non-Gaussian measurements.",
+      "Not suitable for real-time adjustments."
+    ],
+    "compared_to": [
+      {
+        "technique": "Conventional Uniform Sampling",
+        "verdict": "Use Bayesian design for better efficiency and accuracy in measurement."
+      }
+    ]
+  },
+  "connects_to": [
+    "Bayesian Inference",
+    "Spectroscopic Analysis",
+    "Data Acquisition Techniques",
+    "Machine Learning for Experimental Design"
+  ],
+  "maturity": "emerging"
+}

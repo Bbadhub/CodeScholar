@@ -1,0 +1,89 @@
+{
+  "summary": "The authors propose a new framework called IPCK for classifying Git commits using prompt-tuned language models, addressing the limitations of existing systems that are overly complex and reliant on large labeled datasets. Engineers should care because this approach simplifies the classification process while maintaining performance across various tasks.",
+  "key_contribution": "A generative commit classification framework that utilizes prompt tuning and external knowledge without the need for a softmax head or extensive labeled data.",
+  "problem_type": "commit classification",
+  "problem_description": "Existing commit classification systems struggle with complexity, generalization, and dependency on large labeled datasets.",
+  "domain": "Software Engineering",
+  "sub_domain": "Commit classification",
+  "technique_name": "IPCK",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The IPCK framework leverages prompt tuning to enhance language models for classifying Git commits. It incorporates external knowledge to improve classification accuracy without relying on a softmax head or large labeled datasets.",
+    "algorithm_steps": [
+      "1. Collect Git commit messages and relevant external knowledge.",
+      "2. Preprocess the commit messages for input into the language model.",
+      "3. Apply prompt tuning to adapt the language model for commit classification.",
+      "4. Use the tuned model to classify commits based on the provided prompts.",
+      "5. Evaluate the classification results against existing baselines."
+    ],
+    "input": "Git commit messages and external knowledge sources.",
+    "output": "Classified commit labels (binary or multiclass).",
+    "key_parameters": [
+      "prompt_length: 10",
+      "tuning_epochs: 5"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "GitHub commit datasets"
+    ],
+    "metrics": [
+      "accuracy",
+      "F1 score"
+    ],
+    "baselines": [
+      "Existing commit classification systems"
+    ],
+    "improvement": "Outperforms existing baselines in both binary and multiclass tasks."
+  },
+  "concepts": [
+    "prompt tuning",
+    "language models",
+    "commit classification",
+    "external knowledge"
+  ],
+  "use_this_when": [
+    "You need a lightweight solution for classifying Git commits.",
+    "You want to reduce dependency on large labeled datasets.",
+    "You require a system that can adapt to evolving classification schemes."
+  ],
+  "dont_use_when": [
+    "You have a highly specialized classification task requiring extensive labeled data.",
+    "You need real-time classification with minimal latency.",
+    "You prefer traditional discriminative classifiers."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "commit message strings",
+      "classification labels"
+    ],
+    "dependencies": [
+      "transformers library",
+      "PyTorch or TensorFlow"
+    ],
+    "pseudocode_hint": "model = load_prompt_tuned_model(); labels = model.classify(commit_messages)",
+    "gotchas": [
+      "Ensure external knowledge is relevant and up-to-date.",
+      "Monitor for overfitting during prompt tuning."
+    ]
+  },
+  "connects_to": [
+    "prompt-based learning",
+    "transfer learning",
+    "natural language processing"
+  ],
+  "prerequisites": [
+    "understanding of language models",
+    "familiarity with Git commit structures"
+  ],
+  "limitations": [
+    "Performance may vary with the quality of external knowledge.",
+    "Not suitable for tasks requiring extensive labeled data."
+  ],
+  "open_questions": [
+    "How can the framework be adapted for other types of software artifacts?",
+    "What are the best practices for selecting external knowledge sources?"
+  ]
+}

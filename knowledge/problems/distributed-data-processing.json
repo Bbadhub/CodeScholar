@@ -1,0 +1,37 @@
+{
+  "problem_name": "Distributed Data Processing",
+  "description": "Distributed data processing involves managing and analyzing large datasets across multiple computing nodes. This approach is essential for handling data that exceeds the capacity of a single machine, ensuring scalability and efficiency in data analysis.",
+  "you_have_this_if": [
+    "You are dealing with large datasets that cannot fit into memory on a single machine.",
+    "Your data processing tasks require significant computational resources.",
+    "You need to scale your data processing capabilities as data volume increases.",
+    "You are working in a collaborative environment where data is generated from multiple sources.",
+    "You require fault tolerance and reliability in your data processing workflows."
+  ],
+  "approaches": [
+    {
+      "technique": "Hadoop-based distributed data processing",
+      "best_for": "Handling large datasets from scientific experiments and needing scalable data processing solutions.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While Hadoop provides scalability, it may introduce complexity in setup and management."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Hadoop-based distributed data processing",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to process large volumes of data across a distributed system with fault tolerance."
+    }
+  ],
+  "start_here": "Start with Hadoop-based distributed data processing if you are facing challenges with large datasets and require a scalable solution. It is well-suited for environments with high data throughput requirements.",
+  "related_problems": [
+    "Stream processing",
+    "Batch processing",
+    "Data warehousing",
+    "Big data analytics"
+  ]
+}

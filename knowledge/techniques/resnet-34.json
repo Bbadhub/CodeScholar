@@ -1,0 +1,85 @@
+{
+  "technique_name": "ResNet-34",
+  "aliases": [
+    "Residual Network 34"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "ResNet-34 is a deep convolutional neural network architecture designed for image classification tasks.",
+  "how_it_works": "ResNet-34 utilizes residual learning to allow gradients to flow through the network more effectively, enabling the training of deeper networks. It consists of 34 layers with skip connections that bypass one or more layers, which helps mitigate the vanishing gradient problem. This architecture is particularly effective for image classification tasks, such as identifying diseases in plant leaves.",
+  "algorithm": {
+    "steps": [
+      "1. Capture images of the target objects (e.g., soybean leaves).",
+      "2. Preprocess the images to enhance quality and remove noise.",
+      "3. Apply data augmentation techniques like rotation, flipping, and zooming.",
+      "4. Split the dataset into training, validation, and testing sets.",
+      "5. Train the ResNet-34 model on the training set.",
+      "6. Evaluate the model's performance using the validation set.",
+      "7. Test the model on the test set to obtain final accuracy."
+    ],
+    "core_equation": "output = softmax(W \u00b7 ReLU(W \u00b7 input + b))",
+    "input_format": "Images of size 224x224 pixels, categorized into multiple classes.",
+    "output_format": "Classified disease type for each input image."
+  },
+  "parameters": [
+    {
+      "name": "image_size",
+      "typical_value": "224x224 pixels",
+      "effect": "Changing the image size can affect model performance and training time."
+    },
+    {
+      "name": "augmentation",
+      "typical_value": "random rotation, flipping, zooming (up to 10%)",
+      "effect": "Data augmentation improves model robustness and generalization."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * d^2) where n is the number of images and d is the depth of the network.",
+    "space": "O(d) for storing the model parameters.",
+    "practical_note": "While ResNet-34 is computationally intensive, it can achieve high accuracy in image classification tasks."
+  },
+  "use_when": [
+    "You need to classify plant diseases from images.",
+    "You have access to smartphone imagery for data collection.",
+    "You are dealing with imbalanced datasets in agricultural applications."
+  ],
+  "avoid_when": [
+    "You require precise lesion segmentation rather than classification.",
+    "You have limited computational resources for deep learning models.",
+    "You need real-time processing capabilities."
+  ],
+  "implementation_skeleton": "def resnet34_model(input_images: np.ndarray) -> np.ndarray:\n    # Preprocess images\n    processed_images = preprocess(input_images)\n    # Load ResNet-34 architecture\n    model = load_resnet34()\n    # Forward pass\n    predictions = model(processed_images)\n    return predictions",
+  "common_mistakes": [
+    "Not applying sufficient data augmentation, leading to overfitting.",
+    "Using inappropriate image sizes that do not match the model's input requirements.",
+    "Failing to properly preprocess images, which can degrade model performance."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy in image classification tasks.",
+      "Effective in handling vanishing gradient problems due to residual connections.",
+      "Robust to overfitting with proper data augmentation."
+    ],
+    "weaknesses": [
+      "Computationally intensive and requires significant resources.",
+      "Not suitable for real-time applications without optimization.",
+      "Complex architecture that may be difficult to interpret."
+    ],
+    "compared_to": [
+      {
+        "technique": "Logistic Regression",
+        "verdict": "Use ResNet-34 for complex image data; Logistic Regression is simpler but less effective for deep features."
+      },
+      {
+        "technique": "VGG-16",
+        "verdict": "ResNet-34 is generally more efficient and performs better on deeper architectures."
+      }
+    ]
+  },
+  "connects_to": [
+    "Data Augmentation",
+    "Transfer Learning",
+    "Convolutional Neural Networks (CNNs)",
+    "Image Preprocessing Techniques"
+  ],
+  "maturity": "proven"
+}

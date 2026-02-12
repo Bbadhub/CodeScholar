@@ -1,0 +1,81 @@
+{
+  "technique_name": "Randomized Wait-Free Locks",
+  "aliases": [],
+  "category": "synchronization",
+  "one_liner": "Randomized wait-free locks provide a mechanism for concurrent processes to access shared resources without blocking, ensuring fairness and bounded time complexity.",
+  "how_it_works": "This technique allows processes to attempt to acquire locks through a tryLock operation. If a process fails to acquire the lock due to contention, it can retry the operation while helping others complete their critical sections. This ensures that all processes make progress and that the system remains fair. The method is designed to handle high contention scenarios efficiently.",
+  "algorithm": {
+    "steps": [
+      "1. A process attempts to execute a tryLock operation with a specified set of locks.",
+      "2. If the tryLock succeeds, the process runs the associated code.",
+      "3. If the tryLock fails due to contention, the process retries the operation.",
+      "4. Each process helps others complete their critical sections to ensure progress.",
+      "5. The process remains in a pending state until it has taken a fixed number of steps before revealing its priority."
+    ],
+    "core_equation": "Expected steps for success = O(\u03ba\u00b3L\u00b3T)",
+    "input_format": "A set of locks and a thunk (code to execute in the critical section).",
+    "output_format": "Boolean indicating success or failure of the tryLock operation."
+  },
+  "parameters": [
+    {
+      "name": "\u03ba",
+      "typical_value": "maximum contention on any lock",
+      "effect": "Higher values increase contention and expected steps."
+    },
+    {
+      "name": "L",
+      "typical_value": "maximum number of locks in a tryLock's set",
+      "effect": "More locks can increase complexity."
+    },
+    {
+      "name": "T",
+      "typical_value": "maximum steps taken by critical section",
+      "effect": "Longer critical sections can lead to higher wait times."
+    }
+  ],
+  "complexity": {
+    "time": "O(\u03ba\u00b2L\u00b2T) for each tryLock attempt; expected O(\u03ba\u00b3L\u00b3T) steps for retries.",
+    "space": "O(1) for each process.",
+    "practical_note": "Performance can degrade with high contention and many locks."
+  },
+  "use_when": [
+    "Building concurrent data structures that require fine-grained locking.",
+    "Implementing systems where fairness in lock acquisition is critical.",
+    "Developing applications that may experience high contention on shared resources."
+  ],
+  "avoid_when": [
+    "In scenarios where deterministic locking is required.",
+    "When the overhead of retries is unacceptable for the application."
+  ],
+  "implementation_skeleton": "def randomized_wait_free_lock(locks: List[Lock], code: Callable[[], None]) -> bool:\n    for attempt in range(MAX_ATTEMPTS):\n        if try_lock(locks):\n            code()\n            return True\n        help_others()\n    return False",
+  "common_mistakes": [
+    "Not accounting for the maximum contention when designing the system.",
+    "Failing to implement the helping mechanism effectively.",
+    "Overlooking the impact of retries on performance."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Ensures fairness in lock acquisition.",
+      "Provides bounded time complexity under contention.",
+      "Allows for high concurrency in shared resource access."
+    ],
+    "weaknesses": [
+      "Can introduce overhead due to retries.",
+      "Performance may degrade with high contention.",
+      "Not suitable for deterministic locking requirements."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Locking Mechanisms",
+        "verdict": "Use randomized locks for fairness and bounded time; traditional locks for deterministic behavior."
+      }
+    ]
+  },
+  "connects_to": [
+    "Lock-Free Data Structures",
+    "Optimistic Concurrency Control",
+    "Backoff Algorithms",
+    "Priority Scheduling"
+  ],
+  "maturity": "emerging"
+}

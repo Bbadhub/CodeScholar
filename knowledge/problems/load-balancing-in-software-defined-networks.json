@@ -1,0 +1,37 @@
+{
+  "problem_name": "Load Balancing in Software-Defined Networks",
+  "description": "Load balancing in software-defined networks (SDNs) involves distributing network traffic efficiently across multiple resources to optimize performance and resource utilization. This problem is critical in ensuring that no single resource is overwhelmed while others remain underutilized, especially in scalable network environments.",
+  "you_have_this_if": [
+    "You are experiencing uneven traffic distribution across network resources.",
+    "Your network performance is degrading due to overloaded switches or links.",
+    "You are implementing a software-defined network architecture.",
+    "You need to scale your network dynamically based on traffic demands.",
+    "You are looking to improve resource utilization and reduce latency."
+  ],
+  "approaches": [
+    {
+      "technique": "AI-driven load balancing methods",
+      "best_for": "when you need to optimize resource utilization in a scalable network using AI techniques.",
+      "paper_count": 1,
+      "max_citations": 7,
+      "key_tradeoff": "While AI-driven methods can significantly enhance performance, they may require more computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "AI-driven load balancing methods",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to optimize traffic distribution in a dynamic and scalable SDN environment."
+    }
+  ],
+  "start_here": "Start with AI-driven load balancing methods as they provide a robust solution for optimizing resource utilization and enhancing network performance in SDNs.",
+  "related_problems": [
+    "Traffic Engineering in Networks",
+    "Resource Allocation in Cloud Computing",
+    "Dynamic Routing in SDNs",
+    "Network Performance Optimization"
+  ]
+}

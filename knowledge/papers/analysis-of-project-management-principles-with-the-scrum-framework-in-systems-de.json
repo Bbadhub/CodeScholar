@@ -1,0 +1,99 @@
+{
+  "summary": "The paper analyzes the application of project management principles using the Scrum framework within systems development in a public organization, demonstrating how Kanban can enhance workflow management and service delivery. Engineers should care because it provides a structured approach to improve project efficiency and adaptability in software development.",
+  "key_contribution": "The introduction of Kanban as a method to manage knowledge work effectively within existing workflows.",
+  "problem_type": "workflow management in software development",
+  "problem_description": "The need for improved efficiency and adaptability in delivering software services in public organizations.",
+  "domain": "Software Engineering",
+  "sub_domain": "Agile methodologies, Kanban framework",
+  "technique_name": "Kanban",
+  "technique_category": "framework",
+  "technique_type": "adaptation",
+  "method": {
+    "approach": "Kanban visualizes work to manage and improve the flow of tasks through a system, allowing teams to self-organize and adapt to changes. It emphasizes limiting work in progress (WIP) to enhance efficiency and predictability.",
+    "algorithm_steps": [
+      "1. Visualize the workflow using a Kanban board.",
+      "2. Limit the number of work items in progress (WIP).",
+      "3. Manage flow by monitoring and adjusting the work process.",
+      "4. Make policies explicit to guide decision-making.",
+      "5. Implement feedback cycles to continuously improve the process.",
+      "6. Evolve the system collaboratively through experimentation."
+    ],
+    "input": "Work items/tasks that need to be managed.",
+    "output": "Improved workflow efficiency and service delivery.",
+    "key_parameters": [
+      "WIP limit: varies by team and project",
+      "Feedback cycle frequency: daily/weekly",
+      "Visualization tools: Kanban board, metrics"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Case study in a public organization"
+    ],
+    "metrics": [
+      "Cycle time, lead time, throughput"
+    ],
+    "baselines": [
+      "Traditional project management methods"
+    ],
+    "improvement": "Significant improvements in workflow efficiency and adaptability were observed, though specific percentages were not stated."
+  },
+  "concepts": [
+    "Kanban",
+    "Scrum",
+    "Agile",
+    "Workflow visualization",
+    "WIP limits",
+    "Feedback cycles",
+    "Continuous improvement"
+  ],
+  "use_this_when": [
+    "You need to manage complex workflows in software development.",
+    "Your team is facing challenges with project delivery timelines.",
+    "You want to implement a flexible and adaptive project management approach."
+  ],
+  "dont_use_when": [
+    "The project requires strict adherence to predefined methodologies.",
+    "You have a small team with very simple workflows.",
+    "The organization is not open to iterative improvements."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Kanban board",
+      "Task cards",
+      "Metrics tracking tools"
+    ],
+    "dependencies": [
+      "Kanban software tools (e.g., Trello, Jira)",
+      "Collaboration tools (e.g., Slack, Microsoft Teams)"
+    ],
+    "pseudocode_hint": "for task in kanban_board: if task.is_ready(): move_to_next_stage(task)",
+    "gotchas": [
+      "Failing to limit WIP can lead to bottlenecks.",
+      "Not making policies explicit can cause confusion.",
+      "Ignoring feedback cycles can hinder continuous improvement."
+    ]
+  },
+  "connects_to": [
+    "Scrum",
+    "Lean methodologies",
+    "Agile project management",
+    "Continuous delivery",
+    "DevOps"
+  ],
+  "prerequisites": [
+    "Understanding of Agile principles",
+    "Familiarity with project management concepts",
+    "Basic knowledge of workflow processes"
+  ],
+  "limitations": [
+    "Kanban may not fit well in highly regulated environments.",
+    "Requires cultural change within the organization to be effective.",
+    "Not suitable for projects with fixed scope and timelines."
+  ],
+  "open_questions": [
+    "How can Kanban be integrated with other project management frameworks?",
+    "What are the best practices for scaling Kanban in large organizations?"
+  ]
+}

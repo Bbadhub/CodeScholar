@@ -1,0 +1,93 @@
+{
+  "technique_name": "Non-invasive Vagus Nerve Stimulation (nVNS)",
+  "aliases": [],
+  "category": "medical_therapy",
+  "one_liner": "nVNS is a therapeutic technique that stimulates the vagus nerve to alleviate symptoms in patients with persistent post-concussion syndrome.",
+  "how_it_works": "nVNS employs a handheld device to stimulate the vagus nerve non-invasively, activating the cholinergic anti-inflammatory pathway. Patients use the device daily, applying it to the cervical pulse point for short sessions. The effectiveness of the treatment is evaluated through changes in symptom severity measured by the Neurobehavioral Symptom Inventory (NSI).",
+  "algorithm": {
+    "steps": [
+      "1. Patient completes baseline NSI assessment.",
+      "2. Patient is prescribed gammaCore\u2122 device for nVNS.",
+      "3. Patient is trained to use the device over the cervical pulse point.",
+      "4. Patient uses the device for 2 minutes, twice in the morning and twice in the evening.",
+      "5. Follow-up NSI assessment is conducted approximately 112 days post-treatment initiation.",
+      "6. Analyze changes in NSI scores to evaluate treatment efficacy."
+    ],
+    "core_equation": "output = change in NSI scores before and after nVNS treatment",
+    "input_format": "Patient symptom data collected via the Neurobehavioral Symptom Inventory (NSI).",
+    "output_format": "Change in NSI scores indicating symptom severity before and after nVNS treatment."
+  },
+  "parameters": [
+    {
+      "name": "stimulation_duration",
+      "typical_value": "2 minutes",
+      "effect": "Longer durations may enhance efficacy but are not tested."
+    },
+    {
+      "name": "stimulation_frequency",
+      "typical_value": "25 Hz",
+      "effect": "Higher frequencies may alter nerve response."
+    },
+    {
+      "name": "intensity",
+      "typical_value": "up to 60 milliamps",
+      "effect": "Increased intensity may improve stimulation but risks discomfort."
+    },
+    {
+      "name": "voltage",
+      "typical_value": "24 volts",
+      "effect": "Higher voltage may enhance effectiveness but could lead to side effects."
+    },
+    {
+      "name": "treatment_frequency",
+      "typical_value": "4 sessions per day",
+      "effect": "More frequent sessions may improve outcomes."
+    }
+  ],
+  "complexity": {
+    "time": "O(1) for each treatment session",
+    "space": "O(1) as it requires minimal data storage",
+    "practical_note": "Real-world performance may vary based on patient compliance and device usage."
+  },
+  "use_when": [
+    "Managing persistent post-concussion symptoms in patients with mTBI.",
+    "Integrating adjunctive therapies into standard care for TBI.",
+    "Seeking non-pharmacological interventions for symptom relief."
+  ],
+  "avoid_when": [
+    "Patients have contraindications such as implanted pacemakers.",
+    "Immediate acute care is required for severe TBI symptoms.",
+    "Patients are not compliant with treatment protocols."
+  ],
+  "implementation_skeleton": "def nVNS_treatment(patient_data: NSIData) -> NSIChange:\n    baseline_scores = patient_data.get_baseline_scores()\n    device = gammaCore()\n    for session in range(4):\n        device.stimulate(duration=2, frequency=25)\n    follow_up_scores = patient_data.get_follow_up_scores()\n    return analyze_scores(baseline_scores, follow_up_scores)",
+  "common_mistakes": [
+    "Failing to train patients properly on device usage.",
+    "Not adhering to the prescribed treatment frequency.",
+    "Ignoring contraindications that may lead to adverse effects."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Non-invasive and easy to use.",
+      "Can be integrated into existing treatment protocols.",
+      "Potentially significant symptom relief for patients."
+    ],
+    "weaknesses": [
+      "Effectiveness may vary among individuals.",
+      "Requires patient compliance for optimal results.",
+      "Not suitable for all patients due to contraindications."
+    ],
+    "compared_to": [
+      {
+        "technique": "pharmacological treatments",
+        "verdict": "nVNS is preferred for patients seeking non-drug interventions."
+      }
+    ]
+  },
+  "connects_to": [
+    "Transcutaneous Electrical Nerve Stimulation (TENS)",
+    "Cognitive Behavioral Therapy (CBT)",
+    "Physical Rehabilitation for TBI",
+    "Biofeedback Techniques"
+  ],
+  "maturity": "proven (widely used in production)"
+}

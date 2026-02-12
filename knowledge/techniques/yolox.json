@@ -1,0 +1,90 @@
+{
+  "technique_name": "YOLOx",
+  "aliases": [
+    "You Only Look Once X"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "YOLOx is a one-stage object detection model that predicts bounding boxes and classifications in a single pass, optimized for speed and efficiency.",
+  "how_it_works": "YOLOx utilizes a backbone network called CSPDarkNet to extract features from input video frames. It aggregates space-time features from consecutive frames to enhance detection accuracy. The model predicts bounding boxes and class labels in one pass, allowing for fast inference speeds. Additionally, it reuses results from previous frames to improve detection performance in video streams.",
+  "algorithm": {
+    "steps": [
+      "Input video frames into the YOLOx model.",
+      "Extract features using the CSPDarkNet backbone.",
+      "Aggregate space-time features from consecutive frames.",
+      "Predict bounding boxes and classifications in one pass.",
+      "Reuse results from previous frames to improve detection.",
+      "Output detected objects with bounding boxes and class labels."
+    ],
+    "core_equation": "output = predict(bounding_boxes, class_labels)",
+    "input_format": "Video frames in RGB format (e.g., 640x640 pixels).",
+    "output_format": "Detected objects with bounding boxes and class labels."
+  },
+  "parameters": [
+    {
+      "name": "input_size",
+      "typical_value": "640x640",
+      "effect": "Changing this affects the model's ability to detect objects at different scales."
+    },
+    {
+      "name": "confidence_threshold",
+      "typical_value": "0.5",
+      "effect": "Higher values reduce false positives but may miss some detections."
+    },
+    {
+      "name": "nms_threshold",
+      "typical_value": "0.4",
+      "effect": "Adjusting this affects how overlapping bounding boxes are handled."
+    }
+  ],
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)",
+    "practical_note": "YOLOx is designed for real-time applications, achieving 30 FPS on benchmark datasets."
+  },
+  "use_when": [
+    "You need fast object detection in video streams.",
+    "Real-time applications require efficient processing.",
+    "You want to detect objects under varying motion conditions."
+  ],
+  "avoid_when": [
+    "High accuracy is prioritized over speed.",
+    "The application involves complex scene understanding.",
+    "You need to detect small objects in high-density scenes."
+  ],
+  "implementation_skeleton": "def yolo_x_detect(frames: List[np.ndarray]) -> List[Tuple[np.ndarray, str]]:\n    # Load YOLOx model\n    model = load_yolox_model()\n    results = []\n    for frame in frames:\n        features = model.extract_features(frame)\n        detections = model.predict(features)\n        results.append(detections)\n    return results",
+  "common_mistakes": [
+    "Not adjusting the input size for specific use cases.",
+    "Ignoring the impact of confidence and NMS thresholds on results.",
+    "Failing to preprocess video frames correctly before input."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Fast inference speeds suitable for real-time applications.",
+      "Single-pass detection simplifies the processing pipeline.",
+      "Effective in aggregating features from video frames."
+    ],
+    "weaknesses": [
+      "May sacrifice accuracy for speed in complex scenes.",
+      "Less effective at detecting small objects in dense environments.",
+      "Requires careful tuning of parameters for optimal performance."
+    ],
+    "compared_to": [
+      {
+        "technique": "Faster R-CNN",
+        "verdict": "Use YOLOx for speed; use Faster R-CNN for higher accuracy."
+      },
+      {
+        "technique": "SSD",
+        "verdict": "YOLOx offers better speed improvements over SSD in video applications."
+      }
+    ]
+  },
+  "connects_to": [
+    "Faster R-CNN",
+    "Single Shot MultiBox Detector (SSD)",
+    "Object Detection",
+    "Real-time Video Processing",
+    "Deep Learning for Computer Vision"
+  ],
+  "maturity": "proven"
+}

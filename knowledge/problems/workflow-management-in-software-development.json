@@ -1,0 +1,37 @@
+{
+  "problem_name": "Workflow Management in Software Development",
+  "description": "Workflow management in software development involves organizing and optimizing the processes that teams use to deliver software. It aims to enhance productivity, improve collaboration, and ensure timely project delivery.",
+  "you_have_this_if": [
+    "Your team struggles to meet project deadlines.",
+    "You have multiple ongoing projects with overlapping tasks.",
+    "Communication breakdowns are common in your team.",
+    "You need better visibility into project progress.",
+    "Your current project management approach feels rigid and unresponsive."
+  ],
+  "approaches": [
+    {
+      "technique": "Kanban",
+      "best_for": "when you need to manage complex workflows in software development and require flexibility.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While Kanban offers flexibility, it may lack the structured planning of other methodologies."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Kanban",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "easy",
+      "best_when": "You need a visual representation of tasks and want to adapt to changes quickly."
+    }
+  ],
+  "start_here": "Start with Kanban as it provides a visual workflow management system that can help your team adapt to changes and improve delivery timelines.",
+  "related_problems": [
+    "Agile Project Management",
+    "Scrum Implementation",
+    "Task Prioritization",
+    "Resource Allocation"
+  ]
+}

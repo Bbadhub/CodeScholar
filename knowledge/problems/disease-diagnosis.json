@@ -1,0 +1,52 @@
+{
+  "problem_name": "Disease Diagnosis",
+  "description": "Disease diagnosis involves identifying a disease based on various symptoms, test results, and other relevant data. It is crucial in both medical and agricultural fields to ensure timely and accurate treatment or intervention.",
+  "you_have_this_if": [
+    "You are trying to identify a specific disease based on symptoms or test results.",
+    "You have access to multiple data sources (e.g., images, lab results).",
+    "You need to improve the accuracy of existing diagnostic methods.",
+    "You are working under time constraints for diagnosis.",
+    "You are integrating diagnostic capabilities into an application."
+  ],
+  "approaches": [
+    {
+      "technique": "Multimodal Fusion Framework",
+      "best_for": "when you need to diagnose plant diseases accurately using multiple data sources.",
+      "paper_count": 1,
+      "max_citations": 6,
+      "key_tradeoff": "Offers high accuracy but may require extensive data preprocessing."
+    },
+    {
+      "technique": "Smart Medical Report Algorithm",
+      "best_for": "when you need to diagnose diseases from blood tests quickly in a healthcare application.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "Provides fast results but may sacrifice some diagnostic accuracy."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Multimodal Fusion Framework",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You have high-quality images and multiple data sources for plant disease diagnosis."
+    },
+    {
+      "technique": "Smart Medical Report Algorithm",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You need quick diagnosis from blood tests in a clinical setting."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Smart Medical Report Algorithm, especially if you are focused on speed and integrating into healthcare applications.",
+  "related_problems": [
+    "Symptom Analysis",
+    "Predictive Health Monitoring",
+    "Plant Health Assessment",
+    "Clinical Decision Support Systems"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "problem_name": "Academic Writing Assistance",
+  "description": "Academic writing assistance involves improving the quality of written academic content, including clarity, structure, and coherence. It can also aid in generating ideas and outlines for research papers or translating complex academic material.",
+  "you_have_this_if": [
+    "You struggle with organizing your thoughts in written form.",
+    "You find it difficult to maintain clarity and coherence in your writing.",
+    "You need help generating ideas or outlines for your academic work.",
+    "You are translating academic content and need assistance with language.",
+    "You are looking for feedback on your writing style and structure."
+  ],
+  "approaches": [
+    {
+      "technique": "ChatGPT",
+      "best_for": "when you need to enhance the clarity and structure of existing academic text, brainstorm ideas, or translate academic content.",
+      "paper_count": 1,
+      "max_citations": 45,
+      "key_tradeoff": "While ChatGPT can provide quick assistance, it may not always capture the nuances of specialized academic language."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "ChatGPT",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "easy",
+      "best_when": "You need immediate assistance with writing or structuring academic content."
+    }
+  ],
+  "start_here": "Start with ChatGPT for quick and effective assistance in improving your academic writing, as it offers a balance of speed and ease of use.",
+  "related_problems": [
+    "Technical Writing Assistance",
+    "Research Paper Structuring",
+    "Academic Translation Services"
+  ]
+}

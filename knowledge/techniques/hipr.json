@@ -1,0 +1,102 @@
+{
+  "technique_name": "HIPR",
+  "aliases": [
+    "Hardware IP Protection Redaction"
+  ],
+  "category": "hardware_security",
+  "one_liner": "HIPR is a technique for protecting hardware intellectual property through fine-grain redaction with low overhead.",
+  "how_it_works": "HIPR identifies security-critical components in a hardware design and replaces them with configurable elements that can only be programmed with a secure bitstream. The process begins by creating a hypergraph representation of the design, which is then analyzed to identify critical logic. Redaction is performed using specialized components, and the configuration bitstream is optimized for size while maintaining security.",
+  "algorithm": {
+    "steps": [
+      "Create a hypergraph from the original netlist.",
+      "Sort the hypergraph topologically.",
+      "Identify critical edges based on a removal cost function.",
+      "Redact Boolean logic using Configurable Look-Up Tables (CLUTs).",
+      "Redact sequential logic using Configurable Sequential Blocks (CSBs).",
+      "Redact interconnect logic using Configurable Programmable Interconnects (CPIs).",
+      "Generate the configuration bitstream for the redacted components.",
+      "Optimize the bitstream for size without compromising security."
+    ],
+    "core_equation": "output = redacted netlist + compacted configuration bitstream",
+    "input_format": "Original netlist (RTL or gate-level design files)",
+    "output_format": "Redacted netlist and compacted configuration bitstream"
+  },
+  "parameters": [
+    {
+      "name": "Tcrit",
+      "typical_value": "0",
+      "effect": "Adjusting this threshold changes the sensitivity of critical logic identification."
+    },
+    {
+      "name": "gamma_min_size",
+      "typical_value": "varies",
+      "effect": "Sets the minimum size for random LUTs, affecting granularity."
+    },
+    {
+      "name": "gamma_max_size",
+      "typical_value": "varies",
+      "effect": "Sets the maximum size for random LUTs, influencing performance."
+    },
+    {
+      "name": "gamma_x_max",
+      "typical_value": "varies",
+      "effect": "Limits the percentage of flip-flops to redact using CSBs."
+    },
+    {
+      "name": "gamma_y_max",
+      "typical_value": "varies",
+      "effect": "Limits the percentage of sequential logic to redact."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on design complexity and the specific parameters used."
+  },
+  "use_when": [
+    "You need to protect hardware IP in a zero-trust manufacturing environment.",
+    "You require a scalable solution for hardware IP redaction with minimal overhead.",
+    "You want to integrate redaction techniques into existing EDA tool flows."
+  ],
+  "avoid_when": [
+    "The design does not involve sensitive hardware IP.",
+    "You are working with very small designs where overhead is not a concern.",
+    "You require a solution that does not involve reconfigurable fabrics."
+  ],
+  "implementation_skeleton": "def hipr_redaction(original_netlist: Netlist) -> Tuple[Netlist, Bitstream]:\n    hypergraph = create_hypergraph(original_netlist)\n    sorted_hypergraph = topological_sort(hypergraph)\n    critical_edges = identify_critical_edges(sorted_hypergraph)\n    redacted_netlist = redact_logic(original_netlist, critical_edges)\n    bitstream = generate_bitstream(redacted_netlist)\n    optimized_bitstream = optimize_bitstream(bitstream)\n    return redacted_netlist, optimized_bitstream",
+  "common_mistakes": [
+    "Failing to properly identify critical logic, leading to insufficient protection.",
+    "Overlooking the optimization of the configuration bitstream, resulting in excessive overhead.",
+    "Not adjusting parameters based on specific design requirements, leading to suboptimal performance."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Significantly reduces area overhead compared to existing techniques.",
+      "Provides a scalable solution for hardware IP protection.",
+      "Integrates well with existing electronic design automation (EDA) tools."
+    ],
+    "weaknesses": [
+      "May not be suitable for designs without sensitive IP.",
+      "Overhead may still be a concern for very small designs.",
+      "Requires reconfigurable fabrics, limiting applicability."
+    ],
+    "compared_to": [
+      {
+        "technique": "Coarse-grain redaction",
+        "verdict": "Use HIPR for finer control and lower overhead."
+      },
+      {
+        "technique": "Fine-grain redaction",
+        "verdict": "HIPR offers better scalability and integration."
+      }
+    ]
+  },
+  "connects_to": [
+    "Coarse-grain redaction",
+    "Fine-grain redaction",
+    "Configurable Logic Blocks",
+    "Electronic Design Automation (EDA) tools",
+    "Hardware Security Techniques"
+  ],
+  "maturity": "proven"
+}

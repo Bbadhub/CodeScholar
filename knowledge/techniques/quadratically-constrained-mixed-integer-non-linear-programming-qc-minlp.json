@@ -1,0 +1,82 @@
+{
+  "technique_name": "Quadratically Constrained Mixed-Integer Non-Linear Programming (QC-MINLP)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "QC-MINLP optimizes resource allocation and routing in logistics while incorporating quadratic constraints.",
+  "how_it_works": "QC-MINLP formulates complex distribution problems by defining an objective function that minimizes costs while considering multiple constraints. It incorporates quadratic constraints that reflect real-world logistics challenges, allowing for a more accurate representation of the problem. A suitable solver is then used to find optimal solutions, which can be analyzed and adjusted as necessary.",
+  "algorithm": {
+    "steps": [
+      "Define the objective function to minimize transportation costs.",
+      "Identify constraints related to capacity, demand, and delivery times.",
+      "Incorporate quadratic constraints that model logistical relationships.",
+      "Use a suitable solver for QC-MINLP to find optimal solutions.",
+      "Analyze the results and adjust parameters as necessary."
+    ],
+    "core_equation": "minimize transportation_cost subject to capacity, demand, and quadratic constraints",
+    "input_format": "Data on product demand, transportation costs, vehicle capacities, and distribution center locations.",
+    "output_format": "Optimal distribution plan detailing routes and quantities for each sink location."
+  },
+  "parameters": [
+    {
+      "name": "demand",
+      "typical_value": "varies by retail location",
+      "effect": "affects the allocation of resources"
+    },
+    {
+      "name": "transportation_cost",
+      "typical_value": "varies by route",
+      "effect": "influences the overall cost minimization"
+    },
+    {
+      "name": "vehicle_capacity",
+      "typical_value": "e.g., 1000 kg",
+      "effect": "limits the amount that can be transported"
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the complexity of constraints and the solver used."
+  },
+  "use_when": [
+    "You need to optimize distribution logistics for multiple products.",
+    "You are dealing with complex constraints that affect transportation.",
+    "You want to minimize costs while meeting delivery requirements."
+  ],
+  "avoid_when": [
+    "The problem can be solved with simpler linear programming techniques.",
+    "Real-time dynamic adjustments are required during distribution.",
+    "Data on constraints is incomplete or unreliable."
+  ],
+  "implementation_skeleton": "def qc_minlp_solver(demand: List[float], transportation_cost: List[float], vehicle_capacity: float) -> Dict[str, Any]:\n    # Define objective function\n    # Identify constraints\n    # Incorporate quadratic constraints\n    # Use solver to find optimal solution\n    # Return optimal distribution plan\n    return optimal_plan",
+  "common_mistakes": [
+    "Neglecting to accurately model quadratic constraints.",
+    "Using incomplete or unreliable data for constraints.",
+    "Overcomplicating the model when simpler solutions exist."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Handles complex constraints effectively.",
+      "Provides more accurate solutions for logistics problems.",
+      "Can lead to significant cost reductions."
+    ],
+    "weaknesses": [
+      "May require more computational resources than simpler models.",
+      "Not suitable for real-time adjustments.",
+      "Complexity can lead to longer solution times."
+    ],
+    "compared_to": [
+      {
+        "technique": "Linear Programming",
+        "verdict": "Use QC-MINLP for complex constraints; use Linear Programming for simpler problems."
+      }
+    ]
+  },
+  "connects_to": [
+    "Linear Programming",
+    "Mixed-Integer Programming",
+    "Non-Linear Programming",
+    "Logistics Optimization Techniques"
+  ],
+  "maturity": "emerging"
+}

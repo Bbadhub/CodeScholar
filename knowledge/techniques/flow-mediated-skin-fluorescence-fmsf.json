@@ -1,0 +1,86 @@
+{
+  "technique_name": "Flow Mediated Skin Fluorescence (FMSF)",
+  "aliases": [],
+  "category": "biomedical_technique",
+  "one_liner": "FMSF measures changes in NADH fluorescence in skin tissue to assess mitochondrial and vascular function.",
+  "how_it_works": "The FMSF technique involves occluding blood flow in the brachial artery and measuring the fluorescence of NADH in the skin. After inducing ischemia, the changes in fluorescence are recorded to evaluate the ischemic and hyperemic responses. The analysis provides insights into mitochondrial and vascular health by deriving parameters such as flowmotion and hypoxia sensitivity.",
+  "algorithm": {
+    "steps": [
+      "1. Apply a cuff to occlude blood flow in the brachial artery.",
+      "2. Measure NADH fluorescence at baseline for 3 minutes.",
+      "3. Inflate the cuff to 60 mmHg above systolic blood pressure to induce ischemia.",
+      "4. Record changes in NADH fluorescence during ischemia to determine ischemic response (IRmax).",
+      "5. Release the cuff and measure the hyperemic response (HRmax) as NADH fluorescence decreases.",
+      "6. Analyze the fluorescence signal to derive flowmotion (FM) and hypoxia sensitivity (HS)."
+    ],
+    "core_equation": "output = analyze(NADH fluorescence data)",
+    "input_format": "NADH fluorescence data collected from skin tissue during various stages of blood flow occlusion and reperfusion.",
+    "output_format": "Parameters including baseline fluorescence (FLbase), ischemic response (IRmax), hyperemic response (HRmax), flowmotion (FM), and hypoxia sensitivity (HS)."
+  },
+  "parameters": [
+    {
+      "name": "cuff_pressure",
+      "typical_value": "60 mmHg above systolic blood pressure",
+      "effect": "Affects the level of ischemia induced."
+    },
+    {
+      "name": "sampling_frequency",
+      "typical_value": "25 Hz",
+      "effect": "Determines the temporal resolution of fluorescence measurements."
+    },
+    {
+      "name": "measurement_duration",
+      "typical_value": "3 minutes for baseline",
+      "effect": "Influences the accuracy of baseline fluorescence readings."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) where n is the number of measurements taken during the procedure.",
+    "space": "O(m) where m is the number of parameters derived from the fluorescence data.",
+    "practical_note": "Real-world performance may vary based on patient conditions and equipment calibration."
+  },
+  "use_when": [
+    "Assessing patients for cardiovascular diseases or diabetes.",
+    "Monitoring metabolic health in athletes.",
+    "Evaluating microcirculatory dysfunction in chronic diseases."
+  ],
+  "avoid_when": [
+    "When immediate results are required without setup time.",
+    "In patients with skin conditions that may affect fluorescence measurements."
+  ],
+  "implementation_skeleton": "def fmsf_measurement(data: List[float]) -> Dict[str, float]:\n    # Step 1: Apply cuff\n    apply_cuff()\n    # Step 2: Measure baseline\n    baseline = measure_nadh(data)\n    # Step 3: Induce ischemia\n    induce_ischemia()\n    # Step 4: Record ischemic response\n    irmax = record_ischemic_response()\n    # Step 5: Measure hyperemic response\n    hrmax = measure_hyperemic_response()\n    # Step 6: Analyze results\n    return analyze_results(baseline, irmax, hrmax)",
+  "common_mistakes": [
+    "Neglecting to calibrate equipment before measurements.",
+    "Failing to account for patient variability in skin fluorescence.",
+    "Inadequate baseline measurement duration leading to inaccurate results."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Non-invasive assessment of vascular and mitochondrial function.",
+      "Provides real-time feedback on blood flow dynamics.",
+      "Can differentiate between healthy and diseased states effectively."
+    ],
+    "weaknesses": [
+      "Requires specific equipment and setup time.",
+      "Results can be influenced by external factors like skin conditions.",
+      "May not provide immediate results."
+    ],
+    "compared_to": [
+      {
+        "technique": "Laser Doppler flowmetry",
+        "verdict": "FMSF provides more detailed metabolic insights compared to LDF."
+      },
+      {
+        "technique": "Flow mediated dilation",
+        "verdict": "FMSF offers a broader assessment of both mitochondrial and vascular function."
+      }
+    ]
+  },
+  "connects_to": [
+    "Laser Doppler flowmetry (LDF)",
+    "Laser speckle contrast imaging (LSCI)",
+    "Flow mediated dilation (FMD)",
+    "Reactive hyperemia peripheral arterial tonometry (RH-PAT)"
+  ],
+  "maturity": "proven (widely used in production)"
+}

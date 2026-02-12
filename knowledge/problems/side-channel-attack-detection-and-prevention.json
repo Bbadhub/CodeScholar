@@ -1,0 +1,37 @@
+{
+  "problem_name": "Side-Channel Attack Detection and Prevention",
+  "description": "Side-channel attacks exploit information gained from the physical implementation of a system, such as timing information, power consumption, or electromagnetic leaks. Detecting and preventing these attacks is crucial for securing cryptographic implementations, especially in resource-constrained environments like microcontrollers.",
+  "you_have_this_if": [
+    "You are observing unusual power consumption patterns during cryptographic operations.",
+    "You suspect that your system may be vulnerable to timing attacks.",
+    "You are developing or deploying cryptographic algorithms in embedded systems.",
+    "You need to ensure compliance with security standards for hardware implementations.",
+    "You are facing challenges in assessing the robustness of your current security measures."
+  ],
+  "approaches": [
+    {
+      "technique": "Deep Learning-based Power Analysis",
+      "best_for": "when you need to assess the security of cryptographic implementations in microcontrollers and develop countermeasures against advanced side-channel attacks.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach may require significant computational resources but can provide high accuracy in detecting vulnerabilities."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Deep Learning-based Power Analysis",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to analyze complex power consumption patterns to identify potential side-channel vulnerabilities."
+    }
+  ],
+  "start_here": "Start with Deep Learning-based Power Analysis as it provides a robust framework for detecting vulnerabilities in power consumption patterns, especially in cryptographic implementations.",
+  "related_problems": [
+    "Timing Attack Detection",
+    "Fault Injection Attack Prevention",
+    "Cryptographic Implementation Security",
+    "Hardware Security Module Vulnerabilities"
+  ]
+}

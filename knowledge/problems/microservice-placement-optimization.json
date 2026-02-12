@@ -1,0 +1,37 @@
+{
+  "problem_name": "Microservice Placement Optimization",
+  "description": "Microservice placement optimization involves determining the most efficient way to deploy microservices across available resources to maximize performance and minimize costs. This problem is particularly relevant in environments where resources are limited and operational efficiency is critical.",
+  "you_have_this_if": [
+    "You are experiencing performance bottlenecks in your microservice architecture.",
+    "Your deployment costs are higher than expected.",
+    "You have limited resources and need to optimize their usage.",
+    "You are working with real-time data processing requirements.",
+    "Your application is deployed in a dynamic environment, such as IIoT."
+  ],
+  "approaches": [
+    {
+      "technique": "Mixed-Integer Linear Programming (MILP) for SFT mapping",
+      "best_for": "When you need to optimize microservice deployment in resource-constrained environments.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "While MILP can provide optimal solutions, it may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Mixed-Integer Linear Programming (MILP)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need an optimal solution for microservice placement in a resource-constrained environment."
+    }
+  ],
+  "start_here": "Start with Mixed-Integer Linear Programming (MILP) if you are looking for an optimal solution and have the computational resources available.",
+  "related_problems": [
+    "Resource Allocation Optimization",
+    "Load Balancing in Microservices",
+    "Container Scheduling",
+    "Network Traffic Optimization"
+  ]
+}

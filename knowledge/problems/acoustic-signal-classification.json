@@ -1,0 +1,37 @@
+{
+  "problem_name": "Acoustic Signal Classification",
+  "description": "Acoustic signal classification involves identifying and categorizing sounds based on their characteristics. This is particularly useful in applications such as wildlife monitoring, agricultural practices, and emotional analysis of animal vocalizations.",
+  "you_have_this_if": [
+    "You are working with audio data from animals or environments.",
+    "You need to classify sounds into distinct categories.",
+    "You are interested in non-invasive monitoring techniques.",
+    "You require real-time analysis of acoustic signals.",
+    "You are exploring AI applications in agriculture or animal welfare."
+  ],
+  "approaches": [
+    {
+      "technique": "Whisper",
+      "best_for": "When you need to monitor poultry welfare without invasive methods.",
+      "paper_count": 1,
+      "max_citations": 7,
+      "key_tradeoff": "This approach offers a balance between accuracy and non-invasiveness but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Whisper",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to analyze animal vocalizations for emotional states in a real-time setting."
+    }
+  ],
+  "start_here": "Start with the Whisper technique as it provides a robust framework for non-invasive acoustic signal classification, particularly in agricultural settings.",
+  "related_problems": [
+    "Speech recognition",
+    "Environmental sound classification",
+    "Animal behavior analysis",
+    "Emotion recognition in vocalizations"
+  ]
+}

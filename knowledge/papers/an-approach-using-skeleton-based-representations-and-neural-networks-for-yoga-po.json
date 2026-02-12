@@ -1,0 +1,100 @@
+{
+  "summary": "The paper presents a method for recognizing yoga poses using skeleton-based representations extracted from images via the MoveNet model, achieving high accuracy with neural networks. Engineers should care because this approach can be implemented to create smart virtual trainers for yoga practice, enhancing user experience and safety.",
+  "key_contribution": "The integration of MoveNet for skeleton extraction and the development of FNN1D and Conv1D models for yoga pose classification.",
+  "problem_type": "pose recognition",
+  "problem_description": "The need for accurate yoga pose recognition to prevent injuries and enhance the effectiveness of home workouts.",
+  "domain": "Machine Learning & AI",
+  "sub_domain": "Pose Recognition",
+  "technique_name": "FNN1D and Conv1D",
+  "technique_category": "neural_architecture",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method uses MoveNet to extract skeletal keypoints from images, which are then fed into either a Feedforward Neural Network (FNN) or a Convolutional Neural Network (CNN) for classification of yoga poses. The models are trained on a dataset of skeletal representations to achieve high accuracy.",
+    "algorithm_steps": [
+      "1. Collect images of yoga poses.",
+      "2. Use MoveNet to extract skeletal keypoints from images.",
+      "3. Preprocess the keypoints into a feature vector.",
+      "4. Train the FNN1D or Conv1D model using the feature vectors.",
+      "5. Evaluate the model's performance using metrics like accuracy, precision, recall, and F1-score.",
+      "6. Deploy the model in a web application for real-time yoga pose recognition."
+    ],
+    "input": "Images of yoga poses in .jpg or .png format, which are converted to skeletal data.",
+    "output": "Predicted yoga pose labels corresponding to the input images.",
+    "key_parameters": [
+      "learning_rate: 0.0005",
+      "batch_size: 32",
+      "epochs: 80",
+      "dropout_rate: 0.2"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Custom dataset of 3939 images of 10 yoga poses"
+    ],
+    "metrics": [
+      "Accuracy: 97.68% for FNN1D, 98.13% for Conv1D",
+      "Precision, Recall, F1-score (exact values not stated)"
+    ],
+    "baselines": [
+      "Previous models using different architectures like VGG16, ResNet"
+    ],
+    "improvement": "Conv1D model achieved 0.98135 accuracy, outperforming baseline models."
+  },
+  "concepts": [
+    "skeleton extraction",
+    "pose recognition",
+    "neural networks",
+    "MoveNet",
+    "FNN",
+    "CNN",
+    "data preprocessing"
+  ],
+  "use_this_when": [
+    "Building applications for yoga pose recognition.",
+    "Creating virtual trainers for fitness applications.",
+    "Developing systems that require real-time human pose analysis."
+  ],
+  "dont_use_when": [
+    "Working with non-human poses or actions.",
+    "When RGB image data is preferred over skeletal data.",
+    "In scenarios requiring 3D pose recognition."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "1D arrays for skeletal keypoints",
+      "CSV files for storing extracted features"
+    ],
+    "dependencies": [
+      "TensorFlow",
+      "Flask",
+      "HTML/CSS/JavaScript for web interface"
+    ],
+    "pseudocode_hint": "skeleton_data = MoveNet(image); pose = Conv1D(skeleton_data)",
+    "gotchas": [
+      "Ensure images are clear and contain detectable skeletons.",
+      "Monitor for overfitting during model training.",
+      "Optimize the model for different hardware capabilities."
+    ]
+  },
+  "connects_to": [
+    "PoseNet",
+    "OpenPose",
+    "3D CNN architectures",
+    "Transfer Learning techniques"
+  ],
+  "prerequisites": [
+    "Understanding of neural networks",
+    "Familiarity with image processing",
+    "Knowledge of web development"
+  ],
+  "limitations": [
+    "Dependent on the quality of input images",
+    "Limited to the poses included in the training dataset",
+    "May require significant computational resources for real-time processing"
+  ],
+  "open_questions": [
+    "How can the model be adapted for more complex yoga poses?",
+    "What additional features could enhance user interaction in the application?"
+  ]
+}

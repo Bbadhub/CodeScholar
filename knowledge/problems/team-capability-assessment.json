@@ -1,0 +1,37 @@
+{
+  "problem_name": "Team Capability Assessment",
+  "description": "Team capability assessment involves evaluating the skills, processes, and practices of a software development team to determine their effectiveness and readiness for projects. This assessment helps organizations make informed decisions about team assignments, training needs, and process improvements.",
+  "you_have_this_if": [
+    "You are considering awarding a contract to a software development team.",
+    "You want to implement DevOps practices within your organization.",
+    "You are looking to improve project outcomes through better evaluations of team capabilities.",
+    "You need to identify gaps in team skills and processes.",
+    "You are preparing for a project that requires specific team competencies."
+  ],
+  "approaches": [
+    {
+      "technique": "Capability Maturity Model Integration (CMMI) with DevOps practices",
+      "best_for": "When you need a structured framework to assess and improve team capabilities in a DevOps context.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "Provides a comprehensive assessment but may require significant time and resources to implement."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "CMMI with DevOps practices",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a thorough evaluation of team capabilities before starting a new project or initiative."
+    }
+  ],
+  "start_here": "The recommended first approach is to use the Capability Maturity Model Integration (CMMI) with DevOps practices, as it provides a structured framework for assessing team capabilities and aligning them with project goals.",
+  "related_problems": [
+    "Skill Gap Analysis",
+    "Team Performance Evaluation",
+    "Process Improvement Assessment",
+    "DevOps Readiness Assessment"
+  ]
+}

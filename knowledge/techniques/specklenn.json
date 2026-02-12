@@ -1,0 +1,87 @@
+{
+  "technique_name": "SpeckleNN",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "SpeckleNN is a neural network optimized for real-time classification of X-ray single-particle imaging data.",
+  "how_it_works": "SpeckleNN is designed to classify speckle patterns from X-ray detectors efficiently. The model is optimized to reduce its parameters significantly while maintaining high accuracy. It leverages FPGA hardware for deployment, allowing for low latency and reduced power consumption during inference.",
+  "algorithm": {
+    "steps": [
+      "Define the original SpeckleNN architecture with approximately 5.6 million parameters.",
+      "Optimize the model to reduce parameters to 64.6K while maintaining at least 90% accuracy.",
+      "Implement the optimized model on the KCU1500 FPGA board using the SLAC Neural Network Library (SNL).",
+      "Evaluate performance based on resource utilization, power consumption, and inference latency.",
+      "Compare FPGA performance against a GPU implementation."
+    ],
+    "core_equation": "output = classification(SpeckleNN(input))",
+    "input_format": "Speckle patterns from X-ray detectors (data type: images, shape: variable)",
+    "output_format": "Real-time classification results indicating the presence of single-particle hits (data type: labels, shape: variable)"
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "not stated",
+      "effect": "affects convergence speed and model performance"
+    },
+    {
+      "name": "parameter_count",
+      "typical_value": "64.6K",
+      "effect": "reducing parameters may impact accuracy"
+    },
+    {
+      "name": "latency",
+      "typical_value": "45.015 microseconds",
+      "effect": "lower latency improves real-time performance"
+    },
+    {
+      "name": "power_consumption",
+      "typical_value": "9.4W",
+      "effect": "lower power consumption is critical for embedded systems"
+    }
+  ],
+  "complexity": {
+    "time": "not stated",
+    "space": "not stated",
+    "practical_note": "The model is optimized for FPGA deployment, which may not translate directly to other hardware."
+  },
+  "use_when": [
+    "You need to perform real-time classification of high-throughput data from X-ray detectors.",
+    "You are working in environments where power consumption is critical.",
+    "You require rapid deployment of machine learning models that may need frequent updates."
+  ],
+  "avoid_when": [
+    "You have access to abundant computational resources and can afford higher latency.",
+    "You require extremely high accuracy beyond 90% and cannot compromise on model size.",
+    "You are working with datasets that do not fit the few-shot learning paradigm."
+  ],
+  "implementation_skeleton": "def speckle_nn(input: np.ndarray) -> np.ndarray:\n    # Load optimized model parameters\n    model = load_model('optimized_speckle_nn')\n    # Perform classification\n    output = model.predict(input)\n    return output",
+  "common_mistakes": [
+    "Neglecting to optimize the model for the specific FPGA architecture.",
+    "Overlooking the trade-off between model size and accuracy.",
+    "Failing to evaluate power consumption during deployment."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High efficiency in real-time classification tasks.",
+      "Significant reduction in power consumption compared to GPU implementations.",
+      "Fast inference times suitable for high-throughput environments."
+    ],
+    "weaknesses": [
+      "Limited to approximately 90% accuracy, which may not be sufficient for all applications.",
+      "Requires careful optimization for FPGA deployment.",
+      "Not suitable for datasets outside the few-shot learning paradigm."
+    ],
+    "compared_to": [
+      {
+        "technique": "GPU-based neural networks",
+        "verdict": "Use SpeckleNN for lower power and latency; use GPU for higher accuracy and flexibility."
+      }
+    ]
+  },
+  "connects_to": [
+    "FPGA optimization techniques",
+    "Real-time machine learning",
+    "X-ray imaging analysis",
+    "Low-power neural networks"
+  ],
+  "maturity": "emerging"
+}

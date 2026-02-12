@@ -1,0 +1,86 @@
+{
+  "technique_name": "Two-Tower Networks with Multi-Armed Bandit",
+  "aliases": [
+    "Two-Tower Neural Networks",
+    "Multi-Armed Bandit for Recommendations"
+  ],
+  "category": "neural_architecture, optimization_algorithm",
+  "one_liner": "This technique combines two-tower neural networks with multi-armed bandit algorithms to optimize personalized nudges in real-time.",
+  "how_it_works": "Two-tower networks separately encode user and item features, allowing for effective matching. The multi-armed bandit algorithm dynamically selects the best nudge based on user interactions and contextual factors. This approach continuously refines recommendations by learning from real-time feedback, enhancing user engagement and conversion rates.",
+  "algorithm": {
+    "steps": [
+      "1. Encode user features using the first tower of the neural network.",
+      "2. Encode item features using the second tower of the neural network.",
+      "3. Use the multi-armed bandit algorithm to select the optimal nudge based on user context.",
+      "4. Present the nudge to the user at the most opportune moment.",
+      "5. Collect user feedback and interactions to update the model.",
+      "6. Continuously refine nudges based on real-time data."
+    ],
+    "core_equation": "output = f(user_features) + g(item_features)",
+    "input_format": "User features (demographics, behavior) and item features (product details, timing).",
+    "output_format": "Personalized nudges (recommendations) for users."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A higher learning rate may speed up training but can lead to instability."
+    },
+    {
+      "name": "exploration_rate",
+      "typical_value": "0.1",
+      "effect": "Increasing exploration rate enhances the diversity of nudges but may reduce immediate performance."
+    },
+    {
+      "name": "number_of_arms",
+      "typical_value": "5",
+      "effect": "More arms allow for more nudges but increase complexity in selection."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(1)",
+    "practical_note": "Real-time nudge selection is efficient, but training can be computationally intensive."
+  },
+  "use_when": [
+    "You need to influence user behavior in a digital platform.",
+    "Real-time personalization is critical for user engagement.",
+    "You want to leverage behavioral insights in your recommendations."
+  ],
+  "avoid_when": [
+    "User data is sparse or unreliable.",
+    "Real-time processing is not feasible due to system constraints.",
+    "The application domain does not require behavioral nudging."
+  ],
+  "implementation_skeleton": "def two_tower_bandit(user_features: List[float], item_features: List[float]) -> str:\n    user_embedding = encode_user(user_features)\n    item_embedding = encode_item(item_features)\n    nudge = select_nudge(user_embedding, item_embedding)\n    return nudge",
+  "common_mistakes": [
+    "Neglecting to update the model with user feedback.",
+    "Using too high of an exploration rate, leading to poor user experience.",
+    "Failing to properly encode user and item features, resulting in ineffective nudges."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Enhances user engagement through personalized nudges.",
+      "Adapts in real-time based on user interactions.",
+      "Combines deep learning with reinforcement learning for better performance."
+    ],
+    "weaknesses": [
+      "Requires substantial user data for effective training.",
+      "Complexity in model training and real-time processing.",
+      "May not perform well in domains lacking behavioral nudging."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Recommendation Systems",
+        "verdict": "Use Two-Tower Networks with Multi-Armed Bandit when real-time personalization and behavioral nudging are essential."
+      }
+    ]
+  },
+  "connects_to": [
+    "Reinforcement Learning",
+    "Collaborative Filtering",
+    "Deep Learning for Recommendations",
+    "Contextual Bandits"
+  ],
+  "maturity": "emerging"
+}

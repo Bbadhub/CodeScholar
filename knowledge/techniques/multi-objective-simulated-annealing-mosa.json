@@ -1,0 +1,84 @@
+{
+  "technique_name": "Multi-Objective Simulated Annealing (MOSA)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "MOSA is an optimization technique that balances exploration and exploitation to solve multi-objective problems.",
+  "how_it_works": "MOSA begins with a high exploration phase to broadly search for potential solutions. As the algorithm progresses, it gradually reduces exploration in favor of refining the best solutions found. This balance allows it to effectively navigate complex solution spaces while optimizing for multiple conflicting objectives.",
+  "algorithm": {
+    "steps": [
+      "Initialize temperature and solution set.",
+      "Generate initial solutions randomly.",
+      "While temperature is above a threshold:",
+      "  For each solution, evaluate its performance against multiple objectives.",
+      "  Select solutions to keep based on performance and temperature.",
+      "  Gradually reduce temperature to decrease exploration.",
+      "Return the best solution found."
+    ],
+    "core_equation": "output = optimized task allocation for UAVs",
+    "input_format": "Task requirements (array), UAV capabilities (array), traffic data (array)",
+    "output_format": "Optimized task allocation (array)"
+  },
+  "parameters": [
+    {
+      "name": "initial_temperature",
+      "typical_value": "100",
+      "effect": "Higher initial temperature allows for more exploration."
+    },
+    {
+      "name": "cooling_rate",
+      "typical_value": "0.95",
+      "effect": "A slower cooling rate results in more thorough exploration."
+    },
+    {
+      "name": "max_iterations",
+      "typical_value": "1000",
+      "effect": "More iterations can lead to better solutions but increase computation time."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)",
+    "practical_note": "Performance may vary based on the cooling schedule and problem complexity."
+  },
+  "use_when": [
+    "You need to allocate tasks among multiple UAVs with conflicting objectives.",
+    "You are working on optimization problems in dynamic environments.",
+    "You want to balance exploration and exploitation in your search algorithm."
+  ],
+  "avoid_when": [
+    "The problem has a single objective that can be optimized directly.",
+    "Real-time decision making is critical and cannot afford the cooling period.",
+    "The solution space is small and can be exhaustively searched."
+  ],
+  "implementation_skeleton": "def mos_algorithm(task_requirements: List, uav_capabilities: List, traffic_data: List) -> List:\n    temperature = 100\n    solutions = generate_initial_solutions(task_requirements, uav_capabilities)\n    while temperature > threshold:\n        for solution in solutions:\n            evaluate_performance(solution, traffic_data)\n        solutions = select_best_solutions(solutions, temperature)\n        temperature *= cooling_rate\n    return best_solution(solutions)",
+  "common_mistakes": [
+    "Not properly tuning the cooling rate, leading to premature convergence.",
+    "Failing to adequately evaluate the performance of solutions against all objectives.",
+    "Overlooking the importance of the initial temperature setting."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively handles multiple conflicting objectives.",
+      "Balances exploration and exploitation for better solution quality.",
+      "Adaptable to dynamic environments."
+    ],
+    "weaknesses": [
+      "Can be slower than single-objective optimization methods.",
+      "Performance heavily depends on parameter tuning.",
+      "May require significant computational resources for large problems."
+    ],
+    "compared_to": [
+      {
+        "technique": "Single-Objective Simulated Annealing",
+        "verdict": "Use MOSA when dealing with multiple objectives; otherwise, single-objective methods may be more efficient."
+      }
+    ]
+  },
+  "connects_to": [
+    "Simulated Annealing",
+    "Genetic Algorithms",
+    "Multi-Objective Optimization",
+    "Task Allocation Algorithms"
+  ],
+  "maturity": "proven"
+}

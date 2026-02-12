@@ -1,0 +1,98 @@
+{
+  "technique_name": "Fast Container to Machine Allocator (FCMA)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "FCMA optimizes the allocation of containers and virtual machines based on workload predictions to minimize costs.",
+  "how_it_works": "FCMA calculates the optimal allocation of containers and virtual machines (VMs) by analyzing workload predictions. It reduces the problem size and combines Integer Linear Programming (ILP) methods with heuristics to achieve near-optimal solutions quickly. The algorithm considers available instance classes and their resources to allocate containers efficiently while minimizing costs.",
+  "algorithm": {
+    "steps": [
+      "1. Define the workload for each application in requests per second.",
+      "2. Identify available instance classes and their resources (CPU, memory, price).",
+      "3. Formulate a partial ILP problem to determine initial allocations.",
+      "4. Aggregate nodes based on resource requirements.",
+      "5. Allocate containers to nodes based on performance and cost.",
+      "6. Aggregate containers to optimize resource usage."
+    ],
+    "core_equation": "output = number of VMs and containers allocated for each application based on workload and resource requirements",
+    "input_format": "Workload data (requests per second), instance class specifications (CPU cores, memory, price), container class requirements.",
+    "output_format": "Number of VMs and containers allocated for each application, along with their respective resources."
+  },
+  "parameters": [
+    {
+      "name": "workload",
+      "typical_value": "requests per second (rps)",
+      "effect": "Higher workload increases resource allocation."
+    },
+    {
+      "name": "instance_classes",
+      "typical_value": "number of available instance classes",
+      "effect": "More classes can lead to better optimization."
+    },
+    {
+      "name": "containers",
+      "typical_value": "number of container classes",
+      "effect": "More container classes may complicate allocation."
+    },
+    {
+      "name": "cores",
+      "typical_value": "CPU cores required per container",
+      "effect": "More cores per container increases resource demand."
+    },
+    {
+      "name": "memory",
+      "typical_value": "memory required per container (GB)",
+      "effect": "Higher memory requirements may limit VM options."
+    },
+    {
+      "name": "price",
+      "typical_value": "cost per hour of instance classes ($/h)",
+      "effect": "Higher prices may lead to fewer allocations."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated.",
+    "space": "Not stated.",
+    "practical_note": "FCMA shows an average solving time reduction of two orders of magnitude compared to traditional ILP methods."
+  },
+  "use_when": [
+    "You need to optimize resource allocation in a cloud environment with variable workloads.",
+    "Real-time autoscaling decisions are critical for maintaining service levels.",
+    "You want to minimize costs associated with deploying containers and VMs."
+  ],
+  "avoid_when": [
+    "The workload is predictable and does not require dynamic scaling.",
+    "You have a very small number of containers and VMs, making the problem trivial.",
+    "You require absolute optimality over speed in resource allocation."
+  ],
+  "implementation_skeleton": "def fcma_allocate(workload: float, instance_classes: List[InstanceClass], containers: List[ContainerClass]) -> Allocation:\n    # Step 1: Define workload\n    # Step 2: Identify instance classes\n    # Step 3: Formulate ILP problem\n    # Step 4: Aggregate nodes\n    # Step 5: Allocate containers\n    # Step 6: Optimize resource usage\n    return allocation",
+  "common_mistakes": [
+    "Ignoring the variability in workload predictions.",
+    "Overcomplicating the model with too many instance or container classes.",
+    "Failing to consider cost implications of resource allocation."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Significantly faster than traditional ILP methods.",
+      "Cost-effective solutions comparable to ILP.",
+      "Scalable to various workloads and resource configurations."
+    ],
+    "weaknesses": [
+      "May not achieve absolute optimality.",
+      "Performance can degrade with highly complex workloads.",
+      "Requires accurate workload predictions for best results."
+    ],
+    "compared_to": [
+      {
+        "technique": "Integer Linear Programming (ILP)",
+        "verdict": "Use FCMA for speed and cost-effectiveness; use ILP for absolute optimality."
+      }
+    ]
+  },
+  "connects_to": [
+    "Dynamic resource allocation techniques",
+    "Container orchestration frameworks",
+    "Cloud cost optimization strategies",
+    "Autoscaling algorithms"
+  ],
+  "maturity": "emerging"
+}

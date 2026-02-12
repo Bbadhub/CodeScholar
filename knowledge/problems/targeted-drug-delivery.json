@@ -1,0 +1,37 @@
+{
+  "problem_name": "Targeted Drug Delivery",
+  "description": "Targeted drug delivery involves directing therapeutic agents to specific sites within the body to enhance treatment efficacy while minimizing side effects. This approach is particularly important in treating diseases like cancer and neurological disorders, where precision is crucial.",
+  "you_have_this_if": [
+    "You are developing a system to deliver drugs to specific tissues or organs.",
+    "You are facing challenges with the precision of drug delivery mechanisms.",
+    "You are working on minimizing side effects of drug treatments.",
+    "You are integrating robotics or advanced technologies in medical applications.",
+    "You are exploring innovative solutions for drug delivery in complex biological environments."
+  ],
+  "approaches": [
+    {
+      "technique": "Magnetic Microrobot Navigation",
+      "best_for": "when developing targeted drug delivery systems for neurological applications or complex biological environments.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach offers high precision but may require complex navigation algorithms."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Magnetic Microrobot Navigation",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to navigate through complex biological environments to deliver drugs accurately."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is Magnetic Microrobot Navigation, as it provides a high level of accuracy in targeted drug delivery, especially in challenging environments.",
+  "related_problems": [
+    "Nanoparticle Drug Delivery",
+    "Localized Cancer Treatment",
+    "Smart Drug Delivery Systems",
+    "Biomimetic Drug Delivery"
+  ]
+}

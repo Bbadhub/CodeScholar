@@ -1,0 +1,93 @@
+{
+  "technique_name": "YOLOv8-CE",
+  "aliases": [
+    "You Only Look Once version 8 with Coordinate Attention"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "YOLOv8-CE is a real-time object detection model optimized for detecting small traffic signs in autonomous vehicles.",
+  "how_it_works": "YOLOv8-CE enhances the YOLOv8 architecture by integrating Coordinate Attention to improve localization and using EIoU for better regression accuracy. It processes input images through data augmentation techniques and extracts features using a backbone network. The model employs a decoupled head for classification and detection, and utilizes Focal Loss to effectively handle sample difficulty, particularly for small objects.",
+  "algorithm": {
+    "steps": [
+      "1. Input images are processed using data augmentation techniques like Mosaic and MixUp.",
+      "2. The backbone network extracts features using Conv, C2f, and SPPF modules.",
+      "3. Coordinate Attention is applied to enhance localization capabilities.",
+      "4. The neck fuses features at different scales using FPN and PANet.",
+      "5. The head uses a decoupled structure for classification and detection.",
+      "6. The EIoU loss function is used for regression.",
+      "7. The model is trained and evaluated on the CCTSDB dataset."
+    ],
+    "core_equation": "output = predicted bounding boxes and class labels",
+    "input_format": "640x640 pixel images of traffic signs",
+    "output_format": "Predicted bounding boxes and class labels for detected traffic signs"
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.01",
+      "effect": "Higher values may lead to faster convergence but risk overshooting minima."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "16",
+      "effect": "Larger batch sizes can stabilize training but require more memory."
+    },
+    {
+      "name": "weight_decay",
+      "typical_value": "0.0005",
+      "effect": "Increases regularization to prevent overfitting."
+    },
+    {
+      "name": "epochs",
+      "typical_value": "300",
+      "effect": "More epochs can improve accuracy but may lead to overfitting."
+    }
+  ],
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)",
+    "practical_note": "Real-world performance is optimized for real-time applications with an inference time of 96 ms."
+  },
+  "use_when": [
+    "You need to detect small objects in real-time.",
+    "You are working on an autonomous vehicle project.",
+    "You require a model that performs well under varying environmental conditions."
+  ],
+  "avoid_when": [
+    "You have access to high-end computing resources and can afford larger models.",
+    "The application does not require real-time performance.",
+    "You are working with very large images that exceed the model's input size."
+  ],
+  "implementation_skeleton": "def yolo_v8_ce(input_image: np.ndarray) -> Tuple[np.ndarray, List[str]]:\n    # Step 1: Data augmentation\n    augmented_image = data_augmentation(input_image)\n    # Step 2: Feature extraction\n    features = backbone_network(augmented_image)\n    # Step 3: Apply Coordinate Attention\n    localized_features = coordinate_attention(features)\n    # Step 4: Feature fusion\n    fused_features = feature_fusion(localized_features)\n    # Step 5: Detection head\n    predictions = detection_head(fused_features)\n    return predictions.bounding_boxes, predictions.class_labels",
+  "common_mistakes": [
+    "Neglecting data augmentation, which can lead to poor performance on small objects.",
+    "Using inappropriate learning rates that can cause instability in training.",
+    "Failing to properly tune the EIoU loss function for regression tasks."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy in detecting small traffic signs.",
+      "Real-time performance suitable for autonomous applications.",
+      "Robustness to varying environmental conditions."
+    ],
+    "weaknesses": [
+      "May not perform as well on larger objects.",
+      "Requires careful tuning of hyperparameters.",
+      "Limited to the input size of 640x640 pixels."
+    ],
+    "compared_to": [
+      {
+        "technique": "YOLOv8",
+        "verdict": "YOLOv8-CE is preferable for small object detection, while YOLOv8 may be better for larger objects."
+      }
+    ]
+  },
+  "connects_to": [
+    "YOLOv8",
+    "Focal Loss",
+    "Coordinate Attention",
+    "EIoU",
+    "Feature Pyramid Networks (FPN)",
+    "Path Aggregation Network (PANet)"
+  ],
+  "maturity": "proven"
+}

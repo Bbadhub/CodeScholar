@@ -1,0 +1,37 @@
+{
+  "problem_name": "Cross-Domain Voice Conversion",
+  "description": "Cross-domain voice conversion involves transforming audio from one domain (like singing) to another (like speech) while preserving the speaker's identity. This is particularly useful in applications such as music technology and improving accessibility for hearing-impaired users.",
+  "you_have_this_if": [
+    "You are working on projects that involve audio processing.",
+    "You need to convert singing into intelligible speech.",
+    "You are developing applications for music technology.",
+    "You are focused on enhancing audio intelligibility for specific user groups.",
+    "You are interested in improving Automatic Lyrics Transcription systems."
+  ],
+  "approaches": [
+    {
+      "technique": "Generative Flow-based Singing-to-Speech Conversion",
+      "best_for": "when you need to convert singing to speech for applications in music technology or enhance audio intelligibility.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This technique may require significant computational resources but offers high-quality audio output."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Generative Flow-based Singing-to-Speech Conversion",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need high-quality voice conversion for music applications and can afford computational resources."
+    }
+  ],
+  "start_here": "Start with the Generative Flow-based Singing-to-Speech Conversion technique, as it is specifically designed for converting singing to speech and offers high accuracy.",
+  "related_problems": [
+    "Voice Cloning",
+    "Speech Synthesis",
+    "Audio Style Transfer",
+    "Emotion Recognition in Speech"
+  ]
+}

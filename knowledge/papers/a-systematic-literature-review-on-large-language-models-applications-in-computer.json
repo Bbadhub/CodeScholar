@@ -1,0 +1,91 @@
+{
+  "summary": "This paper presents a systematic literature review of the applications of large language models (LLMs) in the evaluation process of programming education. Engineers should care because it highlights effective strategies and emerging trends in leveraging LLMs for assessing coding skills, which can enhance educational tools and methodologies.",
+  "key_contribution": "The paper identifies key trends and effective applications of LLMs in programming education assessment, providing a roadmap for future implementations.",
+  "problem_type": "educational assessment in programming",
+  "problem_description": "The work is motivated by the need to improve the evaluation processes in programming education using advanced AI techniques.",
+  "domain": "Education Technology",
+  "sub_domain": "Programming Education",
+  "technique_name": "Large Language Models (LLMs)",
+  "technique_category": "neural_architecture",
+  "technique_type": "adaptation",
+  "method": {
+    "approach": "The method involves systematically reviewing existing literature to identify how LLMs are utilized in programming education assessments. It synthesizes findings from various studies to outline effective practices and potential areas for future research.",
+    "algorithm_steps": [
+      "1. Define the scope of the literature review.",
+      "2. Collect relevant studies on LLM applications in programming education.",
+      "3. Analyze the methodologies and outcomes of these studies.",
+      "4. Identify trends and gaps in the current research.",
+      "5. Synthesize findings to propose future directions."
+    ],
+    "input": "A collection of academic studies and papers related to LLMs in programming education.",
+    "output": "A comprehensive review summarizing effective practices and trends in LLM applications for programming assessment.",
+    "key_parameters": [
+      "review_scope: broad",
+      "study_count: dozens"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Existing literature on LLM applications in programming education"
+    ],
+    "metrics": [
+      "effectiveness of LLMs in assessment, trends identified"
+    ],
+    "baselines": [
+      "Traditional assessment methods in programming education"
+    ],
+    "improvement": "Identified trends suggest significant improvements in assessment effectiveness compared to traditional methods."
+  },
+  "concepts": [
+    "large language models",
+    "programming education",
+    "assessment techniques",
+    "literature review"
+  ],
+  "use_this_when": [
+    "You want to enhance programming education tools with AI.",
+    "You are researching effective assessment methods in coding.",
+    "You need to understand current trends in educational technology."
+  ],
+  "dont_use_when": [
+    "You are looking for specific coding algorithms or techniques.",
+    "You need immediate implementation guidance for LLMs.",
+    "You are focused on non-educational applications of LLMs."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Literature database",
+      "Analysis framework"
+    ],
+    "dependencies": [
+      "Literature review tools",
+      "Data analysis software"
+    ],
+    "pseudocode_hint": "review_literature(studies): analyze(studies) -> summarize(trends)",
+    "gotchas": [
+      "Ensure comprehensive coverage of literature",
+      "Avoid bias in study selection",
+      "Be aware of the evolving nature of LLM applications"
+    ]
+  },
+  "connects_to": [
+    "Natural Language Processing techniques",
+    "Machine Learning in education",
+    "Assessment frameworks in education"
+  ],
+  "prerequisites": [
+    "Understanding of large language models",
+    "Familiarity with educational assessment methods",
+    "Knowledge of systematic literature review processes"
+  ],
+  "limitations": [
+    "Focuses primarily on LLMs, may overlook other AI techniques.",
+    "Results may vary based on the quality of reviewed studies.",
+    "Limited to the current state of research as of 2026."
+  ],
+  "open_questions": [
+    "How can LLMs be further integrated into real-time programming assessments?",
+    "What are the long-term impacts of LLMs on programming education outcomes?"
+  ]
+}

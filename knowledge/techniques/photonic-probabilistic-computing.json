@@ -1,0 +1,84 @@
+{
+  "technique_name": "Photonic Probabilistic Computing",
+  "aliases": [
+    "Probabilistic photonic computing"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "This technique utilizes chaotic light to perform high-speed probabilistic computations in photonic systems.",
+  "how_it_works": "Photonic probabilistic computing leverages chaotic light as a source of entropy to enable parallel sampling and efficient encoding of probabilistic information. It operates within a photonic crossbar array, where matrix-vector multiplications are performed using optical signals. This approach allows for the computation of probability density functions, making it particularly useful for Bayesian neural networks and uncertainty quantification.",
+  "algorithm": {
+    "steps": [
+      "1. Generate chaotic light using amplified spontaneous emission.",
+      "2. Split and delay the light to create independent optical signals.",
+      "3. Encode input distributions onto the optical carrier using electro-optic modulators.",
+      "4. Perform matrix-vector multiplications in the photonic crossbar array using non-volatile phase change material.",
+      "5. Demultiplex the output signal to sample from the probability density functions in parallel."
+    ],
+    "core_equation": "output = probability density functions from matrix-vector multiplications",
+    "input_format": "Encoded distributions of input data represented as optical signals.",
+    "output_format": "Probability density functions representing the results of probabilistic computations."
+  },
+  "parameters": [
+    {
+      "name": "symbol_rate",
+      "typical_value": "17.6 GBaud",
+      "effect": "Higher rates can improve throughput but may increase noise."
+    },
+    {
+      "name": "optical_bandwidth",
+      "typical_value": "several THz",
+      "effect": "Wider bandwidth allows for more data to be processed simultaneously."
+    },
+    {
+      "name": "transmission_coefficient",
+      "typical_value": "0.6 (for GST cell)",
+      "effect": "Affects the efficiency of signal transmission and overall performance."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the specific implementation and hardware used."
+  },
+  "use_when": [
+    "You need to perform high-speed probabilistic computations.",
+    "Uncertainty quantification is critical for your application.",
+    "You are working with incomplete or noisy data."
+  ],
+  "avoid_when": [
+    "Deterministic computations are sufficient for your needs.",
+    "You require a traditional electronic computing architecture.",
+    "Low latency is more critical than handling uncertainty."
+  ],
+  "implementation_skeleton": "def photonic_probabilistic_computing(input_data: OpticalSignal) -> ProbabilityDensityFunction:\n    chaotic_light = generate_chaotic_light()\n    optical_signals = split_and_delay(chaotic_light)\n    encoded_signals = encode_input_distributions(optical_signals, input_data)\n    output_signal = perform_matrix_vector_multiplications(encoded_signals)\n    return demultiplex_output(output_signal)",
+  "common_mistakes": [
+    "Neglecting the impact of noise on the chaotic light generation.",
+    "Overlooking the importance of proper encoding of input distributions.",
+    "Failing to optimize the parameters for specific applications."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Enables high-speed computations.",
+      "Provides better uncertainty quantification compared to deterministic methods.",
+      "Can handle incomplete or noisy data effectively."
+    ],
+    "weaknesses": [
+      "May require specialized hardware.",
+      "Complexity in implementation and tuning.",
+      "Not suitable for applications requiring deterministic outputs."
+    ],
+    "compared_to": [
+      {
+        "technique": "Deterministic ANNs",
+        "verdict": "Use photonic probabilistic computing when uncertainty quantification is essential."
+      }
+    ]
+  },
+  "connects_to": [
+    "Bayesian Neural Networks",
+    "Quantum Computing",
+    "Optical Signal Processing",
+    "Stochastic Computing"
+  ],
+  "maturity": "emerging"
+}

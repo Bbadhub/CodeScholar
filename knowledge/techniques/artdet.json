@@ -1,0 +1,76 @@
+{
+  "technique_name": "ARTDET",
+  "aliases": [],
+  "category": "machine_learning",
+  "one_liner": "ARTDET is a machine learning software for automated detection of art deterioration in easel paintings.",
+  "how_it_works": "ARTDET employs image processing and machine learning techniques to analyze high-resolution images of paintings. It enhances features relevant to deterioration and applies algorithms to identify patterns indicative of damage. The system generates a detailed report on detected issues and their severity, facilitating the preservation of cultural heritage.",
+  "algorithm": {
+    "steps": [
+      "1. Acquire high-resolution images of the painting.",
+      "2. Preprocess images to enhance features relevant to deterioration.",
+      "3. Apply machine learning algorithms to identify patterns of deterioration.",
+      "4. Generate a report detailing detected issues and their severity."
+    ],
+    "core_equation": "output = report(detection(image))",
+    "input_format": "High-resolution images of easel paintings (e.g., 300 DPI)",
+    "output_format": "A report indicating detected deterioration areas and their severity levels."
+  },
+  "parameters": [
+    {
+      "name": "image_resolution",
+      "typical_value": "300 DPI",
+      "effect": "Higher resolution improves detection accuracy."
+    },
+    {
+      "name": "detection_threshold",
+      "typical_value": "0.5",
+      "effect": "Lowering the threshold may increase false positives."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on image quality and complexity of deterioration patterns."
+  },
+  "use_when": [
+    "You need to automate the assessment of art condition.",
+    "You want to enhance the preservation process of cultural heritage.",
+    "You require a systematic approach to detect subtle damages in paintings."
+  ],
+  "avoid_when": [
+    "The painting is in a condition that requires immediate manual inspection.",
+    "You lack high-resolution images for analysis.",
+    "The deterioration patterns are too complex for current algorithms."
+  ],
+  "implementation_skeleton": "def artdet(image: Image) -> Report:\n    preprocessed_image = preprocess(image)\n    detections = detect_deterioration(preprocessed_image)\n    report = generate_report(detections)\n    return report",
+  "common_mistakes": [
+    "Using low-resolution images which can lead to inaccurate detections.",
+    "Setting the detection threshold too low, resulting in false positives.",
+    "Neglecting to preprocess images adequately before analysis."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Automates the detection process, saving time and resources.",
+      "Provides systematic and consistent assessments.",
+      "Improves detection accuracy over traditional methods."
+    ],
+    "weaknesses": [
+      "Requires high-quality images for effective analysis.",
+      "May struggle with complex deterioration patterns.",
+      "Not suitable for immediate manual inspections."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional visual inspection",
+        "verdict": "Use ARTDET for systematic assessments; use visual inspection for immediate evaluations."
+      }
+    ]
+  },
+  "connects_to": [
+    "Image processing techniques",
+    "Machine learning for anomaly detection",
+    "Cultural heritage preservation methods",
+    "Computer vision applications"
+  ],
+  "maturity": "proven"
+}

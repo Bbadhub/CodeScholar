@@ -1,0 +1,37 @@
+{
+  "problem_name": "Crossmodal Retrieval and Embedding Learning",
+  "description": "Crossmodal retrieval and embedding learning involves finding relevant information across different modalities, such as text and images, based on their inherent relationships. This problem is crucial for tasks that require understanding and retrieving data from diverse sources without explicit annotations.",
+  "you_have_this_if": [
+    "You are working with unannotated datasets.",
+    "You need to retrieve materials based on high-level properties.",
+    "You want to visualize relationships between different types of data.",
+    "You are leveraging existing literature for materials discovery.",
+    "You are dealing with multiple modalities in your data."
+  ],
+  "approaches": [
+    {
+      "technique": "Contrastive Language\u2013Structure Pre-training (CLaSP)",
+      "best_for": "When you need to retrieve materials based on high-level properties from unannotated datasets.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This approach may require significant computational resources but provides a robust framework for crossmodal retrieval."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Contrastive Language\u2013Structure Pre-training (CLaSP)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have access to unannotated datasets and need to explore relationships between different modalities."
+    }
+  ],
+  "start_here": "Start with Contrastive Language\u2013Structure Pre-training (CLaSP) as it effectively addresses the challenges of crossmodal retrieval and embedding learning, especially in unannotated contexts.",
+  "related_problems": [
+    "Multimodal Learning",
+    "Information Retrieval",
+    "Embedding Learning",
+    "Data Fusion"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "technique_name": "Energy-aware scheduling and dynamic power management",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "This technique optimizes energy consumption in high-performance computing (HPC) systems while maintaining performance levels.",
+  "how_it_works": "Energy-aware scheduling prioritizes jobs based on their power draw, allowing for more efficient use of resources. Dynamic power management adjusts power consumption in real-time according to workload demands. Continuous monitoring of energy usage enables adaptive strategies to enhance energy efficiency without sacrificing performance.",
+  "algorithm": {
+    "steps": [
+      "1. Assess current energy consumption and performance metrics of HPC systems.",
+      "2. Implement energy-aware scheduling to prioritize jobs based on their power draw.",
+      "3. Utilize dynamic power management to adjust power consumption based on workload demands.",
+      "4. Monitor energy usage continuously and adjust strategies as needed.",
+      "5. Evaluate the impact of changes on performance and energy efficiency."
+    ],
+    "core_equation": "output = optimized scheduling of jobs + reduced energy consumption",
+    "input_format": "Data on current energy consumption, job performance metrics, and workload characteristics.",
+    "output_format": "Optimized scheduling of jobs and reduced energy consumption in HPC systems."
+  },
+  "parameters": [
+    {
+      "name": "PUE (Power Usage Efficiency)",
+      "typical_value": "< 1.3 by 2030",
+      "effect": "Lower values indicate better energy efficiency."
+    },
+    {
+      "name": "Energy reuse",
+      "typical_value": "10%-20% depending on the year of operation",
+      "effect": "Higher reuse rates improve sustainability."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Real-world performance may vary based on the specific HPC architecture and workload characteristics."
+  },
+  "use_when": [
+    "You need to reduce operational costs in HPC systems.",
+    "You are required to comply with energy efficiency regulations.",
+    "You want to implement sustainable practices in data centers."
+  ],
+  "avoid_when": [
+    "The HPC workload is not sensitive to energy consumption.",
+    "You are operating in a low-cost energy environment.",
+    "The infrastructure is not capable of supporting advanced cooling solutions."
+  ],
+  "implementation_skeleton": "def energy_aware_scheduling(jobs: List[Job], metrics: Metrics) -> List[Job]:\n    # Step 1: Assess current energy consumption\n    current_metrics = assess_energy(metrics)\n    # Step 2: Prioritize jobs based on power draw\n    prioritized_jobs = prioritize_jobs(jobs, current_metrics)\n    # Step 3: Adjust power consumption dynamically\n    adjust_power(prioritized_jobs)\n    # Step 4: Monitor energy usage\n    monitor_energy_usage()\n    # Step 5: Evaluate performance impact\n    evaluate_performance(prioritized_jobs)\n    return optimized_jobs",
+  "common_mistakes": [
+    "Neglecting to continuously monitor energy usage.",
+    "Failing to adapt scheduling based on real-time workload changes.",
+    "Overlooking the importance of infrastructure capabilities for cooling."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Reduces operational costs significantly.",
+      "Enhances compliance with energy regulations.",
+      "Promotes sustainable practices in data centers."
+    ],
+    "weaknesses": [
+      "May not be effective for workloads insensitive to energy consumption.",
+      "Requires advanced infrastructure for optimal performance.",
+      "Implementation complexity can be high."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional scheduling",
+        "verdict": "Use energy-aware scheduling when energy efficiency is a priority."
+      }
+    ]
+  },
+  "connects_to": [
+    "Dynamic voltage and frequency scaling (DVFS)",
+    "Resource allocation algorithms",
+    "Load balancing techniques",
+    "Thermal management strategies"
+  ],
+  "maturity": "emerging"
+}

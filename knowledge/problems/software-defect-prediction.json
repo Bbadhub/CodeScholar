@@ -1,0 +1,37 @@
+{
+  "problem_name": "Software Defect Prediction",
+  "description": "Software defect prediction involves identifying potential defects in software code before they manifest in production. This helps in improving software quality and reducing maintenance costs by addressing issues early in the development process.",
+  "you_have_this_if": [
+    "You are experiencing high defect rates in your software releases.",
+    "Your team is struggling to prioritize bug fixes based on potential impact.",
+    "You have a large codebase with many components and dependencies.",
+    "You notice that certain areas of your code are more prone to defects than others.",
+    "You want to leverage historical defect data to inform future development efforts."
+  ],
+  "approaches": [
+    {
+      "technique": "Cost-Sensitive Forest (CS-Forest), Forest Penalizing Attributes (FPA), Functional Trees (FT)",
+      "best_for": "when you need to predict defects in large software codebases with class imbalance and require a scalable solution.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach balances the need for accuracy in defect prediction with the challenges of class imbalance in datasets."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Cost-Sensitive Forest (CS-Forest), Forest Penalizing Attributes (FPA), Functional Trees (FT)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have a large, imbalanced dataset and need to improve defect prediction across multiple projects."
+    }
+  ],
+  "start_here": "Start with the Cost-Sensitive Forest approach, as it effectively addresses class imbalance and scales well with large datasets, making it suitable for most defect prediction scenarios.",
+  "related_problems": [
+    "Bug Triage",
+    "Code Quality Assessment",
+    "Test Case Prioritization",
+    "Software Reliability Prediction"
+  ]
+}

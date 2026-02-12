@@ -1,0 +1,91 @@
+{
+  "technique_name": "Eye-Tracking Analysis",
+  "aliases": [
+    "Visual Attention Tracking",
+    "Gaze Tracking"
+  ],
+  "category": "data_analysis",
+  "one_liner": "Eye-tracking analysis measures and analyzes eye movement patterns to understand visual attention and cognitive processing.",
+  "how_it_works": "Eye-tracking analysis involves classifying participants based on cognitive styles and tracking their eye movements as they engage with visual content. The technique records fixation durations and transition patterns, allowing researchers to assess how different cognitive styles influence visual processing behavior. The collected data can be analyzed statistically to evaluate knowledge acquisition and user interaction patterns.",
+  "algorithm": {
+    "steps": [
+      "1. Classify participants as visualizers or verbalizers using questionnaires.",
+      "2. Present exhibition content under varying complexity levels.",
+      "3. Record eye movements using an eye-tracking device.",
+      "4. Analyze fixation durations and counts for different content types.",
+      "5. Conduct statistical analysis to compare visual attention patterns.",
+      "6. Evaluate knowledge acquisition through retention and transfer tests."
+    ],
+    "core_equation": "output = fixation_duration + fixation_count + knowledge_assessment_scores",
+    "input_format": "Exhibition content consisting of artifacts, images, text descriptions, and videos presented in varying complexity levels.",
+    "output_format": "Data on eye movement patterns, including total fixation duration, fixation count, and knowledge assessment scores."
+  },
+  "parameters": [
+    {
+      "name": "sampling_rate",
+      "typical_value": "2000 Hz",
+      "effect": "Higher rates provide more detailed tracking of eye movements."
+    },
+    {
+      "name": "display_resolution",
+      "typical_value": "1280 x 1024 pixels",
+      "effect": "Higher resolutions can improve the accuracy of eye-tracking data."
+    },
+    {
+      "name": "number_of_participants",
+      "typical_value": "54",
+      "effect": "More participants can enhance the reliability of the findings."
+    },
+    {
+      "name": "complexity_levels",
+      "typical_value": "3 (low, moderate, high)",
+      "effect": "Different complexity levels can reveal how cognitive styles affect visual attention."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Real-world performance may vary based on the quality of eye-tracking technology and participant engagement."
+  },
+  "use_when": [
+    "Designing museum exhibitions that cater to diverse cognitive styles.",
+    "Evaluating the effectiveness of multimodal content in educational settings.",
+    "Researching user interaction patterns in complex information environments."
+  ],
+  "avoid_when": [
+    "The exhibition content is purely textual or visual without multimodal elements.",
+    "Resources for eye-tracking technology are unavailable.",
+    "The target audience has a uniform cognitive style."
+  ],
+  "implementation_skeleton": "def eye_tracking_analysis(participants: List[Participant], content: ExhibitionContent) -> EyeTrackingData:\n    classify_participants(participants)\n    present_content(content)\n    eye_movements = record_eye_movements()\n    fixation_data = analyze_fixations(eye_movements)\n    statistical_results = conduct_statistical_analysis(fixation_data)\n    return statistical_results",
+  "common_mistakes": [
+    "Neglecting to properly classify participants based on cognitive styles.",
+    "Using inadequate eye-tracking technology that compromises data quality.",
+    "Failing to account for varying complexity levels in content presentation."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides insights into user attention and cognitive processing.",
+      "Can inform design decisions for educational and exhibition content.",
+      "Captures real-time interaction patterns."
+    ],
+    "weaknesses": [
+      "Requires specialized equipment and expertise.",
+      "Can be resource-intensive in terms of time and cost.",
+      "Data interpretation may be complex and context-dependent."
+    ],
+    "compared_to": [
+      {
+        "technique": "Surveys",
+        "verdict": "Use eye-tracking for real-time data; surveys for retrospective insights."
+      }
+    ]
+  },
+  "connects_to": [
+    "Cognitive Load Theory",
+    "User Experience Research",
+    "Multimodal Learning",
+    "Behavioral Analytics"
+  ],
+  "maturity": "proven"
+}

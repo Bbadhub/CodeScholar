@@ -1,0 +1,35 @@
+{
+  "problem_name": "Model Compression and Optimization",
+  "description": "Model compression and optimization involves reducing the size and complexity of machine learning models while maintaining their performance. This is particularly important for deploying models in resource-constrained environments, such as mobile devices or edge computing.",
+  "you_have_this_if": [
+    "You need to deploy a deep learning model on an edge device.",
+    "Your model is too large to fit into memory or run efficiently.",
+    "You are experiencing high latency in model inference.",
+    "You want to reduce energy consumption during model operation."
+  ],
+  "approaches": [
+    {
+      "technique": "Neural Network Pruning",
+      "best_for": "When deploying deep learning models on edge devices with limited computational resources.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "Pruning can significantly reduce model size but may lead to a slight decrease in accuracy."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Neural Network Pruning",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to reduce the model size while maintaining a balance between speed and accuracy."
+    }
+  ],
+  "start_here": "Start with Neural Network Pruning as it effectively reduces model size for deployment on edge devices without drastically impacting performance.",
+  "related_problems": [
+    "Model Quantization",
+    "Knowledge Distillation",
+    "Low-Rank Factorization"
+  ]
+}

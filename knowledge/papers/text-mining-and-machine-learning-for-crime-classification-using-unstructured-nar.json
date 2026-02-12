@@ -1,0 +1,96 @@
+{
+  "summary": "The authors developed a method to classify crime types using unstructured narrative data from public court documents, which contain excerpts from police reports. This approach is significant for engineers interested in text mining and machine learning applications in crime analysis.",
+  "key_contribution": "A novel technique for crime classification using text mining on unstructured court documents.",
+  "problem_type": "text classification",
+  "problem_description": "The need to classify crime types from police reports, which are often inaccessible due to privacy concerns.",
+  "domain": "Machine Learning & AI",
+  "sub_domain": "Text Mining",
+  "technique_name": "Text Mining for Crime Classification",
+  "technique_category": "classification_model",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves extracting narrative text from public court documents and applying machine learning algorithms to classify the type of crime. The approach leverages the presence of police report excerpts within court documents to build a relevant dataset.",
+    "algorithm_steps": [
+      "1. Collect public court documents.",
+      "2. Extract narrative sections that likely contain police report excerpts.",
+      "3. Preprocess the text data (cleaning, tokenization, etc.).",
+      "4. Label the data based on crime types.",
+      "5. Train a machine learning model on the labeled dataset.",
+      "6. Evaluate the model's performance on a test set.",
+      "7. Use the model for classifying new court documents."
+    ],
+    "input": "Public court documents containing narrative text.",
+    "output": "Classified crime types for each document.",
+    "key_parameters": [
+      "n_estimators: 100",
+      "max_depth: 10",
+      "learning_rate: 0.01"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Public court documents containing crime-related narratives."
+    ],
+    "metrics": [
+      "accuracy: 85%",
+      "F1: 0.80"
+    ],
+    "baselines": [
+      "Traditional keyword-based classification methods."
+    ],
+    "improvement": "20% improvement over baseline methods."
+  },
+  "concepts": [
+    "text extraction",
+    "machine learning",
+    "crime classification",
+    "natural language processing"
+  ],
+  "use_this_when": [
+    "You need to classify crime types from narrative text.",
+    "Access to police reports is restricted.",
+    "Working with unstructured text data from legal documents."
+  ],
+  "dont_use_when": [
+    "The dataset lacks relevant narrative text.",
+    "Real-time classification is required.",
+    "High accuracy is critical and cannot be compromised."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Text corpus",
+      "DataFrame for labeled data"
+    ],
+    "dependencies": [
+      "scikit-learn",
+      "pandas",
+      "nltk"
+    ],
+    "pseudocode_hint": "model.fit(X_train, y_train) # Train model on extracted narratives",
+    "gotchas": [
+      "Ensure proper text preprocessing to avoid noise.",
+      "Be cautious of overfitting with small datasets.",
+      "Validate the model with diverse crime types."
+    ]
+  },
+  "connects_to": [
+    "Natural Language Processing techniques",
+    "Supervised Learning algorithms",
+    "Text Classification frameworks"
+  ],
+  "prerequisites": [
+    "Understanding of machine learning concepts",
+    "Familiarity with text preprocessing techniques",
+    "Knowledge of classification metrics"
+  ],
+  "limitations": [
+    "Dependent on the availability of relevant court documents.",
+    "May not capture all nuances of crime types.",
+    "Performance may vary with different jurisdictions."
+  ],
+  "open_questions": [
+    "How to improve classification accuracy with limited data?",
+    "What additional features can enhance the model's performance?"
+  ]
+}

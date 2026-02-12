@@ -1,0 +1,37 @@
+{
+  "problem_name": "Document Information Extraction",
+  "description": "Document information extraction involves automatically retrieving structured data from unstructured documents such as invoices, receipts, and forms. This process is crucial for automating workflows and improving data accuracy in various applications.",
+  "you_have_this_if": [
+    "You are frequently processing invoices or receipts.",
+    "You encounter various document formats that need data extraction.",
+    "You require high accuracy in the extracted information.",
+    "You have limited training data available for your extraction models.",
+    "You need to reduce manual data entry efforts."
+  ],
+  "approaches": [
+    {
+      "technique": "Applied Key Information Extraction (KIE)",
+      "best_for": "when you need to automate data extraction from invoices or receipts with high accuracy.",
+      "paper_count": 1,
+      "max_citations": 4,
+      "key_tradeoff": "While KIE offers high accuracy, it may require more initial setup and understanding of document structures."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Applied Key Information Extraction (KIE)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to extract structured data from diverse document formats with a focus on accuracy."
+    }
+  ],
+  "start_here": "Start with Applied Key Information Extraction (KIE) as it is specifically designed for high accuracy in extracting information from invoices and receipts, making it a suitable choice for your needs.",
+  "related_problems": [
+    "Data Entry Automation",
+    "Optical Character Recognition (OCR)",
+    "Natural Language Processing (NLP) for Document Analysis",
+    "Form Data Extraction"
+  ]
+}

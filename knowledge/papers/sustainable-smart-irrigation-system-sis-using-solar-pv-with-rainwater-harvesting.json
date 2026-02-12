@@ -1,0 +1,100 @@
+{
+  "summary": "The paper presents a Sustainable Smart Irrigation System (SIS) that integrates solar photovoltaic (PV) technology and rainwater harvesting for indoor plant irrigation. Engineers should care because this system optimizes water usage and energy efficiency, addressing the challenges of manual watering and promoting sustainability.",
+  "key_contribution": "Integration of solar PV, rainwater harvesting, and IoT for an automated irrigation system.",
+  "problem_type": "automated irrigation system",
+  "problem_description": "The need for efficient and sustainable watering solutions for indoor plants due to the inconsistency and tediousness of manual watering.",
+  "domain": "Robotics & Control Systems",
+  "sub_domain": "Smart irrigation systems",
+  "technique_name": "Sustainable Smart Irrigation System (SIS)",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The SIS uses a solar PV panel to power an Arduino-based system that controls soil moisture sensors and a water pump. The system collects rainwater and uses IoT technology to monitor soil moisture levels, adjusting irrigation schedules accordingly.",
+    "algorithm_steps": [
+      "1. Measure soil moisture using the sensor.",
+      "2. If moisture is below a threshold, activate the water pump.",
+      "3. Use GSM to notify the user about the irrigation status.",
+      "4. Collect rainwater and store it in a tank.",
+      "5. Calculate daily water requirements based on plant needs.",
+      "6. Optimize PV panel size based on energy consumption.",
+      "7. Monitor system performance and adjust as necessary."
+    ],
+    "input": "Soil moisture data, rainfall data, energy consumption data.",
+    "output": "Irrigation status notifications, optimized irrigation schedules.",
+    "key_parameters": [
+      "PV panel size: 30W",
+      "Daily energy consumption: 22.71Wh",
+      "GSM module for notifications",
+      "Soil moisture threshold: calibrated based on sensor readings"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Rainwater collection data, soil moisture sensor data"
+    ],
+    "metrics": [
+      "Water usage efficiency, CO2 emissions reduction: 14.97 kgCO2/year"
+    ],
+    "baselines": [
+      "Manual watering methods"
+    ],
+    "improvement": "Significant reduction in water usage and CO2 emissions compared to traditional methods."
+  },
+  "concepts": [
+    "solar PV",
+    "IoT",
+    "rainwater harvesting",
+    "soil moisture sensors",
+    "GSM communication",
+    "Arduino control"
+  ],
+  "use_this_when": [
+    "You need an automated irrigation solution for indoor plants.",
+    "You want to reduce water usage and promote sustainability.",
+    "You require remote monitoring of irrigation systems."
+  ],
+  "dont_use_when": [
+    "The project requires high water demand that exceeds rainwater collection capacity.",
+    "You need a system that operates without solar power.",
+    "You are working in an area with unreliable GSM coverage."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Arduino Uno",
+      "soil moisture sensor",
+      "ultrasonic sensor",
+      "GSM module",
+      "DC water pump"
+    ],
+    "dependencies": [
+      "Arduino IDE",
+      "GSM library for Arduino"
+    ],
+    "pseudocode_hint": "if soil_moisture < threshold: activate_pump() notify_user()",
+    "gotchas": [
+      "Ensure GSM coverage is available for notifications.",
+      "Calibrate soil moisture sensors accurately to avoid overwatering.",
+      "Consider seasonal variations in rainfall for tank sizing."
+    ]
+  },
+  "connects_to": [
+    "IoT frameworks",
+    "solar energy systems",
+    "automated control systems"
+  ],
+  "prerequisites": [
+    "Basic understanding of Arduino programming",
+    "Knowledge of IoT concepts",
+    "Familiarity with solar energy systems"
+  ],
+  "limitations": [
+    "Dependent on weather conditions for rainwater collection.",
+    "Limited by the capacity of the rainwater harvesting tank.",
+    "Requires maintenance of solar panels and sensors."
+  ],
+  "open_questions": [
+    "How can the system be scaled for larger agricultural applications?",
+    "What are the long-term effects of using this system on plant health?"
+  ]
+}

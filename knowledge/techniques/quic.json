@@ -1,0 +1,85 @@
+{
+  "technique_name": "QUIC",
+  "aliases": [
+    "Quick UDP Internet Connections"
+  ],
+  "category": "networking_protocol",
+  "one_liner": "QUIC is a transport layer network protocol designed to reduce latency and improve performance over unreliable networks.",
+  "how_it_works": "QUIC combines transport and application-layer functions to minimize handshake overhead and reduce latency. It uses multiplexing to allow multiple streams over a single connection, which helps in efficient data transmission. Additionally, QUIC implements built-in congestion control and supports connection migration, making it adaptable to changing network conditions.",
+  "algorithm": {
+    "steps": [
+      "1. Initiate a QUIC connection using a single UDP packet.",
+      "2. Perform a 0-RTT handshake if possible to establish the connection quickly.",
+      "3. Multiplex multiple streams over the established connection.",
+      "4. Implement built-in congestion control to adapt to network conditions.",
+      "5. Handle incoming data streams without head-of-line blocking.",
+      "6. Maintain connection migration capabilities for changing network environments."
+    ],
+    "core_equation": "output = established QUIC connections with multiplexed streams and reduced latency",
+    "input_format": "UDP packets containing QUIC connection initiation and data streams.",
+    "output_format": "Established QUIC connections with multiplexed streams and reduced latency."
+  },
+  "parameters": [
+    {
+      "name": "max_streams",
+      "typical_value": "100",
+      "effect": "Increases the number of simultaneous streams that can be handled."
+    },
+    {
+      "name": "initial_rtt",
+      "typical_value": "100ms",
+      "effect": "Affects the perceived latency during the initial connection setup."
+    },
+    {
+      "name": "congestion_control_algorithm",
+      "typical_value": "BBR",
+      "effect": "Determines how the protocol adapts to network congestion."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "QUIC's performance can vary based on network conditions and implementation details."
+  },
+  "use_when": [
+    "Building applications that require low-latency data transmission.",
+    "Developing services that need to handle multiple streams efficiently.",
+    "Creating applications that operate in unreliable network conditions."
+  ],
+  "avoid_when": [
+    "Working in environments where TCP is mandated or required.",
+    "Applications that do not require fast connection establishment.",
+    "Scenarios where legacy support for TCP is critical."
+  ],
+  "implementation_skeleton": "def quic_connection_initiation(data: bytes) -> str:\n    # Step 1: Initiate QUIC connection\n    send_udp_packet(data)\n    # Step 2: Perform 0-RTT handshake if possible\n    if can_perform_0_rtt():\n        perform_handshake()\n    # Step 3: Multiplex streams\n    multiplex_streams()\n    return 'QUIC connection established'",
+  "common_mistakes": [
+    "Neglecting to implement proper congestion control, leading to performance issues.",
+    "Failing to handle connection migration, which can disrupt ongoing streams.",
+    "Overlooking the need for a proper 0-RTT handshake implementation."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Significantly reduces latency compared to traditional TCP.",
+      "Supports multiplexing, allowing multiple streams without head-of-line blocking.",
+      "Adapts well to changing network conditions with built-in congestion control."
+    ],
+    "weaknesses": [
+      "Not suitable for environments where TCP is required.",
+      "May require more complex implementation compared to TCP.",
+      "Limited support in some legacy systems."
+    ],
+    "compared_to": [
+      {
+        "technique": "TCP",
+        "verdict": "Use QUIC for low-latency applications; use TCP for legacy support and environments where it's mandated."
+      }
+    ]
+  },
+  "connects_to": [
+    "TCP",
+    "HTTP/3",
+    "WebRTC",
+    "SCTP"
+  ],
+  "maturity": "proven (widely used in production)"
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Network Traffic Classification",
+  "description": "Network traffic classification involves categorizing data packets based on their characteristics and behaviors. This is crucial for managing network resources, enhancing security, and optimizing performance in various environments.",
+  "you_have_this_if": [
+    "You are experiencing difficulties in identifying types of network traffic.",
+    "Your current classification methods yield low accuracy.",
+    "You need real-time classification for software-defined networking (SDN).",
+    "You are looking for a solution that can adapt to evolving network patterns.",
+    "You want to implement a rule-based classification system."
+  ],
+  "approaches": [
+    {
+      "technique": "GenClass",
+      "best_for": "when you need to classify network traffic in real-time for SDN environments and existing methods are inadequate.",
+      "paper_count": 1,
+      "max_citations": 4,
+      "key_tradeoff": "GenClass offers high adaptability through genetic programming but may require more computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "GenClass",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a robust classification system that can evolve with network traffic patterns."
+    }
+  ],
+  "start_here": "Start with GenClass if you require a flexible and accurate classification method that leverages genetic programming, especially in dynamic SDN environments.",
+  "related_problems": [
+    "Anomaly Detection in Network Traffic",
+    "Traffic Prediction and Forecasting",
+    "Intrusion Detection Systems",
+    "Quality of Service (QoS) Management"
+  ]
+}

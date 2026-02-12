@@ -1,0 +1,79 @@
+{
+  "technique_name": "Hybrid Memory Leak Detection",
+  "aliases": [
+    "Static and Symbolic Memory Leak Detection"
+  ],
+  "category": "static_analysis, dynamic_analysis",
+  "one_liner": "A technique that combines static analysis and directed symbolic execution to detect memory leaks in C/C++ programs.",
+  "how_it_works": "This technique first performs static analysis on the source code to identify memory allocation points. It then generates a control flow graph of the program and uses directed symbolic execution to explore paths from allocation to deallocation. By analyzing these paths, it can identify instances where allocated memory is not freed, providing a detailed report of potential memory leaks.",
+  "algorithm": {
+    "steps": [
+      "1. Perform static analysis on the source code to identify memory allocation points.",
+      "2. Generate a control flow graph of the program.",
+      "3. Use directed symbolic execution to explore paths from allocation to deallocation.",
+      "4. Identify paths where allocated memory is not freed.",
+      "5. Report potential memory leaks with context."
+    ],
+    "core_equation": "N/A",
+    "input_format": "Source code of C or C++ programs.",
+    "output_format": "Report of potential memory leaks with detailed context."
+  },
+  "parameters": [
+    {
+      "name": "symbolic_execution_depth",
+      "typical_value": "5",
+      "effect": "Increases the depth of exploration in symbolic execution, potentially improving detection accuracy."
+    },
+    {
+      "name": "static_analysis_threshold",
+      "typical_value": "0.8",
+      "effect": "Sets the threshold for static analysis confidence, affecting the sensitivity of leak detection."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated.",
+    "space": "Not stated.",
+    "practical_note": "Performance overhead may vary based on code complexity and size."
+  },
+  "use_when": [
+    "You need to detect memory leaks in large C/C++ codebases.",
+    "You want to improve the accuracy of existing memory leak detection tools.",
+    "You are developing software where memory management is critical."
+  ],
+  "avoid_when": [
+    "The codebase is small and can be manually reviewed.",
+    "You are working in a language with automatic garbage collection.",
+    "Performance overhead of analysis is a concern."
+  ],
+  "implementation_skeleton": "def hybrid_memory_leak_detection(source_code: str) -> List[str]:\n    # Step 1: Perform static analysis\n    allocation_points = static_analysis(source_code)\n    # Step 2: Generate control flow graph\n    cfg = generate_control_flow_graph(source_code)\n    # Step 3: Explore paths using symbolic execution\n    leaks = directed_symbolic_execution(cfg, allocation_points)\n    # Step 4: Identify unfreed memory\n    potential_leaks = identify_unfreed_memory(leaks)\n    # Step 5: Report findings\n    return report_memory_leaks(potential_leaks)",
+  "common_mistakes": [
+    "Neglecting to configure symbolic execution depth appropriately.",
+    "Overlooking the importance of static analysis threshold settings.",
+    "Failing to account for false positives in the final report."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Combines the broad coverage of static analysis with the precision of symbolic execution.",
+      "Achieves high accuracy (95%) with a low false positive rate (2%).",
+      "Improves detection accuracy by 20% over traditional methods."
+    ],
+    "weaknesses": [
+      "May introduce performance overhead during analysis.",
+      "Complexity in implementation compared to simpler methods.",
+      "Not suitable for languages with automatic garbage collection."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Dynamic Analysis",
+        "verdict": "Use Hybrid Memory Leak Detection for better accuracy and coverage."
+      }
+    ]
+  },
+  "connects_to": [
+    "Static Analysis Tools",
+    "Dynamic Analysis Tools",
+    "Symbolic Execution",
+    "Control Flow Graph Generation"
+  ],
+  "maturity": "proven (widely used in production)"
+}

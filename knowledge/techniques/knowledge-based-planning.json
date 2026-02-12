@@ -1,0 +1,81 @@
+{
+  "technique_name": "Knowledge-Based Planning",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "Knowledge-Based Planning enables robots to adapt their actions based on human input and environmental changes.",
+  "how_it_works": "This technique leverages a knowledge base that contains information about tasks, objects, and human actions. By monitoring human actions and environmental changes, the robot can analyze current task requirements and generate a dynamic action plan. The robot executes this plan while continuously updating it based on new information, allowing for real-time adjustments in collaborative settings.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize knowledge base with task and object information.",
+      "2. Monitor human actions and environmental changes.",
+      "3. Analyze current task requirements based on the knowledge base.",
+      "4. Generate a dynamic action plan that incorporates human input.",
+      "5. Execute the action plan while continuously updating based on new information."
+    ],
+    "core_equation": "output = dynamic action plan based on knowledge base and human input",
+    "input_format": "Data about the environment, human actions, and task requirements.",
+    "output_format": "A dynamic action plan for the robot to execute in collaboration with humans."
+  },
+  "parameters": [
+    {
+      "name": "knowledge_base_size",
+      "typical_value": "1000 entries",
+      "effect": "Larger knowledge bases can improve decision-making but may increase processing time."
+    },
+    {
+      "name": "adaptation_threshold",
+      "typical_value": "0.5",
+      "effect": "Higher thresholds may lead to more conservative adaptations, while lower thresholds allow for more aggressive changes."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on the size of the knowledge base and the complexity of the tasks."
+  },
+  "use_when": [
+    "You need robots to work alongside humans in dynamic environments.",
+    "Tasks require real-time adjustments based on human actions.",
+    "You want to improve robot efficiency in collaborative settings."
+  ],
+  "avoid_when": [
+    "The task environment is completely static and predictable.",
+    "Robots are required to perform highly repetitive tasks without human interaction.",
+    "Real-time adaptation is not necessary."
+  ],
+  "implementation_skeleton": "def knowledge_based_planning(knowledge_base: dict, human_actions: list) -> list:\n    action_plan = []\n    # Step 1: Analyze task requirements\n    task_requirements = analyze_requirements(knowledge_base)\n    # Step 2: Generate action plan\n    action_plan = generate_dynamic_plan(task_requirements, human_actions)\n    # Step 3: Execute plan\n    execute_plan(action_plan)\n    return action_plan",
+  "common_mistakes": [
+    "Neglecting to update the knowledge base with new information.",
+    "Overfitting the knowledge base to specific scenarios, limiting adaptability.",
+    "Failing to monitor human actions effectively, leading to poor decision-making."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Enhances robot adaptability in dynamic environments.",
+      "Improves efficiency in collaborative tasks.",
+      "Increases human satisfaction through better interaction."
+    ],
+    "weaknesses": [
+      "May require extensive initial setup of the knowledge base.",
+      "Performance can degrade if the knowledge base is not maintained.",
+      "Real-time processing demands can be high."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional scripted robot programming",
+        "verdict": "Use Knowledge-Based Planning for flexibility and adaptability over rigid scripts."
+      },
+      {
+        "technique": "Basic reactive planning systems",
+        "verdict": "Knowledge-Based Planning offers more informed decision-making compared to simple reactive systems."
+      }
+    ]
+  },
+  "connects_to": [
+    "Reinforcement Learning",
+    "Human-Robot Interaction",
+    "Dynamic Task Allocation",
+    "Adaptive Control Systems"
+  ],
+  "maturity": "emerging"
+}

@@ -1,0 +1,99 @@
+{
+  "summary": "The paper presents FFRecovery, a novel ransomware defense strategy that enables fine-grained per-file data recovery from ransomware attacks by leveraging file system forensics and flash translation layer data extraction. Engineers should care because it addresses the limitations of existing recovery solutions by allowing users to selectively recover critical files instead of restoring entire disks.",
+  "key_contribution": "FFRecovery is the first cross-layer data recovery design against ransomware that collaborates multiple layers of a storage system for file-driven recovery.",
+  "problem_type": "data recovery from ransomware attacks",
+  "problem_description": "The increasing prevalence of ransomware attacks that encrypt user files necessitates effective recovery solutions that do not require paying ransoms.",
+  "domain": "Cybersecurity",
+  "sub_domain": "File system forensics, Flash translation layer",
+  "technique_name": "FFRecovery",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "FFRecovery restores corrupted files by first recovering the file system metadata using file system forensics, then extracting the original file data from the flash memory using raw data extraction techniques, and finally assembling the metadata and data to restore the file. It incorporates a garbage collection delay and freeze mechanism to prevent data loss during recovery.",
+    "algorithm_steps": [
+      "1. Detect ransomware and stop its execution.",
+      "2. Identify the files that need recovery based on user input.",
+      "3. Restore the file system metadata using forensic analysis.",
+      "4. Extract the original file data from the flash memory.",
+      "5. Re-map the logical disk locations to the physical flash memory locations.",
+      "6. Assemble the restored metadata and data into a recoverable file.",
+      "7. Present the recovered files to the user."
+    ],
+    "input": "User input specifying which files to recover, and the flash memory data.",
+    "output": "Restored files in their original state.",
+    "key_parameters": [
+      "garbage_collection_delay: configurable (not specified)",
+      "freeze_mechanism: enabled (default)",
+      "file_system_type: EXT3, EXT4, NTFS, FAT32, exFAT (based on user environment)"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Real-world ransomware samples from 54 families"
+    ],
+    "metrics": [
+      "Recovery rate: not specified",
+      "Storage cost: negligible",
+      "Performance impact: negligible"
+    ],
+    "baselines": [
+      "Existing ransomware recovery solutions like CLDSafe, RockFS, PayBreak"
+    ],
+    "improvement": "FFRecovery allows for fine-grained recovery, which is a significant improvement over existing solutions that require full disk restoration."
+  },
+  "concepts": [
+    "file system forensics",
+    "flash translation layer",
+    "out-of-place updates",
+    "ransomware detection",
+    "data extraction",
+    "metadata restoration"
+  ],
+  "use_this_when": [
+    "You need to recover specific files after a ransomware attack.",
+    "You want to minimize downtime by selectively restoring critical files.",
+    "You are working with flash memory storage systems."
+  ],
+  "dont_use_when": [
+    "The ransomware operates with root privileges.",
+    "You have a reliable off-site backup solution.",
+    "The storage medium is not flash-based."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "File system metadata structures (inodes, directory entries)",
+      "Mapping tables for logical to physical address translation"
+    ],
+    "dependencies": [
+      "File system libraries",
+      "Flash memory access libraries",
+      "Ransomware detection tools"
+    ],
+    "pseudocode_hint": "def recover_file(file_id): restore_metadata(file_id); data = extract_raw_data(file_id); return assemble_file(metadata, data)",
+    "gotchas": [
+      "Ensure the garbage collection mechanism is properly configured to prevent data loss.",
+      "Be aware of the specific file system type being used for accurate metadata restoration.",
+      "Monitor the performance impact during recovery operations."
+    ]
+  },
+  "connects_to": [
+    "File system recovery techniques",
+    "Data backup solutions",
+    "Ransomware detection algorithms"
+  ],
+  "prerequisites": [
+    "Understanding of file system structures",
+    "Knowledge of flash memory operations",
+    "Familiarity with ransomware behavior"
+  ],
+  "limitations": [
+    "Only applicable to user-space ransomware",
+    "Dependent on the integrity of the flash memory",
+    "May not recover files if garbage collection has occurred"
+  ],
+  "open_questions": [
+    "How to enhance recovery for root-level ransomware?",
+    "What additional optimizations can be made for performance?"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "technique_name": "Multi-Modal Behavioral Transformer (MMBT)",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "MMBT identifies fraudulent transactions by analyzing user behavior data through a Transformer model.",
+  "how_it_works": "MMBT processes both inner-page and inter-page behavioral data to detect fraud. It transforms mouse trajectory data into image patches, which are then encoded using a Transformer model. The model fuses multiple behavioral data sources to learn patterns indicative of fraud, allowing for real-time detection of fraudulent transactions.",
+  "algorithm": {
+    "steps": [
+      "1. Collect user behavior data including mouse trajectory and page view sequences.",
+      "2. Preprocess mouse trajectory data by converting it into image patches.",
+      "3. Encode the processed data using a Transformer model.",
+      "4. Fuse multiple behavioral data sources using a multi-tower architecture.",
+      "5. Train the model on labeled fraud data.",
+      "6. Deploy the model for online inference and real-time fraud detection."
+    ],
+    "core_equation": "output = Transformer(encode(mouse_trajectory_patches, page_view_sequences))",
+    "input_format": "User behavior data including mouse trajectory coordinates (2D), page view sequences (sequential), and item prices (numerical).",
+    "output_format": "Fraud scores (numerical) and behavioral embeddings (vector) indicating the likelihood of fraud."
+  },
+  "parameters": [
+    {
+      "name": "patch_size",
+      "typical_value": "30x30",
+      "effect": "Changing the patch size affects the granularity of mouse trajectory representation."
+    },
+    {
+      "name": "number_of_bins_for_price",
+      "typical_value": "1500",
+      "effect": "Altering the number of bins can impact the model's ability to differentiate price ranges."
+    },
+    {
+      "name": "P99 latency for online inference",
+      "typical_value": "< 500 ms",
+      "effect": "Lowering latency improves real-time detection capabilities."
+    },
+    {
+      "name": "P99 latency for online rule engine",
+      "typical_value": "< 50 ms",
+      "effect": "Faster rule engine response enhances overall system performance."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the complexity of user behavior data and model architecture."
+  },
+  "use_when": [
+    "You need to detect fraudulent transactions in e-commerce applications.",
+    "You have access to detailed user behavior data including mouse movements and page views.",
+    "You require a real-time fraud detection system with low latency."
+  ],
+  "avoid_when": [
+    "The available user behavior data is insufficient or unreliable.",
+    "You are working in a domain where user behavior patterns are not indicative of fraud.",
+    "You need a solution with extremely high interpretability and explainability."
+  ],
+  "implementation_skeleton": "def mmbt_model(mouse_trajectory: List[Tuple[float, float]], page_views: List[str], prices: List[float]) -> Tuple[float, List[float]]:\n    # Step 1: Preprocess mouse trajectory into image patches\n    patches = preprocess_mouse_trajectory(mouse_trajectory)\n    # Step 2: Encode data using Transformer\n    encoded_data = transformer_encode(patches, page_views)\n    # Step 3: Fuse data and predict fraud score\n    fraud_score, embeddings = fuse_and_predict(encoded_data, prices)\n    return fraud_score, embeddings",
+  "common_mistakes": [
+    "Neglecting to preprocess mouse trajectory data properly.",
+    "Using insufficient or low-quality user behavior data.",
+    "Overfitting the model to training data without proper validation."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Combines multiple data sources for improved fraud detection.",
+      "Utilizes advanced Transformer architecture for pattern recognition.",
+      "Enables real-time fraud detection with low latency."
+    ],
+    "weaknesses": [
+      "Requires high-quality and comprehensive user behavior data.",
+      "May lack interpretability compared to simpler models.",
+      "Performance can degrade with insufficient training data."
+    ],
+    "compared_to": [
+      {
+        "technique": "CNN-based models",
+        "verdict": "Use MMBT for multi-modal data; use CNNs for image-only tasks."
+      }
+    ]
+  },
+  "connects_to": [
+    "Transformers",
+    "Convolutional Neural Networks (CNNs)",
+    "Anomaly Detection Techniques",
+    "Real-Time Data Processing Frameworks"
+  ],
+  "maturity": "emerging"
+}

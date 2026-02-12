@@ -1,0 +1,85 @@
+{
+  "technique_name": "Mass Spectrometry Imaging (MSI)",
+  "aliases": [
+    "MSI"
+  ],
+  "category": "analytical_technique",
+  "one_liner": "MSI visualizes the spatial distribution of metabolites in samples using mass spectrometry combined with imaging techniques.",
+  "how_it_works": "Mass Spectrometry Imaging combines mass spectrometry with imaging to analyze the spatial distribution of metabolites in samples, such as herbal medicines. The technique allows for both qualitative and quantitative analysis without complex sample preparation. By slicing the sample into thin sections and applying an ionization method, ions are generated and analyzed to create detailed images of metabolite distribution and concentration.",
+  "algorithm": {
+    "steps": [
+      "1. Prepare the sample by slicing it into thin sections.",
+      "2. Select an appropriate ionization method (SIMS, MALDI, or DESI).",
+      "3. Apply the ionization source to the sample to generate ions.",
+      "4. Analyze the ions using a mass analyzer to obtain mass spectra.",
+      "5. Map the spatial distribution of the detected ions to create an image.",
+      "6. Use software to extract and visualize the data."
+    ],
+    "core_equation": "output = spatial distribution of detected ions",
+    "input_format": "Thin sections of herbal medicine samples.",
+    "output_format": "Spatial distribution images of metabolites and their concentrations."
+  },
+  "parameters": [
+    {
+      "name": "spatial_resolution",
+      "typical_value": "1-100 \u00b5m",
+      "effect": "Higher resolution allows for more detailed images of metabolite distribution."
+    },
+    {
+      "name": "matrix_selection",
+      "typical_value": "varies by method",
+      "effect": "Different matrices can enhance ionization efficiency."
+    },
+    {
+      "name": "ionization_environment",
+      "typical_value": "high vacuum for SIMS and MALDI, ambient for DESI",
+      "effect": "The environment affects the ionization process and the quality of the results."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "MSI generally requires specialized equipment and can be time-consuming depending on the sample and method used."
+  },
+  "use_when": [
+    "You need to visualize the spatial distribution of metabolites in herbal medicines.",
+    "You want to improve quality control processes for herbal products.",
+    "You are exploring the pharmacological mechanisms of herbal compounds."
+  ],
+  "avoid_when": [
+    "You require a simple qualitative analysis without spatial information.",
+    "The sample is highly unstable and cannot withstand the ionization process.",
+    "You need results in a very short time frame with minimal setup."
+  ],
+  "implementation_skeleton": "def mass_spectrometry_imaging(sample: str) -> str:\n    # Step 1: Prepare the sample\n    thin_sections = prepare_sample(sample)\n    # Step 2: Select ionization method\n    ionization_method = select_ionization_method()\n    # Step 3: Generate ions\n    ions = generate_ions(thin_sections, ionization_method)\n    # Step 4: Analyze ions\n    mass_spectra = analyze_ions(ions)\n    # Step 5: Map spatial distribution\n    spatial_distribution = map_distribution(mass_spectra)\n    # Step 6: Visualize data\n    visualize_data(spatial_distribution)\n    return spatial_distribution",
+  "common_mistakes": [
+    "Not selecting the appropriate ionization method for the sample type.",
+    "Failing to properly prepare the sample, leading to poor results.",
+    "Overlooking the importance of matrix selection, which can affect ionization."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides high spatial resolution and sensitivity.",
+      "Allows for simultaneous qualitative and quantitative analysis.",
+      "No complex sample preparation required."
+    ],
+    "weaknesses": [
+      "Can be time-consuming and requires specialized equipment.",
+      "Not suitable for unstable samples.",
+      "Results may vary significantly based on ionization method and conditions."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional analytical methods (LC-MS, GC-MS)",
+        "verdict": "Use MSI for higher spatial resolution and sensitivity."
+      }
+    ]
+  },
+  "connects_to": [
+    "Mass Spectrometry (MS)",
+    "Imaging Techniques",
+    "Analytical Chemistry",
+    "Pharmacognosy"
+  ],
+  "maturity": "proven"
+}

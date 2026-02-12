@@ -1,0 +1,87 @@
+{
+  "technique_name": "Distributed Software Build Assurance",
+  "aliases": [
+    "Build Integrity Verification",
+    "Decentralized Build Assurance"
+  ],
+  "category": "security_method",
+  "one_liner": "This technique ensures the integrity of software artifacts through decentralized verification methods.",
+  "how_it_works": "Distributed Software Build Assurance leverages reproducible builds and a software bill of materials (SBOM) to verify the integrity of software artifacts. It constructs a Merkle tree from the source code, build output, and SBOM documentation to generate a proof of integrity. This proof is then compared against a reference proof stored on a blockchain, ensuring that the software artifacts remain unmodified and trustworthy.",
+  "algorithm": {
+    "steps": [
+      "1. User downloads source code (s) and dependencies.",
+      "2. User compiles the source code to generate build output (b) and SBOM documentation (d).",
+      "3. User constructs a Merkle tree using s, b, and d to generate proof (p).",
+      "4. User retrieves reference proof (p') from the blockchain.",
+      "5. User compares p with p'.",
+      "6. If p equals p', the software artifacts are verified as unmodified."
+    ],
+    "core_equation": "proof = MerkleTree(s, b, d)",
+    "input_format": "Source code files (s), build output (b), SBOM documentation (d)",
+    "output_format": "Proof of integrity (p) for the software artifacts"
+  },
+  "parameters": [
+    {
+      "name": "hash_function",
+      "typical_value": "SHA-256",
+      "effect": "Changing the hash function may affect the security and performance of the proof generation."
+    },
+    {
+      "name": "Merkle_tree",
+      "typical_value": "constructed from s, b, d",
+      "effect": "Altering the structure of the Merkle tree can impact the efficiency of proof verification."
+    },
+    {
+      "name": "blockchain",
+      "typical_value": "permissioned with proof-of-authority consensus",
+      "effect": "Using a different blockchain model may change the trust model and verification speed."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for Merkle tree construction",
+    "space": "O(n) for storing the Merkle tree",
+    "practical_note": "The verification time is approximately 1 second overhead, significantly faster than centralized server approaches."
+  },
+  "use_when": [
+    "You need to verify the integrity of software builds in a decentralized manner.",
+    "You are working with open-source software projects that require assurance against malicious modifications.",
+    "You want to implement a secure software supply chain process."
+  ],
+  "avoid_when": [
+    "The software artifacts are not reproducible across different environments.",
+    "You require real-time verification with a centralized authority.",
+    "The overhead of generating proofs is unacceptable for your application."
+  ],
+  "implementation_skeleton": "def distributed_build_assurance(source_code: str, dependencies: List[str]) -> str:\n    build_output = compile(source_code, dependencies)\n    sbom = generate_sbom(source_code, dependencies)\n    proof = construct_merkle_tree(source_code, build_output, sbom)\n    reference_proof = retrieve_reference_proof_from_blockchain()\n    if proof == reference_proof:\n        return 'Integrity Verified'\n    return 'Integrity Compromised'",
+  "common_mistakes": [
+    "Neglecting to ensure that all dependencies are included in the SBOM.",
+    "Using an insecure hash function that compromises proof integrity.",
+    "Failing to properly configure the blockchain for proof retrieval."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Decentralized verification reduces reliance on a single point of failure.",
+      "Increased trust in software artifacts through blockchain technology.",
+      "Significant performance gains over centralized server approaches."
+    ],
+    "weaknesses": [
+      "Requires reproducible builds, which may not be feasible for all projects.",
+      "Overhead in generating proofs may not be suitable for real-time applications.",
+      "Complexity in setting up and maintaining the blockchain infrastructure."
+    ],
+    "compared_to": [
+      {
+        "technique": "Centralized Build Assurance",
+        "verdict": "Use Distributed Software Build Assurance for decentralized verification and enhanced trust."
+      }
+    ]
+  },
+  "connects_to": [
+    "Reproducible Builds",
+    "Software Bill of Materials (SBOM)",
+    "Merkle Trees",
+    "Blockchain Technology",
+    "Supply Chain Security"
+  ],
+  "maturity": "emerging"
+}

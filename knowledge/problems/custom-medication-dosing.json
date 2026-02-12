@@ -1,0 +1,37 @@
+{
+  "problem_name": "Custom Medication Dosing",
+  "description": "Custom medication dosing involves creating personalized dosages of medication tailored to individual patient needs. This is particularly important for patients with specific health conditions or for pediatric patients who require precise dosing.",
+  "you_have_this_if": [
+    "You are working with patients who have unique medication requirements.",
+    "You need to create personalized medication solutions.",
+    "You are in a clinical setting that requires on-demand medication manufacturing.",
+    "You are facing challenges with standard dosages not being effective for certain patients.",
+    "You are exploring innovative manufacturing techniques for medication."
+  ],
+  "approaches": [
+    {
+      "technique": "Semisolid extrusion additive manufacturing",
+      "best_for": "Developing personalized medication solutions for pediatric patients and creating custom dosages for specific health conditions.",
+      "paper_count": 1,
+      "max_citations": 8,
+      "key_tradeoff": "While this technique allows for precise customization, it may require specialized equipment and expertise."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Semisolid extrusion additive manufacturing",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to produce custom medication dosages quickly and accurately for patients with specific health needs."
+    }
+  ],
+  "start_here": "Start with semisolid extrusion additive manufacturing as it provides a balance of customization and accuracy for medication dosing.",
+  "related_problems": [
+    "Personalized medicine",
+    "3D printing in healthcare",
+    "On-demand drug manufacturing",
+    "Pediatric medication formulation"
+  ]
+}

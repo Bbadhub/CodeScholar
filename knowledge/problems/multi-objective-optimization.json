@@ -1,0 +1,127 @@
+{
+  "problem_name": "Multi-Objective Optimization",
+  "description": "Multi-objective optimization involves finding solutions that simultaneously optimize two or more conflicting objectives. This problem is common in various fields, including logistics, resource management, and engineering design.",
+  "you_have_this_if": [
+    "You are trying to balance multiple competing goals in a project.",
+    "You have conflicting requirements from stakeholders.",
+    "You need to make decisions that affect multiple outcomes.",
+    "You are facing trade-offs between performance metrics.",
+    "You are working with complex systems where multiple objectives must be considered."
+  ],
+  "approaches": [
+    {
+      "technique": "Evolutionary Surrogate-assisted Prescription (ESP)",
+      "best_for": "When optimizing land-use decisions to minimize carbon emissions and exploring trade-offs between environmental impact and land-use change.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "Effective for environmental optimization but may lack scalability."
+    },
+    {
+      "technique": "Parallel Drone Scheduling Traveling Salesman Problem (PDSTSP)",
+      "best_for": "When implementing last-mile delivery solutions in urban areas with high demand density.",
+      "paper_count": 1,
+      "max_citations": 14,
+      "key_tradeoff": "Optimizes logistics but may require significant computational resources."
+    },
+    {
+      "technique": "Dueling Deep Q-Network (Dueling DQN)",
+      "best_for": "When optimizing load transfer in active distribution networks with complex topologies.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "Quick and efficient for network optimization but may require deep learning expertise."
+    },
+    {
+      "technique": "Multi-strategy Horned Lizard Optimization Algorithm (mHLOA)",
+      "best_for": "When dealing with high-dimensional datasets in classification tasks.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "Robust for complex problems but may be less effective on simpler tasks."
+    },
+    {
+      "technique": "MoVPAAC",
+      "best_for": "When optimizing VM placement for multiple objectives in a cloud environment.",
+      "paper_count": 1,
+      "max_citations": 10,
+      "key_tradeoff": "Proactive in managing VM failures but may be complex to implement."
+    },
+    {
+      "technique": "Adaptive Multi-Stage Bat Algorithm",
+      "best_for": "When optimizing complex multi-objective functions with a need for balance between exploration and exploitation.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Good for exploration but may converge slowly."
+    },
+    {
+      "technique": "Multi-Objective Simulated Annealing (MOSA)",
+      "best_for": "When allocating tasks among multiple UAVs with conflicting objectives.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Balances exploration and exploitation but may be computationally intensive."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "ESP",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to optimize land-use decisions with environmental considerations."
+    },
+    {
+      "technique": "PDSTSP",
+      "speed": "fast",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You are implementing last-mile delivery solutions in urban areas."
+    },
+    {
+      "technique": "Dueling DQN",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You need a quick solution for optimizing load transfer in networks."
+    },
+    {
+      "technique": "mHLOA",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You are working with high-dimensional datasets in classification."
+    },
+    {
+      "technique": "MoVPAAC",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You need to optimize VM placement in a cloud environment."
+    },
+    {
+      "technique": "Adaptive Multi-Stage Bat Algorithm",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You require a balance between exploration and exploitation in optimization."
+    },
+    {
+      "technique": "MOSA",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to allocate tasks among UAVs with conflicting objectives."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Parallel Drone Scheduling Traveling Salesman Problem (PDSTSP) due to its effectiveness in logistics and urban delivery scenarios.",
+  "related_problems": [
+    "Single-Objective Optimization",
+    "Constraint Satisfaction Problems",
+    "Multi-Criteria Decision Making",
+    "Resource Allocation Problems"
+  ]
+}

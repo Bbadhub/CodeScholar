@@ -1,0 +1,37 @@
+{
+  "problem_name": "Training Effectiveness Under Stress in Emergency Response Scenarios",
+  "description": "This problem focuses on evaluating how effective training programs are for emergency responders when they are subjected to high-stress situations. It aims to identify the best methods to enhance learning and performance in critical scenarios.",
+  "you_have_this_if": [
+    "You are developing training programs for emergency responders.",
+    "You need to assess cognitive load during training.",
+    "You are using virtual reality (VR) for training simulations.",
+    "You want to create adaptive training based on real-time data.",
+    "You are interested in improving performance under stress."
+  ],
+  "approaches": [
+    {
+      "technique": "Visuospatial Sequence Learning Task",
+      "best_for": "When developing training programs for emergency responders using VR and assessing performance under stress.",
+      "paper_count": 1,
+      "max_citations": 3,
+      "key_tradeoff": "This technique provides valuable insights into cognitive load but may require significant resources for implementation."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Visuospatial Sequence Learning Task",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to evaluate training effectiveness in high-stress scenarios using VR."
+    }
+  ],
+  "start_here": "Start with the Visuospatial Sequence Learning Task as it provides a structured approach to assess cognitive load and performance under stress, which is crucial for effective training.",
+  "related_problems": [
+    "Cognitive Load Assessment in Training",
+    "Performance Evaluation in High-Stress Environments",
+    "Adaptive Learning Systems for Emergency Response",
+    "Virtual Reality Training Effectiveness"
+  ]
+}

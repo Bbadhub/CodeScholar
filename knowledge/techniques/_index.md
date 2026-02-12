@@ -1,0 +1,445 @@
+# Technique Reference
+
+*441 techniques extracted from 443 papers*
+
+- **[2P-FSID](2p-fsid.md)** - 2P-FSID is a two-phase feature selection framework designed to enhance the efficiency of intrusion detection systems by balancing feature relevance and computational costs.
+- **[3D Point Cloud Object Detection](3d-point-cloud-object-detection.md)** - This technique detects and classifies objects within 3D point cloud data.
+- **[3D U-Net](3d-u-net.md)** - 3D U-Net is a convolutional neural network architecture designed for volumetric image segmentation tasks.
+- **[5K genotyping assay](5k-genotyping-assay.md)** - A high-throughput genotyping assay for assessing genetic diversity and tracking allele inheritance in groundnut breeding.
+- **[AE+SINDy-C](aesindy-c.md)** - AE+SINDy-C combines autoencoders and Sparse Identification of Nonlinear Dynamics with Control for efficient learning and control of high-dimensional systems.
+- **[AI and ML applications in environmental sustainability](ai-and-ml-applications-in-environmental-sustainability.md)** - This technique uses AI and machine learning to enhance environmental sustainability through optimized resource management and contaminant detection.
+- **[AI-driven load balancing methods](ai-driven-load-balancing-methods.md)** - AI-driven load balancing methods optimize traffic distribution in networks using artificial intelligence techniques.
+- **[AI-driven multi-sensor data logging system](ai-driven-multi-sensor-data-logging-system.md)** - This technique integrates multiple low-cost sensors with AI for real-time environmental monitoring.
+- **[AI-driven tools for microservices design](ai-driven-tools-for-microservices-design.md)** - This technique uses AI to automate the design and optimization of microservices architectures.
+- **[AKG-VO](akg-vo.md)** - AKG-VO is an adaptive keyframe generation method that enhances visual odometry for autonomous vehicles.
+- **[ARTDET](artdet.md)** - ARTDET is a machine learning software for automated detection of art deterioration in easel paintings.
+- **[ARTU-R autonomous search algorithm](artu-r-autonomous-search-algorithm.md)** - A robotic search algorithm that autonomously explores disaster areas to locate victims using ensemble deep learning techniques.
+- **[Adaptive Boundary Whale Optimization Algorithm (ABWOA)](adaptive-boundary-whale-optimization-algorithm-abwoa.md)** - ABWOA enhances the Whale Optimization Algorithm by dynamically adjusting search boundaries for improved optimization in high-dimensional problems.
+- **[Adaptive Multi-Stage Bat Algorithm](adaptive-multi-stage-bat-algorithm.md)** - An enhanced version of the Bat Algorithm that dynamically adjusts parameters for improved optimization performance.
+- **[Advanced Predictive Models](advanced-predictive-models.md)** - This technique predicts potential defects in software changes using historical defect data and advanced statistical models.
+- **[Adversarial Techniques for GenAI Text Detectors](adversarial-techniques-for-genai-text-detectors.md)** - This technique manipulates AI-generated text to evade detection by text detectors.
+- **[Affective Generative Music AI (AGM-AI)](affective-generative-music-ai-agm-ai.md)** - AGM-AI generates real-time music tailored to users' physiological states to enhance emotional synchrony.
+- **[Agent-based modeling](agent-based-modeling.md)** - Agent-based modeling simulates the interactions of autonomous agents to assess their effects on the system as a whole.
+- **[Agentic AI](agentic-ai.md)** - Agentic AI enables systems to autonomously define and manage goals that adapt over time.
+- **[Agentic Workflows](agentic-workflows.md)** - Agentic Workflows enhance large language model reasoning through structured iterative feedback in robotic object-centered planning.
+- **[AlphaBoot](alphaboot.md)** - AlphaBoot accelerates container cold start times by leveraging SmartNICs to cache frequently accessed container images.
+- **[Ambience](ambience.md)** - Ambience is an operating system designed for deploying IoT microservices efficiently across various hardware platforms.
+- **[Analog Sequential Hippocampal Memory Model](analog-sequential-hippocampal-memory-model.md)** - This technique simulates hippocampal functions to learn and recall trajectories effectively.
+- **[Analytic Hierarchy Process and Weighted Shapley Value](analytic-hierarchy-process-and-weighted-shapley-value.md)** - This technique prioritizes strategies and allocates resources for tourism development using structured decision-making and game theory.
+- **[Analytical System Design for Fingerprint Examination](analytical-system-design-for-fingerprint-examination.md)** - A systematic approach to enhance fingerprint examination through analytical techniques.
+- **[Angle of Attack Optimization (AOA)](angle-of-attack-optimization-aoa.md)** - AOA optimizes the weights and biases of neural networks to enhance performance in energy systems.
+- **[Applied Key Information Extraction (KIE)](applied-key-information-extraction-kie.md)** - A method for automating the extraction of key information from heterogeneous documents using OCR and LLMs.
+- **[Artificial Neural Networks](artificial-neural-networks.md)** - Artificial Neural Networks are computational models inspired by the human brain used for pattern recognition and prediction tasks.
+- **[Asymmetric Byzantine Quorum Systems](asymmetric-byzantine-quorum-systems.md)** - Asymmetric Byzantine Quorum Systems enable consensus in distributed systems with varying trust assumptions among processes.
+- **[Athletic Intelligence Quotient (AIQ)](athletic-intelligence-quotient-aiq.md)** - AIQ measures cognitive abilities relevant to athletic performance and predicts outcomes based on these metrics.
+- **[Atom Search Optimization (ASO)](atom-search-optimization-aso.md)** - ASO simulates atomic interactions to optimize complex problems in various domains.
+- **[Atomic Force Microscopy (AFM)](atomic-force-microscopy-afm.md)** - AFM is a high-resolution imaging technique used to characterize the surface properties of materials at the nanoscale.
+- **[B-spline Function Based Unwrapping](b-spline-function-based-unwrapping.md)** - This technique normalizes 3D point cloud data of fingerprints by fitting B-spline curves to unwarp the shape.
+- **[BERT (Bidirectional Encoder Representations from Transformers)](bert-bidirectional-encoder-representations-from-transformers.md)** - BERT is a transformer-based model designed for understanding the context of words in a sentence by considering both left and right context simultaneously.
+- **[BERT, PSPNet, Mask R-CNN](bert-pspnet-mask-r-cnn.md)** - This technique combines language and vision models to analyze urban sentiment from social media and street view imagery.
+- **[BERT-GGNN](bert-ggnn.md)** - BERT-GGNN combines BERT's contextual embeddings with Gated Graph Neural Networks to detect sarcasm in text.
+- **[BPMN and Petri Net Integration](bpmn-and-petri-net-integration.md)** - This technique integrates BPMN diagrams and Petri nets to enhance deep learning applications through structured organizational task modeling.
+- **[Bayesian experimental design for spectroscopy](bayesian-experimental-design-for-spectroscopy.md)** - This technique optimizes measurement points in spectroscopic experiments using a Bayesian framework.
+- **[Bayesian inference with synthetic likelihoods](bayesian-inference-with-synthetic-likelihoods.md)** - This technique uses Bayesian inference to estimate model parameters and quantify uncertainties in simulations through synthetic likelihoods.
+- **[Behavioral tendency analysis](behavioral-tendency-analysis.md)** - This technique analyzes behavioral data to identify patterns and correlations in attitudes towards specific groups, such as individuals with invisible disabilities.
+- **[Binaural Audio Technology](binaural-audio-technology.md)** - Binaural audio technology creates immersive sound experiences that enhance navigation and interaction in digital environments.
+- **[Biologically Inspired Joint Attention System](biologically-inspired-joint-attention-system.md)** - This technique enables robots to respond to human attention cues, enhancing interaction quality.
+- **[Block-Level Conformer](block-level-conformer.md)** - A machine learning technique for detecting vulnerabilities in Python code by analyzing structural and semantic features.
+- **[Brain age prediction algorithms](brain-age-prediction-algorithms.md)** - This technique predicts brain age from MRI scans and calculates the brain age gap (BAG) to assess brain health.
+- **[Brain-Computer Interface (BCI)](brain-computer-interface-bci.md)** - BCIs enable direct communication between the brain and external devices, facilitating innovative applications in various fields, including education.
+- **[Break-Pad](break-pad.md)** - Break-Pad injects random padding packets into traffic bursts to enhance privacy in the Tor network.
+- **[CNN-LSTM](cnn-lstm.md)** - CNN-LSTM combines convolutional neural networks and long short-term memory networks for effective time series prediction.
+- **[CNN-based Copy-Move Forgery Detection](cnn-based-copy-move-forgery-detection.md)** - This technique uses convolutional neural networks to detect copy-move image forgery.
+- **[COF-CDN membrane](cof-cdn-membrane.md)** - The COF-CDN membrane is designed for ultrafast desalination using hourglass-shaped nanochannels.
+- **[COMPROMISE](compromise.md)** - COMPROMISE is a predictive modeling approach for efficient data compression that reconstructs omitted data using interpolation.
+- **[COSMIC](cosmic.md)** - COSMIC is a machine learning algorithm designed for identifying and estimating the richness of galaxy clusters from astronomical data.
+- **[CRISPR-Cas systems (Cas9, Cas12, Cas13, Cas14)](crispr-cas-systems-cas9-cas12-cas13-cas14.md)** - CRISPR-Cas systems are used for precise gene editing to modify specific genes in organisms, including bacteria, to combat antibiotic resistance.
+- **[CRISPR/Cas](crisprcas.md)** - CRISPR/Cas technology enables precise editing of specific genes in organisms, particularly in agriculture.
+- **[Capability Maturity Model Integration (CMMI) with DevOps practices](capability-maturity-model-integration-cmmi-with-devops-practices.md)** - A framework for integrating DevOps practices with CMMI to enhance software development team capabilities.
+- **[Causal Graph Extraction](causal-graph-extraction.md)** - This technique constructs causal graphs from communication logs to analyze subsystem interactions and identify root causes of failures.
+- **[Chain-of-Thought Transfer Adversarial Attacks (CTTA)](chain-of-thought-transfer-adversarial-attacks-ctta.md)** - CTTA generates adversarial prompts that exploit reasoning processes in large language models (LLMs).
+- **[Channel capacity analysis for THz transceivers](channel-capacity-analysis-for-thz-transceivers.md)** - This technique calculates the overall channel capacity of THz transceivers by analyzing narrow sub-bands of the total bandwidth.
+- **[ChatGPT](chatgpt.md)** - ChatGPT assists in academic writing by generating suggestions and improving text clarity while ensuring ethical standards are met.
+- **[ChatGPT-based Robot Control Platform](chatgpt-based-robot-control-platform.md)** - This technique enables robots to engage in natural conversations with users through integration with ChatGPT.
+- **[CiteSpace](citespace.md)** - CiteSpace is a tool for visualizing and analyzing trends and patterns in scientific literature.
+- **[Clustering K-anonymity Algorithm (CKA)](clustering-k-anonymity-algorithm-cka.md)** - CKA enhances location privacy in IoT by clustering nodes to provide k-anonymity.
+- **[Co-DeepNet](co-deepnet.md)** - Co-DeepNet is a cooperative learning approach using two convolutional neural networks (CNNs) to enhance prediction accuracy for DNA methylation-based age estimation.
+- **[Co-occurrence Analysis of Code Smells and Design Patterns](co-occurrence-analysis-of-code-smells-and-design-patterns.md)** - This technique analyzes the relationship between code smells and design patterns to assess their impact on code quality.
+- **[CoBA (Causal contextual Bandits with One-shot data integration)](coba-causal-contextual-bandits-with-one-shot-data-integration.md)** - CoBA is a method for optimizing decision-making in contextual bandit settings using one-shot data integration.
+- **[Coenzyme Q10 supplementation](coenzyme-q10-supplementation.md)** - Coenzyme Q10 supplementation aims to reduce oxidative stress and inflammation in pediatric hemodialysis patients.
+- **[Common Neighbor Completion with Information Entropy (IECNC)](common-neighbor-completion-with-information-entropy-iecnc.md)** - IECNC predicts potential links in social networks by leveraging common neighbors and quantifying uncertainty through information entropy.
+- **[Comparative analysis of detection approaches](comparative-analysis-of-detection-approaches.md)** - This technique reviews and compares various methods for detecting hate speech and ideological extremism in text data.
+- **[Comparative analysis of machine learning models](comparative-analysis-of-machine-learning-models.md)** - This technique evaluates various machine learning models to identify the most effective one for DDoS attack detection in network traffic.
+- **[Complex Single-Valued Neutrosophic Soft Sets](complex-single-valued-neutrosophic-soft-sets.md)** - This technique manages uncertainty in multi-attribute decision-making contexts using complex single-valued neutrosophic soft sets.
+- **[Computational Pragmatics Approach](computational-pragmatics-approach.md)** - This technique analyzes conversational implicature to classify sentiments in indirect language cues.
+- **[Computer-assisted EEG analysis](computer-assisted-eeg-analysis.md)** - This technique systematically reviews existing literature on computer-assisted EEG analysis to identify biomarkers of epilepsy.
+- **[Congruence Modulo Technique for Fuzzy Bottleneck Cost Optimization](congruence-modulo-technique-for-fuzzy-bottleneck-cost-optimization.md)** - This technique optimizes transportation routes under fuzzy constraints to minimize worst-case scenario costs.
+- **[Context-Aware Language Model for Science (CALMS)](context-aware-language-model-for-science-calms.md)** - CALMS enhances large language models to provide contextual assistance in scientific environments.
+- **[Contextual Bias Analysis](contextual-bias-analysis.md)** - Contextual Bias Analysis examines user reactions to political bias in generative AI responses.
+- **[Contrastive Decoding Algorithm](contrastive-decoding-algorithm.md)** - A method to refine outputs of large language models by distinguishing between plausible and implausible responses.
+- **[Contrastive Language–Structure Pre-training (CLaSP)](contrastive-languagestructure-pre-training-clasp.md)** - CLaSP learns embeddings that align crystal structures with their textual descriptions for material retrieval.
+- **[Contributing Events Framework](contributing-events-framework.md)** - A framework for modeling supply chain risk events by analyzing their contributing factors.
+- **[Convolutional Neural Network (CNN)](convolutional-neural-network-cnn.md)** - CNNs are deep learning models designed for processing structured grid data such as images.
+- **[Convolutional Neural Network (CNN), Long Short-Term Memory (LSTM), Random Forest](convolutional-neural-network-cnn-long-short-term-memory-lstm-random-forest.md)** - CNNs and LSTMs are deep learning models used for detecting intrusions in network traffic data.
+- **[Convolutional Neural Networks (CNNs)](convolutional-neural-networks-cnns.md)** - CNNs are a class of deep learning algorithms primarily used for processing structured grid data such as images.
+- **[Cooperative Packet Recovery Protocol](cooperative-packet-recovery-protocol.md)** - This protocol enables reliable packet recovery in real-time multimedia streaming applications by utilizing cooperative communication among clients and a server.
+- **[Cost-Sensitive Forest (CS-Forest), Forest Penalizing Attributes (FPA), Functional Trees (FT)](cost-sensitive-forest-cs-forest-forest-penalizing-attributes-fpa-functional-tree.md)** - Cost-Sensitive Forest enhances defect prediction in software by integrating cost-sensitive learning and attribute penalization within decision forest classifiers.
+- **[Covert Communication via MQTT](covert-communication-via-mqtt.md)** - This technique enables covert communication by obfuscating messages and transmitting them via the MQTT protocol.
+- **[CycleGAN](cyclegan.md)** - CycleGAN is a generative adversarial network used for image-to-image translation without paired examples.
+- **[DAUD](daud.md)** - DAUD approximates continuous distributions using discrete representations derived from noisy data.
+- **[DBF-Net](dbf-net.md)** - DBF-Net is a deep learning framework designed for accurate 6D object pose estimation using a sparse linear transformer.
+- **[DNA Cryptography](dna-cryptography.md)** - DNA Cryptography encodes data into DNA sequences for secure and durable storage.
+- **[DSIPTS](dsipts.md)** - DSIPTS automates the data preparation, model training, and evaluation processes for time series forecasting.
+- **[Data-Driven Molecular Typing](data-driven-molecular-typing.md)** - This technique classifies tumors based on their molecular characteristics using large datasets.
+- **[Decoupled Learning for IVF](decoupled-learning-for-ivf.md)** - This technique involves training separate models for embryo-ranking and implantation-prediction to enhance accuracy in IVF applications.
+- **[Deep Learning Model for Road Surface Classification](deep-learning-model-for-road-surface-classification.md)** - This technique classifies road surfaces using deep learning models trained on sensor data from motorcycles.
+- **[Deep Learning-based Intrusion Detection System](deep-learning-based-intrusion-detection-system.md)** - This technique uses deep learning models to enhance the detection of intrusions in network traffic.
+- **[Deep Learning-based Power Analysis](deep-learning-based-power-analysis.md)** - This technique uses deep learning to analyze power consumption data to infer secret keys from cryptographic operations.
+- **[Deep Reinforcement Learning](deep-reinforcement-learning.md)** - Deep Reinforcement Learning is a method that enables agents to learn optimal actions through trial and error, guided by rewards and user feedback.
+- **[DeepWalk](deepwalk.md)** - DeepWalk is a technique for learning latent representations of nodes in a graph using random walks.
+- **[DenseNet](densenet.md)** - DenseNet is a convolutional neural network architecture that improves feature propagation and reduces the number of parameters by connecting each layer to every other layer in a feed-forward fashion.
+- **[Deterministic Graph Traversal Method](deterministic-graph-traversal-method.md)** - This technique classifies white blood cells (WBCs) using a directed graph and a Boolean feature vector derived from images.
+- **[DevOps Team Formation-Performance Framework](devops-team-formation-performance-framework.md)** - A framework for optimizing DevOps team structures based on performance metrics.
+- **[Distributed Software Build Assurance](distributed-software-build-assurance.md)** - This technique ensures the integrity of software artifacts through decentralized verification methods.
+- **[Distributed two-layer optimal safe coordination protocol](distributed-two-layer-optimal-safe-coordination-protocol.md)** - A protocol for coordinating swarms of hypersonic flight vehicles while ensuring safety and optimality.
+- **[Diversity-Integrated Load Management Model](diversity-integrated-load-management-model.md)** - This technique optimizes electric vehicle (EV) charging schedules to minimize peak load on distribution transformers by considering fleet diversity and electricity tariffs.
+- **[Domain-informed CNN architectures](domain-informed-cnn-architectures.md)** - This technique enhances CNN architectures by incorporating domain knowledge to improve the accuracy of predictions in specific applications, such as weather forecasting.
+- **[Dual Impact Statistical Analysis](dual-impact-statistical-analysis.md)** - This technique decomposes the environmental impact of AI into distinct effects of emissions reduction and increase for accurate assessment.
+- **[Dual-Aggregation Approach](dual-aggregation-approach.md)** - A method to enhance federated learning by filtering out poisoning attacks through dual aggregation of model updates.
+- **[Dueling Deep Q-Network (Dueling DQN)](dueling-deep-q-network-dueling-dqn.md)** - Dueling DQN is a reinforcement learning technique that improves the stability and efficiency of Q-learning by separating the representation of state value and advantage functions.
+- **[Durability Rating Framework](durability-rating-framework.md)** - A systematic approach to measure and rate the durability of garments based on key influencing variables.
+- **[Dynamic Car-Following Model with Jerk Suppression](dynamic-car-following-model-with-jerk-suppression.md)** - This technique models vehicle behavior to ensure smooth acceleration while maintaining safe distances in autonomous driving.
+- **[Dynamic Mentalizing Model](dynamic-mentalizing-model.md)** - A model that enables agents to infer and adapt to human intentions and beliefs in real-time for effective collaboration.
+- **[Dynamic Programming (DP)](dynamic-programming-dp.md)** - Dynamic Programming is a method for solving complex problems by breaking them down into simpler subproblems and solving each of those just once.
+- **[Dynamic-budget superpixel active learning](dynamic-budget-superpixel-active-learning.md)** - This technique optimizes the labeling process in semantic segmentation by selectively querying high-uncertainty superpixels for manual labeling.
+- **[Earthquake Early Warning System](earthquake-early-warning-system.md)** - This technique detects seismic activity and provides early warnings for potential earthquakes using geospatial data.
+- **[Earthworm optimization algorithm](earthworm-optimization-algorithm.md)** - A nature-inspired optimization algorithm used for parameter tuning in complex models.
+- **[Econometric Measurement](econometric-measurement.md)** - Econometric measurement analyzes relationships between variables using statistical models to estimate causal effects.
+- **[Edge Computing Architecture for Underwater Cultural Heritage Management](edge-computing-architecture-for-underwater-cultural-heritage-management.md)** - This technique utilizes edge computing to manage and monitor underwater cultural heritage sites effectively.
+- **[Electroanatomic Mapping (EAM)](electroanatomic-mapping-eam.md)** - Electroanatomic mapping is a technique used to assess the electrical activity of the heart to diagnose arrhythmogenic cardiomyopathy.
+- **[Electrochemical Impedance Spectroscopy (EIS) based SoC estimation](electrochemical-impedance-spectroscopy-eis-based-soc-estimation.md)** - This technique estimates the state of charge of solid-state batteries using electrochemical impedance spectroscopy.
+- **[Electrooculography-based intoxication detection](electrooculography-based-intoxication-detection.md)** - This technique uses electrooculography signals to detect alcohol intoxication levels in individuals.
+- **[Emoji suggestion algorithm](emoji-suggestion-algorithm.md)** - This technique suggests contextually relevant emojis based on user text input.
+- **[Empirical Survey Methodology](empirical-survey-methodology.md)** - A method for collecting and analyzing survey data to understand relationships between variables.
+- **[Empirical performance evaluation of graph visualization libraries](empirical-performance-evaluation-of-graph-visualization-libraries.md)** - This technique evaluates the performance of various graph visualization libraries using controlled experiments.
+- **[Energy Consumption Model for Microservices](energy-consumption-model-for-microservices.md)** - This technique models and optimizes energy consumption for microservices deployed on UAVs.
+- **[Energy-aware scheduling and dynamic power management](energy-aware-scheduling-and-dynamic-power-management.md)** - This technique optimizes energy consumption in high-performance computing (HPC) systems while maintaining performance levels.
+- **[Enhanced Attention-Driven Dynamic Graph Convolutional Network](enhanced-attention-driven-dynamic-graph-convolutional-network.md)** - A neural network architecture designed to predict drug-drug interactions using dynamic graphs and attention mechanisms.
+- **[Enhanced Binary Kepler Optimization Algorithm (BKOA-MUT)](enhanced-binary-kepler-optimization-algorithm-bkoa-mut.md)** - BKOA-MUT is an optimization algorithm that simulates planetary motion for effective feature selection in supervised learning classification tasks.
+- **[Enhanced Deep Super Resolution (EDSR), Very Deep Super Resolution (VDSR), Efficient Sub-Pixel Convolutional Network (ESPCN), Super Resolution Convolutional Neural Network (SRCNN)](enhanced-deep-super-resolution-edsr-very-deep-super-resolution-vdsr-efficient-su.md)** - SRCNN and its variants enhance the resolution of low-quality images, particularly for QR codes.
+- **[Enhanced KGE with Spatio-Temporal Reasoning](enhanced-kge-with-spatio-temporal-reasoning.md)** - This technique enhances knowledge graph embeddings by incorporating spatio-temporal attributes for improved link prediction accuracy in APT detection.
+- **[Enhanced Multilayer Perceptron (EMLP)](enhanced-multilayer-perceptron-emlp.md)** - EMLP is an advanced version of the multilayer perceptron designed for effective feature extraction and classification in complex datasets.
+- **[Enhanced Network Topology (ENT)](enhanced-network-topology-ent.md)** - ENT optimizes network security and IP address allocation through hierarchical design and VLSM subnetting.
+- **[Enhanced Swarm-based Fuzzy Clustering](enhanced-swarm-based-fuzzy-clustering.md)** - This technique optimizes fuzzy clustering for monochromatic images using swarm intelligence.
+- **[Ensemble Machine Learning Model (EMLM)](ensemble-machine-learning-model-emlm.md)** - EMLM combines multiple machine learning models to improve the accuracy of predictions in environmental modeling.
+- **[Ensemble Model (MLP, Random Forest, XGBoost)](ensemble-model-mlp-random-forest-xgboost.md)** - Ensemble models combine predictions from multiple machine learning algorithms to enhance accuracy and stability.
+- **[Epistemic Network Analysis (ENA)](epistemic-network-analysis-ena.md)** - ENA is a method for visualizing and analyzing cognitive presence patterns in discussions.
+- **[Evolutionary Game Theory Model](evolutionary-game-theory-model.md)** - This technique models the strategic interactions among multiple decision-makers over time using evolutionary principles.
+- **[Evolutionary Surrogate-assisted Prescription (ESP)](evolutionary-surrogate-assisted-prescription-esp.md)** - ESP optimizes land-use policies by using a surrogate model to predict emissions and an evolutionary algorithm to explore solutions.
+- **[Experimental comparison of VST and OST HMDs](experimental-comparison-of-vst-and-ost-hmds.md)** - This technique compares the performance of tasks using Virtual Spatial Technology (VST) and Optical Spatial Technology (OST) head-mounted displays (HMDs) against unaided vision.
+- **[Eye-Tracking Analysis](eye-tracking-analysis.md)** - Eye-tracking analysis measures and analyzes eye movement patterns to understand visual attention and cognitive processing.
+- **[FAIR-MAST](fair-mast.md)** - FAIR-MAST is a data management system designed for efficient handling of fusion reactor data based on FAIR principles.
+- **[FAPI Nanoparticles](fapi-nanoparticles.md)** - FAPI Nanoparticles enhance tumor imaging by targeting fibroblast activation protein on cancer cells.
+- **[FFRecovery](ffrecovery.md)** - FFRecovery enables selective recovery of files from ransomware attacks using file system forensics and flash memory data extraction.
+- **[FIESTA](fiesta.md)** - FIESTA evaluates hardware circuits under random fault models to analyze their resilience against fault injection attacks.
+- **[FLASC](flasc.md)** - FLASC is a flare-sensitive clustering algorithm that detects branching structures within clusters.
+- **[FNN1D and Conv1D](fnn1d-and-conv1d.md)** - FNN1D and Conv1D are neural network architectures used for classifying skeletal representations of poses.
+- **[FOMO (MobileNetV2)](fomo-mobilenetv2.md)** - FOMO utilizes MobileNetV2 for real-time object shape recognition in bionic prostheses.
+- **[FSBOA (Feature Selection using Bat Optimization Algorithm)](fsboa-feature-selection-using-bat-optimization-algorithm.md)** - FSBOA selects the most relevant features from software metrics to enhance fault prediction accuracy while reducing dimensionality.
+- **[Fanuc ROBOGUIDE](fanuc-roboguide.md)** - Fanuc ROBOGUIDE is a software environment for programming and simulating industrial robots.
+- **[Fast Container to Machine Allocator (FCMA)](fast-container-to-machine-allocator-fcma.md)** - FCMA optimizes the allocation of containers and virtual machines based on workload predictions to minimize costs.
+- **[Fast Routing Recovery (FRR)](fast-routing-recovery-frr.md)** - FRR minimizes network formation time for IoT devices after power loss by caching essential configuration data.
+- **[FastSLAM 2.0](fastslam-20.md)** - FastSLAM 2.0 is a particle filter-based algorithm for simultaneous localization and mapping (SLAM) that efficiently estimates a robot's pose and the map of its environment.
+- **[Federated Learning](federated-learning.md)** - Federated Learning enables collaborative model training across institutions without sharing their private data.
+- **[Feed-Forward Neural Network](feed-forward-neural-network.md)** - A feed-forward neural network processes inputs through layers to produce outputs without feedback loops.
+- **[Fermentation Techniques](fermentation-techniques.md)** - Fermentation techniques enhance the nutritional quality of low-grade poultry feed ingredients through microbial action.
+- **[Fermentation and Distillation of Fruit Waste Juices](fermentation-and-distillation-of-fruit-waste-juices.md)** - This technique converts fruit waste juices into bioethanol through fermentation and distillation processes.
+- **[First-Person Avatar Customization](first-person-avatar-customization.md)** - This technique allows users to customize their avatars from a first-person perspective to enhance embodiment and reduce biases.
+- **[Five-phase combinatorial approach](five-phase-combinatorial-approach.md)** - A method for solving fuzzy linear programming problems in supply chain production planning under uncertainty.
+- **[Flow Mediated Skin Fluorescence (FMSF)](flow-mediated-skin-fluorescence-fmsf.md)** - FMSF measures changes in NADH fluorescence in skin tissue to assess mitochondrial and vascular function.
+- **[Forced Oscillation Technique (FOT)](forced-oscillation-technique-fot.md)** - FOT measures respiratory impedance using external oscillatory signals during normal breathing.
+- **[Fractal Neural Network (FNN)](fractal-neural-network-fnn.md)** - FNN utilizes modular fractal blocks for efficient feature extraction and classification of images.
+- **[Frequency-Informed Transformer (FiT)](frequency-informed-transformer-fit.md)** - FiT is a neural network architecture that leverages frequency domain analysis for enhanced leak detection in water pipelines.
+- **[Friendship Index](friendship-index.md)** - The Friendship Index measures the ratio of the average degree of an individual's friends to their own degree over time.
+- **[Fully Integrated Wearable Control System (FIWCS)](fully-integrated-wearable-control-system-fiwcs.md)** - FIWCS enables intuitive control of micro/nanorobots using physiological signals and AI processing.
+- **[Fusion Transfer Learning (FTL)](fusion-transfer-learning-ftl.md)** - FTL is a technique that uses transfer learning to model nonlinear plasma dynamics from low-dimensional embeddings.
+- **[Fuzzy Analytic Hierarchy Process (FAHP) with Triangular q-rung Fuzzy Numbers (TR-q-ROFNS)](fuzzy-analytic-hierarchy-process-fahp-with-triangular-q-rung-fuzzy-numbers-tr-q-.md)** - FAHP with TR-q-ROFNS is a method for ranking alternatives based on fuzzy evaluations of subjective criteria.
+- **[GANplification](ganplification.md)** - GANplification is a technique that uses Generative Adversarial Networks (GANs) to amplify datasets while preserving their statistical properties.
+- **[GExp](gexp.md)** - GExp enables robots to autonomously explore their environment, generate tasks, and learn from experiences using vision-language and large language models.
+- **[GSO-CNN](gso-cnn.md)** - GSO-CNN enhances facial recognition by combining Grey Wolf Optimization with Convolutional Neural Networks for improved feature extraction and classification.
+- **[GWAI](gwai.md)** - GWAI is an artificial intelligence platform designed for enhanced analysis of gravitational wave data.
+- **[GenClass](genclass.md)** - GenClass uses genetic programming to generate classification rules for network traffic data.
+- **[Generative Adversarial Networks (GANs), Variational Autoencoders (VAEs), Transformers](generative-adversarial-networks-gans-variational-autoencoders-vaes-transformers.md)** - Generative models that create new data instances similar to a given dataset.
+- **[Generative Flow-based Singing-to-Speech Conversion](generative-flow-based-singing-to-speech-conversion.md)** - This technique converts singing Mel-spectrograms into speech-like Mel-spectrograms while preserving phonetic information.
+- **[Giving Up Density (GUD)](giving-up-density-gud.md)** - GUD measures the foraging behavior of predators in relation to the presence of livestock guardian dogs.
+- **[GloVe, One-Hot, Skip-Gram, CBOW, FastText](glove-one-hot-skip-gram-cbow-fasttext.md)** - GloVe is a vector space model for word representation that captures semantic relationships between words based on their co-occurrence in a corpus.
+- **[GloWord_biGRU](gloword_bigru.md)** - GloWord_biGRU enhances sentiment classification by combining GloVe and Word2Vec embeddings processed through a bidirectional GRU.
+- **[Graph Convolutional Networks (GCN)](graph-convolutional-networks-gcn.md)** - Graph Convolutional Networks are used to process graph-structured data for tasks such as motion capture and animation.
+- **[Graph Representation Learning for Event Prediction](graph-representation-learning-for-event-prediction.md)** - This technique uses graph representation learning to predict future events based on their relationships and semantics.
+- **[Graph-Based Digital Twin](graph-based-digital-twin.md)** - A technique that uses graph representations to optimize emergency response planning in urban environments during heatwaves.
+- **[Graph-based Cost Optimization](graph-based-cost-optimization.md)** - This technique uses graph theory to optimize resource placement and cost management in cloud environments.
+- **[Graphene-based membranes](graphene-based-membranes.md)** - Graphene-based membranes utilize engineered nanochannels and nanopores for advanced filtration and separation tasks.
+- **[HIPR](hipr.md)** - HIPR is a technique for protecting hardware intellectual property through fine-grain redaction with low overhead.
+- **[Hadoop-based distributed data processing](hadoop-based-distributed-data-processing.md)** - This technique utilizes Hadoop's distributed computing framework to efficiently process large datasets across a cluster of machines.
+- **[Haptic Digital Twins (HDT) and Assisted Operations (AO)](haptic-digital-twins-hdt-and-assisted-operations-ao.md)** - Haptic Digital Twins simulate real-world environments to enhance robotic teleoperation and operator training through assisted operations.
+- **[Hereditary Attentive Template-based Approach](hereditary-attentive-template-based-approach.md)** - This technique enhances question answering systems by breaking down complex queries into manageable parts using templates and attention mechanisms.
+- **[Heterogeneous Federated Learning with SM9 Threshold Identity Authentication](heterogeneous-federated-learning-with-sm9-threshold-identity-authentication.md)** - This technique enables secure and privacy-preserving collaborative model training across diverse healthcare institutions.
+- **[Heterogeneous MPC](heterogeneous-mpc.md)** - Heterogeneous MPC efficiently solves graph problems using a combination of a powerful machine and smaller machines in a distributed environment.
+- **[Hierarchical Attention LSTM (HierAttnLSTM)](hierarchical-attention-lstm-hierattnlstm.md)** - HierAttnLSTM is a neural network model designed for spatial-temporal traffic forecasting using a hierarchical attention mechanism.
+- **[Hierarchical Attention Network (HAN)](hierarchical-attention-network-han.md)** - HAN is a neural network architecture designed to capture long-term dependencies and semantic relationships in data through hierarchical attention mechanisms.
+- **[Hierarchical Clustering](hierarchical-clustering.md)** - Hierarchical clustering groups data points into a tree of clusters based on their similarities.
+- **[Hive](hive.md)** - Hive is a framework for secure and scalable inference across multiple Ollama instances.
+- **[Human-in-the-loop transfer learning](human-in-the-loop-transfer-learning.md)** - This technique enhances reinforcement learning models by integrating human feedback into the training process for improved decision-making.
+- **[Hybrid Audio Analysis Framework](hybrid-audio-analysis-framework.md)** - This technique integrates traditional transcription methods with modern audio analysis to enhance speech recognition accuracy and provide insights into non-textual audio features.
+- **[Hybrid Data Storage Architecture](hybrid-data-storage-architecture.md)** - A design approach that combines traditional data storage with microservices for optimized data access and management.
+- **[Hybrid Deep Model with Dendritic Learning (HDM-D)](hybrid-deep-model-with-dendritic-learning-hdm-d.md)** - HDM-D is a deep learning model that combines CNN, RNN, and dendritic learning for improved classification of modulated signals.
+- **[Hybrid Encrypted Search Framework](hybrid-encrypted-search-framework.md)** - This technique enables secure multi-keyword searches on encrypted data without decryption.
+- **[Hybrid Euclidean Distance with Large Language Models (HED-LM)](hybrid-euclidean-distance-with-large-language-models-hed-lm.md)** - HED-LM optimizes example selection for few-shot learning by combining Euclidean distance filtering with contextual evaluation from large language models.
+- **[Hybrid KEMTLS with Identity-Based Encryption](hybrid-kemtls-with-identity-based-encryption.md)** - A method for transitioning to post-quantum secure TLS using identity-based encryption alongside classical public key algorithms.
+- **[Hybrid Memory Leak Detection](hybrid-memory-leak-detection.md)** - A technique that combines static analysis and directed symbolic execution to detect memory leaks in C/C++ programs.
+- **[IPCK](ipck.md)** - IPCK enhances language models for classifying Git commits using prompt tuning and external knowledge.
+- **[Imperative Genetic Programming](imperative-genetic-programming.md)** - Imperative Genetic Programming evolves imperative programs using a combination of tree and linear genetic programming paradigms.
+- **[Improved RT-DETR](improved-rt-detr.md)** - A transformer-based model for high-quality defect detection in digitally printed fabrics.
+- **[Improved Slime Mould Algorithm (ISMA)](improved-slime-mould-algorithm-isma.md)** - ISMA is an optimization technique designed to enhance trajectory planning for robotic arms by minimizing time and impact forces.
+- **[Improved Walrus Optimizer (IWO)](improved-walrus-optimizer-iwo.md)** - The Improved Walrus Optimizer enhances clustering through opposition-based learning and mutation strategies.
+- **[Improved YOLOv5](improved-yolov5.md)** - Improved YOLOv5 enhances object detection speed and accuracy for real-time applications, particularly in agricultural settings.
+- **[Improved YOLOv8](improved-yolov8.md)** - A modified version of YOLOv8 designed for efficient real-time barcode detection.
+- **[In-Place Radix-2 FFT](in-place-radix-2-fft.md)** - An efficient method for computing the Fast Fourier Transform (FFT) in a memory-constrained environment.
+- **[In-situ Participatory Design Methodology](in-situ-participatory-design-methodology.md)** - A collaborative approach to design that involves stakeholders directly in the development process to ensure the final product meets their needs.
+- **[Incomplete Data Weighted Classification Tree](incomplete-data-weighted-classification-tree.md)** - This technique classifies tuples in multidimensional datasets with missing values to optimize skyline queries.
+- **[Influencer Impact Analysis](influencer-impact-analysis.md)** - This technique quantifies the impact of influencer endorsements on investment decisions using statistical models.
+- **[Intelligent Run-Adaptive Shot Distribution](intelligent-run-adaptive-shot-distribution.md)** - This technique adaptively distributes quantum shots across multiple hardware options to enhance reliability and mitigate tampering effects.
+- **[Interoceptive Trait Prediction Error (ITPE) and Interoceptive State Prediction Error (ISPE)](interoceptive-trait-prediction-error-itpe-and-interoceptive-state-prediction-err.md)** - ITPE and ISPE quantify discrepancies between subjective interoceptive beliefs and objective performance in interoception studies.
+- **[JavaScript Rendering Optimization for Crawlers](javascript-rendering-optimization-for-crawlers.md)** - This technique optimizes the rendering of JavaScript-heavy web pages for efficient vulnerability scanning by selectively rendering necessary components.
+- **[Joint Multi-Scale Channel Attention and Multi-Perception Head](joint-multi-scale-channel-attention-and-multi-perception-head.md)** - This technique enhances underwater object detection by utilizing multi-scale channel attention and a multi-perception head.
+- **[Kanban](kanban.md)** - Kanban visualizes work to manage and improve the flow of tasks through a system, allowing teams to self-organize and adapt to changes.
+- **[Karmem](karmem.md)** - Karmem enables efficient communication between WebAssembly modules through shared memory access.
+- **[Kernel Density Estimation (KDE)](kernel-density-estimation-kde.md)** - KDE is a non-parametric way to estimate the probability density function of a random variable.
+- **[Kinetic Model for Opinion Dynamics](kinetic-model-for-opinion-dynamics.md)** - This technique models the evolution of opinions in social networks using a kinetic approach based on agent interactions.
+- **[Knowledge Distillation](knowledge-distillation.md)** - Knowledge distillation is a technique for transferring knowledge from a complex model (teacher) to a simpler model (student) to improve efficiency without sacrificing accuracy.
+- **[Knowledge-Based Planning](knowledge-based-planning.md)** - Knowledge-Based Planning enables robots to adapt their actions based on human input and environmental changes.
+- **[Kolmogorov-Arnold Networks](kolmogorov-arnold-networks.md)** - Kolmogorov-Arnold Networks are used to model complex, nonlinear relationships in data, particularly for biometric recognition tasks.
+- **[LASSO regression and logistic regression](lasso-regression-and-logistic-regression.md)** - A combined approach using LASSO regression for feature selection followed by logistic regression for predictive modeling.
+- **[LS-YOLO](ls-yolo.md)** - LS-YOLO is a lightweight, real-time object detection algorithm optimized for challenging driving conditions.
+- **[LViT-Net](lvit-net.md)** - LViT-Net is a dual-branch model designed for person re-identification that combines local semantics and multi-feature cross fusion.
+- **[Large Language Models (LLMs)](large-language-models-llms.md)** - Large Language Models are AI systems designed to understand and generate human-like text based on input data.
+- **[Lead Qualification Model](lead-qualification-model.md)** - A machine learning model that scores leads based on historical data to automate lead qualification.
+- **[Leader-Followers paradigm](leader-followers-paradigm.md)** - A decentralized approach for coordinating multiple UAVs where leaders guide followers in mission execution.
+- **[Learning Force Control for Paper Wrapping](learning-force-control-for-paper-wrapping.md)** - This technique trains robots to optimally apply force while wrapping paper around various objects.
+- **[Leave-one-out algorithm](leave-one-out-algorithm.md)** - The leave-one-out algorithm quantifies the contribution of individual treatment comparisons in network meta-analysis.
+- **[Life on the Edge (LotE)](life-on-the-edge-lote.md)** - LotE assesses the vulnerability of animal populations to climate change by integrating genomic and environmental data.
+- **[Life-Cycle Assessment (LCA)](life-cycle-assessment-lca.md)** - LCA evaluates the environmental impacts associated with all stages of a product's life from cradle to grave.
+- **[LightEdit](lightedit.md)** - LightEdit is a lightweight image editing technique that uses textual prompts to modify images efficiently.
+- **[Lightweight Gaussian Process Visual Servoing](lightweight-gaussian-process-visual-servoing.md)** - This technique uses Gaussian Processes to model environments for optimal navigation in autonomous systems.
+- **[Lightweight Transformer for Malware Detection](lightweight-transformer-for-malware-detection.md)** - This technique uses a lightweight transformer architecture to detect malware in Android applications while providing interpretable predictions.
+- **[Linear Law-Based Feature Extraction](linear-law-based-feature-extraction.md)** - This technique extracts features from ECG signals using a linear law-based approach for efficient classification.
+- **[Logistic Regression](logistic-regression.md)** - Logistic regression is a statistical method for predicting binary classes based on one or more predictor variables.
+- **[Low Functional Redundancy-based Network Slimming (LFRNS)](low-functional-redundancy-based-network-slimming-lfrns.md)** - LFRNS reduces the size of deep neural networks by removing redundant parameters while maintaining accuracy.
+- **[MD-CrimePredictor](md-crimepredictor.md)** - MD-CrimePredictor forecasts criminal activities in multi-density crime hotspots using clustering and predictive modeling.
+- **[MM-HGT-Bot](mm-hgt-bot.md)** - MM-HGT-Bot is a model for detecting social bots by fusing user content and social relationships in a heterogeneous graph framework.
+- **[MOT-DETR](mot-detr.md)** - MOT-DETR is a single-stage object tracking method that processes color images and 3D point clouds simultaneously for improved detection and re-identification features.
+- **[Machine Learning for Hysteresis Analysis](machine-learning-for-hysteresis-analysis.md)** - This technique uses machine learning to analyze hysteresis behavior in perovskite solar cells.
+- **[Machine Learning-Driven Boundary Value Analysis](machine-learning-driven-boundary-value-analysis.md)** - This technique uses machine learning to enhance test case generation for user input validation by focusing on critical boundary values.
+- **[MacroSwarm](macroswarm.md)** - MacroSwarm enables decentralized coordination among devices to perform complex swarm behaviors through a sense-compute-interact loop.
+- **[Madgwick algorithm](madgwick-algorithm.md)** - The Madgwick algorithm is used for real-time orientation estimation from inertial and magnetic sensor data.
+- **[Magnetic Microrobot Navigation](magnetic-microrobot-navigation.md)** - This technique uses magnetic fields to control the movement of microrobots for targeted drug delivery in complex biological environments.
+- **[Mamba](mamba.md)** - Mamba is a selective state model designed for improved recognition of animal actions in video data.
+- **[Man-Kendall Test, Wavelet Coherence](man-kendall-test-wavelet-coherence.md)** - This technique assesses trends and relationships in time series data, particularly in environmental and agricultural contexts.
+- **[Masked Image Modeling](masked-image-modeling.md)** - Masked Image Modeling trains models to predict missing parts of images, enhancing feature learning without extensive labeled data.
+- **[Mass Spectrometry Imaging (MSI)](mass-spectrometry-imaging-msi.md)** - MSI visualizes the spatial distribution of metabolites in samples using mass spectrometry combined with imaging techniques.
+- **[Mean Field Deep Deterministic Policy Gradients (MF-DDPG)](mean-field-deep-deterministic-policy-gradients-mf-ddpg.md)** - MF-DDPG is a reinforcement learning algorithm that enables decentralized decision-making in environments with multiple agents using mean field game theory.
+- **[Message Passing for Data Assimilation](message-passing-for-data-assimilation.md)** - This technique formulates data assimilation as a Bayesian inference problem using message passing algorithms.
+- **[Microplastic Analysis and Health Indices Assessment](microplastic-analysis-and-health-indices-assessment.md)** - This technique assesses the presence of microplastics in fish and evaluates their health using specific indices.
+- **[Min-CCV and Min-V](min-ccv-and-min-v.md)** - Min-CCV and Min-V are algorithms designed to optimize task scheduling in delay-sensitive IoT applications by minimizing costs and maximizing quality of service (QoS).
+- **[Mixed-Integer Linear Programming (MILP) for SFT mapping](mixed-integer-linear-programming-milp-for-sft-mapping.md)** - MILP is used to optimize the placement of microservices in fog networks to minimize latency and maximize resource utilization.
+- **[MoVPAAC](movpaac.md)** - MoVPAAC optimizes dynamic VM placement in cloud environments based on multiple objectives to enhance application service availability.
+- **[Modelica](modelica.md)** - Modelica is a modeling language for complex systems that allows for acausal simulation based on physical equations.
+- **[Moderated Serial Mediation Model](moderated-serial-mediation-model.md)** - This technique analyzes the relationships between variables while accounting for mediation and moderation effects.
+- **[Moderated mediation model](moderated-mediation-model.md)** - A statistical technique used to understand the relationships between variables while accounting for the influence of other variables.
+- **[Moderated mediation model analysis](moderated-mediation-model-analysis.md)** - This technique analyzes the mediating and moderating effects of variables in a statistical model.
+- **[Modified Regularization Long Short-Term Memory (MR-LSTM)](modified-regularization-long-short-term-memory-mr-lstm.md)** - MR-LSTM enhances traditional LSTM networks with regularization techniques to improve long-term dependency retention in sequential data.
+- **[Mofka](mofka.md)** - Mofka is an event-streaming system optimized for high-performance computing applications.
+- **[Morpheus](morpheus.md)** - Morpheus enables efficient runtime switching of sparse matrix storage formats to optimize performance in machine learning workflows.
+- **[Multi-Armed Bandit](multi-armed-bandit.md)** - A strategy for resource allocation that balances exploration and exploitation based on performance feedback.
+- **[Multi-Modal Behavioral Transformer (MMBT)](multi-modal-behavioral-transformer-mmbt.md)** - MMBT identifies fraudulent transactions by analyzing user behavior data through a Transformer model.
+- **[Multi-Objective Simulated Annealing (MOSA)](multi-objective-simulated-annealing-mosa.md)** - MOSA is an optimization technique that balances exploration and exploitation to solve multi-objective problems.
+- **[Multi-Server Two-Way Communication Retrial Queue](multi-server-two-way-communication-retrial-queue.md)** - This technique models a multi-server queue system that incorporates retrial queues and two-way communication under varying server states.
+- **[Multi-step Partitioning with SOM Clustering](multi-step-partitioning-with-som-clustering.md)** - This technique enhances SAT solver performance by partitioning problems and clustering features using Self-Organizing Maps (SOM).
+- **[Multi-strategy Horned Lizard Optimization Algorithm (mHLOA)](multi-strategy-horned-lizard-optimization-algorithm-mhloa.md)** - mHLOA enhances search efficiency for complex optimization and feature selection problems by combining multiple strategies.
+- **[Multi-threaded compaction operation](multi-threaded-compaction-operation.md)** - This technique parallelizes the compaction process in key-value stores to enhance I/O performance.
+- **[Multi-view representation learning](multi-view-representation-learning.md)** - This technique integrates multiple perspectives of data to create a comprehensive representation for improved analysis and decision-making.
+- **[Multifidelity Kolmogorov-Arnold Networks (MFKANs)](multifidelity-kolmogorov-arnold-networks-mfkans.md)** - MFKANs leverage low-fidelity data to enhance predictions using a small set of high-fidelity data.
+- **[Multimodal Fusion Framework](multimodal-fusion-framework.md)** - This technique integrates various machine vision methods to enhance the diagnosis of plant diseases using visual data.
+- **[Multimodal Scene Recognition](multimodal-scene-recognition.md)** - This technique enhances scene recognition by integrating RGB images with semantic segmentation outputs.
+- **[Multimodal Text-Driven Model with Attention Mechanisms](multimodal-text-driven-model-with-attention-mechanisms.md)** - This technique predicts short-term currency movements by integrating quantitative market data with qualitative news sentiment using attention mechanisms.
+- **[Multinomial Logistic Regression (MLR)](multinomial-logistic-regression-mlr.md)** - MLR is used to classify outcomes into multiple categories based on independent variables.
+- **[Multiscale model for espresso brewing](multiscale-model-for-espresso-brewing.md)** - This technique models the espresso brewing process to optimize solubles extraction dynamics.
+- **[Multitask Deep Learning for Heavy Metal Detection](multitask-deep-learning-for-heavy-metal-detection.md)** - This technique uses multitask deep learning to simultaneously detect multiple heavy metal contaminants in soil using spectroscopy data.
+- **[NAFIC and CESHAP](nafic-and-ceshap.md)** - NAFIC and CESHAP enhance feature importance methods to improve robustness and interpretability in complex and noisy data environments.
+- **[Narrative-driven Virtual Reality Experience](narrative-driven-virtual-reality-experience.md)** - This technique uses immersive virtual reality to enhance empathy in medical training through narrative storytelling.
+- **[National Fisheries Restricted Areas (nFRAs)](national-fisheries-restricted-areas-nfras.md)** - nFRAs are designated areas aimed at enhancing biodiversity and supporting local fisheries through sustainable management practices.
+- **[Network Analysis](network-analysis.md)** - Network analysis examines the relationships between symptoms of behavioral issues over time using graphical models.
+- **[Neural Ensemble Architecture with Pseudo-Random Input Sequence](neural-ensemble-architecture-with-pseudo-random-input-sequence.md)** - This technique combines multiple neural networks with pseudo-random input sequences to enhance classification accuracy.
+- **[Neural Network Pruning](neural-network-pruning.md)** - Neural network pruning reduces the number of active weights in a neural network to create sparser models, optimizing performance metrics.
+- **[Neural Network for Quantum State Preparation](neural-network-for-quantum-state-preparation.md)** - This technique uses a neural network to optimize control sequences for preparing Schrödinger cat states in a microwave cavity.
+- **[Neural Radiance Fields (NeRF)](neural-radiance-fields-nerf.md)** - NeRF synthesizes high-quality images of 3D scenes using neural networks to model color and density from spatial coordinates and viewing directions.
+- **[Neuro-fuzzy emotion recognition](neuro-fuzzy-emotion-recognition.md)** - This technique uses neuro-fuzzy systems to recognize emotions from audio data and adapt virtual environments accordingly.
+- **[NewSQL performance evaluation](newsql-performance-evaluation.md)** - This technique benchmarks NewSQL databases to assess their performance in distributed architectures while maintaining ACID properties.
+- **[Non-Dominated Sorting Student Psychology Based Optimization Algorithm](non-dominated-sorting-student-psychology-based-optimization-algorithm.md)** - This algorithm optimizes multi-objective task scheduling using principles inspired by student psychology and non-dominated sorting.
+- **[Non-invasive Vagus Nerve Stimulation (nVNS)](non-invasive-vagus-nerve-stimulation-nvns.md)** - nVNS is a therapeutic technique that stimulates the vagus nerve to alleviate symptoms in patients with persistent post-concussion syndrome.
+- **[Non-traditional data integration](non-traditional-data-integration.md)** - This technique enhances climate models by integrating non-traditional datasets with modern data.
+- **[Nonlinear Energy Harvesting Full-Duplex Communication](nonlinear-energy-harvesting-full-duplex-communication.md)** - This technique enables simultaneous data transmission and reception using nonlinear energy harvesting to improve spectral efficiency.
+- **[Nonlinear Variation Decomposition](nonlinear-variation-decomposition.md)** - This technique enhances predictive accuracy in semiconductor processes by decomposing variations using nonlinear methods.
+- **[OMNIJET-α](omnijet-α.md)** - OMNIJET-α is a model designed for generating synthetic jet sequences in particle physics using transfer learning.
+- **[Odatix](odatix.md)** - Odatix is an open-source toolbox that automates the design process for FPGA and ASIC implementations.
+- **[Onboard Anomaly Detection Method](onboard-anomaly-detection-method.md)** - This technique detects and classifies anomalies in real-time using satellite sensor data.
+- **[One-class classifiers](one-class-classifiers.md)** - One-class classifiers are used to identify anomalies by learning from normal operational data.
+- **[OpenPodcar](openpodcar.md)** - OpenPodcar is an open-source platform designed for research and experimentation in autonomous driving technologies.
+- **[Optimal Camera Placement Algorithm](optimal-camera-placement-algorithm.md)** - This technique determines the best locations for surveillance cameras to maximize coverage and minimize costs.
+- **[Optimizable Ensemble model](optimizable-ensemble-model.md)** - This technique combines multiple machine learning models to improve classification accuracy and reliability.
+- **[Optimized Efficient Job Scheduling Resource (OEJSR)](optimized-efficient-job-scheduling-resource-oejsr.md)** - OEJSR is a hybrid optimization technique for efficient job scheduling in cloud environments.
+- **[Optimized Kubernetes Framework](optimized-kubernetes-framework.md)** - A framework for enhancing the performance of Kubernetes through various optimizations.
+- **[Optimized MAC Hardware Architecture](optimized-mac-hardware-architecture.md)** - This technique involves designing specialized hardware to optimize Multiply-Accumulate (MAC) operations for deep learning tasks.
+- **[PCR (Polymerase Chain Reaction)](pcr-polymerase-chain-reaction.md)** - PCR is a technique used to amplify specific DNA sequences for analysis and identification.
+- **[PDGPT](pdgpt.md)** - PDGPT is a large language model tailored for acquiring phase diagram information in magnesium alloys.
+- **[PM2.5-GNN](pm25-gnn.md)** - PM2.5-GNN predicts PM2.5 concentrations using a graph neural network approach, integrating meteorological and fire-related data.
+- **[PREDICTOR](predictor.md)** - PREDICTOR forecasts when a driver needs to take control of a semi-automated vehicle.
+- **[Parallel Drone Scheduling Traveling Salesman Problem (PDSTSP)](parallel-drone-scheduling-traveling-salesman-problem-pdstsp.md)** - PDSTSP optimizes delivery routes for a fleet of drones and trucks operating in parallel to minimize completion time and environmental impact.
+- **[Pattern-Based Feature Extraction](pattern-based-feature-extraction.md)** - This technique extracts structured features from financial time series data by analyzing geometric properties of price movements.
+- **[PeakNet](peaknet.md)** - PeakNet is a deep learning architecture designed for real-time segmentation of Bragg peaks in X-ray diffraction data.
+- **[Performance Evaluation Framework](performance-evaluation-framework.md)** - A framework for evaluating the performance of microservices communication protocols.
+- **[Performance Evaluation of ARM and RISC-V Architectures](performance-evaluation-of-arm-and-risc-v-architectures.md)** - This technique evaluates and compares the performance of ARM and RISC-V architectures in high-performance computing environments.
+- **[Persuasive Technique Influence on LLMs](persuasive-technique-influence-on-llms.md)** - This technique applies persuasive strategies to prompts for large language models to influence their responses.
+- **[Petri nets](petri-nets.md)** - Petri nets are a mathematical modeling tool used for describing and analyzing the behavior of concurrent systems.
+- **[Pharmacokinetic modeling](pharmacokinetic-modeling.md)** - Pharmacokinetic modeling analyzes how drugs are absorbed, distributed, metabolized, and excreted in the body.
+- **[Photonic Probabilistic Computing](photonic-probabilistic-computing.md)** - This technique utilizes chaotic light to perform high-speed probabilistic computations in photonic systems.
+- **[Physics-informed Variational Autoencoder](physics-informed-variational-autoencoder.md)** - A variational autoencoder that integrates physics-based knowledge with data-driven learning for improved interpretability and performance.
+- **[Physics-informed autoencoder (PIA)](physics-informed-autoencoder-pia.md)** - PIA combines autoencoder architecture with physics-informed loss functions to estimate neutron star parameters while maintaining interpretability.
+- **[Pig tongue soft robot](pig-tongue-soft-robot.md)** - This technique involves creating a soft robotic tongue that mimics the movements and stiffness of a biological tongue using 3D scanning and silicone materials.
+- **[Polynomial-Time Algorithm for Detection of Uncovered Transitions](polynomial-time-algorithm-for-detection-of-uncovered-transitions.md)** - This technique detects uncovered transitions in Petri net-based concurrent systems efficiently.
+- **[Portable Solar-Integrated Electrochemical Station](portable-solar-integrated-electrochemical-station.md)** - A portable system that uses solar energy to power electrolysis for hydrogen production from wastewater.
+- **[Private Cloud Bespoke Orchestrator (PCBO)](private-cloud-bespoke-orchestrator-pcbo.md)** - PCBO automates the construction and management of virtual machine environments in private clouds using Infrastructure as Code principles.
+- **[Probabilistic Cardinality and Replicability Notations](probabilistic-cardinality-and-replicability-notations.md)** - This technique estimates data set sizes and ensures consistent analysis across instances using probabilistic methods.
+- **[Proximal Policy Optimization (PPO)](proximal-policy-optimization-ppo.md)** - PPO is a reinforcement learning algorithm used to optimize policies in dynamic environments.
+- **[Pseudo Relevance Feedback Query Recommendation](pseudo-relevance-feedback-query-recommendation.md)** - This technique recommends queries to enhance the relevance of search results based on user interaction data.
+- **[QUIC](quic.md)** - QUIC is a transport layer network protocol designed to reduce latency and improve performance over unreliable networks.
+- **[Quadratically Constrained Mixed-Integer Non-Linear Programming (QC-MINLP)](quadratically-constrained-mixed-integer-non-linear-programming-qc-minlp.md)** - QC-MINLP optimizes resource allocation and routing in logistics while incorporating quadratic constraints.
+- **[Quality Aware Code Fixing](quality-aware-code-fixing.md)** - This technique generates quality-aware code recommendations by analyzing functional and syntactic similarities in code snippets.
+- **[Quantum Materials Review](quantum-materials-review.md)** - A method for summarizing the properties and applications of quantum materials through literature review.
+- **[Quaternion-based Recurrent Neural Networks (QRNN)](quaternion-based-recurrent-neural-networks-qrnn.md)** - QRNNs leverage quaternion mathematics to enhance the modeling of sequential three-dimensional data for activity recognition.
+- **[Quotient Network](quotient-network.md)** - Quotient Networks enhance feature representation by learning the quotient of features instead of their differences.
+- **[RASCAL (Reconstruction by AnalogS of ClimatologicAL time series)](rascal-reconstruction-by-analogs-of-climatological-time-series.md)** - RASCAL reconstructs climatological time series by leveraging analog days with similar atmospheric conditions.
+- **[RCBAM–TCN–LSTM](rcbamtcnlstm.md)** - A lightweight model combining RCBAM for feature extraction and TCN-LSTM for temporal modeling to predict aircraft trajectories.
+- **[RNNs, LSTMs, CNNs, Autoencoders, GNNs, Transformers, Reinforcement Learning hybrids](rnns-lstms-cnns-autoencoders-gnns-transformers-reinforcement-learning-hybrids.md)** - A collection of deep learning architectures used for predicting market movements in algorithmic trading.
+- **[RT-MQTT and MRT-MQTT](rt-mqtt-and-mrt-mqtt.md)** - RT-MQTT and MRT-MQTT enhance MQTT for real-time communication in industrial applications using SDN integration.
+- **[Radiographic prediction model](radiographic-prediction-model.md)** - A model that predicts anterior cruciate ligament (ACL) function in knee osteoarthritis (KOA) patients using X-ray images.
+- **[Random Forest, JRip](random-forest-jrip.md)** - Random Forest is an ensemble learning method used for classification and regression tasks that operates by constructing multiple decision trees during training time and outputting the mode of their predictions.
+- **[Random Forest, KNN, AdaBoost, SVM, ANN, RNN, LSTM](random-forest-knn-adaboost-svm-ann-rnn-lstm.md)** - This technique involves using multiple machine learning models to predict stock market trends based on historical data.
+- **[Random Forest, XGBoost](random-forest-xgboost.md)** - Random Forest and XGBoost are ensemble learning techniques used for classification and regression tasks that capture complex relationships in data.
+- **[Random k Conditional Nearest Neighbor (RkCNN)](random-k-conditional-nearest-neighbor-rkcnn.md)** - RkCNN enhances classification accuracy by aggregating predictions from multiple kCNN classifiers built on random feature subsets.
+- **[Randomized CNN-multihead-attention hybrid model](randomized-cnn-multihead-attention-hybrid-model.md)** - A hybrid model combining a Randomized CNN and multi-head attention for emotion recognition tasks.
+- **[Randomized Wait-Free Locks](randomized-wait-free-locks.md)** - Randomized wait-free locks provide a mechanism for concurrent processes to access shared resources without blocking, ensuring fairness and bounded time complexity.
+- **[Recurrent Sigmoid Piecewise Linear (RSPL) neurons](recurrent-sigmoid-piecewise-linear-rspl-neurons.md)** - RSPL neurons enhance traditional RNNs by using piecewise linear activation functions for improved time series forecasting.
+- **[Reduction Method with Gumbel–Hougaard Copula](reduction-method-with-gumbelhougaard-copula.md)** - This technique models system performance metrics using a copula approach to analyze reliability in fault-tolerant systems.
+- **[Reflective Error](reflective-error.md)** - Reflective Error is a metric that assesses predictive performance with a focus on extreme events.
+- **[Regularized Generative Adversarial Network (R-GAN)](regularized-generative-adversarial-network-r-gan.md)** - R-GAN generates synthetic anomaly data to enhance anomaly detection in imbalanced datasets.
+- **[Reinforcement Learning for Autonomous Navigation](reinforcement-learning-for-autonomous-navigation.md)** - This technique uses reinforcement learning to train agents for autonomous navigation by mimicking human driving behaviors.
+- **[Reinforcement Learning for Chemical Process Control](reinforcement-learning-for-chemical-process-control.md)** - This technique uses reinforcement learning to optimize control actions in chemical processes while adhering to safety constraints.
+- **[Reliever Reliance Test (RRT)](reliever-reliance-test-rrt.md)** - The RRT evaluates patients' reliance on short-acting beta-agonists (SABA) and provides personalized feedback to improve asthma management.
+- **[ResNet-34](resnet-34.md)** - ResNet-34 is a deep convolutional neural network architecture designed for image classification tasks.
+- **[ResNet-LSTM](resnet-lstm.md)** - ResNet-LSTM combines deep residual networks with long short-term memory networks for enhanced prediction of sequential data.
+- **[Retrieval Augmented Generation (RAG)](retrieval-augmented-generation-rag.md)** - RAG combines retrieval of relevant information with generative models to enhance response quality.
+- **[Retrieval-Augmented Generation (RAG)](retrieval-augmented-generation-rag.md)** - RAG combines retrieval of relevant information with generative models to enhance response quality.
+- **[RoBERTa](roberta.md)** - RoBERTa is a transformer-based model designed for natural language processing tasks, particularly effective in text classification.
+- **[RosenPy](rosenpy.md)** - RosenPy is a framework for building complex-valued neural networks using complex numbers for weights and activations.
+- **[Round-Robin Allocation with Sunflower Whale Optimization (RRA-SWO)](round-robin-allocation-with-sunflower-whale-optimization-rra-swo.md)** - RRA-SWO optimizes resource allocation in cloud environments by dynamically balancing loads across virtual machines.
+- **[Rule-Based Burst Tolerance Method](rule-based-burst-tolerance-method.md)** - This method enhances burst tolerance in stateful microservices by monitoring memory usage and redistributing workloads accordingly.
+- **[SA-FDR](sa-fdr.md)** - SA-FDR optimizes feature selection using simulated annealing to maximize the Fisher Discriminant Ratio.
+- **[SN-Comparator](sn-comparator.md)** - SN-Comparator is a tool for visualizing and comparing the agreement of multiple text embedding models in similarity calculations.
+- **[SWIN-XVR](swin-xvr.md)** - SWIN-XVR is a model that reconstructs high-resolution image sequences from low-resolution and high-resolution image inputs using a shifted window transformer architecture.
+- **[Scoop](scoop.md)** - Scoop is an optimization algorithm designed to enhance the training of models for profiling attacks against higher-order masking in cryptographic implementations.
+- **[Secure Proof of Ownership Scheme](secure-proof-of-ownership-scheme.md)** - This technique verifies file ownership in cloud storage systems securely and efficiently.
+- **[Security vulnerability assessment](security-vulnerability-assessment.md)** - A systematic evaluation of applications to identify security vulnerabilities.
+- **[Self-Supervised Tree Segmentation](self-supervised-tree-segmentation.md)** - This technique segments individual trees from airborne LiDAR point clouds using self-supervised learning.
+- **[Self-conditioned diffusion with gradient manipulation](self-conditioned-diffusion-with-gradient-manipulation.md)** - This technique imputes missing longitudinal MRI data using enhanced diffusion processes and gradient manipulation.
+- **[Semi-decentralized Variational Equilibrium-based Planner (SVEP)](semi-decentralized-variational-equilibrium-based-planner-svep.md)** - SVEP optimizes trajectories for connected and autonomous vehicles (CAVs) while ensuring safety and interaction fairness through shared information.
+- **[Semisolid extrusion additive manufacturing](semisolid-extrusion-additive-manufacturing.md)** - This technique allows for the creation of custom-dosed tablets using a 3D printer to extrude semisolid formulations.
+- **[Series of Local Triangulations (SOLT)](series-of-local-triangulations-solt.md)** - SOLT is a method for resampling point clouds by constructing localized triangulations around individual points.
+- **[Sesame Auth](sesame-auth.md)** - Sesame Auth provides a passwordless authentication solution using cryptography, steganography, and biometrics.
+- **[Shape Memory Alloys (SMAs)](shape-memory-alloys-smas.md)** - Shape Memory Alloys are materials that can change shape in response to stimuli, enabling soft actuators that mimic biological movements.
+- **[Signal Averaged Electrocardiography (SAECG)](signal-averaged-electrocardiography-saecg.md)** - SAECG is a non-invasive technique used to evaluate the risk of ventricular arrhythmias by analyzing late potentials in ECG waveforms.
+- **[Similarity Caching](similarity-caching.md)** - Similarity Caching optimizes content retrieval by serving similar cached items instead of fetching from the original source.
+- **[Simulated Annealing Ant Lion Optimizer (SAALO)](simulated-annealing-ant-lion-optimizer-saalo.md)** - SAALO combines Ant Lion Optimization with simulated annealing to effectively resolve integer ambiguities in GNSS applications.
+- **[Single Packet Header Binary Image (SPHBI)](single-packet-header-binary-image-sphbi.md)** - SPHBI converts TCP/IP packet headers into binary images for efficient classification of network traffic.
+- **[Sleep Extension Protocol](sleep-extension-protocol.md)** - A method to enhance physical and cognitive performance by extending sleep duration.
+- **[Smart Medical Report Algorithm](smart-medical-report-algorithm.md)** - This technique analyzes blood test results to efficiently detect both common and rare diseases using machine learning.
+- **[SmartScanPCOS](smartscanpcos.md)** - SmartScanPCOS predicts the likelihood of Polycystic Ovary Syndrome (PCOS) using a feature-driven machine learning approach with explainable AI.
+- **[Social Connectedness Mediating Model](social-connectedness-mediating-model.md)** - This technique analyzes the mediating effect of social connectedness on the relationship between fandom identity and mental health outcomes.
+- **[Sociolinguistic Language Modeling](sociolinguistic-language-modeling.md)** - Sociolinguistic Language Modeling focuses on creating language models that accurately represent specific varieties of language informed by sociolinguistic theories.
+- **[Soft-Body physics simulation](soft-body-physics-simulation.md)** - Soft-Body physics simulation models the interactions between deformable objects during dynamic events like crashes.
+- **[Soliton-based modulation with attenuation compensation](soliton-based-modulation-with-attenuation-compensation.md)** - This technique enhances fault localization in power cables by improving signal clarity and compensating for attenuation.
+- **[Sonic Sleuth](sonic-sleuth.md)** - Sonic Sleuth is a convolutional neural network model designed for detecting deepfake audio.
+- **[Sound-Based Reaction System](sound-based-reaction-system.md)** - This technique enables robots to respond to specific sounds associated with fearful or shocking events, mimicking human reactions to enhance sociability.
+- **[Sound-based assembly of soft robots](sound-based-assembly-of-soft-robots.md)** - This technique uses sound waves to assemble magnetically responsive soft robots for biomedical applications.
+- **[SpeckleNN](specklenn.md)** - SpeckleNN is a neural network optimized for real-time classification of X-ray single-particle imaging data.
+- **[Static Code Analysis](static-code-analysis.md)** - Static code analysis evaluates code quality without executing the program.
+- **[Stochastic Resetting](stochastic-resetting.md)** - Stochastic Resetting enhances SGD by allowing model parameters to reset to a previous state, mitigating the effects of label noise during training.
+- **[Structural Contrastive Learning (SCL)](structural-contrastive-learning-scl.md)** - SCL is a framework for unsupervised fake news detection that learns representations from augmented views of news propagation structures.
+- **[Structure from Motion (SfM)](structure-from-motion-sfm.md)** - SfM is a technique used to reconstruct 3D structures from a series of 2D images taken from different angles.
+- **[Support Vector Machine for Regression (SVMR), Multiple Linear Regression (MLR), Random Forest (RF)](support-vector-machine-for-regression-svmr-multiple-linear-regression-mlr-random.md)** - SVMR is a regression technique that predicts continuous outcomes based on input features using support vector machines.
+- **[Sustainable Smart Irrigation System (SIS)](sustainable-smart-irrigation-system-sis.md)** - SIS automates irrigation for indoor plants using solar power and rainwater harvesting.
+- **[System Call Analyzer](system-call-analyzer.md)** - A tool for intercepting and analyzing system calls made by applications in Linux containers.
+- **[Systematic Qualitative Content Analysis](systematic-qualitative-content-analysis.md)** - This technique analyzes textual data to identify patterns and categorize content based on specific criteria.
+- **[Systematic Review of Bias in LLMs](systematic-review-of-bias-in-llms.md)** - This technique systematically reviews literature to evaluate and address demographic biases in large language models (LLMs) in medical contexts.
+- **[TG3 Snca knockout mouse model](tg3-snca-knockout-mouse-model.md)** - A genetically modified mouse model used to study the effects of alpha-synuclein knockout on melanoma development and DNA damage response.
+- **[TRM-MAAN](trm-maan.md)** - TRM-MAAN evaluates pilot workload in real-time by integrating EEG and EMG signals using a Transformer architecture.
+- **[Tag Replication and Status Bits Encoding](tag-replication-and-status-bits-encoding.md)** - This technique enhances cache metadata reliability by replicating tags and encoding status bits.
+- **[Tele-robotic Ultrasound System](tele-robotic-ultrasound-system.md)** - A tele-robotic ultrasound system enables remote ultrasound examinations via a robotic arm controlled over a 5G network.
+- **[Temperature-Tunable Cholesteric Liquid Crystal Optical Combiner](temperature-tunable-cholesteric-liquid-crystal-optical-combiner.md)** - This technique utilizes cholesteric liquid crystals to dynamically adjust optical properties based on temperature changes for enhanced augmented reality experiences.
+- **[Temporal Graph Network (TGN)](temporal-graph-network-tgn.md)** - TGN is a neural network architecture designed to process dynamic graphs that evolve over time for tasks such as fraud detection.
+- **[Tentative Operations](tentative-operations.md)** - Tentative operations enable real-time collaborative editing of geospatial data while minimizing concurrency issues.
+- **[Text Mining for Crime Classification](text-mining-for-crime-classification.md)** - This technique classifies types of crime using narrative text extracted from court documents.
+- **[Three-Stage Heuristic (3SH)](three-stage-heuristic-3sh.md)** - 3SH optimizes the arrangement of containers in maritime terminals to minimize relocations.
+- **[Token Probability Analysis](token-probability-analysis.md)** - Token Probability Analysis evaluates the accuracy of language model responses by analyzing token probabilities and expressed confidence levels.
+- **[TokenMixer](tokenmixer.md)** - TokenMixer is a hybrid architecture that combines CNNs and Vision Transformers for efficient classification of histopathology images.
+- **[Tour Recommendation System](tour-recommendation-system.md)** - This technique generates personalized travel itineraries based on user preferences and dynamic information from social media data.
+- **[Traffic Clearance Routing Algorithm](traffic-clearance-routing-algorithm.md)** - This algorithm optimizes routing for emergency vehicles by filtering waypoints and updating routes in real-time.
+- **[Traffic Weaver](traffic-weaver.md)** - Traffic Weaver generates synthetic time-varying network traffic based on historical data analysis for testing purposes.
+- **[Transcranial Magnetic Stimulation (TMS)](transcranial-magnetic-stimulation-tms.md)** - TMS is a non-invasive method used to stimulate neural activity in the brain using magnetic fields.
+- **[Transcranial Ultrasound Stimulation (TUS)](transcranial-ultrasound-stimulation-tus.md)** - TUS is a non-invasive technique that uses ultrasound waves to modulate neuronal activity in deep brain structures.
+- **[Transfer Learning, Active Learning, Low-shot Prompting](transfer-learning-active-learning-low-shot-prompting.md)** - This technique automates the detection of data leakage in machine learning code using limited annotated datasets.
+- **[TruCBN™](trucbn.md)** - TruCBN™ is a proprietary formulation of cannabinoids aimed at improving sleep quality through randomized clinical trials.
+- **[TuGraph](tugraph.md)** - TuGraph is a high-performance graph storage solution optimized for efficient querying and data management.
+- **[Two-Tower Networks with Multi-Armed Bandit](two-tower-networks-with-multi-armed-bandit.md)** - This technique combines two-tower neural networks with multi-armed bandit algorithms to optimize personalized nudges in real-time.
+- **[UAV Fog Node Location algorithm](uav-fog-node-location-algorithm.md)** - This algorithm optimizes the placement of UAVs as fog nodes to meet user demands while minimizing costs.
+- **[Unsupervised Machine Learning for Test Suite Reduction](unsupervised-machine-learning-for-test-suite-reduction.md)** - This technique reduces the size of test suites while maintaining code coverage using unsupervised machine learning methods.
+- **[User Motivation Assessment Framework](user-motivation-assessment-framework.md)** - This framework assesses psychological and social factors influencing user motivations for engaging with social chatbots.
+- **[VGG16 with Grad-CAM](vgg16-with-grad-cam.md)** - This technique combines the VGG16 convolutional neural network with Grad-CAM for image classification and interpretability.
+- **[VR NDE Simulation](vr-nde-simulation.md)** - A virtual reality simulation designed to help reduce death anxiety and stress in participants by immersing them in a near-death experience scenario.
+- **[Variational Autoencoder for Multi-Criteria Recommendation Systems (VAE-MCRS)](variational-autoencoder-for-multi-criteria-recommendation-systems-vae-mcrs.md)** - VAE-MCRS enhances recommendation accuracy by leveraging latent features from user-item interactions across multiple criteria.
+- **[Various SISR architectures](various-sisr-architectures.md)** - SISR architectures enhance the resolution of low-quality images using various neural network designs.
+- **[Vector Quantized Variational Autoencoder (VQVAE)](vector-quantized-variational-autoencoder-vqvae.md)** - VQVAE compresses high-dimensional data into a discrete latent space for generative tasks.
+- **[ViTAAl](vitaal.md)** - ViTAAl integrates audio and visual data to enhance lipreading performance in low-resource environments.
+- **[Video Fingerprint Matching Framework](video-fingerprint-matching-framework.md)** - This technique identifies video content shared over instant messaging by matching transmission fingerprints against a database.
+- **[Video Slice Encryption Scheme](video-slice-encryption-scheme.md)** - This technique encrypts video content by dividing it into slices and applying unique encryption keys to each slice for enhanced security.
+- **[Vigilant Hawk](vigilant-hawk.md)** - Vigilant Hawk utilizes Akka's actor model for decentralized management of smart grid systems.
+- **[Virtual Access Tool](virtual-access-tool.md)** - A tool that creates interactive virtual representations of archaeological sites for remote exploration and education.
+- **[Virtual Lunar Navigation Simulation](virtual-lunar-navigation-simulation.md)** - This technique simulates navigation in a virtual lunar environment to study movement patterns and decision-making in low-gravity conditions.
+- **[Visuospatial Sequence Learning Task](visuospatial-sequence-learning-task.md)** - This technique evaluates performance and cognitive load in a VR environment through a sequence of actions under stress conditions.
+- **[Wavelet-based edge computing method](wavelet-based-edge-computing-method.md)** - This technique uses wavelet transforms to efficiently analyze signals from IoT sensors while minimizing computational load.
+- **[Weighted Phase Lag Index (WPLI)](weighted-phase-lag-index-wpli.md)** - WPLI is used to assess brain connectivity by analyzing EEG signals.
+- **[Whale-Goshawk Optimization Algorithm (WGO)](whale-goshawk-optimization-algorithm-wgo.md)** - WGO is an optimization algorithm designed for service composition in uncertain cloud manufacturing environments.
+- **[Whisper](whisper.md)** - Whisper is a transformer-based model designed to decode and analyze audio signals, particularly for sentiment analysis in animal vocalizations.
+- **[Whole-genome sequencing (WGS)](whole-genome-sequencing-wgs.md)** - Whole-genome sequencing (WGS) is a comprehensive method for analyzing the complete DNA sequence of an organism's genome.
+- **[XGBoost](xgboost.md)** - XGBoost is an efficient and scalable implementation of gradient boosting framework designed for speed and performance.
+- **[YOLOv10](yolov10.md)** - YOLOv10 is a real-time object detection model designed for high accuracy and speed in identifying objects in images.
+- **[YOLOv4-tiny](yolov4-tiny.md)** - YOLOv4-tiny is a lightweight object detection model optimized for real-time performance.
+- **[YOLOv5](yolov5.md)** - YOLOv5 is a real-time object detection model that identifies and classifies objects in images efficiently.
+- **[YOLOv8](yolov8.md)** - YOLOv8 is a lightweight object detection algorithm optimized for real-time performance on low-powered hardware.
+- **[YOLOv8-CE](yolov8-ce.md)** - YOLOv8-CE is a real-time object detection model optimized for detecting small traffic signs in autonomous vehicles.
+- **[YOLOv8n (Nano), YOLOv8m (Medium), Detection Transformer (DETR)](yolov8n-nano-yolov8m-medium-detection-transformer-detr.md)** - YOLOv8n and YOLOv8m are lightweight deep learning models designed for real-time object detection, particularly in resource-constrained environments.
+- **[YOLOx](yolox.md)** - YOLOx is a one-stage object detection model that predicts bounding boxes and classifications in a single pass, optimized for speed and efficiency.
+- **[Zero-Shot Knowledge-Based VQA](zero-shot-knowledge-based-vqa.md)** - This technique answers questions about images without fine-tuning on specific datasets by using frozen language models.
+- **[g-C3N4 microrobots](g-c3n4-microrobots.md)** - g-C3N4 microrobots are light-responsive devices designed to navigate and degrade antibiotic pollutants in water.
+- **[mTORC1 signaling modulation](mtorc1-signaling-modulation.md)** - This technique modulates mTORC1 signaling to study its effects on cellular processes such as autophagy and injury response.
+- **[tapai](tapai.md)** - tapai is a neural network-based method for classifying scorpion venom peptide sequences into toxin categories.

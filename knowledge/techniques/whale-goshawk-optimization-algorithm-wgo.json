@@ -1,0 +1,84 @@
+{
+  "technique_name": "Whale-Goshawk Optimization Algorithm (WGO)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "WGO is an optimization algorithm designed for service composition in uncertain cloud manufacturing environments.",
+  "how_it_works": "WGO operates in two stages: first, it performs a global search to identify potential service combinations using a similar integer coding method based on Quality of Service (QoS) attributes. Next, it refines these combinations through a local search that groups services with similar QoS characteristics using cosine similarity. This dual approach enhances the search for optimal service compositions tailored to user preferences.",
+  "algorithm": {
+    "steps": [
+      "1. Decompose the user request into subtasks.",
+      "2. Construct a candidate service set (CSS) for each subtask.",
+      "3. Apply similar integer coding to the CSS based on QoS similarity.",
+      "4. Perform a global search using WOA to identify promising service combinations.",
+      "5. Execute a local search using NGO to refine the identified combinations.",
+      "6. Evaluate the service combinations based on user-defined QoS preferences.",
+      "7. Return the optimal service composition."
+    ],
+    "core_equation": "output = optimal service composition based on QoS attributes",
+    "input_format": "User request for service composition, including QoS preferences and task requirements.",
+    "output_format": "Optimal service composition that maximizes QoS attributes according to user preferences."
+  },
+  "parameters": [
+    {
+      "name": "cosine_similarity_threshold",
+      "typical_value": "0.6",
+      "effect": "Higher values may reduce the number of grouped services, potentially missing some optimal combinations."
+    },
+    {
+      "name": "\u03b3",
+      "typical_value": "0.3",
+      "effect": "Adjusting this parameter influences the balance between exploration and exploitation in the search."
+    },
+    {
+      "name": "max_iterations",
+      "typical_value": "T (not specified)",
+      "effect": "More iterations may lead to better solutions but increase computation time."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated.",
+    "space": "Not stated.",
+    "practical_note": "The algorithm's performance may vary based on the size of the service repository and the complexity of the user request."
+  },
+  "use_when": [
+    "You need to optimize service composition in a cloud manufacturing environment with uncertain service states.",
+    "You have a large repository of services with varying QoS attributes and need to group similar services.",
+    "You require a flexible optimization algorithm that can adapt to dynamic service conditions."
+  ],
+  "avoid_when": [
+    "The service repository is small and stable, where simpler methods may suffice.",
+    "Real-time processing is critical and cannot accommodate the algorithm's computational overhead.",
+    "You need guaranteed optimal solutions rather than near-optimal solutions."
+  ],
+  "implementation_skeleton": "def wgo_optimization(user_request: dict) -> dict:\n    subtasks = decompose_request(user_request)\n    candidate_services = construct_css(subtasks)\n    coded_services = apply_integer_coding(candidate_services)\n    global_combinations = global_search(coded_services)\n    refined_combinations = local_search(global_combinations)\n    optimal_composition = evaluate_combinations(refined_combinations, user_request['QoS_preferences'])\n    return optimal_composition",
+  "common_mistakes": [
+    "Failing to properly define QoS preferences, leading to suboptimal service compositions.",
+    "Overlooking the impact of cosine similarity threshold on service grouping.",
+    "Not adjusting parameters like \u03b3 and max_iterations based on the specific problem context."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively handles large and uncertain service repositories.",
+      "Utilizes a dual-stage search process for improved optimization.",
+      "Adapts to varying QoS attributes, enhancing service composition."
+    ],
+    "weaknesses": [
+      "May not perform well with small, stable service repositories.",
+      "Computational overhead can be significant in real-time applications.",
+      "Does not guarantee optimal solutions, only near-optimal ones."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional QoS-based service composition methods",
+        "verdict": "WGO is more flexible and can handle uncertainty better, while traditional methods may be simpler and faster for stable environments."
+      }
+    ]
+  },
+  "connects_to": [
+    "Quality of Service (QoS) optimization techniques",
+    "Cloud service composition methods",
+    "Metaheuristic optimization algorithms",
+    "Integer programming approaches"
+  ],
+  "maturity": "emerging"
+}

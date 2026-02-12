@@ -1,0 +1,90 @@
+{
+  "technique_name": "DenseNet",
+  "aliases": [
+    "Densely Connected Convolutional Networks"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "DenseNet is a convolutional neural network architecture that improves feature propagation and reduces the number of parameters by connecting each layer to every other layer in a feed-forward fashion.",
+  "how_it_works": "DenseNet connects each layer to every other layer, allowing for better feature reuse and reducing the number of parameters. This architecture enables gradients to flow more easily during training, which helps in learning more complex features. The model is typically pre-trained on large datasets and fine-tuned for specific tasks, such as image classification.",
+  "algorithm": {
+    "steps": [
+      "Load pre-trained DenseNet model (121, 169, or 201 variant).",
+      "Freeze all layers of the pre-trained model.",
+      "Replace the classifier layer with a new fully connected layer for binary classification.",
+      "Pre-process images (resize, normalize, augment).",
+      "Train the model using the training dataset.",
+      "Evaluate the model on the validation and test datasets."
+    ],
+    "core_equation": "output = softmax(W \u00b7 h + b)",
+    "input_format": "5856 annotated X-ray images (224x224 pixels, normalized)",
+    "output_format": "Binary classification labels (Normal or Pneumonia)"
+  },
+  "parameters": [
+    {
+      "name": "epochs",
+      "typical_value": "50",
+      "effect": "More epochs can lead to better learning but may cause overfitting."
+    },
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "Higher learning rates may speed up training but risk overshooting minima."
+    },
+    {
+      "name": "optimizer",
+      "typical_value": "stochastic gradient descent",
+      "effect": "Different optimizers can affect convergence speed and stability."
+    },
+    {
+      "name": "loss_function",
+      "typical_value": "Binary Cross-Entropy with Logits Loss",
+      "effect": "Changing the loss function can impact how well the model learns the classification task."
+    }
+  ],
+  "complexity": {
+    "time": "O(n^2) for training due to dense connections",
+    "space": "O(n) for storing activations and gradients",
+    "practical_note": "DenseNet can be computationally intensive, especially with larger models and datasets."
+  },
+  "use_when": [
+    "You need to classify medical images for pneumonia detection.",
+    "You want to leverage pre-trained models to save training time.",
+    "You require high accuracy in binary image classification tasks."
+  ],
+  "avoid_when": [
+    "You have a very small dataset that cannot support deep learning models.",
+    "You need real-time processing with extremely low latency.",
+    "You require interpretability beyond what DenseNet provides."
+  ],
+  "implementation_skeleton": "def train_densenet_model(images: List[np.ndarray], labels: List[int]) -> None:\n    model = load_pretrained_densenet()\n    freeze_layers(model)\n    model.add(Dense(1, activation='sigmoid'))\n    preprocess_images(images)\n    model.compile(optimizer='sgd', loss='binary_crossentropy')\n    model.fit(images, labels, epochs=50)\n    evaluate_model(model)",
+  "common_mistakes": [
+    "Not properly pre-processing images before feeding them into the model.",
+    "Overfitting due to insufficient data or too many epochs.",
+    "Failing to fine-tune the model after loading pre-trained weights."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy in image classification tasks.",
+      "Efficient parameter usage due to dense connections.",
+      "Better gradient flow during training."
+    ],
+    "weaknesses": [
+      "Computationally intensive, requiring significant resources.",
+      "Can be complex to implement and tune.",
+      "Less interpretable than simpler models."
+    ],
+    "compared_to": [
+      {
+        "technique": "ResNet",
+        "verdict": "Use DenseNet for better feature reuse; use ResNet for simpler architecture and faster training."
+      }
+    ]
+  },
+  "connects_to": [
+    "Transfer Learning",
+    "Convolutional Neural Networks (CNNs)",
+    "Image Augmentation",
+    "Fine-tuning"
+  ],
+  "maturity": "proven"
+}

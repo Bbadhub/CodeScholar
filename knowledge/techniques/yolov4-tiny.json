@@ -1,0 +1,85 @@
+{
+  "technique_name": "YOLOv4-tiny",
+  "aliases": [
+    "You Only Look Once version 4 tiny"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "YOLOv4-tiny is a lightweight object detection model optimized for real-time performance.",
+  "how_it_works": "YOLOv4-tiny processes images through a convolutional neural network to detect and classify objects in real-time. It uses a single neural network to predict bounding boxes and class probabilities directly from full images. The model is designed to be faster and more efficient than its larger counterparts, making it suitable for applications with limited computational resources.",
+  "algorithm": {
+    "steps": [
+      "Collect and annotate video data of road surfaces.",
+      "Preprocess the images using median filtering and data augmentation.",
+      "Develop the YOLOv4-tiny CNN architecture.",
+      "Train the model using the annotated dataset.",
+      "Evaluate the model's performance on test videos.",
+      "Deploy the model for real-time video analysis."
+    ],
+    "core_equation": "output = bounding_box_predictions + class_probabilities",
+    "input_format": "Video streams of road surfaces containing various types of damage.",
+    "output_format": "Real-time detection and classification of pavement damage (e.g., potholes, cracks)."
+  },
+  "parameters": [
+    {
+      "name": "input_image_size",
+      "typical_value": "416x416",
+      "effect": "Changing the size affects detection accuracy and speed."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "64",
+      "effect": "Higher batch sizes can improve training speed but require more memory."
+    }
+  ],
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)",
+    "practical_note": "Real-time performance is achievable on standard hardware, but may vary based on input resolution."
+  },
+  "use_when": [
+    "You need to automate the detection of road surface damage in real-time.",
+    "You have access to video data of road conditions.",
+    "You want to improve road maintenance efficiency."
+  ],
+  "avoid_when": [
+    "You require a solution for static images rather than video.",
+    "You have limited computational resources for real-time processing.",
+    "You need a solution that does not involve deep learning."
+  ],
+  "implementation_skeleton": "def yolo_v4_tiny(video_stream: str) -> List[Detection]:\n    # Load YOLOv4-tiny model\n    model = load_model('yolov4-tiny')\n    detections = []\n    for frame in read_video(video_stream):\n        processed_frame = preprocess(frame)\n        detection = model.predict(processed_frame)\n        detections.append(detection)\n    return detections",
+  "common_mistakes": [
+    "Not properly annotating the training data, leading to poor model performance.",
+    "Ignoring the importance of data augmentation in improving model robustness.",
+    "Underestimating the computational requirements for real-time processing."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Optimized for real-time performance.",
+      "Lightweight architecture suitable for edge devices.",
+      "Effective for detecting small objects in video streams."
+    ],
+    "weaknesses": [
+      "Lower accuracy compared to larger YOLO models.",
+      "May struggle with complex scenes or occlusions.",
+      "Requires careful tuning of hyperparameters for optimal performance."
+    ],
+    "compared_to": [
+      {
+        "technique": "YOLOv4",
+        "verdict": "Use YOLOv4 for higher accuracy when computational resources are available."
+      },
+      {
+        "technique": "MobileNetSSD",
+        "verdict": "Choose MobileNetSSD for mobile applications with less emphasis on real-time performance."
+      }
+    ]
+  },
+  "connects_to": [
+    "YOLOv4",
+    "YOLOv5",
+    "MobileNet",
+    "Faster R-CNN",
+    "SSD"
+  ],
+  "maturity": "proven"
+}

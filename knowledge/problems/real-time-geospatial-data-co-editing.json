@@ -1,0 +1,37 @@
+{
+  "problem_name": "Real-Time Geospatial Data Co-Editing",
+  "description": "This problem involves multiple users editing geospatial data simultaneously in real-time, requiring mechanisms to handle conflicts and ensure data consistency. It is crucial for applications like collaborative mapping and emergency response systems where timely updates are essential.",
+  "you_have_this_if": [
+    "You are developing a collaborative mapping application.",
+    "Multiple users need to edit geospatial data at the same time.",
+    "You require live updates to geospatial information.",
+    "You are working on a crowdsourced geographic information system.",
+    "You need to ensure data consistency across different users' edits."
+  ],
+  "approaches": [
+    {
+      "technique": "Tentative Operations",
+      "best_for": "Building applications for real-time collaborative mapping and emergency response requiring live data updates.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Offers conflict-free operations but may introduce complexity in managing user states."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Tentative Operations",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to support multiple users editing geospatial data in real-time without conflicts."
+    }
+  ],
+  "start_here": "Start with Tentative Operations as it is specifically designed for real-time collaborative environments, ensuring that edits do not conflict and can be managed effectively.",
+  "related_problems": [
+    "Real-time collaborative editing",
+    "Distributed database consistency",
+    "Conflict resolution in shared data",
+    "Crowdsourced data validation"
+  ]
+}

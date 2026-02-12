@@ -1,0 +1,84 @@
+{
+  "technique_name": "VR NDE Simulation",
+  "aliases": [
+    "Virtual Reality Near-Death Experience Simulation"
+  ],
+  "category": "therapeutic_intervention",
+  "one_liner": "A virtual reality simulation designed to help reduce death anxiety and stress in participants by immersing them in a near-death experience scenario.",
+  "how_it_works": "Participants engage in a first-person virtual reality simulation that mimics common elements of near-death experiences. The simulation lasts for 11 minutes and is followed by questionnaires assessing changes in death anxiety and perceived stress. The data collected before and after the simulation is analyzed to evaluate the effectiveness of the intervention in reducing anxiety and stress levels.",
+  "algorithm": {
+    "steps": [
+      "1. Recruit participants aged 18 and older.",
+      "2. Administer pre-intervention questionnaires measuring death anxiety and perceived stress.",
+      "3. Participants engage in an 11-minute VR NDE simulation using Oculus Quest 2.",
+      "4. Administer post-intervention questionnaires to measure changes in death anxiety and stress.",
+      "5. Analyze data using statistical methods to compare pre- and post-intervention scores."
+    ],
+    "core_equation": "Post-intervention scores = Pre-intervention scores - Change in scores",
+    "input_format": "Participants' responses to pre-intervention questionnaires measuring death anxiety and perceived stress.",
+    "output_format": "Post-intervention scores on death anxiety and perceived stress, along with qualitative feedback on the VR experience."
+  },
+  "parameters": [
+    {
+      "name": "simulation_duration",
+      "typical_value": "11 minutes",
+      "effect": "Longer simulations may enhance immersion but could lead to fatigue."
+    },
+    {
+      "name": "sample_size",
+      "typical_value": "61 participants",
+      "effect": "Larger sample sizes can improve statistical power."
+    },
+    {
+      "name": "questionnaire_items",
+      "typical_value": "PSQ (30 items), DAS (15 items)",
+      "effect": "More items may provide a more comprehensive assessment but increase participant burden."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) for data analysis, where n is the number of participants",
+    "space": "O(n) for storing questionnaire responses",
+    "practical_note": "The complexity of the simulation itself is not explicitly stated but involves VR technology and data analysis."
+  },
+  "use_when": [
+    "Developing VR applications for mental health interventions.",
+    "Addressing anxiety related to mortality in therapeutic settings.",
+    "Creating immersive experiences for psychological exposure therapy."
+  ],
+  "avoid_when": [
+    "Participants have severe mental health conditions that may be exacerbated by VR experiences.",
+    "The target population is not comfortable with death-related topics.",
+    "High levels of pre-existing death anxiety may lead to adverse effects."
+  ],
+  "implementation_skeleton": "def vr_nde_simulation(participants: List[Participant]) -> List[PostInterventionScore]:\n    pre_scores = administer_pre_questionnaires(participants)\n    for participant in participants:\n        engage_in_vr_simulation(participant, duration=11)\n    post_scores = administer_post_questionnaires(participants)\n    return analyze_scores(pre_scores, post_scores)",
+  "common_mistakes": [
+    "Not properly screening participants for mental health conditions.",
+    "Failing to provide adequate support during the VR experience.",
+    "Neglecting to analyze qualitative feedback from participants."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Can significantly reduce death anxiety and perceived stress.",
+      "Provides an immersive experience that can enhance therapeutic outcomes.",
+      "Utilizes modern VR technology for engaging interventions."
+    ],
+    "weaknesses": [
+      "May not be suitable for all participants, especially those with severe anxiety.",
+      "Requires access to VR technology, which may not be available to all practitioners.",
+      "Potential for adverse effects in sensitive populations."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional therapy",
+        "verdict": "Use VR NDE Simulation for immersive experiences; use traditional therapy for more conventional approaches."
+      }
+    ]
+  },
+  "connects_to": [
+    "Exposure Therapy",
+    "Cognitive Behavioral Therapy (CBT)",
+    "Virtual Reality Therapy",
+    "Mindfulness-Based Stress Reduction (MBSR)"
+  ],
+  "maturity": "emerging"
+}

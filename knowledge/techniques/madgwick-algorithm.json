@@ -1,0 +1,100 @@
+{
+  "technique_name": "Madgwick algorithm",
+  "aliases": [
+    "Madgwick filter"
+  ],
+  "category": "sensor_fusion",
+  "one_liner": "The Madgwick algorithm is used for real-time orientation estimation from inertial and magnetic sensor data.",
+  "how_it_works": "The Madgwick algorithm fuses data from accelerometers, gyroscopes, and magnetometers to estimate the orientation of a device. It uses quaternion representation to minimize errors in sensor readings and applies an optimization step to update the orientation in real-time. This approach is particularly effective for applications requiring accurate motion tracking, such as in wearable devices and virtual reality systems.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize the sensor data collection.",
+      "2. Calibrate accelerometer, gyroscope, and magnetometer data to correct errors.",
+      "3. Apply the Madgwick algorithm for attitude estimation.",
+      "4. Update the quaternion using gyroscope data and optimization steps.",
+      "5. Normalize the quaternion.",
+      "6. Use the forward kinematics method to describe joint motion.",
+      "7. Output the fused data for real-time applications."
+    ],
+    "core_equation": "output = quaternion_update(gyro_data, error_compensation) \u00b7 normalize(quaternion)",
+    "input_format": "Raw sensor data from accelerometers, gyroscopes, and magnetometers.",
+    "output_format": "Fused joint motion data with optimized joint angles and segment orientations."
+  },
+  "parameters": [
+    {
+      "name": "sampling_frequency",
+      "typical_value": "80 Hz",
+      "effect": "Higher frequencies can improve responsiveness but may introduce noise."
+    },
+    {
+      "name": "\u03b7 (error compensation factor)",
+      "typical_value": "> 1",
+      "effect": "Adjusting this factor can help in compensating for sensor errors."
+    },
+    {
+      "name": "optimal bias vector for gyroscope",
+      "typical_value": "[5, 6.2] for X-axis, [0, 5] for Y-axis, [-5, 3] for Z-axis",
+      "effect": "Fine-tuning these values can reduce drift in orientation estimates."
+    },
+    {
+      "name": "optimal bias vector for accelerometer",
+      "typical_value": "[7.5, 10] for X-axis, [7.5, 10] for Y-axis, [0, 10] for Z-axis",
+      "effect": "Improves accuracy of motion tracking."
+    },
+    {
+      "name": "optimal bias vector for magnetometer",
+      "typical_value": "[0, 5] for X-axis, [10, +00] for Y-axis, [-3.5, 0] for Z-axis",
+      "effect": "Enhances the reliability of magnetic field readings."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) where n is the number of sensor readings processed",
+    "space": "O(1) for storing quaternion and bias vectors",
+    "practical_note": "The algorithm is efficient for real-time applications, but performance may vary based on sensor quality."
+  },
+  "use_when": [
+    "Building applications for real-time motion tracking in sports and rehabilitation.",
+    "Developing virtual reality systems that require accurate motion capture.",
+    "Creating wearable devices for health monitoring that need precise joint motion data."
+  ],
+  "avoid_when": [
+    "When high computational complexity is a concern and real-time processing is not required.",
+    "In environments where sensor drift and noise cannot be effectively managed.",
+    "For applications needing extensive multi-modal data integration beyond joint motion."
+  ],
+  "implementation_skeleton": "def madgwick_algorithm(accel: List[float], gyro: List[float], mag: List[float]) -> Tuple[float, float, float]:\n    # Initialize quaternion and bias vectors\n    quaternion = initialize_quaternion()\n    # Calibrate sensor data\n    calibrated_accel, calibrated_gyro, calibrated_mag = calibrate_sensors(accel, gyro, mag)\n    # Apply Madgwick algorithm\n    quaternion = update_quaternion(quaternion, calibrated_gyro)\n    quaternion = normalize(quaternion)\n    return quaternion",
+  "common_mistakes": [
+    "Neglecting to calibrate sensors before using the algorithm.",
+    "Using incorrect bias values leading to inaccurate orientation estimates.",
+    "Failing to normalize the quaternion after updates."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides real-time orientation estimates.",
+      "Reduces errors compared to traditional filtering methods.",
+      "Simple to implement and computationally efficient."
+    ],
+    "weaknesses": [
+      "May struggle in environments with significant magnetic interference.",
+      "Performance can degrade with poor sensor quality.",
+      "Requires careful tuning of parameters for optimal results."
+    ],
+    "compared_to": [
+      {
+        "technique": "Complementary Filter",
+        "verdict": "Use Madgwick for more accurate orientation estimates in dynamic environments."
+      },
+      {
+        "technique": "Extended Kalman Filter",
+        "verdict": "Use EKF for applications needing extensive multi-modal data integration."
+      }
+    ]
+  },
+  "connects_to": [
+    "Complementary Filter",
+    "Extended Kalman Filter",
+    "Unscented Kalman Filter",
+    "Sensor calibration techniques"
+  ],
+  "maturity": "proven (widely used in production)"
+}

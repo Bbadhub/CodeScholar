@@ -1,0 +1,95 @@
+{
+  "summary": "This paper presents a virtual reality (VR) intervention designed to reduce death anxiety (DA) and stress in adults through a near-death experience (NDE) simulation. Engineers should care because it demonstrates a novel application of VR technology in psychological interventions, potentially offering a scalable solution for mental health challenges.",
+  "key_contribution": "The introduction of an immersive VR NDE simulation as an effective intervention for reducing death anxiety and stress in adults.",
+  "problem_type": "psychological intervention for anxiety reduction",
+  "problem_description": "The work addresses the significant psychological challenges posed by death anxiety and stress, which negatively impact health and wellbeing.",
+  "domain": "Human-Computer Interaction",
+  "sub_domain": "Virtual Reality Therapy",
+  "technique_name": "VR NDE Simulation",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves participants experiencing a first-person VR simulation of a near-death experience, which includes immersive scenes commonly reported in NDEs. Participants complete pre- and post-intervention questionnaires to assess changes in death anxiety and stress levels.",
+    "algorithm_steps": [
+      "1. Recruit participants aged 18 and older.",
+      "2. Administer pre-intervention questionnaires measuring death anxiety and perceived stress.",
+      "3. Participants engage in an 11-minute VR NDE simulation using Oculus Quest 2.",
+      "4. Administer post-intervention questionnaires to measure changes in death anxiety and stress.",
+      "5. Analyze data using statistical methods to compare pre- and post-intervention scores."
+    ],
+    "input": "Participants' responses to pre-intervention questionnaires measuring death anxiety and perceived stress.",
+    "output": "Post-intervention scores on death anxiety and perceived stress, along with qualitative feedback on the VR experience.",
+    "key_parameters": [
+      "simulation_duration: 11 minutes",
+      "sample_size: 61 participants",
+      "questionnaire_items: PSQ (30 items), DAS (15 items)"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Pre- and post-intervention questionnaire responses from 61 participants."
+    ],
+    "metrics": [
+      "Death Anxiety (DA) scores: pre-intervention mean = 8.57, post-intervention mean = 7.00",
+      "Perceived Stress scores: pre-intervention mean = 0.469, post-intervention mean = 0.396"
+    ],
+    "baselines": [
+      "Pre-intervention scores for DA and perceived stress."
+    ],
+    "improvement": "Significant reduction in DA (\u0394mean = 1.566, p < 0.001) and perceived stress (\u0394mean = 0.073, p = 0.002)."
+  },
+  "concepts": [
+    "virtual reality",
+    "death anxiety",
+    "stress reduction",
+    "near-death experience",
+    "psychological interventions",
+    "immersive technology"
+  ],
+  "use_this_when": [
+    "Developing VR applications for mental health interventions.",
+    "Addressing anxiety related to mortality in therapeutic settings.",
+    "Creating immersive experiences for psychological exposure therapy."
+  ],
+  "dont_use_when": [
+    "Participants have severe mental health conditions that may be exacerbated by VR experiences.",
+    "The target population is not comfortable with death-related topics.",
+    "High levels of pre-existing death anxiety may lead to adverse effects."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Participant data records",
+      "Questionnaire response arrays"
+    ],
+    "dependencies": [
+      "Oculus Quest 2 SDK",
+      "Statistical analysis software (e.g., SPSS)"
+    ],
+    "pseudocode_hint": "def run_vr_experience(participant): administer_pre_questionnaire(participant); launch_vr_simulation(); administer_post_questionnaire(participant);",
+    "gotchas": [
+      "Ensure participants are screened for comfort with VR and death-related topics.",
+      "Monitor for adverse reactions during the VR experience.",
+      "Provide clear instructions on using VR equipment."
+    ]
+  },
+  "connects_to": [
+    "Exposure therapy techniques",
+    "Other VR-based therapeutic interventions",
+    "Cognitive Behavioral Therapy (CBT) methods"
+  ],
+  "prerequisites": [
+    "Understanding of VR technology and its applications in therapy.",
+    "Knowledge of psychological principles related to anxiety and stress.",
+    "Familiarity with statistical analysis methods for intervention studies."
+  ],
+  "limitations": [
+    "Potential for increased anxiety in a subset of participants (26.7% experienced increased DA).",
+    "Sample may not represent broader populations due to self-selection bias.",
+    "Limited generalizability due to the homogeneous sample of university students."
+  ],
+  "open_questions": [
+    "What are the effects of simulating negative or hellish NDEs in VR?",
+    "How can VR NDE simulations be personalized to enhance effectiveness?"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "technique_name": "Logistic Regression",
+  "aliases": [
+    "Logit Regression",
+    "Logistic Model"
+  ],
+  "category": "statistical_method",
+  "one_liner": "Logistic regression is a statistical method for predicting binary classes based on one or more predictor variables.",
+  "how_it_works": "Logistic regression models the probability of a binary outcome based on one or more predictor variables. It uses the logistic function to map predicted values to probabilities, ensuring outputs are between 0 and 1. The model is trained using maximum likelihood estimation, adjusting parameters to best fit the training data. It is particularly useful in scenarios where interpretability of the model is crucial, such as in clinical decision-making.",
+  "algorithm": {
+    "steps": [
+      "1. Collect biometric and demographic data from the target population.",
+      "2. Preprocess the data: clean, impute missing values, and select relevant features.",
+      "3. Develop a logistic regression model using a suitable programming language.",
+      "4. Train the model on the dataset using maximum likelihood estimation.",
+      "5. Evaluate the model using performance metrics such as accuracy, sensitivity, and ROC curve.",
+      "6. Adjust parameters based on cross-validation results.",
+      "7. Deploy the model for practical use."
+    ],
+    "core_equation": "P(Y=1|X) = 1 / (1 + e^(- (\u03b20 + \u03b21*X1 + \u03b22*X2 + ... + \u03b2n*Xn)))",
+    "input_format": "Biometric and demographic data including age, height, and growth patterns (e.g., numerical and categorical variables).",
+    "output_format": "Probability of appropriate height or short stature (binary outcome)."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "not specified",
+      "effect": "Affects the speed of convergence during training."
+    },
+    {
+      "name": "max_iterations",
+      "typical_value": "not specified",
+      "effect": "Limits the number of iterations for convergence."
+    },
+    {
+      "name": "cross_validation_folds",
+      "typical_value": "k-fold (number not specified)",
+      "effect": "Affects the robustness of model evaluation."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * p^2) where n is the number of samples and p is the number of features.",
+    "space": "O(p) where p is the number of features.",
+    "practical_note": "Logistic regression is computationally efficient and performs well with small to medium-sized datasets."
+  },
+  "use_when": [
+    "You need a transparent and interpretable model for clinical decision-making.",
+    "You are working with small to medium-sized datasets.",
+    "Real-time processing and resource efficiency are required in healthcare environments."
+  ],
+  "avoid_when": [
+    "You require complex non-linear relationships that logistic regression cannot model.",
+    "You have a large dataset that may benefit from more complex models.",
+    "Interpretability is not a priority for your application."
+  ],
+  "implementation_skeleton": "def logistic_regression(X: np.ndarray, y: np.ndarray, learning_rate: float, max_iterations: int) -> np.ndarray:\n    # Initialize parameters\n    beta = np.zeros(X.shape[1])\n    for _ in range(max_iterations):\n        predictions = 1 / (1 + np.exp(-X.dot(beta)))\n        # Update beta using gradient ascent\n        beta += learning_rate * X.T.dot(y - predictions)\n    return beta",
+  "common_mistakes": [
+    "Neglecting to preprocess data, which can lead to poor model performance.",
+    "Overlooking the importance of feature selection, which can introduce noise.",
+    "Failing to evaluate model performance using appropriate metrics."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides interpretable results, making it suitable for clinical applications.",
+      "Efficient for small to medium-sized datasets.",
+      "Works well when the relationship between features and the outcome is approximately linear."
+    ],
+    "weaknesses": [
+      "Cannot model complex non-linear relationships.",
+      "Assumes independence of observations, which may not hold in all datasets.",
+      "Sensitive to outliers, which can skew results."
+    ],
+    "compared_to": [
+      {
+        "technique": "Decision Trees",
+        "verdict": "Use decision trees for non-linear relationships and when interpretability is less critical."
+      },
+      {
+        "technique": "Support Vector Machines",
+        "verdict": "Use SVMs for high-dimensional data and complex decision boundaries."
+      }
+    ]
+  },
+  "connects_to": [
+    "Linear Regression",
+    "Support Vector Machines",
+    "Decision Trees",
+    "Random Forests",
+    "Neural Networks"
+  ],
+  "maturity": "proven"
+}

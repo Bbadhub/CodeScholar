@@ -1,0 +1,36 @@
+{
+  "problem_name": "Adversarial Attack on Large Language Models",
+  "description": "Adversarial attacks on large language models (LLMs) involve crafting inputs that can deceive the model into producing incorrect or harmful outputs. This problem is critical as LLMs are increasingly used in applications where accuracy and reliability are paramount.",
+  "you_have_this_if": [
+    "You notice unexpected outputs from the model in critical applications.",
+    "Your LLM-based system is deployed in a high-stakes environment.",
+    "You are conducting research on the security of AI systems.",
+    "You have observed discrepancies in model performance under certain input conditions."
+  ],
+  "approaches": [
+    {
+      "technique": "Chain-of-Thought Transfer Adversarial Attacks (CTTA)",
+      "best_for": "when you need to evaluate the robustness of LLMs in critical applications and understand their vulnerabilities.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach may provide insights into model weaknesses but could require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Chain-of-Thought Transfer Adversarial Attacks (CTTA)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a thorough evaluation of LLM robustness against adversarial inputs."
+    }
+  ],
+  "start_here": "Begin with Chain-of-Thought Transfer Adversarial Attacks (CTTA) as it provides a structured approach to assess LLM vulnerabilities, especially in critical applications.",
+  "related_problems": [
+    "Robustness evaluation of machine learning models",
+    "Data poisoning attacks on AI systems",
+    "Model interpretability and explainability",
+    "Bias and fairness in AI models"
+  ]
+}

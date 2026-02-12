@@ -1,0 +1,52 @@
+{
+  "problem_name": "Sequence Classification",
+  "description": "Sequence classification involves categorizing sequences of data into predefined classes. This is commonly used in various fields such as natural language processing, bioinformatics, and medical diagnosis.",
+  "you_have_this_if": [
+    "You are working with time-series data or sequential data.",
+    "You need to classify data based on patterns over time.",
+    "You are facing challenges with existing classification models.",
+    "You require high accuracy in classification tasks.",
+    "You are dealing with complex sequences that have long-term dependencies."
+  ],
+  "approaches": [
+    {
+      "technique": "Modified Regularization Long Short-Term Memory (MR-LSTM)",
+      "best_for": "when you need to process sequential medical data for diagnosis or improve accuracy in long-term dependency retention.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "Offers improved accuracy for long-term dependencies but may require more computational resources."
+    },
+    {
+      "technique": "tapai",
+      "best_for": "when you need to classify short peptide sequences from scorpion venom or improve toxin identification.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Specialized for toxin classification but may not generalize well to other sequence types."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Modified Regularization Long Short-Term Memory (MR-LSTM)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to classify complex medical sequences with long-term dependencies."
+    },
+    {
+      "technique": "tapai",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "easy",
+      "best_when": "You are classifying short peptide sequences in drug discovery projects."
+    }
+  ],
+  "start_here": "Start with the MR-LSTM technique if you are dealing with complex sequences requiring long-term dependency retention; otherwise, consider tapai for specialized toxin classification tasks.",
+  "related_problems": [
+    "Time Series Forecasting",
+    "Natural Language Processing",
+    "Image Sequence Classification",
+    "Anomaly Detection in Sequences"
+  ]
+}

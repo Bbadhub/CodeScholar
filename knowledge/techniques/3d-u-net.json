@@ -1,0 +1,83 @@
+{
+  "technique_name": "3D U-Net",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "3D U-Net is a convolutional neural network architecture designed for volumetric image segmentation tasks.",
+  "how_it_works": "3D U-Net extends the traditional U-Net architecture to three dimensions, making it suitable for volumetric data such as medical images. It employs skip connections to retain spatial information while downsampling and upsampling the input data. The architecture is particularly effective in learning features from limited datasets, making it ideal for medical imaging applications where data can be scarce.",
+  "algorithm": {
+    "steps": [
+      "1. Acquire low-resolution medical images.",
+      "2. Apply CLAHE to enhance image contrast.",
+      "3. Feed the preprocessed images into the 3D U-Net architecture.",
+      "4. Train the model using a small dataset.",
+      "5. Validate the model on a separate test set.",
+      "6. Fine-tune hyperparameters as necessary."
+    ],
+    "core_equation": "output = 3D_U_Net(input)",
+    "input_format": "Low-resolution medical images of the hippocampus (3D tensor format).",
+    "output_format": "Segmented images highlighting the hippocampus region (3D tensor format)."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A higher learning rate may lead to faster convergence but risks overshooting the optimal solution."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "16",
+      "effect": "Larger batch sizes can stabilize training but require more memory."
+    },
+    {
+      "name": "num_epochs",
+      "typical_value": "50",
+      "effect": "More epochs can improve learning but may lead to overfitting."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m * p)",
+    "space": "O(n * m * p)",
+    "practical_note": "Performance may vary based on the size of the input data and the architecture's complexity."
+  },
+  "use_when": [
+    "You have a small dataset of medical images.",
+    "You need to segment anatomical structures with high accuracy.",
+    "You want to minimize overfitting in your model."
+  ],
+  "avoid_when": [
+    "You have access to large, high-resolution datasets.",
+    "Real-time segmentation is required.",
+    "The computational resources are not constrained."
+  ],
+  "implementation_skeleton": "def train_3d_unet(images: np.ndarray, labels: np.ndarray, learning_rate: float = 0.001, batch_size: int = 16, num_epochs: int = 50) -> Model:\n    # Preprocess images using CLAHE\n    preprocessed_images = apply_clahe(images)\n    model = create_3d_unet()\n    for epoch in range(num_epochs):\n        for batch in get_batches(preprocessed_images, labels, batch_size):\n            train_on_batch(model, batch)\n    return model",
+  "common_mistakes": [
+    "Neglecting to preprocess images, which can lead to poor model performance.",
+    "Using too large a learning rate, causing instability during training.",
+    "Not validating the model on a separate test set, risking overfitting."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effective for small datasets common in medical imaging.",
+      "High accuracy in segmenting complex anatomical structures.",
+      "Robust against overfitting due to regularization techniques."
+    ],
+    "weaknesses": [
+      "Not suitable for large datasets due to potential inefficiencies.",
+      "May require significant computational resources for training.",
+      "Real-time performance is not achievable with this architecture."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard 3D U-Net",
+        "verdict": "Use 3D U-Net with CLAHE for better performance on small datasets."
+      }
+    ]
+  },
+  "connects_to": [
+    "U-Net",
+    "Convolutional Neural Networks (CNN)",
+    "Image Segmentation Techniques",
+    "Transfer Learning in Medical Imaging"
+  ],
+  "maturity": "proven"
+}

@@ -1,0 +1,38 @@
+# Problem: Sarcasm Detection
+
+Sarcasm detection is the task of identifying when a statement is meant to convey the opposite of its literal meaning. This is particularly challenging in informal text, such as social media posts, where tone and context play a crucial role.
+
+## You Have This Problem If
+
+- You notice frequent misunderstandings in text-based communication.
+- Your sentiment analysis results are inconsistent with human judgment.
+- You are dealing with user-generated content that includes slang and informal language.
+- Your chatbot struggles to respond appropriately to sarcastic remarks.
+- You are analyzing customer feedback that often includes sarcastic comments.
+
+## Start Here
+
+**Start with the BERT-GGNN approach, as it leverages advanced neural architectures to effectively capture the complexities of sarcasm in text, making it suitable for nuanced sentiment analysis tasks.**
+
+## Decision Matrix
+
+| Technique | Speed | Memory | Accuracy | Ease | Best When |
+|-----------|-------|--------|----------|------|-----------|
+| **BERT-GGNN** | medium | high | high | medium | You are working on a project that requires deep understanding of context and sentiment in informal text. |
+
+## Approaches
+
+### BERT-GGNN
+
+**Best for:** when you need to analyze sentiment in social media text where sarcasm is prevalent.
+
+**Tradeoff:** This approach requires significant computational resources but offers high accuracy in understanding nuanced language.
+
+*1 papers, up to 6 citations*
+
+## Related Problems
+
+- Sentiment Analysis
+- Emotion Recognition
+- Intent Detection
+- Text Classification

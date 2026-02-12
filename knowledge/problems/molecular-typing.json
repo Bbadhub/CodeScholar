@@ -1,0 +1,37 @@
+{
+  "problem_name": "Molecular Typing",
+  "description": "Molecular typing involves classifying biological samples, such as tumors, based on their molecular characteristics. This classification is crucial for personalized medicine, allowing for tailored treatment strategies based on the specific genetic makeup of a patient's cancer.",
+  "you_have_this_if": [
+    "You are working with tumor samples.",
+    "You need to classify tumors based on genetic data.",
+    "You are involved in cancer research.",
+    "You are analyzing large genomic datasets.",
+    "You are looking for personalized treatment options."
+  ],
+  "approaches": [
+    {
+      "technique": "Data-Driven Molecular Typing",
+      "best_for": "when you need to classify tumors based on molecular characteristics and analyze large genomic datasets.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach provides detailed insights but may require substantial computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Data-Driven Molecular Typing",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have access to large genomic datasets and require accurate tumor classification."
+    }
+  ],
+  "start_here": "Start with Data-Driven Molecular Typing as it is specifically designed for classifying tumors based on molecular characteristics and is suitable for large datasets.",
+  "related_problems": [
+    "Genomic Data Analysis",
+    "Tumor Classification",
+    "Personalized Medicine",
+    "Cancer Genomics"
+  ]
+}

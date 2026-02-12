@@ -1,0 +1,36 @@
+{
+  "problem_name": "Goal Management in Autonomous Systems",
+  "description": "Goal management in autonomous systems involves enabling machines to set, pursue, and adapt their objectives autonomously. This is crucial for applications that operate in dynamic environments where user needs and external conditions can change rapidly.",
+  "you_have_this_if": [
+    "Your system needs to make decisions without human intervention.",
+    "The environment in which your system operates is unpredictable.",
+    "You require your application to adapt to varying user requirements.",
+    "Your project involves complex task management that requires prioritization and re-evaluation of goals."
+  ],
+  "approaches": [
+    {
+      "technique": "Agentic AI",
+      "best_for": "when developing systems that require autonomous decision-making in dynamic environments.",
+      "paper_count": 1,
+      "max_citations": 313,
+      "key_tradeoff": "While Agentic AI provides robust decision-making capabilities, it may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Agentic AI",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a system that can autonomously manage goals in a complex and changing environment."
+    }
+  ],
+  "start_here": "Start with Agentic AI as it provides a comprehensive framework for managing goals in autonomous systems, especially in dynamic settings.",
+  "related_problems": [
+    "Dynamic Task Allocation",
+    "Autonomous Decision Making",
+    "User-Adaptive Systems",
+    "Intelligent Agent Design"
+  ]
+}

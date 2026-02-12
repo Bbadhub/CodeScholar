@@ -1,0 +1,97 @@
+{
+  "problem_name": "Multi-Class Classification",
+  "description": "Multi-class classification involves categorizing data points into one of several classes. This is a common problem in various fields, including image recognition, medical diagnosis, and natural language processing.",
+  "you_have_this_if": [
+    "You need to classify data into more than two categories.",
+    "Your dataset contains multiple classes with varying characteristics.",
+    "You are facing challenges in achieving high accuracy across all classes.",
+    "You have limited labeled data for training your models.",
+    "You require interpretability in your classification results."
+  ],
+  "approaches": [
+    {
+      "technique": "VGG16 with Grad-CAM",
+      "best_for": "When you need to classify images of potato leaves for disease detection and require interpretability.",
+      "paper_count": 1,
+      "max_citations": 19,
+      "key_tradeoff": "Provides interpretability but may require significant computational resources."
+    },
+    {
+      "technique": "TokenMixer",
+      "best_for": "When you need to classify histopathology images for breast cancer diagnosis while reducing computational resources.",
+      "paper_count": 1,
+      "max_citations": 11,
+      "key_tradeoff": "Efficient model with high accuracy but may not be as interpretable."
+    },
+    {
+      "technique": "ResNet-34",
+      "best_for": "When you need to classify plant diseases from smartphone imagery, especially with imbalanced datasets.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "Good for imbalanced datasets but may require more data for optimal performance."
+    },
+    {
+      "technique": "Multitask Deep Learning for Heavy Metal Detection",
+      "best_for": "When monitoring heavy metal contamination across large areas with multiple contaminants.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Simultaneous detection of multiple classes but may require specialized data."
+    },
+    {
+      "technique": "Neural Ensemble Architecture with Pseudo-Random Input Sequence",
+      "best_for": "When classifying multiple classes of diabetes with limited training data.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Improves accuracy but may increase complexity in model training."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "VGG16 with Grad-CAM",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a model that provides both high accuracy and interpretability for image classification."
+    },
+    {
+      "technique": "TokenMixer",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You want to classify images efficiently while maintaining high accuracy."
+    },
+    {
+      "technique": "ResNet-34",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You are dealing with smartphone imagery and need to classify imbalanced datasets."
+    },
+    {
+      "technique": "Multitask Deep Learning for Heavy Metal Detection",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "medium",
+      "ease_of_implementation": "hard",
+      "best_when": "You need to monitor multiple contaminants simultaneously across large areas."
+    },
+    {
+      "technique": "Neural Ensemble Architecture with Pseudo-Random Input Sequence",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You need to improve accuracy in classifying multiple diabetes types with limited data."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is to start with VGG16 with Grad-CAM if interpretability is crucial, or TokenMixer if you need efficiency and high accuracy.",
+  "related_problems": [
+    "Binary Classification",
+    "Image Segmentation",
+    "Object Detection",
+    "Natural Language Processing Classification"
+  ]
+}

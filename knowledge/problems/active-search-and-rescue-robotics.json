@@ -1,0 +1,37 @@
+{
+  "problem_name": "Active Search and Rescue Robotics",
+  "description": "Active search and rescue robotics involves the use of autonomous systems to locate and assist individuals in emergency situations, particularly in challenging environments. These robots must navigate complex terrains while efficiently identifying victims and providing support.",
+  "you_have_this_if": [
+    "You are working in disaster response scenarios.",
+    "You need to deploy robots in environments that are difficult for humans to access.",
+    "You require real-time decision-making capabilities from your robotic systems.",
+    "You are focused on enhancing the effectiveness of search operations.",
+    "You need to interpret and explain the decisions made by the robotic system."
+  ],
+  "approaches": [
+    {
+      "technique": "ARTU-R Autonomous Search Algorithm",
+      "best_for": "when you need to perform search and rescue operations in complex terrains with interpretable decision-making.",
+      "paper_count": 1,
+      "max_citations": 5,
+      "key_tradeoff": "Provides strong victim detection capabilities but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "ARTU-R Autonomous Search Algorithm",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a reliable system for search and rescue in challenging environments."
+    }
+  ],
+  "start_here": "Start with the ARTU-R Autonomous Search Algorithm as it is specifically designed for complex terrains and offers interpretable decision-making, making it suitable for search and rescue operations.",
+  "related_problems": [
+    "Autonomous navigation in disaster scenarios",
+    "Robotic victim detection systems",
+    "Multi-robot coordination for search operations",
+    "Terrain mapping and analysis for rescue missions"
+  ]
+}

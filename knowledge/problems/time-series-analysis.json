@@ -1,0 +1,37 @@
+{
+  "problem_name": "Time Series Analysis",
+  "description": "Time series analysis involves analyzing data points collected or recorded at specific time intervals to identify trends, patterns, and seasonal variations. It is commonly used in various fields, including finance, economics, and environmental studies.",
+  "you_have_this_if": [
+    "You have data collected over time intervals.",
+    "You need to identify trends or seasonal patterns in your data.",
+    "You are looking to make predictions based on historical data.",
+    "You are analyzing the impact of external factors on a time-dependent variable.",
+    "You require statistical methods to validate your findings."
+  ],
+  "approaches": [
+    {
+      "technique": "Man-Kendall Test, Wavelet Coherence",
+      "best_for": "When analyzing the impact of climate variables on agricultural yields or developing predictive models for crop production.",
+      "paper_count": 1,
+      "max_citations": 10,
+      "key_tradeoff": "This approach provides robust statistical insights but may require a deeper understanding of statistical methods."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Man-Kendall Test, Wavelet Coherence",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to analyze the relationship between climate variables and agricultural yields over time."
+    }
+  ],
+  "start_here": "Start with the Man-Kendall Test and Wavelet Coherence for analyzing time series data related to agricultural yields, as it provides a solid statistical foundation for understanding trends and relationships.",
+  "related_problems": [
+    "Seasonal Decomposition of Time Series",
+    "ARIMA Modeling",
+    "Exponential Smoothing",
+    "Fourier Analysis"
+  ]
+}

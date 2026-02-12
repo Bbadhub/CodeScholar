@@ -1,0 +1,37 @@
+{
+  "problem_name": "Time Series Classification",
+  "description": "Time series classification involves categorizing sequences of data points collected over time. This problem is common in various domains, such as finance, healthcare, and environmental monitoring, where understanding patterns over time is crucial for making predictions.",
+  "you_have_this_if": [
+    "You have sequential data that varies over time.",
+    "You need to identify patterns or trends in the data.",
+    "You are facing challenges with noise in your data.",
+    "You require accurate predictions based on historical data.",
+    "You have tried basic models but need more structured features."
+  ],
+  "approaches": [
+    {
+      "technique": "Pattern-Based Feature Extraction",
+      "best_for": "when you need to classify financial time series data with high noise levels and existing models are underperforming.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This approach may require more preprocessing but can significantly improve model performance."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Pattern-Based Feature Extraction",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have noisy financial time series data and need to extract meaningful features for classification."
+    }
+  ],
+  "start_here": "Start with Pattern-Based Feature Extraction as it effectively addresses noise and enhances the performance of classification models in financial time series.",
+  "related_problems": [
+    "Anomaly Detection in Time Series",
+    "Time Series Forecasting",
+    "Multivariate Time Series Analysis",
+    "Temporal Pattern Mining"
+  ]
+}

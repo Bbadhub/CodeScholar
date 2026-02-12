@@ -1,0 +1,37 @@
+{
+  "problem_name": "Data Storage Architecture Design",
+  "description": "Data storage architecture design involves creating a framework for how data is stored, accessed, and managed in software applications. It is crucial for ensuring that applications can scale efficiently and meet diverse data management needs.",
+  "you_have_this_if": [
+    "You are experiencing performance bottlenecks in your current data storage solution.",
+    "Your application is expected to scale significantly in the near future.",
+    "You have diverse data types that require different storage solutions.",
+    "You are transitioning from a monolithic architecture to a more modular approach.",
+    "You need to optimize data retrieval times for a web application."
+  ],
+  "approaches": [
+    {
+      "technique": "Hybrid Data Storage Architecture",
+      "best_for": "When building a web application that requires high scalability and diverse data management needs.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Offers flexibility in data management but may introduce complexity in integration."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Hybrid Data Storage Architecture",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to support a variety of data types and anticipate high traffic loads."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Hybrid Data Storage Architecture, as it provides the flexibility needed for diverse data types while supporting scalability.",
+  "related_problems": [
+    "Monolithic Architecture Bottlenecks",
+    "Data Retrieval Optimization",
+    "Scalable Web Application Design",
+    "Data Management Strategy Development"
+  ]
+}

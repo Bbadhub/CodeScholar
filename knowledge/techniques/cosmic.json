@@ -1,0 +1,85 @@
+{
+  "technique_name": "COSMIC",
+  "aliases": [],
+  "category": "machine_learning_algorithm",
+  "one_liner": "COSMIC is a machine learning algorithm designed for identifying and estimating the richness of galaxy clusters from astronomical data.",
+  "how_it_works": "COSMIC operates in two main steps. First, it uses an XGBoost classifier to identify Brightest Cluster Galaxies (BCGs) based on photometric and spectroscopic features. Second, it generates a smoothed optical map around each identified BCG and employs a deep neural network to estimate the richness of the galaxy cluster.",
+  "algorithm": {
+    "steps": [
+      "Step 1: Use XGBoost to classify galaxies as BCG-like based on features such as r-band magnitude and colors.",
+      "Step 2: Generate a smoothed optical map (SOM) around each BCG.",
+      "Step 3: Use a pretrained ResNet-34 model to estimate cluster richness from the smoothed optical map."
+    ],
+    "core_equation": "output = XGBoost(photometric_features) \u2192 BCGs; richness = ResNet-34(smoothed_optical_map)",
+    "input_format": "Photometric and spectroscopic data of galaxies, including r-band magnitude, colors, and photometric redshifts.",
+    "output_format": "Identified BCGs and estimated richness of galaxy clusters."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.1",
+      "effect": "A lower learning rate may improve accuracy but increase training time."
+    },
+    {
+      "name": "max_depth",
+      "typical_value": "6",
+      "effect": "Increasing max depth can lead to overfitting."
+    },
+    {
+      "name": "n_estimators",
+      "typical_value": "100",
+      "effect": "More estimators can improve performance but increase computation."
+    },
+    {
+      "name": "sigma",
+      "typical_value": "0.05",
+      "effect": "Adjusting sigma affects the degree of Gaussian smoothing applied."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated.",
+    "space": "Not explicitly stated.",
+    "practical_note": "Performance may vary based on dataset size and feature complexity."
+  },
+  "use_when": [
+    "You need to catalog galaxy clusters from large astronomical datasets.",
+    "You want to improve the accuracy of galaxy cluster detection in optical surveys.",
+    "You are working with data from upcoming large-scale astronomical surveys."
+  ],
+  "avoid_when": [
+    "You have a small dataset that does not require machine learning.",
+    "You need real-time processing with minimal computational resources.",
+    "You are focused on non-optical methods of galaxy cluster detection."
+  ],
+  "implementation_skeleton": "def cosmic_algorithm(data: pd.DataFrame) -> Tuple[List[BCG], List[float]]:\n    bcs = xgboost_classifier(data)\n    smoothed_maps = generate_smoothed_maps(bcs)\n    richness = estimate_richness(smoothed_maps)\n    return bcs, richness",
+  "common_mistakes": [
+    "Neglecting to preprocess input data properly before feeding it to the model.",
+    "Overfitting the XGBoost model by using too many estimators or too high max depth.",
+    "Failing to validate the model on a separate test set to ensure generalization."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy in identifying BCGs and estimating cluster richness.",
+      "Utilizes advanced machine learning techniques for improved performance.",
+      "Can handle large datasets effectively."
+    ],
+    "weaknesses": [
+      "Requires significant computational resources for training.",
+      "Not suitable for small datasets or real-time applications.",
+      "Performance may degrade if the input data is not representative."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional cluster detection algorithms",
+        "verdict": "COSMIC generally provides better completeness and purity."
+      }
+    ]
+  },
+  "connects_to": [
+    "XGBoost",
+    "Deep Learning (ResNet)",
+    "Photometric Redshift Estimation",
+    "Galaxy Cluster Analysis"
+  ],
+  "maturity": "emerging"
+}

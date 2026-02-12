@@ -1,0 +1,37 @@
+{
+  "problem_name": "Data Compression",
+  "description": "Data compression is the process of reducing the size of a dataset to save storage space or transmission time. It involves encoding information using fewer bits than the original representation, which can be crucial for efficient data management and transfer.",
+  "you_have_this_if": [
+    "You are dealing with large datasets that take up significant storage space.",
+    "You need to transmit data over bandwidth-limited networks.",
+    "You require faster data processing times without sacrificing quality.",
+    "You are working with various types of data that may need different compression strategies.",
+    "You have constraints on storage or transmission costs."
+  ],
+  "approaches": [
+    {
+      "technique": "COMPROMISE",
+      "best_for": "when you need to compress large datasets efficiently without significant loss of quality.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "This approach offers flexibility in handling heterogeneous data types but may require more computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "COMPROMISE",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a flexible compression solution that can adapt to varying data characteristics and user-defined error thresholds."
+    }
+  ],
+  "start_here": "Start with the COMPROMISE technique as it provides a balanced approach for compressing diverse datasets while maintaining quality, making it suitable for most scenarios.",
+  "related_problems": [
+    "Data Decompression",
+    "Data Encoding",
+    "Data Transmission Optimization",
+    "Data Storage Management"
+  ]
+}

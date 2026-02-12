@@ -1,0 +1,81 @@
+{
+  "technique_name": "Karmem",
+  "aliases": [],
+  "category": "data_exchange_protocol",
+  "one_liner": "Karmem enables efficient communication between WebAssembly modules through shared memory access.",
+  "how_it_works": "Karmem facilitates communication by allowing WebAssembly (WASM) modules to directly access shared memory, eliminating the need for data copying. It employs a custom interface description language, KarmemIDL, to define data structures and communication patterns. This approach optimizes data transfer efficiency and memory usage across different programming languages.",
+  "algorithm": {
+    "steps": [
+      "Define data structures using KarmemIDL.",
+      "Compile the KarmemIDL definitions into target programming languages.",
+      "Establish shared memory regions for data exchange.",
+      "Use the Karmem protocol to facilitate communication between modules."
+    ],
+    "core_equation": "output = efficiently exchanged data between WASM modules",
+    "input_format": "Data structures defined in KarmemIDL.",
+    "output_format": "Efficiently exchanged data between WASM modules."
+  },
+  "parameters": [
+    {
+      "name": "memory_size",
+      "typical_value": "up to 4 GB",
+      "effect": "Increases the amount of data that can be shared."
+    },
+    {
+      "name": "padding_size",
+      "typical_value": "64 bits",
+      "effect": "Affects the alignment and efficiency of data access."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance improvements over traditional WASM communication methods are significant, though specific metrics are not provided."
+  },
+  "use_when": [
+    "Building applications that require high-performance data exchange between WASM modules.",
+    "Developing multi-language systems where different modules are written in various programming languages.",
+    "Implementing systems that need to optimize memory usage and data transfer efficiency."
+  ],
+  "avoid_when": [
+    "Working with simple data transfer needs that do not require high efficiency.",
+    "Developing applications that do not utilize WebAssembly.",
+    "When existing protocols sufficiently meet performance requirements."
+  ],
+  "implementation_skeleton": "def karmem_communication(data: KarmemIDL) -> EfficientData:\n    shared_memory = establish_shared_memory(data)\n    compiled_data = compile_karmemIDL(data)\n    return exchange_data(shared_memory, compiled_data)",
+  "common_mistakes": [
+    "Neglecting to define data structures properly in KarmemIDL.",
+    "Failing to establish shared memory regions before communication.",
+    "Overlooking the need for proper memory alignment and padding."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Eliminates data copying, enhancing performance.",
+      "Supports interoperability across multiple programming languages.",
+      "Optimizes memory usage for large data transfers."
+    ],
+    "weaknesses": [
+      "Complexity in defining data structures with KarmemIDL.",
+      "Requires understanding of shared memory management.",
+      "Not suitable for simple data transfer scenarios."
+    ],
+    "compared_to": [
+      {
+        "technique": "WIT",
+        "verdict": "Use Karmem for high-performance needs; WIT is simpler for basic transfers."
+      },
+      {
+        "technique": "MessagePack",
+        "verdict": "Karmem is better for shared memory scenarios; MessagePack is easier for general serialization."
+      }
+    ]
+  },
+  "connects_to": [
+    "WebAssembly (WASM)",
+    "WASM Interface Types (WIT)",
+    "MessagePack",
+    "Shared Memory APIs",
+    "Inter-Process Communication (IPC)"
+  ],
+  "maturity": "emerging"
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Distributed Database Consistency",
+  "description": "Distributed database consistency refers to the challenge of ensuring that all nodes in a distributed system reflect the same data state at any given time. This is crucial for applications that require strong consistency guarantees, especially in environments where data is frequently updated across multiple locations.",
+  "you_have_this_if": [
+    "You are experiencing data discrepancies across different nodes.",
+    "Your application requires real-time data accuracy.",
+    "You are facing challenges with transaction management in a distributed setup.",
+    "Your system is experiencing latency issues during data synchronization.",
+    "You are migrating from a traditional database to a distributed architecture."
+  ],
+  "approaches": [
+    {
+      "technique": "NewSQL performance evaluation",
+      "best_for": "When building applications requiring strong consistency in distributed environments.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "Offers strong consistency but may introduce latency compared to eventual consistency models."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "NewSQL performance evaluation",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need strong consistency and are willing to trade off some performance for data accuracy."
+    }
+  ],
+  "start_here": "Start with NewSQL performance evaluation as it provides a strong consistency model suitable for high-performance transactional systems, making it ideal for your needs.",
+  "related_problems": [
+    "Eventual Consistency in Distributed Systems",
+    "CAP Theorem Trade-offs",
+    "Data Replication Strategies",
+    "Distributed Transaction Management"
+  ]
+}

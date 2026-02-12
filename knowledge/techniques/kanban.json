@@ -1,0 +1,87 @@
+{
+  "technique_name": "Kanban",
+  "aliases": [
+    "Kanban Method",
+    "Kanban System"
+  ],
+  "category": "project_management",
+  "one_liner": "Kanban visualizes work to manage and improve the flow of tasks through a system, allowing teams to self-organize and adapt to changes.",
+  "how_it_works": "Kanban uses a visual board to represent the workflow of tasks, helping teams to see the status of work items at a glance. By limiting the number of tasks in progress (WIP), it enhances efficiency and predictability. Teams continuously monitor and adjust their processes based on feedback, fostering a culture of iterative improvement and collaboration.",
+  "algorithm": {
+    "steps": [
+      "1. Visualize the workflow using a Kanban board.",
+      "2. Limit the number of work items in progress (WIP).",
+      "3. Manage flow by monitoring and adjusting the work process.",
+      "4. Make policies explicit to guide decision-making.",
+      "5. Implement feedback cycles to continuously improve the process.",
+      "6. Evolve the system collaboratively through experimentation."
+    ],
+    "core_equation": "output = improved workflow efficiency and service delivery",
+    "input_format": "Work items/tasks that need to be managed.",
+    "output_format": "Improved workflow efficiency and service delivery."
+  },
+  "parameters": [
+    {
+      "name": "WIP limit",
+      "typical_value": "varies by team and project",
+      "effect": "Limiting WIP can enhance focus and reduce bottlenecks."
+    },
+    {
+      "name": "Feedback cycle frequency",
+      "typical_value": "daily/weekly",
+      "effect": "More frequent feedback can lead to quicker adjustments and improvements."
+    },
+    {
+      "name": "Visualization tools",
+      "typical_value": "Kanban board, metrics",
+      "effect": "Effective visualization aids in tracking progress and identifying issues."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) for monitoring tasks",
+    "space": "O(n) for storing task states",
+    "practical_note": "Real-world performance can vary based on team size and complexity of workflows."
+  },
+  "use_when": [
+    "You need to manage complex workflows in software development.",
+    "Your team is facing challenges with project delivery timelines.",
+    "You want to implement a flexible and adaptive project management approach."
+  ],
+  "avoid_when": [
+    "The project requires strict adherence to predefined methodologies.",
+    "You have a small team with very simple workflows.",
+    "The organization is not open to iterative improvements."
+  ],
+  "implementation_skeleton": "def kanban_board(tasks: List[Task], wip_limit: int) -> None:\n    visualize_workflow(tasks)\n    while not all_tasks_completed(tasks):\n        if current_wip(tasks) < wip_limit:\n            start_next_task(tasks)\n        monitor_flow(tasks)\n        implement_feedback_cycle()\n        evolve_system()",
+  "common_mistakes": [
+    "Not setting appropriate WIP limits, leading to bottlenecks.",
+    "Failing to visualize the workflow effectively.",
+    "Ignoring feedback cycles, which can hinder improvement."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Enhances visibility of work processes.",
+      "Promotes team autonomy and self-organization.",
+      "Facilitates continuous improvement through feedback."
+    ],
+    "weaknesses": [
+      "May not suit projects requiring strict methodologies.",
+      "Can become chaotic without proper management.",
+      "Requires cultural buy-in for effective implementation."
+    ],
+    "compared_to": [
+      {
+        "technique": "Scrum",
+        "verdict": "Use Kanban for continuous flow and flexibility; use Scrum for structured sprints and roles."
+      }
+    ]
+  },
+  "connects_to": [
+    "Scrum",
+    "Lean",
+    "Agile methodologies",
+    "Continuous Delivery",
+    "Value Stream Mapping"
+  ],
+  "maturity": "proven (widely used in production)"
+}

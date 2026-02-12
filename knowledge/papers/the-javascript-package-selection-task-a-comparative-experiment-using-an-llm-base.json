@@ -1,0 +1,98 @@
+{
+  "summary": "This paper presents a Retrieval Augmented Generation (RAG) architecture that enhances the AIDT recommender system for selecting JavaScript packages. It combines machine learning techniques with large language models (LLMs) to improve the relevance and explainability of package recommendations, addressing the challenges developers face in package selection.",
+  "key_contribution": "The introduction of a RAG architecture that integrates LLMs for improved package selection and explanation capabilities.",
+  "problem_type": "package selection",
+  "problem_description": "Developers struggle to find relevant JavaScript packages due to ineffective search results from package managers and search engines.",
+  "domain": "Software Engineering",
+  "sub_domain": "Recommender Systems",
+  "technique_name": "Retrieval Augmented Generation (RAG)",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The RAG architecture retrieves relevant JavaScript packages based on a developer's query and re-ranks them using an LLM. It combines results from multiple sources and provides explanations for the recommendations.",
+    "algorithm_steps": [
+      "1. Receive a developer's query.",
+      "2. Perform semantic search on a knowledge repository to retrieve candidate packages.",
+      "3. Re-rank the retrieved packages using a learning-to-rank model.",
+      "4. Generate an enriched prompt for the LLM with the top-k packages.",
+      "5. Synthesize a response using the LLM."
+    ],
+    "input": "A natural language query expressing a technology need.",
+    "output": "A ranked list of recommended JavaScript packages with explanations.",
+    "key_parameters": [
+      "top_k: 5",
+      "embedding_dimension: 768",
+      "learning_rate: 0.001"
+    ],
+    "complexity": "O(n log n) time for ranking, O(n) space."
+  },
+  "benchmarks": {
+    "datasets": [
+      "4600 curated JavaScript packages from GitHub"
+    ],
+    "metrics": [
+      "precision: 20% improvement over NPM",
+      "MAP: not stated",
+      "nDCG: not stated"
+    ],
+    "baselines": [
+      "AIDT",
+      "human rankings"
+    ],
+    "improvement": "RAG achieved performance comparable to AIDT with better explainability."
+  },
+  "concepts": [
+    "RAG architecture",
+    "LLM integration",
+    "semantic search",
+    "learning-to-rank",
+    "explainable recommendations"
+  ],
+  "use_this_when": [
+    "You need to recommend JavaScript packages based on developer queries.",
+    "You want to improve the explainability of package recommendations.",
+    "You are facing challenges with traditional search engines returning irrelevant results."
+  ],
+  "dont_use_when": [
+    "The task requires real-time package recommendations without any prior data.",
+    "You have a very small dataset of packages to work with.",
+    "The application context is not related to JavaScript."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Knowledge repository for JavaScript packages",
+      "Ranking model for package features"
+    ],
+    "dependencies": [
+      "Transformers library for LLMs",
+      "Semantic search library"
+    ],
+    "pseudocode_hint": "results = RAG(query); return results",
+    "gotchas": [
+      "Ensure the knowledge repository is up-to-date.",
+      "Be cautious of LLM hallucinations in package recommendations.",
+      "Fine-tune the learning-to-rank model for best results."
+    ]
+  },
+  "connects_to": [
+    "AIDT",
+    "ChatGPT",
+    "Cohere",
+    "Llama2",
+    "learning-to-rank algorithms"
+  ],
+  "prerequisites": [
+    "Understanding of recommender systems",
+    "Familiarity with LLMs",
+    "Knowledge of JavaScript package ecosystem"
+  ],
+  "limitations": [
+    "RAG performance may vary with different LLMs",
+    "Dependency on the quality of the knowledge repository",
+    "Potential for LLMs to produce irrelevant recommendations"
+  ],
+  "open_questions": [
+    "How can RAG be further optimized for real-time applications?",
+    "What additional features can improve the ranking accuracy?"
+  ]
+}

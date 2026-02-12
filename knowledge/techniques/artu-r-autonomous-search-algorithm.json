@@ -1,0 +1,94 @@
+{
+  "technique_name": "ARTU-R Autonomous Search Algorithm",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "A robotic search algorithm that autonomously explores disaster areas to locate victims using ensemble deep learning techniques.",
+  "how_it_works": "The ARTU-R algorithm utilizes a quadruped robot equipped with RGB-D cameras and lidar to gather environmental data. It employs convolutional neural networks (CNNs) for object detection and a Random Forest model to estimate the probability of finding victims. The algorithm evaluates potential exploration points based on various criteria and selects the most promising one to navigate towards, repeating the process until the search is complete.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize the robot and sensors.",
+      "2. Capture environment data using RGB-D camera and lidar.",
+      "3. Use CNN to detect room types and objects.",
+      "4. Process detection results with Random Forest to estimate victim probability.",
+      "5. Evaluate candidate exploration points based on distance, unexplored space, and victim probability.",
+      "6. Select the next exploration point using a fitness function.",
+      "7. Move the robot to the selected point and repeat."
+    ],
+    "core_equation": "output = select_next_point(fitness_function(candidate_points))",
+    "input_format": "Sensor data from RGB-D camera and lidar, including images and spatial information.",
+    "output_format": "Path to the next exploration point and victim detection probabilities."
+  },
+  "parameters": [
+    {
+      "name": "max_speed",
+      "typical_value": "0.5 m/s",
+      "effect": "Affects the speed of exploration."
+    },
+    {
+      "name": "robot_dimensions",
+      "typical_value": "12 degrees of freedom",
+      "effect": "Determines the robot's maneuverability."
+    },
+    {
+      "name": "lidar_distance_range",
+      "typical_value": "40 m",
+      "effect": "Limits the range of obstacle detection."
+    },
+    {
+      "name": "lidar_sample_rate",
+      "typical_value": "9.2 kHz",
+      "effect": "Influences the frequency of data collection."
+    },
+    {
+      "name": "camera_resolution",
+      "typical_value": "1920 x 1080 px",
+      "effect": "Affects the quality of object detection."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on environmental complexity and computational resources."
+  },
+  "use_when": [
+    "You need to perform search and rescue operations in complex terrains.",
+    "You require a system that provides interpretable decision-making processes.",
+    "You want to enhance victim detection capabilities in disaster scenarios."
+  ],
+  "avoid_when": [
+    "The environment is fully known and can be mapped beforehand.",
+    "You have limited computational resources for real-time processing.",
+    "The robot needs to operate in environments without obstacles."
+  ],
+  "implementation_skeleton": "def artu_r_search(robot: Robot, sensors: Sensors) -> Path:\n    initialize(robot, sensors)\n    while not search_complete:\n        data = capture_data(sensors)\n        detections = detect_objects(data)\n        probabilities = estimate_victim_probability(detections)\n        candidates = evaluate_exploration_points(probabilities)\n        next_point = select_next_point(candidates)\n        move_robot(robot, next_point)\n    return path_to_victims",
+  "common_mistakes": [
+    "Neglecting to calibrate sensors for accurate data collection.",
+    "Failing to account for dynamic obstacles in the environment.",
+    "Overlooking the importance of real-time processing capabilities."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves victim detection efficiency compared to traditional methods.",
+      "Provides interpretable decision-making processes.",
+      "Adapts to complex and dynamic environments."
+    ],
+    "weaknesses": [
+      "Requires significant computational resources for real-time processing.",
+      "May struggle in fully known or static environments.",
+      "Performance can degrade in highly cluttered spaces."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard search and rescue algorithms",
+        "verdict": "Use ARTU-R for dynamic environments; use standard algorithms for static, known areas."
+      }
+    ]
+  },
+  "connects_to": [
+    "Convolutional Neural Networks (CNNs)",
+    "Random Forest Models",
+    "Robotic Navigation Algorithms",
+    "Sensor Fusion Techniques"
+  ],
+  "maturity": "proven (widely used in production)"
+}

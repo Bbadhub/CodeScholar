@@ -1,0 +1,97 @@
+{
+  "problem_name": "Object Detection",
+  "description": "Object detection involves identifying and locating objects within images or video streams. This problem is crucial in various applications, including autonomous vehicles, surveillance, and quality control in manufacturing.",
+  "you_have_this_if": [
+    "You need to identify multiple objects in images or videos.",
+    "Real-time processing is required for your application.",
+    "You are working with complex backgrounds or varying lighting conditions.",
+    "High accuracy in detection is critical for your use case.",
+    "You have access to specific hardware constraints (e.g., low-powered devices)."
+  ],
+  "approaches": [
+    {
+      "technique": "Improved RT-DETR",
+      "best_for": "Detecting defects in fabrics with complex patterns.",
+      "paper_count": 1,
+      "max_citations": 5,
+      "key_tradeoff": "Offers high accuracy but may require more computational resources."
+    },
+    {
+      "technique": "Improved YOLOv5",
+      "best_for": "Real-time object detection in dynamic agricultural environments.",
+      "paper_count": 1,
+      "max_citations": 4,
+      "key_tradeoff": "Balances speed and accuracy, suitable for robotic applications."
+    },
+    {
+      "technique": "YOLOv8",
+      "best_for": "Deploying detection systems on low-powered hardware.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Minimizes latency but may sacrifice some accuracy."
+    },
+    {
+      "technique": "YOLOv8-CE",
+      "best_for": "Detecting small objects in real-time for autonomous vehicles.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "Optimized for small object detection but may be complex to implement."
+    },
+    {
+      "technique": "Improved YOLOv8",
+      "best_for": "Real-time barcode detection on mobile devices.",
+      "paper_count": 1,
+      "max_citations": 7,
+      "key_tradeoff": "High accuracy with minimal resources, but may be limited to specific tasks."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Improved RT-DETR",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need high accuracy in defect detection for quality control."
+    },
+    {
+      "technique": "Improved YOLOv5",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You are building a robotic system for agricultural applications."
+    },
+    {
+      "technique": "YOLOv8",
+      "speed": "fast",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "easy",
+      "best_when": "You need to deploy a detection system on low-powered hardware."
+    },
+    {
+      "technique": "YOLOv8-CE",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You are working on an autonomous vehicle project requiring small object detection."
+    },
+    {
+      "technique": "Improved YOLOv8",
+      "speed": "fast",
+      "memory": "low",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a lightweight model for real-time barcode detection on mobile devices."
+    }
+  ],
+  "start_here": "Start with Improved YOLOv5 for a balance of speed and accuracy in dynamic environments, especially for agricultural applications.",
+  "related_problems": [
+    "Image Segmentation",
+    "Face Recognition",
+    "Action Recognition",
+    "Anomaly Detection"
+  ]
+}

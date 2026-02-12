@@ -1,0 +1,37 @@
+{
+  "problem_name": "Virtual Site Exploration",
+  "description": "Virtual site exploration involves creating digital representations of physical locations, particularly fragile archaeological or historical sites, to allow users to explore them remotely. This approach is essential for preserving cultural heritage while providing educational opportunities.",
+  "you_have_this_if": [
+    "You are working with fragile archaeological sites.",
+    "You need to create an educational tool for historical sites.",
+    "You are developing a virtual reality application for cultural heritage.",
+    "You want to enhance user engagement with historical content.",
+    "You require remote access solutions for site exploration."
+  ],
+  "approaches": [
+    {
+      "technique": "Virtual Access Tool",
+      "best_for": "When you need to provide immersive access to fragile sites while ensuring educational value.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Offers a rich user experience but may require significant resources for development."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Virtual Access Tool",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You want to create an engaging and educational virtual experience for users."
+    }
+  ],
+  "start_here": "The recommended first approach is to use the Virtual Access Tool, as it provides a comprehensive framework for creating immersive experiences while addressing the specific needs of fragile sites.",
+  "related_problems": [
+    "Augmented Reality for Historical Sites",
+    "Remote Learning Tools for Cultural Education",
+    "Digital Preservation of Archaeological Artifacts",
+    "Interactive Museum Exhibits"
+  ]
+}

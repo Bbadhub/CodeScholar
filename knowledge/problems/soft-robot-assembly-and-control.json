@@ -1,0 +1,37 @@
+{
+  "problem_name": "Soft Robot Assembly and Control",
+  "description": "Soft robot assembly and control involves the design and integration of flexible robotic components that can adapt to various environments and tasks. This problem is particularly challenging due to the unique materials and assembly techniques required for soft robots, which differ significantly from traditional rigid robots.",
+  "you_have_this_if": [
+    "You are working on projects involving soft robotics.",
+    "You need to assemble components that are flexible and deformable.",
+    "You are developing robots for applications in confined or sensitive environments.",
+    "You require precise control over the assembly process.",
+    "You are integrating soft robots into medical or delicate applications."
+  ],
+  "approaches": [
+    {
+      "technique": "Sound-based assembly of soft robots",
+      "best_for": "When developing soft robots for drug delivery systems, creating minimally invasive surgical tools, or designing robots that require precise assembly in confined spaces.",
+      "paper_count": 1,
+      "max_citations": 5,
+      "key_tradeoff": "This technique offers precise assembly but may require specialized equipment for sound generation and detection."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Sound-based assembly of soft robots",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to assemble soft robot components accurately in a confined space without physical contact."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the sound-based assembly technique, as it provides a balance of accuracy and adaptability for soft robotics applications.",
+  "related_problems": [
+    "Rigid robot assembly and control",
+    "Soft robotic manipulation",
+    "Flexible electronics integration",
+    "Adaptive robotic systems"
+  ]
+}

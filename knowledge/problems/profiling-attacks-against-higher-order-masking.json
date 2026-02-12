@@ -1,0 +1,37 @@
+{
+  "problem_name": "Profiling Attacks Against Higher-Order Masking",
+  "description": "Profiling attacks target the vulnerabilities in cryptographic implementations by analyzing side-channel information. Higher-order masking techniques are used to protect against these attacks, but optimizing models to effectively counteract profiling attacks can be challenging.",
+  "you_have_this_if": [
+    "You are working with cryptographic implementations that utilize higher-order masking.",
+    "You observe performance degradation in your models during training.",
+    "You are dealing with small datasets typical in side-channel analysis.",
+    "You notice the plateau effect in optimization during model training.",
+    "You require enhanced model efficiency to mitigate profiling attacks."
+  ],
+  "approaches": [
+    {
+      "technique": "Scoop",
+      "best_for": "when you need to optimize deep learning models for profiling attacks against cryptographic implementations.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Scoop provides efficient optimization but may require careful tuning to avoid overfitting on small datasets."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Scoop",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to optimize models effectively while managing the challenges of small datasets in side-channel analysis."
+    }
+  ],
+  "start_here": "Begin with the Scoop technique as it is specifically designed to optimize models against profiling attacks, especially in scenarios with limited data.",
+  "related_problems": [
+    "Side-Channel Attacks",
+    "Model Overfitting in Cryptography",
+    "Optimization of Machine Learning Models",
+    "Higher-Order Masking Techniques"
+  ]
+}

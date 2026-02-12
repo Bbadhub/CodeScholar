@@ -1,0 +1,37 @@
+{
+  "problem_name": "Population-Scale Genomics",
+  "description": "Population-scale genomics involves analyzing the genetic information of large groups of individuals to understand genetic variation and its implications for health and disease. This field is crucial for advancing precision medicine and developing tools for genomic data analysis.",
+  "you_have_this_if": [
+    "You are working with large datasets of genomic information.",
+    "You need to integrate diverse genomic datasets for analysis.",
+    "You are developing applications aimed at precision medicine.",
+    "You require tools for variant calling in genomic data.",
+    "You are conducting large-scale studies on genetic variation."
+  ],
+  "approaches": [
+    {
+      "technique": "Whole-genome sequencing (WGS)",
+      "best_for": "Building applications for precision medicine based on genomic data and conducting large-scale genomic studies.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "WGS provides comprehensive genomic data but can be resource-intensive and complex to analyze."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Whole-genome sequencing (WGS)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need detailed genomic information for large populations and can manage the computational resources."
+    }
+  ],
+  "start_here": "Start with Whole-genome sequencing (WGS) as it provides comprehensive data necessary for precision medicine applications and large-scale genomic studies.",
+  "related_problems": [
+    "Targeted genomic sequencing",
+    "Exome sequencing",
+    "Genomic data integration",
+    "Variant analysis in genomics"
+  ]
+}

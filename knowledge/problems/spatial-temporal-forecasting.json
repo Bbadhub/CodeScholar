@@ -1,0 +1,37 @@
+{
+  "problem_name": "Spatial-Temporal Forecasting",
+  "description": "Spatial-temporal forecasting involves predicting future states of a system based on both spatial and temporal data. This is particularly relevant in fields like traffic management, where understanding patterns over time and across different locations is crucial.",
+  "you_have_this_if": [
+    "You need to predict future values based on historical data.",
+    "Your data has both spatial and temporal dimensions.",
+    "You are working with complex datasets that vary over time and space.",
+    "You require high accuracy in predictions for decision-making.",
+    "You are facing challenges with traditional forecasting methods."
+  ],
+  "approaches": [
+    {
+      "technique": "Hierarchical Attention LSTM (HierAttnLSTM)",
+      "best_for": "when you need to predict traffic states across multiple corridors and capture both short-term and long-term traffic patterns.",
+      "paper_count": 1,
+      "max_citations": 8,
+      "key_tradeoff": "While it offers high accuracy, it may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Hierarchical Attention LSTM (HierAttnLSTM)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have complex spatial-temporal data and need to capture intricate patterns for accurate forecasting."
+    }
+  ],
+  "start_here": "Start with the Hierarchical Attention LSTM approach, as it is specifically designed to handle the complexities of spatial-temporal data and has shown promising results in traffic state prediction.",
+  "related_problems": [
+    "Time Series Forecasting",
+    "Traffic Prediction",
+    "Weather Forecasting",
+    "Resource Allocation in Networks"
+  ]
+}

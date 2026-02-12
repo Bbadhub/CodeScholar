@@ -1,0 +1,77 @@
+{
+  "technique_name": "Reliever Reliance Test (RRT)",
+  "aliases": [],
+  "category": "healthcare_assessment",
+  "one_liner": "The RRT evaluates patients' reliance on short-acting beta-agonists (SABA) and provides personalized feedback to improve asthma management.",
+  "how_it_works": "The RRT uses the SABA Reliance Questionnaire (SRQ) to assess how much patients depend on SABA for asthma control. Patients complete the questionnaire online, which consists of five items scored on a Likert scale. Based on their responses, the tool classifies their risk of over-reliance on SABA and offers tailored feedback and recommendations to encourage better asthma management discussions with healthcare professionals.",
+  "algorithm": {
+    "steps": [
+      "1. Patient completes the RRT online.",
+      "2. Calculate the SRQ score based on responses to 5 items.",
+      "3. Classify the risk of SABA over-reliance as low, medium, or high based on the SRQ score.",
+      "4. Provide personalized feedback and recommendations based on the risk classification.",
+      "5. Encourage patients to discuss their treatment with healthcare professionals."
+    ],
+    "core_equation": "Risk classification = classify(SRQ score)",
+    "input_format": "Responses to the SABA Reliance Questionnaire (SRQ), which includes 5 items scored on a Likert scale.",
+    "output_format": "Risk classification (low, medium, high) and personalized feedback regarding SABA use."
+  },
+  "parameters": [
+    {
+      "name": "SRQ items",
+      "typical_value": "5-item scale",
+      "effect": "Affects the accuracy of the risk classification."
+    },
+    {
+      "name": "Risk classification thresholds",
+      "typical_value": "low (<10), medium (11-17), high (18-25)",
+      "effect": "Determines how patients are categorized based on their reliance on SABA."
+    }
+  ],
+  "complexity": {
+    "time": "O(1) for scoring and classification",
+    "space": "O(1) for storing responses and classifications",
+    "practical_note": "The method is straightforward and quick, requiring minimal computational resources."
+  },
+  "use_when": [
+    "Patients exhibit high reliance on SABA for asthma management.",
+    "There is a need to educate patients about the risks of SABA overuse.",
+    "Healthcare professionals want to facilitate discussions about asthma treatment options."
+  ],
+  "avoid_when": [
+    "Patients are already well-controlled on their asthma treatment.",
+    "Patients have limited access to alternative asthma treatments.",
+    "Patients are not digitally literate and cannot complete the RRT online."
+  ],
+  "implementation_skeleton": "def reliever_reliance_test(responses: List[int]) -> Tuple[str, str]:\n    srq_score = sum(responses)\n    risk_classification = classify(srq_score)\n    feedback = generate_feedback(risk_classification)\n    return risk_classification, feedback",
+  "common_mistakes": [
+    "Failing to ensure patients understand the questionnaire items.",
+    "Not providing adequate follow-up after risk classification.",
+    "Overlooking the importance of digital literacy for online completion."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides personalized feedback to patients.",
+      "Encourages proactive discussions about asthma management.",
+      "Simple and quick to implement."
+    ],
+    "weaknesses": [
+      "Relies on patients' self-reporting, which may be biased.",
+      "May not be suitable for all patient demographics.",
+      "Limited effectiveness if patients are not engaged."
+    ],
+    "compared_to": [
+      {
+        "technique": "traditional asthma management assessments",
+        "verdict": "RRT offers a more interactive and personalized approach."
+      }
+    ]
+  },
+  "connects_to": [
+    "SABA Reliance Questionnaire (SRQ)",
+    "Asthma management plans",
+    "Patient education tools",
+    "Digital health interventions"
+  ],
+  "maturity": "emerging"
+}

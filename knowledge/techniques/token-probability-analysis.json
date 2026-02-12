@@ -1,0 +1,82 @@
+{
+  "technique_name": "Token Probability Analysis",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "Token Probability Analysis evaluates the accuracy of language model responses by analyzing token probabilities and expressed confidence levels.",
+  "how_it_works": "This technique involves prompting large language models (LLMs) with specific questions and extracting both the confidence ratings and token probabilities associated with their answers. By comparing these metrics against the actual accuracy of the responses, it assesses how well the token probabilities predict the correctness of the answers. This method is particularly useful in high-stakes fields like medicine, where understanding model confidence is crucial.",
+  "algorithm": {
+    "steps": [
+      "Select a set of LLMs that provide access to internal probabilities.",
+      "Prompt each model with a medical question and request a confidence rating.",
+      "Extract the token probability for the chosen answer from the model's output.",
+      "Evaluate the accuracy of the model's response.",
+      "Compare the predictive performance of expressed confidence and token probabilities using statistical metrics."
+    ],
+    "core_equation": "accuracy = f(token_probabilities, expressed_confidence)",
+    "input_format": "Medical questions from datasets such as the USMLE MedQA database.",
+    "output_format": "Predicted accuracy of responses based on token probabilities and expressed confidence."
+  },
+  "parameters": [
+    {
+      "name": "temperature",
+      "typical_value": "0",
+      "effect": "Reduces variability in model responses."
+    },
+    {
+      "name": "prompting_strategy",
+      "typical_value": "vanilla prompting",
+      "effect": "Standardizes the input format for consistency."
+    },
+    {
+      "name": "confidence_scale",
+      "typical_value": "0 to 100",
+      "effect": "Defines the range of expressed confidence levels."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) where n is the number of questions processed.",
+    "space": "O(m) where m is the number of models evaluated.",
+    "practical_note": "Real-world performance may vary based on model architecture and dataset size."
+  },
+  "use_when": [
+    "Building medical chatbots that require reliable confidence estimation.",
+    "Evaluating the performance of LLMs in clinical settings.",
+    "Improving decision-making processes in healthcare applications."
+  ],
+  "avoid_when": [
+    "The application does not require high-stakes decision-making.",
+    "When using models that do not provide access to internal probabilities.",
+    "In scenarios where expressed confidence is sufficient."
+  ],
+  "implementation_skeleton": "def token_probability_analysis(models: List[LLM], questions: List[str]) -> List[float]:\n    results = []\n    for model in models:\n        for question in questions:\n            confidence = model.get_confidence(question)\n            token_prob = model.get_token_probability(question)\n            accuracy = evaluate_accuracy(model.answer(question))\n            results.append((confidence, token_prob, accuracy))\n    return results",
+  "common_mistakes": [
+    "Assuming all models provide internal probabilities.",
+    "Neglecting to validate the accuracy of model responses.",
+    "Using inappropriate datasets that do not reflect real-world scenarios."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a quantitative measure of model confidence.",
+      "Improves decision-making in critical applications.",
+      "Enhances understanding of model behavior."
+    ],
+    "weaknesses": [
+      "Requires models with accessible internal probabilities.",
+      "May not be applicable in low-stakes scenarios.",
+      "Performance can vary significantly between models."
+    ],
+    "compared_to": [
+      {
+        "technique": "Expressed Confidence Estimation",
+        "verdict": "Use Token Probability Analysis for more reliable predictions in high-stakes contexts."
+      }
+    ]
+  },
+  "connects_to": [
+    "Confidence Estimation",
+    "Large Language Models",
+    "Medical Chatbots",
+    "Statistical Analysis in AI"
+  ],
+  "maturity": "emerging"
+}

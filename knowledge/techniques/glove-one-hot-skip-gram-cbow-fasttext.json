@@ -1,0 +1,80 @@
+{
+  "technique_name": "GloVe",
+  "aliases": [
+    "Global Vectors for Word Representation"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "GloVe is a vector space model for word representation that captures semantic relationships between words based on their co-occurrence in a corpus.",
+  "how_it_works": "GloVe constructs word embeddings by leveraging global word co-occurrence statistics from a corpus. It creates a matrix of word co-occurrences and then factorizes this matrix to produce dense vector representations for each word. The resulting vectors capture semantic meanings, allowing for effective comparisons and predictions based on the relationships between words.",
+  "algorithm": {
+    "steps": [
+      "1. Collect event logs from workflow processes.",
+      "2. Create a co-occurrence matrix from the corpus of text.",
+      "3. Factorize the co-occurrence matrix to generate word vectors.",
+      "4. Normalize the vectors to ensure they represent semantic similarities.",
+      "5. Use the vectors in downstream tasks such as prediction or classification."
+    ],
+    "core_equation": "cost = sum((X_ij - V_i^T V_j)^2)",
+    "input_format": "Event logs containing sequences of workflow events.",
+    "output_format": "Predicted remaining time for workflow processes."
+  },
+  "parameters": [
+    {
+      "name": "N (number of discrete classifications)",
+      "typical_value": "10",
+      "effect": "Increases the granularity of classification."
+    },
+    {
+      "name": "Context window size for CBOW",
+      "typical_value": "2",
+      "effect": "Affects the amount of context considered for word embeddings."
+    }
+  ],
+  "complexity": {
+    "time": "O(V^2)",
+    "space": "O(V^2)",
+    "practical_note": "Real-world performance can vary based on the size of the corpus and the number of unique words."
+  },
+  "use_when": [
+    "You need to predict the remaining time of cloud-based workflows.",
+    "You are evaluating different encoding techniques for event data.",
+    "You want to optimize resource allocation in cloud applications."
+  ],
+  "avoid_when": [
+    "You have a small dataset where complex models may overfit.",
+    "You require real-time predictions with minimal computational overhead.",
+    "You are working with non-sequential data."
+  ],
+  "implementation_skeleton": "def glove_embedding(event_logs: List[str]) -> Dict[str, np.ndarray]:\n    co_occurrence_matrix = create_co_occurrence_matrix(event_logs)\n    word_vectors = factorize_matrix(co_occurrence_matrix)\n    return word_vectors",
+  "common_mistakes": [
+    "Not normalizing the vectors, leading to skewed results.",
+    "Using too small a context window, missing important relationships.",
+    "Overfitting the model on small datasets."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Captures semantic relationships effectively.",
+      "Generates dense representations that reduce dimensionality.",
+      "Improves prediction accuracy in various tasks."
+    ],
+    "weaknesses": [
+      "Requires a large corpus for effective training.",
+      "Can be computationally intensive.",
+      "Not suitable for real-time applications."
+    ],
+    "compared_to": [
+      {
+        "technique": "Word2Vec",
+        "verdict": "Use GloVe for global co-occurrence information; use Word2Vec for local context."
+      }
+    ]
+  },
+  "connects_to": [
+    "Word2Vec",
+    "FastText",
+    "Skip-Gram",
+    "CBOW",
+    "One-Hot Encoding"
+  ],
+  "maturity": "proven"
+}

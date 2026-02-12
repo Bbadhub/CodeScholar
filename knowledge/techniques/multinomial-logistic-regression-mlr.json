@@ -1,0 +1,83 @@
+{
+  "technique_name": "Multinomial Logistic Regression (MLR)",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "MLR is used to classify outcomes into multiple categories based on independent variables.",
+  "how_it_works": "Multinomial Logistic Regression extends binary logistic regression to handle multiple classes. It estimates the probabilities of different outcomes based on a set of independent variables. The model uses a softmax function to convert the linear combinations of the inputs into probabilities for each class, allowing for classification into more than two categories.",
+  "algorithm": {
+    "steps": [
+      "1. Collect and preprocess data from prospectuses.",
+      "2. Split data into training (90%) and testing (10%) sets.",
+      "3. Normalize the training data.",
+      "4. Train the MLR model using the training data.",
+      "5. Calculate class probabilities using the trained model.",
+      "6. Assign labels based on a predetermined threshold.",
+      "7. Evaluate model performance using metrics like accuracy, recall, precision, and F1 score."
+    ],
+    "core_equation": "P(Y = k | X) = exp(\u03b2_k \u00b7 X) / \u03a3(exp(\u03b2_j \u00b7 X)) for all classes j",
+    "input_format": "Data from IPO prospectuses including financial ratios and prospectus characteristics.",
+    "output_format": "Predicted class of IPO performance: BELOW AVERAGE (0), AVERAGE (1), ABOVE AVERAGE (2)."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.01",
+      "effect": "Affects the speed of convergence during training."
+    },
+    {
+      "name": "threshold",
+      "typical_value": "0.5",
+      "effect": "Determines the cutoff for classifying probabilities into categories."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * k * m) where n is the number of samples, k is the number of classes, and m is the number of features.",
+    "space": "O(k * m) for storing the model parameters.",
+    "practical_note": "Real-world performance may vary based on the quality of input data and preprocessing steps."
+  },
+  "use_when": [
+    "You need to predict the performance of IPOs based on financial data.",
+    "You have access to detailed prospectus information for companies going public.",
+    "You want to classify outcomes into multiple categories rather than binary."
+  ],
+  "avoid_when": [
+    "The dataset is too small to train a reliable model.",
+    "You require real-time predictions and cannot afford preprocessing time.",
+    "The IPOs have unique characteristics that cannot be generalized."
+  ],
+  "implementation_skeleton": "def train_mlr_model(data: np.ndarray, labels: np.ndarray) -> MLRModel:\n    # Preprocess data\n    normalized_data = normalize(data)\n    # Split data\n    train_data, test_data = split_data(normalized_data)\n    # Train model\n    model = MLRModel()\n    model.fit(train_data, labels)\n    return model",
+  "common_mistakes": [
+    "Not normalizing the input data before training.",
+    "Using a threshold that does not reflect the distribution of classes.",
+    "Overfitting the model by using too many features without regularization."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Can handle multiple classes effectively.",
+      "Provides probabilities for class membership.",
+      "Relatively easy to interpret and implement."
+    ],
+    "weaknesses": [
+      "Assumes independence of features, which may not hold in practice.",
+      "Can struggle with imbalanced datasets.",
+      "Sensitive to outliers in the data."
+    ],
+    "compared_to": [
+      {
+        "technique": "Binary Logistic Regression",
+        "verdict": "Use MLR when dealing with more than two classes."
+      },
+      {
+        "technique": "Random Forest",
+        "verdict": "Use Random Forest for better handling of non-linear relationships."
+      }
+    ]
+  },
+  "connects_to": [
+    "Logistic Regression",
+    "Softmax Regression",
+    "Support Vector Machines",
+    "Decision Trees"
+  ],
+  "maturity": "proven"
+}

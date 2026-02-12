@@ -1,0 +1,93 @@
+{
+  "technique_name": "In-Place Radix-2 FFT",
+  "aliases": [
+    "In-Place Fast Fourier Transform"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "An efficient method for computing the Fast Fourier Transform (FFT) in a memory-constrained environment.",
+  "how_it_works": "The In-Place Radix-2 FFT organizes FFT data in memory such that two FFT elements are stored in each memory address. This allows for parallel load and store operations, optimizing both floating point and block floating point configurations. The method enhances the Signal-to-Noise Ratio (SNR) performance while minimizing resource utilization, making it suitable for edge computing applications.",
+  "algorithm": {
+    "steps": [
+      "1. Load two memory words containing FFT pairs into registers.",
+      "2. Perform butterfly computations on the pairs.",
+      "3. Permute the results and store them back in memory.",
+      "4. Repeat for all FFT stages."
+    ],
+    "core_equation": "output = FFT(input)",
+    "input_format": "Input data points for FFT, ranging from 1K to 16K points, represented as either 8-bit or 16-bit floating point or block floating point numbers.",
+    "output_format": "Transformed FFT output data in standard order."
+  },
+  "parameters": [
+    {
+      "name": "input_size",
+      "typical_value": "1K to 16K points",
+      "effect": "Changing the input size affects the computational load and memory usage."
+    },
+    {
+      "name": "FP8 representation",
+      "typical_value": "8-bit floating point",
+      "effect": "Using different representations can impact precision and performance."
+    },
+    {
+      "name": "BFP8 representation",
+      "typical_value": "8-bit block floating point",
+      "effect": "Block floating point can enhance performance in specific scenarios."
+    },
+    {
+      "name": "FP16 representation",
+      "typical_value": "16-bit floating point",
+      "effect": "Higher precision can improve SNR but may require more resources."
+    },
+    {
+      "name": "BFP16 representation",
+      "typical_value": "16-bit block floating point",
+      "effect": "Similar to FP16 but optimized for specific applications."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)",
+    "practical_note": "This method is efficient for the specified input sizes, providing significant improvements in memory utilization and execution time."
+  },
+  "use_when": [
+    "Developing applications for edge devices with limited computational resources.",
+    "Implementing real-time signal processing tasks in satellite communications.",
+    "Optimizing FFT computations for low-power embedded systems."
+  ],
+  "avoid_when": [
+    "Working with high-performance computing systems where memory is not a constraint.",
+    "When using FFT sizes outside the 1K to 16K range.",
+    "In scenarios requiring complex FFT implementations beyond radix-2."
+  ],
+  "implementation_skeleton": "def in_place_radix2_fft(data: List[float]) -> List[float]:\n    n = len(data)\n    # Ensure n is a power of 2\n    for stage in range(int(log2(n))):\n        for k in range(0, n, 2**(stage + 1)):\n            for j in range(2**stage):\n                idx1 = k + j\n                idx2 = idx1 + 2**stage\n                # Perform butterfly operation\n                temp = data[idx1] + data[idx2]\n                data[idx2] = data[idx1] - data[idx2]\n                data[idx1] = temp\n    return data",
+  "common_mistakes": [
+    "Assuming the method works for FFT sizes outside the specified range.",
+    "Neglecting to optimize memory access patterns.",
+    "Overlooking the impact of floating point representation on performance."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Efficient memory utilization for edge computing.",
+      "Improved execution time compared to traditional FFT methods.",
+      "Enhanced SNR performance."
+    ],
+    "weaknesses": [
+      "Limited to specific input sizes (1K to 16K points).",
+      "Not suitable for high-performance computing environments.",
+      "Complexity increases with larger data sizes."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard FFT",
+        "verdict": "Use In-Place Radix-2 FFT for memory-constrained environments; otherwise, standard FFT may be preferable."
+      }
+    ]
+  },
+  "connects_to": [
+    "Cooley-Tukey FFT algorithm",
+    "Mixed-Radix FFT",
+    "Fast Hartley Transform",
+    "Discrete Cosine Transform"
+  ],
+  "maturity": "proven (widely used in production)"
+}

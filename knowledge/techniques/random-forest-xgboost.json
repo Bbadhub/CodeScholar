@@ -1,0 +1,92 @@
+{
+  "technique_name": "Random Forest and XGBoost",
+  "aliases": [
+    "Ensemble Learning",
+    "Boosted Trees"
+  ],
+  "category": "machine_learning",
+  "one_liner": "Random Forest and XGBoost are ensemble learning techniques used for classification and regression tasks that capture complex relationships in data.",
+  "how_it_works": "Random Forest builds multiple decision trees and merges them to improve accuracy and control overfitting. XGBoost, on the other hand, uses gradient boosting to optimize the model by sequentially adding trees that correct the errors of previous ones. Both methods are effective in handling non-linear relationships and provide insights into feature importance through techniques like SHAP values.",
+  "algorithm": {
+    "steps": [
+      "1. Collect retrospective cohort data from emergency departments.",
+      "2. Define target variables for undertriage and overtriage.",
+      "3. Preprocess data, including handling missing values and categorical data.",
+      "4. Train Random Forest and XGBoost models on the dataset.",
+      "5. Optimize model parameters using GridSearch.",
+      "6. Evaluate model performance using ROC curves.",
+      "7. Analyze feature importance using SHAP values."
+    ],
+    "core_equation": "output = majority_vote(trees) for Random Forest; output = previous_output + learning_rate * new_tree for XGBoost",
+    "input_format": "Patient records including triage score, age, sex, arrival time, clinical referral department, reason for emergency contact, discharge location, level of care, and time of death.",
+    "output_format": "Classification of patients into undertriaged or overtriaged categories."
+  },
+  "parameters": [
+    {
+      "name": "class_weight",
+      "typical_value": "balanced",
+      "effect": "adjusts for unbalanced data"
+    },
+    {
+      "name": "SMOTE",
+      "typical_value": "applied",
+      "effect": "oversamples minority classes"
+    },
+    {
+      "name": "n_estimators",
+      "typical_value": "default values",
+      "effect": "controls the number of trees in the ensemble"
+    },
+    {
+      "name": "max_depth",
+      "typical_value": "tuned during GridSearch",
+      "effect": "affects the complexity of individual trees"
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for Random Forest; O(n) for XGBoost depending on implementation",
+    "space": "O(n * m) where n is the number of samples and m is the number of features",
+    "practical_note": "Performance can vary based on dataset size and feature complexity."
+  },
+  "use_when": [
+    "You need to analyze patient data to improve triage accuracy.",
+    "You want to identify factors contributing to misclassification in emergency departments.",
+    "You are working on healthcare applications that require classification of patient urgency."
+  ],
+  "avoid_when": [
+    "Data availability is limited or lacks granularity.",
+    "You require real-time triage decision-making without historical data.",
+    "The problem does not involve classification or triage."
+  ],
+  "implementation_skeleton": "def train_model(data: pd.DataFrame) -> Tuple[RandomForestClassifier, XGBClassifier]:\n    # Preprocess data\n    X, y = preprocess(data)\n    # Train Random Forest\n    rf_model = RandomForestClassifier(class_weight='balanced')\n    rf_model.fit(X, y)\n    # Train XGBoost\n    xgb_model = XGBClassifier()\n    xgb_model.fit(X, y)\n    return rf_model, xgb_model",
+  "common_mistakes": [
+    "Neglecting to preprocess data properly, leading to poor model performance.",
+    "Overfitting models by using too many trees or too deep trees without proper tuning.",
+    "Failing to evaluate model performance using appropriate metrics like ROC AUC."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Handles non-linear relationships effectively.",
+      "Provides insights into feature importance.",
+      "Robust to overfitting with proper tuning."
+    ],
+    "weaknesses": [
+      "Can be computationally intensive with large datasets.",
+      "May require extensive hyperparameter tuning.",
+      "Interpretability can be challenging compared to simpler models."
+    ],
+    "compared_to": [
+      {
+        "technique": "Logistic Regression",
+        "verdict": "Use Random Forest or XGBoost for complex relationships; use Logistic Regression for simpler, linear relationships."
+      }
+    ]
+  },
+  "connects_to": [
+    "Decision Trees",
+    "Gradient Boosting",
+    "Support Vector Machines",
+    "SHAP values"
+  ],
+  "maturity": "proven"
+}

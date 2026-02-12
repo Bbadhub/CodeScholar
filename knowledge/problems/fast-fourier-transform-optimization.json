@@ -1,0 +1,35 @@
+{
+  "problem_name": "Fast Fourier Transform Optimization",
+  "description": "Fast Fourier Transform (FFT) optimization involves improving the efficiency of FFT algorithms to handle large datasets or real-time processing tasks. This is particularly important in applications such as signal processing, where performance and resource constraints are critical.",
+  "you_have_this_if": [
+    "You are working with large datasets that require FFT computations.",
+    "Your application needs to process signals in real-time.",
+    "You are developing for edge devices with limited computational resources.",
+    "You are facing performance bottlenecks in existing FFT implementations."
+  ],
+  "approaches": [
+    {
+      "technique": "In-Place Radix-2 FFT",
+      "best_for": "When developing applications for edge devices with limited computational resources or real-time signal processing tasks.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "This approach optimizes memory usage at the cost of increased implementation complexity."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "In-Place Radix-2 FFT",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to optimize FFT computations for low-power embedded systems while maintaining high accuracy."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the In-Place Radix-2 FFT, as it effectively balances memory usage and computational efficiency, making it suitable for edge devices and real-time applications.",
+  "related_problems": [
+    "Signal Processing Optimization",
+    "Real-Time Data Processing",
+    "Embedded Systems Performance Tuning"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Data Modeling for Big Data Analytics",
+  "description": "Data modeling for big data analytics involves creating a structured representation of data to facilitate analysis and decision-making. This process is crucial for handling large datasets and ensuring that insights drawn from the data are accurate and actionable.",
+  "you_have_this_if": [
+    "You are dealing with large datasets that have uncertain cardinality.",
+    "You need to ensure consistent metrics across multiple data sources.",
+    "You are building dashboards for real-time data tracking.",
+    "You are facing challenges in analyzing data due to its volume and complexity.",
+    "You require statistical methods to derive insights from your data."
+  ],
+  "approaches": [
+    {
+      "technique": "Probabilistic Cardinality and Replicability Notations",
+      "best_for": "When analyzing large data sets with uncertain cardinality and ensuring consistent metrics across multiple data sources.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach provides statistical rigor but may require complex implementations."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Probabilistic Cardinality and Replicability Notations",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to analyze large datasets with uncertain cardinality and require consistent metrics."
+    }
+  ],
+  "start_here": "Start with Probabilistic Cardinality and Replicability Notations, as it effectively addresses the challenges of uncertain cardinality in large datasets while ensuring consistency in metrics.",
+  "related_problems": [
+    "Data Integration Challenges",
+    "Real-Time Data Processing",
+    "Data Quality Assurance",
+    "Scalable Data Architecture"
+  ]
+}

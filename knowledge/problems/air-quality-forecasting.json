@@ -1,0 +1,36 @@
+{
+  "problem_name": "Air Quality Forecasting",
+  "description": "Air quality forecasting involves predicting the concentration of pollutants in the air, such as PM2.5, to inform public health and environmental policies. Accurate forecasts can help manage air quality during events like wildfires and industrial activities.",
+  "you_have_this_if": [
+    "You are experiencing poor air quality in your region.",
+    "You need to provide timely information for public health advisories.",
+    "You are analyzing the effects of environmental policies.",
+    "You require data for emergency management during pollution events."
+  ],
+  "approaches": [
+    {
+      "technique": "PM2.5-GNN",
+      "best_for": "When you need to forecast air quality impacts from prescribed fires or require real-time PM2.5 predictions.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This technique offers high accuracy but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "PM2.5-GNN",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need accurate real-time air quality forecasts for emergency management."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the PM2.5-GNN technique due to its ability to provide accurate forecasts in real-time, which is crucial for managing air quality during critical events.",
+  "related_problems": [
+    "Weather forecasting",
+    "Pollution source identification",
+    "Climate change impact assessment",
+    "Environmental health risk assessment"
+  ]
+}

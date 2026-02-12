@@ -1,0 +1,84 @@
+{
+  "technique_name": "Co-DeepNet",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "Co-DeepNet is a cooperative learning approach using two convolutional neural networks (CNNs) to enhance prediction accuracy for DNA methylation-based age estimation.",
+  "how_it_works": "Co-DeepNet employs two CNNs that alternate training on the same dataset, allowing them to share learned features. This cooperative learning strategy enhances model performance while reducing the need for extensive computational resources. By leveraging the strengths of both networks, Co-DeepNet improves prediction accuracy, particularly in scenarios with limited training data.",
+  "algorithm": {
+    "steps": [
+      "Initialize two CNN models.",
+      "Split the training dataset into two subsets.",
+      "Train the first CNN on its subset.",
+      "Share learned features with the second CNN.",
+      "Train the second CNN on its subset using shared features.",
+      "Repeat the process for a specified number of iterations.",
+      "Combine predictions from both CNNs for final output."
+    ],
+    "core_equation": "output = combine(predictions from CNN1, predictions from CNN2)",
+    "input_format": "DNA methylation data formatted as numerical arrays.",
+    "output_format": "Predicted age based on DNA methylation patterns."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A higher learning rate may speed up training but can lead to instability."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Larger batch sizes can improve training speed but may require more memory."
+    },
+    {
+      "name": "num_epochs",
+      "typical_value": "50",
+      "effect": "More epochs can lead to better learning but may also cause overfitting."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated, but generally O(n * epochs) where n is the dataset size.",
+    "space": "Not explicitly stated, but requires memory for two CNN models.",
+    "practical_note": "Performance may vary based on dataset size and model architecture."
+  },
+  "use_when": [
+    "You need to predict biological age from DNA methylation data.",
+    "You want to improve prediction accuracy while minimizing computational costs.",
+    "You are working with limited training data and need to leverage feature sharing."
+  ],
+  "avoid_when": [
+    "You have a large dataset that can be effectively handled by a single CNN.",
+    "Real-time predictions are required with minimal latency.",
+    "You need a straightforward model without the complexity of cooperative training."
+  ],
+  "implementation_skeleton": "def co_deepnet(train_data: np.ndarray, num_epochs: int = 50, learning_rate: float = 0.001) -> np.ndarray:\n    cnn1 = initialize_cnn()\n    cnn2 = initialize_cnn()\n    for epoch in range(num_epochs):\n        subset1, subset2 = split_data(train_data)\n        train_cnn(cnn1, subset1, learning_rate)\n        features = extract_features(cnn1)\n        train_cnn(cnn2, subset2, learning_rate, features)\n    return combine_predictions(cnn1, cnn2)",
+  "common_mistakes": [
+    "Neglecting to properly share features between the two CNNs.",
+    "Overfitting due to excessive training epochs without validation.",
+    "Not tuning hyperparameters effectively, leading to suboptimal performance."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improved prediction accuracy through feature sharing.",
+      "Reduced computational resource requirements compared to training two separate models.",
+      "Effective in scenarios with limited training data."
+    ],
+    "weaknesses": [
+      "Increased complexity in model training and implementation.",
+      "Potentially longer training times due to alternating training.",
+      "May not perform well with large datasets suited for single CNNs."
+    ],
+    "compared_to": [
+      {
+        "technique": "Single CNN",
+        "verdict": "Use Co-DeepNet when feature sharing can enhance performance; otherwise, a single CNN may suffice."
+      }
+    ]
+  },
+  "connects_to": [
+    "Convolutional Neural Networks (CNNs)",
+    "Transfer Learning",
+    "Ensemble Learning",
+    "Feature Extraction Techniques"
+  ],
+  "maturity": "emerging"
+}

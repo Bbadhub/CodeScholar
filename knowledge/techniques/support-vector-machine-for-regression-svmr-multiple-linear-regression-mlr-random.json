@@ -1,0 +1,93 @@
+{
+  "technique_name": "Support Vector Machine for Regression (SVMR)",
+  "aliases": [
+    "SVM Regression"
+  ],
+  "category": "statistical_method",
+  "one_liner": "SVMR is a regression technique that predicts continuous outcomes based on input features using support vector machines.",
+  "how_it_works": "SVMR works by finding the hyperplane that best fits the data points in a high-dimensional space. It aims to minimize the error while maximizing the margin between the predicted values and actual outcomes. The model is trained on historical data to learn the relationship between input features and the target variable, allowing it to make accurate predictions on unseen data.",
+  "algorithm": {
+    "steps": [
+      "1. Collect historical data from battery sensors during charge/discharge cycles.",
+      "2. Preprocess the data (cleaning, scaling, feature extraction).",
+      "3. Train the SVMR model using the preprocessed data.",
+      "4. Predict the number of cycles elapsed and remaining capacity.",
+      "5. Calculate Remaining Useful Life (RUL) based on the predicted cycles and fault threshold."
+    ],
+    "core_equation": "output = w \u00b7 x + b, where w is the weight vector and b is the bias.",
+    "input_format": "Voltage (U), Current (I), Discharged Capacity (C) at each cycle.",
+    "output_format": "Predicted number of remaining cycles and RUL."
+  },
+  "parameters": [
+    {
+      "name": "C",
+      "typical_value": "0.1",
+      "effect": "Controls the trade-off between maximizing the margin and minimizing the classification error."
+    },
+    {
+      "name": "kernel",
+      "typical_value": "poly",
+      "effect": "Defines the type of hyperplane used to separate the data."
+    },
+    {
+      "name": "degree",
+      "typical_value": "3.5",
+      "effect": "Specifies the degree of the polynomial kernel function."
+    },
+    {
+      "name": "gamma",
+      "typical_value": "scale",
+      "effect": "Determines the influence of a single training example."
+    }
+  ],
+  "complexity": {
+    "time": "O(n^2) to O(n^3) depending on the implementation and kernel choice.",
+    "space": "O(n)",
+    "practical_note": "Performance can degrade with very large datasets due to the computational complexity."
+  },
+  "use_when": [
+    "You need to optimize battery replacement schedules for UAVs.",
+    "You want to implement a predictive maintenance system for battery management.",
+    "You have access to historical battery performance data."
+  ],
+  "avoid_when": [
+    "You require real-time predictions without historical data.",
+    "You are working with battery types other than Li-ion.",
+    "You need a solution that does not involve machine learning."
+  ],
+  "implementation_skeleton": "def train_svmr(X: np.ndarray, y: np.ndarray) -> SVC:\n    model = SVC(kernel='poly', degree=3.5, C=0.1, gamma='scale')\n    model.fit(X, y)\n    return model\n\n\ndef predict_rul(model: SVC, X_new: np.ndarray) -> np.ndarray:\n    return model.predict(X_new)",
+  "common_mistakes": [
+    "Not preprocessing the data properly before training.",
+    "Choosing inappropriate kernel functions for the data distribution.",
+    "Overfitting the model by using too complex a kernel."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy in predicting continuous outcomes.",
+      "Effective in high-dimensional spaces.",
+      "Robust against overfitting in high-dimensional datasets."
+    ],
+    "weaknesses": [
+      "Sensitive to the choice of kernel and hyperparameters.",
+      "Computationally intensive for large datasets.",
+      "Less interpretable compared to simpler models like linear regression."
+    ],
+    "compared_to": [
+      {
+        "technique": "Multiple Linear Regression (MLR)",
+        "verdict": "Use SVMR for non-linear relationships; MLR for simpler, linear relationships."
+      },
+      {
+        "technique": "Random Forest (RF)",
+        "verdict": "Use SVMR for high accuracy in small datasets; RF for larger datasets with more features."
+      }
+    ]
+  },
+  "connects_to": [
+    "Multiple Linear Regression (MLR)",
+    "Random Forest (RF)",
+    "Kernel Methods",
+    "Ensemble Learning"
+  ],
+  "maturity": "proven (widely used in production)"
+}

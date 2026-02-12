@@ -1,0 +1,37 @@
+{
+  "problem_name": "Performance Optimization",
+  "description": "Performance optimization involves enhancing the efficiency and effectiveness of a system, process, or individual to achieve better results. This can apply to various fields, including software engineering, athletics, and health management.",
+  "you_have_this_if": [
+    "You notice slow response times in your application.",
+    "Users report lag or delays during critical operations.",
+    "Performance metrics indicate resource bottlenecks.",
+    "You are unable to meet performance benchmarks or SLAs.",
+    "Your application struggles under high load conditions."
+  ],
+  "approaches": [
+    {
+      "technique": "Sleep Extension Protocol",
+      "best_for": "When designing interventions to enhance athletic performance through sleep management.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach may require significant lifestyle changes but can lead to substantial performance improvements."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Sleep Extension Protocol",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You are developing health applications focused on sleep tracking and optimization."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Sleep Extension Protocol, as it provides a structured method to enhance performance through sleep management, which is often overlooked.",
+  "related_problems": [
+    "Resource Management",
+    "Load Balancing",
+    "System Bottlenecks",
+    "User Experience Optimization"
+  ]
+}

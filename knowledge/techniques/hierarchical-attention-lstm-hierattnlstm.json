@@ -1,0 +1,94 @@
+{
+  "technique_name": "Hierarchical Attention LSTM (HierAttnLSTM)",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "HierAttnLSTM is a neural network model designed for spatial-temporal traffic forecasting using a hierarchical attention mechanism.",
+  "how_it_works": "HierAttnLSTM processes traffic data through multiple layers of LSTM units, capturing both short-term fluctuations and long-term trends. It employs attention pooling to weigh the importance of hidden and cell states from lower layers before passing them to higher layers. This hierarchical structure allows the model to effectively learn complex patterns in traffic data across different time scales.",
+  "algorithm": {
+    "steps": [
+      "Initialize LSTM layers with input traffic data.",
+      "For each time step, compute hidden and cell states using LSTM equations.",
+      "Apply affine transformations to hidden and cell states.",
+      "Compute attention weights using softmax on transformed states.",
+      "Pool hidden states and cell states using attention weights.",
+      "Feed pooled states into the upper layer LSTM.",
+      "Repeat for multiple layers to capture hierarchical features.",
+      "Output final predictions through a fully connected layer."
+    ],
+    "core_equation": "output = fully_connected_layer(pooled_states)",
+    "input_format": "Traffic state data including speed, density, volume, and travel time (shape: [batch_size, time_steps, features])",
+    "output_format": "Predicted traffic states for all corridors over a specified time horizon (shape: [batch_size, output_size])"
+  },
+  "parameters": [
+    {
+      "name": "number_of_layers",
+      "typical_value": "3",
+      "effect": "Increasing layers may capture more complex patterns but can lead to overfitting."
+    },
+    {
+      "name": "window_size",
+      "typical_value": "5",
+      "effect": "Larger window sizes can capture longer trends but may increase computational complexity."
+    },
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "Higher learning rates can speed up training but may lead to instability."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "64",
+      "effect": "Larger batch sizes can improve training speed but may require more memory."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m * p)",
+    "space": "O(n * m)",
+    "practical_note": "Performance can vary significantly based on the size of the dataset and the complexity of the traffic patterns."
+  },
+  "use_when": [
+    "You need to predict traffic states across multiple corridors.",
+    "You want to capture both short-term and long-term traffic patterns.",
+    "You are dealing with complex spatial-temporal data."
+  ],
+  "avoid_when": [
+    "The dataset is too small or lacks temporal granularity.",
+    "Real-time prediction is not critical.",
+    "You require a simpler model without hierarchical complexity."
+  ],
+  "implementation_skeleton": "def hierarchical_attention_lstm(data: np.ndarray) -> np.ndarray:\n    lstm_layers = initialize_lstm_layers(data)\n    for time_step in range(data.shape[1]):\n        hidden_states, cell_states = compute_lstm_states(lstm_layers, data[:, time_step])\n        attention_weights = compute_attention_weights(hidden_states)\n        pooled_states = pool_states(hidden_states, cell_states, attention_weights)\n        lstm_layers = feed_to_upper_layer(lstm_layers, pooled_states)\n    return output_final_predictions(lstm_layers)",
+  "common_mistakes": [
+    "Neglecting to tune hyperparameters like learning rate and batch size.",
+    "Using insufficient training data leading to overfitting.",
+    "Failing to preprocess input data adequately for temporal patterns."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Captures complex spatial-temporal dependencies effectively.",
+      "Improves prediction accuracy over traditional LSTM models.",
+      "Hierarchical structure allows for multi-scale learning."
+    ],
+    "weaknesses": [
+      "Increased computational complexity compared to simpler models.",
+      "Requires larger datasets for effective training.",
+      "May be prone to overfitting if not properly regularized."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional LSTM",
+        "verdict": "Use HierAttnLSTM for complex patterns; use LSTM for simpler tasks."
+      },
+      {
+        "technique": "Graph Neural Networks",
+        "verdict": "Use HierAttnLSTM for temporal data; use GNNs for spatial relationships."
+      }
+    ]
+  },
+  "connects_to": [
+    "LSTM",
+    "Attention Mechanisms",
+    "Graph Neural Networks",
+    "Temporal Convolutional Networks"
+  ],
+  "maturity": "emerging"
+}

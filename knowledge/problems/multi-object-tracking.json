@@ -1,0 +1,37 @@
+{
+  "problem_name": "Multi-Object Tracking",
+  "description": "Multi-object tracking involves identifying and following multiple objects over time in a video or a sequence of images. This problem is particularly challenging in complex environments where objects may occlude each other or change appearance.",
+  "you_have_this_if": [
+    "You need to track several objects simultaneously.",
+    "Objects frequently overlap or occlude each other.",
+    "You are working in a dynamic environment.",
+    "You require real-time processing capabilities.",
+    "You are implementing a solution for robotics or surveillance."
+  ],
+  "approaches": [
+    {
+      "technique": "MOT-DETR",
+      "best_for": "When tracking multiple objects in complex environments with occlusions.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "Balances accuracy and complexity in a single-stage tracking solution."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "MOT-DETR",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a robust solution for tracking multiple objects in environments with frequent occlusions."
+    }
+  ],
+  "start_here": "Start with the MOT-DETR technique as it provides a balanced approach for tracking multiple objects in complex scenarios, especially when occlusions are present.",
+  "related_problems": [
+    "Single Object Tracking",
+    "Object Detection",
+    "Video Surveillance",
+    "Robotic Navigation"
+  ]
+}

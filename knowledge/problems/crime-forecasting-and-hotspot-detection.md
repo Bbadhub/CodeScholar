@@ -1,0 +1,38 @@
+# Problem: Crime Forecasting and Hotspot Detection
+
+Crime forecasting and hotspot detection involves predicting where and when crimes are likely to occur based on historical data. This helps law enforcement agencies allocate resources more effectively and implement preventive measures in high-risk areas.
+
+## You Have This Problem If
+
+- You have access to historical crime data.
+- You are looking to improve police resource allocation.
+- You need to identify crime trends in urban settings.
+- You want to reduce crime rates through proactive measures.
+- You are facing challenges in managing police patrols effectively.
+
+## Start Here
+
+**Start with MD-CrimePredictor if you have access to extensive historical crime data and are looking to enhance police resource allocation through predictive analytics.**
+
+## Decision Matrix
+
+| Technique | Speed | Memory | Accuracy | Ease | Best When |
+|-----------|-------|--------|----------|------|-----------|
+| **MD-CrimePredictor** | medium | medium | high | medium | You have sufficient historical data and need to predict future crime hotspots in urban areas. |
+
+## Approaches
+
+### MD-CrimePredictor
+
+**Best for:** when you need to predict crime trends in urban areas with varying crime densities and have extensive historical data.
+
+**Tradeoff:** While it provides accurate predictions, it requires substantial historical data and may not adapt well to sudden changes in crime patterns.
+
+*1 papers, up to 20 citations*
+
+## Related Problems
+
+- Predictive policing
+- Urban crime analysis
+- Resource allocation in law enforcement
+- Crime trend analysis

@@ -1,0 +1,83 @@
+{
+  "technique_name": "Contrastive Language\u2013Structure Pre-training (CLaSP)",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "CLaSP learns embeddings that align crystal structures with their textual descriptions for material retrieval.",
+  "how_it_works": "CLaSP utilizes a dataset of crystal structures paired with publication titles and abstracts to create embeddings that capture the relationships between materials and their properties. It employs a contrastive learning framework to align these crystal and text embeddings, allowing for intuitive retrieval of materials based on textual queries. The model is pre-trained on crystal structures and fine-tuned with keywords from literature to enhance its performance in material discovery.",
+  "algorithm": {
+    "steps": [
+      "1. Pre-train a crystal encoder using pairs of crystal structures and publication titles.",
+      "2. Fine-tune the model using pairs of crystal structures and keywords generated from titles and abstracts.",
+      "3. Transform crystal structures into embeddings using the crystal encoder.",
+      "4. Transform paired caption texts into embeddings using the text encoder.",
+      "5. Minimize the large margin cosine loss function to align embeddings.",
+      "6. Retrieve candidate structures based on user-provided text queries."
+    ],
+    "core_equation": "loss = max(0, margin - cosine_similarity(embedding_crystal, embedding_text))",
+    "input_format": "Crystal structures and their associated publication titles and abstracts.",
+    "output_format": "Embeddings of crystal structures and the ability to retrieve structures based on textual queries."
+  },
+  "parameters": [
+    {
+      "name": "embedding_dimensionality",
+      "typical_value": "768",
+      "effect": "Higher dimensions may capture more complex relationships but increase computational cost."
+    },
+    {
+      "name": "margin (m)",
+      "typical_value": "[0, 0.3, 0.5]",
+      "effect": "Adjusting the margin affects the separation of positive and negative pairs in the embedding space."
+    },
+    {
+      "name": "scaling hyperparameter (s)",
+      "typical_value": "[1.0, 1.5, 2.0, 2.5, 3.0, 3.5]",
+      "effect": "Scaling can influence the sensitivity of the cosine similarity loss."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for retrieval tasks",
+    "space": "O(n) for storing embeddings",
+    "practical_note": "Performance may vary based on dataset size and embedding dimensionality."
+  },
+  "use_when": [
+    "You need to retrieve materials based on high-level properties from unannotated datasets.",
+    "You want to leverage existing literature to enhance materials discovery.",
+    "You require a method to visualize and explore relationships between materials and their properties."
+  ],
+  "avoid_when": [
+    "You have a well-annotated dataset with specific property labels.",
+    "You need real-time predictions for specific material properties.",
+    "You are working in a domain where textual descriptions are not available."
+  ],
+  "implementation_skeleton": "def clasp_model(crystal_data: List[Crystal], text_data: List[str]) -> Embeddings:\n    # Step 1: Pre-train crystal encoder\n    crystal_embeddings = pretrain_crystal_encoder(crystal_data)\n    # Step 2: Fine-tune with text\n    text_embeddings = fine_tune_with_text(crystal_embeddings, text_data)\n    # Step 3: Minimize loss\n    loss = compute_loss(crystal_embeddings, text_embeddings)\n    return crystal_embeddings, text_embeddings",
+  "common_mistakes": [
+    "Neglecting to properly preprocess text data before embedding.",
+    "Using inappropriate margin values that do not reflect the dataset's distribution.",
+    "Failing to validate the model on a separate test set after fine-tuning."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively captures relationships between materials and their textual descriptions.",
+      "Enhances material retrieval from unannotated datasets.",
+      "Utilizes existing literature to improve model performance."
+    ],
+    "weaknesses": [
+      "Requires a substantial amount of paired data for effective training.",
+      "Performance may degrade in domains without rich textual descriptions.",
+      "Not suitable for real-time predictions."
+    ],
+    "compared_to": [
+      {
+        "technique": "CMML",
+        "verdict": "CLaSP outperforms CMML in retrieval tasks by leveraging textual information."
+      }
+    ]
+  },
+  "connects_to": [
+    "Contrastive Learning",
+    "Natural Language Processing",
+    "Graph Neural Networks",
+    "Material Property Prediction"
+  ],
+  "maturity": "emerging"
+}

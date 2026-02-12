@@ -1,0 +1,37 @@
+{
+  "problem_name": "Quantum Computing Security",
+  "description": "Quantum computing security involves protecting quantum algorithms and computations from potential threats and vulnerabilities, particularly in environments where hardware may be unreliable. As quantum technology advances, ensuring the integrity and reliability of quantum computations becomes increasingly critical.",
+  "you_have_this_if": [
+    "You are experiencing frequent errors in quantum computations.",
+    "Your quantum algorithms are running on mixed or unreliable hardware.",
+    "You are concerned about the security implications of quantum computing in critical applications.",
+    "You have a need for improved reliability in quantum computations.",
+    "You are facing challenges with tampering or interference in quantum systems."
+  ],
+  "approaches": [
+    {
+      "technique": "Intelligent Run-Adaptive Shot Distribution",
+      "best_for": "when you need to run quantum algorithms on unreliable hardware and improve reliability in critical applications.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This technique offers improved reliability at the cost of potentially increased computational overhead."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Intelligent Run-Adaptive Shot Distribution",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to enhance the reliability of quantum computations in a mixed hardware environment."
+    }
+  ],
+  "start_here": "Begin with the Intelligent Run-Adaptive Shot Distribution approach, as it directly addresses the challenges of running quantum algorithms on unreliable hardware and is suitable for critical applications.",
+  "related_problems": [
+    "Quantum error correction",
+    "Quantum algorithm optimization",
+    "Quantum hardware reliability",
+    "Quantum cryptography"
+  ]
+}

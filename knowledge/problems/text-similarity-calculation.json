@@ -1,0 +1,37 @@
+{
+  "problem_name": "Text Similarity Calculation",
+  "description": "Text similarity calculation involves determining how similar two pieces of text are to each other. This is crucial in applications like search engines, recommendation systems, and plagiarism detection.",
+  "you_have_this_if": [
+    "You need to compare different text documents.",
+    "You are working on applications that require understanding of text relationships.",
+    "You notice discrepancies in text similarity results across different models.",
+    "You require a method to visualize text similarity.",
+    "You are dealing with large datasets of text that need analysis."
+  ],
+  "approaches": [
+    {
+      "technique": "SN-Comparator",
+      "best_for": "When you need to compare multiple text embedding models for similarity and visualize their performance.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Provides a comprehensive comparison but may require more resources for visualization."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "SN-Comparator",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to analyze and visualize the similarity between multiple text embeddings."
+    }
+  ],
+  "start_here": "Start with the SN-Comparator technique as it allows for a detailed comparison of text embeddings and provides visualization, which is beneficial for understanding model performance.",
+  "related_problems": [
+    "Text Classification",
+    "Sentiment Analysis",
+    "Information Retrieval",
+    "Natural Language Processing"
+  ]
+}

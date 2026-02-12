@@ -1,0 +1,37 @@
+{
+  "problem_name": "Biodiversity Monitoring",
+  "description": "Biodiversity monitoring involves assessing the variety and abundance of species in a given ecosystem. It is crucial for conservation efforts and understanding ecological health, especially in the face of environmental changes.",
+  "you_have_this_if": [
+    "You need to assess species diversity in a specific area.",
+    "Traditional biodiversity assessment methods are too invasive or impractical.",
+    "You require quick results on species presence.",
+    "You are working with vertebrate species.",
+    "You have access to PCR technology."
+  ],
+  "approaches": [
+    {
+      "technique": "PCR (Polymerase Chain Reaction)",
+      "best_for": "when you need to monitor vertebrate diversity in a non-invasive manner.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While PCR is rapid and non-invasive, it may not provide a complete picture of biodiversity."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "PCR (Polymerase Chain Reaction)",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a quick and non-invasive method to assess vertebrate species presence."
+    }
+  ],
+  "start_here": "Start with PCR for biodiversity monitoring, as it allows for rapid and non-invasive assessment of vertebrate diversity, making it suitable for urgent conservation needs.",
+  "related_problems": [
+    "Species distribution modeling",
+    "Habitat assessment",
+    "Ecological impact assessment",
+    "Environmental DNA (eDNA) analysis"
+  ]
+}

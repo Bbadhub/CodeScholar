@@ -1,0 +1,37 @@
+{
+  "problem_name": "Network Formation Time Optimization",
+  "description": "Network formation time optimization involves reducing the time it takes for a network to establish connections and become operational after disruptions. This is particularly important in environments like IoT and smart grids where downtime can lead to significant inefficiencies and losses.",
+  "you_have_this_if": [
+    "You are experiencing delays in network recovery after outages.",
+    "Your application requires quick re-establishment of connections.",
+    "You are working with distributed systems that need efficient network formation.",
+    "You notice performance degradation during network reconnections.",
+    "Your system is sensitive to latency and requires rapid response times."
+  ],
+  "approaches": [
+    {
+      "technique": "Fast Routing Recovery (FRR)",
+      "best_for": "when you need to minimize downtime in IoT networks after power outages or improve efficiency in distributed systems.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While FRR can significantly reduce recovery time, it may require more complex protocol implementations."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Fast Routing Recovery (FRR)",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to quickly restore network functionality in IoT or smart grid applications."
+    }
+  ],
+  "start_here": "Start with Fast Routing Recovery (FRR) as it is specifically designed to minimize downtime and improve network formation efficiency in critical applications.",
+  "related_problems": [
+    "Network Resilience Optimization",
+    "Latency Reduction in Distributed Systems",
+    "IoT Network Stability",
+    "Smart Grid Communication Efficiency"
+  ]
+}

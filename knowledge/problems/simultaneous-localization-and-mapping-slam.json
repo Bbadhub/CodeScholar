@@ -1,0 +1,37 @@
+{
+  "problem_name": "Simultaneous Localization and Mapping (SLAM)",
+  "description": "Simultaneous Localization and Mapping (SLAM) is the process of creating a map of an unknown environment while simultaneously keeping track of an agent's location within that environment. This is particularly challenging in dynamic or uncertain environments where sensor data may be incomplete or noisy.",
+  "you_have_this_if": [
+    "You are developing autonomous vehicles that need to navigate unknown terrains.",
+    "You require real-time mapping capabilities in robotic applications.",
+    "You are working with sensor data that is often uncertain or incomplete.",
+    "You need to integrate multiple sensor inputs for accurate localization.",
+    "You are facing challenges in maintaining consistent mapping over time."
+  ],
+  "approaches": [
+    {
+      "technique": "FastSLAM 2.0",
+      "best_for": "when developing SLAM systems for autonomous vehicles and real-time mapping in robotics applications.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "FastSLAM 2.0 provides efficient processing but may struggle with highly dynamic environments."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "FastSLAM 2.0",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to implement a SLAM system that can handle uncertain sensor data while maintaining reasonable performance."
+    }
+  ],
+  "start_here": "Start with FastSLAM 2.0 as it offers a balanced approach for real-time SLAM applications, especially in environments with uncertain data.",
+  "related_problems": [
+    "Visual Odometry",
+    "Map Building",
+    "Path Planning",
+    "Sensor Fusion"
+  ]
+}

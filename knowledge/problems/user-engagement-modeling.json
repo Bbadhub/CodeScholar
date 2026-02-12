@@ -1,0 +1,37 @@
+{
+  "problem_name": "User Engagement Modeling",
+  "description": "User engagement modeling involves understanding and predicting how users interact with applications to enhance their experience and retention. This problem is crucial for designing effective user interfaces and algorithms that keep users engaged.",
+  "you_have_this_if": [
+    "You are noticing a decline in user activity on your platform.",
+    "Users are dropping off after initial interactions.",
+    "You want to optimize user experience based on behavioral data.",
+    "You are developing a new application and need to predict user interactions.",
+    "You are conducting research on user behavior in digital environments."
+  ],
+  "approaches": [
+    {
+      "technique": "Agent-based modeling",
+      "best_for": "When simulating complex interactions between users and the system to understand engagement dynamics.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Provides detailed insights into user behavior but can be computationally intensive."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Agent-based modeling",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to simulate user interactions in a complex environment to understand engagement patterns."
+    }
+  ],
+  "start_here": "Start with agent-based modeling as it allows for a nuanced understanding of user interactions and can help identify key factors influencing engagement.",
+  "related_problems": [
+    "User retention analysis",
+    "Behavioral prediction modeling",
+    "User experience design",
+    "Social network analysis"
+  ]
+}

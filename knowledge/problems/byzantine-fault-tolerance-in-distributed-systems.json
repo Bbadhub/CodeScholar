@@ -1,0 +1,36 @@
+{
+  "problem_name": "Byzantine Fault Tolerance in Distributed Systems",
+  "description": "Byzantine fault tolerance (BFT) is a property of a distributed system that allows it to continue functioning correctly even when some of its nodes fail or act maliciously. This is crucial for maintaining reliability and trust in decentralized applications, especially in environments where nodes may not fully trust each other.",
+  "you_have_this_if": [
+    "You are working on a decentralized application.",
+    "Your system requires consensus among nodes with varying trust levels.",
+    "You are facing challenges with node failures or malicious behavior.",
+    "You need to ensure data integrity and consistency in a distributed environment."
+  ],
+  "approaches": [
+    {
+      "technique": "Asymmetric Byzantine Quorum Systems",
+      "best_for": "Building decentralized applications that require flexible trust models.",
+      "paper_count": 1,
+      "max_citations": 45,
+      "key_tradeoff": "Offers flexibility in trust models but may introduce complexity in implementation."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Asymmetric Byzantine Quorum Systems",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a robust solution for consensus in a system with varying trust levels among nodes."
+    }
+  ],
+  "start_here": "Start with Asymmetric Byzantine Quorum Systems as it provides a flexible approach to achieving Byzantine fault tolerance in decentralized applications.",
+  "related_problems": [
+    "Consensus in distributed systems",
+    "Fault tolerance in distributed databases",
+    "Security in decentralized networks",
+    "Trust models in blockchain systems"
+  ]
+}

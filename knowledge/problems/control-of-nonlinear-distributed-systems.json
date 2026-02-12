@@ -1,0 +1,37 @@
+{
+  "problem_name": "Control of Nonlinear Distributed Systems",
+  "description": "Controlling nonlinear distributed systems involves managing systems where the dynamics are governed by nonlinear equations and the system is distributed across multiple locations. This can be particularly challenging due to the complexity and high dimensionality of the systems involved.",
+  "you_have_this_if": [
+    "You are dealing with high-dimensional nonlinear systems.",
+    "You have limited data for system modeling.",
+    "You require interpretable models for safety-critical applications.",
+    "You are facing high computational costs in simulations.",
+    "You need to ensure stability and performance in control tasks."
+  ],
+  "approaches": [
+    {
+      "technique": "AE+SINDy-C",
+      "best_for": "When controlling high-dimensional nonlinear systems with limited data and the need for interpretable models.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "This approach balances model interpretability with computational efficiency."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "AE+SINDy-C",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to control a complex nonlinear system with limited data while ensuring model interpretability."
+    }
+  ],
+  "start_here": "Start with AE+SINDy-C as it provides a good balance between interpretability and computational efficiency, making it suitable for high-dimensional nonlinear systems.",
+  "related_problems": [
+    "Control of Linear Systems",
+    "Model Predictive Control",
+    "Stochastic Control Systems",
+    "Adaptive Control Techniques"
+  ]
+}

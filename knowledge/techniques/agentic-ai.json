@@ -1,0 +1,78 @@
+{
+  "technique_name": "Agentic AI",
+  "aliases": [],
+  "category": "autonomous_intelligence",
+  "one_liner": "Agentic AI enables systems to autonomously define and manage goals that adapt over time.",
+  "how_it_works": "Agentic AI systems autonomously set and adjust their goals based on user input and environmental changes. They continuously monitor their surroundings for new information, allowing them to reassess their strategies and take actions without external prompts. This adaptability enables them to manage complex tasks effectively and allocate resources dynamically as needed.",
+  "algorithm": {
+    "steps": [
+      "1. Define initial goals based on user input or environmental context.",
+      "2. Continuously monitor the environment for changes or new information.",
+      "3. Reassess goals and strategies based on new data.",
+      "4. Initiate actions to achieve the defined goals autonomously.",
+      "5. Allocate resources dynamically as needed.",
+      "6. Modify strategies in response to feedback or changing conditions."
+    ],
+    "core_equation": "output = autonomous actions based on dynamic goals and environmental data",
+    "input_format": "Initial goals (string), environmental data (various types), user context (string)",
+    "output_format": "Autonomous actions (list of actions) and resource allocations (resource map)"
+  },
+  "parameters": [
+    {
+      "name": "goal_definition",
+      "typical_value": "dynamic",
+      "effect": "Allows the system to adjust goals based on context."
+    },
+    {
+      "name": "adaptability_threshold",
+      "typical_value": "configurable",
+      "effect": "Determines how sensitive the system is to changes in the environment."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on the complexity of the environment and the adaptability of the system."
+  },
+  "use_when": [
+    "Developing systems that require autonomous decision-making in dynamic environments",
+    "Creating applications that need to adapt to changing user needs",
+    "Building intelligent agents for complex task management"
+  ],
+  "avoid_when": [
+    "Tasks are strictly defined with no need for adaptation",
+    "Real-time human supervision is required for every decision",
+    "The environment is static and predictable"
+  ],
+  "implementation_skeleton": "def agentic_ai(initial_goals: str, env_data: dict, user_context: str) -> List[str]:\n    goals = define_goals(initial_goals, user_context)\n    while True:\n        new_data = monitor_environment(env_data)\n        goals = reassess_goals(goals, new_data)\n        actions = initiate_actions(goals)\n        allocate_resources(actions)\n        modify_strategies(actions)",
+  "common_mistakes": [
+    "Failing to properly define initial goals leading to confusion in execution.",
+    "Overlooking the importance of continuous monitoring of the environment.",
+    "Not adjusting the adaptability threshold, resulting in either overreaction or underreaction to changes."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Highly adaptable to changing environments.",
+      "Can autonomously manage complex tasks without constant supervision.",
+      "Improves goal achievement rates compared to classical AI systems."
+    ],
+    "weaknesses": [
+      "May struggle in static environments where adaptation is unnecessary.",
+      "Requires careful tuning of parameters for optimal performance.",
+      "Potentially complex to implement and maintain."
+    ],
+    "compared_to": [
+      {
+        "technique": "Classical AI systems",
+        "verdict": "Use Agentic AI for dynamic environments; classical systems for static tasks."
+      }
+    ]
+  },
+  "connects_to": [
+    "Reinforcement Learning",
+    "Multi-Agent Systems",
+    "Dynamic Resource Allocation",
+    "Adaptive Control Systems"
+  ],
+  "maturity": "emerging"
+}

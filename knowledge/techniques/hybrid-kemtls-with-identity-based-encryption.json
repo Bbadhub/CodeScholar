@@ -1,0 +1,86 @@
+{
+  "technique_name": "Hybrid KEMTLS with Identity-Based Encryption",
+  "aliases": [
+    "Hybrid Key Encapsulation Mechanism Transport Layer Security"
+  ],
+  "category": "cryptography",
+  "one_liner": "A method for transitioning to post-quantum secure TLS using identity-based encryption alongside classical public key algorithms.",
+  "how_it_works": "This technique combines classical public key infrastructure with identity-based encryption to facilitate a gradual transition to post-quantum security. It allows existing TLS certificates to be utilized while integrating post-quantum operations, thereby minimizing the need for immediate updates from certificate authorities. The hybrid approach ensures secure communication by encapsulating keys with both classical and post-quantum methods, maintaining compatibility during the migration process.",
+  "algorithm": {
+    "steps": [
+      "1. Generate a master public key (mpk) and master secret key (msk) using IDKEM.KeyGen.",
+      "2. For each server, extract a secret key using IDKEM.Extract with the server's identity.",
+      "3. Use the existing public key infrastructure for classical key encapsulation.",
+      "4. For post-quantum operations, encapsulate keys using IDKEM.Encaps with the server's identity.",
+      "5. Decapsulate keys using IDKEM.Decaps with the extracted secret key.",
+      "6. Integrate the classical public key into the identity for revocation management.",
+      "7. Implement the hybrid KEMTLS protocol for secure communication."
+    ],
+    "core_equation": "output = post-quantum secure communication using existing TLS certificates",
+    "input_format": "Server's identity and existing public key infrastructure.",
+    "output_format": "Post-quantum secure communication using existing TLS certificates."
+  },
+  "parameters": [
+    {
+      "name": "security_parameter",
+      "typical_value": "1\u03bb",
+      "effect": "Increases security level against quantum attacks."
+    },
+    {
+      "name": "key_size",
+      "typical_value": "typical sizes for post-quantum keys not specified",
+      "effect": "Larger keys may enhance security but increase message size."
+    },
+    {
+      "name": "message_size",
+      "typical_value": "larger than classical TLS",
+      "effect": "Increased message size can impact performance."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated.",
+    "space": "Not stated.",
+    "practical_note": "Timings remain competitive despite larger message sizes compared to existing TLS implementations."
+  },
+  "use_when": [
+    "Transitioning existing TLS systems to be resistant to quantum attacks.",
+    "Maintaining compatibility with current public key infrastructure during migration.",
+    "Implementing a gradual upgrade path to post-quantum cryptography."
+  ],
+  "avoid_when": [
+    "Immediate full transition to post-quantum cryptography is feasible.",
+    "Existing infrastructure cannot support hybrid approaches.",
+    "Performance is a critical constraint and larger message sizes are unacceptable."
+  ],
+  "implementation_skeleton": "def hybrid_kem_tls(server_identity: str, existing_public_key: str) -> str:\n    mpk, msk = IDKEM.KeyGen()\n    secret_key = IDKEM.Extract(server_identity, msk)\n    classical_key = classical_key_encapsulation(existing_public_key)\n    post_quantum_key = IDKEM.Encaps(server_identity)\n    decapsulated_key = IDKEM.Decaps(secret_key)\n    return secure_communication(classical_key, post_quantum_key, decapsulated_key)",
+  "common_mistakes": [
+    "Neglecting to update the public key infrastructure to support hybrid operations.",
+    "Underestimating the impact of larger message sizes on performance.",
+    "Failing to properly manage key revocation in the hybrid system."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Facilitates a smooth transition to post-quantum security.",
+      "Maintains compatibility with existing TLS infrastructure.",
+      "Reduces immediate pressure on certificate authorities."
+    ],
+    "weaknesses": [
+      "Increased message sizes may affect performance.",
+      "Complexity in managing both classical and post-quantum keys.",
+      "Potential vulnerabilities if not implemented correctly."
+    ],
+    "compared_to": [
+      {
+        "technique": "Classical TLS",
+        "verdict": "Use Hybrid KEMTLS for quantum resistance; classical TLS is not secure against quantum attacks."
+      }
+    ]
+  },
+  "connects_to": [
+    "Post-Quantum Cryptography",
+    "Identity-Based Encryption",
+    "Transport Layer Security (TLS)",
+    "Key Encapsulation Mechanisms (KEM)"
+  ],
+  "maturity": "emerging"
+}

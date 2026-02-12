@@ -1,0 +1,37 @@
+{
+  "problem_name": "Environmental Monitoring of Aquatic Pollution",
+  "description": "This problem involves assessing the impact of pollution, particularly microplastics, on aquatic ecosystems and the health of marine life. It aims to develop effective monitoring protocols to evaluate the extent of contamination and its effects on fish health.",
+  "you_have_this_if": [
+    "You observe declining fish populations in a specific area.",
+    "Water quality tests indicate high levels of microplastics.",
+    "There are noticeable changes in fish behavior or health.",
+    "Local reports indicate increased pollution levels in nearby water bodies.",
+    "You are developing a study to assess the ecological impact of pollutants."
+  ],
+  "approaches": [
+    {
+      "technique": "Microplastic Analysis and Health Indices Assessment",
+      "best_for": "When assessing the impact of pollution on aquatic ecosystems and developing monitoring protocols.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Provides detailed insights into microplastic contamination but may require extensive data collection."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Microplastic Analysis and Health Indices Assessment",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a comprehensive assessment of microplastic impacts on aquatic life."
+    }
+  ],
+  "start_here": "Begin with Microplastic Analysis and Health Indices Assessment as it provides a thorough understanding of pollution impacts on aquatic ecosystems.",
+  "related_problems": [
+    "Water Quality Assessment",
+    "Biodiversity Monitoring in Aquatic Systems",
+    "Impact of Agricultural Runoff on Marine Life",
+    "Climate Change Effects on Aquatic Ecosystems"
+  ]
+}

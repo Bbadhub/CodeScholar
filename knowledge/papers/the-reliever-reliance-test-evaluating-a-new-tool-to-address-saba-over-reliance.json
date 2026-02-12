@@ -1,0 +1,93 @@
+{
+  "summary": "The Reliever Reliance Test (RRT) is a self-completed behavior-change tool designed to identify and address over-reliance on short-acting beta2-agonists (SABA) among asthma patients. It has shown effectiveness in raising awareness about SABA overuse and encouraging patients to consult healthcare professionals about their asthma treatment.",
+  "key_contribution": "The RRT effectively identifies patients at risk of SABA over-reliance and motivates them to seek treatment reviews with healthcare professionals.",
+  "problem_type": "behavior change intervention for asthma management",
+  "problem_description": "Patients with asthma often over-rely on SABA inhalers, leading to poor asthma control and increased health risks.",
+  "domain": "Healthcare & Patient Management",
+  "sub_domain": "Behavior Change Interventions",
+  "technique_name": "Reliever Reliance Test (RRT)",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The RRT incorporates the SABA Reliance Questionnaire (SRQ) to assess patients' reliance on SABA and provides personalized feedback and recommendations. It encourages patients to reflect on their beliefs about SABA and prompts them to discuss their treatment with healthcare professionals.",
+    "algorithm_steps": [
+      "1. Patient completes the RRT online.",
+      "2. Calculate the SRQ score based on responses to 5 items.",
+      "3. Classify the risk of SABA over-reliance as low, medium, or high based on the SRQ score.",
+      "4. Provide personalized feedback and recommendations based on the risk classification.",
+      "5. Encourage patients to discuss their treatment with healthcare professionals."
+    ],
+    "input": "Responses to the SABA Reliance Questionnaire (SRQ), which includes 5 items scored on a Likert scale.",
+    "output": "Risk classification (low, medium, high) and personalized feedback regarding SABA use.",
+    "key_parameters": [
+      "SRQ items: 5-item scale",
+      "Risk classification thresholds: low (<10), medium (11-17), high (18-25)"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Data from 670 participants in Argentina, with 93 completing the RRT."
+    ],
+    "metrics": [
+      "SABA over-reliance classification: 82% classified as medium-to-high risk.",
+      "Intention to consult a doctor: 75% of medium-to-high risk participants."
+    ],
+    "baselines": [
+      "Comparison with previous studies on patient behavior change regarding asthma treatment."
+    ],
+    "improvement": "75% of participants intended to make an appointment with a doctor after completing the RRT."
+  },
+  "concepts": [
+    "SABA over-reliance",
+    "behavior change",
+    "patient education",
+    "asthma management",
+    "self-assessment tool"
+  ],
+  "use_this_when": [
+    "Patients exhibit high reliance on SABA for asthma management.",
+    "There is a need to educate patients about the risks of SABA overuse.",
+    "Healthcare professionals want to facilitate discussions about asthma treatment options."
+  ],
+  "dont_use_when": [
+    "Patients are already well-controlled on their asthma treatment.",
+    "Patients have limited access to alternative asthma treatments.",
+    "Patients are not digitally literate and cannot complete the RRT online."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Patient responses to the SRQ",
+      "Risk classification data"
+    ],
+    "dependencies": [
+      "Web-based platform for RRT delivery",
+      "Survey tools (e.g., Qualtrics)"
+    ],
+    "pseudocode_hint": "if patient completes_RRT: classify_risk = calculate_SRQ(patient.responses); provide_feedback(classify_risk)",
+    "gotchas": [
+      "Ensure patients understand the importance of discussing results with healthcare professionals.",
+      "Be aware of potential anxiety in patients regarding their reliance on SABA.",
+      "Monitor for patients who may not follow through on their intentions to seek help."
+    ]
+  },
+  "connects_to": [
+    "SABA Reliance Questionnaire (SRQ)",
+    "Behavior Change Techniques",
+    "Patient Education Strategies"
+  ],
+  "prerequisites": [
+    "Understanding of asthma management guidelines",
+    "Knowledge of behavior change theories",
+    "Familiarity with patient engagement strategies"
+  ],
+  "limitations": [
+    "Small sample size",
+    "Self-reported data may introduce bias",
+    "Limited exploration of accessibility issues for alternative treatments"
+  ],
+  "open_questions": [
+    "How can the RRT be adapted for use in different cultural contexts?",
+    "What long-term behavior changes result from using the RRT?"
+  ]
+}

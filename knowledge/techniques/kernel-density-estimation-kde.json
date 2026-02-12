@@ -1,0 +1,86 @@
+{
+  "technique_name": "Kernel Density Estimation (KDE)",
+  "aliases": [
+    "KDE"
+  ],
+  "category": "statistical_method",
+  "one_liner": "KDE is a non-parametric way to estimate the probability density function of a random variable.",
+  "how_it_works": "KDE uses a set of data points to create a smooth estimate of the probability density function. It applies a kernel function to each data point, which contributes to the overall density estimate. The choice of kernel and the bandwidth parameter significantly influence the smoothness and accuracy of the resulting density estimate.",
+  "algorithm": {
+    "steps": [
+      "1. Collect atmospheric temperature and geopotential height data.",
+      "2. Compute the zero-degree isotherm height (ZDIH) from the data.",
+      "3. Calculate daily rain heights using the formula hr = ho + 0.36 (km).",
+      "4. Apply KDE using various kernel functions (Gaussian, Epanechnikov, Triangular, Rectangular) to estimate the probability density function of rain heights.",
+      "5. Optimize the bandwidth for each kernel to minimize Integrated Squared Errors (ISE).",
+      "6. Validate the estimated rain heights against measured data.",
+      "7. Generate contour maps of seasonal rain heights."
+    ],
+    "core_equation": "output = sum(kernel(x - xi) for all xi) / (n * bandwidth)",
+    "input_format": "Atmospheric temperature and geopotential height data at multiple pressure levels.",
+    "output_format": "Estimated seasonal rain heights and contour maps showing spatial distribution."
+  },
+  "parameters": [
+    {
+      "name": "bandwidth",
+      "typical_value": "optimized per kernel",
+      "effect": "Affects the smoothness of the density estimate."
+    },
+    {
+      "name": "sample_size",
+      "typical_value": "m (number of observations)",
+      "effect": "More observations can lead to a more accurate estimate."
+    },
+    {
+      "name": "standard_deviation",
+      "typical_value": "\u03c3 (calculated from data)",
+      "effect": "Influences the shape of the kernel function."
+    }
+  ],
+  "complexity": {
+    "time": "O(n^2) in naive implementations, can be improved with optimized algorithms.",
+    "space": "O(n)",
+    "practical_note": "Performance can vary based on the choice of kernel and bandwidth."
+  },
+  "use_when": [
+    "You need to estimate rain heights for communication network planning.",
+    "You are working in regions with high rain-induced signal attenuation.",
+    "You require seasonal variations in rain height for meteorological studies."
+  ],
+  "avoid_when": [
+    "You have access to localized radar data that provides accurate rain height measurements.",
+    "You need real-time rain height data for immediate decision-making.",
+    "The computational resources are limited for processing large datasets."
+  ],
+  "implementation_skeleton": "def kernel_density_estimation(data: List[float], bandwidth: float) -> List[float]:\n    # Initialize density array\n    density = []\n    for x in range(min(data), max(data)):\n        # Calculate density for each point\n        density.append(sum(kernel(x - xi) for xi in data) / (len(data) * bandwidth))\n    return density",
+  "common_mistakes": [
+    "Choosing an inappropriate kernel function for the data distribution.",
+    "Not optimizing the bandwidth, leading to over-smoothing or under-smoothing.",
+    "Ignoring the impact of sample size on the density estimate."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a smooth estimate of the probability density function.",
+      "Flexible with different kernel functions.",
+      "Non-parametric, making it applicable to various data distributions."
+    ],
+    "weaknesses": [
+      "Computationally intensive for large datasets.",
+      "Sensitive to the choice of bandwidth.",
+      "Can produce misleading results if the data is sparse."
+    ],
+    "compared_to": [
+      {
+        "technique": "Histogram",
+        "verdict": "KDE provides a smoother estimate compared to histograms, which can be too coarse."
+      }
+    ]
+  },
+  "connects_to": [
+    "Gaussian Mixture Models",
+    "Support Vector Machines",
+    "Principal Component Analysis",
+    "Regression Analysis"
+  ],
+  "maturity": "proven (widely used in production)"
+}

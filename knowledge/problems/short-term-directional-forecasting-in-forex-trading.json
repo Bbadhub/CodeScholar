@@ -1,0 +1,37 @@
+{
+  "problem_name": "Short-Term Directional Forecasting in Forex Trading",
+  "description": "This problem involves predicting the short-term movements of currency exchange rates in the Forex market. Accurate forecasting is crucial for traders to make informed decisions and maximize profits.",
+  "you_have_this_if": [
+    "You are experiencing inconsistent trading results.",
+    "You have access to both historical market data and news sentiment.",
+    "You notice that traditional forecasting methods are not meeting your accuracy needs.",
+    "You are looking for a data-driven approach to enhance your trading strategy.",
+    "You want to incorporate multiple data sources into your predictions."
+  ],
+  "approaches": [
+    {
+      "technique": "Multimodal Text-Driven Model with Attention Mechanisms",
+      "best_for": "when you need to predict short-term currency movements using both market data and news sentiment.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach may require more computational resources compared to simpler models."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Multimodal Text-Driven Model with Attention Mechanisms",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have access to diverse data sources and need to improve prediction accuracy."
+    }
+  ],
+  "start_here": "The recommended first approach is the Multimodal Text-Driven Model with Attention Mechanisms, as it leverages both market data and sentiment analysis to enhance prediction accuracy.",
+  "related_problems": [
+    "Long-Term Forex Forecasting",
+    "Stock Price Prediction",
+    "Sentiment Analysis in Financial Markets",
+    "Algorithmic Trading Strategies"
+  ]
+}

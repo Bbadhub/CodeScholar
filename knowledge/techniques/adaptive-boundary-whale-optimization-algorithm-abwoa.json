@@ -1,0 +1,88 @@
+{
+  "technique_name": "Adaptive Boundary Whale Optimization Algorithm (ABWOA)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "ABWOA enhances the Whale Optimization Algorithm by dynamically adjusting search boundaries for improved optimization in high-dimensional problems.",
+  "how_it_works": "ABWOA starts with a population of potential solutions and evaluates their fitness based on resource requirements. It updates the positions of these solutions using various mechanisms to explore the search space effectively. The algorithm dynamically adjusts the search boundaries based on the current optimal solutions, ensuring that the search remains focused and efficient. This process continues until the convergence criteria are met, resulting in an optimized mapping of physical network entities to digital twin nodes.",
+  "algorithm": {
+    "steps": [
+      "Initialize a population of potential solutions (construction schemes).",
+      "Evaluate the fitness of each solution based on the number of DTNI nodes used.",
+      "Update positions of solutions using the shrinking encircling mechanism, spiral updating mechanism, and prey exploration mechanism.",
+      "Apply the Augmented Lagrangian Method for constraint handling to ensure valid solutions.",
+      "Dynamically adjust search boundaries based on current optimal solutions.",
+      "Repeat until convergence criteria are met."
+    ],
+    "core_equation": "output = optimized mapping of physical network entities to DTNI nodes",
+    "input_format": "Data representing the physical network, including nodes, links, and their resource requirements (CPU, memory, bandwidth).",
+    "output_format": "An optimized mapping of physical network entities to DTNI nodes, minimizing the number of servers used."
+  },
+  "parameters": [
+    {
+      "name": "population_size",
+      "typical_value": "100",
+      "effect": "Larger populations may explore the search space better but increase computation time."
+    },
+    {
+      "name": "max_iterations",
+      "typical_value": "1000",
+      "effect": "More iterations can lead to better solutions but increase runtime."
+    },
+    {
+      "name": "penalty_coefficient",
+      "typical_value": "1.0",
+      "effect": "Adjusting this affects how strictly constraints are enforced."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on problem size and complexity."
+  },
+  "use_when": [
+    "You need to optimize the mapping of physical networks to digital infrastructures.",
+    "Working on large-scale distributed systems requiring efficient resource allocation.",
+    "You are facing high-dimensional optimization problems in network construction."
+  ],
+  "avoid_when": [
+    "The problem size is small and can be solved with simpler algorithms.",
+    "Real-time constraints are critical and require faster heuristics.",
+    "The problem does not involve resource constraints."
+  ],
+  "implementation_skeleton": "def abwoa(population_size: int, max_iterations: int, penalty_coefficient: float) -> List[Solution]:\n    initialize_population()\n    for iteration in range(max_iterations):\n        evaluate_fitness()\n        update_positions()\n        apply_constraints(penalty_coefficient)\n        adjust_boundaries()\n        if convergence_criteria_met():\n            break\n    return best_solution",
+  "common_mistakes": [
+    "Not properly initializing the population, leading to poor exploration.",
+    "Ignoring the importance of constraint handling, resulting in invalid solutions.",
+    "Failing to adjust search boundaries effectively, which can hinder convergence."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improved convergence speed compared to traditional optimization algorithms.",
+      "Dynamic boundary adjustments enhance solution quality.",
+      "Effective for high-dimensional optimization problems."
+    ],
+    "weaknesses": [
+      "Complexity may lead to longer computation times for large populations.",
+      "Performance can vary significantly based on parameter settings.",
+      "Not suitable for problems with real-time constraints."
+    ],
+    "compared_to": [
+      {
+        "technique": "Original Whale Optimization Algorithm",
+        "verdict": "ABWOA generally provides better performance in high-dimensional scenarios."
+      },
+      {
+        "technique": "Genetic Algorithm",
+        "verdict": "ABWOA may outperform GA in terms of convergence speed for specific network optimization tasks."
+      }
+    ]
+  },
+  "connects_to": [
+    "Whale Optimization Algorithm",
+    "Genetic Algorithm",
+    "Particle Swarm Optimization",
+    "Differential Evolution Algorithm",
+    "Artificial Bee Colony"
+  ],
+  "maturity": "emerging"
+}

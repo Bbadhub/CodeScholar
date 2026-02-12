@@ -1,0 +1,99 @@
+{
+  "summary": "Ambience is a novel operating system designed specifically for IoT microservices, addressing the challenges of heterogeneity and resource constraints in IoT environments. Engineers should care because it enables efficient deployment and management of microservices across a wide range of hardware, from microcontrollers to servers.",
+  "key_contribution": "Ambience provides a unified operating system abstraction for IoT microservices that optimizes resource usage and performance across diverse hardware platforms.",
+  "problem_type": "operating system design for IoT microservices",
+  "problem_description": "The need for a common operating system that can efficiently manage microservices across a wide range of resource-constrained IoT devices and traditional cloud infrastructure.",
+  "domain": "Software Engineering",
+  "sub_domain": "Operating Systems for IoT",
+  "technique_name": "Ambience",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "Ambience operates by providing a set of abstractions that allow microservices to be deployed flexibly across various hardware platforms. It utilizes deployment-time determination of isolation boundaries, asynchronous computational models, and typed system calls to optimize performance.",
+    "algorithm_steps": [
+      "1. Define microservices with strongly typed interfaces using an interface definition language (IDL).",
+      "2. Create deployment manifests that specify service dependencies, network topologies, and security isolation groups.",
+      "3. Compile custom kernel images for each target node based on the deployment manifest.",
+      "4. Assign microservices to groups for shared address space or isolation based on deployment requirements.",
+      "5. Utilize zero-copy IPC for communication within groups and RPC for communication between groups."
+    ],
+    "input": "Deployment manifests written in a Domain Specific Language (DSL) embedded in Python, defining services, dependencies, and network configurations.",
+    "output": "Custom kernel images for each node that instantiate the specified microservices and their configurations.",
+    "key_parameters": [
+      "service_instance: {name: 'detection', service: tf_lite_detection}",
+      "network: {udp-internet: 4898}",
+      "group: {name: 'camera_group', services: ['detection', 'camera']}"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "End-to-end IoT application for wildlife monitoring"
+    ],
+    "metrics": [
+      "Throughput: hundreds of thousands of requests per second",
+      "Latency: lower per-request latencies compared to Tock"
+    ],
+    "baselines": [
+      "Linux operating system",
+      "Azure IoT platform",
+      "Tock embedded operating system"
+    ],
+    "improvement": "Ambience achieves one to three orders of magnitude better efficiency compared to Linux and Azure IoT, and up to 7x greater throughput than Tock."
+  },
+  "concepts": [
+    "microservices",
+    "typed interfaces",
+    "asynchronous communication",
+    "deployment manifests",
+    "resource optimization",
+    "capability-based access control"
+  ],
+  "use_this_when": [
+    "Building IoT applications that require efficient resource management across heterogeneous devices.",
+    "Developing microservices that need to be deployed on both low-resource microcontrollers and high-performance servers.",
+    "Needing a flexible isolation model for microservices that can adapt at deployment time."
+  ],
+  "dont_use_when": [
+    "Developing applications that require POSIX compatibility.",
+    "When a general-purpose operating system is needed for non-IoT applications.",
+    "In scenarios where existing middleware solutions are sufficient."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Deployment manifests",
+      "Service groups",
+      "Custom kernel images"
+    ],
+    "dependencies": [
+      "Python for writing deployment manifests",
+      "Ambience framework for deployment"
+    ],
+    "pseudocode_hint": "compile_and_deploy(manifest): create_kernel_image(manifest) -> deploy_to_nodes(kernel_image)",
+    "gotchas": [
+      "Ensure that service dependencies are correctly defined in the manifest to avoid runtime errors.",
+      "Be cautious of resource constraints on microcontrollers when defining service groups.",
+      "Avoid hardcoding isolation decisions; leverage Ambience's deployment-time flexibility."
+    ]
+  },
+  "connects_to": [
+    "Kubernetes",
+    "Serverless computing",
+    "Unikernels",
+    "Tock operating system"
+  ],
+  "prerequisites": [
+    "Understanding of microservices architecture",
+    "Familiarity with operating system concepts",
+    "Knowledge of IoT device constraints"
+  ],
+  "limitations": [
+    "Not a general-purpose OS; lacks POSIX compatibility",
+    "May require specific hardware support for optimal performance",
+    "Complexity in defining deployment manifests for large applications"
+  ],
+  "open_questions": [
+    "How can Ambience be extended to support more complex security models?",
+    "What are the implications of using Ambience in highly dynamic IoT environments?"
+  ]
+}

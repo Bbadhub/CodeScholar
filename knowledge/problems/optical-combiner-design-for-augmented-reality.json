@@ -1,0 +1,35 @@
+{
+  "problem_name": "Optical Combiner Design for Augmented Reality",
+  "description": "The design of optical combiners is crucial for augmented reality (AR) applications, as they enable the integration of virtual images with the real world. This involves creating systems that can dynamically adjust to provide clear and effective visual overlays for users.",
+  "you_have_this_if": [
+    "You are developing XR applications that require dynamic visual overlays.",
+    "You need lightweight and adaptable optical systems for head-mounted displays.",
+    "You aim to improve user experience in augmented reality environments."
+  ],
+  "approaches": [
+    {
+      "technique": "Temperature-Tunable Cholesteric Liquid Crystal Optical Combiner",
+      "best_for": "When developing AR applications that require dynamic visual overlays and adaptability.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "This technique offers flexibility in visual presentation but may require careful temperature management."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Temperature-Tunable Cholesteric Liquid Crystal Optical Combiner",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a dynamic optical solution that can adapt to varying environmental conditions."
+    }
+  ],
+  "start_here": "Start with the Temperature-Tunable Cholesteric Liquid Crystal Optical Combiner, as it provides a good balance of adaptability and performance for AR applications.",
+  "related_problems": [
+    "Optical System Design for Virtual Reality",
+    "Lightweight Display Technologies for Wearable Devices",
+    "Dynamic Visual Overlay Systems for Mixed Reality",
+    "User Experience Optimization in Augmented Reality"
+  ]
+}

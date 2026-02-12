@@ -1,0 +1,37 @@
+{
+  "problem_name": "Symptom Management in Traumatic Brain Injury",
+  "description": "Symptom management in traumatic brain injury (TBI) involves addressing the ongoing effects of brain injuries, particularly in patients experiencing persistent symptoms after a mild traumatic brain injury (mTBI). Effective management is crucial for improving the quality of life and facilitating recovery.",
+  "you_have_this_if": [
+    "You are treating patients with persistent post-concussion symptoms.",
+    "Patients report ongoing headaches, dizziness, or cognitive difficulties.",
+    "You are looking for non-pharmacological treatment options.",
+    "Standard care protocols have not provided sufficient relief.",
+    "You are integrating adjunctive therapies into existing treatment plans."
+  ],
+  "approaches": [
+    {
+      "technique": "Non-invasive Vagus Nerve Stimulation (nVNS)",
+      "best_for": "Managing persistent post-concussion symptoms in patients with mTBI.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While nVNS is non-invasive and offers a novel approach, its effectiveness and acceptance in clinical practice are still being evaluated."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Non-invasive Vagus Nerve Stimulation (nVNS)",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a non-pharmacological intervention for patients with persistent symptoms after mTBI."
+    }
+  ],
+  "start_here": "Begin with Non-invasive Vagus Nerve Stimulation (nVNS) as it offers a promising non-pharmacological approach for managing persistent symptoms in TBI patients.",
+  "related_problems": [
+    "Post-Concussion Syndrome",
+    "Chronic Pain Management",
+    "Cognitive Rehabilitation in TBI",
+    "Neuropsychiatric Symptoms in TBI"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Life-Cycle Assessment of Embodied Carbon Emissions",
+  "description": "Life-cycle assessment (LCA) is a method used to evaluate the environmental impacts associated with all stages of a product's life, from raw material extraction to disposal. In the context of embodied carbon emissions, LCA helps in understanding the total greenhouse gas emissions produced throughout the lifecycle of buildings and infrastructure.",
+  "you_have_this_if": [
+    "You are involved in urban planning or construction projects.",
+    "You need to evaluate the sustainability of building materials.",
+    "You are required to report on carbon emissions for compliance.",
+    "You are interested in reducing the carbon footprint of a project.",
+    "You are assessing the environmental impact of design choices."
+  ],
+  "approaches": [
+    {
+      "technique": "Life-Cycle Assessment (LCA)",
+      "best_for": "when assessing the environmental impact of new urban developments or sustainable building practices.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "LCA provides comprehensive insights but can be resource-intensive."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Life-Cycle Assessment (LCA)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a thorough evaluation of the environmental impacts of a product or building over its entire lifecycle."
+    }
+  ],
+  "start_here": "Start with Life-Cycle Assessment (LCA) as it provides a detailed analysis of embodied carbon emissions and is essential for sustainable design practices.",
+  "related_problems": [
+    "Carbon Footprint Analysis",
+    "Sustainable Material Selection",
+    "Environmental Impact Assessment",
+    "Green Building Certification"
+  ]
+}

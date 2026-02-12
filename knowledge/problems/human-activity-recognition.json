@@ -1,0 +1,52 @@
+{
+  "problem_name": "Human Activity Recognition",
+  "description": "Human activity recognition involves identifying and classifying human actions based on sensor data or video input. This problem is crucial in various applications, including healthcare monitoring, smart homes, and security systems.",
+  "you_have_this_if": [
+    "You are working with sensor data from wearables or cameras.",
+    "You need to classify different types of human movements.",
+    "You are facing challenges with model performance on edge devices.",
+    "You require real-time processing of activity data.",
+    "You are dealing with complex motion patterns in 3D space."
+  ],
+  "approaches": [
+    {
+      "technique": "Knowledge Distillation",
+      "best_for": "Deploying AI models on resource-constrained edge devices.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "This approach optimizes model efficiency but may sacrifice some accuracy."
+    },
+    {
+      "technique": "Quaternion-based Recurrent Neural Networks (QRNN)",
+      "best_for": "Recognizing complex human movements in 3D space.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This method improves accuracy but may require more computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Knowledge Distillation",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to deploy a model on an edge device with limited resources."
+    },
+    {
+      "technique": "Quaternion-based Recurrent Neural Networks (QRNN)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You are working with complex motion capture data and require high accuracy."
+    }
+  ],
+  "start_here": "Start with Knowledge Distillation if you need to deploy models on edge devices, as it balances efficiency and performance.",
+  "related_problems": [
+    "Gesture Recognition",
+    "Activity Classification in Video Surveillance",
+    "Anomaly Detection in Human Behavior",
+    "Smart Home Automation"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "technique_name": "Federated Learning",
+  "aliases": [
+    "FL"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "Federated Learning enables collaborative model training across institutions without sharing their private data.",
+  "how_it_works": "Federated Learning allows multiple institutions to collaboratively train a machine learning model while keeping their data localized. Each institution trains the model on its own dataset and only shares the model updates with a central server. The server aggregates these updates to improve a global model, which is then redistributed for further training. This process continues iteratively until the model converges.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize a global model.",
+      "2. Distribute the global model to all participating institutions.",
+      "3. Each institution trains the model on its local dataset.",
+      "4. Institutions send model updates (not raw data) back to a central server.",
+      "5. The server aggregates the updates to improve the global model.",
+      "6. Repeat steps 2-5 until convergence."
+    ],
+    "core_equation": "global_model = aggregate(local_updates)",
+    "input_format": "Local datasets from each institution.",
+    "output_format": "A global model that reflects the knowledge from all institutions without accessing their raw data."
+  },
+  "parameters": [
+    {
+      "name": "number_of_rounds",
+      "typical_value": "10",
+      "effect": "More rounds can lead to better convergence but increase computation time."
+    },
+    {
+      "name": "local_epochs",
+      "typical_value": "5",
+      "effect": "Increasing local epochs can improve local model accuracy but may slow down the overall process."
+    },
+    {
+      "name": "learning_rate",
+      "typical_value": "0.01",
+      "effect": "A higher learning rate can speed up convergence but may lead to instability."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m * r)",
+    "space": "O(m)",
+    "practical_note": "The time complexity depends on the number of institutions (n), the size of local datasets (m), and the number of training rounds (r)."
+  },
+  "use_when": [
+    "You need to train models across multiple institutions without sharing data.",
+    "Fairness in model performance across different demographic groups is a priority.",
+    "You are dealing with sensitive data that cannot leave its original location."
+  ],
+  "avoid_when": [
+    "Data can be centralized without privacy concerns.",
+    "The institutions have similar data distributions.",
+    "Real-time model updates are required."
+  ],
+  "implementation_skeleton": "def federated_learning(local_datasets: List[Dataset], rounds: int = 10, local_epochs: int = 5, learning_rate: float = 0.01) -> GlobalModel:\n    global_model = initialize_global_model()\n    for round in range(rounds):\n        local_updates = []\n        for dataset in local_datasets:\n            local_model = train_local_model(global_model, dataset, local_epochs, learning_rate)\n            local_updates.append(local_model)\n        global_model = aggregate(local_updates)\n    return global_model",
+  "common_mistakes": [
+    "Not properly aggregating model updates, leading to suboptimal global models.",
+    "Ignoring data heterogeneity across institutions, which can affect model performance.",
+    "Underestimating the communication costs between institutions and the central server."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Preserves data privacy by keeping data localized.",
+      "Enables collaboration across institutions without data sharing.",
+      "Can improve fairness in model performance across diverse datasets."
+    ],
+    "weaknesses": [
+      "Communication overhead can be significant.",
+      "Model convergence may be slower compared to centralized training.",
+      "Requires careful handling of data heterogeneity."
+    ],
+    "compared_to": [
+      {
+        "technique": "Centralized Learning",
+        "verdict": "Use Federated Learning when data privacy is a concern; otherwise, centralized learning may be more efficient."
+      }
+    ]
+  },
+  "connects_to": [
+    "Differential Privacy",
+    "Transfer Learning",
+    "Multi-Task Learning",
+    "Distributed Learning"
+  ],
+  "maturity": "proven (widely used in production)"
+}

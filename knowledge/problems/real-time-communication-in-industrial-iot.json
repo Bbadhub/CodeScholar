@@ -1,0 +1,36 @@
+{
+  "problem_name": "Real-Time Communication in Industrial IoT",
+  "description": "Real-time communication in industrial IoT involves ensuring that data is transmitted and received instantly across various devices and networks. This is crucial for applications that require immediate responses, such as monitoring and control systems in manufacturing environments.",
+  "you_have_this_if": [
+    "You experience delays in data transmission between devices.",
+    "Your IoT devices are from different manufacturers and require integration.",
+    "You need to manage a large number of devices simultaneously.",
+    "Your application demands low latency for critical operations.",
+    "You are facing challenges in maintaining consistent communication quality."
+  ],
+  "approaches": [
+    {
+      "technique": "RT-MQTT and MRT-MQTT",
+      "best_for": "when you need to ensure real-time communication in industrial IoT applications.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach offers low latency but may require more complex network management."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "RT-MQTT and MRT-MQTT",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to connect heterogeneous devices with minimal latency in a dynamic network environment."
+    }
+  ],
+  "start_here": "Start with RT-MQTT and MRT-MQTT as they are specifically designed for real-time communication in industrial IoT, providing the necessary framework for low-latency interactions.",
+  "related_problems": [
+    "Data Synchronization in IoT",
+    "Network Management for IoT Devices",
+    "Latency Reduction in IoT Communications"
+  ]
+}

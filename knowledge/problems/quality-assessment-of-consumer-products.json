@@ -1,0 +1,37 @@
+{
+  "problem_name": "Quality Assessment of Consumer Products",
+  "description": "Quality assessment of consumer products involves evaluating the durability and overall performance of items to ensure they meet consumer expectations. This is particularly important in industries like clothing, where product longevity can significantly impact customer satisfaction and brand reputation.",
+  "you_have_this_if": [
+    "You are developing an e-commerce platform for clothing.",
+    "You need to establish a quality assurance program for garments.",
+    "You are conducting research on textile materials.",
+    "You want to improve customer feedback on product quality.",
+    "You are facing high return rates due to quality issues."
+  ],
+  "approaches": [
+    {
+      "technique": "Durability Rating Framework",
+      "best_for": "When developing a clothing e-commerce platform or garment quality assurance program.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "Provides a structured approach to assess durability but may require extensive data collection."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Durability Rating Framework",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a comprehensive assessment of product durability for consumer satisfaction."
+    }
+  ],
+  "start_here": "Start with the Durability Rating Framework as it provides a structured method for assessing product quality, which is essential for e-commerce and quality assurance.",
+  "related_problems": [
+    "Consumer Satisfaction Analysis",
+    "Product Lifecycle Management",
+    "Quality Control in Manufacturing",
+    "Return Rate Analysis"
+  ]
+}

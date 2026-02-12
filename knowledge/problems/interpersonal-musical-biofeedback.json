@@ -1,0 +1,37 @@
+{
+  "problem_name": "Interpersonal Musical Biofeedback",
+  "description": "Interpersonal musical biofeedback involves using music to enhance communication and emotional connection between individuals by responding to their physiological signals. This approach can be particularly beneficial in therapeutic settings and interactive art installations.",
+  "you_have_this_if": [
+    "You are developing applications that use music for communication.",
+    "You want to create therapeutic tools that respond to users' emotional states.",
+    "You are designing interactive installations that engage audiences through music.",
+    "You have access to physiological data from users.",
+    "You are interested in the intersection of technology, music, and emotional well-being."
+  ],
+  "approaches": [
+    {
+      "technique": "Affective Generative Music AI (AGM-AI)",
+      "best_for": "When developing applications for enhancing interpersonal communication through music and leveraging physiological data.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While AGM-AI can create personalized music experiences, it may require significant data input and processing."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Affective Generative Music AI (AGM-AI)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to create a responsive music application that adapts to users' emotional states in real-time."
+    }
+  ],
+  "start_here": "Start with Affective Generative Music AI (AGM-AI) as it provides a robust framework for creating interactive musical experiences based on physiological feedback, making it suitable for both therapeutic and artistic applications.",
+  "related_problems": [
+    "Emotional AI in music therapy",
+    "Interactive sound installations",
+    "Biofeedback in therapeutic settings",
+    "Music-based communication tools"
+  ]
+}

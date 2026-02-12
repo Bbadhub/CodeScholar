@@ -1,0 +1,86 @@
+{
+  "technique_name": "MD-CrimePredictor",
+  "aliases": [
+    "Multi-density crime predictor"
+  ],
+  "category": "statistical_method",
+  "one_liner": "MD-CrimePredictor forecasts criminal activities in multi-density crime hotspots using clustering and predictive modeling.",
+  "how_it_works": "MD-CrimePredictor first identifies crime hotspots through a multi-density clustering algorithm. It then applies SARIMA and LSTM models to forecast crime trends within these hotspots. The method adapts to the unique characteristics of each hotspot by automatically computing densities and shapes, allowing for tailored predictions without predefined divisions.",
+  "algorithm": {
+    "steps": [
+      "1. Gather spatio-temporal crime data.",
+      "2. Apply multi-density clustering algorithm (CHD) to detect crime hotspots.",
+      "3. For each hotspot, analyze data to discover a specific regressive model.",
+      "4. Train SARIMA and LSTM models on the data from each hotspot.",
+      "5. Evaluate the performance of both models using error measures.",
+      "6. Ensemble the models if beneficial for improved accuracy."
+    ],
+    "core_equation": "output = forecast(SARIMA(data)) + forecast(LSTM(data))",
+    "input_format": "Spatio-temporal crime data (e.g., location, time, type of crime).",
+    "output_format": "Forecasted number of crimes in each detected hotspot over specified time horizons."
+  },
+  "parameters": [
+    {
+      "name": "SARIMA parameters",
+      "typical_value": "p, d, q (specific values not detailed)",
+      "effect": "Affects the seasonal and trend components of the forecast."
+    },
+    {
+      "name": "LSTM parameters",
+      "typical_value": "number of layers, number of units per layer (specific values not detailed)",
+      "effect": "Influences the model's capacity to learn complex patterns."
+    },
+    {
+      "name": "Clustering parameters",
+      "typical_value": "density thresholds (specific values not detailed)",
+      "effect": "Determines the sensitivity of hotspot detection."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated.",
+    "space": "Not stated.",
+    "practical_note": "Performance may vary based on the density of crime data and the effectiveness of the clustering algorithm."
+  },
+  "use_when": [
+    "You need to predict crime trends in urban areas with varying crime densities.",
+    "You have access to extensive historical crime data.",
+    "You want to improve police resource allocation based on predictive analytics."
+  ],
+  "avoid_when": [
+    "The crime data is sparse or lacks temporal resolution.",
+    "You require real-time predictions without historical data.",
+    "The urban environment does not exhibit multi-density characteristics."
+  ],
+  "implementation_skeleton": "def md_crime_predictor(data: List[CrimeData]) -> List[Forecast]:\n    hotspots = apply_clustering(data)\n    forecasts = []\n    for hotspot in hotspots:\n        sarima_model = train_sarima(hotspot)\n        lstm_model = train_lstm(hotspot)\n        forecast = ensemble_models(sarima_model, lstm_model)\n        forecasts.append(forecast)\n    return forecasts",
+  "common_mistakes": [
+    "Neglecting to preprocess the crime data adequately before analysis.",
+    "Using inappropriate parameters for SARIMA and LSTM models.",
+    "Failing to validate the model performance with appropriate metrics."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Adapts to varying crime densities for more accurate predictions.",
+      "Combines multiple modeling approaches for improved accuracy.",
+      "Utilizes historical data effectively to inform future trends."
+    ],
+    "weaknesses": [
+      "Requires extensive historical data which may not always be available.",
+      "Performance may degrade in areas with sparse data.",
+      "Complexity in tuning multiple models can be challenging."
+    ],
+    "compared_to": [
+      {
+        "technique": "DBSCAN",
+        "verdict": "Use MD-CrimePredictor when dealing with multi-density environments; DBSCAN is better for uniform density."
+      }
+    ]
+  },
+  "connects_to": [
+    "SARIMA",
+    "LSTM",
+    "DBSCAN",
+    "Time Series Forecasting",
+    "Clustering Algorithms"
+  ],
+  "maturity": "proven (widely used in production)"
+}

@@ -1,0 +1,82 @@
+{
+  "technique_name": "Empirical Survey Methodology",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "A method for collecting and analyzing survey data to understand relationships between variables.",
+  "how_it_works": "This methodology involves designing a survey to gather data on specific behaviors and their associated outcomes. Participants respond to questions that quantify their experiences, which are then statistically analyzed to identify patterns and correlations. The results provide insights into how certain behaviors impact various aspects of life, such as relationships and well-being.",
+  "algorithm": {
+    "steps": [
+      "1. Design a survey to collect data on phone usage and relationship satisfaction.",
+      "2. Distribute the survey to a representative sample of participants.",
+      "3. Collect responses and clean the data for analysis.",
+      "4. Perform statistical analysis to identify correlations between phone use and relationship outcomes.",
+      "5. Interpret results and draw conclusions about the impact of phone use."
+    ],
+    "core_equation": "correlation = covariance(X, Y) / (std_dev(X) * std_dev(Y))",
+    "input_format": "Survey responses detailing phone usage patterns and relationship satisfaction metrics.",
+    "output_format": "Statistical correlations and insights regarding the impact of phone use on relationships."
+  },
+  "parameters": [
+    {
+      "name": "sample_size",
+      "typical_value": "200",
+      "effect": "Larger samples increase the reliability of results."
+    },
+    {
+      "name": "confidence_level",
+      "typical_value": "95%",
+      "effect": "Higher confidence levels reduce the risk of Type I errors."
+    },
+    {
+      "name": "correlation_threshold",
+      "typical_value": "0.3",
+      "effect": "Lower thresholds may identify weaker correlations."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) for data collection and O(n^2) for correlation analysis",
+    "space": "O(n) for storing survey responses",
+    "practical_note": "Real-world performance can vary based on sample size and survey design."
+  },
+  "use_when": [
+    "Designing apps to promote healthy phone usage in relationships",
+    "Conducting research on technology's impact on social interactions",
+    "Creating educational content on digital well-being"
+  ],
+  "avoid_when": [
+    "The focus is on non-relationship contexts",
+    "When studying technology use in professional settings",
+    "If the goal is to enhance productivity rather than relationship quality"
+  ],
+  "implementation_skeleton": "def empirical_survey_analysis(survey_data: List[Dict[str, Any]]) -> Dict[str, float]:\n    cleaned_data = clean_data(survey_data)\n    correlations = perform_statistical_analysis(cleaned_data)\n    return correlations",
+  "common_mistakes": [
+    "Failing to ensure a representative sample, leading to biased results.",
+    "Neglecting to clean data properly, which can skew analysis.",
+    "Overlooking the importance of clear survey questions, resulting in ambiguous responses."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides quantitative insights into behavioral impacts.",
+      "Can be applied across various fields and contexts.",
+      "Facilitates understanding of complex relationships between variables."
+    ],
+    "weaknesses": [
+      "Results may be influenced by response biases.",
+      "Correlation does not imply causation.",
+      "Requires careful survey design to avoid misleading conclusions."
+    ],
+    "compared_to": [
+      {
+        "technique": "Qualitative Interviews",
+        "verdict": "Use qualitative methods for deeper insights into individual experiences."
+      }
+    ]
+  },
+  "connects_to": [
+    "Statistical Analysis",
+    "Survey Design",
+    "Behavioral Research",
+    "Data Cleaning Techniques"
+  ],
+  "maturity": "established"
+}

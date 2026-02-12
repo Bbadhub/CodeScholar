@@ -1,0 +1,82 @@
+{
+  "technique_name": "Asymmetric Byzantine Quorum Systems",
+  "aliases": [],
+  "category": "distributed_systems",
+  "one_liner": "Asymmetric Byzantine Quorum Systems enable consensus in distributed systems with varying trust assumptions among processes.",
+  "how_it_works": "This technique allows each process in a distributed system to define its own trust assumptions about other processes. It constructs local quorum systems that ensure consistency and availability while implementing protocols for shared memory and reliable broadcasts. The approach extends traditional consensus protocols to accommodate asymmetric trust, ensuring safety for wise processes and liveness based on the presence of sufficient wise processes.",
+  "algorithm": {
+    "steps": [
+      "1. Define a fail-prone system for each process based on its trust assumptions.",
+      "2. Construct local quorum systems for each process that satisfy consistency and availability conditions.",
+      "3. Implement protocols for shared memory and broadcast using the defined quorums.",
+      "4. Extend a randomized binary consensus protocol to work with asymmetric trust.",
+      "5. Ensure that safety is guaranteed for wise processes and liveness depends on the presence of a sufficient number of wise processes."
+    ],
+    "core_equation": "Consensus decisions are made based on the defined local quorum systems and trust assumptions.",
+    "input_format": "A set of processes with defined trust assumptions and communication links.",
+    "output_format": "Consensus decisions, reliable broadcasts, and shared memory states."
+  },
+  "parameters": [
+    {
+      "name": "n",
+      "typical_value": "number of processes",
+      "effect": "Affects the overall system size and complexity."
+    },
+    {
+      "name": "f",
+      "typical_value": "maximum number of faulty processes (typically f < n/3)",
+      "effect": "Determines the fault tolerance of the system."
+    },
+    {
+      "name": "local_quorum_size",
+      "typical_value": "varies based on trust assumptions",
+      "effect": "Influences the safety and liveness guarantees."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on the number of processes and the specific trust assumptions defined."
+  },
+  "use_when": [
+    "Building decentralized applications that require flexible trust models.",
+    "Implementing consensus protocols in permissioned blockchain systems.",
+    "Designing distributed systems where nodes may have different trust levels."
+  ],
+  "avoid_when": [
+    "The system requires uniform trust assumptions across all nodes.",
+    "Performance is critical and the overhead of asymmetric trust is unacceptable.",
+    "The application domain does not involve Byzantine faults."
+  ],
+  "implementation_skeleton": "def asymmetric_byzantine_quorum_system(processes: List[Process], trust_assumptions: Dict[Process, TrustAssumption]) -> ConsensusDecision:\n    # Step 1: Define fail-prone systems\n    for process in processes:\n        define_fail_prone_system(process, trust_assumptions[process])\n    # Step 2: Construct local quorum systems\n    local_quorums = construct_local_quorum_systems(processes)\n    # Step 3: Implement protocols\n    implement_shared_memory_protocol(local_quorums)\n    implement_broadcast_protocol(local_quorums)\n    # Step 4: Extend consensus protocol\n    return extend_consensus_protocol(local_quorums)",
+  "common_mistakes": [
+    "Assuming uniform trust across all processes when using asymmetric quorums.",
+    "Neglecting to define clear trust assumptions for each process.",
+    "Overlooking the impact of local quorum sizes on system performance."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Allows for flexible trust models among processes.",
+      "Improves safety guarantees for wise processes.",
+      "Enhances liveness conditions compared to traditional systems."
+    ],
+    "weaknesses": [
+      "Increased complexity in defining trust assumptions.",
+      "Potential performance overhead due to asymmetric trust.",
+      "Requires careful design to ensure safety and liveness."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Byzantine Quorum Systems",
+        "verdict": "Use asymmetric systems when trust levels vary; use traditional systems for uniform trust."
+      }
+    ]
+  },
+  "connects_to": [
+    "Byzantine Fault Tolerance",
+    "Consensus Algorithms",
+    "Distributed Ledger Technologies",
+    "Decentralized Applications"
+  ],
+  "maturity": "emerging"
+}

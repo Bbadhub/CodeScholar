@@ -1,0 +1,92 @@
+{
+  "technique_name": "Atom Search Optimization (ASO)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "ASO simulates atomic interactions to optimize complex problems in various domains.",
+  "how_it_works": "Atom Search Optimization (ASO) mimics the behavior of atoms in a solution space, where each candidate solution is represented as an atom. The algorithm calculates attractive and repulsive forces between atoms based on their distances, guiding the search for optimal solutions. By iteratively updating the positions of these atoms and evaluating their fitness, ASO converges towards the best solution based on the defined objective function.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize a population of atoms representing candidate solutions.",
+      "2. Calculate interaction forces between atoms based on their distances.",
+      "3. Update the position of each atom according to the net force acting on it.",
+      "4. Evaluate the fitness of each atom based on the objective function.",
+      "5. Apply constraint forces to maintain fixed distances between certain atoms.",
+      "6. Repeat steps 2-5 until convergence criteria are met."
+    ],
+    "core_equation": "output = optimal solution found within the search space",
+    "input_format": "A set of candidate solutions represented as atoms, along with the objective function to be optimized.",
+    "output_format": "The optimal solution found within the search space."
+  },
+  "parameters": [
+    {
+      "name": "number_of_atoms",
+      "typical_value": "100",
+      "effect": "Increasing this may improve solution diversity but also increase computation time."
+    },
+    {
+      "name": "max_iterations",
+      "typical_value": "1000",
+      "effect": "More iterations can lead to better convergence but will take longer to compute."
+    },
+    {
+      "name": "attraction_coefficient",
+      "typical_value": "1.0",
+      "effect": "Adjusting this affects the strength of attraction between atoms."
+    },
+    {
+      "name": "repulsion_coefficient",
+      "typical_value": "1.0",
+      "effect": "Changing this alters the repulsion force, impacting atom distribution."
+    }
+  ],
+  "complexity": {
+    "time": "O(n\u00b2)",
+    "space": "O(n)",
+    "practical_note": "ASO is computationally intensive for large populations due to its quadratic time complexity."
+  },
+  "use_when": [
+    "You need to solve complex optimization problems in engineering design.",
+    "You are dealing with multi-objective optimization tasks.",
+    "You require a flexible and adaptable optimization algorithm."
+  ],
+  "avoid_when": [
+    "The optimization problem is simple and can be solved using traditional methods.",
+    "Derivative information is readily available and can be utilized."
+  ],
+  "implementation_skeleton": "def atom_search_optimization(objective_function: Callable[[List[float]], float], num_atoms: int = 100, max_iterations: int = 1000) -> List[float]:\n    atoms = initialize_atoms(num_atoms)\n    for iteration in range(max_iterations):\n        forces = calculate_forces(atoms)\n        update_positions(atoms, forces)\n        evaluate_fitness(atoms, objective_function)\n        apply_constraints(atoms)\n    return best_solution(atoms)",
+  "common_mistakes": [
+    "Not properly initializing the atom positions, leading to poor convergence.",
+    "Ignoring the effect of parameters like attraction and repulsion coefficients.",
+    "Stopping the algorithm too early before convergence is achieved."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effective for complex and multi-objective optimization problems.",
+      "Flexible and adaptable to various types of optimization tasks.",
+      "Demonstrates improved convergence speed and solution quality compared to traditional methods."
+    ],
+    "weaknesses": [
+      "Computationally intensive, especially for large populations.",
+      "May require careful tuning of parameters for optimal performance.",
+      "Not suitable for simple optimization problems."
+    ],
+    "compared_to": [
+      {
+        "technique": "Genetic Algorithms (GA)",
+        "verdict": "Use ASO for better convergence speed in complex problems; GA may be simpler for straightforward tasks."
+      },
+      {
+        "technique": "Particle Swarm Optimization (PSO)",
+        "verdict": "ASO can provide better solutions in multi-objective scenarios, while PSO is faster for single-objective problems."
+      }
+    ]
+  },
+  "connects_to": [
+    "Genetic Algorithms (GA)",
+    "Particle Swarm Optimization (PSO)",
+    "Simulated Annealing",
+    "Differential Evolution",
+    "Ant Colony Optimization"
+  ],
+  "maturity": "emerging"
+}

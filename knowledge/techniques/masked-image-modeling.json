@@ -1,0 +1,84 @@
+{
+  "technique_name": "Masked Image Modeling",
+  "aliases": [
+    "Self-Supervised Masked Learning"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "Masked Image Modeling trains models to predict missing parts of images, enhancing feature learning without extensive labeled data.",
+  "how_it_works": "This technique involves randomly masking portions of images and training a model to predict these masked areas based on the surrounding visible context. It leverages self-supervised learning, allowing the model to learn important features from the data itself. After initial training, the model can be fine-tuned on a smaller labeled dataset to improve performance on specific tasks, such as detecting dental caries in X-ray images.",
+  "algorithm": {
+    "steps": [
+      "1. Collect a dataset of dental X-ray images.",
+      "2. Randomly mask patches of the images.",
+      "3. Train the model to predict the masked patches based on the visible context.",
+      "4. Fine-tune the model on a smaller labeled dataset for caries detection.",
+      "5. Evaluate the model's performance on a test set."
+    ],
+    "core_equation": "output = predict(masked_image | visible_context)",
+    "input_format": "Dental X-ray images with masked patches.",
+    "output_format": "Predictions of dental features and detection of caries."
+  },
+  "parameters": [
+    {
+      "name": "masking_ratio",
+      "typical_value": "0.15",
+      "effect": "Increasing this ratio may lead to better feature learning but can also make prediction harder."
+    },
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A higher learning rate may speed up training but can lead to instability."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Larger batch sizes can improve training stability but require more memory."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m) where n is the number of images and m is the number of patches per image.",
+    "space": "O(n * p) where p is the size of the model parameters.",
+    "practical_note": "Performance can vary based on the dataset size and the complexity of the model architecture."
+  },
+  "use_when": [
+    "You have a limited labeled dataset for dental X-ray images.",
+    "You want to leverage self-supervised learning techniques.",
+    "You need to improve model performance in medical imaging tasks."
+  ],
+  "avoid_when": [
+    "You have a large, well-annotated dataset available.",
+    "Real-time processing is a critical requirement.",
+    "The application requires high interpretability of model decisions."
+  ],
+  "implementation_skeleton": "def masked_image_modeling(images: List[Image]) -> List[Prediction]:\n    masked_images = mask_randomly(images)\n    predictions = train_model(masked_images)\n    fine_tuned_model = fine_tune(predictions)\n    return evaluate(fine_tuned_model, test_set)",
+  "common_mistakes": [
+    "Not masking enough patches, leading to poor feature learning.",
+    "Using an inappropriate learning rate that causes convergence issues.",
+    "Failing to properly fine-tune the model on the labeled dataset."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Reduces the need for large labeled datasets.",
+      "Enhances feature learning through self-supervised techniques.",
+      "Can improve performance on specific tasks after fine-tuning."
+    ],
+    "weaknesses": [
+      "May not perform well with large, well-annotated datasets.",
+      "Real-time processing can be challenging.",
+      "Interpretability of model decisions may be limited."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Supervised Learning",
+        "verdict": "Use Masked Image Modeling when labeled data is scarce; otherwise, traditional methods may be more straightforward."
+      }
+    ]
+  },
+  "connects_to": [
+    "Self-Supervised Learning",
+    "Transfer Learning",
+    "Data Augmentation",
+    "Contrastive Learning"
+  ],
+  "maturity": "emerging"
+}

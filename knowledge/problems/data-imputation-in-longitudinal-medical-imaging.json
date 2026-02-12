@@ -1,0 +1,35 @@
+{
+  "problem_name": "Data Imputation in Longitudinal Medical Imaging",
+  "description": "Data imputation in longitudinal medical imaging involves filling in missing scans in a series of medical images taken over time. This is crucial for accurate disease progression predictions and treatment outcome simulations, especially in cases where complete data is not available.",
+  "you_have_this_if": [
+    "You have longitudinal MRI data with missing scans.",
+    "You need to predict disease progression from incomplete data.",
+    "You are developing models for treatment outcome simulations."
+  ],
+  "approaches": [
+    {
+      "technique": "Self-conditioned diffusion with gradient manipulation",
+      "best_for": "When you have longitudinal MRI data with missing scans and need to accurately predict outcomes.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This technique offers high accuracy but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Self-conditioned diffusion with gradient manipulation",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have longitudinal MRI data with substantial missing information and need reliable predictions."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the self-conditioned diffusion with gradient manipulation technique, as it is specifically designed to handle missing data in longitudinal medical imaging effectively.",
+  "related_problems": [
+    "Data imputation in time-series analysis",
+    "Missing data in clinical trials",
+    "Image reconstruction in medical imaging",
+    "Longitudinal data analysis"
+  ]
+}

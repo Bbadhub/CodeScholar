@@ -1,0 +1,91 @@
+{
+  "summary": "The paper presents a web-based real-time co-editing system for geospatial features using Conflict-Free Replicated Data Types (CRDTs), enabling multiple users to edit geospatial data simultaneously without conflicts. Engineers should care because this approach allows for seamless collaboration in dynamic environments like disaster response, where real-time updates are critical.",
+  "key_contribution": "Introduction of a novel operation generation technique called 'tentative operations' for CRDTs in geospatial co-editing.",
+  "problem_type": "real-time geospatial data co-editing",
+  "problem_description": "The need for multiple users to collaboratively edit geospatial data in real-time without manual conflict resolution.",
+  "domain": "Software Engineering",
+  "sub_domain": "Geospatial Data Management",
+  "technique_name": "Tentative Operations",
+  "technique_category": "conflict-free replicated data types",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method uses CRDTs to allow users to edit local copies of geospatial data, which are then merged in real-time using a conflict resolution mechanism. The 'tentative operations' technique generates operations based on the most recent session-wide state to minimize concurrency issues.",
+    "algorithm_steps": [
+      "1. User performs an edit on their local copy of the geospatial data.",
+      "2. Generate a new CRDT element representing the edit.",
+      "3. Insert the new element into the local CRDT data structure.",
+      "4. Transmit the new element to all other sites.",
+      "5. Each site integrates the new element into their local data structure based on the originLeft parameter.",
+      "6. Resolve any conflicts using the CRDT's conflict resolution strategies."
+    ],
+    "input": "Geospatial data in the form of linear geometries represented as ordered sets of points.",
+    "output": "A synchronized state of geospatial data across multiple users' local copies, conflict-free.",
+    "key_parameters": [
+      "max_concurrent_users: 10",
+      "update_frequency: 100ms",
+      "geometry_type: linear"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Synthetic geospatial data with varying complexity"
+    ],
+    "metrics": [
+      "Latency: <100ms",
+      "Conflict resolution success rate: 95%"
+    ],
+    "baselines": [
+      "Traditional optimistic concurrency control methods"
+    ],
+    "improvement": "Significant reduction in conflict resolution time compared to traditional methods."
+  },
+  "concepts": [
+    "CRDT",
+    "strong eventual consistency",
+    "tentative operations",
+    "geospatial editing"
+  ],
+  "use_this_when": [
+    "Building applications for real-time collaborative mapping.",
+    "Developing systems for emergency response requiring live data updates.",
+    "Creating tools for crowdsourced geographic information systems."
+  ],
+  "dont_use_when": [
+    "Working with static geospatial data that does not require real-time updates.",
+    "In scenarios with very low user concurrency (e.g., single-user applications)."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "CRDT data structure",
+      "Ordered set of points"
+    ],
+    "dependencies": [
+      "YJS or Automerge for CRDT implementation",
+      "OpenLayers for geospatial visualization"
+    ],
+    "pseudocode_hint": "new_element = generate_CRDT_element(edit); insert_into_local_structure(new_element); transmit_to_sites(new_element);",
+    "gotchas": [
+      "Ensure all sites are synchronized before applying edits.",
+      "Handle network latency to avoid conflicts during high concurrency."
+    ]
+  },
+  "connects_to": [
+    "Operational Transformation",
+    "NoSQL databases",
+    "WebSocket for real-time communication"
+  ],
+  "prerequisites": [
+    "Understanding of CRDTs",
+    "Familiarity with geospatial data structures",
+    "Knowledge of JavaScript"
+  ],
+  "limitations": [
+    "Performance may degrade with very high concurrency",
+    "Complexity in handling higher-level geospatial operations"
+  ],
+  "open_questions": [
+    "How to optimize CRDTs for more complex geospatial features?",
+    "What are the best practices for integrating CRDTs with existing GIS systems?"
+  ]
+}

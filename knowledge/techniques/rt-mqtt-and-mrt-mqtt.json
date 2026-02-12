@@ -1,0 +1,90 @@
+{
+  "technique_name": "RT-MQTT and MRT-MQTT",
+  "aliases": [
+    "Real-Time MQTT",
+    "Multicast Real-Time MQTT"
+  ],
+  "category": "networking_protocol",
+  "one_liner": "RT-MQTT and MRT-MQTT enhance MQTT for real-time communication in industrial applications using SDN integration.",
+  "how_it_works": "RT-MQTT allows applications to specify real-time requirements for MQTT messages, which are enforced by a Software-Defined Networking (SDN) controller. The framework intercepts MQTT traffic to extract these requirements and creates network reservations to ensure low latency and reliable communication. Multicast is utilized to efficiently propagate MQTT messages across multiple edge networks, optimizing performance in industrial scenarios.",
+  "algorithm": {
+    "steps": [
+      "1. Define real-time requirements using MQTT User Properties.",
+      "2. Intercept MQTT traffic with a Network Manager.",
+      "3. Extract real-time information from the intercepted traffic.",
+      "4. Instruct the SDN controller to create network reservations based on the extracted information.",
+      "5. Deploy multicast across selected brokers to propagate MQTT traffic.",
+      "6. Monitor and adjust network reservations as needed."
+    ],
+    "core_equation": "output = real-time MQTT communication with guaranteed latency and reliability",
+    "input_format": "MQTT messages with specified real-time requirements in User Properties.",
+    "output_format": "Real-time MQTT communication with guaranteed latency and reliability across the network."
+  },
+  "parameters": [
+    {
+      "name": "QoS levels",
+      "typical_value": "0, 1, 2",
+      "effect": "Determines the delivery guarantee of messages."
+    },
+    {
+      "name": "Latency requirements",
+      "typical_value": "application-specific",
+      "effect": "Specifies the acceptable delay for message delivery."
+    },
+    {
+      "name": "Network reservation parameters",
+      "typical_value": "application-specific",
+      "effect": "Defines the resources reserved for real-time communication."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated.",
+    "space": "Not stated.",
+    "practical_note": "Performance improvements are observed in latency reduction compared to standard MQTT and DM-MQTT."
+  },
+  "use_when": [
+    "You need to ensure real-time communication in industrial IoT applications.",
+    "You are working with heterogeneous devices that require dynamic network management.",
+    "You want to reduce latency in MQTT communications across multiple edge networks."
+  ],
+  "avoid_when": [
+    "The application does not require real-time guarantees.",
+    "You are working in a static network environment with no need for dynamic reconfiguration.",
+    "The overhead of integrating SDN is not justified for your use case."
+  ],
+  "implementation_skeleton": "def rt_mqtt_implementation(mqtt_message: str, user_properties: dict) -> None:\n    # Step 1: Define real-time requirements\n    define_real_time_requirements(user_properties)\n    # Step 2: Intercept MQTT traffic\n    intercepted_traffic = intercept_mqtt_traffic(mqtt_message)\n    # Step 3: Extract real-time information\n    real_time_info = extract_real_time_info(intercepted_traffic)\n    # Step 4: Instruct SDN controller\n    create_network_reservations(real_time_info)\n    # Step 5: Deploy multicast\n    deploy_multicast()\n    # Step 6: Monitor and adjust\n    monitor_and_adjust_reservations()",
+  "common_mistakes": [
+    "Failing to properly define real-time requirements in User Properties.",
+    "Neglecting to monitor network performance after deployment.",
+    "Overcomplicating the network configuration without clear benefits."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Ensures low latency and reliable communication for real-time applications.",
+      "Utilizes SDN for dynamic network management.",
+      "Efficiently propagates messages using multicast."
+    ],
+    "weaknesses": [
+      "Increased complexity due to SDN integration.",
+      "Potential overhead in network management.",
+      "Not suitable for static network environments."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard MQTT",
+        "verdict": "Use RT-MQTT when real-time guarantees are needed; otherwise, standard MQTT suffices."
+      },
+      {
+        "technique": "DM-MQTT",
+        "verdict": "RT-MQTT is preferred for lower latency requirements in dynamic environments."
+      }
+    ]
+  },
+  "connects_to": [
+    "MQTT",
+    "Software-Defined Networking (SDN)",
+    "Multicast Networking",
+    "Industrial IoT Protocols"
+  ],
+  "maturity": "emerging"
+}

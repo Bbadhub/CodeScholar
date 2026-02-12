@@ -1,0 +1,97 @@
+{
+  "summary": "This study demonstrates that a single night of sleep extension significantly enhances physical and cognitive performance in physically active university students, particularly during morning assessments. Engineers should care because this research provides insights into optimizing performance through non-pharmacological means, which can be applied in various fields such as sports science and health technology.",
+  "key_contribution": "Establishing sleep extension as an effective strategy for improving physical and cognitive performance across different times of day.",
+  "problem_type": "performance optimization",
+  "problem_description": "The need to enhance physical and cognitive performance in physically active individuals through improved sleep strategies.",
+  "domain": "Health and Sports Science",
+  "sub_domain": "Sleep Optimization",
+  "technique_name": "Sleep Extension Protocol",
+  "technique_category": "intervention strategy",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves extending sleep duration by adjusting bedtimes to increase total sleep time. Performance assessments are conducted under both normal sleep and sleep extension conditions to evaluate the effects on physical and cognitive tasks.",
+    "algorithm_steps": [
+      "1. Recruit participants and ensure they meet inclusion criteria.",
+      "2. Randomly assign participants to normal sleep and sleep extension conditions with a washout period.",
+      "3. Monitor sleep using wrist actigraphy to measure total sleep time.",
+      "4. Conduct performance assessments at specified times (8 PM, 8 AM, 4 PM).",
+      "5. Compare performance metrics between conditions."
+    ],
+    "input": "Participant sleep data (wrist actigraphy), performance test results.",
+    "output": "Performance metrics (e.g., shuttle-run distance, reaction times) under different sleep conditions.",
+    "key_parameters": [
+      "bedtime: 21:00 (sleep extension), 22:30 (normal sleep)",
+      "wake time: 07:00 (both conditions)",
+      "total sleep time: 531.3 \u00b1 56.8 min (extension), 476.5 \u00b1 64.2 min (normal)"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "24 physically active university students (17 males, 7 females)"
+    ],
+    "metrics": [
+      "5 m shuttle-run best distance: 102.8 \u00b1 11.9 m (EXT) vs. 93.3 \u00b1 8.5 m (NS)",
+      "squat-jump height: 28.2 \u00b1 8.0 cm (EXT) vs. 26.3 \u00b1 7.2 cm (NS)",
+      "simple reaction time: 252.8 \u00b1 55.3 ms (EXT) vs. 296.4 \u00b1 75.2 ms (NS)",
+      "digit-cancellation performance: 67.6 \u00b1 12.6 (EXT) vs. 63.0 \u00b1 10.0 (NS)"
+    ],
+    "baselines": [
+      "Normal Sleep (NS) performance metrics"
+    ],
+    "improvement": "Significant improvements in performance metrics, e.g., 9.5 m increase in shuttle-run best distance at 8 AM."
+  },
+  "concepts": [
+    "sleep extension",
+    "performance optimization",
+    "cognitive function",
+    "physical performance",
+    "actigraphy",
+    "circadian rhythms"
+  ],
+  "use_this_when": [
+    "Designing interventions to enhance athletic performance through sleep management.",
+    "Developing health applications focused on sleep tracking and optimization.",
+    "Creating training programs for physically active individuals aiming to improve performance."
+  ],
+  "dont_use_when": [
+    "When working with individuals who have chronic sleep disorders.",
+    "In scenarios where sleep duration cannot be manipulated due to lifestyle constraints.",
+    "For populations that do not engage in regular physical activity."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Participant sleep data records",
+      "Performance test results database"
+    ],
+    "dependencies": [
+      "ActiGraph for actigraphy data",
+      "Statistical software (e.g., SPSS, Python) for analysis"
+    ],
+    "pseudocode_hint": "if sleep_extension: measure_performance() else: measure_performance()",
+    "gotchas": [
+      "Ensure participants adhere to the sleep schedule to avoid data variability.",
+      "Monitor for external factors that may influence performance (e.g., diet, stress).",
+      "Validate actigraphy data with subjective sleep reports to ensure accuracy."
+    ]
+  },
+  "connects_to": [
+    "Chronobiology studies",
+    "Sleep quality assessment tools",
+    "Performance enhancement strategies in sports science"
+  ],
+  "prerequisites": [
+    "Understanding of sleep physiology",
+    "Knowledge of performance testing protocols",
+    "Familiarity with actigraphy and sleep monitoring techniques"
+  ],
+  "limitations": [
+    "Results may not generalize to non-physically active populations.",
+    "Short duration of sleep extension may limit long-term applicability.",
+    "Potential variability in individual responses to sleep extension."
+  ],
+  "open_questions": [
+    "What are the long-term effects of repeated sleep extension on performance?",
+    "How do individual differences (e.g., chronotype) affect the efficacy of sleep extension?"
+  ]
+}

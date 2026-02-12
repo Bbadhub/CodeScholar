@@ -1,0 +1,36 @@
+{
+  "problem_name": "Multimodal Classification",
+  "description": "Multimodal classification involves categorizing data that comes from multiple sources or modalities, such as text, audio, and images. This problem is common in applications where different types of data need to be analyzed together to make accurate predictions.",
+  "you_have_this_if": [
+    "You are dealing with data from different sources.",
+    "Your application requires understanding relationships between different types of data.",
+    "You notice that single-modality models are underperforming.",
+    "You need to integrate various data types for a comprehensive analysis."
+  ],
+  "approaches": [
+    {
+      "technique": "TRM-MAAN",
+      "best_for": "when you need to assess workload in real-time applications with multimodal physiological data.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach excels in handling temporal dependencies but may require more computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "TRM-MAAN",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have real-time multimodal data with critical temporal dependencies."
+    }
+  ],
+  "start_here": "Start with TRM-MAAN if your application involves real-time analysis of multimodal physiological data, as it effectively captures temporal relationships.",
+  "related_problems": [
+    "Single-modality classification",
+    "Multimodal regression",
+    "Time series analysis",
+    "Sensor fusion"
+  ]
+}

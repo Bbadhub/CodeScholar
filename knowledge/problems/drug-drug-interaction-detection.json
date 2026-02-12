@@ -1,0 +1,37 @@
+{
+  "problem_name": "Drug-Drug Interaction Detection",
+  "description": "Drug-drug interaction detection involves identifying potential adverse interactions between different medications. This is crucial for ensuring patient safety and effective treatment plans in pharmacology.",
+  "you_have_this_if": [
+    "You are analyzing multiple medications simultaneously.",
+    "You have encountered unexpected adverse reactions in patients.",
+    "You are working on a pharmacovigilance project.",
+    "You need to ensure high accuracy in your predictions.",
+    "You are dealing with complex relationships in drug interactions."
+  ],
+  "approaches": [
+    {
+      "technique": "Enhanced Attention-Driven Dynamic Graph Convolutional Network",
+      "best_for": "when you need to analyze complex relationships between multiple drugs and require high accuracy in predicting adverse drug reactions.",
+      "paper_count": 1,
+      "max_citations": 3,
+      "key_tradeoff": "This technique offers high accuracy but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Enhanced Attention-Driven Dynamic Graph Convolutional Network",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to analyze complex interactions and prioritize accuracy over speed."
+    }
+  ],
+  "start_here": "Start with the Enhanced Attention-Driven Dynamic Graph Convolutional Network for its ability to handle complex relationships and provide high accuracy in drug interaction predictions.",
+  "related_problems": [
+    "Adverse Drug Reaction Prediction",
+    "Drug Repurposing",
+    "Pharmacovigilance Data Analysis",
+    "Drug Interaction Network Analysis"
+  ]
+}

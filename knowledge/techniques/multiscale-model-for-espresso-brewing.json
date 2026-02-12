@@ -1,0 +1,86 @@
+{
+  "technique_name": "Multiscale Model for Espresso Brewing",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "This technique models the espresso brewing process to optimize solubles extraction dynamics.",
+  "how_it_works": "The multiscale model formulates a system of partial differential equations that describe liquid flow through the coffee bed and the transport of solubles. By applying asymptotic analysis, the model simplifies these equations to focus on key regions of solubles transport. The model can then be solved numerically to predict concentration profiles over time, allowing for optimization of the brewing process.",
+  "algorithm": {
+    "steps": [
+      "1. Define the geometry of the coffee bed and the properties of coffee grains.",
+      "2. Formulate the governing equations for liquid flow and solubles transport.",
+      "3. Apply boundary conditions for the inlet and outlet of the espresso machine.",
+      "4. Use asymptotic analysis to identify distinct regions of solubles transport.",
+      "5. Solve the reduced model numerically and compare with the full model."
+    ],
+    "core_equation": "output = concentration profiles of solubles in liquid and coffee grains over time",
+    "input_format": "Parameters including coffee grain size distribution, initial solubles concentration, flow rate, and pressure.",
+    "output_format": "Concentration profiles of solubles in the liquid and within the coffee grains over time."
+  },
+  "parameters": [
+    {
+      "name": "flow_rate",
+      "typical_value": "fixed at inlet",
+      "effect": "affects the rate of extraction"
+    },
+    {
+      "name": "pressure",
+      "typical_value": "9-10 bar",
+      "effect": "influences solubles transport"
+    },
+    {
+      "name": "temperature",
+      "typical_value": "92-95\u00b0C",
+      "effect": "affects solubles solubility"
+    },
+    {
+      "name": "initial_solubles_concentration",
+      "typical_value": "c_i,init",
+      "effect": "determines starting extraction levels"
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "The reduced model is significantly cheaper to solve while maintaining accuracy."
+  },
+  "use_when": [
+    "You need to model the espresso brewing process for optimization.",
+    "You want to understand the dynamics of solubles extraction in coffee.",
+    "You are developing a new espresso machine and need to predict extraction outcomes."
+  ],
+  "avoid_when": [
+    "You are working with a brewing method that does not involve packed beds, like French press.",
+    "You need real-time predictions during brewing without prior modeling."
+  ],
+  "implementation_skeleton": "def multiscale_espresso_model(coffee_grain_properties: dict, flow_rate: float, pressure: float, temperature: float) -> dict:\n    # Step 1: Define geometry and properties\n    # Step 2: Formulate equations\n    # Step 3: Apply boundary conditions\n    # Step 4: Perform asymptotic analysis\n    # Step 5: Solve numerically\n    return concentration_profiles",
+  "common_mistakes": [
+    "Neglecting to accurately define the geometry of the coffee bed.",
+    "Overlooking the importance of boundary conditions in the model.",
+    "Failing to validate the model against experimental data."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides detailed insights into solubles extraction dynamics.",
+      "Allows for optimization of brewing parameters.",
+      "Can be adapted for different coffee types and brewing methods."
+    ],
+    "weaknesses": [
+      "Requires a good understanding of fluid dynamics and differential equations.",
+      "May be computationally intensive depending on the model complexity.",
+      "Not suitable for all brewing methods."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional brewing models",
+        "verdict": "Use this model for more detailed insights and optimization."
+      }
+    ]
+  },
+  "connects_to": [
+    "Fluid dynamics modeling",
+    "Thermodynamics in brewing",
+    "Optimization algorithms for food processing",
+    "Numerical simulation techniques"
+  ],
+  "maturity": "emerging"
+}

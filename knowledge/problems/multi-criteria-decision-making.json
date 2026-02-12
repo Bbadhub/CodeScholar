@@ -1,0 +1,37 @@
+{
+  "problem_name": "Multi-Criteria Decision-Making",
+  "description": "Multi-criteria decision-making (MCDM) involves evaluating and prioritizing different options based on multiple conflicting criteria. It is commonly used in various fields where decisions must be made under uncertainty and subjective evaluations.",
+  "you_have_this_if": [
+    "You have multiple options to evaluate.",
+    "The criteria for evaluation are not strictly quantitative.",
+    "You need to incorporate expert opinions or subjective judgments.",
+    "The decision-making process involves uncertainty.",
+    "You are facing conflicting criteria that need to be balanced."
+  ],
+  "approaches": [
+    {
+      "technique": "Fuzzy Analytic Hierarchy Process (FAHP) with Triangular q-rung Fuzzy Numbers (TR-q-ROFNS)",
+      "best_for": "When you need to evaluate options with subjective criteria and incorporate uncertainty.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "This approach balances the complexity of fuzzy logic with the need for structured decision-making."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Fuzzy Analytic Hierarchy Process (FAHP)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to evaluate options with subjective criteria and uncertainty."
+    }
+  ],
+  "start_here": "Start with the Fuzzy Analytic Hierarchy Process (FAHP) if you need to incorporate subjective evaluations and handle uncertainty in your decision-making process.",
+  "related_problems": [
+    "Single-Criteria Decision-Making",
+    "Group Decision-Making",
+    "Risk Assessment",
+    "Portfolio Selection"
+  ]
+}

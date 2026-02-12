@@ -1,0 +1,89 @@
+{
+  "technique_name": "Weighted Phase Lag Index (WPLI)",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "WPLI is used to assess brain connectivity by analyzing EEG signals.",
+  "how_it_works": "WPLI quantifies the phase synchronization between different EEG channels, providing insights into functional connectivity in the brain. It is particularly useful for analyzing brain activity in response to emotional stimuli. By comparing the phase differences of signals, WPLI helps identify how different brain regions communicate during specific tasks or emotional experiences.",
+  "algorithm": {
+    "steps": [
+      "1. Select nostalgic and non-nostalgic stimuli based on participant feedback.",
+      "2. Present stimuli through auditory, visual, and audiovisual channels.",
+      "3. Record EEG data during stimulus presentation.",
+      "4. Measure emotional responses using Likert scales.",
+      "5. Preprocess EEG data (filtering, artifact removal).",
+      "6. Calculate WPLI to assess functional connectivity.",
+      "7. Analyze emotional response data using ANOVA."
+    ],
+    "core_equation": "WPLI = |E[exp(j(\u03c61 - \u03c62))]| / (E[|exp(j(\u03c61 - \u03c62))|])^2",
+    "input_format": "EEG signals from participants, emotional response ratings from Likert scales.",
+    "output_format": "Analysis of emotional responses and brain connectivity metrics."
+  },
+  "parameters": [
+    {
+      "name": "number_of_participants",
+      "typical_value": "38",
+      "effect": "More participants can improve the reliability of results."
+    },
+    {
+      "name": "stimulus_duration",
+      "typical_value": "30-40 seconds",
+      "effect": "Longer durations may enhance emotional engagement."
+    },
+    {
+      "name": "EEG_channels",
+      "typical_value": "64",
+      "effect": "More channels provide a finer resolution of brain connectivity."
+    },
+    {
+      "name": "frequency_bands",
+      "typical_value": "Delta (1-4 Hz), Theta (4-8 Hz), Alpha (8-13 Hz), Beta (13-30 Hz), Gamma (30-50 Hz)",
+      "effect": "Different bands can reveal various aspects of brain activity."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for FFT calculations",
+    "space": "O(n) for storing EEG data",
+    "practical_note": "Real-world performance may vary based on preprocessing steps and the quality of EEG data."
+  },
+  "use_when": [
+    "Designing applications that leverage nostalgia for emotional engagement.",
+    "Creating therapeutic tools that utilize music and imagery for emotional well-being.",
+    "Conducting research on emotional responses to multimedia stimuli."
+  ],
+  "avoid_when": [
+    "The target audience has no emotional connection to the stimuli.",
+    "The application requires real-time processing of emotional responses.",
+    "The focus is solely on visual or auditory stimuli without integration."
+  ],
+  "implementation_skeleton": "def calculate_wpli(eeg_data: List[List[float]]) -> List[float]:\n    # Preprocess EEG data\n    filtered_data = preprocess(eeg_data)\n    # Calculate WPLI\n    wpli_values = []\n    for channel_pair in combinations(filtered_data, 2):\n        wpli = compute_wpli(channel_pair)\n        wpli_values.append(wpli)\n    return wpli_values",
+  "common_mistakes": [
+    "Neglecting proper preprocessing of EEG data, leading to noise interference.",
+    "Using inappropriate stimulus types that do not elicit emotional responses.",
+    "Failing to account for individual differences in emotional engagement."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a robust measure of brain connectivity.",
+      "Effective for analyzing emotional responses.",
+      "Can be applied to various types of stimuli."
+    ],
+    "weaknesses": [
+      "Requires careful preprocessing of EEG data.",
+      "May not be suitable for real-time applications.",
+      "Interpretation of results can be complex."
+    ],
+    "compared_to": [
+      {
+        "technique": "Phase Locking Value (PLV)",
+        "verdict": "Use WPLI for better noise resistance in EEG data."
+      }
+    ]
+  },
+  "connects_to": [
+    "Phase Locking Value (PLV)",
+    "Functional Connectivity Analysis",
+    "EEG Signal Processing",
+    "Emotional Response Measurement"
+  ],
+  "maturity": "emerging"
+}

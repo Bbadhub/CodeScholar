@@ -1,0 +1,36 @@
+{
+  "problem_name": "Cyberbullying Perpetration Analysis",
+  "description": "Cyberbullying perpetration analysis involves understanding the factors that lead individuals, particularly adolescents, to engage in online aggression. This analysis is crucial for developing effective interventions and educational programs aimed at reducing cyberbullying incidents.",
+  "you_have_this_if": [
+    "You notice an increase in reports of online harassment among adolescents.",
+    "You are tasked with developing educational programs about online behavior.",
+    "You are analyzing psychological factors related to aggressive online behavior.",
+    "You are involved in creating interventions to mitigate cyberbullying."
+  ],
+  "approaches": [
+    {
+      "technique": "Moderated mediation model",
+      "best_for": "When analyzing the psychological factors contributing to online aggression and developing targeted interventions.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach provides insights into complex relationships but may require advanced statistical knowledge."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Moderated mediation model",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to understand the interplay between psychological factors and cyberbullying behavior."
+    }
+  ],
+  "start_here": "The moderated mediation model is the recommended first approach for analyzing cyberbullying perpetration due to its ability to uncover complex relationships between psychological factors and online aggression.",
+  "related_problems": [
+    "Cyberbullying victimization analysis",
+    "Online harassment prevention strategies",
+    "Youth mental health and online behavior",
+    "Social media influence on adolescent behavior"
+  ]
+}

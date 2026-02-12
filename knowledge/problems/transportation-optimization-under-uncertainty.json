@@ -1,0 +1,37 @@
+{
+  "problem_name": "Transportation Optimization Under Uncertainty",
+  "description": "Transportation optimization under uncertainty involves finding the most efficient way to transport goods while accounting for uncertain variables such as demand, costs, and travel times. This problem is critical for logistics and supply chain management, where fluctuations can significantly impact overall performance.",
+  "you_have_this_if": [
+    "You are facing fluctuating transportation costs.",
+    "Your demand forecasts are uncertain.",
+    "You have multiple constraints that are not precisely defined.",
+    "You need to make decisions that are robust against variability.",
+    "You are looking for cost-effective solutions in a complex environment."
+  ],
+  "approaches": [
+    {
+      "technique": "Congruence Modulo Technique for Fuzzy Bottleneck Cost Optimization",
+      "best_for": "When dealing with transportation problems where input values are uncertain and multiple fuzzy constraints exist.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This technique provides robust solutions but may require more computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Congruence Modulo Technique for Fuzzy Bottleneck Cost Optimization",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to optimize transportation costs while accounting for uncertain input values and constraints."
+    }
+  ],
+  "start_here": "Start with the Congruence Modulo Technique for Fuzzy Bottleneck Cost Optimization, as it is specifically designed to handle uncertainty in transportation problems effectively.",
+  "related_problems": [
+    "Supply Chain Optimization",
+    "Logistics Network Design",
+    "Dynamic Routing Problems",
+    "Inventory Management Under Uncertainty"
+  ]
+}

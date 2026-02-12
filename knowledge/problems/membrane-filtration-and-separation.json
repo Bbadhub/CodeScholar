@@ -1,0 +1,37 @@
+{
+  "problem_name": "Membrane Filtration and Separation",
+  "description": "Membrane filtration and separation involves the use of selective barriers to separate substances from mixtures, often used in water treatment, food processing, and chemical production. The challenge lies in achieving high efficiency, selectivity, and durability of the membranes used.",
+  "you_have_this_if": [
+    "You are facing challenges with traditional filtration methods.",
+    "You need to separate specific particles or molecules from a solution.",
+    "You are looking for sustainable and energy-efficient filtration solutions.",
+    "You require membranes that can withstand harsh chemical environments.",
+    "You are dealing with high volumes of liquid that need processing."
+  ],
+  "approaches": [
+    {
+      "technique": "Graphene-based membranes",
+      "best_for": "when you need high-performance filtration solutions with specific permeability and selectivity.",
+      "paper_count": 1,
+      "max_citations": 15,
+      "key_tradeoff": "While graphene-based membranes offer superior performance, they can be expensive and may require specialized fabrication techniques."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Graphene-based membranes",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You need to achieve high selectivity and permeability in filtration applications."
+    }
+  ],
+  "start_here": "Start with graphene-based membranes for high-performance applications, especially when specific permeability and selectivity are crucial, despite the complexity of implementation.",
+  "related_problems": [
+    "Reverse osmosis membranes",
+    "Ultrafiltration techniques",
+    "Microfiltration systems",
+    "Nanofiltration processes"
+  ]
+}

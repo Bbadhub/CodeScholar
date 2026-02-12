@@ -1,0 +1,77 @@
+{
+  "technique_name": "Giving Up Density (GUD)",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "GUD measures the foraging behavior of predators in relation to the presence of livestock guardian dogs.",
+  "how_it_works": "The GUD technique involves setting up foraging stations in areas with and without livestock guardian dogs. By measuring the amount of food left at these stations over time, researchers can calculate the GUD, which reflects the effort predators are willing to expend to obtain food. A higher GUD indicates that predators are less willing to forage in the presence of guardian dogs, suggesting a landscape of fear created by these animals.",
+  "algorithm": {
+    "steps": [
+      "1. Identify study area with livestock guardian dogs and areas without.",
+      "2. Set up foraging stations in both areas.",
+      "3. Measure the amount of food left at each station over time.",
+      "4. Calculate GUD based on the amount of food consumed versus time spent foraging.",
+      "5. Analyze the differences in GUD between the two areas."
+    ],
+    "core_equation": "GUD = (Food available - Food consumed) / Time spent foraging",
+    "input_format": "Data on food availability, time spent foraging, and presence of livestock guardian dogs.",
+    "output_format": "Calculated GUD values indicating predator foraging behavior in relation to the presence of guardian dogs."
+  },
+  "parameters": [
+    {
+      "name": "food_availability",
+      "typical_value": "variable",
+      "effect": "Affects the GUD calculation based on how much food is present."
+    },
+    {
+      "name": "time_spent_foraging",
+      "typical_value": "variable",
+      "effect": "Longer foraging time can indicate higher GUD if food is scarce."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Real-world performance may vary based on environmental factors and predator behavior."
+  },
+  "use_when": [
+    "Designing wildlife management systems",
+    "Implementing conservation strategies in agricultural settings",
+    "Studying predator behavior in relation to livestock protection"
+  ],
+  "avoid_when": [
+    "In urban environments with no livestock",
+    "When studying non-predatory species",
+    "In areas where guardian dogs are not present"
+  ],
+  "implementation_skeleton": "def calculate_gud(food_available: float, food_consumed: float, time_spent: float) -> float:\n    return (food_available - food_consumed) / time_spent\n\n# Example usage\nfood_available = 100.0\nfood_consumed = 30.0\ntime_spent = 5.0\ngud_value = calculate_gud(food_available, food_consumed, time_spent)",
+  "common_mistakes": [
+    "Not accounting for environmental variables that affect food availability.",
+    "Failing to standardize foraging time across different stations.",
+    "Overlooking the influence of other predators or species in the area."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides quantitative insights into predator behavior.",
+      "Helps in assessing the effectiveness of guardian dogs.",
+      "Can inform wildlife management and conservation strategies."
+    ],
+    "weaknesses": [
+      "May not be applicable in all environments.",
+      "Results can be influenced by external factors like weather.",
+      "Requires careful setup and monitoring of foraging stations."
+    ],
+    "compared_to": [
+      {
+        "technique": "Direct observation of predator behavior",
+        "verdict": "Use GUD for quantitative analysis; use direct observation for qualitative insights."
+      }
+    ]
+  },
+  "connects_to": [
+    "Wildlife management techniques",
+    "Behavioral ecology studies",
+    "Conservation biology methods",
+    "Predator-prey interaction models"
+  ],
+  "maturity": "emerging"
+}

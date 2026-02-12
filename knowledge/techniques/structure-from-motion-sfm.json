@@ -1,0 +1,79 @@
+{
+  "technique_name": "Structure from Motion (SfM)",
+  "aliases": [
+    "SfM"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "SfM is a technique used to reconstruct 3D structures from a series of 2D images taken from different angles.",
+  "how_it_works": "SfM processes multiple overlapping images to identify common features and estimate their 3D positions. It uses geometric principles to triangulate points in space, creating a dense point cloud representation of the scene. This point cloud can then be analyzed for various applications, such as estimating vegetation volume and litter accumulation in ecological studies.",
+  "algorithm": {
+    "steps": [
+      "1. Capture high-resolution images of the target area from multiple angles.",
+      "2. Detect and match features across the images.",
+      "3. Estimate camera positions and orientations using the matched features.",
+      "4. Triangulate the 3D positions of the matched features to create a point cloud.",
+      "5. Apply classification algorithms to analyze the point cloud data."
+    ],
+    "core_equation": "3D_point = triangulate(2D_points, camera_parameters)",
+    "input_format": "High-resolution images of the target area.",
+    "output_format": "3D point cloud and estimated metrics (e.g., vegetation volume)."
+  },
+  "parameters": [
+    {
+      "name": "image_resolution",
+      "typical_value": "0.1mm",
+      "effect": "Higher resolution improves detail but increases processing time."
+    },
+    {
+      "name": "point_cloud_density",
+      "typical_value": "1000 points/m\u00b2",
+      "effect": "Higher density provides more detail but requires more computational resources."
+    }
+  ],
+  "complexity": {
+    "time": "O(n^2) for feature matching, where n is the number of images.",
+    "space": "O(n) for storing image data and point cloud.",
+    "practical_note": "Performance can vary significantly based on the number of images and their resolution."
+  },
+  "use_when": [
+    "Estimating biomass in dense grassland ecosystems",
+    "Creating detailed 3D models for ecological studies",
+    "Analyzing litter accumulation in vegetation"
+  ],
+  "avoid_when": [
+    "Working in sparse vegetation areas",
+    "Needing real-time data processing",
+    "When budget constraints limit high-resolution imaging"
+  ],
+  "implementation_skeleton": "def structure_from_motion(images: List[Image]) -> PointCloud:\n    # Step 1: Feature detection\n    features = detect_features(images)\n    # Step 2: Feature matching\n    matches = match_features(features)\n    # Step 3: Estimate camera poses\n    camera_params = estimate_camera_positions(matches)\n    # Step 4: Triangulate points\n    point_cloud = triangulate(matches, camera_params)\n    return point_cloud",
+  "common_mistakes": [
+    "Not capturing enough overlapping images for accurate reconstruction.",
+    "Ignoring lens distortion effects in camera calibration.",
+    "Using low-resolution images that lack detail."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Can produce high-quality 3D models from standard cameras.",
+      "Effective for dense vegetation analysis.",
+      "Relatively low cost compared to traditional methods like LiDAR."
+    ],
+    "weaknesses": [
+      "Sensitive to lighting conditions and image quality.",
+      "Requires significant computational resources for large datasets.",
+      "Not suitable for real-time applications."
+    ],
+    "compared_to": [
+      {
+        "technique": "LiDAR",
+        "verdict": "Use SfM for lower-cost applications where high-resolution images are available; use LiDAR for faster, real-time data collection."
+      }
+    ]
+  },
+  "connects_to": [
+    "Photogrammetry",
+    "Computer Vision",
+    "3D Reconstruction",
+    "Point Cloud Processing"
+  ],
+  "maturity": "proven (widely used in production)"
+}

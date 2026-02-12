@@ -1,0 +1,37 @@
+{
+  "problem_name": "Human-Robot Interaction Design",
+  "description": "Human-robot interaction design focuses on creating effective and intuitive interfaces between humans and robots. This involves understanding user needs and behaviors to ensure that robotic systems are usable and beneficial in real-world applications.",
+  "you_have_this_if": [
+    "You are developing a robot intended for direct interaction with humans.",
+    "You need to consider user feedback in the design process.",
+    "You are working in a context where user experience is critical, such as healthcare.",
+    "You are collaborating with stakeholders who may not be familiar with robotic technologies.",
+    "You aim to ensure that the robot's functionalities meet actual user needs."
+  ],
+  "approaches": [
+    {
+      "technique": "In-situ Participatory Design Methodology",
+      "best_for": "When designing assistive robots for healthcare settings and engaging with stakeholders who have limited experience with robotic technologies.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This approach can be time-consuming but yields highly relevant user-centered designs."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "In-situ Participatory Design Methodology",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to gather direct user input and feedback in the context where the robot will be used."
+    }
+  ],
+  "start_here": "Start with the In-situ Participatory Design Methodology as it allows for direct engagement with users, ensuring that the design aligns closely with their needs and expectations.",
+  "related_problems": [
+    "User Interface Design for Robotics",
+    "Usability Testing in Robotics",
+    "Assistive Technology Development",
+    "Stakeholder Engagement in Technology Design"
+  ]
+}

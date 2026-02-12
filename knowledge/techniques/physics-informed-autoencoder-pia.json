@@ -1,0 +1,100 @@
+{
+  "technique_name": "Physics-informed autoencoder (PIA)",
+  "aliases": [
+    "PIA"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "PIA combines autoencoder architecture with physics-informed loss functions to estimate neutron star parameters while maintaining interpretability.",
+  "how_it_works": "The Physics-informed autoencoder encodes the equation of state (EoS) of neutron stars into a latent space that is interpretable. It uses an autoencoder structure where the loss function integrates both reconstruction loss and additional physics-informed losses. This allows the model to learn the mapping between observables and microphysical parameters while adhering to physical laws, ensuring that the results are meaningful and interpretable in the context of astrophysics.",
+  "algorithm": {
+    "steps": [
+      "1. Normalize the dataset of EoS parameters and neutron star observables.",
+      "2. Initialize the encoder and decoder networks with fully connected layers.",
+      "3. Define the loss function as a combination of reconstruction loss and physics-informed losses.",
+      "4. Train the model using the ADAM optimizer with a learning rate of 0.001 and apply early stopping.",
+      "5. Use Monte Carlo dropout during inference for uncertainty estimation.",
+      "6. Evaluate the model's performance on test data."
+    ],
+    "core_equation": "loss = reconstruction_loss + physics_informed_loss",
+    "input_format": "Pairs of data consisting of parameterized EoS and corresponding neutron star observables (mass, radius, tidal deformability).",
+    "output_format": "Reconstructed EoS parameters and insights into the physical connections between EoS and observable quantities."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "Affects the speed of convergence during training."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "[4, 64]",
+      "effect": "Impacts the stability and speed of training."
+    },
+    {
+      "name": "number_of_epochs",
+      "typical_value": "2000",
+      "effect": "Determines how long the model trains, affecting performance."
+    },
+    {
+      "name": "dropout_rate",
+      "typical_value": "[0.1, 0.5]",
+      "effect": "Helps prevent overfitting by randomly dropping units during training."
+    },
+    {
+      "name": "patience",
+      "typical_value": "[300, 400]",
+      "effect": "Controls early stopping based on validation loss."
+    },
+    {
+      "name": "n",
+      "typical_value": "[16, 128]",
+      "effect": "Defines the dimensionality of the latent space."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated.",
+    "space": "Not explicitly stated.",
+    "practical_note": "Performance may vary based on dataset size and model architecture."
+  },
+  "use_when": [
+    "You need to estimate neutron star parameters from observational data.",
+    "Interpretability of machine learning models is critical for your application.",
+    "You want to incorporate physical laws into your machine learning models."
+  ],
+  "avoid_when": [
+    "The problem domain does not require interpretability.",
+    "You are working with data that does not relate to astrophysical phenomena.",
+    "You need a fast, non-interpretative black-box model."
+  ],
+  "implementation_skeleton": "def physics_informed_autoencoder(data: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:\n    # Normalize data\n    normalized_data = normalize(data)\n    # Initialize encoder and decoder\n    encoder = build_encoder()\n    decoder = build_decoder()\n    # Define loss function\n    loss_function = define_loss()\n    # Train model\n    for epoch in range(2000):\n        train_step(encoder, decoder, normalized_data, loss_function)\n    # Use Monte Carlo dropout for inference\n    return reconstruct(encoder, decoder, normalized_data)",
+  "common_mistakes": [
+    "Neglecting to normalize the input data, leading to poor model performance.",
+    "Overfitting due to insufficient dropout or early stopping parameters.",
+    "Failing to properly define the physics-informed loss, which can lead to non-interpretative results."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides interpretable results that adhere to physical laws.",
+      "Improves precision in estimating astrophysical parameters compared to traditional models.",
+      "Integrates machine learning with domain-specific knowledge effectively."
+    ],
+    "weaknesses": [
+      "May require extensive tuning of hyperparameters for optimal performance.",
+      "Complexity in defining appropriate physics-informed loss functions.",
+      "Performance may be limited to specific domains (e.g., astrophysics)."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional black-box models",
+        "verdict": "Use PIA when interpretability and adherence to physical laws are required."
+      }
+    ]
+  },
+  "connects_to": [
+    "Autoencoders",
+    "Physics-informed neural networks",
+    "Interpretable machine learning",
+    "Neutron star astrophysics"
+  ],
+  "maturity": "emerging"
+}

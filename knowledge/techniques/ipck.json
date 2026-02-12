@@ -1,0 +1,79 @@
+{
+  "technique_name": "IPCK",
+  "aliases": [
+    "Integrated Prompt Classification Knowledge"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "IPCK enhances language models for classifying Git commits using prompt tuning and external knowledge.",
+  "how_it_works": "The IPCK framework utilizes prompt tuning to adapt a language model specifically for classifying Git commit messages. It incorporates external knowledge to improve classification accuracy without the need for a softmax head or large labeled datasets. By preprocessing commit messages and applying tuned prompts, the model can effectively classify commits into relevant categories.",
+  "algorithm": {
+    "steps": [
+      "1. Collect Git commit messages and relevant external knowledge.",
+      "2. Preprocess the commit messages for input into the language model.",
+      "3. Apply prompt tuning to adapt the language model for commit classification.",
+      "4. Use the tuned model to classify commits based on the provided prompts.",
+      "5. Evaluate the classification results against existing baselines."
+    ],
+    "core_equation": "output = classify(commit_message, tuned_model)",
+    "input_format": "Git commit messages and external knowledge sources (text data).",
+    "output_format": "Classified commit labels (binary or multiclass)."
+  },
+  "parameters": [
+    {
+      "name": "prompt_length",
+      "typical_value": "10",
+      "effect": "Longer prompts may provide more context but can also introduce noise."
+    },
+    {
+      "name": "tuning_epochs",
+      "typical_value": "5",
+      "effect": "More epochs can lead to better adaptation but may risk overfitting."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on the size of the language model and the complexity of the commit messages."
+  },
+  "use_when": [
+    "You need a lightweight solution for classifying Git commits.",
+    "You want to reduce dependency on large labeled datasets.",
+    "You require a system that can adapt to evolving classification schemes."
+  ],
+  "avoid_when": [
+    "You have a highly specialized classification task requiring extensive labeled data.",
+    "You need real-time classification with minimal latency.",
+    "You prefer traditional discriminative classifiers."
+  ],
+  "implementation_skeleton": "def classify_commits(commit_messages: List[str], external_knowledge: List[str]) -> List[str]:\n    # Preprocess commit messages\n    preprocessed = preprocess(commit_messages)\n    # Apply prompt tuning\n    tuned_model = prompt_tune(preprocessed, external_knowledge)\n    # Classify using the tuned model\n    return classify(preprocessed, tuned_model)",
+  "common_mistakes": [
+    "Neglecting to preprocess commit messages properly.",
+    "Using prompts that are too long or too short.",
+    "Failing to evaluate the model against appropriate baselines."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Reduces reliance on large labeled datasets.",
+      "Adapts well to evolving classification needs.",
+      "Lightweight compared to traditional models."
+    ],
+    "weaknesses": [
+      "May not perform well on highly specialized tasks.",
+      "Potentially slower than real-time classifiers.",
+      "Requires careful prompt design for optimal results."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Discriminative Classifiers",
+        "verdict": "Use IPCK for flexibility and reduced data requirements; use traditional classifiers for specialized tasks."
+      }
+    ]
+  },
+  "connects_to": [
+    "Prompt Tuning",
+    "Transfer Learning",
+    "Natural Language Processing",
+    "Git Commit Analysis"
+  ],
+  "maturity": "emerging"
+}

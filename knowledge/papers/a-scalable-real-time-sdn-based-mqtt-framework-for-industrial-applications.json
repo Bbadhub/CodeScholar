@@ -1,0 +1,99 @@
+{
+  "summary": "This paper presents a scalable framework that integrates Software-Defined Networking (SDN) with the Message Queuing Telemetry Transport (MQTT) protocol to enhance real-time communication in industrial applications. Engineers should care because it addresses the critical need for timeliness and reliability in the rapidly evolving landscape of Industry 4.0 and the Industrial Internet of Things (IIoT).",
+  "key_contribution": "The development of a real-time MQTT extension (RT-MQTT) integrated with SDN for improved network management and real-time performance.",
+  "problem_type": "real-time communication in industrial IoT",
+  "problem_description": "The need for reliable and timely communication in complex industrial environments with numerous heterogeneous devices.",
+  "domain": "Networking & Distributed Systems",
+  "sub_domain": "Industrial Internet of Things (IIoT), Software-Defined Networking (SDN), MQTT",
+  "technique_name": "RT-MQTT and MRT-MQTT",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method integrates SDN with MQTT to allow applications to specify real-time requirements, which are then enforced by the SDN controller through network reservations. The framework uses multicast to efficiently propagate MQTT traffic across multiple edge networks.",
+    "algorithm_steps": [
+      "1. Define real-time requirements using MQTT User Properties.",
+      "2. Intercept MQTT traffic with a Network Manager.",
+      "3. Extract real-time information from the intercepted traffic.",
+      "4. Instruct the SDN controller to create network reservations based on the extracted information.",
+      "5. Deploy multicast across selected brokers to propagate MQTT traffic.",
+      "6. Monitor and adjust network reservations as needed."
+    ],
+    "input": "MQTT messages with specified real-time requirements in User Properties.",
+    "output": "Real-time MQTT communication with guaranteed latency and reliability across the network.",
+    "key_parameters": [
+      "QoS levels: 0, 1, 2",
+      "Latency requirements: application-specific (not specified in the paper)",
+      "Network reservation parameters: application-specific (not specified in the paper)"
+    ],
+    "complexity": "Not stated."
+  },
+  "benchmarks": {
+    "datasets": [
+      "Emulation experiments conducted in industrial scenarios."
+    ],
+    "metrics": [
+      "Latency reduction compared to standard MQTT and DM-MQTT."
+    ],
+    "baselines": [
+      "Standard MQTT, Direct Multicast-MQTT (DM-MQTT)"
+    ],
+    "improvement": "Demonstrated superior performance in latency reduction over MQTT and DM-MQTT."
+  },
+  "concepts": [
+    "SDN",
+    "MQTT",
+    "real-time communication",
+    "multicast",
+    "resource management",
+    "IIoT",
+    "network reservations"
+  ],
+  "use_this_when": [
+    "You need to ensure real-time communication in industrial IoT applications.",
+    "You are working with heterogeneous devices that require dynamic network management.",
+    "You want to reduce latency in MQTT communications across multiple edge networks."
+  ],
+  "dont_use_when": [
+    "The application does not require real-time guarantees.",
+    "You are working in a static network environment with no need for dynamic reconfiguration.",
+    "The overhead of integrating SDN is not justified for your use case."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "MQTT message structure",
+      "SDN flow tables",
+      "Network reservation data structures"
+    ],
+    "dependencies": [
+      "MQTT broker (v5.0)",
+      "SDN controller (OpenFlow compatible)"
+    ],
+    "pseudocode_hint": "def handle_mqtt_message(message): extract_real_time_requirements(message); instruct_sdn_controller(); propagate_multicast();",
+    "gotchas": [
+      "Ensure compatibility between MQTT version and SDN controller.",
+      "Monitor network performance to adjust reservations dynamically.",
+      "Be aware of potential overhead introduced by real-time extensions."
+    ]
+  },
+  "connects_to": [
+    "MQTT-SN",
+    "OpenQoS",
+    "DM-MQTT",
+    "MI-SDN",
+    "SDN-based QoS frameworks"
+  ],
+  "prerequisites": [
+    "Understanding of MQTT protocol",
+    "Familiarity with SDN concepts",
+    "Knowledge of real-time systems"
+  ],
+  "limitations": [
+    "Not explicitly designed for non-real-time applications",
+    "Potential overhead from real-time processing",
+    "Requires specific network configurations for optimal performance"
+  ],
+  "open_questions": [
+    "How can security be integrated without compromising real-time performance?",
+    "What are the scalability limits of the proposed framework in larger industrial settings?"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "technique_name": "Contextual Bias Analysis",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "Contextual Bias Analysis examines user reactions to political bias in generative AI responses.",
+  "how_it_works": "This technique involves collecting and analyzing user interaction data with generative AI to identify perceived political bias. It combines qualitative and quantitative methods to assess user sentiment and categorize reactions based on demographics. The insights generated help inform AI design to improve user experience and transparency.",
+  "algorithm": {
+    "steps": [
+      "1. Collect user interaction data with generative AI.",
+      "2. Identify instances of perceived political bias in AI responses.",
+      "3. Analyze user feedback and sentiment regarding these instances.",
+      "4. Categorize reactions based on user demographics and preferences.",
+      "5. Generate insights on how context influences user perception."
+    ],
+    "core_equation": "output = insights on user perceptions of political bias",
+    "input_format": "User interaction data with generative AI, including queries and responses.",
+    "output_format": "Insights into user perceptions of political bias and recommendations for AI design."
+  },
+  "parameters": [
+    {
+      "name": "contextual_data",
+      "typical_value": "user preferences",
+      "effect": "Affects the accuracy of bias perception analysis."
+    },
+    {
+      "name": "bias_threshold",
+      "typical_value": "defined level of bias",
+      "effect": "Determines the sensitivity of bias detection."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on the volume of user interaction data."
+  },
+  "use_when": [
+    "Designing AI systems that require user interaction",
+    "Evaluating user feedback on AI-generated content",
+    "Improving transparency in AI responses"
+  ],
+  "avoid_when": [
+    "Building purely objective AI systems",
+    "When user context is irrelevant",
+    "In applications where bias is not a concern"
+  ],
+  "implementation_skeleton": "def contextual_bias_analysis(user_data: List[Dict[str, Any]]) -> Dict[str, Any]:\n    # Step 1: Collect user interaction data\n    # Step 2: Identify perceived bias\n    # Step 3: Analyze user sentiment\n    # Step 4: Categorize reactions\n    # Step 5: Generate insights\n    return insights",
+  "common_mistakes": [
+    "Neglecting to account for user demographics in analysis.",
+    "Overlooking the importance of context in user interactions.",
+    "Failing to validate the bias detection thresholds."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides insights into user perceptions of bias.",
+      "Enhances AI transparency and user trust.",
+      "Facilitates targeted improvements in AI design."
+    ],
+    "weaknesses": [
+      "May not be applicable in all AI contexts.",
+      "Requires extensive user interaction data.",
+      "Potentially subjective interpretation of bias."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard Bias Detection",
+        "verdict": "Use Contextual Bias Analysis when user context is critical for understanding bias."
+      }
+    ]
+  },
+  "connects_to": [
+    "User Experience Research",
+    "Sentiment Analysis",
+    "Bias Detection Algorithms",
+    "Generative AI Design"
+  ],
+  "maturity": "emerging"
+}

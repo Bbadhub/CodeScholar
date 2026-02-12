@@ -1,0 +1,37 @@
+{
+  "problem_name": "Tele-robotic Ultrasound System in Medical Imaging",
+  "description": "The tele-robotic ultrasound system addresses the challenge of providing ultrasound imaging services remotely, particularly in areas where access to radiologists is limited. This technology enables healthcare providers to conduct medical examinations in real-time, facilitating timely diagnosis and treatment.",
+  "you_have_this_if": [
+    "You are in a rural area with limited access to medical imaging specialists.",
+    "There is a need for immediate ultrasound services.",
+    "You are facing logistical challenges in deploying traditional ultrasound equipment.",
+    "Patients require remote consultations due to mobility issues.",
+    "You need to enhance the reach of medical services in underserved populations."
+  ],
+  "approaches": [
+    {
+      "technique": "Tele-robotic Ultrasound System",
+      "best_for": "When access to radiologists is limited due to geographic constraints.",
+      "paper_count": 1,
+      "max_citations": 4,
+      "key_tradeoff": "While it provides remote access to ultrasound services, it may require significant initial investment and training."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Tele-robotic Ultrasound System",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to provide ultrasound services quickly in remote locations."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is to implement the Tele-robotic Ultrasound System, as it effectively addresses the need for remote medical imaging in underserved areas.",
+  "related_problems": [
+    "Remote Patient Monitoring",
+    "Telemedicine for Chronic Disease Management",
+    "Mobile Health Applications",
+    "Virtual Consultations in Healthcare"
+  ]
+}

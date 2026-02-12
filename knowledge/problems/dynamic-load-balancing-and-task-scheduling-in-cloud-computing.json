@@ -1,0 +1,37 @@
+{
+  "problem_name": "Dynamic Load Balancing and Task Scheduling in Cloud Computing",
+  "description": "Dynamic load balancing and task scheduling involve distributing workloads across multiple computing resources in a cloud environment to optimize resource utilization and ensure efficient performance. This problem is crucial for maintaining system responsiveness and preventing overload on individual resources.",
+  "you_have_this_if": [
+    "You experience performance degradation in your cloud applications.",
+    "Your virtual machines are frequently overloaded.",
+    "You need to allocate tasks dynamically based on current resource usage.",
+    "You require real-time monitoring of resource loads.",
+    "Your system has fluctuating workloads that need adaptive management."
+  ],
+  "approaches": [
+    {
+      "technique": "Round-Robin Allocation with Sunflower Whale Optimization (RRA-SWO)",
+      "best_for": "when you need to optimize resource utilization in a cloud environment with real-time adjustments.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "This approach balances load effectively but may introduce some latency in task allocation."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Round-Robin Allocation with Sunflower Whale Optimization (RRA-SWO)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a balance between resource optimization and real-time performance in a cloud environment."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Round-Robin Allocation with Sunflower Whale Optimization (RRA-SWO) due to its effectiveness in optimizing resource utilization while allowing for real-time adjustments.",
+  "related_problems": [
+    "Static Load Balancing",
+    "Resource Allocation in Cloud Computing",
+    "Task Scheduling Algorithms",
+    "Performance Optimization in Distributed Systems"
+  ]
+}

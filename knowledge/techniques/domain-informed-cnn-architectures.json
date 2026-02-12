@@ -1,0 +1,86 @@
+{
+  "technique_name": "Domain-informed CNN architectures",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "This technique enhances CNN architectures by incorporating domain knowledge to improve the accuracy of predictions in specific applications, such as weather forecasting.",
+  "how_it_works": "Domain-informed CNN architectures leverage both coarse forecast data and domain-specific features to train a convolutional neural network. By integrating physical principles and local atmospheric conditions, the model learns to predict finer-scale patterns. This approach is particularly useful in scenarios where traditional methods fall short, allowing for more accurate localized predictions.",
+  "algorithm": {
+    "steps": [
+      "1. Gather coarse wind forecast data from numerical weather prediction (NWP) models.",
+      "2. Integrate domain-specific features related to local geography and atmospheric conditions.",
+      "3. Design and train a CNN architecture using the integrated data.",
+      "4. Validate the model against high-resolution observational data.",
+      "5. Use the trained model to generate downscaled wind forecasts."
+    ],
+    "core_equation": "output = CNN(integrated_coarse_data, domain_features)",
+    "input_format": "Coarse wind forecast data from NWP models and domain-specific features.",
+    "output_format": "High-resolution wind forecasts tailored to specific locations."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A higher learning rate may speed up training but risks overshooting the optimal solution."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Larger batch sizes can stabilize training but may require more memory."
+    },
+    {
+      "name": "num_epochs",
+      "typical_value": "100",
+      "effect": "More epochs can improve accuracy but may lead to overfitting."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m * k) where n is the number of training samples, m is the number of features, and k is the number of epochs.",
+    "space": "O(m * p) where m is the number of features and p is the number of parameters in the model.",
+    "practical_note": "The actual performance may vary based on the architecture and the size of the input data."
+  },
+  "use_when": [
+    "You need to improve local wind forecasts for renewable energy applications.",
+    "You have access to both coarse NWP data and high-resolution observational data.",
+    "You want to leverage domain knowledge in weather prediction."
+  ],
+  "avoid_when": [
+    "You require real-time predictions without prior training.",
+    "You have limited computational resources.",
+    "You are working with non-weather-related forecasting tasks."
+  ],
+  "implementation_skeleton": "def domain_informed_cnn(coarse_data: np.ndarray, domain_features: np.ndarray) -> np.ndarray:\n    # Step 1: Integrate data\n    integrated_data = integrate(coarse_data, domain_features)\n    # Step 2: Define CNN model\n    model = create_cnn_model()\n    # Step 3: Train model\n    model.fit(integrated_data)\n    # Step 4: Generate forecasts\n    forecasts = model.predict(integrated_data)\n    return forecasts",
+  "common_mistakes": [
+    "Neglecting to properly preprocess the domain-specific features.",
+    "Overfitting the model by using too many epochs without validation.",
+    "Failing to validate against high-resolution observational data."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves accuracy of localized predictions.",
+      "Utilizes domain knowledge for better feature representation.",
+      "Can outperform traditional downscaling methods."
+    ],
+    "weaknesses": [
+      "Requires substantial computational resources for training.",
+      "Dependent on the quality of both coarse and high-resolution data.",
+      "May not generalize well to non-weather-related tasks."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard downscaling methods",
+        "verdict": "Use domain-informed CNNs for better accuracy in localized forecasts."
+      },
+      {
+        "technique": "Other CNN architectures",
+        "verdict": "Use domain-informed CNNs when domain knowledge is available to enhance predictions."
+      }
+    ]
+  },
+  "connects_to": [
+    "Convolutional Neural Networks (CNNs)",
+    "Numerical Weather Prediction (NWP)",
+    "Feature Engineering",
+    "Data Preprocessing Techniques"
+  ],
+  "maturity": "emerging"
+}

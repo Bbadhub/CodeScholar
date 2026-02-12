@@ -1,0 +1,84 @@
+{
+  "technique_name": "Enhanced KGE with Spatio-Temporal Reasoning",
+  "aliases": [
+    "Spatio-Temporal Knowledge Graph Embedding"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "This technique enhances knowledge graph embeddings by incorporating spatio-temporal attributes for improved link prediction accuracy in APT detection.",
+  "how_it_works": "The technique begins by constructing a knowledge graph that represents Advanced Persistent Threat (APT) incidents. It integrates spatio-temporal attributes to capture the dynamics of these incidents. Adversarial negative sampling is then employed to generate challenging negative examples, which helps to improve the robustness of the embeddings. Finally, the model is trained on this enhanced graph to improve its performance on link prediction tasks.",
+  "algorithm": {
+    "steps": [
+      "1. Construct a knowledge graph representing APT incidents.",
+      "2. Integrate spatio-temporal attributes into the graph.",
+      "3. Apply adversarial negative sampling to generate challenging negative examples.",
+      "4. Train the embedding model using the enhanced graph.",
+      "5. Evaluate the model's performance on link prediction tasks."
+    ],
+    "core_equation": "output = enhanced_embeddings(graph, spatio_temporal_attributes, adversarial_samples)",
+    "input_format": "A knowledge graph with spatio-temporal attributes related to APT incidents.",
+    "output_format": "Enhanced embeddings that improve link prediction accuracy for APT detection."
+  },
+  "parameters": [
+    {
+      "name": "embedding_dimension",
+      "typical_value": "128",
+      "effect": "Higher dimensions can capture more complex relationships but may lead to overfitting."
+    },
+    {
+      "name": "negative_sample_size",
+      "typical_value": "64",
+      "effect": "Increasing the size can improve robustness but may increase training time."
+    },
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A higher learning rate can speed up convergence but may lead to instability."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for training, where n is the number of nodes in the graph.",
+    "space": "O(n) for storing embeddings.",
+    "practical_note": "The complexity may vary based on the implementation and size of the knowledge graph."
+  },
+  "use_when": [
+    "You need to model complex cyber threats like APTs.",
+    "Data on incidents is sparse and inconsistent.",
+    "You want to improve the accuracy of link prediction in knowledge graphs."
+  ],
+  "avoid_when": [
+    "You have abundant and consistent data on incidents.",
+    "The problem does not involve temporal dynamics.",
+    "You require real-time processing with minimal latency."
+  ],
+  "implementation_skeleton": "def enhanced_kge(graph: KnowledgeGraph, spatio_temporal_attributes: Attributes) -> Embeddings:\n    # Step 1: Integrate spatio-temporal attributes\n    enhanced_graph = integrate_attributes(graph, spatio_temporal_attributes)\n    # Step 2: Generate adversarial samples\n    negative_samples = generate_adversarial_samples(enhanced_graph)\n    # Step 3: Train the model\n    embeddings = train_model(enhanced_graph, negative_samples)\n    return embeddings",
+  "common_mistakes": [
+    "Neglecting to properly preprocess spatio-temporal attributes.",
+    "Using too high of an embedding dimension leading to overfitting.",
+    "Not validating the model with sufficient metrics beyond link prediction."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves accuracy of link prediction in sparse datasets.",
+      "Captures dynamic relationships in APT incidents.",
+      "Robust against misleading data through adversarial sampling."
+    ],
+    "weaknesses": [
+      "May require extensive computational resources for training.",
+      "Complexity in integrating spatio-temporal attributes.",
+      "Performance can degrade if data is abundant and consistent."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard KGE methods",
+        "verdict": "Use Enhanced KGE when dealing with temporal dynamics and sparse data."
+      }
+    ]
+  },
+  "connects_to": [
+    "Knowledge Graph Embedding (KGE)",
+    "Adversarial Training",
+    "Temporal Graph Networks",
+    "Link Prediction Algorithms"
+  ],
+  "maturity": "emerging"
+}

@@ -1,0 +1,86 @@
+{
+  "technique_name": "Tour Recommendation System",
+  "aliases": [
+    "Personalized Itinerary Generator"
+  ],
+  "category": "recommendation_system",
+  "one_liner": "This technique generates personalized travel itineraries based on user preferences and dynamic information from social media data.",
+  "how_it_works": "The Tour Recommendation System extracts implicit features from Points of Interest (POIs) using textual descriptions and clusters users based on their visiting sequences. It predicts dynamic staying times at different POIs using Non-negative Matrix Factorization (NMF) and generates personalized itineraries that maximize user preferences and time constraints. The system leverages social media data to enhance the accuracy of recommendations.",
+  "algorithm": {
+    "steps": [
+      "1. Collect photo records with GPS coordinates and timestamps.",
+      "2. Assign the nearest POI to each photo record based on GPS location.",
+      "3. Extract implicit features from POI textual descriptions using TF-IDF and Autoencoder.",
+      "4. Transform visiting sequences into implicit vectors and cluster users using K-Means based on cosine similarity.",
+      "5. Evaluate user preferences for each POI based on historical visit data.",
+      "6. Predict dynamic staying times for users at different POIs using NMF.",
+      "7. Generate the personalized itinerary with the highest preference score and longest remaining time."
+    ],
+    "core_equation": "output = generate_itinerary(user_preferences, staying_times)",
+    "input_format": "User's previous visiting sequence (list), request (string), and time limitation (integer).",
+    "output_format": "Personalized itinerary (list of POIs) with the highest preference score and longest remaining time."
+  },
+  "parameters": [
+    {
+      "name": "wpop",
+      "typical_value": "0.5",
+      "effect": "Adjusting this weight influences the importance of POI popularity in recommendations."
+    },
+    {
+      "name": "watt",
+      "typical_value": "0.5",
+      "effect": "Changing this weight affects how attraction factors into the itinerary."
+    },
+    {
+      "name": "k",
+      "typical_value": "5",
+      "effect": "Modifying the number of nearest neighbors alters the granularity of user preference calculations."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated.",
+    "space": "Not explicitly stated.",
+    "practical_note": "Performance may vary based on the size of the dataset and the number of users."
+  },
+  "use_when": [
+    "You need to create a personalized itinerary for tourists based on their preferences.",
+    "You want to utilize social media data to enhance recommendation accuracy.",
+    "You need to account for varying staying times at different POIs."
+  ],
+  "avoid_when": [
+    "The dataset lacks sufficient social media photo records.",
+    "You require a simple recommendation system without dynamic factors.",
+    "The user base is too small to form meaningful clusters."
+  ],
+  "implementation_skeleton": "def generate_itinerary(user_sequence: List[str], request: str, time_limit: int) -> List[str]:\n    # Step 1: Collect photo records\n    # Step 2: Assign nearest POIs\n    # Step 3: Extract features using TF-IDF\n    # Step 4: Cluster users using K-Means\n    # Step 5: Evaluate user preferences\n    # Step 6: Predict staying times using NMF\n    # Step 7: Generate personalized itinerary\n    return itinerary",
+  "common_mistakes": [
+    "Neglecting to preprocess textual data properly before feature extraction.",
+    "Overfitting the model to a small dataset, leading to poor generalization.",
+    "Failing to account for user preferences that change over time."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Utilizes rich social media data for enhanced recommendations.",
+      "Adapts to user preferences dynamically based on historical data.",
+      "Generates personalized itineraries that consider time constraints."
+    ],
+    "weaknesses": [
+      "Requires a substantial amount of data for effective clustering.",
+      "Performance may degrade with a small user base.",
+      "Complexity in implementation due to multiple steps involved."
+    ],
+    "compared_to": [
+      {
+        "technique": "Basic Recommendation System",
+        "verdict": "Use the Tour Recommendation System for dynamic and personalized itineraries, while basic systems are suitable for static recommendations."
+      }
+    ]
+  },
+  "connects_to": [
+    "Collaborative Filtering",
+    "Content-Based Filtering",
+    "Clustering Algorithms",
+    "Non-negative Matrix Factorization (NMF)"
+  ],
+  "maturity": "proven (widely used in production)"
+}

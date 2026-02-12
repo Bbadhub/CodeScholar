@@ -1,0 +1,97 @@
+{
+  "summary": "This paper presents a systematic literature review on the application of AI techniques in the design of microservices, highlighting how AI can automate and enhance service decomposition, decision-making, and architectural validation. Engineers should care because it provides insights into optimizing microservices design, addressing challenges like service boundaries and inter-service communication using AI.",
+  "key_contribution": "The review identifies key AI methods used in microservices design and highlights the challenges and benefits of integrating AI into the design process.",
+  "problem_type": "microservices design",
+  "problem_description": "The need for scalable and modular software systems has led to challenges in designing microservices architectures, particularly in service decomposition and maintaining data consistency.",
+  "domain": "Software Engineering",
+  "sub_domain": "Microservices Architecture",
+  "technique_name": "AI-driven tools for microservices design",
+  "technique_category": "framework",
+  "technique_type": "adaptation",
+  "method": {
+    "approach": "The method involves using AI techniques such as machine learning and natural language processing to automate the design of microservices. This includes analyzing requirements and user stories to identify service boundaries and optimize architectural decisions.",
+    "algorithm_steps": [
+      "1. Gather design artifacts such as textual requirements and UML diagrams.",
+      "2. Apply NLP techniques to analyze unstructured data and identify key entities.",
+      "3. Use clustering algorithms (e.g., k-means) to group related functionalities.",
+      "4. Define service boundaries based on the analysis.",
+      "5. Validate architectural decisions using AI-driven tools."
+    ],
+    "input": "Design artifacts including textual requirements, user stories, UML diagrams, and source code.",
+    "output": "Optimized microservices architecture with defined service boundaries and improved design decisions.",
+    "key_parameters": [
+      "clustering_algorithm: k-means",
+      "NLP_tool: SEMGROMI",
+      "service_boundary_definition: based on semantic similarity"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Studies published between 2018 and 2024 focusing on AI in microservices design."
+    ],
+    "metrics": [
+      "Percentage of studies using AI techniques: 100%",
+      "Percentage using ML techniques: 53.5%",
+      "Percentage using NLP: 32.6%"
+    ],
+    "baselines": [
+      "Traditional microservices design methodologies without AI."
+    ],
+    "improvement": "AI techniques reported to enhance service decomposition and decision-making, but specific numerical improvements not stated."
+  },
+  "concepts": [
+    "service decomposition",
+    "AI-driven decision-making",
+    "natural language processing",
+    "machine learning",
+    "microservices architecture",
+    "performance optimization"
+  ],
+  "use_this_when": [
+    "Designing new microservices from scratch in complex domains.",
+    "Automating service identification and decomposition tasks.",
+    "Improving architectural validation processes using AI."
+  ],
+  "dont_use_when": [
+    "Working with well-defined monolithic systems that do not require decomposition.",
+    "When the team lacks expertise in AI techniques.",
+    "In scenarios where regulatory compliance is critical and AI methods have not been validated."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Service definitions",
+      "User story clusters",
+      "Design artifacts"
+    ],
+    "dependencies": [
+      "NLP libraries (e.g., NLTK, SpaCy)",
+      "Machine learning frameworks (e.g., Scikit-learn, TensorFlow)"
+    ],
+    "pseudocode_hint": "services = cluster(user_stories); boundaries = define_boundaries(services); validate(architecture);",
+    "gotchas": [
+      "Ensure clarity in user stories to avoid ambiguous service boundaries.",
+      "Carefully calibrate clustering parameters to achieve meaningful segmentation.",
+      "Monitor for data consistency issues during service interactions."
+    ]
+  },
+  "connects_to": [
+    "Domain-Driven Design (DDD)",
+    "Microservices Performance Optimization",
+    "AI in Software Engineering"
+  ],
+  "prerequisites": [
+    "Understanding of microservices architecture",
+    "Familiarity with AI techniques",
+    "Knowledge of software design principles"
+  ],
+  "limitations": [
+    "Challenges in handling distributed transactions remain.",
+    "AI techniques depend heavily on the quality of input data.",
+    "Limited empirical studies assessing the practical impact of AI-driven methods."
+  ],
+  "open_questions": [
+    "What are the best practices for integrating AI into existing microservices architectures?",
+    "How can AI techniques be validated in real-world scenarios to ensure compliance and security?"
+  ]
+}

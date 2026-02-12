@@ -1,0 +1,85 @@
+{
+  "technique_name": "Hadoop-based distributed data processing",
+  "aliases": [
+    "Hadoop data processing",
+    "Distributed data processing with Hadoop"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "This technique utilizes Hadoop's distributed computing framework to efficiently process large datasets across a cluster of machines.",
+  "how_it_works": "Hadoop-based distributed data processing involves setting up a cluster of machines that work together to handle large volumes of data. Data is ingested into the Hadoop Distributed File System (HDFS), where it can be processed in parallel using MapReduce jobs. This approach ensures scalability and fault tolerance, making it suitable for handling data from scientific experiments and other high-throughput environments.",
+  "algorithm": {
+    "steps": [
+      "1. Set up a Hadoop cluster with necessary configurations.",
+      "2. Ingest data from synchrotron radiation experiments into HDFS.",
+      "3. Use MapReduce jobs to process the data in parallel.",
+      "4. Store processed results back into HDFS or a suitable database.",
+      "5. Analyze the output data for scientific insights."
+    ],
+    "core_equation": "output = MapReduce(input)",
+    "input_format": "Data from synchrotron radiation experiments in formats compatible with Hadoop (e.g., CSV, JSON).",
+    "output_format": "Processed data results ready for analysis, stored in HDFS or a database."
+  },
+  "parameters": [
+    {
+      "name": "num_mappers",
+      "typical_value": "10",
+      "effect": "Increasing the number of mappers can improve parallel processing but may lead to resource contention."
+    },
+    {
+      "name": "num_reducers",
+      "typical_value": "5",
+      "effect": "Adjusting the number of reducers affects the final aggregation of results; too few may lead to bottlenecks."
+    },
+    {
+      "name": "memory_allocation",
+      "typical_value": "4GB per node",
+      "effect": "Higher memory allocation per node can improve processing speed but requires more resources."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for sorting and O(n) for processing with MapReduce",
+    "space": "O(n) for data storage in HDFS",
+    "practical_note": "Performance can vary based on cluster configuration and data characteristics."
+  },
+  "use_when": [
+    "Handling large datasets from scientific experiments",
+    "Needing scalable data processing solutions",
+    "Working in environments with high data throughput requirements"
+  ],
+  "avoid_when": [
+    "Data volume is small and manageable on a single machine",
+    "Real-time processing is required",
+    "Low-latency applications are prioritized"
+  ],
+  "implementation_skeleton": "def process_data_hadoop(data: List[str]) -> None:\n    cluster = setup_hadoop_cluster()\n    ingest_data_to_hdfs(data)\n    results = run_mapreduce_jobs()\n    store_results(results)\n    analyze_output(results)",
+  "common_mistakes": [
+    "Underestimating the need for cluster resource management.",
+    "Not optimizing MapReduce jobs for specific data characteristics.",
+    "Failing to monitor and adjust parameters based on performance metrics."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Scalable to handle large datasets.",
+      "Fault tolerance through data replication.",
+      "Parallel processing reduces overall processing time."
+    ],
+    "weaknesses": [
+      "Not suitable for small datasets.",
+      "Higher latency compared to in-memory processing.",
+      "Complex setup and maintenance of Hadoop clusters."
+    ],
+    "compared_to": [
+      {
+        "technique": "Single-machine processing",
+        "verdict": "Use Hadoop for large datasets; single-machine is better for small, manageable data."
+      }
+    ]
+  },
+  "connects_to": [
+    "MapReduce",
+    "Hadoop Distributed File System (HDFS)",
+    "Apache Spark",
+    "Data ingestion frameworks (e.g., Apache Flume)"
+  ],
+  "maturity": "proven (widely used in production)"
+}

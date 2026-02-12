@@ -1,0 +1,37 @@
+{
+  "problem_name": "Fairness in Machine Learning",
+  "description": "Fairness in machine learning refers to the challenge of ensuring that models perform equitably across different demographic groups. This problem is crucial in applications where biased outcomes can lead to significant social and ethical implications.",
+  "you_have_this_if": [
+    "You notice discrepancies in model performance across different demographic groups.",
+    "Stakeholders express concerns about biased predictions.",
+    "You are working with sensitive data that cannot be shared.",
+    "Regulatory compliance requires fairness in AI outcomes.",
+    "You are collaborating with multiple institutions on a machine learning project."
+  ],
+  "approaches": [
+    {
+      "technique": "Federated Learning",
+      "best_for": "when you need to train models across multiple institutions without sharing data, while prioritizing fairness across demographic groups.",
+      "paper_count": 1,
+      "max_citations": 3,
+      "key_tradeoff": "While federated learning enhances privacy, it may introduce challenges in model convergence and communication overhead."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Federated Learning",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to maintain data privacy while ensuring fair model performance across diverse user groups."
+    }
+  ],
+  "start_here": "Start with Federated Learning as it allows for training on sensitive data while addressing fairness concerns across different demographic groups.",
+  "related_problems": [
+    "Bias in AI",
+    "Data Privacy in Machine Learning",
+    "Model Interpretability",
+    "Ethical AI Development"
+  ]
+}

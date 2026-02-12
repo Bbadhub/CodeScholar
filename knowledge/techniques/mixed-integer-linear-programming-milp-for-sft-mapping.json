@@ -1,0 +1,85 @@
+{
+  "technique_name": "Mixed-Integer Linear Programming (MILP) for SFT Mapping",
+  "aliases": [
+    "MILP for Microservice Mapping"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "MILP is used to optimize the placement of microservices in fog networks to minimize latency and maximize resource utilization.",
+  "how_it_works": "MILP formulates the problem of mapping microservices to physical fog nodes as a mathematical optimization problem. It considers various constraints such as latency, resource usage, and communication paths. By solving this model, it identifies the optimal placement of microservices that meets the defined criteria, ensuring efficient operation in resource-constrained environments.",
+  "algorithm": {
+    "steps": [
+      "1. Define the Service Function Tree (SFT) structure and associated microservices.",
+      "2. Identify physical fog nodes and their resource constraints.",
+      "3. Preprocess to compute feasible communication paths between fog nodes.",
+      "4. Formulate the MILP model incorporating latency, resource usage, and sensor proximity constraints.",
+      "5. Solve the MILP model to find optimal microservice placements.",
+      "6. Validate the solution through simulations in a concrete pouring scenario."
+    ],
+    "core_equation": "Objective: minimize latency subject to resource constraints and communication feasibility.",
+    "input_format": "Service Function Tree structure, fog network topology, resource constraints, sensor data rates.",
+    "output_format": "Optimized mapping of microservices to fog nodes with minimized latency and maximized resource utilization."
+  },
+  "parameters": [
+    {
+      "name": "latency_bound",
+      "typical_value": "100 ms",
+      "effect": "Lowering this value may lead to stricter placement constraints."
+    },
+    {
+      "name": "sensor_proximity",
+      "typical_value": "within 50 meters",
+      "effect": "Adjusting this can affect the feasibility of certain mappings."
+    },
+    {
+      "name": "fog_node_capacity",
+      "typical_value": "4 GB RAM, 2 CPU cores",
+      "effect": "Increasing capacity allows for more microservices to be placed."
+    }
+  ],
+  "complexity": {
+    "time": "NP-hard in general cases.",
+    "space": "Depends on the number of variables and constraints in the MILP formulation.",
+    "practical_note": "Real-world performance can vary based on the specific problem instance and solver used."
+  },
+  "use_when": [
+    "You need to optimize microservice deployment in resource-constrained environments.",
+    "Real-time data processing is critical for operational efficiency.",
+    "You are working on IIoT applications in dynamic environments like construction."
+  ],
+  "avoid_when": [
+    "The application does not require low-latency processing.",
+    "Resources are not constrained or are abundant.",
+    "The system does not involve complex microservice dependencies."
+  ],
+  "implementation_skeleton": "def optimize_microservice_mapping(sft: SFT, fog_nodes: List[FogNode], constraints: Constraints) -> Mapping:\n    # Step 1: Define the SFT and fog nodes\n    # Step 2: Preprocess communication paths\n    # Step 3: Formulate MILP model\n    # Step 4: Solve the MILP\n    # Step 5: Return optimized mapping\n    return optimized_mapping",
+  "common_mistakes": [
+    "Neglecting to accurately model resource constraints.",
+    "Overlooking communication path feasibility.",
+    "Setting unrealistic latency bounds that lead to infeasible solutions."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides optimal solutions for complex mapping problems.",
+      "Handles multiple constraints effectively.",
+      "Improves resource utilization significantly."
+    ],
+    "weaknesses": [
+      "Can be computationally intensive for large instances.",
+      "Requires accurate modeling of the problem.",
+      "May not scale well with increasing complexity."
+    ],
+    "compared_to": [
+      {
+        "technique": "Heuristic methods",
+        "verdict": "Use MILP for optimal solutions, heuristics for faster, approximate solutions."
+      }
+    ]
+  },
+  "connects_to": [
+    "Linear Programming",
+    "Integer Programming",
+    "Resource Allocation Algorithms",
+    "Network Optimization Techniques"
+  ],
+  "maturity": "proven (widely used in production)"
+}

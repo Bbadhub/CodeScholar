@@ -1,0 +1,78 @@
+{
+  "technique_name": "GExp",
+  "aliases": [],
+  "category": "robotics, autonomous exploration",
+  "one_liner": "GExp enables robots to autonomously explore their environment, generate tasks, and learn from experiences using vision-language and large language models.",
+  "how_it_works": "GExp utilizes an RGB-D camera to observe and understand the environment. It generates scene descriptions to identify objects and employs a large language model (LLM) to create manipulation tasks based on these observations. The robot executes these tasks using a library of skills and verifies their success through both vision-based and code-based methods. Successful tasks are reflected upon to refine the skills library and add new capabilities.",
+  "algorithm": {
+    "steps": [
+      "1. Observe the environment using an RGB-D camera.",
+      "2. Generate a scene description and identify objects.",
+      "3. Use LLM to create manipulation tasks based on the scene.",
+      "4. Execute the tasks using a library of acquired skills.",
+      "5. Verify the success of each task using vision-based and code-based methods.",
+      "6. Reflect on successful tasks to refine and add new skills to the library."
+    ],
+    "core_equation": "output = refined skills library with newly acquired skills",
+    "input_format": "RGB-D camera data, initial skills library, scene language description, observed objects.",
+    "output_format": "Refined skills library with newly acquired skills."
+  },
+  "parameters": [
+    {
+      "name": "initial_skills",
+      "typical_value": "[movep, close_gripper, open_gripper, get_obj_position, go_home]",
+      "effect": "Changing the initial skills affects the robot's ability to perform tasks."
+    },
+    {
+      "name": "BOUNDS",
+      "typical_value": "[[xmin, xmax], [ymin, ymax], [zmin, zmax]]",
+      "effect": "Adjusting bounds influences the robot's operational area."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on the complexity of the environment and the tasks generated."
+  },
+  "use_when": [
+    "You need a robot to autonomously explore and learn in an unknown environment.",
+    "You want to enable a robot to generate tasks based on its observations.",
+    "You require a system that can adapt to various scenarios without prior human input."
+  ],
+  "avoid_when": [
+    "The robot requires precise human-defined tasks.",
+    "The environment is highly structured and predictable.",
+    "Real-time human intervention is necessary for task execution."
+  ],
+  "implementation_skeleton": "def gexp_algorithm(rgbd_data: Any, initial_skills: List[str]) -> List[str]:\n    scene_description = observe_environment(rgbd_data)\n    objects = identify_objects(scene_description)\n    tasks = generate_tasks(objects)\n    skills_library = initial_skills\n    for task in tasks:\n        success = execute_task(task, skills_library)\n        if success:\n            skills_library = refine_skills(skills_library, task)\n    return skills_library",
+  "common_mistakes": [
+    "Neglecting to verify task success can lead to skill library inaccuracies.",
+    "Failing to update the skills library may result in outdated capabilities.",
+    "Overlooking the importance of scene understanding can hinder task generation."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Enables autonomous learning and adaptation.",
+      "Reduces the need for human intervention.",
+      "Utilizes advanced models for scene understanding and task generation."
+    ],
+    "weaknesses": [
+      "May struggle in highly structured environments.",
+      "Performance can be inconsistent without proper task verification.",
+      "Requires significant computational resources for model inference."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional robotic programming",
+        "verdict": "GExp is preferable for environments requiring adaptability, while traditional methods are better for predictable tasks."
+      }
+    ]
+  },
+  "connects_to": [
+    "Reinforcement Learning",
+    "Vision-Language Models",
+    "Task Planning Algorithms",
+    "Autonomous Navigation Systems"
+  ],
+  "maturity": "emerging"
+}

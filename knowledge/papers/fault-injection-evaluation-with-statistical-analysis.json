@@ -1,0 +1,95 @@
+{
+  "summary": "The paper introduces FIESTA, an automated framework for evaluating the resistance of cryptographic hardware against fault injection attacks using a statistical approach. Engineers should care because FIESTA allows for the assessment of larger designs under realistic fault models, which is crucial for ensuring the security of hardware implementations in various applications.",
+  "key_contribution": "FIESTA is an open-source fault evaluation framework that employs a statistical approach to assess circuits within the general random fault model.",
+  "problem_type": "fault injection evaluation",
+  "problem_description": "The need to verify the resistance of cryptographic hardware designs against fault injection attacks before fabrication.",
+  "domain": "Computer Security",
+  "sub_domain": "Cryptographic Hardware Security",
+  "technique_name": "FIESTA",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "FIESTA evaluates hardware circuits under the general random fault model by leveraging a non-exhaustive approach. It allows for the analysis of larger designs while maintaining a reasonable level of confidence in the results.",
+    "algorithm_steps": [
+      "1. Define the circuit under test and its parameters.",
+      "2. Specify the fault model and the probability distribution of faults.",
+      "3. Generate a randomized subset of gates to be faulted based on the defined model.",
+      "4. Simulate the circuit with the injected faults.",
+      "5. Analyze the output to determine if the faults were effective.",
+      "6. Report the success probability bounds based on the analysis."
+    ],
+    "input": "A circuit design represented in a suitable format (e.g., GDSII file) and a defined probability distribution for faults.",
+    "output": "Success probability bounds indicating the effectiveness of fault injection attacks on the circuit.",
+    "key_parameters": [
+      "error_probability: \u03b1 > 0",
+      "fault_probability_distribution: user-defined based on the specific use case"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Various protected Advanced Encryption Standard (AES) cores"
+    ],
+    "metrics": [
+      "success probability bounds: (\u00b5\u2113, \u00b5u) = (14, 12)"
+    ],
+    "baselines": [
+      "VERICA+, IronMask+"
+    ],
+    "improvement": "FIESTA evaluates larger designs in less time compared to VERICA+ and IronMask+."
+  },
+  "concepts": [
+    "fault injection",
+    "cryptographic hardware",
+    "random fault model",
+    "statistical analysis",
+    "circuit evaluation",
+    "adversary models"
+  ],
+  "use_this_when": [
+    "Evaluating the security of large cryptographic hardware designs against fault injection attacks.",
+    "Needing a framework that supports various adversary models for customized resistance analysis.",
+    "Conducting pre-fabrication security assessments of hardware implementations."
+  ],
+  "dont_use_when": [
+    "Working with very small circuits where exhaustive verification is feasible.",
+    "When precise fault injection techniques are required that FIESTA does not support.",
+    "If the application does not involve cryptographic hardware."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Directed Acyclic Graph (DAG) for circuit representation",
+      "Sets for fault combinations"
+    ],
+    "dependencies": [
+      "Python, GitHub repository for FIESTA"
+    ],
+    "pseudocode_hint": "def evaluate_circuit(circuit, fault_model): inject_faults(circuit, fault_model); return analyze_output(circuit)",
+    "gotchas": [
+      "Ensure the probability distribution for faults is accurately defined.",
+      "Be aware of the error probability \u03b1 when interpreting results.",
+      "Consider the physical layout of the circuit when analyzing fault effects."
+    ]
+  },
+  "connects_to": [
+    "VERICA+",
+    "IronMask+",
+    "Statistical Fault Analysis (SFA)",
+    "Differential Fault Analysis (DFA)",
+    "Fault Sensitivity Analysis (FSA)"
+  ],
+  "prerequisites": [
+    "Understanding of fault injection techniques and their implications.",
+    "Familiarity with cryptographic hardware design.",
+    "Knowledge of statistical analysis methods."
+  ],
+  "limitations": [
+    "FIESTA introduces an error probability \u03b1, which may affect the confidence in results.",
+    "Requires user-defined probability distributions, which can be complex.",
+    "Not exhaustive in terms of inputs or fault combinations, which may lead to imprecise results."
+  ],
+  "open_questions": [
+    "How can FIESTA be adapted to incorporate more precise fault models?",
+    "What additional adversary models could enhance the framework's applicability?"
+  ]
+}

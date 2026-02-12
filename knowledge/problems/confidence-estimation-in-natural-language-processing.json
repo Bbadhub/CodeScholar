@@ -1,0 +1,37 @@
+{
+  "problem_name": "Confidence Estimation in Natural Language Processing",
+  "description": "Confidence estimation in NLP involves assessing how certain a model is about its predictions. This is particularly important in applications where incorrect outputs can have significant consequences, such as in healthcare or legal domains.",
+  "you_have_this_if": [
+    "Your model's predictions are critical for decision-making.",
+    "You need to evaluate the reliability of language models.",
+    "You are working on applications that require user trust in AI outputs.",
+    "You are developing systems that interact with sensitive data.",
+    "You have observed inconsistent performance in your NLP models."
+  ],
+  "approaches": [
+    {
+      "technique": "Token Probability Analysis",
+      "best_for": "When building medical chatbots that require reliable confidence estimation.",
+      "paper_count": 1,
+      "max_citations": 8,
+      "key_tradeoff": "Provides a statistical basis for confidence but may not capture contextual nuances."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Token Probability Analysis",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a reliable measure of confidence for critical applications like healthcare."
+    }
+  ],
+  "start_here": "Start with Token Probability Analysis as it provides a solid statistical foundation for estimating confidence in NLP tasks, especially in sensitive domains.",
+  "related_problems": [
+    "Uncertainty Quantification in Machine Learning",
+    "Model Interpretability in NLP",
+    "Error Analysis in Natural Language Processing",
+    "Performance Evaluation of Language Models"
+  ]
+}

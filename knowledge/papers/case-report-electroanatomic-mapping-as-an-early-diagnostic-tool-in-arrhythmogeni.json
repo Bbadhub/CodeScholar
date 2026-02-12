@@ -1,0 +1,87 @@
+{
+  "summary": "The paper presents a case study demonstrating the utility of electroanatomic mapping (EAM) as an early diagnostic tool for arrhythmogenic cardiomyopathy (ACM). It highlights that EAM can reveal abnormal electrical substrates before structural changes are detected by imaging, which is crucial for timely diagnosis and management.",
+  "key_contribution": "Electroanatomic mapping can identify early electrical abnormalities in arrhythmogenic cardiomyopathy, potentially improving diagnostic accuracy.",
+  "problem_type": "diagnostic tool for arrhythmogenic cardiomyopathy",
+  "problem_description": "The need for early and accurate diagnosis of arrhythmogenic cardiomyopathy, which can lead to serious cardiac events if not identified.",
+  "domain": "Bioinformatics & Health",
+  "sub_domain": "Cardiovascular diagnostics",
+  "technique_name": "Electroanatomic Mapping (EAM)",
+  "technique_category": "detection_system",
+  "technique_type": "novel",
+  "method": {
+    "approach": "Electroanatomic mapping is performed using a multielectrode catheter to assess the electrical activity of the heart. It identifies areas of low-voltage and fractionated electrograms that correlate with myocardial abnormalities associated with ACM.",
+    "algorithm_steps": [
+      "1. Insert a multielectrode catheter into the heart.",
+      "2. Perform endocardial high-density substrate bipolar voltage mapping.",
+      "3. Identify areas with low-voltage and fractionated electrograms.",
+      "4. Target specific PVC morphologies for ablation.",
+      "5. Confirm findings with genetic testing if necessary."
+    ],
+    "input": "Electrophysiological data from the heart, including voltage measurements from the mapping catheter.",
+    "output": "Identification of abnormal electrical substrates and potential diagnosis of arrhythmogenic cardiomyopathy.",
+    "key_parameters": [
+      "bipolar voltage threshold: <0.5 mV for low voltage",
+      "unipolar voltage threshold: <0.5 mV for low voltage"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Electrophysiological data from patients with suspected ACM."
+    ],
+    "metrics": [
+      "Identification of abnormal substrates, diagnostic accuracy."
+    ],
+    "baselines": [
+      "Traditional imaging techniques such as echocardiography and cardiac MRI."
+    ],
+    "improvement": "EAM may increase sensitivity for detecting ACM compared to imaging alone."
+  },
+  "concepts": [
+    "electroanatomic mapping",
+    "arrhythmogenic cardiomyopathy",
+    "premature ventricular contractions",
+    "bipolar voltage mapping"
+  ],
+  "use_this_when": [
+    "Diagnosing patients with frequent PVCs and inconclusive imaging results.",
+    "Assessing patients with suspected arrhythmogenic cardiomyopathy.",
+    "Evaluating patients who have undergone previous catheter ablation without clear diagnosis."
+  ],
+  "dont_use_when": [
+    "When clear structural abnormalities are evident on imaging.",
+    "In patients without significant arrhythmias or symptoms."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Multielectrode catheter data",
+      "Electrophysiological mapping data"
+    ],
+    "dependencies": [
+      "Electrophysiology equipment",
+      "Cardiac imaging systems"
+    ],
+    "pseudocode_hint": "map = EAM(catheter_data); abnormalities = identify_abnormalities(map);",
+    "gotchas": [
+      "Ensure good contact of the mapping catheter to avoid false low-voltage readings.",
+      "Be cautious of differentiating ACM from other conditions like myocarditis."
+    ]
+  },
+  "connects_to": [
+    "cardiac imaging techniques",
+    "genetic testing for cardiomyopathies",
+    "electrophysiological studies"
+  ],
+  "prerequisites": [
+    "Understanding of cardiac anatomy",
+    "Familiarity with electrophysiological mapping techniques"
+  ],
+  "limitations": [
+    "EAM may not detect abnormalities in all patients with ACM.",
+    "Requires specialized equipment and training."
+  ],
+  "open_questions": [
+    "What are the long-term outcomes of patients diagnosed with ACM using EAM?",
+    "How can EAM be integrated into standard diagnostic criteria for ACM?"
+  ]
+}

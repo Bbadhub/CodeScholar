@@ -1,0 +1,36 @@
+{
+  "problem_name": "Policy Analysis and Negotiation Dynamics",
+  "description": "This problem involves understanding the various preferences and strategies of different stakeholders in policy-making, particularly in the context of international negotiations. It requires analyzing how these preferences influence outcomes, especially in areas like environmental treaties and regulations.",
+  "you_have_this_if": [
+    "You are working on international environmental negotiations.",
+    "You need to analyze conflicting policy preferences among stakeholders.",
+    "You are tasked with developing strategies for policy advocacy.",
+    "You are examining the influence of economic interests on policy decisions."
+  ],
+  "approaches": [
+    {
+      "technique": "Systematic Qualitative Content Analysis",
+      "best_for": "When you need to understand the diverse policy preferences of countries regarding environmental treaties.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This approach provides deep insights but may require significant time and effort to analyze qualitative data."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Systematic Qualitative Content Analysis",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a comprehensive understanding of stakeholder preferences and negotiation dynamics."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is Systematic Qualitative Content Analysis, as it allows for a thorough exploration of the complex dynamics at play in policy negotiations.",
+  "related_problems": [
+    "Stakeholder Analysis",
+    "Conflict Resolution in Policy Making",
+    "Environmental Policy Evaluation",
+    "Negotiation Strategy Development"
+  ]
+}

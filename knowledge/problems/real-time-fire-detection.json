@@ -1,0 +1,37 @@
+{
+  "problem_name": "Real-Time Fire Detection",
+  "description": "Real-time fire detection involves identifying and alerting the presence of fire in various environments using visual data. This is crucial for safety in remote areas and requires efficient processing to ensure timely responses.",
+  "you_have_this_if": [
+    "You need to monitor large areas for fire hazards.",
+    "You are working in environments with limited connectivity.",
+    "You require immediate alerts for fire detection.",
+    "You are deploying on resource-constrained devices.",
+    "You need to analyze video feeds in real-time."
+  ],
+  "approaches": [
+    {
+      "technique": "YOLOv8n (Nano), YOLOv8m (Medium), Detection Transformer (DETR)",
+      "best_for": "When you need a lightweight model for deployment on edge devices and require real-time processing of visual data.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While these models are efficient, they may sacrifice some accuracy for speed and resource constraints."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "YOLOv8n (Nano), YOLOv8m (Medium), Detection Transformer (DETR)",
+      "speed": "fast",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to deploy a fire detection system in remote areas with limited resources."
+    }
+  ],
+  "start_here": "Start with YOLOv8n for its lightweight nature and speed, making it suitable for edge devices in real-time applications.",
+  "related_problems": [
+    "Smoke Detection",
+    "Intrusion Detection Systems",
+    "Anomaly Detection in Video Streams",
+    "Environmental Monitoring"
+  ]
+}

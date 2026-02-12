@@ -1,0 +1,81 @@
+{
+  "technique_name": "JavaScript Rendering Optimization for Crawlers",
+  "aliases": [
+    "Selective JavaScript Rendering",
+    "Crawling Optimization for JavaScript"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "This technique optimizes the rendering of JavaScript-heavy web pages for efficient vulnerability scanning by selectively rendering necessary components.",
+  "how_it_works": "The technique analyzes the JavaScript execution paths of a web page to identify which elements are essential for vulnerability scanning. By creating a rendering plan that includes only these critical elements, it minimizes resource consumption. This selective rendering leads to faster scans and reduced server costs, making it particularly useful for dynamic websites.",
+  "algorithm": {
+    "steps": [
+      "1. Identify the target web page and its JavaScript dependencies.",
+      "2. Analyze the JavaScript execution to determine which elements are critical for vulnerability scanning.",
+      "3. Create a rendering plan that includes only the necessary elements.",
+      "4. Execute the rendering plan to fetch the required DOM elements.",
+      "5. Perform vulnerability scans on the rendered elements.",
+      "6. Log results and optimize future rendering decisions based on past scans."
+    ],
+    "core_equation": "output = rendered DOM elements necessary for vulnerability scanning",
+    "input_format": "URL of the target web page and its JavaScript files.",
+    "output_format": "Rendered DOM elements necessary for vulnerability scanning."
+  },
+  "parameters": [
+    {
+      "name": "timeout",
+      "typical_value": "5000ms",
+      "effect": "Increases the time allowed for rendering; too high may lead to unnecessary delays."
+    },
+    {
+      "name": "max_retries",
+      "typical_value": "3",
+      "effect": "Determines how many times to retry fetching elements if initial attempts fail."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance improvements include a 30% reduction in server costs and a 40% decrease in scan time compared to standard web crawlers."
+  },
+  "use_when": [
+    "You need to scan JavaScript-heavy websites for vulnerabilities.",
+    "You want to reduce server costs associated with web crawling.",
+    "You are dealing with dynamic content that changes frequently."
+  ],
+  "avoid_when": [
+    "The target website has minimal JavaScript content.",
+    "You require a full rendering of the page for other purposes.",
+    "You are working with static HTML pages."
+  ],
+  "implementation_skeleton": "def optimize_rendering(url: str, js_files: List[str], timeout: int = 5000, max_retries: int = 3) -> List[Element]:\n    # Step 1: Identify dependencies\n    dependencies = identify_dependencies(url, js_files)\n    # Step 2: Analyze execution paths\n    critical_elements = analyze_execution(dependencies)\n    # Step 3: Create rendering plan\n    rendering_plan = create_rendering_plan(critical_elements)\n    # Step 4: Execute rendering\n    rendered_elements = execute_rendering(rendering_plan, timeout, max_retries)\n    # Step 5: Perform scans\n    perform_vulnerability_scan(rendered_elements)\n    return rendered_elements",
+  "common_mistakes": [
+    "Failing to accurately identify critical elements, leading to incomplete scans.",
+    "Setting timeout values too low, causing unnecessary failures.",
+    "Neglecting to log results for future optimization."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Reduces server costs significantly.",
+      "Decreases scan time for JavaScript-heavy pages.",
+      "Improves efficiency in vulnerability scanning."
+    ],
+    "weaknesses": [
+      "Not effective for websites with minimal JavaScript.",
+      "May not provide full page rendering needed for other analyses.",
+      "Requires careful analysis to identify critical elements."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard web crawlers",
+        "verdict": "Use this technique for JavaScript-heavy sites; standard crawlers are better for static content."
+      }
+    ]
+  },
+  "connects_to": [
+    "Web Crawler Optimization",
+    "Dynamic Content Analysis",
+    "Vulnerability Scanning Techniques",
+    "JavaScript Dependency Management"
+  ],
+  "maturity": "proven (widely used in production)"
+}

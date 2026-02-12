@@ -1,0 +1,37 @@
+{
+  "problem_name": "Medical Diagnosis and Risk Assessment",
+  "description": "Medical diagnosis and risk assessment involves evaluating a patient's health to identify potential diseases or conditions and assessing the risk of future health issues. This is crucial for timely intervention and effective treatment planning.",
+  "you_have_this_if": [
+    "You are dealing with patients who have non-ischemic cardiomyopathy (NICM).",
+    "You need to assess arrhythmia risk without invasive procedures.",
+    "You are looking to predict arrhythmogenic substrates.",
+    "You are developing tools for cardiac health monitoring.",
+    "You require statistical methods for accurate diagnosis."
+  ],
+  "approaches": [
+    {
+      "technique": "Signal Averaged Electrocardiography (SAECG)",
+      "best_for": "when you need a non-invasive method to assess arrhythmia risk in NICM patients.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "SAECG provides non-invasive assessment but may have limitations in specificity."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Signal Averaged Electrocardiography (SAECG)",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to evaluate arrhythmia risk in patients without invasive procedures."
+    }
+  ],
+  "start_here": "Start with Signal Averaged Electrocardiography (SAECG) as it provides a reliable non-invasive assessment for arrhythmia risk in NICM patients.",
+  "related_problems": [
+    "Cardiac arrhythmia detection",
+    "Heart disease risk assessment",
+    "Non-invasive cardiac monitoring",
+    "Predictive modeling for cardiovascular events"
+  ]
+}

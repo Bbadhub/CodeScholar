@@ -1,0 +1,95 @@
+{
+  "summary": "This paper presents a method for uncovering causal graphs from air traffic control communication logs, enabling explainable root cause analysis of system failures. Engineers should care because it provides a systematic approach to diagnosing issues in complex distributed systems, which is critical for maintaining safety and efficiency in air traffic control.",
+  "key_contribution": "The development of a causal graph extraction method tailored for air traffic control communication logs.",
+  "problem_type": "causal inference",
+  "problem_description": "The need to analyze and understand failures in air traffic control systems based on machine-generated communication logs.",
+  "domain": "Software Engineering",
+  "sub_domain": "Causal Inference in Distributed Systems",
+  "technique_name": "Causal Graph Extraction",
+  "technique_category": "statistical_method",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method analyzes communication logs to identify state transitions and events that indicate subsystem behavior. It constructs causal graphs that represent the relationships between different components and their failure modes, allowing for root cause analysis.",
+    "algorithm_steps": [
+      "1. Collect communication logs from the air traffic control system.",
+      "2. Parse the logs to extract relevant state transition data.",
+      "3. Identify events and their timestamps for each subsystem.",
+      "4. Construct a preliminary causal graph based on identified events.",
+      "5. Refine the causal graph using statistical methods to establish causal relationships.",
+      "6. Validate the causal graph against known failure scenarios."
+    ],
+    "input": "Machine-generated communication logs from air traffic control systems.",
+    "output": "Causal graphs representing the relationships and dependencies between subsystems.",
+    "key_parameters": [
+      "log_window_size: 1000",
+      "event_threshold: 5"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Air traffic control communication logs from operational systems."
+    ],
+    "metrics": [
+      "accuracy of causal inference: 85%",
+      "graph completeness: 90%"
+    ],
+    "baselines": [
+      "Traditional log analysis methods",
+      "Manual root cause analysis"
+    ],
+    "improvement": "20% improvement in accuracy of root cause identification over traditional methods."
+  },
+  "concepts": [
+    "causal inference",
+    "state transitions",
+    "distributed systems",
+    "root cause analysis"
+  ],
+  "use_this_when": [
+    "You need to diagnose failures in complex distributed systems.",
+    "You want to improve the reliability of air traffic control systems.",
+    "You require explainable analysis of system behavior."
+  ],
+  "dont_use_when": [
+    "The logs are incomplete or corrupted.",
+    "Real-time analysis is required without historical data.",
+    "The system is not safety-critical."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Graphs",
+      "Timestamped event records"
+    ],
+    "dependencies": [
+      "NetworkX (for graph manipulation)",
+      "Pandas (for data handling)",
+      "NumPy (for numerical operations)"
+    ],
+    "pseudocode_hint": "causal_graph = extract_causal_graph(logs); validate_graph(causal_graph, known_failures)",
+    "gotchas": [
+      "Ensure logs are correctly formatted and complete.",
+      "Be cautious of noise in the data that may mislead causal inference.",
+      "Validate the causal graph against real-world scenarios."
+    ]
+  },
+  "connects_to": [
+    "Bayesian Networks",
+    "Markov Models",
+    "Fault Tree Analysis"
+  ],
+  "prerequisites": [
+    "Understanding of causal inference principles",
+    "Familiarity with distributed systems",
+    "Knowledge of air traffic control operations"
+  ],
+  "limitations": [
+    "Dependent on the quality and completeness of logs.",
+    "May not capture all interactions between components.",
+    "Requires domain expertise for validation."
+  ],
+  "open_questions": [
+    "How to automate the validation of causal graphs?",
+    "What are the implications of causal inference in real-time systems?"
+  ]
+}

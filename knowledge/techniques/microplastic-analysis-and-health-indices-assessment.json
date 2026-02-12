@@ -1,0 +1,94 @@
+{
+  "technique_name": "Microplastic Analysis and Health Indices Assessment",
+  "aliases": [],
+  "category": "environmental_analysis",
+  "one_liner": "This technique assesses the presence of microplastics in fish and evaluates their health using specific indices.",
+  "how_it_works": "The technique involves collecting fish samples and dissecting specific organs to isolate microplastics using potassium hydroxide. After filtering and identifying the microplastics, health indices are calculated based on the fish's biometric data and microplastic content. Statistical analyses are then performed to understand the relationships between microplastic presence and fish health.",
+  "algorithm": {
+    "steps": [
+      "1. Collect fish samples and measure total body length and mass.",
+      "2. Dissect organs (gills, liver, gastrointestinal tract) and weigh them.",
+      "3. Digest organs in 10% potassium hydroxide to isolate microplastics.",
+      "4. Filter the digested samples through a fine mesh filter.",
+      "5. Identify and categorize microplastics based on size, shape, and color.",
+      "6. Calculate health indices (K, HSI, GILSI, GITI) using the specified formulas.",
+      "7. Perform statistical analysis and principal component analysis (PCA) to assess relationships."
+    ],
+    "core_equation": "K = (total fish weight [g] \u00d7 100) / (total fish length [cm]\u00b3)",
+    "input_format": "Fish samples (gills, liver, gastrointestinal tract) and their biometric measurements.",
+    "output_format": "Quantified microplastic presence and calculated health indices for each fish species."
+  },
+  "parameters": [
+    {
+      "name": "potassium_hydroxide_concentration",
+      "typical_value": "10%",
+      "effect": "Higher concentrations may increase microplastic isolation efficiency."
+    },
+    {
+      "name": "K_factor_formula",
+      "typical_value": "K = (total fish weight [g] \u00d7 100) / (total fish length [cm]\u00b3)",
+      "effect": "Changes in fish weight or length will directly affect the K index."
+    },
+    {
+      "name": "HSI_formula",
+      "typical_value": "HSI = liver weight [g] / total fish weight [g]",
+      "effect": "Variations in liver weight impact the health assessment."
+    },
+    {
+      "name": "GILSI_formula",
+      "typical_value": "GILSI = gills weight [g] / total fish weight [g]",
+      "effect": "Changes in gill weight affect the gill health index."
+    },
+    {
+      "name": "GITI_formula",
+      "typical_value": "GITI = gastrointestinal tract weight [g] / total fish weight [g]",
+      "effect": "Variations in gastrointestinal tract weight influence the GITI."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) for sample processing and analysis",
+    "space": "O(n) for storing sample data and results",
+    "practical_note": "Real-world performance may vary based on sample size and processing efficiency."
+  },
+  "use_when": [
+    "Assessing the impact of pollution on aquatic ecosystems.",
+    "Developing monitoring protocols for microplastic contamination in marine life.",
+    "Evaluating fish health in relation to environmental stressors."
+  ],
+  "avoid_when": [
+    "When studying freshwater species not affected by microplastics.",
+    "In environments where microplastics are not a concern.",
+    "For species that do not have established health indices."
+  ],
+  "implementation_skeleton": "def analyze_microplastics(samples: List[FishSample]) -> Tuple[Dict[str, float], List[MicroplasticData]]:\n    results = {}\n    for sample in samples:\n        dissect(sample)\n        microplastics = isolate_microplastics(sample)\n        health_indices = calculate_health_indices(sample)\n        results[sample.species] = health_indices\n    return results",
+  "common_mistakes": [
+    "Not using the correct concentration of potassium hydroxide for digestion.",
+    "Failing to properly filter the digested samples, leading to contamination.",
+    "Inaccurate measurement of fish biometric data affecting health indices."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a comprehensive assessment of fish health in polluted environments.",
+      "Introduces new health indices for better evaluation.",
+      "Facilitates understanding of the impact of microplastics on aquatic life."
+    ],
+    "weaknesses": [
+      "Limited applicability to species without established health indices.",
+      "Requires careful handling and processing of biological samples.",
+      "Potential for variability in results based on sample collection methods."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Fish Health Assessment",
+        "verdict": "Use microplastic analysis for a more detailed understanding of health impacts."
+      }
+    ]
+  },
+  "connects_to": [
+    "Environmental Toxicology",
+    "Ecotoxicology",
+    "Marine Biology",
+    "Pollution Monitoring Techniques"
+  ],
+  "maturity": "emerging"
+}

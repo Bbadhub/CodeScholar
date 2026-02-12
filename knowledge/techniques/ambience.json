@@ -1,0 +1,86 @@
+{
+  "technique_name": "Ambience",
+  "aliases": [],
+  "category": "operating_system",
+  "one_liner": "Ambience is an operating system designed for deploying IoT microservices efficiently across various hardware platforms.",
+  "how_it_works": "Ambience provides abstractions for deploying microservices with strongly typed interfaces. It allows for flexible deployment by determining isolation boundaries at deployment time and using asynchronous computational models. The system optimizes performance through zero-copy inter-process communication (IPC) and remote procedure calls (RPC) for service communication.",
+  "algorithm": {
+    "steps": [
+      "1. Define microservices with strongly typed interfaces using an interface definition language (IDL).",
+      "2. Create deployment manifests that specify service dependencies, network topologies, and security isolation groups.",
+      "3. Compile custom kernel images for each target node based on the deployment manifest.",
+      "4. Assign microservices to groups for shared address space or isolation based on deployment requirements.",
+      "5. Utilize zero-copy IPC for communication within groups and RPC for communication between groups."
+    ],
+    "core_equation": "output = custom_kernel_images(deployment_manifest)",
+    "input_format": "Deployment manifests written in a Domain Specific Language (DSL) embedded in Python, defining services, dependencies, and network configurations.",
+    "output_format": "Custom kernel images for each node that instantiate the specified microservices and their configurations."
+  },
+  "parameters": [
+    {
+      "name": "service_instance",
+      "typical_value": "{name: 'detection', service: tf_lite_detection}",
+      "effect": "Defines the specific microservice to be deployed."
+    },
+    {
+      "name": "network",
+      "typical_value": "{udp-internet: 4898}",
+      "effect": "Specifies the network configuration for the microservices."
+    },
+    {
+      "name": "group",
+      "typical_value": "{name: 'camera_group', services: ['detection', 'camera']}",
+      "effect": "Determines how microservices are grouped for shared address space or isolation."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Ambience is designed for high efficiency in IoT applications, achieving significant performance improvements over traditional operating systems."
+  },
+  "use_when": [
+    "Building IoT applications that require efficient resource management across heterogeneous devices.",
+    "Developing microservices that need to be deployed on both low-resource microcontrollers and high-performance servers.",
+    "Needing a flexible isolation model for microservices that can adapt at deployment time."
+  ],
+  "avoid_when": [
+    "Developing applications that require POSIX compatibility.",
+    "When a general-purpose operating system is needed for non-IoT applications.",
+    "In scenarios where existing middleware solutions are sufficient."
+  ],
+  "implementation_skeleton": "def deploy_microservices(manifest: str) -> str:\n    # Step 1: Parse the deployment manifest\n    services = parse_manifest(manifest)\n    # Step 2: Compile kernel images for each node\n    kernel_images = compile_kernels(services)\n    # Step 3: Assign services to groups\n    assign_to_groups(services)\n    # Step 4: Return the custom kernel images\n    return kernel_images",
+  "common_mistakes": [
+    "Neglecting to define strong types for service interfaces, leading to runtime errors.",
+    "Failing to specify all dependencies in the deployment manifest, causing deployment failures.",
+    "Overlooking the need for security isolation in service groups."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High efficiency in resource utilization across diverse hardware.",
+      "Flexible deployment and isolation models for microservices.",
+      "Significantly improved throughput and lower latency compared to traditional OS."
+    ],
+    "weaknesses": [
+      "Limited applicability outside of IoT environments.",
+      "Not suitable for applications requiring POSIX compliance.",
+      "Complexity in defining deployment manifests and service interfaces."
+    ],
+    "compared_to": [
+      {
+        "technique": "Linux operating system",
+        "verdict": "Use Ambience for IoT-specific applications requiring high efficiency; use Linux for general-purpose applications."
+      },
+      {
+        "technique": "Azure IoT platform",
+        "verdict": "Ambience offers better performance for specific IoT tasks, while Azure provides broader cloud integration."
+      }
+    ]
+  },
+  "connects_to": [
+    "Microservices architecture",
+    "Domain Specific Languages (DSL)",
+    "Zero-copy IPC mechanisms",
+    "Remote Procedure Calls (RPC)"
+  ],
+  "maturity": "proven (widely used in production)"
+}

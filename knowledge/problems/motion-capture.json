@@ -1,0 +1,37 @@
+{
+  "problem_name": "Motion Capture",
+  "description": "Motion capture involves recording the movement of objects or people to create realistic animations. This technology is widely used in gaming, film, and virtual simulations to enhance visual storytelling and training experiences.",
+  "you_have_this_if": [
+    "You need to create realistic character animations.",
+    "You are working on a virtual simulation for training purposes.",
+    "You are developing animated films or short videos.",
+    "You require high fidelity in motion representation.",
+    "You have access to motion capture hardware or data."
+  ],
+  "approaches": [
+    {
+      "technique": "Graph Convolutional Networks (GCN)",
+      "best_for": "When building realistic character animations for games or simulations.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "GCNs can provide high accuracy in motion representation but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Graph Convolutional Networks (GCN)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to achieve high fidelity in character animations and have access to sufficient computational resources."
+    }
+  ],
+  "start_here": "Start with Graph Convolutional Networks (GCN) for motion capture tasks, as they provide a robust solution for creating realistic animations, especially when computational resources are available.",
+  "related_problems": [
+    "Facial Animation",
+    "Gesture Recognition",
+    "3D Reconstruction",
+    "Virtual Reality Interaction"
+  ]
+}

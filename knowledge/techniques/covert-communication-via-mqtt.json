@@ -1,0 +1,90 @@
+{
+  "technique_name": "Covert Communication via MQTT",
+  "aliases": [
+    "Stealthy Messaging"
+  ],
+  "category": "communication_protocol",
+  "one_liner": "This technique enables covert communication by obfuscating messages and transmitting them via the MQTT protocol.",
+  "how_it_works": "The technique splits a secret message into multiple parts and obfuscates these parts using modular exponentiation. Each part is then sent as an MQTT message. Subscribers can reconstruct the original message by applying the XOR operation on the received parts. This method allows for stealthy communication in environments where message patterns are monitored.",
+  "algorithm": {
+    "steps": [
+      "1. Generate k random parts of the same size as the message M.",
+      "2. Compute the k-th part as Pk = M XOR P1 XOR ... XOR Pk-1.",
+      "3. For each part Pi, compute the length L = (Pi^a mod n) mod l, where l is the maximum MQTT message size.",
+      "4. Publish each part using the MQTT protocol with the computed lengths.",
+      "5. Subscribers retrieve parts by brute-forcing possible values based on the lengths of incoming packets.",
+      "6. Reconstruct the original message M using M = P1 XOR P2 XOR ... XOR Pk."
+    ],
+    "core_equation": "M = P1 XOR P2 XOR ... XOR Pk",
+    "input_format": "The secret message M and parameters k, a, n, and the MQTT broker and topic information.",
+    "output_format": "The original message M reconstructed from the received parts."
+  },
+  "parameters": [
+    {
+      "name": "k",
+      "typical_value": "3",
+      "effect": "Increases the number of parts, enhancing security but requiring more overhead."
+    },
+    {
+      "name": "a",
+      "typical_value": "1861836248542572424",
+      "effect": "Affects the obfuscation strength of the message parts."
+    },
+    {
+      "name": "n",
+      "typical_value": "89802601036489635412700864252846407279584917476820871708772821852121126622533",
+      "effect": "Defines the modulus for the modular exponentiation."
+    },
+    {
+      "name": "l",
+      "typical_value": "268,435,456 bytes",
+      "effect": "Limits the maximum size of each MQTT message."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated.",
+    "space": "Not explicitly stated.",
+    "practical_note": "No significant time overhead; additional byte overhead remains within acceptable limits."
+  },
+  "use_when": [
+    "You need to transmit sensitive information in environments with high surveillance.",
+    "You want to avoid detection of communication patterns by censors.",
+    "You are working with IoT devices that require secure data exchange."
+  ],
+  "avoid_when": [
+    "The communication environment is not subject to monitoring or censorship.",
+    "You require high-speed data transmission without any overhead.",
+    "The application does not support MQTT protocol."
+  ],
+  "implementation_skeleton": "def covert_communication(message: str, k: int, a: int, n: int, broker: str, topic: str) -> str:\n    parts = generate_random_parts(message, k)\n    for i in range(k):\n        length = (parts[i] ** a % n) % max_mqtt_size\n        publish_mqtt(broker, topic, parts[i], length)\n    received_parts = subscribe_mqtt(broker, topic)\n    return reconstruct_message(received_parts)",
+  "common_mistakes": [
+    "Not properly handling the MQTT message size limits.",
+    "Failing to securely generate random parts, compromising the message's security.",
+    "Neglecting to account for potential packet loss in MQTT communication."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a covert channel for sensitive communication.",
+      "Utilizes existing MQTT infrastructure, making it easy to implement.",
+      "Low overhead in terms of execution time."
+    ],
+    "weaknesses": [
+      "Requires careful management of message parts to avoid detection.",
+      "Brute-forcing may be necessary for subscribers, which can be resource-intensive.",
+      "Dependent on the MQTT protocol, limiting its applicability."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard Encryption",
+        "verdict": "Use standard encryption for environments where covert communication is not necessary."
+      }
+    ]
+  },
+  "connects_to": [
+    "MQTT Protocol",
+    "Steganography",
+    "Secure Messaging",
+    "Data Obfuscation Techniques"
+  ],
+  "maturity": "emerging"
+}

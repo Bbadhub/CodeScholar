@@ -1,0 +1,37 @@
+{
+  "problem_name": "Adversarial Machine Learning",
+  "description": "Adversarial machine learning involves the study of models that can be fooled by malicious inputs designed to mislead them. This problem is critical in applications where security and integrity of machine learning models are paramount, such as in finance, healthcare, and autonomous systems.",
+  "you_have_this_if": [
+    "You notice unexpected behavior in your model's predictions.",
+    "Your model is deployed in a sensitive environment where data integrity is crucial.",
+    "You are working with federated learning systems that include untrusted clients.",
+    "You observe that your model's performance degrades significantly under certain conditions.",
+    "You are concerned about the potential for malicious attacks on your machine learning system."
+  ],
+  "approaches": [
+    {
+      "technique": "Dual-Aggregation Approach",
+      "best_for": "Building federated learning systems in IoT environments and ensuring model integrity in sensitive applications.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach balances the need for model robustness against the challenges of untrusted clients."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Dual-Aggregation Approach",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to secure a federated learning system against adversarial attacks while maintaining performance."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Dual-Aggregation Approach, as it effectively addresses the challenges of adversarial attacks in federated learning environments.",
+  "related_problems": [
+    "Data Poisoning",
+    "Model Inversion",
+    "Evasion Attacks",
+    "Privacy-Preserving Machine Learning"
+  ]
+}

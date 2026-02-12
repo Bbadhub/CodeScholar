@@ -1,0 +1,99 @@
+{
+  "summary": "The paper presents the Whale-Goshawk Optimization Algorithm (WGO), which enhances service composition in uncertain cloud manufacturing environments by integrating a novel similar integer coding method and combining the Whale Optimization Algorithm (WOA) with the Northern Goshawk Optimization Algorithm (NGO). Engineers should care because this approach improves the efficiency and effectiveness of service selection under uncertainty, a common challenge in cloud manufacturing.",
+  "key_contribution": "Introduction of the Whale-Goshawk Optimization Algorithm (WGO) that combines WOA and NGO with a novel similar integer coding method for improved service composition in uncertain environments.",
+  "problem_type": "service composition optimization",
+  "problem_description": "The work addresses the challenge of optimizing service composition in cloud manufacturing, where uncertainties in service states and environments complicate traditional QoS-based methods.",
+  "domain": "Cloud Manufacturing",
+  "sub_domain": "Service Composition",
+  "technique_name": "Whale-Goshawk Optimization Algorithm (WGO)",
+  "technique_category": "optimization_algorithm",
+  "technique_type": "novel",
+  "method": {
+    "approach": "WGO operates in two stages: a global search using a similar integer coding method to identify potential service combinations, followed by a local search that refines these combinations based on service similarity. The algorithm utilizes cosine similarity to group services with similar QoS attributes, enhancing the search for optimal solutions.",
+    "algorithm_steps": [
+      "1. Decompose the user request into subtasks.",
+      "2. Construct a candidate service set (CSS) for each subtask.",
+      "3. Apply similar integer coding to the CSS based on QoS similarity.",
+      "4. Perform a global search using WOA to identify promising service combinations.",
+      "5. Execute a local search using NGO to refine the identified combinations.",
+      "6. Evaluate the service combinations based on user-defined QoS preferences.",
+      "7. Return the optimal service composition."
+    ],
+    "input": "User request for service composition, including QoS preferences and task requirements.",
+    "output": "Optimal service composition that maximizes QoS attributes according to user preferences.",
+    "key_parameters": [
+      "cosine_similarity_threshold: 0.6",
+      "\u03b3: 0.3",
+      "max_iterations: T (not specified)"
+    ],
+    "complexity": "Not stated."
+  },
+  "benchmarks": {
+    "datasets": [
+      "Not specified in the provided text."
+    ],
+    "metrics": [
+      "QoS attributes, execution time, cost, reliability."
+    ],
+    "baselines": [
+      "Traditional QoS-based service composition methods."
+    ],
+    "improvement": "Experimental results demonstrate effectiveness, but specific improvement percentages are not stated."
+  },
+  "concepts": [
+    "similar integer coding",
+    "cosine similarity",
+    "global search",
+    "local search",
+    "cloud manufacturing",
+    "service composition"
+  ],
+  "use_this_when": [
+    "You need to optimize service composition in a cloud manufacturing environment with uncertain service states.",
+    "You have a large repository of services with varying QoS attributes and need to group similar services.",
+    "You require a flexible optimization algorithm that can adapt to dynamic service conditions."
+  ],
+  "dont_use_when": [
+    "The service repository is small and stable, where simpler methods may suffice.",
+    "Real-time processing is critical and cannot accommodate the algorithm's computational overhead.",
+    "You need guaranteed optimal solutions rather than near-optimal solutions."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Service repository",
+      "Candidate service set (CSS)",
+      "Similar service set (SS)"
+    ],
+    "dependencies": [
+      "NumPy for numerical operations",
+      "SciPy for cosine similarity calculations"
+    ],
+    "pseudocode_hint": "services = similar_integer_coding(candidate_services); optimal_services = WGO(services);",
+    "gotchas": [
+      "Ensure the cosine similarity threshold is appropriate for your service set.",
+      "Monitor the balance between global and local search to avoid local optima.",
+      "Be cautious of the computational cost when dealing with large service repositories."
+    ]
+  },
+  "connects_to": [
+    "Whale Optimization Algorithm (WOA)",
+    "Northern Goshawk Optimization Algorithm (NGO)",
+    "Genetic Algorithms",
+    "Ant Colony Optimization",
+    "Particle Swarm Optimization"
+  ],
+  "prerequisites": [
+    "Understanding of QoS metrics",
+    "Familiarity with optimization algorithms",
+    "Knowledge of cloud manufacturing concepts"
+  ],
+  "limitations": [
+    "Performance may degrade with very large service repositories",
+    "Sensitivity to the choice of similarity threshold",
+    "Assumes service QoS attributes are accurately measurable"
+  ],
+  "open_questions": [
+    "How can the algorithm be adapted for real-time service composition?",
+    "What are the implications of varying QoS metrics on the optimization process?"
+  ]
+}

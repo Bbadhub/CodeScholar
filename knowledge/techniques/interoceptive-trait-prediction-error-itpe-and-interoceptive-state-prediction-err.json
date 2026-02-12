@@ -1,0 +1,98 @@
+{
+  "technique_name": "Interoceptive Trait Prediction Error (ITPE) and Interoceptive State Prediction Error (ISPE)",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "ITPE and ISPE quantify discrepancies between subjective interoceptive beliefs and objective performance in interoception studies.",
+  "how_it_works": "This technique assesses interoceptive accuracy through heartbeat tracking and discrimination tasks, combined with self-report questionnaires. ITPE measures the difference between an individual's interoceptive sensibility and their actual accuracy, while ISPE evaluates performance on a trial-by-trial basis along with confidence ratings. The results help in understanding interoceptive processing in various populations, particularly in migraine patients.",
+  "algorithm": {
+    "steps": [
+      "1. Recruit participants and classify them into migraine and control groups.",
+      "2. Conduct heartbeat tracking and discrimination tasks to measure interoceptive accuracy.",
+      "3. Administer self-report questionnaires to assess interoceptive sensibility and dissociation.",
+      "4. Calculate ITPE as the difference between interoceptive sensibility and accuracy.",
+      "5. Calculate ISPE based on trial-by-trial performance and confidence ratings.",
+      "6. Analyze the data using statistical methods to compare groups."
+    ],
+    "core_equation": "ITPE = Interoceptive Sensibility - Interoceptive Accuracy; ISPE = Trial Performance - Confidence Ratings",
+    "input_format": "Participants' heartbeat data from tracking and discrimination tasks, self-report questionnaire responses.",
+    "output_format": "Quantified interoceptive accuracy, ITPE, ISPE, and dissociation scores."
+  },
+  "parameters": [
+    {
+      "name": "HTT",
+      "typical_value": "Heartbeat Tracking Task",
+      "effect": "Measures interoceptive accuracy."
+    },
+    {
+      "name": "HDT",
+      "typical_value": "Heartbeat Discrimination Task",
+      "effect": "Assesses the ability to discriminate between heartbeats."
+    },
+    {
+      "name": "SDQ",
+      "typical_value": "Somatoform Dissociation Questionnaire",
+      "effect": "Evaluates dissociative symptoms."
+    },
+    {
+      "name": "MDI",
+      "typical_value": "Multiscale Dissociation Inventory",
+      "effect": "Measures various aspects of dissociation."
+    },
+    {
+      "name": "BAI",
+      "typical_value": "Beck\u2019s Anxiety Inventory",
+      "effect": "Assesses anxiety levels."
+    },
+    {
+      "name": "BDI",
+      "typical_value": "Beck\u2019s Depression Inventory",
+      "effect": "Measures depression severity."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Real-world performance may vary based on participant characteristics and task execution."
+  },
+  "use_when": [
+    "Developing diagnostic tools for migraine based on interoceptive processing.",
+    "Creating therapeutic interventions targeting interoceptive abnormalities.",
+    "Researching the relationship between chronic pain and cognitive processes."
+  ],
+  "avoid_when": [
+    "Addressing acute migraine attacks without considering interoceptive factors.",
+    "When the focus is solely on pharmacological treatments without behavioral or cognitive assessments."
+  ],
+  "implementation_skeleton": "def calculate_itpe(interoceptive_sensibility: float, interoceptive_accuracy: float) -> float:\n    return interoceptive_sensibility - interoceptive_accuracy\n\ndef calculate_ispe(trial_performance: List[float], confidence_ratings: List[float]) -> List[float]:\n    return [performance - confidence for performance, confidence in zip(trial_performance, confidence_ratings)]",
+  "common_mistakes": [
+    "Neglecting to properly classify participants into migraine and control groups.",
+    "Failing to ensure accurate heartbeat tracking and discrimination task execution.",
+    "Overlooking the importance of self-report questionnaires in assessing interoceptive sensibility."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a quantitative measure of interoceptive processing.",
+      "Helps in understanding cognitive aspects of chronic pain.",
+      "Can inform therapeutic interventions targeting interoceptive abnormalities."
+    ],
+    "weaknesses": [
+      "Requires careful participant selection and task execution.",
+      "May not be applicable in acute migraine scenarios.",
+      "Dependent on self-report accuracy, which can vary."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard Pain Assessment Tools",
+        "verdict": "Use ITPE and ISPE for deeper insights into cognitive processes related to pain."
+      }
+    ]
+  },
+  "connects_to": [
+    "Interoceptive Awareness",
+    "Cognitive Behavioral Therapy",
+    "Pain Management Techniques",
+    "Dissociation Studies",
+    "Heartbeat Tracking Methods"
+  ],
+  "maturity": "emerging"
+}

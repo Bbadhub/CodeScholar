@@ -1,0 +1,79 @@
+{
+  "technique_name": "Modelica",
+  "aliases": [
+    "Acausal modeling",
+    "Declarative modeling"
+  ],
+  "category": "simulation_tool",
+  "one_liner": "Modelica is a modeling language for complex systems that allows for acausal simulation based on physical equations.",
+  "how_it_works": "Modelica enables engineers to define systems using declarative physical equations without needing to specify the order of operations. The underlying solver analyzes the system's structure to determine the execution order, allowing for real-time updates and accurate simulations. This approach is particularly beneficial for modeling interconnected components with implicit dependencies.",
+  "algorithm": {
+    "steps": [
+      "Define the system using declarative physical equations.",
+      "Identify the components and their interconnections.",
+      "Allow the solver to determine the order of operations.",
+      "Run the simulation with real-time updates."
+    ],
+    "core_equation": "output = real-time simulation results of the interconnected system",
+    "input_format": "Declarative physical equations representing the system.",
+    "output_format": "Real-time simulation results of the interconnected system."
+  },
+  "parameters": [
+    {
+      "name": "timestep",
+      "typical_value": "0.01s",
+      "effect": "A smaller timestep increases simulation accuracy but may require more computational resources."
+    },
+    {
+      "name": "solver_tolerance",
+      "typical_value": "1e-6",
+      "effect": "Lower tolerance values improve accuracy but may slow down the simulation."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance can vary significantly based on system complexity and solver configuration."
+  },
+  "use_when": [
+    "Modeling complex systems with implicit dependencies",
+    "Real-time simulation requirements",
+    "Need for accurate representation of interconnected components"
+  ],
+  "avoid_when": [
+    "Simple systems with unidirectional inputs/outputs",
+    "When using traditional causal modeling tools suffices",
+    "Low computational resources are available"
+  ],
+  "implementation_skeleton": "def run_modelica_simulation(equations: str, timestep: float, tolerance: float) -> str:\n    # Define the system using the provided equations\n    system = define_system(equations)\n    # Configure solver with timestep and tolerance\n    solver = configure_solver(timestep, tolerance)\n    # Run the simulation\n    results = solver.run(system)\n    return results",
+  "common_mistakes": [
+    "Neglecting to define all necessary interconnections between components",
+    "Using inappropriate timestep values that affect simulation accuracy",
+    "Overlooking solver configuration options that can optimize performance"
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Handles complex systems with implicit dependencies effectively",
+      "Allows for real-time updates during simulations",
+      "Provides accurate representations of interconnected components"
+    ],
+    "weaknesses": [
+      "May be overkill for simple systems",
+      "Requires more computational resources compared to causal modeling tools",
+      "Learning curve for new users unfamiliar with declarative modeling"
+    ],
+    "compared_to": [
+      {
+        "technique": "Causal modeling tools like Simulink",
+        "verdict": "Use Modelica for complex systems; use Simulink for simpler, unidirectional models."
+      }
+    ]
+  },
+  "connects_to": [
+    "System dynamics modeling",
+    "Simulation-based optimization",
+    "Control system design",
+    "Digital twins"
+  ],
+  "maturity": "proven (widely used in production)"
+}

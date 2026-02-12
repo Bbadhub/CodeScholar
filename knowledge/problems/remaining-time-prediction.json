@@ -1,0 +1,37 @@
+{
+  "problem_name": "Remaining Time Prediction",
+  "description": "Remaining time prediction involves estimating how much time is left for a task or workflow to complete. This is particularly important in cloud-based applications where resource allocation and efficiency are critical.",
+  "you_have_this_if": [
+    "You are working with cloud-based workflows.",
+    "You need to optimize resource allocation.",
+    "You are evaluating different encoding techniques for event data.",
+    "You are dealing with time-sensitive tasks.",
+    "You require accurate predictions for task completion."
+  ],
+  "approaches": [
+    {
+      "technique": "GloVe, One-Hot, Skip-Gram, CBOW, FastText",
+      "best_for": "When you need to predict the remaining time of cloud-based workflows and evaluate encoding techniques for event data.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "This approach provides a balance between accuracy and computational efficiency."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "GloVe, One-Hot, Skip-Gram, CBOW, FastText",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to predict remaining time in cloud workflows with a focus on optimizing resource allocation."
+    }
+  ],
+  "start_here": "Start with the GloVe, One-Hot, Skip-Gram, CBOW, FastText approach as it offers a solid balance of accuracy and efficiency for remaining time prediction in cloud applications.",
+  "related_problems": [
+    "Task completion prediction",
+    "Resource allocation optimization",
+    "Workflow management in cloud computing",
+    "Event data encoding techniques"
+  ]
+}

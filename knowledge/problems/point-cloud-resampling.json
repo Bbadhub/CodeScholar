@@ -1,0 +1,37 @@
+{
+  "problem_name": "Point Cloud Resampling",
+  "description": "Point cloud resampling involves adjusting the density and distribution of points in a point cloud dataset. This is crucial for applications in computer-aided engineering (CAE) where preserving the underlying geometry and topology is essential.",
+  "you_have_this_if": [
+    "You have a point cloud dataset that is too dense or sparse for your application.",
+    "You need to maintain the geometric features of the original data.",
+    "You are facing performance issues due to the size of the point cloud.",
+    "You require a solution that does not depend on pre-trained models.",
+    "You are working with CAE applications that demand high fidelity in point representation."
+  ],
+  "approaches": [
+    {
+      "technique": "Series of Local Triangulations (SOLT)",
+      "best_for": "when you need to resample point clouds for CAE applications while preserving geometry and topology.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "SOLT provides a lightweight solution but may require careful parameter tuning to achieve optimal results."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Series of Local Triangulations (SOLT)",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to resample point clouds while ensuring that the geometric features are preserved without heavy computational overhead."
+    }
+  ],
+  "start_here": "Start with the Series of Local Triangulations (SOLT) technique, as it effectively balances performance and fidelity in point cloud resampling for CAE applications.",
+  "related_problems": [
+    "Point Cloud Denoising",
+    "Point Cloud Compression",
+    "Point Cloud Registration",
+    "Point Cloud Segmentation"
+  ]
+}

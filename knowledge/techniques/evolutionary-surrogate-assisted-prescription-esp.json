@@ -1,0 +1,93 @@
+{
+  "technique_name": "Evolutionary Surrogate-assisted Prescription (ESP)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "ESP optimizes land-use policies by using a surrogate model to predict emissions and an evolutionary algorithm to explore solutions.",
+  "how_it_works": "ESP begins by collecting historical land-use data and training a surrogate model to predict emissions based on this data. It then initializes a population of candidate land-use policies represented as neural networks. Each candidate is evaluated using the surrogate model, and the best-performing candidates are selected for further evolution through crossover and mutation. This iterative process continues until a set of optimal policies is identified, represented as a Pareto front balancing emissions and land-use change.",
+  "algorithm": {
+    "steps": [
+      "1. Collect historical data on land-use changes and associated emissions.",
+      "2. Train a surrogate model to predict emissions based on land-use changes.",
+      "3. Initialize a population of candidate policies (neural networks).",
+      "4. Evaluate each candidate using the surrogate model to predict outcomes.",
+      "5. Select the best-performing candidates based on their predicted outcomes.",
+      "6. Apply crossover and mutation to generate new candidates.",
+      "7. Repeat steps 4-6 until convergence or a stopping criterion is met."
+    ],
+    "core_equation": "output = surrogate_model(land_use_changes)",
+    "input_format": "Historical land-use data (latitude, longitude, area, year, current land use percentages)",
+    "output_format": "A Pareto front of optimal land-use policies minimizing emissions and land-use change"
+  },
+  "parameters": [
+    {
+      "name": "population_size",
+      "typical_value": "100",
+      "effect": "Larger populations may explore more solutions but increase computation time."
+    },
+    {
+      "name": "mutation_rate",
+      "typical_value": "0.01",
+      "effect": "Higher rates introduce more variability, potentially leading to better solutions."
+    },
+    {
+      "name": "crossover_rate",
+      "typical_value": "0.7",
+      "effect": "Affects the balance between exploration and exploitation in the search process."
+    },
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "Impacts the speed of convergence of the surrogate model."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated, but generally depends on population size and number of generations.",
+    "space": "Not explicitly stated, but involves storage for population and surrogate model.",
+    "practical_note": "Performance may vary based on the complexity of the surrogate model and the size of the dataset."
+  },
+  "use_when": [
+    "You need to optimize land-use decisions to minimize carbon emissions.",
+    "You want to explore trade-offs between environmental impact and land-use change.",
+    "You are working on climate change mitigation strategies."
+  ],
+  "avoid_when": [
+    "The land-use decisions are highly localized and require fine-grained data.",
+    "You need real-time decision-making without the ability to train models.",
+    "The problem does not involve multiple conflicting objectives."
+  ],
+  "implementation_skeleton": "def esp_algorithm(historical_data: List[Tuple[float, float, float, int, float]]) -> List[Policy]:\n    surrogate_model = train_surrogate(historical_data)\n    population = initialize_population(size=100)\n    while not convergence_criteria_met():\n        evaluations = evaluate_population(population, surrogate_model)\n        selected = select_best_candidates(evaluations)\n        population = generate_new_candidates(selected)\n    return generate_pareto_front(population)",
+  "common_mistakes": [
+    "Neglecting to properly train the surrogate model, leading to inaccurate predictions.",
+    "Using inappropriate parameters for population size or mutation rate.",
+    "Failing to adequately evaluate the trade-offs represented in the Pareto front."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively balances multiple conflicting objectives.",
+      "Utilizes historical data to improve decision-making.",
+      "Generates a diverse set of optimal solutions."
+    ],
+    "weaknesses": [
+      "May require significant computational resources for large datasets.",
+      "Performance heavily relies on the quality of the surrogate model.",
+      "Not suitable for real-time decision-making scenarios."
+    ],
+    "compared_to": [
+      {
+        "technique": "Multi-objective linear programming",
+        "verdict": "Use ESP when historical data is available and multiple objectives need balancing."
+      },
+      {
+        "technique": "Causal machine learning approaches",
+        "verdict": "ESP is preferable for exploratory optimization in land-use scenarios."
+      }
+    ]
+  },
+  "connects_to": [
+    "Multi-objective optimization",
+    "Neuroevolution",
+    "Surrogate modeling",
+    "Land-use change modeling"
+  ],
+  "maturity": "emerging"
+}

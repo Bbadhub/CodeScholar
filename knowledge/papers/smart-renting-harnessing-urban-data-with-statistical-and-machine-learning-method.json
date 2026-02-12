@@ -1,0 +1,103 @@
+{
+  "summary": "This paper presents a machine learning framework for predicting rental prices in S\u00e3o Carlos, Brazil, using urban data. Engineers should care because it provides a practical application of ML techniques to a significant economic sector, enabling better decision-making for tenants and landlords.",
+  "key_contribution": "The development of a comprehensive machine learning model that accurately predicts rental prices based on various property attributes.",
+  "problem_type": "regression analysis for rental price prediction",
+  "problem_description": "The lack of effective tools for estimating rental prices in the Brazilian market, particularly in the context of rising rental demand.",
+  "domain": "Machine Learning & AI",
+  "sub_domain": "Regression Analysis",
+  "technique_name": "XGBoost",
+  "technique_category": "classification_model",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves collecting rental property data, preprocessing it, and applying various machine learning models to predict rental prices. The best-performing model, XGBoost, captures complex relationships between property features and rental values.",
+    "algorithm_steps": [
+      "1. Collect rental property data from a real estate website.",
+      "2. Preprocess data: clean, encode categorical variables, and scale numerical variables.",
+      "3. Split the dataset into training (80%) and testing (20%) sets.",
+      "4. Apply various regression models including Linear Regression, SVR, Random Forest, XGBoost, KNN, and MLP.",
+      "5. Use GridSearchCV for hyperparameter tuning with k-fold cross-validation.",
+      "6. Evaluate models using metrics like MAE, MSE, RMSE, and R2.",
+      "7. Select the best model based on performance metrics."
+    ],
+    "input": "Data frame containing property attributes: Type, Bedrooms, Bathrooms, Garages, Neighborhood, Suites, Furnished, and Rent_value.",
+    "output": "Predicted rental prices for the properties.",
+    "key_parameters": [
+      "GridSearchCV: k-fold = 5",
+      "XGBoost hyperparameters: not specified in detail"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Rental property data from Imobili\u00e1ria Cardinali, S\u00e3o Carlos, Brazil (1166 rows, 8 columns)"
+    ],
+    "metrics": [
+      "MAE: 517.77 BRL",
+      "MSE: 910,429.47 BRL",
+      "RMSE: 954.16 BRL",
+      "R2: 0.74"
+    ],
+    "baselines": [
+      "Linear Regression, SVR, Random Forest, KNN, MLP"
+    ],
+    "improvement": "XGBoost outperformed other models with an R2 of 0.74."
+  },
+  "concepts": [
+    "Machine Learning",
+    "Regression Analysis",
+    "Data Preprocessing",
+    "Hyperparameter Tuning",
+    "Web Scraping",
+    "Feature Engineering"
+  ],
+  "use_this_when": [
+    "You need to predict rental prices based on property features.",
+    "You want to develop a user-friendly platform for tenants and landlords.",
+    "You are working in a market with limited rental price prediction tools."
+  ],
+  "dont_use_when": [
+    "You require real-time price predictions with minimal data.",
+    "You are dealing with a very small dataset.",
+    "You need a model that interprets results in a straightforward manner."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "DataFrame for property attributes and rental prices"
+    ],
+    "dependencies": [
+      "requests",
+      "Beautiful Soup",
+      "ScikitLearn",
+      "XGBoost",
+      "Matplotlib",
+      "statsmodels"
+    ],
+    "pseudocode_hint": "model = XGBRegressor(); model.fit(X_train, y_train); predictions = model.predict(X_test)",
+    "gotchas": [
+      "Ensure data is cleaned and preprocessed correctly before modeling.",
+      "Be cautious of overfitting when tuning hyperparameters.",
+      "Consider the impact of outliers on model performance."
+    ]
+  },
+  "connects_to": [
+    "Random Forest",
+    "Support Vector Regression",
+    "Linear Regression",
+    "K-Nearest Neighbors",
+    "Neural Networks"
+  ],
+  "prerequisites": [
+    "Basic understanding of machine learning concepts",
+    "Familiarity with Python programming",
+    "Knowledge of regression analysis"
+  ],
+  "limitations": [
+    "Model may struggle with extreme rental values due to limited data representation.",
+    "The approach is specific to the S\u00e3o Carlos market and may not generalize well.",
+    "Requires continuous data updates for accuracy."
+  ],
+  "open_questions": [
+    "How can the model be adapted for different geographical markets?",
+    "What additional features could improve prediction accuracy?"
+  ]
+}

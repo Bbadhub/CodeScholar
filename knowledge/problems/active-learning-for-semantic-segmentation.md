@@ -1,0 +1,38 @@
+# Problem: Active Learning for Semantic Segmentation
+
+Active learning for semantic segmentation is a technique that aims to minimize the amount of labeled data required to train a model effectively. It strategically selects the most informative samples for labeling, thereby reducing costs and improving performance, especially in scenarios with limited resources.
+
+## You Have This Problem If
+
+- You are facing high labeling costs for your dataset.
+- Your dataset has imbalanced classes.
+- You have a limited budget for labeling data.
+- You want to improve model performance with fewer labeled examples.
+- You are working on a semantic segmentation task.
+
+## Start Here
+
+**Start with Dynamic-budget superpixel active learning as it effectively addresses the challenges of labeling costs and class imbalance in semantic segmentation tasks.**
+
+## Decision Matrix
+
+| Technique | Speed | Memory | Accuracy | Ease | Best When |
+|-----------|-------|--------|----------|------|-----------|
+| **Dynamic-budget superpixel active learning** | medium | medium | high | medium | You need to efficiently label a dataset with limited resources while ensuring high accuracy in semantic segmentation. |
+
+## Approaches
+
+### Dynamic-budget superpixel active learning
+
+**Best for:** when you need to reduce labeling costs in semantic segmentation tasks while maximizing model performance.
+
+**Tradeoff:** This approach balances the need for accurate labeling with the constraints of budget and class imbalance.
+
+*1 papers, up to 1 citations*
+
+## Related Problems
+
+- Cost-effective labeling strategies
+- Imbalanced dataset handling in machine learning
+- Active learning for classification tasks
+- Semi-supervised learning for semantic segmentation

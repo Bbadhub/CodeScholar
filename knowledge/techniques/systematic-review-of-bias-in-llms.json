@@ -1,0 +1,84 @@
+{
+  "technique_name": "Systematic Review of Bias in LLMs",
+  "aliases": [
+    "Systematic Review of Demographic Biases in Large Language Models"
+  ],
+  "category": "statistical_method",
+  "one_liner": "This technique systematically reviews literature to evaluate and address demographic biases in large language models (LLMs) in medical contexts.",
+  "how_it_works": "The technique involves defining criteria for including studies that assess demographic biases in LLMs. It conducts a comprehensive literature search, screens relevant studies, and extracts data on bias types and mitigation strategies. The quality of the studies is assessed, and findings are synthesized to provide a comprehensive overview of bias in medical LLMs.",
+  "algorithm": {
+    "steps": [
+      "1. Define inclusion criteria for studies evaluating demographic biases in LLMs.",
+      "2. Conduct a literature search across multiple databases from January 2018 to July 2024.",
+      "3. Screen titles and abstracts for relevance using Rayyan software.",
+      "4. Extract data from included studies regarding bias types and mitigation strategies.",
+      "5. Assess the quality of studies using JBI Critical Appraisal Tools.",
+      "6. Synthesize findings narratively and categorize by bias type and mitigation method."
+    ],
+    "core_equation": "output = comprehensive overview of bias types + measurement methods + mitigation strategies",
+    "input_format": "Peer-reviewed studies evaluating demographic biases in LLMs applied to medical tasks.",
+    "output_format": "A comprehensive overview of bias types, measurement methods, and mitigation strategies in medical LLMs."
+  },
+  "parameters": [
+    {
+      "name": "search_date_range",
+      "typical_value": "January 2018 - July 2024",
+      "effect": "Defines the temporal scope of the literature review."
+    },
+    {
+      "name": "included_studies",
+      "typical_value": "24",
+      "effect": "Indicates the number of studies reviewed for bias evaluation."
+    },
+    {
+      "name": "bias_types",
+      "typical_value": "gender, racial, ethnic, age, disability, socioeconomic",
+      "effect": "Specifies the types of demographic biases assessed."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for sorting and screening studies",
+    "space": "O(n) for storing study data",
+    "practical_note": "The complexity is primarily dependent on the number of studies reviewed and the depth of analysis."
+  },
+  "use_when": [
+    "Developing AI applications in healthcare that utilize LLMs.",
+    "Evaluating existing LLMs for bias before deployment in clinical settings.",
+    "Implementing mitigation strategies to reduce bias in AI outputs."
+  ],
+  "avoid_when": [
+    "Working with LLMs in non-medical domains where bias is less critical.",
+    "When the application context does not involve demographic considerations."
+  ],
+  "implementation_skeleton": "def systematic_review_bias(input_data: List[Study]) -> Overview:\n    # Step 1: Define inclusion criteria\n    # Step 2: Conduct literature search\n    # Step 3: Screen studies\n    # Step 4: Extract data\n    # Step 5: Assess quality\n    # Step 6: Synthesize findings\n    return overview",
+  "common_mistakes": [
+    "Neglecting to define clear inclusion criteria for studies.",
+    "Overlooking the quality assessment of included studies.",
+    "Failing to categorize biases effectively during synthesis."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a comprehensive overview of existing biases.",
+      "Identifies effective mitigation strategies.",
+      "Supports informed decision-making in AI deployment."
+    ],
+    "weaknesses": [
+      "Time-consuming due to extensive literature review.",
+      "May not capture all emerging biases if studies are limited.",
+      "Dependent on the quality of included studies."
+    ],
+    "compared_to": [
+      {
+        "technique": "Ad-hoc bias evaluation",
+        "verdict": "Use systematic review for a thorough understanding; ad-hoc methods may miss critical insights."
+      }
+    ]
+  },
+  "connects_to": [
+    "Bias detection algorithms",
+    "Fairness in AI",
+    "Ethical AI frameworks",
+    "Meta-analysis techniques"
+  ],
+  "maturity": "established"
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Link Prediction",
+  "description": "Link prediction is the task of predicting the existence of a link between two entities in a network. This is commonly used in social networks, recommendation systems, and various applications where relationships between entities are not fully known.",
+  "you_have_this_if": [
+    "You are working with incomplete graphs.",
+    "You need to suggest potential connections in a social network.",
+    "You are analyzing social network data for hidden relationships.",
+    "You require accurate predictions for future connections.",
+    "You are developing a recommendation system."
+  ],
+  "approaches": [
+    {
+      "technique": "Common Neighbor Completion with Information Entropy (IECNC)",
+      "best_for": "When building recommendation systems that suggest potential connections in social networks.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach balances accuracy with the complexity of implementation."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Common Neighbor Completion with Information Entropy (IECNC)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to predict links in a social network with a focus on accuracy and hidden relationships."
+    }
+  ],
+  "start_here": "Start with Common Neighbor Completion with Information Entropy (IECNC) as it provides a good balance of accuracy and implementation complexity for link prediction tasks.",
+  "related_problems": [
+    "Node Classification",
+    "Community Detection",
+    "Graph Clustering",
+    "Recommendation Systems"
+  ]
+}

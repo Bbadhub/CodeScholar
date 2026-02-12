@@ -1,0 +1,78 @@
+{
+  "technique_name": "Analytical System Design for Fingerprint Examination",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "A systematic approach to enhance fingerprint examination through analytical techniques.",
+  "how_it_works": "This technique involves collecting fingerprint samples from a crime scene and analyzing their condition and clarity. It categorizes prints based on their decay state and relevance, allowing for prioritization of prints for further examination. By matching these prioritized prints against a fingerprint database, the method aims to streamline the identification process, especially in complex environments with overlapping fingerprints.",
+  "algorithm": {
+    "steps": [
+      "1. Collect fingerprint samples from the crime scene.",
+      "2. Analyze the condition and clarity of each print.",
+      "3. Categorize prints based on decay state and potential relevance.",
+      "4. Prioritize prints for further examination using analytical criteria.",
+      "5. Match prioritized prints against a fingerprint database.",
+      "6. Generate a report of findings for investigators."
+    ],
+    "core_equation": "output = prioritize(prints) \u2192 match(prints, database)",
+    "input_format": "Fingerprint samples collected from various surfaces at a crime scene.",
+    "output_format": "A prioritized list of fingerprints with potential matches and their conditions."
+  },
+  "parameters": [
+    {
+      "name": "decay_threshold",
+      "typical_value": "0.5",
+      "effect": "Higher values may exclude more degraded prints."
+    },
+    {
+      "name": "relevance_score",
+      "typical_value": "0.7",
+      "effect": "Adjusting this score changes the sensitivity of relevance filtering."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Processing time is approximately 30 seconds per sample."
+  },
+  "use_when": [
+    "You need to analyze a large number of fingerprints from a crime scene.",
+    "You want to improve the accuracy of fingerprint identification.",
+    "You are dealing with degraded fingerprint samples."
+  ],
+  "avoid_when": [
+    "The fingerprint samples are clear and easily identifiable.",
+    "You have a limited number of prints to analyze.",
+    "The environment is controlled and free of clutter."
+  ],
+  "implementation_skeleton": "def analyze_fingerprints(samples: List[Fingerprint]) -> List[Match]:\n    prioritized_prints = []\n    for sample in samples:\n        condition = analyze_condition(sample)\n        if condition >= decay_threshold:\n            relevance = calculate_relevance(sample)\n            if relevance >= relevance_score:\n                prioritized_prints.append(sample)\n    matches = match_to_database(prioritized_prints)\n    return generate_report(matches)",
+  "common_mistakes": [
+    "Neglecting to properly assess the condition of each fingerprint.",
+    "Setting decay thresholds too high, leading to missed prints.",
+    "Failing to update the fingerprint database regularly."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves identification accuracy by 20% over traditional methods.",
+      "Streamlines the examination process in cluttered environments.",
+      "Effectively handles degraded fingerprint samples."
+    ],
+    "weaknesses": [
+      "May not be necessary for clear and easily identifiable prints.",
+      "Processing time can be a bottleneck with large datasets.",
+      "Requires a well-maintained fingerprint database for effective matching."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Fingerprint Examination",
+        "verdict": "Use Analytical System Design when dealing with large or degraded samples."
+      }
+    ]
+  },
+  "connects_to": [
+    "Image Processing Techniques",
+    "Machine Learning for Pattern Recognition",
+    "Database Management Systems",
+    "Forensic Analysis Methods"
+  ],
+  "maturity": "proven (widely used in production)"
+}

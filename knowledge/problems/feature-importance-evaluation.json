@@ -1,0 +1,37 @@
+{
+  "problem_name": "Feature Importance Evaluation",
+  "description": "Feature importance evaluation is the process of determining which features in a dataset contribute the most to the predictions made by a model. This is crucial for understanding model behavior, improving model performance, and making informed decisions based on model outputs.",
+  "you_have_this_if": [
+    "You need to interpret the results of a machine learning model.",
+    "You are working with a dataset that has many features.",
+    "You want to improve the performance of your model by focusing on important features.",
+    "You are dealing with noisy data and need to identify relevant features.",
+    "You need to explain model predictions to stakeholders."
+  ],
+  "approaches": [
+    {
+      "technique": "NAFIC and CESHAP",
+      "best_for": "when working with noisy industrial data and needing to explain model predictions in critical applications.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach may require more computational resources but provides clearer insights into feature importance."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "NAFIC and CESHAP",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to evaluate feature importance in a noisy dataset while ensuring model interpretability."
+    }
+  ],
+  "start_here": "Start with NAFIC and CESHAP as it is specifically designed for noisy industrial data and provides robust explanations for model predictions.",
+  "related_problems": [
+    "Model interpretability",
+    "Feature selection",
+    "Noise reduction in datasets",
+    "Model performance evaluation"
+  ]
+}

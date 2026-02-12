@@ -1,0 +1,37 @@
+{
+  "problem_name": "Text-to-Image Editing",
+  "description": "Text-to-image editing involves modifying images based on textual descriptions or commands. This allows users to make changes to images without needing advanced graphic design skills.",
+  "you_have_this_if": [
+    "You want to allow users to edit images using text prompts.",
+    "You need a solution that is accessible to non-professionals.",
+    "You require quick edits without heavy computational demands.",
+    "You are integrating image editing features into an application.",
+    "You are looking for a user-friendly interface for image modifications."
+  ],
+  "approaches": [
+    {
+      "technique": "LightEdit",
+      "best_for": "when you need to enable non-professionals to edit images easily and quickly.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While it is user-friendly and efficient, it may not offer the depth of features found in more complex editing tools."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "LightEdit",
+      "speed": "fast",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "easy",
+      "best_when": "You need a quick and simple solution for text-based image editing that can be used by non-experts."
+    }
+  ],
+  "start_here": "Start with LightEdit for most cases, as it provides a balance of speed and ease of use, making it ideal for non-professionals.",
+  "related_problems": [
+    "Image Generation from Text",
+    "Image Restoration",
+    "Image Style Transfer",
+    "Interactive Image Editing"
+  ]
+}

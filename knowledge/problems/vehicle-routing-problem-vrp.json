@@ -1,0 +1,37 @@
+{
+  "problem_name": "Vehicle Routing Problem (VRP)",
+  "description": "The Vehicle Routing Problem (VRP) involves finding the most efficient routes for a fleet of vehicles to deliver goods to a set of locations. This problem is crucial in logistics and transportation, especially for minimizing costs and improving service levels.",
+  "you_have_this_if": [
+    "You are managing a fleet of delivery vehicles.",
+    "You need to reduce transportation costs.",
+    "You are facing challenges with timely deliveries.",
+    "You have multiple delivery locations to manage.",
+    "You are dealing with constraints like vehicle capacity or time windows."
+  ],
+  "approaches": [
+    {
+      "technique": "CiteSpace",
+      "best_for": "When you need to optimize delivery routes for perishable goods or understand the current state of research in cold chain logistics.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach provides valuable insights through visualization but may not directly solve routing problems."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "CiteSpace",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to visualize and analyze existing research to inform your routing strategies."
+    }
+  ],
+  "start_here": "Start with CiteSpace to gain insights into the current research landscape and identify best practices for optimizing delivery routes in your specific context.",
+  "related_problems": [
+    "Traveling Salesman Problem (TSP)",
+    "Capacitated Vehicle Routing Problem (CVRP)",
+    "Dynamic Vehicle Routing Problem (DVRP)",
+    "Stochastic Vehicle Routing Problem (SVRP)"
+  ]
+}

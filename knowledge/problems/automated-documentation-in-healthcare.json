@@ -1,0 +1,37 @@
+{
+  "problem_name": "Automated Documentation in Healthcare",
+  "description": "Automated documentation in healthcare refers to the use of technology to streamline the process of recording patient information and clinical notes. This problem is critical in high-pressure medical environments where accuracy and efficiency are paramount for patient care.",
+  "you_have_this_if": [
+    "You are experiencing delays in clinical documentation.",
+    "Healthcare professionals are overwhelmed with paperwork.",
+    "There are frequent errors in patient records.",
+    "You are looking to integrate AI tools into existing healthcare workflows.",
+    "You need to improve the efficiency of record-keeping in a busy medical setting."
+  ],
+  "approaches": [
+    {
+      "technique": "Retrieval-Augmented Generation (RAG)",
+      "best_for": "When automating documentation in high-pressure medical environments and improving accuracy and efficiency in clinical record-keeping.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "While RAG can enhance documentation speed and accuracy, it may require significant initial setup and training."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Retrieval-Augmented Generation (RAG)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to automate documentation while ensuring high accuracy in a fast-paced healthcare environment."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is to implement Retrieval-Augmented Generation (RAG) due to its ability to enhance both the speed and accuracy of documentation in healthcare settings.",
+  "related_problems": [
+    "Clinical Decision Support Systems",
+    "Natural Language Processing in Healthcare",
+    "Electronic Health Record Optimization",
+    "Patient Data Management Systems"
+  ]
+}

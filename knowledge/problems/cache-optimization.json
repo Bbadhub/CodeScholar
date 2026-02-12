@@ -1,0 +1,37 @@
+{
+  "problem_name": "Cache Optimization",
+  "description": "Cache optimization involves improving the efficiency of data retrieval from cache storage to enhance application performance. This is particularly important when dealing with high volumes of requests for similar content, as it can significantly reduce latency and resource usage.",
+  "you_have_this_if": [
+    "You experience slow response times for content delivery.",
+    "Your application handles a large number of similar requests.",
+    "Your cache storage is frequently reaching its limits.",
+    "You notice increased load on your backend systems.",
+    "Users report delays in accessing frequently requested content."
+  ],
+  "approaches": [
+    {
+      "technique": "Similarity Caching",
+      "best_for": "When you have a high volume of similar content requests and need to optimize limited cache storage.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While it can significantly reduce latency, it may require more complex implementation and management."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Similarity Caching",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to serve a large number of similar requests efficiently while managing limited cache resources."
+    }
+  ],
+  "start_here": "Start with Similarity Caching as it is specifically designed to handle high volumes of similar requests, optimizing both speed and resource usage.",
+  "related_problems": [
+    "Cache Eviction Strategies",
+    "Data Prefetching",
+    "Load Balancing",
+    "Content Delivery Network Optimization"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Automated Irrigation System",
+  "description": "An automated irrigation system is designed to manage the watering of plants without manual intervention. It aims to optimize water usage while ensuring that plants receive the necessary moisture for healthy growth.",
+  "you_have_this_if": [
+    "You have indoor plants that require consistent watering.",
+    "You are concerned about water waste in your irrigation practices.",
+    "You want to monitor and control your irrigation system remotely.",
+    "You are looking for a sustainable solution to manage plant care.",
+    "You have limited time to manually water your plants."
+  ],
+  "approaches": [
+    {
+      "technique": "Sustainable Smart Irrigation System (SIS)",
+      "best_for": "when you need an automated irrigation solution for indoor plants and want to promote sustainability.",
+      "paper_count": 1,
+      "max_citations": 5,
+      "key_tradeoff": "This approach balances sustainability with the need for effective plant care."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Sustainable Smart Irrigation System (SIS)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a reliable and eco-friendly irrigation solution for indoor plants."
+    }
+  ],
+  "start_here": "The recommended first approach is the Sustainable Smart Irrigation System (SIS) due to its focus on sustainability and effective plant care.",
+  "related_problems": [
+    "Drip Irrigation Systems",
+    "Soil Moisture Monitoring",
+    "Automated Plant Care Systems",
+    "Water Conservation Techniques"
+  ]
+}

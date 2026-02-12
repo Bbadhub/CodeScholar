@@ -1,0 +1,37 @@
+{
+  "problem_name": "Parameter Estimation",
+  "description": "Parameter estimation involves determining the values of parameters within a model based on observed data. This is crucial in various fields, such as astrophysics, where accurate parameter values can significantly impact the understanding of phenomena.",
+  "you_have_this_if": [
+    "You have observational data that requires interpretation.",
+    "You need to estimate parameters that are not directly measurable.",
+    "Your model's accuracy is critical for predictions.",
+    "You require a model that adheres to known physical laws.",
+    "You are facing challenges with traditional estimation methods."
+  ],
+  "approaches": [
+    {
+      "technique": "Physics-informed autoencoder (PIA)",
+      "best_for": "When you need to estimate neutron star parameters from observational data while incorporating physical laws.",
+      "paper_count": 1,
+      "max_citations": 7,
+      "key_tradeoff": "While it provides interpretability and adherence to physical laws, it may require more complex implementation."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Physics-informed autoencoder (PIA)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You need a model that combines observational data with physical laws for parameter estimation."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Physics-informed autoencoder (PIA) due to its ability to integrate physical laws into the estimation process, enhancing interpretability and accuracy.",
+  "related_problems": [
+    "Model fitting",
+    "Statistical inference",
+    "Machine learning for scientific data",
+    "Bayesian parameter estimation"
+  ]
+}

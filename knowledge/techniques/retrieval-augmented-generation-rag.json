@@ -1,0 +1,82 @@
+{
+  "technique_name": "Retrieval Augmented Generation (RAG)",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "RAG combines retrieval of relevant information with generative models to enhance response quality.",
+  "how_it_works": "RAG first retrieves relevant items from a knowledge base based on a user's query. It then re-ranks these items using a learning-to-rank model to prioritize the most relevant results. Finally, it generates a comprehensive response using a language model, incorporating the retrieved items to provide context and explanations.",
+  "algorithm": {
+    "steps": [
+      "1. Receive a developer's query.",
+      "2. Perform semantic search on a knowledge repository to retrieve candidate packages.",
+      "3. Re-rank the retrieved packages using a learning-to-rank model.",
+      "4. Generate an enriched prompt for the LLM with the top-k packages.",
+      "5. Synthesize a response using the LLM."
+    ],
+    "core_equation": "output = generate_response(retrieve_and_rank(query))",
+    "input_format": "Natural language query expressing a technology need.",
+    "output_format": "A ranked list of recommended JavaScript packages with explanations."
+  },
+  "parameters": [
+    {
+      "name": "top_k",
+      "typical_value": "5",
+      "effect": "Increases the number of packages considered for ranking."
+    },
+    {
+      "name": "embedding_dimension",
+      "typical_value": "768",
+      "effect": "Affects the quality of semantic search."
+    },
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "Impacts the convergence speed of the learning-to-rank model."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)",
+    "practical_note": "The ranking step can be computationally intensive, especially with large datasets."
+  },
+  "use_when": [
+    "You need to recommend JavaScript packages based on developer queries.",
+    "You want to improve the explainability of package recommendations.",
+    "You are facing challenges with traditional search engines returning irrelevant results."
+  ],
+  "avoid_when": [
+    "The task requires real-time package recommendations without any prior data.",
+    "You have a very small dataset of packages to work with.",
+    "The application context is not related to JavaScript."
+  ],
+  "implementation_skeleton": "def rag_recommendation(query: str) -> List[Tuple[str, str]]:\n    candidates = semantic_search(query)\n    ranked_packages = learning_to_rank(candidates)\n    enriched_prompt = create_prompt(ranked_packages)\n    response = generate_response(enriched_prompt)\n    return response",
+  "common_mistakes": [
+    "Neglecting to fine-tune the learning-to-rank model for specific datasets.",
+    "Using an insufficiently large knowledge base for retrieval.",
+    "Failing to validate the explainability of the generated responses."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves the relevance of recommendations.",
+      "Enhances explainability of results.",
+      "Combines strengths of retrieval and generation."
+    ],
+    "weaknesses": [
+      "Can be computationally expensive.",
+      "Requires a well-curated knowledge base.",
+      "Performance may degrade with irrelevant data."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Search Engines",
+        "verdict": "Use RAG for better context and explainability."
+      }
+    ]
+  },
+  "connects_to": [
+    "Semantic Search",
+    "Learning-to-Rank Models",
+    "Natural Language Processing",
+    "Knowledge Graphs"
+  ],
+  "maturity": "proven"
+}

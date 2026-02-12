@@ -1,0 +1,94 @@
+{
+  "summary": "The paper presents a novel method for covert communication using the MQTT protocol, allowing secret data exchange by embedding messages within normal MQTT traffic. Engineers should care because this approach enhances privacy and security in environments where communication is monitored or censored.",
+  "key_contribution": "A new covert communication method utilizing MQTT messages to create a storage channel for secure data exfiltration.",
+  "problem_type": "covert communication",
+  "problem_description": "The need for secure and undetectable communication in environments subject to censorship and surveillance.",
+  "domain": "Cybersecurity",
+  "sub_domain": "Covert channels, MQTT protocol",
+  "technique_name": "Covert Communication via MQTT",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves generating k parts of a secret message, applying modular exponentiation to obfuscate these parts, and sending them through MQTT messages. Subscribers can reconstruct the original message using the XOR operation on the received parts.",
+    "algorithm_steps": [
+      "1. Generate k random parts of the same size as the message M.",
+      "2. Compute the k-th part as Pk = M \u2295 P1 \u2295 ... \u2295 Pk-1.",
+      "3. For each part Pi, compute the length L = (Pi^a mod n) mod l, where l is the maximum MQTT message size.",
+      "4. Publish each part using the MQTT protocol with the computed lengths.",
+      "5. Subscribers retrieve parts by brute-forcing possible values based on the lengths of incoming packets.",
+      "6. Reconstruct the original message M using M = P1 \u2295 P2 \u2295 ... \u2295 Pk."
+    ],
+    "input": "The secret message M and parameters k, a, n, and the MQTT broker and topic information.",
+    "output": "The original message M reconstructed from the received parts.",
+    "key_parameters": [
+      "k: number of parts (e.g., k = 3)",
+      "a: exponent used in modular exponentiation (e.g., 1861836248542572424)",
+      "n: prime modulus (e.g., 89802601036489635412700864252846407279584917476820871708772821852121126622533)",
+      "l: maximum MQTT message size (268,435,456 bytes)"
+    ],
+    "complexity": "Not stated."
+  },
+  "benchmarks": {
+    "datasets": [
+      "Simulated MQTT traffic with covert messages."
+    ],
+    "metrics": [
+      "Execution time for operations on publisher and subscriber sides."
+    ],
+    "baselines": [
+      "Standard MQTT communication without covert channels."
+    ],
+    "improvement": "No significant time overhead; additional byte overhead remains within acceptable limits."
+  },
+  "concepts": [
+    "covert channels",
+    "MQTT",
+    "modular exponentiation",
+    "XOR operation",
+    "data obfuscation"
+  ],
+  "use_this_when": [
+    "You need to transmit sensitive information in environments with high surveillance.",
+    "You want to avoid detection of communication patterns by censors.",
+    "You are working with IoT devices that require secure data exchange."
+  ],
+  "dont_use_when": [
+    "The communication environment is not subject to monitoring or censorship.",
+    "You require high-speed data transmission without any overhead.",
+    "The application does not support MQTT protocol."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "MQTT message structure",
+      "Pseudo-Random Number Generator (PRNG)"
+    ],
+    "dependencies": [
+      "MQTT library (e.g., Paho MQTT for Python)"
+    ],
+    "pseudocode_hint": "for each part in parts: publish MQTT message with length L",
+    "gotchas": [
+      "Ensure the secret key is sufficiently long to prevent brute-force attacks.",
+      "Carefully choose topics to avoid detection by censors.",
+      "Monitor the overhead introduced by the additional bytes in MQTT messages."
+    ]
+  },
+  "connects_to": [
+    "Encryption algorithms (e.g., AES)",
+    "Anonymous communication protocols",
+    "Other covert channel techniques"
+  ],
+  "prerequisites": [
+    "Understanding of MQTT protocol and its message structure.",
+    "Knowledge of cryptographic principles, especially modular arithmetic.",
+    "Familiarity with XOR operations and their properties."
+  ],
+  "limitations": [
+    "The method relies on the MQTT protocol, which may not be suitable for all applications.",
+    "Potential overhead in terms of additional bytes transmitted.",
+    "Requires pre-shared keys among communicating parties."
+  ],
+  "open_questions": [
+    "How can this method be adapted to other communication protocols?",
+    "What are the implications of using this method in different regulatory environments?"
+  ]
+}

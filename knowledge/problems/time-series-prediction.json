@@ -1,0 +1,37 @@
+{
+  "problem_name": "Time Series Prediction",
+  "description": "Time series prediction involves forecasting future values based on previously observed values over time. This problem is common in various fields, including finance, weather forecasting, and resource management.",
+  "you_have_this_if": [
+    "You have sequential data that changes over time.",
+    "You need to make predictions based on historical trends.",
+    "You are dealing with time-dependent variables.",
+    "Your data exhibits seasonality or cyclic patterns.",
+    "You require forecasts for planning and decision-making."
+  ],
+  "approaches": [
+    {
+      "technique": "CNN-LSTM",
+      "best_for": "when you need to predict time series data for critical infrastructure or crisis management solutions.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "While CNN-LSTM can capture complex patterns, it may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "CNN-LSTM",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have a large dataset with complex temporal patterns and need high accuracy in predictions."
+    }
+  ],
+  "start_here": "Start with the CNN-LSTM approach if you are dealing with critical infrastructure predictions, as it effectively captures both spatial and temporal dependencies.",
+  "related_problems": [
+    "Anomaly Detection in Time Series",
+    "Seasonal Decomposition of Time Series",
+    "Forecasting with ARIMA Models",
+    "Long Short-Term Memory Networks for Sequential Data"
+  ]
+}

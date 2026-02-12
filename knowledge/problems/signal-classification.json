@@ -1,0 +1,37 @@
+{
+  "problem_name": "Signal Classification",
+  "description": "Signal classification involves categorizing signals into predefined classes based on their characteristics. This is particularly important in fields like healthcare, where accurate classification of signals such as ECG can lead to timely interventions.",
+  "you_have_this_if": [
+    "You are working with time-series data.",
+    "You need to categorize signals into different classes.",
+    "You are facing challenges with real-time processing.",
+    "You are dealing with resource constraints in your deployment environment.",
+    "You require high accuracy in signal interpretation."
+  ],
+  "approaches": [
+    {
+      "technique": "Linear Law-Based Feature Extraction",
+      "best_for": "When deploying ECG classification in resource-constrained environments or needing real-time ECG monitoring solutions.",
+      "paper_count": 1,
+      "max_citations": 3,
+      "key_tradeoff": "This approach may sacrifice some complexity for speed and efficiency in low-resource settings."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Linear Law-Based Feature Extraction",
+      "speed": "fast",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to classify ECG signals in real-time on wearable devices."
+    }
+  ],
+  "start_here": "Start with Linear Law-Based Feature Extraction, as it is specifically designed for resource-constrained environments and provides a balance between speed and accuracy.",
+  "related_problems": [
+    "Time-Series Anomaly Detection",
+    "Speech Signal Processing",
+    "Image Classification",
+    "Sensor Data Fusion"
+  ]
+}

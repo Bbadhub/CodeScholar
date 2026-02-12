@@ -1,0 +1,93 @@
+{
+  "summary": "This study investigates the impact of cognitive abilities, measured by the Athletic Intelligence Quotient (AIQ), on the performance of NFL quarterbacks. Engineers should care because understanding these cognitive metrics can inform the development of predictive models for athlete performance in sports analytics.",
+  "key_contribution": "The study demonstrates that cognitive abilities, particularly Reaction Time, significantly predict NFL quarterback performance metrics beyond traditional draft pick evaluations.",
+  "problem_type": "predictive modeling for athlete performance",
+  "problem_description": "The work is motivated by the need to improve recruitment and performance prediction of NFL quarterbacks using cognitive assessments.",
+  "domain": "Machine Learning & AI",
+  "sub_domain": "Sports Analytics",
+  "technique_name": "Athletic Intelligence Quotient (AIQ)",
+  "technique_category": "statistical_method",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The AIQ assesses cognitive abilities relevant to athletic performance through a series of subtests. The results are then correlated with performance metrics to evaluate predictive power.",
+    "algorithm_steps": [
+      "1. Administer the AIQ to NFL quarterback draftees.",
+      "2. Collect performance metrics from NFL games.",
+      "3. Perform regression analysis to evaluate the relationship between AIQ subscales and performance metrics.",
+      "4. Control for draft pick in the analysis.",
+      "5. Report significant predictors and their contributions to performance variance."
+    ],
+    "input": "AIQ scores from cognitive assessments and NFL performance metrics (e.g., passing yards, QB rating).",
+    "output": "Regression coefficients indicating the predictive power of cognitive abilities on quarterback performance.",
+    "key_parameters": [
+      "AIQ subscales: Reaction Time, Visual Spatial Processing, Decision Making, Learning Efficiency",
+      "Draft Pick: categorical variable representing player selection order"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Performance metrics from 42 NFL quarterbacks over multiple seasons (2018-2021)"
+    ],
+    "metrics": [
+      "Career Approximate Value (CAV)",
+      "Quarterback Rating (QBR)",
+      "Passing Yards per Game",
+      "Rushing Yards per Game"
+    ],
+    "baselines": [
+      "Draft Pick evaluations"
+    ],
+    "improvement": "Reaction Time explained an additional 13% of variance in CAV and 8% in QBR after controlling for Draft Pick."
+  },
+  "concepts": [
+    "Cognitive abilities",
+    "Athletic Intelligence Quotient",
+    "Predictive modeling",
+    "Regression analysis",
+    "Performance metrics"
+  ],
+  "use_this_when": [
+    "Developing predictive models for athlete performance based on cognitive assessments.",
+    "Evaluating quarterback prospects for NFL teams using cognitive metrics.",
+    "Integrating cognitive data into sports analytics platforms."
+  ],
+  "dont_use_when": [
+    "When focusing solely on physical performance metrics without cognitive considerations.",
+    "In contexts where cognitive assessments are not feasible or acceptable."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "DataFrame for AIQ scores and performance metrics",
+      "Regression model structure for analysis"
+    ],
+    "dependencies": [
+      "Pandas for data manipulation",
+      "Statsmodels or Scikit-learn for regression analysis"
+    ],
+    "pseudocode_hint": "model = sm.OLS(y, X).fit()  # where y is performance metric and X includes AIQ scores and draft pick",
+    "gotchas": [
+      "Ensure data is de-identified to protect player privacy.",
+      "Control for confounding variables like draft pick to avoid biased results."
+    ]
+  },
+  "connects_to": [
+    "Machine Learning models",
+    "Statistical analysis techniques",
+    "Sports performance analytics frameworks"
+  ],
+  "prerequisites": [
+    "Understanding of regression analysis",
+    "Familiarity with cognitive assessment methods",
+    "Knowledge of sports performance metrics"
+  ],
+  "limitations": [
+    "Small sample size of 42 quarterbacks",
+    "Potential biases in cognitive assessments",
+    "Generalizability to other positions not established"
+  ],
+  "open_questions": [
+    "How do cognitive abilities interact with physical skills in other sports?",
+    "What are the long-term impacts of cognitive training on athlete performance?"
+  ]
+}

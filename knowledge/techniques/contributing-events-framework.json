@@ -1,0 +1,78 @@
+{
+  "technique_name": "Contributing Events Framework",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "A framework for modeling supply chain risk events by analyzing their contributing factors.",
+  "how_it_works": "The Contributing Events Framework systematically identifies and analyzes events that lead to risk occurrences in supply chains. By examining historical data on disruptions and their contributing factors, the framework develops a predictive model. This model helps in understanding the dynamics of risk and can forecast potential disruptions based on identified contributing events.",
+  "algorithm": {
+    "steps": [
+      "1. Identify potential risk events in the supply chain.",
+      "2. Gather data on historical disruptions and their contributing events.",
+      "3. Analyze the relationships between contributing events and risk events.",
+      "4. Develop a model that incorporates these relationships.",
+      "5. Validate the model with real-world data.",
+      "6. Use the model to predict potential disruptions."
+    ],
+    "core_equation": "output = predictive model based on contributing events",
+    "input_format": "Historical data on supply chain disruptions and contributing events.",
+    "output_format": "A predictive model that identifies potential risk events based on contributing factors."
+  },
+  "parameters": [
+    {
+      "name": "data_source",
+      "typical_value": "historical disruption data",
+      "effect": "Quality of predictions improves with comprehensive data."
+    },
+    {
+      "name": "analysis_method",
+      "typical_value": "statistical correlation",
+      "effect": "Different methods may yield varying insights into event relationships."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on the complexity of the supply chain and the quality of historical data."
+  },
+  "use_when": [
+    "You need to model complex supply chain disruptions.",
+    "You want to improve risk management strategies.",
+    "You are analyzing historical supply chain data."
+  ],
+  "avoid_when": [
+    "The supply chain is simple with few variables.",
+    "Real-time decision-making is required without historical data.",
+    "Immediate responses to disruptions are needed."
+  ],
+  "implementation_skeleton": "def contributing_events_framework(data: List[Dict[str, Any]]) -> Model:\n    # Step 1: Identify risk events\n    risk_events = identify_risk_events(data)\n    # Step 2: Gather historical data\n    historical_data = gather_historical_data(data)\n    # Step 3: Analyze relationships\n    relationships = analyze_relationships(historical_data)\n    # Step 4: Develop model\n    model = develop_model(relationships)\n    # Step 5: Validate model\n    validate_model(model, historical_data)\n    return model",
+  "common_mistakes": [
+    "Neglecting to gather comprehensive historical data.",
+    "Overlooking the relationships between contributing events and risk events.",
+    "Failing to validate the model with real-world data."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a comprehensive understanding of risk dynamics.",
+      "Improves prediction accuracy compared to traditional models.",
+      "Facilitates better risk management strategies."
+    ],
+    "weaknesses": [
+      "Requires extensive historical data for accuracy.",
+      "May not be suitable for simple supply chains.",
+      "Can be complex to implement and validate."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Risk Assessment Models",
+        "verdict": "Use the Contributing Events Framework for more accurate predictions in complex scenarios."
+      }
+    ]
+  },
+  "connects_to": [
+    "Risk Assessment Models",
+    "Predictive Analytics",
+    "Supply Chain Management Techniques",
+    "Statistical Analysis Methods"
+  ],
+  "maturity": "emerging"
+}

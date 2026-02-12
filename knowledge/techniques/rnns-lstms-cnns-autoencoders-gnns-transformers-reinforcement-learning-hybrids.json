@@ -1,0 +1,91 @@
+{
+  "technique_name": "Deep Learning for Algorithmic Trading",
+  "aliases": [
+    "RNNs",
+    "LSTMs",
+    "CNNs",
+    "Autoencoders",
+    "GNNs",
+    "Transformers",
+    "Reinforcement Learning hybrids"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "A collection of deep learning architectures used for predicting market movements in algorithmic trading.",
+  "how_it_works": "Deep learning models like RNNs and LSTMs are employed to analyze historical financial time series data to capture temporal dependencies. These models are trained on past market data to predict future price movements or generate trading signals. The architecture choice depends on the specific trading task and the nature of the data. After training, the models are validated on unseen data to ensure their effectiveness in real-world trading scenarios.",
+  "algorithm": {
+    "steps": [
+      "1. Identify the trading task and data requirements.",
+      "2. Select an appropriate deep learning architecture (e.g., RNN, LSTM).",
+      "3. Preprocess the financial time series data.",
+      "4. Train the model using historical data.",
+      "5. Validate the model's performance on unseen data.",
+      "6. Implement the model in a trading strategy."
+    ],
+    "core_equation": "output = f(model(input_data))",
+    "input_format": "Historical financial time series data, including price, volume, and other relevant indicators.",
+    "output_format": "Predicted price movements or trading signals."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A higher learning rate may speed up training but can lead to instability."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Larger batch sizes can improve training speed but may require more memory."
+    },
+    {
+      "name": "epochs",
+      "typical_value": "100",
+      "effect": "More epochs can lead to better training but may cause overfitting."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m) where n is the number of training samples and m is the number of epochs",
+    "space": "O(d) where d is the dimensionality of the input data",
+    "practical_note": "Performance can vary significantly based on architecture and hyperparameter tuning."
+  },
+  "use_when": [
+    "You need to predict stock prices based on historical data.",
+    "You want to implement a trading strategy that adapts to market conditions.",
+    "You are dealing with high-frequency trading data."
+  ],
+  "avoid_when": [
+    "The dataset is too small or lacks temporal structure.",
+    "You require explainability in your trading decisions.",
+    "Market conditions are highly unpredictable and volatile."
+  ],
+  "implementation_skeleton": "def train_model(data: np.ndarray, learning_rate: float = 0.001, batch_size: int = 32, epochs: int = 100) -> Model:\n    preprocess(data)\n    model = select_architecture()\n    for epoch in range(epochs):\n        for batch in create_batches(data, batch_size):\n            model.train(batch, learning_rate)\n    return model",
+  "common_mistakes": [
+    "Neglecting to preprocess data properly, leading to poor model performance.",
+    "Overfitting the model by training for too many epochs without validation.",
+    "Choosing an inappropriate architecture for the specific trading task."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Ability to capture complex patterns in time series data.",
+      "Adaptability to changing market conditions.",
+      "Potential for high accuracy in predictions."
+    ],
+    "weaknesses": [
+      "Requires large amounts of data for effective training.",
+      "Can be computationally expensive and time-consuming.",
+      "May lack interpretability compared to traditional models."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional statistical models (e.g., ARIMA)",
+        "verdict": "Use deep learning for complex patterns; use ARIMA for simpler, linear relationships."
+      }
+    ]
+  },
+  "connects_to": [
+    "Reinforcement Learning",
+    "Time Series Analysis",
+    "Feature Engineering",
+    "Model Evaluation Metrics"
+  ],
+  "maturity": "proven"
+}

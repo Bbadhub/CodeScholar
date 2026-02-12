@@ -1,0 +1,37 @@
+{
+  "problem_name": "Audio Deepfake Detection",
+  "description": "Audio deepfake detection involves identifying manipulated audio recordings that may mislead listeners or misrepresent the speaker. This problem is critical in fields such as cybersecurity and journalism, where audio authenticity is paramount.",
+  "you_have_this_if": [
+    "You encounter suspicious audio recordings.",
+    "You need to verify the authenticity of audio content.",
+    "You are working in a domain where audio manipulation is a concern.",
+    "You require a solution that can handle diverse audio inputs.",
+    "You are facing challenges with existing audio verification methods."
+  ],
+  "approaches": [
+    {
+      "technique": "Sonic Sleuth",
+      "best_for": "when you need to detect manipulated audio in cybersecurity applications or journalism.",
+      "paper_count": 1,
+      "max_citations": 8,
+      "key_tradeoff": "While effective, it may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Sonic Sleuth",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a robust solution that generalizes well across various audio inputs."
+    }
+  ],
+  "start_here": "Start with Sonic Sleuth as it provides a strong foundation for detecting audio deepfakes, especially in critical applications like cybersecurity and journalism.",
+  "related_problems": [
+    "Video Deepfake Detection",
+    "Image Forgery Detection",
+    "Speech Recognition Accuracy",
+    "Audio Quality Assessment"
+  ]
+}

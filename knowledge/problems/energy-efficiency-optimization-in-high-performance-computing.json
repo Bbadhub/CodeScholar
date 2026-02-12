@@ -1,0 +1,37 @@
+{
+  "problem_name": "Energy Efficiency Optimization in High-Performance Computing",
+  "description": "Energy efficiency optimization in high-performance computing (HPC) focuses on minimizing energy consumption while maintaining performance levels. This is crucial for reducing operational costs and meeting regulatory requirements in data centers.",
+  "you_have_this_if": [
+    "You notice high energy bills from your HPC systems.",
+    "You are facing pressure to comply with energy efficiency regulations.",
+    "Your data center is looking to implement sustainable practices.",
+    "You experience thermal management issues due to high power usage.",
+    "You are looking for ways to optimize resource allocation in your HPC workloads."
+  ],
+  "approaches": [
+    {
+      "technique": "Energy-aware scheduling and dynamic power management",
+      "best_for": "when you need to reduce operational costs in HPC systems and comply with energy efficiency regulations.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach may require more complex implementation but can lead to significant cost savings."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Energy-aware scheduling and dynamic power management",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to balance performance with energy savings in HPC environments."
+    }
+  ],
+  "start_here": "Start with energy-aware scheduling and dynamic power management, as it directly addresses the need for energy efficiency while maintaining performance in HPC systems.",
+  "related_problems": [
+    "Resource allocation optimization in data centers",
+    "Thermal management in high-performance computing",
+    "Cost reduction strategies in cloud computing",
+    "Sustainable computing practices"
+  ]
+}

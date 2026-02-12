@@ -1,0 +1,91 @@
+{
+  "technique_name": "Sonic Sleuth",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "Sonic Sleuth is a convolutional neural network model designed for detecting deepfake audio.",
+  "how_it_works": "Sonic Sleuth utilizes a custom CNN architecture to classify audio samples as real or synthesized. It employs advanced feature extraction techniques, such as short-time power spectrum and constant-Q transform, to analyze audio signals. The model is trained on a diverse dataset to improve its accuracy in distinguishing between authentic and manipulated audio.",
+  "algorithm": {
+    "steps": [
+      "1. Collect and preprocess audio datasets, ensuring uniformity.",
+      "2. Extract features using short-time power spectrum and constant-Q transform.",
+      "3. Train the CNN model on the processed audio data.",
+      "4. Validate the model using a separate validation set.",
+      "5. Test the model on external datasets to evaluate generalization."
+    ],
+    "core_equation": "output = CNN(features)",
+    "input_format": "Audio files in WAV or MP3 format, standardized to 4 seconds and downsampled to 16 kHz.",
+    "output_format": "Probability score indicating whether the audio is real or deepfake."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "Affects the speed of convergence during training."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Impacts the stability of the training process."
+    },
+    {
+      "name": "epochs",
+      "typical_value": "100",
+      "effect": "Determines how many times the model will see the training data."
+    },
+    {
+      "name": "dropout_rate",
+      "typical_value": "0.10",
+      "effect": "Helps prevent overfitting by randomly dropping units during training."
+    },
+    {
+      "name": "class_weights",
+      "typical_value": "calculated based on dataset imbalance",
+      "effect": "Balances the influence of different classes during training."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the size of the dataset and model architecture."
+  },
+  "use_when": [
+    "You need to detect manipulated audio in cybersecurity applications.",
+    "You are developing tools for journalism to verify audio authenticity.",
+    "You require a robust model that generalizes across various audio inputs."
+  ],
+  "avoid_when": [
+    "The audio data is highly specialized and not covered by the training datasets.",
+    "Real-time detection is required with stringent latency constraints."
+  ],
+  "implementation_skeleton": "def sonic_sleuth_model(audio_data: np.ndarray) -> float:\n    features = extract_features(audio_data)\n    output = cnn_predict(features)\n    return output\n\n# Example usage\nresult = sonic_sleuth_model(audio_sample)",
+  "common_mistakes": [
+    "Neglecting to preprocess audio data properly.",
+    "Using an inappropriate learning rate leading to poor convergence.",
+    "Failing to validate the model on external datasets."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy in detecting deepfake audio.",
+      "Robustness across various audio inputs.",
+      "Utilizes advanced feature extraction techniques."
+    ],
+    "weaknesses": [
+      "May not perform well on highly specialized audio data.",
+      "Not suitable for real-time detection due to processing time.",
+      "Requires significant computational resources for training."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional deepfake detection methods",
+        "verdict": "Sonic Sleuth offers significant improvements in accuracy and EER."
+      }
+    ]
+  },
+  "connects_to": [
+    "Convolutional Neural Networks (CNNs)",
+    "Audio Signal Processing",
+    "Deepfake Detection Techniques",
+    "Feature Extraction Methods"
+  ],
+  "maturity": "proven"
+}

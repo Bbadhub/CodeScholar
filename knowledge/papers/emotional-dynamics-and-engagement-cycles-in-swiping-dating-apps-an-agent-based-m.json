@@ -1,0 +1,89 @@
+{
+  "summary": "This paper presents an agent-based modeling approach to understand emotional dynamics and engagement cycles in swiping dating apps, highlighting the impact of rapid implicit rejection on user behavior. Engineers should care because this model can inform the design of more user-friendly dating applications that mitigate negative emotional effects.",
+  "key_contribution": "An agent-based model that simulates user interactions and emotional responses in swiping dating apps.",
+  "problem_type": "user engagement modeling",
+  "problem_description": "The need to understand how rapid implicit rejection in swiping dating apps affects user emotions and engagement.",
+  "domain": "Human-Computer Interaction",
+  "sub_domain": "User engagement modeling",
+  "technique_name": "Agent-based modeling",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves creating agents that represent users in a swiping dating app environment. These agents interact based on emotional states influenced by rejection and acceptance, allowing for the simulation of engagement cycles over time.",
+    "algorithm_steps": [
+      "1. Initialize a population of user agents with emotional states.",
+      "2. Simulate swiping interactions where agents evaluate potential matches.",
+      "3. Update emotional states based on acceptance or rejection outcomes.",
+      "4. Record engagement metrics over multiple cycles.",
+      "5. Analyze the impact of rejection frequency on overall user satisfaction."
+    ],
+    "input": "Initial parameters for user agents, including emotional state distributions and rejection rates.",
+    "output": "Simulation results showing engagement metrics and emotional dynamics over time.",
+    "key_parameters": [
+      "initial_emotional_state: normal",
+      "rejection_rate: 0.5",
+      "evaluation_time: 2 seconds"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Synthetic user interaction data generated based on typical swiping behaviors."
+    ],
+    "metrics": [
+      "user engagement rate, emotional distress level"
+    ],
+    "baselines": [
+      "Traditional user engagement models without implicit rejection consideration."
+    ],
+    "improvement": "Demonstrated improved understanding of user emotional dynamics compared to baseline models."
+  },
+  "concepts": [
+    "agent-based modeling",
+    "user engagement",
+    "emotional dynamics",
+    "implicit rejection"
+  ],
+  "use_this_when": [
+    "Designing user interfaces for dating apps to enhance user experience.",
+    "Studying the psychological effects of rapid rejection in digital environments.",
+    "Developing algorithms to optimize user engagement in social applications."
+  ],
+  "dont_use_when": [
+    "Building applications that do not involve user interactions or emotional responses.",
+    "When the focus is on explicit rather than implicit user feedback.",
+    "In scenarios where user behavior is not influenced by emotional states."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Agent class to represent users, emotional state variables, interaction history logs"
+    ],
+    "dependencies": [
+      "NetLogo or AnyLogic for agent-based modeling simulation"
+    ],
+    "pseudocode_hint": "for each agent in population: evaluate_match(); update_emotional_state(); log_engagement();",
+    "gotchas": [
+      "Ensure emotional state transitions are realistic and based on psychological research.",
+      "Avoid overfitting the model to synthetic data without real-world validation."
+    ]
+  },
+  "connects_to": [
+    "User behavior modeling",
+    "Emotional AI",
+    "Social network analysis"
+  ],
+  "prerequisites": [
+    "Basic understanding of agent-based modeling",
+    "Familiarity with user engagement metrics",
+    "Knowledge of emotional psychology"
+  ],
+  "limitations": [
+    "Model may not capture all real-world complexities of human emotions.",
+    "Assumes uniformity in user responses to rejection.",
+    "Dependent on the accuracy of initial parameter settings."
+  ],
+  "open_questions": [
+    "How can this model be adapted for different types of social applications?",
+    "What are the long-term effects of using swiping apps on user mental health?"
+  ]
+}

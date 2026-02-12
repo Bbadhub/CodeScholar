@@ -1,0 +1,96 @@
+{
+  "summary": "This study investigates the temporal dynamics of the friendship paradox using smartphone communication data from over 600 students. Engineers should care because understanding this phenomenon can inform the design of social networks and interventions that mitigate distorted social perceptions.",
+  "key_contribution": "The introduction of a dynamic friendship index that tracks the evolution of the friendship paradox over time.",
+  "problem_type": "social network analysis, temporal dynamics, friendship paradox",
+  "problem_description": "The friendship paradox leads individuals to misjudge social norms based on the degree disparity between themselves and their friends.",
+  "domain": "Social Network Analysis",
+  "sub_domain": "Temporal Dynamics of Social Networks",
+  "technique_name": "Friendship Index",
+  "technique_category": "statistical_method",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method calculates a dynamic friendship index that measures the ratio of the average degree of an individual's friends to their own degree over time. This allows for tracking how the friendship paradox evolves as the network develops.",
+    "algorithm_steps": [
+      "1. Collect smartphone communication data over a specified period.",
+      "2. Construct undirected networks daily based on interactions.",
+      "3. Calculate the degree of each node (individual) in the network.",
+      "4. Compute the average degree of each individual's friends.",
+      "5. Calculate the friendship index for each individual at each time point.",
+      "6. Analyze the temporal changes in the friendship index."
+    ],
+    "input": "Smartphone communication records detailing interactions among individuals.",
+    "output": "Dynamic friendship index values for each individual over time.",
+    "key_parameters": [
+      "time_period: 119 days",
+      "number_of_participants: 692",
+      "communication_records: over 60 million"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "NetHealth dataset from 692 undergraduate students at the University of Notre Dame"
+    ],
+    "metrics": [
+      "friendship index",
+      "degree of individuals",
+      "average degree of alters"
+    ],
+    "baselines": [
+      "Static friendship index from previous studies"
+    ],
+    "improvement": "The dynamic friendship index provides a more nuanced understanding of the friendship paradox compared to static measures."
+  },
+  "concepts": [
+    "friendship paradox",
+    "dynamic networks",
+    "social norms",
+    "degree disparity"
+  ],
+  "use_this_when": [
+    "Designing social networks that aim to mitigate distorted perceptions of social norms.",
+    "Analyzing communication patterns in educational or workplace settings.",
+    "Studying the influence of highly connected individuals on group behavior."
+  ],
+  "dont_use_when": [
+    "The network is static and does not evolve over time.",
+    "Data on individual interactions is not available.",
+    "The focus is solely on individual behaviors without considering network effects."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Graph representation of individuals and their connections",
+      "Data structures for storing communication records"
+    ],
+    "dependencies": [
+      "NetworkX (for network analysis)",
+      "Pandas (for data manipulation)",
+      "NumPy (for numerical calculations)"
+    ],
+    "pseudocode_hint": "for each day in time_period: construct_network(data); calculate_friendship_index(network);",
+    "gotchas": [
+      "Ensure data privacy and ethical considerations when collecting communication data.",
+      "Account for missing data in communication records.",
+      "Be cautious of biases in self-reported friendship data."
+    ]
+  },
+  "connects_to": [
+    "Social network analysis techniques",
+    "Graph theory",
+    "Temporal data analysis"
+  ],
+  "prerequisites": [
+    "Understanding of graph theory",
+    "Familiarity with social network analysis",
+    "Basic statistical methods"
+  ],
+  "limitations": [
+    "The study is limited to a specific demographic (undergraduate students).",
+    "Results may not generalize to other types of social networks.",
+    "The reliance on self-reported data may introduce biases."
+  ],
+  "open_questions": [
+    "How do different types of social networks influence the friendship paradox?",
+    "What interventions can effectively mitigate the effects of the friendship paradox?"
+  ]
+}

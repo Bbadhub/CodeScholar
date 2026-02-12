@@ -1,0 +1,37 @@
+{
+  "problem_name": "Hardware IP Protection",
+  "description": "Hardware IP protection involves safeguarding intellectual property related to hardware designs from unauthorized access and duplication. This is crucial in environments where trust is minimal, and the risk of IP theft is high.",
+  "you_have_this_if": [
+    "You are working in a zero-trust manufacturing environment.",
+    "You need to ensure the confidentiality of your hardware designs.",
+    "You are facing challenges with IP theft or unauthorized access.",
+    "You require a scalable solution for hardware IP redaction.",
+    "You want to integrate protection techniques into existing EDA tool flows."
+  ],
+  "approaches": [
+    {
+      "technique": "HIPR",
+      "best_for": "when you need to protect hardware IP in a zero-trust manufacturing environment.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "Provides strong protection but may require integration effort with existing tools."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "HIPR",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a reliable method to protect hardware IP while maintaining compatibility with existing workflows."
+    }
+  ],
+  "start_here": "Start with the HIPR technique as it is specifically designed for hardware IP protection in environments where trust is minimal, and it integrates well with existing EDA tools.",
+  "related_problems": [
+    "Software IP protection",
+    "Data security in hardware design",
+    "Trust management in manufacturing",
+    "Intellectual property theft prevention"
+  ]
+}

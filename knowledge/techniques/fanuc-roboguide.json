@@ -1,0 +1,90 @@
+{
+  "technique_name": "Fanuc ROBOGUIDE",
+  "aliases": [
+    "Fanuc Robot Simulation Software"
+  ],
+  "category": "robotics_simulation",
+  "one_liner": "Fanuc ROBOGUIDE is a software environment for programming and simulating industrial robots.",
+  "how_it_works": "Fanuc ROBOGUIDE allows engineers to select a robot and controller from a library, choose compatible end-effectors, and develop a control program using a 3D model. The program can be simulated to identify and resolve issues before implementation. This structured approach minimizes errors and enhances the efficiency of robot programming.",
+  "algorithm": {
+    "steps": [
+      "1. Select an industrial robot and controller from the library.",
+      "2. Choose an end-effector compatible with the robot.",
+      "3. Add additional equipment to the 3D model in the graphic area.",
+      "4. Develop the control program using the 3D model.",
+      "5. Simulate the developed program to detect issues.",
+      "6. Implement the program on the actual robot."
+    ],
+    "core_equation": "N/A",
+    "input_format": "3D models of industrial robots, end-effectors, and additional equipment.",
+    "output_format": "Control program for the industrial robot, executable by the robot's controller."
+  },
+  "parameters": [
+    {
+      "name": "robot_model",
+      "typical_value": "Fanuc LR Mate 200 iD/7L",
+      "effect": "Specifies the type of robot being programmed."
+    },
+    {
+      "name": "end_effector",
+      "typical_value": "vacuum gripper",
+      "effect": "Determines the tool used for manipulation."
+    },
+    {
+      "name": "payload",
+      "typical_value": "5 kg",
+      "effect": "Indicates the maximum weight the robot can handle."
+    },
+    {
+      "name": "conveyor_dimensions",
+      "typical_value": "150 x 150 x 150 mm",
+      "effect": "Defines the size constraints for the robotic cell."
+    }
+  ],
+  "complexity": {
+    "time": "N/A",
+    "space": "N/A",
+    "practical_note": "The software is designed to optimize programming time and reduce errors compared to manual methods."
+  },
+  "use_when": [
+    "You need to program an industrial robot for a specific task.",
+    "You want to simulate robot operations before implementation.",
+    "You are designing a robotic cell with multiple components."
+  ],
+  "avoid_when": [
+    "You require real-time programming adjustments.",
+    "The robot's tasks are highly dynamic and unpredictable.",
+    "You lack access to the Fanuc ROBOGUIDE environment."
+  ],
+  "implementation_skeleton": "def program_robot(robot_model: str, end_effector: str, payload: float, conveyor_dimensions: tuple) -> str:\n    # Step 1: Select robot and controller\n    # Step 2: Choose end-effector\n    # Step 3: Add equipment to model\n    # Step 4: Develop control program\n    # Step 5: Simulate program\n    # Step 6: Implement on robot\n    return 'Control program generated'",
+  "common_mistakes": [
+    "Neglecting to simulate the program before implementation.",
+    "Choosing incompatible end-effectors or equipment.",
+    "Overlooking payload limitations of the robot."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Reduces programming time significantly.",
+      "Minimizes errors compared to manual programming.",
+      "Allows for detailed simulation of robot operations."
+    ],
+    "weaknesses": [
+      "Not suitable for real-time programming needs.",
+      "Limited to Fanuc robots and controllers.",
+      "Requires familiarity with the software environment."
+    ],
+    "compared_to": [
+      {
+        "technique": "Manual Programming",
+        "verdict": "Use Fanuc ROBOGUIDE for efficiency and error reduction."
+      }
+    ]
+  },
+  "connects_to": [
+    "Robot Operating System (ROS)",
+    "Industrial Robot Programming",
+    "3D Modeling Software",
+    "Simulation Software"
+  ],
+  "maturity": "proven"
+}

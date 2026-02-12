@@ -1,0 +1,83 @@
+{
+  "technique_name": "Lead Qualification Model",
+  "aliases": [],
+  "category": "machine_learning",
+  "one_liner": "A machine learning model that scores leads based on historical data to automate lead qualification.",
+  "how_it_works": "The Lead Qualification Model is trained on historical lead data to identify patterns that indicate the quality of leads. Once trained, the model can score new leads based on these patterns, allowing sales teams to prioritize their efforts effectively. The model is integrated into a CRM system, where it continuously updates with new data to improve its accuracy over time.",
+  "algorithm": {
+    "steps": [
+      "1. Collect historical lead data from the CRM.",
+      "2. Preprocess the data to clean and format it for training.",
+      "3. Train a machine learning model using the processed data.",
+      "4. Validate the model's performance on a separate dataset.",
+      "5. Integrate the model into the CRM to score incoming leads.",
+      "6. Continuously update the model with new lead data for improved accuracy."
+    ],
+    "core_equation": "score = model.predict(new_lead_features)",
+    "input_format": "Historical lead data including features such as lead source, engagement metrics, and demographic information.",
+    "output_format": "A score assigned to each incoming lead indicating its qualification level."
+  },
+  "parameters": [
+    {
+      "name": "model_type",
+      "typical_value": "Random Forest",
+      "effect": "Different models may yield varying accuracy and performance."
+    },
+    {
+      "name": "training_data_size",
+      "typical_value": "1000 leads",
+      "effect": "Larger datasets generally improve model performance."
+    },
+    {
+      "name": "score_threshold",
+      "typical_value": "0.5",
+      "effect": "Adjusting this threshold changes the sensitivity of lead qualification."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for training, where n is the number of leads.",
+    "space": "O(n) for storing the training data.",
+    "practical_note": "Performance may vary based on the complexity of the model and the size of the dataset."
+  },
+  "use_when": [
+    "You need to automate lead qualification in a CRM system.",
+    "You have historical lead data to train a model.",
+    "You want to improve sales efficiency through better lead management."
+  ],
+  "avoid_when": [
+    "You lack sufficient historical data for training.",
+    "The CRM system does not support plugin integration.",
+    "You require real-time lead scoring without prior training."
+  ],
+  "implementation_skeleton": "def lead_qualification_model(data: List[LeadData]) -> List[float]:\n    cleaned_data = preprocess(data)\n    model = train_model(cleaned_data)\n    scores = model.predict(new_leads)\n    return scores",
+  "common_mistakes": [
+    "Not cleaning the data properly before training.",
+    "Using an insufficient amount of historical data.",
+    "Failing to validate the model's performance before deployment."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Automates the lead qualification process, saving time.",
+      "Improves accuracy over manual methods.",
+      "Can adapt to new data for continuous improvement."
+    ],
+    "weaknesses": [
+      "Requires sufficient historical data for training.",
+      "May not perform well if the data is not representative.",
+      "Integration complexity with existing CRM systems."
+    ],
+    "compared_to": [
+      {
+        "technique": "Rule-based scoring systems",
+        "verdict": "Use the Lead Qualification Model for more dynamic and data-driven scoring."
+      }
+    ]
+  },
+  "connects_to": [
+    "CRM Systems",
+    "Data Preprocessing Techniques",
+    "Machine Learning Model Training",
+    "Lead Scoring Algorithms"
+  ],
+  "maturity": "proven"
+}

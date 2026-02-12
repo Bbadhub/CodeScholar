@@ -1,0 +1,92 @@
+{
+  "summary": "The paper presents a method for achieving trustworthy and reliable quantum computing using untrusted and unreliable quantum hardware by modeling adversarial tampering and proposing an equitable distribution of quantum shots across different hardware options. Engineers should care because this approach can significantly improve the reliability of quantum computations, especially in critical applications where tampering could lead to sub-optimal solutions.",
+  "key_contribution": "Proposed an intelligent run-adaptive shot distribution heuristic to mitigate adversarial tampering in quantum computing.",
+  "problem_type": "quantum computing security",
+  "problem_description": "The need for reliable quantum computing solutions in the presence of potentially tampered results from untrusted quantum hardware providers.",
+  "domain": "Quantum Computing",
+  "sub_domain": "Quantum Security",
+  "technique_name": "Intelligent Run-Adaptive Shot Distribution",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves distributing quantum shots across multiple hardware options to mitigate the effects of adversarial tampering. An intelligent heuristic is used to adaptively allocate more shots to reliable hardware based on temporal variations in hardware quality.",
+    "algorithm_steps": [
+      "1. Identify available quantum hardware options.",
+      "2. Distribute total shots across these hardware options.",
+      "3. Execute quantum programs on each hardware option.",
+      "4. Collect results and analyze probability distributions.",
+      "5. Adjust shot distribution based on observed hardware performance.",
+      "6. Combine results to form a final probability distribution of solutions."
+    ],
+    "input": "Quantum programs and the number of total shots to be executed.",
+    "output": "Probability distribution of the solution space after combining results from different hardware.",
+    "key_parameters": [
+      "total_shots: 1000",
+      "tampering_coefficient: 0.1 to 0.5"
+    ],
+    "complexity": "Not stated."
+  },
+  "benchmarks": {
+    "datasets": [
+      "IBM's fake backends for quantum simulations"
+    ],
+    "metrics": [
+      "Performance Metric (PM)",
+      "Total Variational Distance (TVD)"
+    ],
+    "baselines": [
+      "Single hardware execution without shot distribution"
+    ],
+    "improvement": "Achieved up to \u2248190X improvement for pure quantum workloads and \u22482.5X for hybrid-classical algorithms."
+  },
+  "concepts": [
+    "quantum hardware",
+    "adversarial tampering",
+    "shot distribution",
+    "quantum algorithms",
+    "QAOA",
+    "hybrid quantum-classical"
+  ],
+  "use_this_when": [
+    "You need to run quantum algorithms on unreliable hardware.",
+    "You are working with critical applications where tampering could lead to significant consequences.",
+    "You want to improve the reliability of quantum computations in a mixed hardware environment."
+  ],
+  "dont_use_when": [
+    "You have access to fully trusted and reliable quantum hardware.",
+    "The application does not require high reliability in quantum results."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Arrays for storing shot results",
+      "Data structures for probability distributions"
+    ],
+    "dependencies": [
+      "IBM Qiskit"
+    ],
+    "pseudocode_hint": "results = combine_results(distribute_shots(hardware_options, total_shots))",
+    "gotchas": [
+      "Ensure accurate measurement of hardware performance to avoid misallocation of shots.",
+      "Monitor temporal variations in hardware quality continuously."
+    ]
+  },
+  "connects_to": [
+    "Quantum Approximate Optimization Algorithm (QAOA)",
+    "Variational Quantum Eigensolver (VQE)",
+    "Ensemble of Diverse Mappings (EDM)"
+  ],
+  "prerequisites": [
+    "Basic understanding of quantum computing",
+    "Familiarity with quantum algorithms",
+    "Knowledge of cloud-based quantum services"
+  ],
+  "limitations": [
+    "The method relies on the assumption that some hardware is trusted.",
+    "Performance may vary significantly based on the quality of the available hardware.",
+    "The approach may not be effective if all hardware options are untrusted."
+  ],
+  "open_questions": [
+    "How to optimally determine the split boundary for shot distribution?",
+    "What metrics should be used to evaluate the effectiveness of the defense against tampering?"
+  ]
+}

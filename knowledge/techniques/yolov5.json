@@ -1,0 +1,84 @@
+{
+  "technique_name": "YOLOv5",
+  "aliases": [
+    "You Only Look Once version 5"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "YOLOv5 is a real-time object detection model that identifies and classifies objects in images efficiently.",
+  "how_it_works": "YOLOv5 processes images through a single neural network that divides the image into a grid and predicts bounding boxes and class probabilities for each grid cell. It uses a series of convolutional layers to extract features from the image and applies non-maximum suppression to filter out overlapping boxes. This allows for fast and accurate detection of multiple objects in a single pass.",
+  "algorithm": {
+    "steps": [
+      "Load the input image data.",
+      "Resize the image to the required dimensions (e.g., 640x480 pixels).",
+      "Pass the image through the YOLOv5 model to predict bounding boxes and class probabilities.",
+      "Apply non-maximum suppression to eliminate redundant boxes.",
+      "Output the classified images with detected objects."
+    ],
+    "core_equation": "output = sigmoid(predictions) \u00b7 (bounding boxes + class probabilities)",
+    "input_format": "Raw image data in various formats (e.g., fits, JPEG)",
+    "output_format": "Classified images with bounding boxes indicating detected objects"
+  },
+  "parameters": [
+    {
+      "name": "image_size",
+      "typical_value": "640x480",
+      "effect": "Changing the size affects detection accuracy and processing speed."
+    },
+    {
+      "name": "threshold_value",
+      "typical_value": "adaptive thresholding method",
+      "effect": "Altering this value can change the sensitivity of detection."
+    },
+    {
+      "name": "kernel_size",
+      "typical_value": "4x4",
+      "effect": "Modifying kernel size impacts the morphological operations applied to the image."
+    }
+  ],
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)",
+    "practical_note": "Real-world performance can vary based on hardware and image complexity."
+  },
+  "use_when": [
+    "You need to analyze large volumes of astronomical image data.",
+    "Real-time detection of phenomena in remote sensing applications is required.",
+    "You want to leverage cloud computing for scalable image processing."
+  ],
+  "avoid_when": [
+    "You require on-premises processing due to data privacy concerns.",
+    "The image data is too small to justify cloud computing costs.",
+    "You need a solution that does not rely on external cloud services."
+  ],
+  "implementation_skeleton": "def detect_objects(image: np.ndarray) -> List[DetectedObject]:\n    resized_image = resize(image, (640, 480))\n    predictions = yolo_model.predict(resized_image)\n    boxes = non_max_suppression(predictions)\n    return boxes",
+  "common_mistakes": [
+    "Not resizing images to the expected input size.",
+    "Ignoring the need for non-maximum suppression, leading to multiple overlapping detections.",
+    "Failing to preprocess images correctly, which can affect detection accuracy."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High speed and efficiency for real-time applications.",
+      "Ability to detect multiple objects in a single image.",
+      "Scalable through cloud computing resources."
+    ],
+    "weaknesses": [
+      "Dependent on cloud infrastructure, which may raise privacy concerns.",
+      "Performance can degrade with very small or very large objects.",
+      "Requires significant computational resources for training."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional image analysis methods",
+        "verdict": "YOLOv5 is faster and more effective for complex scenes."
+      }
+    ]
+  },
+  "connects_to": [
+    "OpenCV for image processing",
+    "AWS Lambda for serverless architecture",
+    "Non-maximum suppression techniques",
+    "Other YOLO versions (e.g., YOLOv4, YOLOv3)"
+  ],
+  "maturity": "proven"
+}

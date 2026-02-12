@@ -1,0 +1,37 @@
+{
+  "problem_name": "Nonlinear Dynamics Prediction",
+  "description": "Nonlinear dynamics prediction involves forecasting the behavior of systems where outputs are not directly proportional to inputs, often leading to complex and unpredictable behavior. This is particularly relevant in fields like plasma physics, where understanding instabilities can significantly impact system performance.",
+  "you_have_this_if": [
+    "You are working with systems that exhibit chaotic behavior.",
+    "You have limited data from simulations or experiments.",
+    "You need to make predictions in real-time for control systems.",
+    "Your models are struggling to capture the complexity of the dynamics.",
+    "You are dealing with high-dimensional data that is difficult to analyze."
+  ],
+  "approaches": [
+    {
+      "technique": "Fusion Transfer Learning (FTL)",
+      "best_for": "when you need to predict plasma instabilities in fusion devices with limited simulation data.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "FTL can improve prediction accuracy but may require significant initial setup and understanding of the underlying data."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Fusion Transfer Learning (FTL)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have limited data but need to accurately predict complex nonlinear dynamics in fusion systems."
+    }
+  ],
+  "start_here": "Start with Fusion Transfer Learning (FTL) as it is specifically designed for predicting plasma instabilities and can leverage limited data effectively.",
+  "related_problems": [
+    "Chaos Theory in Dynamical Systems",
+    "Time Series Forecasting",
+    "Control Systems Design",
+    "Data-Driven Modeling of Complex Systems"
+  ]
+}

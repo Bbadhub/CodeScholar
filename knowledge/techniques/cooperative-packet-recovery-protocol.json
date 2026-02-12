@@ -1,0 +1,82 @@
+{
+  "technique_name": "Cooperative Packet Recovery Protocol",
+  "aliases": [],
+  "category": "networking_protocol",
+  "one_liner": "This protocol enables reliable packet recovery in real-time multimedia streaming applications by utilizing cooperative communication among clients and a server.",
+  "how_it_works": "The protocol operates by having a source broadcast packets to both clients and a server. Clients store these packets and monitor for any losses. When a client detects a missing packet, it sends a negative acknowledgment (NACK) request to the server, which then retrieves the requested packet from its buffer and sends it back to the client. This process ensures that clients can recover lost packets efficiently, maintaining the quality of the multimedia stream.",
+  "algorithm": {
+    "steps": [
+      "1. Source broadcasts packets to clients and server.",
+      "2. Clients receive packets and store them in a buffer.",
+      "3. If a client detects a missing packet, it sends a NACK request to the server.",
+      "4. The server checks its buffer for the requested packet and sends it back to the client.",
+      "5. Clients update their buffers with the received packets and continue broadcasting to receivers."
+    ],
+    "core_equation": "output = repair_packet(server, requested_packet)",
+    "input_format": "Multimedia packets from a source, NACK requests from clients.",
+    "output_format": "Repaired packets sent from the server to clients."
+  },
+  "parameters": [
+    {
+      "name": "buffer_size",
+      "typical_value": "not stated",
+      "effect": "Larger buffers may improve recovery rates but require more memory."
+    },
+    {
+      "name": "inter_packet_delay",
+      "typical_value": "not stated",
+      "effect": "Affects the timing of packet delivery and may impact QoS."
+    },
+    {
+      "name": "max_retry_count",
+      "typical_value": "3",
+      "effect": "Limits the number of attempts to recover a lost packet."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on network conditions and client-server architecture."
+  },
+  "use_when": [
+    "Implementing real-time multimedia streaming applications.",
+    "Designing systems that require reliable packet delivery over unreliable networks.",
+    "Developing protocols for live broadcasting where packet loss is critical."
+  ],
+  "avoid_when": [
+    "The application does not require real-time packet recovery.",
+    "The network environment is highly reliable with minimal packet loss.",
+    "The system architecture does not support multicast communication."
+  ],
+  "implementation_skeleton": "def cooperative_packet_recovery(source_packets: List[Packet], nacks: List[NACK]) -> List[Packet]:\n    server_buffer = store_packets(source_packets)\n    for nack in nacks:\n        if nack in server_buffer:\n            send_packet_to_client(nack)\n    return updated_client_buffers",
+  "common_mistakes": [
+    "Failing to handle NACK requests efficiently, leading to delays.",
+    "Not considering the impact of network latency on packet recovery.",
+    "Underestimating the required buffer size for effective recovery."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Enhances reliability of multimedia streaming.",
+      "Utilizes cooperative communication to improve packet recovery.",
+      "Adaptable to various network conditions."
+    ],
+    "weaknesses": [
+      "May introduce additional latency in packet delivery.",
+      "Dependent on client-server architecture for effectiveness.",
+      "Not suitable for highly reliable networks."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Acknowledgment Protocols",
+        "verdict": "Use Cooperative Packet Recovery when real-time performance is critical; otherwise, traditional methods may suffice."
+      }
+    ]
+  },
+  "connects_to": [
+    "Real-time Transport Protocol (RTP)",
+    "User Datagram Protocol (UDP)",
+    "Forward Error Correction (FEC)",
+    "Multicast Communication Protocols"
+  ],
+  "maturity": "emerging"
+}

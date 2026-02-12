@@ -1,0 +1,77 @@
+{
+  "technique_name": "Intelligent Run-Adaptive Shot Distribution",
+  "aliases": [],
+  "category": "quantum_computing",
+  "one_liner": "This technique adaptively distributes quantum shots across multiple hardware options to enhance reliability and mitigate tampering effects.",
+  "how_it_works": "The technique identifies available quantum hardware options and distributes a total number of shots across them. It executes quantum programs on each option and collects results to analyze their probability distributions. Based on the observed performance of the hardware, the shot distribution is adjusted dynamically to favor more reliable hardware, ultimately combining the results to form a final probability distribution of solutions.",
+  "algorithm": {
+    "steps": [
+      "1. Identify available quantum hardware options.",
+      "2. Distribute total shots across these hardware options.",
+      "3. Execute quantum programs on each hardware option.",
+      "4. Collect results and analyze probability distributions.",
+      "5. Adjust shot distribution based on observed hardware performance.",
+      "6. Combine results to form a final probability distribution of solutions."
+    ],
+    "core_equation": "output = combine(results from all hardware options)",
+    "input_format": "Quantum programs and the number of total shots to be executed.",
+    "output_format": "Probability distribution of the solution space after combining results from different hardware."
+  },
+  "parameters": [
+    {
+      "name": "total_shots",
+      "typical_value": "1000",
+      "effect": "Increasing total shots improves statistical reliability but may increase execution time."
+    },
+    {
+      "name": "tampering_coefficient",
+      "typical_value": "0.1 to 0.5",
+      "effect": "Adjusting this coefficient influences how aggressively shots are reallocated based on hardware reliability."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated.",
+    "space": "Not explicitly stated.",
+    "practical_note": "Performance can vary significantly based on the reliability of the hardware options used."
+  },
+  "use_when": [
+    "You need to run quantum algorithms on unreliable hardware.",
+    "You are working with critical applications where tampering could lead to significant consequences.",
+    "You want to improve the reliability of quantum computations in a mixed hardware environment."
+  ],
+  "avoid_when": [
+    "You have access to fully trusted and reliable quantum hardware.",
+    "The application does not require high reliability in quantum results."
+  ],
+  "implementation_skeleton": "def intelligent_shot_distribution(quantum_program: str, total_shots: int) -> dict:\n    hardware_options = identify_hardware()\n    shot_distribution = distribute_shots(total_shots, hardware_options)\n    results = {}\n    for hardware in hardware_options:\n        results[hardware] = execute_program(quantum_program, shot_distribution[hardware])\n    adjusted_distribution = adjust_distribution(results)\n    final_output = combine_results(results)\n    return final_output",
+  "common_mistakes": [
+    "Failing to accurately assess hardware reliability before distribution.",
+    "Not adjusting the shot distribution based on real-time performance data.",
+    "Overloading a single hardware option with too many shots."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves reliability of quantum computations.",
+      "Mitigates effects of adversarial tampering.",
+      "Enhances performance in mixed hardware environments."
+    ],
+    "weaknesses": [
+      "Complexity in dynamically adjusting shot distribution.",
+      "Potential overhead in managing multiple hardware options.",
+      "May not be beneficial with fully reliable hardware."
+    ],
+    "compared_to": [
+      {
+        "technique": "Single hardware execution",
+        "verdict": "Use Intelligent Run-Adaptive Shot Distribution when reliability is critical; otherwise, single execution may suffice."
+      }
+    ]
+  },
+  "connects_to": [
+    "Quantum error correction",
+    "Quantum hardware benchmarking",
+    "Adversarial machine learning",
+    "Mixed quantum-classical algorithms"
+  ],
+  "maturity": "emerging"
+}

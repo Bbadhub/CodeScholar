@@ -1,0 +1,37 @@
+{
+  "problem_name": "Desalination",
+  "description": "Desalination is the process of removing salt and other impurities from seawater or brackish water to produce fresh water. This is crucial for providing potable water in areas with limited freshwater resources.",
+  "you_have_this_if": [
+    "You are in a region with limited access to freshwater.",
+    "You are involved in water purification projects.",
+    "You are exploring innovative technologies for chemical separations.",
+    "You need to meet specific water quality standards.",
+    "You are facing challenges with existing desalination methods."
+  ],
+  "approaches": [
+    {
+      "technique": "COF-CDN membrane",
+      "best_for": "when you need to develop a high-performance desalination membrane.",
+      "paper_count": 1,
+      "max_citations": 13,
+      "key_tradeoff": "This approach offers high performance but may require complex fabrication processes."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "COF-CDN membrane",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need an efficient and innovative solution for desalination in a research or development setting."
+    }
+  ],
+  "start_here": "Start with the COF-CDN membrane approach, as it provides a promising solution for high-performance desalination needs based on recent research.",
+  "related_problems": [
+    "Water purification",
+    "Wastewater treatment",
+    "Chemical separation technologies",
+    "Water scarcity solutions"
+  ]
+}

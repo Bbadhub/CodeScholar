@@ -1,0 +1,96 @@
+{
+  "summary": "HIPR is a novel fine-grain redaction methodology designed to protect hardware intellectual property (IP) from confidentiality and integrity attacks in the semiconductor industry. It significantly reduces overhead costs compared to existing redaction techniques while maintaining robust security, making it suitable for real-world applications.",
+  "key_contribution": "Introduction of a low-overhead fine-grain redaction methodology for hardware IP protection that is robust and scalable.",
+  "problem_type": "hardware IP protection",
+  "problem_description": "The globalization of the semiconductor supply chain has made hardware IP vulnerable to piracy, cloning, and malicious alterations.",
+  "domain": "Cybersecurity",
+  "sub_domain": "Hardware IP Protection",
+  "technique_name": "HIPR",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "HIPR identifies security-critical logic cones in a hardware design and replaces them with a configurable fabric that can only be programmed with a protected bitstream. It employs multiple optimization steps to reduce overhead while ensuring security.",
+    "algorithm_steps": [
+      "Create a hypergraph from the original netlist.",
+      "Sort the hypergraph topologically.",
+      "Identify critical edges based on a removal cost function.",
+      "Redact Boolean logic using Configurable Look-Up Tables (CLUTs).",
+      "Redact sequential logic using Configurable Sequential Blocks (CSBs).",
+      "Redact interconnect logic using Configurable Programmable Interconnects (CPIs).",
+      "Generate the configuration bitstream for the redacted components.",
+      "Optimize the bitstream for size without compromising security."
+    ],
+    "input": "Original netlist (RTL or gate-level design files).",
+    "output": "Redacted netlist and compacted configuration bitstream.",
+    "key_parameters": [
+      "Tcrit: configurable threshold for critical logic identification (default: 0)",
+      "gamma_min_size: minimum size for random LUTs",
+      "gamma_max_size: maximum size for random LUTs",
+      "gamma_x_max: maximum percentage of FFs to redact using CSBs",
+      "gamma_y_max: maximum percentage of sequential logic to redact"
+    ],
+    "complexity": "Not stated."
+  },
+  "benchmarks": {
+    "datasets": [
+      "Open-source benchmarks used for evaluation."
+    ],
+    "metrics": [
+      "Area overhead reduction: 1 to 2 orders of magnitude compared to state-of-the-art techniques."
+    ],
+    "baselines": [
+      "Existing coarse-grain and fine-grain redaction techniques."
+    ],
+    "improvement": "1 to 2 orders of magnitude reduction in area overhead."
+  },
+  "concepts": [
+    "fine-grain redaction",
+    "configurable fabric",
+    "security-critical logic",
+    "interconnect randomization"
+  ],
+  "use_this_when": [
+    "You need to protect hardware IP in a zero-trust manufacturing environment.",
+    "You require a scalable solution for hardware IP redaction with minimal overhead.",
+    "You want to integrate redaction techniques into existing EDA tool flows."
+  ],
+  "dont_use_when": [
+    "The design does not involve sensitive hardware IP.",
+    "You are working with very small designs where overhead is not a concern.",
+    "You require a solution that does not involve reconfigurable fabrics."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Hypergraph representation of the netlist.",
+      "Lists for CLUTs, CSBs, and CPIs."
+    ],
+    "dependencies": [
+      "Custom-designed standard cells for CLUTs, CSBs, and CPIs."
+    ],
+    "pseudocode_hint": "Nmod, cfg_bitstreamcompact = HIPR(N, \u03b8, \u03b3)",
+    "gotchas": [
+      "Ensure that the configurable fabric is designed to minimize overhead.",
+      "Be cautious of the security implications of the generated bitstream.",
+      "Monitor the performance impact of redaction on the overall design."
+    ]
+  },
+  "connects_to": [
+    "LUT-based obfuscation",
+    "eFPGA-based redaction",
+    "logic locking techniques"
+  ],
+  "prerequisites": [
+    "Understanding of hardware design flows",
+    "Familiarity with EDA tools",
+    "Knowledge of security threats in hardware IP"
+  ],
+  "limitations": [
+    "Potential vulnerability to advanced structural attacks.",
+    "Requires custom design of standard cells for optimal performance.",
+    "Overhead optimization may not be suitable for all designs."
+  ],
+  "open_questions": [
+    "How can HIPR be adapted for different types of hardware designs?",
+    "What additional security measures can be integrated with HIPR?"
+  ]
+}

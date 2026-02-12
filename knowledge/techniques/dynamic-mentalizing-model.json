@@ -1,0 +1,82 @@
+{
+  "technique_name": "Dynamic Mentalizing Model",
+  "aliases": [],
+  "category": "human-agent collaboration",
+  "one_liner": "A model that enables agents to infer and adapt to human intentions and beliefs in real-time for effective collaboration.",
+  "how_it_works": "The Dynamic Mentalizing Model allows agents to observe human actions and infer their intentions and beliefs. By integrating perception, action planning, and communication, the model enables agents to adjust their tasks dynamically. This continuous adaptation facilitates fluid collaboration between humans and agents in real-time environments.",
+  "algorithm": {
+    "steps": [
+      "1. Observe the actions of the human partner.",
+      "2. Infer the partner's intentions and beliefs using a dynamic mentalizing model.",
+      "3. Adjust the agent's tasks and actions based on the inferred intentions.",
+      "4. Communicate any changes or needs to the human partner implicitly or explicitly.",
+      "5. Continuously monitor the environment and partner's actions to adaptively coordinate tasks."
+    ],
+    "core_equation": "output = adapted task assignments based on inferred intentions",
+    "input_format": "Real-time data from the environment and actions of human partners.",
+    "output_format": "Adapted task assignments and actions for the agent."
+  },
+  "parameters": [
+    {
+      "name": "mentalizing_rate",
+      "typical_value": "0.5",
+      "effect": "Higher values may increase responsiveness to human intentions."
+    },
+    {
+      "name": "action_planning_time",
+      "typical_value": "100ms",
+      "effect": "Shorter times may improve real-time adaptability."
+    },
+    {
+      "name": "communication_threshold",
+      "typical_value": "0.3",
+      "effect": "Lower thresholds may lead to more frequent communication."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the complexity of the environment and the frequency of task changes."
+  },
+  "use_when": [
+    "Developing AI agents for dynamic environments where tasks change frequently.",
+    "Creating systems that require minimal explicit communication between humans and agents.",
+    "Implementing collaborative robots in unstructured settings like kitchens or workshops."
+  ],
+  "avoid_when": [
+    "Working in highly structured environments with predefined roles.",
+    "Tasks require strict adherence to specific protocols or plans.",
+    "Collaboration scenarios where communication is heavily reliant on explicit instructions."
+  ],
+  "implementation_skeleton": "def dynamic_mentalizing_model(observations: List[Action], mentalizing_rate: float) -> AdaptedActions:\n    inferred_intentions = infer_intentions(observations)\n    adapted_actions = adjust_tasks(inferred_intentions)\n    communicate_changes(adapted_actions)\n    return adapted_actions",
+  "common_mistakes": [
+    "Overlooking the importance of real-time data processing.",
+    "Failing to adequately model human intentions leading to poor collaboration.",
+    "Neglecting to adjust communication strategies based on the context."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Enables real-time adaptation to human actions.",
+      "Reduces the need for explicit communication.",
+      "Improves task completion efficiency in dynamic environments."
+    ],
+    "weaknesses": [
+      "May struggle in highly structured or predictable scenarios.",
+      "Requires continuous monitoring which can be resource-intensive.",
+      "Performance may degrade if human actions are erratic."
+    ],
+    "compared_to": [
+      {
+        "technique": "Static Role-Based Collaboration",
+        "verdict": "Use Dynamic Mentalizing when tasks are variable and require adaptability."
+      }
+    ]
+  },
+  "connects_to": [
+    "Reinforcement Learning",
+    "Human-Robot Interaction",
+    "Collaborative Filtering",
+    "Multi-Agent Systems"
+  ],
+  "maturity": "emerging"
+}

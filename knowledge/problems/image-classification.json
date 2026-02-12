@@ -1,0 +1,67 @@
+{
+  "problem_name": "Image Classification",
+  "description": "Image classification is the task of assigning a label to an image based on its visual content. This problem is prevalent in various domains, including healthcare, remote sensing, and autonomous vehicles.",
+  "you_have_this_if": [
+    "You are working with a dataset of images that need to be categorized.",
+    "You notice that your current model is not performing well on image data.",
+    "You require a solution that can generalize well across different image classes.",
+    "You are dealing with large volumes of image data.",
+    "You need to extract meaningful features from images for further analysis."
+  ],
+  "approaches": [
+    {
+      "technique": "Fractal Neural Network (FNN)",
+      "best_for": "Analyzing large satellite images and improving feature extraction in remote sensing applications.",
+      "paper_count": 1,
+      "max_citations": 5,
+      "key_tradeoff": "FNNs may provide better feature extraction but can be complex to implement."
+    },
+    {
+      "technique": "Quotient Network",
+      "best_for": "Improving performance of deep CNNs for datasets similar to CIFAR10, CIFAR100, or SVHN.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "Quotient Networks leverage ResNet advantages but may require careful tuning."
+    },
+    {
+      "technique": "Convolutional Neural Network (CNN)",
+      "best_for": "Classifying medical images and implementing deep learning solutions in healthcare.",
+      "paper_count": 1,
+      "max_citations": 11,
+      "key_tradeoff": "CNNs are widely used and effective but may require large datasets for optimal performance."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Fractal Neural Network (FNN)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You need to analyze large satellite images with complex features."
+    },
+    {
+      "technique": "Quotient Network",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You want to enhance the performance of CNNs on smaller datasets."
+    },
+    {
+      "technique": "Convolutional Neural Network (CNN)",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "easy",
+      "best_when": "You are working with a labeled dataset of medical images."
+    }
+  ],
+  "start_here": "Start with Convolutional Neural Networks (CNN) as they are well-established and effective for a wide range of image classification tasks, especially in healthcare.",
+  "related_problems": [
+    "Object Detection",
+    "Image Segmentation",
+    "Facial Recognition",
+    "Scene Understanding"
+  ]
+}

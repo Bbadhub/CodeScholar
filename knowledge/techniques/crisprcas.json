@@ -1,0 +1,91 @@
+{
+  "technique_name": "CRISPR/Cas",
+  "aliases": [
+    "CRISPR-Cas9",
+    "Clustered Regularly Interspaced Short Palindromic Repeats"
+  ],
+  "category": "genome_editing",
+  "one_liner": "CRISPR/Cas technology enables precise editing of specific genes in organisms, particularly in agriculture.",
+  "how_it_works": "CRISPR/Cas technology utilizes a guide RNA (sgRNA) to direct the Cas9 protein to a specific location in the genome, where it creates a double-strand break. This break triggers the cell's natural DNA repair mechanisms, allowing for targeted genetic modifications. The system can be delivered into plant cells using various methods, leading to the regeneration of edited plants with improved traits.",
+  "algorithm": {
+    "steps": [
+      "1. Design sgRNA targeting the specific gene of interest.",
+      "2. Assemble RNP complex with Cas9 protein and sgRNA.",
+      "3. Introduce RNP complex into plant cells via protoplast transformation or other delivery methods.",
+      "4. Allow the CRISPR/Cas system to induce a double-strand break at the target site.",
+      "5. Activate DNA repair pathways (NHEJ or HDR) to achieve desired genetic modifications.",
+      "6. Regenerate whole plants from edited cells.",
+      "7. Screen for successful edits and evaluate phenotypic traits."
+    ],
+    "core_equation": "output = edited plant lines with specific genetic modifications",
+    "input_format": "Plant protoplasts or tissues, sgRNA, Cas9 protein, and delivery method (e.g., RNP complex)",
+    "output_format": "Edited plant lines with specific genetic modifications"
+  },
+  "parameters": [
+    {
+      "name": "RNP_complex_concentration",
+      "typical_value": "1-10 \u00b5M",
+      "effect": "Higher concentrations may increase editing efficiency but could also lead to off-target effects."
+    },
+    {
+      "name": "sgRNA_length",
+      "typical_value": "20-24 nucleotides",
+      "effect": "Optimal length for effective targeting and minimal off-target activity."
+    },
+    {
+      "name": "transfection_time",
+      "typical_value": "24-48 hours",
+      "effect": "Longer transfection times may improve editing efficiency."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) for design and assembly, where n is the number of target sites",
+    "space": "O(1) for storage of sgRNA and Cas9 components",
+    "practical_note": "Real-world performance can vary based on plant species and transformation methods."
+  },
+  "use_when": [
+    "Developing crops with enhanced resistance to drought and pests.",
+    "Seeking to improve nutritional content of staple crops.",
+    "Working within regulatory frameworks that restrict transgenic crops."
+  ],
+  "avoid_when": [
+    "Crops that are highly recalcitrant to transformation.",
+    "When rapid integration of transgenes is required.",
+    "In environments where traditional breeding is more effective."
+  ],
+  "implementation_skeleton": "def edit_genome(sgRNA: str, cas9: str, plant_cells: Any) -> Any:\n    rnp_complex = assemble_rnp(sgRNA, cas9)\n    introduce_rnp(rnp_complex, plant_cells)\n    induce_double_strand_break(plant_cells)\n    repair_dna(plant_cells)\n    return regenerate_plants(plant_cells)",
+  "common_mistakes": [
+    "Not optimizing sgRNA for specificity, leading to off-target effects.",
+    "Using inappropriate delivery methods for specific plant types.",
+    "Failing to screen for successful edits thoroughly."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High precision in gene editing.",
+      "Ability to make multiple edits simultaneously.",
+      "No integration of foreign DNA in some applications."
+    ],
+    "weaknesses": [
+      "Potential for off-target effects.",
+      "Requires careful design and optimization.",
+      "Not all plant species are amenable to transformation."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional breeding methods",
+        "verdict": "Use CRISPR/Cas for precise edits; traditional methods are better for broad trait improvements."
+      },
+      {
+        "technique": "TALENs",
+        "verdict": "CRISPR/Cas is generally easier and cheaper to implement than TALENs."
+      }
+    ]
+  },
+  "connects_to": [
+    "Gene editing techniques (TALENs, ZFNs)",
+    "Plant transformation methods (Agrobacterium, biolistics)",
+    "Synthetic biology approaches",
+    "Genetic engineering regulations"
+  ],
+  "maturity": "proven"
+}

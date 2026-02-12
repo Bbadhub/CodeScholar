@@ -1,0 +1,37 @@
+{
+  "problem_name": "Supervised Learning with Noisy Labels",
+  "description": "Supervised learning with noisy labels occurs when the labels in the training dataset are incorrect or unreliable, leading to poor model performance. This problem can significantly hinder the model's ability to learn the underlying patterns in the data, resulting in overfitting and reduced generalization to unseen data.",
+  "you_have_this_if": [
+    "Your model's performance is significantly worse on validation data compared to training data.",
+    "You notice inconsistencies in the labels of your training dataset.",
+    "Your model struggles to converge during training.",
+    "You observe high variance in model predictions across different runs.",
+    "You have a dataset where label noise is suspected or confirmed."
+  ],
+  "approaches": [
+    {
+      "technique": "Stochastic Resetting",
+      "best_for": "When training deep neural networks on datasets with known label noise and seeking to improve generalization performance.",
+      "paper_count": 1,
+      "max_citations": 5,
+      "key_tradeoff": "While it can improve generalization, it may require additional computational resources and tuning."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Stochastic Resetting",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have a dataset with known label noise and need to enhance model robustness."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is Stochastic Resetting, as it specifically addresses the challenges posed by noisy labels and can lead to improved model performance.",
+  "related_problems": [
+    "Semi-supervised Learning",
+    "Outlier Detection",
+    "Robust Learning",
+    "Label Noise Reduction"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "User Perception Analysis",
+  "description": "User perception analysis involves understanding how users perceive and interact with AI systems. This can include evaluating user feedback, improving transparency, and ensuring that AI-generated content meets user expectations.",
+  "you_have_this_if": [
+    "You receive inconsistent feedback from users about your AI system.",
+    "Users express confusion about how your AI makes decisions.",
+    "You notice a significant drop in user engagement with your AI-generated content.",
+    "Your AI system's responses are often misinterpreted by users.",
+    "You are tasked with improving user trust in AI interactions."
+  ],
+  "approaches": [
+    {
+      "technique": "Contextual Bias Analysis",
+      "best_for": "When designing AI systems that require user interaction and evaluating user feedback.",
+      "paper_count": 1,
+      "max_citations": 15,
+      "key_tradeoff": "This technique provides insights into user perceptions but may require extensive data collection."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Contextual Bias Analysis",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to analyze user feedback to improve AI transparency and user trust."
+    }
+  ],
+  "start_here": "Begin with Contextual Bias Analysis as it directly addresses user perceptions and provides actionable insights for improving AI interactions.",
+  "related_problems": [
+    "User Experience Evaluation",
+    "AI Transparency Assessment",
+    "Feedback Analysis for AI Systems",
+    "User Engagement Metrics"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Image-to-Image Translation",
+  "description": "Image-to-image translation involves transforming an input image into a corresponding output image, often with different styles or conditions. This problem is prevalent in applications such as satellite imagery, where the goal is to generate images under varying conditions or enhance existing images.",
+  "you_have_this_if": [
+    "You are working with satellite images.",
+    "You need to generate images under different lighting conditions.",
+    "You want to enhance the quality of weather-related images.",
+    "You are involved in projects that require synthetic image generation.",
+    "You are looking to improve the accuracy of image-based models."
+  ],
+  "approaches": [
+    {
+      "technique": "Vector Quantized Variational Autoencoder (VQVAE)",
+      "best_for": "when you need to generate synthetic satellite imagery for nighttime conditions or enhance weather forecasting models.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While VQVAE can produce high-quality images, it may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Vector Quantized Variational Autoencoder (VQVAE)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to generate high-quality synthetic images for specific conditions, such as nighttime satellite imagery."
+    }
+  ],
+  "start_here": "Start with the Vector Quantized Variational Autoencoder (VQVAE) approach, as it is specifically designed for generating high-quality images under varying conditions, making it suitable for satellite imagery tasks.",
+  "related_problems": [
+    "Image Super-Resolution",
+    "Style Transfer",
+    "Image Inpainting",
+    "Semantic Segmentation"
+  ]
+}

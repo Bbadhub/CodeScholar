@@ -1,0 +1,37 @@
+{
+  "problem_name": "Empirical Statistical Downscaling",
+  "description": "Empirical statistical downscaling involves using statistical methods to derive local climate information from larger-scale climate models. This technique is particularly useful in regions where direct climate observations are sparse or missing.",
+  "you_have_this_if": [
+    "You are dealing with missing climate data.",
+    "You need localized climate projections.",
+    "You are working in areas with limited observational data.",
+    "You require climate variability analyses.",
+    "You want to extend short-term forecasts with historical data."
+  ],
+  "approaches": [
+    {
+      "technique": "RASCAL (Reconstruction by AnalogS of ClimatologicAL time series)",
+      "best_for": "when you need to reconstruct missing climate data in regions with limited observations.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While RASCAL is effective for reconstruction, it may not perform well in areas with abundant observational data."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "RASCAL",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to fill gaps in climate data for specific regions with limited observations."
+    }
+  ],
+  "start_here": "Start with RASCAL for reconstructing missing climate data, as it is specifically designed for this purpose and has been validated in relevant studies.",
+  "related_problems": [
+    "Climate Data Interpolation",
+    "Statistical Climate Modeling",
+    "Regional Climate Projections",
+    "Climate Change Impact Assessment"
+  ]
+}

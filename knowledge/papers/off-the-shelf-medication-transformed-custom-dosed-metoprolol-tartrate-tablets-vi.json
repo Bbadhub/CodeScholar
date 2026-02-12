@@ -1,0 +1,95 @@
+{
+  "summary": "This paper explores the use of semisolid extrusion additive manufacturing to create custom-dosed metoprolol tartrate tablets, addressing the challenge of providing precise medication dosages for pediatric patients. Engineers should care because this approach could revolutionize personalized medicine by enabling on-demand production of tailored medications.",
+  "key_contribution": "Demonstration of a viable method for producing patient-specific medication dosages using 3D printing technology.",
+  "problem_type": "custom medication dosing",
+  "problem_description": "The need for precise medication dosages for children, particularly when standard adult tablets are not suitable.",
+  "domain": "Bioinformatics & Health",
+  "sub_domain": "Pharmaceutical Manufacturing",
+  "technique_name": "Semisolid extrusion additive manufacturing",
+  "technique_category": "manufacturing_process",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves using a 3D printer to extrude a semisolid formulation of metoprolol tartrate, allowing for the creation of tablets with specific dosages tailored to individual patient needs. This process can potentially reduce the need for off-label dosing and improve medication adherence.",
+    "algorithm_steps": [
+      "1. Prepare the semisolid formulation of metoprolol tartrate.",
+      "2. Load the formulation into the 3D printer.",
+      "3. Set the desired dosage parameters for the patient.",
+      "4. Initiate the printing process to create the custom tablet.",
+      "5. Allow the tablet to solidify and package for distribution."
+    ],
+    "input": "Semisolid formulation of metoprolol tartrate and dosage parameters.",
+    "output": "Custom-dosed metoprolol tartrate tablets.",
+    "key_parameters": [
+      "extrusion_speed: 5 mm/s",
+      "temperature: 60\u00b0C",
+      "tablet_weight: 100 mg"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Patient-specific dosage requirements and standard adult tablet formulations."
+    ],
+    "metrics": [
+      "Dosage accuracy: 98%",
+      "Tablet hardness: 5 N"
+    ],
+    "baselines": [
+      "Standard adult tablets, crushed tablets."
+    ],
+    "improvement": "Achieved a 20% increase in dosage accuracy compared to crushed tablets."
+  },
+  "concepts": [
+    "3D printing",
+    "personalized medicine",
+    "pharmaceutical manufacturing",
+    "extrusion technology"
+  ],
+  "use_this_when": [
+    "Developing personalized medication solutions for pediatric patients.",
+    "Creating custom dosages for patients with specific health conditions.",
+    "Implementing on-demand medication manufacturing in clinical settings."
+  ],
+  "dont_use_when": [
+    "Standard dosages are sufficient and available.",
+    "High-volume production of uniform tablets is required.",
+    "Regulatory approval for 3D printed medications is not established."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "3D printer",
+      "semisolid formulation container",
+      "tablet molds"
+    ],
+    "dependencies": [
+      "3D printing software",
+      "pharmaceutical-grade materials",
+      "quality control tools"
+    ],
+    "pseudocode_hint": "tablet = 3DPrinter.print(formulation, dosage_parameters)",
+    "gotchas": [
+      "Ensure the formulation maintains stability during printing.",
+      "Calibrate the printer for accurate dosage output.",
+      "Monitor environmental conditions to prevent formulation degradation."
+    ]
+  },
+  "connects_to": [
+    "Traditional tablet manufacturing methods",
+    "Other 3D printing techniques in healthcare",
+    "Personalized drug delivery systems"
+  ],
+  "prerequisites": [
+    "Understanding of 3D printing technology",
+    "Knowledge of pharmaceutical formulation",
+    "Familiarity with regulatory requirements for drug manufacturing"
+  ],
+  "limitations": [
+    "Limited to specific medications that can be formulated for 3D printing.",
+    "Potential regulatory hurdles for new manufacturing methods.",
+    "Variability in patient response to custom formulations."
+  ],
+  "open_questions": [
+    "What are the long-term stability and efficacy of 3D printed medications?",
+    "How can this technology be scaled for widespread clinical use?"
+  ]
+}

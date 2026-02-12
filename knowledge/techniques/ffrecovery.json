@@ -1,0 +1,88 @@
+{
+  "technique_name": "FFRecovery",
+  "aliases": [],
+  "category": "data_recovery",
+  "one_liner": "FFRecovery enables selective recovery of files from ransomware attacks using file system forensics and flash memory data extraction.",
+  "how_it_works": "FFRecovery first detects ransomware and halts its execution to prevent further damage. It identifies which files need recovery based on user input and then uses forensic analysis to restore the file system metadata. The original file data is extracted from the flash memory, and the logical disk locations are remapped to the physical locations. Finally, the metadata and data are assembled to restore the files to their original state.",
+  "algorithm": {
+    "steps": [
+      "1. Detect ransomware and stop its execution.",
+      "2. Identify the files that need recovery based on user input.",
+      "3. Restore the file system metadata using forensic analysis.",
+      "4. Extract the original file data from the flash memory.",
+      "5. Re-map the logical disk locations to the physical flash memory locations.",
+      "6. Assemble the restored metadata and data into a recoverable file.",
+      "7. Present the recovered files to the user."
+    ],
+    "core_equation": "output = assemble(metadata, data)",
+    "input_format": "User input specifying which files to recover, and the flash memory data.",
+    "output_format": "Restored files in their original state."
+  },
+  "parameters": [
+    {
+      "name": "garbage_collection_delay",
+      "typical_value": "configurable",
+      "effect": "Adjusting this can impact the timing of data recovery."
+    },
+    {
+      "name": "freeze_mechanism",
+      "typical_value": "enabled (default)",
+      "effect": "Prevents data loss during recovery."
+    },
+    {
+      "name": "file_system_type",
+      "typical_value": "EXT3, EXT4, NTFS, FAT32, exFAT",
+      "effect": "Determines compatibility with the recovery process."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance impact is negligible, making it suitable for real-time recovery."
+  },
+  "use_when": [
+    "You need to recover specific files after a ransomware attack.",
+    "You want to minimize downtime by selectively restoring critical files.",
+    "You are working with flash memory storage systems."
+  ],
+  "avoid_when": [
+    "The ransomware operates with root privileges.",
+    "You have a reliable off-site backup solution.",
+    "The storage medium is not flash-based."
+  ],
+  "implementation_skeleton": "def ff_recovery(user_input: List[str], flash_memory_data: bytes) -> List[File]:\n    stop_ransomware()\n    files_to_recover = identify_files(user_input)\n    metadata = restore_metadata(files_to_recover)\n    original_data = extract_data(flash_memory_data)\n    remapped_data = remap_locations(original_data)\n    recovered_files = assemble(metadata, remapped_data)\n    return recovered_files",
+  "common_mistakes": [
+    "Failing to stop the ransomware before recovery begins.",
+    "Not accurately identifying the files to recover.",
+    "Neglecting to configure the garbage collection delay appropriately."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Allows for fine-grained recovery of specific files.",
+      "Minimizes downtime by selectively restoring critical files.",
+      "Works effectively with flash memory storage systems."
+    ],
+    "weaknesses": [
+      "Ineffective against ransomware with root privileges.",
+      "Dependent on the integrity of the flash memory data.",
+      "Not suitable for non-flash storage mediums."
+    ],
+    "compared_to": [
+      {
+        "technique": "CLDSafe",
+        "verdict": "Use FFRecovery for selective recovery; CLDSafe is more suited for full disk restoration."
+      },
+      {
+        "technique": "RockFS",
+        "verdict": "FFRecovery offers more targeted recovery options compared to RockFS."
+      }
+    ]
+  },
+  "connects_to": [
+    "File System Forensics",
+    "Flash Translation Layer",
+    "Data Recovery Techniques",
+    "Ransomware Mitigation Strategies"
+  ],
+  "maturity": "emerging"
+}

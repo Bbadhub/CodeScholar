@@ -1,0 +1,88 @@
+{
+  "technique_name": "Deterministic Graph Traversal Method",
+  "aliases": [],
+  "category": "classification_algorithm",
+  "one_liner": "This technique classifies white blood cells (WBCs) using a directed graph and a Boolean feature vector derived from images.",
+  "how_it_works": "The method constructs a directed graph where nodes represent WBC classes and edges represent morphological connections. A Boolean feature vector is generated from segmented WBC images using a convolutional neural network (CNN). The algorithm then performs a deterministic traversal of the graph based on this feature vector to classify the WBCs. This approach leverages domain knowledge to enhance classification accuracy while maintaining lower complexity than traditional deep learning models.",
+  "algorithm": {
+    "steps": [
+      "Input a whole-blood smear image.",
+      "Preprocess the image to segment the WBC.",
+      "Use a CNN model to generate a Boolean feature vector from the segmented WBC image.",
+      "Construct a directed graph with WBC classes as nodes and morphological connections as edges.",
+      "Perform a deterministic traversal on the graph using the Boolean feature vector.",
+      "Identify the WBC class based on the traversal result."
+    ],
+    "core_equation": "output = classify(WBC, traversal(graph, feature_vector))",
+    "input_format": "Whole-blood smear images containing WBCs (e.g., RGB images of shape HxWxC).",
+    "output_format": "Class label of the identified WBC (e.g., string or integer representing the class)."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "Affects the speed of convergence during training."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Impacts the stability of the training process."
+    },
+    {
+      "name": "epochs",
+      "typical_value": "30",
+      "effect": "Determines how many times the model will see the training data."
+    },
+    {
+      "name": "dropout_rate",
+      "typical_value": "0.25",
+      "effect": "Helps prevent overfitting by randomly dropping units during training."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated, but generally depends on the size of the graph and the traversal method used.",
+    "space": "Not explicitly stated, but space complexity is influenced by the number of nodes and edges in the graph.",
+    "practical_note": "Performance may vary based on the complexity of the WBC images and the quality of the feature extraction."
+  },
+  "use_when": [
+    "You need a lightweight classifier for WBC classification.",
+    "You want to reduce dependency on deep learning models for specific applications.",
+    "You have domain knowledge about the classification task that can be encoded in a graph."
+  ],
+  "avoid_when": [
+    "You require real-time processing with high computational resources.",
+    "You have access to large, high-quality datasets suitable for deep learning models.",
+    "You need to classify images with complex features that are not well represented by the proposed method."
+  ],
+  "implementation_skeleton": "def classify_wbc(image: np.ndarray) -> str:\n    segmented_wbc = preprocess_image(image)\n    feature_vector = cnn_model(segmented_wbc)\n    graph = construct_graph()\n    traversal_result = deterministic_traversal(graph, feature_vector)\n    return identify_class(traversal_result)",
+  "common_mistakes": [
+    "Neglecting proper image preprocessing which can lead to poor segmentation.",
+    "Overfitting the CNN model to the training data without proper validation.",
+    "Failing to encode domain knowledge effectively in the graph structure."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Achieves high classification accuracy with lower architectural complexity.",
+      "Reduces reliance on deep learning, making it suitable for resource-constrained environments.",
+      "Utilizes domain knowledge to enhance classification performance."
+    ],
+    "weaknesses": [
+      "May not perform well on complex images with intricate features.",
+      "Limited scalability for larger datasets compared to deep learning approaches.",
+      "Requires careful design of the graph structure to be effective."
+    ],
+    "compared_to": [
+      {
+        "technique": "Deep Learning Models",
+        "verdict": "Use deep learning for complex feature representation and larger datasets."
+      }
+    ]
+  },
+  "connects_to": [
+    "Convolutional Neural Networks (CNN)",
+    "Graph-Based Learning",
+    "Feature Extraction Techniques",
+    "Image Segmentation Methods"
+  ],
+  "maturity": "proven (widely used in production)"
+}

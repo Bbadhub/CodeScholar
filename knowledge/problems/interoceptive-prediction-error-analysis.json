@@ -1,0 +1,37 @@
+{
+  "problem_name": "Interoceptive Prediction Error Analysis",
+  "description": "Interoceptive prediction error analysis focuses on understanding how the brain processes internal bodily signals and how discrepancies between expected and actual interoceptive signals can affect mental and physical health. This analysis is particularly relevant in diagnosing and treating conditions like migraines and chronic pain.",
+  "you_have_this_if": [
+    "You are developing diagnostic tools for migraine based on interoceptive processing.",
+    "You are creating therapeutic interventions targeting interoceptive abnormalities.",
+    "You are researching the relationship between chronic pain and cognitive processes.",
+    "You notice discrepancies between expected and actual bodily sensations.",
+    "You are studying the impact of interoceptive awareness on mental health."
+  ],
+  "approaches": [
+    {
+      "technique": "Interoceptive Trait Prediction Error (ITPE) and Interoceptive State Prediction Error (ISPE)",
+      "best_for": "Developing diagnostic tools and therapeutic interventions related to interoceptive processing.",
+      "paper_count": 1,
+      "max_citations": 3,
+      "key_tradeoff": "This approach provides valuable insights but may require complex statistical analysis."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Interoceptive Trait Prediction Error (ITPE) and Interoceptive State Prediction Error (ISPE)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to analyze interoceptive processing in relation to chronic pain or migraines."
+    }
+  ],
+  "start_here": "Start with the ITPE and ISPE techniques as they provide a comprehensive framework for understanding interoceptive prediction errors, especially in clinical contexts.",
+  "related_problems": [
+    "Chronic Pain Analysis",
+    "Migraine Diagnosis",
+    "Interoceptive Awareness Research",
+    "Cognitive Processing in Pain Management"
+  ]
+}

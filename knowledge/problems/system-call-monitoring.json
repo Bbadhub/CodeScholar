@@ -1,0 +1,37 @@
+{
+  "problem_name": "System Call Monitoring",
+  "description": "System call monitoring involves tracking and analyzing the system calls made by applications to ensure security and compliance. This is particularly important when dealing with untrusted third-party libraries or containerized applications.",
+  "you_have_this_if": [
+    "You are running applications in containers.",
+    "You suspect malicious behavior from third-party libraries.",
+    "You need to ensure compliance with security policies.",
+    "You require real-time insights into application behavior.",
+    "You are facing performance issues related to system calls."
+  ],
+  "approaches": [
+    {
+      "technique": "System Call Analyzer",
+      "best_for": "when you need to monitor system calls from untrusted third-party libraries in a container.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "Provides real-time monitoring but may introduce overhead in performance."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "System Call Analyzer",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to ensure security and compliance in a production environment with real-time monitoring."
+    }
+  ],
+  "start_here": "The recommended first approach is to use the System Call Analyzer, as it provides a comprehensive solution for monitoring system calls in containerized applications while ensuring security and compliance.",
+  "related_problems": [
+    "Application Behavior Monitoring",
+    "Intrusion Detection Systems",
+    "Container Security",
+    "Performance Monitoring"
+  ]
+}

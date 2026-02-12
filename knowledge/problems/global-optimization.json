@@ -1,0 +1,37 @@
+{
+  "problem_name": "Global Optimization",
+  "description": "Global optimization refers to the process of finding the best solution from all feasible solutions in a given problem space. This is particularly challenging due to the presence of multiple local optima that can mislead optimization algorithms.",
+  "you_have_this_if": [
+    "You are facing a complex problem with many variables.",
+    "Your current optimization methods are yielding suboptimal results.",
+    "You need to balance multiple objectives in your solution.",
+    "You are working in fields like engineering design or operations research.",
+    "You require a solution that adapts to changing problem parameters."
+  ],
+  "approaches": [
+    {
+      "technique": "Atom Search Optimization (ASO)",
+      "best_for": "when you need to solve complex optimization problems in engineering design or multi-objective tasks.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "ASO is flexible and adaptable but may require more computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Atom Search Optimization (ASO)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a robust solution for complex optimization problems with multiple objectives."
+    }
+  ],
+  "start_here": "Start with Atom Search Optimization (ASO) as it is designed for complex and multi-objective optimization tasks, providing a flexible approach to finding optimal solutions.",
+  "related_problems": [
+    "Local Optimization",
+    "Multi-Objective Optimization",
+    "Constraint Satisfaction Problems",
+    "Heuristic Optimization"
+  ]
+}

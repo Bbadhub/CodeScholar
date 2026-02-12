@@ -1,0 +1,52 @@
+{
+  "problem_name": "Binary Classification",
+  "description": "Binary classification is a type of predictive modeling where the goal is to categorize data points into one of two distinct classes. This problem is commonly encountered in various fields, including healthcare, finance, and marketing.",
+  "you_have_this_if": [
+    "You need to categorize items into two groups.",
+    "You have labeled data for training your model.",
+    "You are interested in predicting outcomes based on input features.",
+    "Your performance metric is likely to be accuracy, precision, or recall.",
+    "You are dealing with imbalanced datasets where one class is more prevalent than the other."
+  ],
+  "approaches": [
+    {
+      "technique": "Logistic Regression",
+      "best_for": "when you need a transparent and interpretable model for clinical decision-making.",
+      "paper_count": 1,
+      "max_citations": 3,
+      "key_tradeoff": "While it offers interpretability, it may underperform with complex relationships in data."
+    },
+    {
+      "technique": "Ensemble Model (MLP, Random Forest, XGBoost)",
+      "best_for": "when you want to combine multiple machine learning models to improve prediction accuracy.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "These models can provide higher accuracy but may lack interpretability."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Logistic Regression",
+      "speed": "fast",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "easy",
+      "best_when": "You have a small to medium-sized dataset and need quick insights."
+    },
+    {
+      "technique": "Ensemble Model (MLP, Random Forest, XGBoost)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have a larger dataset and require improved accuracy through model combination."
+    }
+  ],
+  "start_here": "Start with Logistic Regression for its simplicity and interpretability, especially in clinical settings. If accuracy is paramount and you have sufficient data, consider transitioning to an Ensemble Model.",
+  "related_problems": [
+    "Multi-class Classification",
+    "Regression Analysis",
+    "Anomaly Detection",
+    "Imbalanced Classification"
+  ]
+}

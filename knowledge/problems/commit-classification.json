@@ -1,0 +1,37 @@
+{
+  "problem_name": "Commit Classification",
+  "description": "Commit classification involves categorizing code changes in version control systems like Git based on their content and intent. This helps in understanding the nature of changes and can assist in various tasks such as code review, project management, and automated testing.",
+  "you_have_this_if": [
+    "You have a large number of Git commits to analyze.",
+    "You need to categorize commits for better project insights.",
+    "You are facing challenges with existing classification methods.",
+    "You want to improve the quality of commit messages.",
+    "You require a system that can adapt to changes in classification needs."
+  ],
+  "approaches": [
+    {
+      "technique": "IPCK",
+      "best_for": "when you need a lightweight solution for classifying Git commits without heavy dependencies.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While IPCK is lightweight, it may not perform as well on complex classification tasks."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "IPCK",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a flexible and lightweight classification system for Git commits."
+    }
+  ],
+  "start_here": "Start with the IPCK technique as it provides a lightweight and adaptable solution for commit classification, especially when dealing with evolving classification schemes.",
+  "related_problems": [
+    "Code Review Automation",
+    "Change Impact Analysis",
+    "Commit Message Quality Improvement",
+    "Version Control System Analytics"
+  ]
+}

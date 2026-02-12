@@ -1,0 +1,87 @@
+{
+  "technique_name": "Moderated Mediation Model",
+  "aliases": [
+    "Moderated mediation analysis",
+    "Conditional process analysis"
+  ],
+  "category": "statistical_method",
+  "one_liner": "A statistical technique used to understand the relationships between variables while accounting for the influence of other variables.",
+  "how_it_works": "The moderated mediation model assesses how a mediator variable influences the relationship between an independent variable and a dependent variable, while also considering the effect of a moderator variable. This allows researchers to explore complex interactions and indirect effects in their data. By using statistical tools like bootstrapping, the model provides insights into the significance and strength of these relationships.",
+  "algorithm": {
+    "steps": [
+      "1. Collect data from participants using surveys or questionnaires.",
+      "2. Measure the independent variable, mediator, moderator, and dependent variable using validated scales.",
+      "3. Conduct correlation analysis to explore relationships between variables.",
+      "4. Use statistical software (e.g., SPSS with Hayes's PROCESS macro) to test the moderated mediation model.",
+      "5. Analyze the results to determine the significance of mediation and moderation effects."
+    ],
+    "core_equation": "Dependent variable = Mediator * Moderator + Independent variable",
+    "input_format": "Survey data with measurements for independent variable, mediator, moderator, and dependent variable.",
+    "output_format": "Statistical results indicating the strength and significance of relationships between variables."
+  },
+  "parameters": [
+    {
+      "name": "sample_size",
+      "typical_value": "varies (e.g., 801 to 1574)",
+      "effect": "Larger sample sizes increase the reliability of results."
+    },
+    {
+      "name": "bootstrapping_samples",
+      "typical_value": "5000",
+      "effect": "Higher bootstrapping samples improve the accuracy of confidence intervals."
+    },
+    {
+      "name": "significance_level",
+      "typical_value": "p < 0.001",
+      "effect": "Lower significance levels indicate stronger evidence against the null hypothesis."
+    }
+  ],
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)",
+    "practical_note": "While the model is computationally efficient, the interpretation of results can be complex and requires careful statistical understanding."
+  },
+  "use_when": [
+    "Developing interventions to reduce cyberbullying among adolescents.",
+    "Analyzing the psychological factors contributing to online aggression.",
+    "Creating educational programs addressing online behavior in specific cultural contexts.",
+    "Designing applications to help users manage digital content effectively.",
+    "Developing educational programs to promote mindfulness among students."
+  ],
+  "avoid_when": [
+    "The target population does not include adolescents.",
+    "The focus is on non-cyberbullying related online behaviors.",
+    "Resources are limited for conducting extensive psychological assessments."
+  ],
+  "implementation_skeleton": "def moderated_mediation_model(data: pd.DataFrame) -> Dict[str, Any]:\n    # Step 1: Collect data\n    # Step 2: Measure variables\n    # Step 3: Conduct correlation analysis\n    # Step 4: Apply PROCESS macro\n    results = apply_process_macro(data)\n    return results",
+  "common_mistakes": [
+    "Neglecting to check for the assumptions of mediation and moderation.",
+    "Using a small sample size which can lead to unreliable results.",
+    "Failing to interpret the interaction effects correctly."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Allows for a nuanced understanding of variable relationships.",
+      "Can reveal indirect effects that are not apparent in simpler models.",
+      "Useful for both theoretical and practical applications in psychology and social sciences."
+    ],
+    "weaknesses": [
+      "Complexity in interpretation can lead to misinterpretation of results.",
+      "Requires a good understanding of statistical methods and software.",
+      "Sensitive to sample size and distribution of data."
+    ],
+    "compared_to": [
+      {
+        "technique": "Simple mediation model",
+        "verdict": "Use moderated mediation when you suspect that the effect of the mediator varies by another variable."
+      }
+    ]
+  },
+  "connects_to": [
+    "Mediation analysis",
+    "Moderation analysis",
+    "Structural equation modeling",
+    "Path analysis"
+  ],
+  "maturity": "proven"
+}

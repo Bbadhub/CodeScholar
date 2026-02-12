@@ -1,0 +1,83 @@
+{
+  "technique_name": "Narrative-driven Virtual Reality Experience",
+  "aliases": [],
+  "category": "educational_technology",
+  "one_liner": "This technique uses immersive virtual reality to enhance empathy in medical training through narrative storytelling.",
+  "how_it_works": "The technique immerses users, particularly medical students, in a virtual reality environment that simulates the experiences of patients with chronic pain. By combining narrative storytelling with sensory stimuli, it aims to evoke emotional responses and deepen understanding of the patient's perspective. Users interact with the environment using gaze control and receive audio cues that guide their exploration, followed by feedback collection to assess the impact on empathy.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize VR environment using Unity game engine.",
+      "2. Load patient narratives and interactive elements.",
+      "3. Present immersive scenes that represent chronic pain experiences.",
+      "4. Use gaze control for user interaction with objects.",
+      "5. Integrate spatialized audio cues to guide exploration.",
+      "6. Collect user feedback through questionnaires post-experience."
+    ],
+    "core_equation": "output = user feedback on empathy and understanding of chronic pain",
+    "input_format": "User's interaction data and VR environment setup.",
+    "output_format": "User feedback on empathy and understanding of chronic pain."
+  },
+  "parameters": [
+    {
+      "name": "VR headset",
+      "typical_value": "Samsung Odyssey",
+      "effect": "Different headsets may affect immersion quality."
+    },
+    {
+      "name": "Development PC",
+      "typical_value": "Intel Core i7-8809G, Radeon RX Vega M GC",
+      "effect": "Higher specs may enhance performance and experience."
+    },
+    {
+      "name": "Duration of experience",
+      "typical_value": "4 minutes",
+      "effect": "Longer experiences may increase empathy but risk user fatigue."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) where n is the number of interactive elements",
+    "space": "O(m) where m is the size of the VR environment assets",
+    "practical_note": "Performance may vary based on hardware capabilities."
+  },
+  "use_when": [
+    "Training medical students on patient empathy.",
+    "Developing immersive educational tools for healthcare.",
+    "Addressing the challenges of undiagnosed chronic pain in clinical settings."
+  ],
+  "avoid_when": [
+    "When traditional teaching methods are sufficient.",
+    "For training in non-empathetic skills.",
+    "In environments lacking VR technology."
+  ],
+  "implementation_skeleton": "def narrative_vr_experience(user_data: dict) -> dict:\n    initialize_vr_environment()\n    load_patient_narratives()\n    present_immersive_scenes()\n    user_interaction = gaze_control()\n    integrate_audio_cues()\n    feedback = collect_user_feedback()\n    return feedback",
+  "common_mistakes": [
+    "Neglecting to tailor narratives to the target audience.",
+    "Overloading the VR experience with too many stimuli.",
+    "Failing to collect and analyze user feedback effectively."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Enhances empathy through immersive experiences.",
+      "Engages users more effectively than traditional methods.",
+      "Provides a safe environment for exploring sensitive topics."
+    ],
+    "weaknesses": [
+      "Requires access to VR technology and expertise.",
+      "May not be suitable for all learning styles.",
+      "Potential for user discomfort in VR environments."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional medical education methods",
+        "verdict": "Use narrative-driven VR for deeper emotional engagement."
+      }
+    ]
+  },
+  "connects_to": [
+    "Immersive learning environments",
+    "Empathy training in healthcare",
+    "Virtual reality in education",
+    "Narrative therapy techniques"
+  ],
+  "maturity": "emerging"
+}

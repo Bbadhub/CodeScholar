@@ -1,0 +1,85 @@
+{
+  "technique_name": "CoBA (Causal contextual Bandits with One-shot data integration)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "CoBA is a method for optimizing decision-making in contextual bandit settings using one-shot data integration.",
+  "how_it_works": "CoBA maintains beliefs about conditional probability distributions (CPDs) and selects samples for various context-action pairs while adhering to budget constraints. It integrates the acquired data to update its policy, aiming to minimize an entropy-like measure. The method is particularly useful when causal side information is available, allowing for more informed decision-making in sequential contexts.",
+  "algorithm": {
+    "steps": [
+      "Initialize beliefs about CPDs using logged offline data.",
+      "Specify the number of samples required for each context-action pair.",
+      "Calculate costs associated with acquiring those samples.",
+      "Ensure total cost does not exceed the budget.",
+      "Integrate acquired samples to update beliefs.",
+      "Learn a policy based on updated beliefs.",
+      "Evaluate the learned policy and measure regret."
+    ],
+    "core_equation": "Regret = O(s(MC/mB - \u03b5) ln(MXMC/\u03b4))",
+    "input_format": "Logged offline data consisting of context-action-reward tuples.",
+    "output_format": "A learned policy mapping contexts to actions."
+  },
+  "parameters": [
+    {
+      "name": "budget",
+      "typical_value": "B (total cost for acquiring samples)",
+      "effect": "Limits the number of samples that can be acquired."
+    },
+    {
+      "name": "cost function",
+      "typical_value": "\u03b2(x, cA, Nx,cA)",
+      "effect": "Determines the cost associated with acquiring samples."
+    },
+    {
+      "name": "number of samples",
+      "typical_value": "Nx,cA for each (x, cA)",
+      "effect": "Specifies how many samples to acquire for each context-action pair."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated.",
+    "space": "Not stated.",
+    "practical_note": "Performance may vary based on the complexity of the context-action space and the budget constraints."
+  },
+  "use_when": [
+    "You need to conduct multiple experiments simultaneously within a budget.",
+    "You have causal side information that can inform decision-making.",
+    "You want to minimize regret in a sequential decision-making context."
+  ],
+  "avoid_when": [
+    "The environment does not allow for one-shot data acquisition.",
+    "You lack causal side information.",
+    "The cost of acquiring samples is prohibitively high."
+  ],
+  "implementation_skeleton": "def coBA(logged_data: List[Tuple[Context, Action, Reward]], budget: float) -> Policy:\n    beliefs = initialize_beliefs(logged_data)\n    while budget > 0:\n        samples = specify_samples(beliefs)\n        costs = calculate_costs(samples)\n        if sum(costs) <= budget:\n            update_beliefs(samples)\n            budget -= sum(costs)\n    policy = learn_policy(beliefs)\n    return policy",
+  "common_mistakes": [
+    "Failing to properly initialize beliefs about CPDs.",
+    "Not accurately calculating the costs associated with sample acquisition.",
+    "Exceeding the budget without realizing it.",
+    "Neglecting to evaluate the learned policy effectively."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Allows for simultaneous experimentation under budget constraints.",
+      "Utilizes causal information to enhance decision-making.",
+      "Minimizes regret in sequential contexts."
+    ],
+    "weaknesses": [
+      "Requires careful budget management.",
+      "Dependent on the availability of causal side information.",
+      "May not perform well in environments with high sample acquisition costs."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard contextual bandit algorithms",
+        "verdict": "CoBA is preferable when causal information is available and budget constraints are critical."
+      }
+    ]
+  },
+  "connects_to": [
+    "Contextual Bandits",
+    "Causal Inference",
+    "Multi-Armed Bandits",
+    "Reinforcement Learning"
+  ],
+  "maturity": "emerging"
+}

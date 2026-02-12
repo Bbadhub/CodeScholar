@@ -1,0 +1,84 @@
+{
+  "technique_name": "Man-Kendall Test and Wavelet Coherence",
+  "aliases": [
+    "Mann-Kendall Trend Test",
+    "Wavelet Coherence Analysis"
+  ],
+  "category": "statistical_method",
+  "one_liner": "This technique assesses trends and relationships in time series data, particularly in environmental and agricultural contexts.",
+  "how_it_works": "The Man-Kendall Test is used to identify trends in time series data, such as temperature records. Wavelet Coherence complements this by analyzing the relationship between two time series across different frequencies. Together, they provide insights into how fluctuations in one variable, like temperature, affect another, such as crop yields over time.",
+  "algorithm": {
+    "steps": [
+      "1. Collect daily temperature data and rice yield data over a long-term period.",
+      "2. Apply descriptive statistics to summarize the data.",
+      "3. Use the Man-Kendall Test to identify trends in temperature data.",
+      "4. Apply Wavelet Coherence to analyze the relationship between temperature variability and rice yields.",
+      "5. Interpret the results to understand the impact of temperature on crop growth."
+    ],
+    "core_equation": "coherence = |Cxy(f)|^2 / (|Cx(f)|^2 * |Cy(f)|^2)",
+    "input_format": "Daily temperature data (time series) and rice yield data (time series)",
+    "output_format": "Statistical trends (p-values) and insights on the relationship between temperature variability and rice yields"
+  },
+  "parameters": [
+    {
+      "name": "significance_level",
+      "typical_value": "0.05",
+      "effect": "A lower value increases the threshold for detecting trends."
+    },
+    {
+      "name": "window_size",
+      "typical_value": "30 days",
+      "effect": "A larger window size smooths out short-term fluctuations but may miss rapid changes."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for the Man-Kendall Test",
+    "space": "O(n) for storing time series data",
+    "practical_note": "Performance can vary based on data size and frequency of observations."
+  },
+  "use_when": [
+    "Analyzing the impact of climate variables on agricultural yields",
+    "Developing predictive models for crop production",
+    "Implementing data-driven agricultural strategies"
+  ],
+  "avoid_when": [
+    "Data is not available or insufficient",
+    "The relationship between variables is already well understood",
+    "Short-term analysis is required"
+  ],
+  "implementation_skeleton": "def man_kendall_test(data: List[float]) -> float:\n    # Implement the Man-Kendall Test logic here\n    pass\n\ndef wavelet_coherence(data1: List[float], data2: List[float]) -> float:\n    # Implement Wavelet Coherence logic here\n    pass\n\n# Example usage:\ntemperature_data = [...]  # Daily temperature data\nrice_yield_data = [...]  # Daily rice yield data\ntrend = man_kendall_test(temperature_data)\ncoherence = wavelet_coherence(temperature_data, rice_yield_data)",
+  "common_mistakes": [
+    "Not ensuring data is stationary before applying the Man-Kendall Test.",
+    "Using inappropriate window sizes for Wavelet Coherence analysis.",
+    "Ignoring the significance of results when interpreting trends."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively identifies trends in non-stationary time series data.",
+      "Provides insights into relationships across different time scales.",
+      "Useful for agricultural and environmental data analysis."
+    ],
+    "weaknesses": [
+      "Requires sufficient data over a long-term period.",
+      "May not capture short-term fluctuations effectively.",
+      "Complexity in interpreting results can lead to misinterpretation."
+    ],
+    "compared_to": [
+      {
+        "technique": "Linear Regression",
+        "verdict": "Use Man-Kendall for non-linear trends and time series data."
+      },
+      {
+        "technique": "Fourier Transform",
+        "verdict": "Wavelet Coherence is better for non-stationary data."
+      }
+    ]
+  },
+  "connects_to": [
+    "Time Series Analysis",
+    "Statistical Trend Analysis",
+    "Wavelet Transform",
+    "Climate Impact Assessment"
+  ],
+  "maturity": "proven"
+}

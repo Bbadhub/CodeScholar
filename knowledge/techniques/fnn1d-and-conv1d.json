@@ -1,0 +1,95 @@
+{
+  "technique_name": "FNN1D and Conv1D",
+  "aliases": [
+    "Feedforward Neural Network 1D",
+    "Convolutional Neural Network 1D"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "FNN1D and Conv1D are neural network architectures used for classifying skeletal representations of poses.",
+  "how_it_works": "FNN1D and Conv1D models process skeletal keypoints extracted from images to classify yoga poses. The skeletal data is transformed into feature vectors, which are then fed into the neural networks for training. The models learn to recognize patterns in the skeletal data, allowing them to predict the yoga pose from new input images.",
+  "algorithm": {
+    "steps": [
+      "1. Collect images of yoga poses.",
+      "2. Use MoveNet to extract skeletal keypoints from images.",
+      "3. Preprocess the keypoints into a feature vector.",
+      "4. Train the FNN1D or Conv1D model using the feature vectors.",
+      "5. Evaluate the model's performance using metrics like accuracy, precision, recall, and F1-score.",
+      "6. Deploy the model in a web application for real-time yoga pose recognition."
+    ],
+    "core_equation": "output = activation(weights \u00b7 input + bias)",
+    "input_format": "Images of yoga poses in .jpg or .png format, converted to skeletal data.",
+    "output_format": "Predicted yoga pose labels corresponding to the input images."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.0005",
+      "effect": "A higher learning rate may speed up training but can lead to instability."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Larger batch sizes can improve training speed but may require more memory."
+    },
+    {
+      "name": "epochs",
+      "typical_value": "80",
+      "effect": "More epochs can improve accuracy but may lead to overfitting."
+    },
+    {
+      "name": "dropout_rate",
+      "typical_value": "0.2",
+      "effect": "Higher dropout rates can reduce overfitting but may hinder learning."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m), where n is the number of samples and m is the number of features",
+    "space": "O(m), where m is the number of features",
+    "practical_note": "Real-world performance can vary based on dataset size and model architecture."
+  },
+  "use_when": [
+    "Building applications for yoga pose recognition.",
+    "Creating virtual trainers for fitness applications.",
+    "Developing systems that require real-time human pose analysis."
+  ],
+  "avoid_when": [
+    "Working with non-human poses or actions.",
+    "When RGB image data is preferred over skeletal data.",
+    "In scenarios requiring 3D pose recognition."
+  ],
+  "implementation_skeleton": "def train_model(data: List[float], labels: List[int]) -> Model:\n    model = create_model()\n    model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])\n    model.fit(data, labels, batch_size=32, epochs=80)\n    return model",
+  "common_mistakes": [
+    "Neglecting to preprocess skeletal data properly.",
+    "Using inappropriate learning rates leading to poor convergence.",
+    "Overfitting the model by training for too many epochs without validation."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy in recognizing yoga poses.",
+      "Real-time processing capabilities.",
+      "Effective with skeletal data representation."
+    ],
+    "weaknesses": [
+      "Limited to human poses.",
+      "Dependent on quality of skeletal keypoint extraction.",
+      "Not suitable for RGB image classification."
+    ],
+    "compared_to": [
+      {
+        "technique": "VGG16",
+        "verdict": "Use FNN1D or Conv1D for skeletal data; VGG16 for RGB images."
+      },
+      {
+        "technique": "ResNet",
+        "verdict": "FNN1D and Conv1D are simpler and faster for skeletal data."
+      }
+    ]
+  },
+  "connects_to": [
+    "MoveNet for keypoint extraction",
+    "LSTM for sequential pose analysis",
+    "Transfer learning techniques",
+    "Data augmentation methods for training"
+  ],
+  "maturity": "proven"
+}

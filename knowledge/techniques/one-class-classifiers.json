@@ -1,0 +1,77 @@
+{
+  "technique_name": "One-class classifiers",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "One-class classifiers are used to identify anomalies by learning from normal operational data.",
+  "how_it_works": "One-class classifiers are trained exclusively on normal data to model the expected behavior of a system. Once trained, they can evaluate new data points to determine if they deviate from this learned behavior, indicating potential anomalies. This approach is particularly useful in scenarios where labeled anomalous data is scarce or unavailable.",
+  "algorithm": {
+    "steps": [
+      "Collect normal operational data from the robotic system.",
+      "Preprocess the data to extract relevant features.",
+      "Train the one-class classifier using the preprocessed data.",
+      "Deploy the classifier to monitor real-time operations.",
+      "Detect anomalies by evaluating new data against the trained model."
+    ],
+    "core_equation": "output = evaluate(new_data) against trained_model",
+    "input_format": "Normal operational data from robotic systems in a structured format.",
+    "output_format": "Anomaly detection results indicating whether the current operation is normal or anomalous."
+  },
+  "parameters": [
+    {
+      "name": "feature_set",
+      "typical_value": "[list of features]",
+      "effect": "Changing the feature set can improve or degrade the model's ability to detect anomalies."
+    },
+    {
+      "name": "threshold",
+      "typical_value": "0.5",
+      "effect": "Adjusting the threshold affects the sensitivity of anomaly detection."
+    }
+  ],
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(m)",
+    "practical_note": "Performance may vary based on the complexity of the feature set and the size of the training data."
+  },
+  "use_when": [
+    "You need to monitor robotic systems for software anomalies.",
+    "You have access to normal operational data for training.",
+    "You require a method that does not rely on labeled anomalous data."
+  ],
+  "avoid_when": [
+    "You have a highly dynamic environment with rapidly changing operational patterns.",
+    "You need to detect known types of anomalies with labeled data.",
+    "You require real-time processing with extremely low latency."
+  ],
+  "implementation_skeleton": "def train_one_class_classifier(data: List[float]) -> Model:\n    # Preprocess data\n    features = extract_features(data)\n    model = OneClassClassifier()\n    model.fit(features)\n    return model\n\ndef detect_anomalies(model: Model, new_data: List[float]) -> List[bool]:\n    features = extract_features(new_data)\n    return model.predict(features)",
+  "common_mistakes": [
+    "Using a feature set that does not capture the essence of normal behavior.",
+    "Failing to preprocess data adequately before training.",
+    "Setting the threshold too low or too high, leading to false positives or negatives."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effective in scenarios with limited labeled data.",
+      "Can adapt to various types of normal behavior.",
+      "Useful for continuous monitoring of systems."
+    ],
+    "weaknesses": [
+      "May struggle in highly dynamic environments.",
+      "Performance heavily depends on the quality of normal data.",
+      "Not suitable for detecting known anomalies with labeled data."
+    ],
+    "compared_to": [
+      {
+        "technique": "Supervised classification models",
+        "verdict": "Use one-class classifiers when labeled anomalous data is unavailable."
+      }
+    ]
+  },
+  "connects_to": [
+    "Anomaly detection techniques",
+    "Supervised learning methods",
+    "Feature extraction methods",
+    "Robotic system monitoring"
+  ],
+  "maturity": "emerging"
+}

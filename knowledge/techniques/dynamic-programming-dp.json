@@ -1,0 +1,83 @@
+{
+  "technique_name": "Dynamic Programming",
+  "aliases": [
+    "DP"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "Dynamic Programming is a method for solving complex problems by breaking them down into simpler subproblems and solving each of those just once.",
+  "how_it_works": "Dynamic Programming optimizes problems by storing the results of subproblems to avoid redundant calculations. It typically involves defining a state and control variables, discretizing the problem, and calculating costs associated with actions. The method uses Bellman's principle to find the optimal solution by working backward from the final state to the initial state.",
+  "algorithm": {
+    "steps": [
+      "1. Define the state of the system and control variables.",
+      "2. Discretize the dynamical system representing the problem.",
+      "3. Compute instantaneous costs associated with control actions.",
+      "4. Calculate total costs backward from the final timestep to the initial one.",
+      "5. Apply Bellman's principle to find the optimized path for minimizing costs."
+    ],
+    "core_equation": "total_cost = min(sum(costs))",
+    "input_format": "Motorcycle specifications, hybridization ratios, and homologation cycle parameters.",
+    "output_format": "Optimized power-split strategy and estimated fuel consumption reduction."
+  },
+  "parameters": [
+    {
+      "name": "hybridization_ratio",
+      "typical_value": "varies",
+      "effect": "Affects the optimization of power-split strategy."
+    },
+    {
+      "name": "nominal_voltage",
+      "typical_value": "48 V",
+      "effect": "Defines the electrical characteristics of the system."
+    },
+    {
+      "name": "target_capacity",
+      "typical_value": "500 kJ to 4000 kJ",
+      "effect": "Influences the energy management strategy."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated.",
+    "space": "Not explicitly stated.",
+    "practical_note": "Performance may vary based on the complexity of the state space and the number of control variables."
+  },
+  "use_when": [
+    "Designing hybrid powertrains for motorcycles.",
+    "Evaluating fuel consumption reduction strategies.",
+    "Optimizing energy management systems in vehicles."
+  ],
+  "avoid_when": [
+    "Real-time applications requiring immediate decision-making.",
+    "When the complexity of the model needs to be minimized."
+  ],
+  "implementation_skeleton": "def dynamic_programming(motorcycle_specs: dict, hybridization_ratios: list) -> dict:\n    # Step 1: Define state and control variables\n    states = initialize_states(motorcycle_specs)\n    costs = compute_costs(states, hybridization_ratios)\n    # Step 4: Calculate total costs backward\n    total_costs = calculate_total_costs(costs)\n    # Step 5: Apply Bellman's principle\n    optimized_strategy = apply_bellman(total_costs)\n    return optimized_strategy",
+  "common_mistakes": [
+    "Neglecting to store results of subproblems, leading to redundant calculations.",
+    "Incorrectly defining the state space, which can lead to suboptimal solutions.",
+    "Failing to properly discretize the problem, resulting in inaccurate cost calculations."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Efficiently solves complex optimization problems.",
+      "Reduces computational overhead by storing intermediate results.",
+      "Provides a systematic approach to finding optimal solutions."
+    ],
+    "weaknesses": [
+      "Can be computationally intensive for large state spaces.",
+      "Requires careful formulation of the problem to be effective.",
+      "Not suitable for real-time decision-making scenarios."
+    ],
+    "compared_to": [
+      {
+        "technique": "Greedy Algorithms",
+        "verdict": "Use DP when an optimal solution is required; use greedy when a quick, approximate solution is acceptable."
+      }
+    ]
+  },
+  "connects_to": [
+    "Linear Programming",
+    "Branch and Bound",
+    "Backtracking",
+    "Heuristic Methods"
+  ],
+  "maturity": "proven"
+}

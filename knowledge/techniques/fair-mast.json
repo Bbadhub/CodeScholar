@@ -1,0 +1,78 @@
+{
+  "technique_name": "FAIR-MAST",
+  "aliases": [],
+  "category": "data_management",
+  "one_liner": "FAIR-MAST is a data management system designed for efficient handling of fusion reactor data based on FAIR principles.",
+  "how_it_works": "FAIR-MAST integrates various data management techniques to ensure that fusion reactor data is stored, accessed, and analyzed efficiently. It emphasizes the principles of findability, accessibility, interoperability, and reusability (FAIR) for scientific data. The system collects data from tokamak experiments, organizes it in a structured format, and implements metadata tagging for easy retrieval, facilitating collaboration among researchers.",
+  "algorithm": {
+    "steps": [
+      "1. Collect data from tokamak experiments.",
+      "2. Store data in a structured format.",
+      "3. Implement metadata tagging for easy retrieval.",
+      "4. Ensure data accessibility through APIs.",
+      "5. Facilitate data sharing among researchers.",
+      "6. Provide tools for data analysis and visualization."
+    ],
+    "core_equation": "output = organized datasets ready for analysis and sharing",
+    "input_format": "Experimental data from tokamak reactors, including sensor readings and operational parameters.",
+    "output_format": "Organized and accessible datasets ready for analysis and sharing."
+  },
+  "parameters": [
+    {
+      "name": "data_retention_period",
+      "typical_value": "5 years",
+      "effect": "Defines how long data is stored before deletion."
+    },
+    {
+      "name": "metadata_schema",
+      "typical_value": "custom",
+      "effect": "Specifies the structure of metadata used for tagging."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance metrics indicate a 30% improvement in data retrieval speed compared to traditional systems."
+  },
+  "use_when": [
+    "Managing large datasets from scientific experiments",
+    "Ensuring data compliance with FAIR principles",
+    "Facilitating collaboration among researchers"
+  ],
+  "avoid_when": [
+    "Data volume is minimal",
+    "Real-time data processing is required",
+    "Simple file storage suffices"
+  ],
+  "implementation_skeleton": "def fair_mast(data: List[Dict[str, Any]], retention_period: int = 5) -> Dict[str, Any]:\n    # Step 1: Collect data\n    # Step 2: Store data in structured format\n    # Step 3: Implement metadata tagging\n    # Step 4: Ensure data accessibility\n    # Step 5: Facilitate data sharing\n    # Step 6: Provide analysis tools\n    return organized_data",
+  "common_mistakes": [
+    "Neglecting to implement a robust metadata schema.",
+    "Failing to ensure data accessibility through APIs.",
+    "Overlooking the importance of data retention policies."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves data retrieval speed by 30% compared to traditional systems.",
+      "Enhances collaboration among researchers.",
+      "Ensures compliance with FAIR principles."
+    ],
+    "weaknesses": [
+      "Not suitable for minimal data volumes.",
+      "May not support real-time data processing needs.",
+      "Complexity in setting up custom metadata schemas."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional data management systems",
+        "verdict": "Use FAIR-MAST for better retrieval speed and compliance with FAIR principles."
+      }
+    ]
+  },
+  "connects_to": [
+    "Data warehousing",
+    "API design",
+    "Metadata management",
+    "Data visualization techniques"
+  ],
+  "maturity": "emerging"
+}

@@ -1,0 +1,86 @@
+{
+  "technique_name": "Artificial Neural Networks",
+  "aliases": [
+    "ANN",
+    "Neural Networks"
+  ],
+  "category": "neural_architecture",
+  "one_liner": "Artificial Neural Networks are computational models inspired by the human brain used for pattern recognition and prediction tasks.",
+  "how_it_works": "Artificial Neural Networks consist of interconnected nodes (neurons) organized in layers. The network learns to map input data to output predictions by adjusting weights through a training process. This is achieved by minimizing the error between predicted and actual outputs using optimization techniques like backpropagation.",
+  "algorithm": {
+    "steps": [
+      "Collect historical drilling data including depth, feed rate, and torque measurements.",
+      "Preprocess the data to normalize and split into training and testing sets.",
+      "Design the neural network architecture with appropriate layers and activation functions.",
+      "Train the neural network using the training dataset.",
+      "Evaluate the model's performance on the testing dataset.",
+      "Use the trained model to predict torque for new drilling conditions."
+    ],
+    "core_equation": "output = activation_function(weights \u00b7 inputs + bias)",
+    "input_format": "Historical drilling data including depth, feed rate, and torque measurements (e.g., arrays of floats).",
+    "output_format": "Predicted torque values for specified drilling conditions (e.g., array of floats)."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A higher learning rate may speed up training but can lead to instability."
+    },
+    {
+      "name": "epochs",
+      "typical_value": "1000",
+      "effect": "More epochs can improve accuracy but may lead to overfitting."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Smaller batch sizes can lead to more stable updates but increase training time."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m * p) where n is the number of training samples, m is the number of epochs, and p is the number of parameters.",
+    "space": "O(p) where p is the number of parameters in the model.",
+    "practical_note": "Training time can vary significantly based on the size of the dataset and the complexity of the network architecture."
+  },
+  "use_when": [
+    "You need to predict torque for deep hole drilling applications.",
+    "You have access to historical drilling data.",
+    "You want to improve drilling efficiency and reduce equipment failure."
+  ],
+  "avoid_when": [
+    "You have limited data for training the model.",
+    "The drilling conditions are highly variable and unpredictable.",
+    "You require real-time predictions with minimal latency."
+  ],
+  "implementation_skeleton": "def train_ann(data: np.ndarray, labels: np.ndarray, learning_rate: float = 0.001, epochs: int = 1000, batch_size: int = 32) -> Model:\n    # Preprocess data\n    # Initialize model architecture\n    # Train model using backpropagation\n    # Return trained model\n    pass",
+  "common_mistakes": [
+    "Not normalizing input data, which can lead to poor performance.",
+    "Overfitting the model by using too many epochs without validation.",
+    "Choosing inappropriate activation functions for the problem at hand."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Can model complex relationships in data.",
+      "Flexible architecture that can be adapted to various tasks.",
+      "Improves prediction accuracy over traditional methods."
+    ],
+    "weaknesses": [
+      "Requires a large amount of data for effective training.",
+      "Can be computationally expensive and time-consuming.",
+      "Difficult to interpret the model's decision-making process."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Nonlinear Regression",
+        "verdict": "Use ANN for complex patterns; use regression for simpler relationships."
+      }
+    ]
+  },
+  "connects_to": [
+    "Deep Learning",
+    "Convolutional Neural Networks",
+    "Recurrent Neural Networks",
+    "Support Vector Machines"
+  ],
+  "maturity": "proven"
+}

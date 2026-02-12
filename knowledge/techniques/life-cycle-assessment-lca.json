@@ -1,0 +1,78 @@
+{
+  "technique_name": "Life-Cycle Assessment (LCA)",
+  "aliases": [
+    "LCA"
+  ],
+  "category": "environmental_analysis",
+  "one_liner": "LCA evaluates the environmental impacts associated with all stages of a product's life from cradle to grave.",
+  "how_it_works": "LCA involves defining the scope of the assessment, collecting data on materials and processes, and calculating the total environmental impacts, particularly carbon emissions. The method aggregates emissions data to provide a comprehensive view of the embodied CO2 associated with a project. This analysis helps identify areas for improvement in sustainability practices.",
+  "algorithm": {
+    "steps": [
+      "1. Define the scope of the assessment including boundaries and functional units.",
+      "2. Collect data on materials used, construction methods, and energy consumption.",
+      "3. Calculate the carbon emissions associated with each material and process.",
+      "4. Aggregate the emissions data to obtain total embodied CO2 emissions.",
+      "5. Analyze results to identify key areas for improvement."
+    ],
+    "core_equation": "total_embodied_CO2 = sum(material_emission * quantity for each material)",
+    "input_format": "Data on materials (types and quantities), construction processes, and energy use.",
+    "output_format": "Total embodied CO2 equivalent emissions for the neighborhood."
+  },
+  "parameters": [
+    {
+      "name": "material_emission_factor",
+      "typical_value": "varies by material type",
+      "effect": "Changing this affects the calculated emissions for each material."
+    },
+    {
+      "name": "construction_energy_use",
+      "typical_value": "specific to construction methods",
+      "effect": "Altering this impacts the overall energy consumption and emissions."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) where n is the number of materials and processes assessed",
+    "space": "O(m) where m is the number of data points collected",
+    "practical_note": "Real-world performance can vary based on data availability and accuracy."
+  },
+  "use_when": [
+    "Assessing the environmental impact of new urban developments.",
+    "Designing sustainable building practices.",
+    "Evaluating compliance with carbon reduction targets."
+  ],
+  "avoid_when": [
+    "The project scope does not include carbon emissions assessment.",
+    "Data on materials and processes is unavailable."
+  ],
+  "implementation_skeleton": "def life_cycle_assessment(materials: List[Material], processes: List[Process]) -> float:\n    total_emissions = 0.0\n    for material in materials:\n        total_emissions += material.emission_factor * material.quantity\n    return total_emissions",
+  "common_mistakes": [
+    "Neglecting to define clear boundaries for the assessment.",
+    "Using outdated or inaccurate emission factors.",
+    "Failing to include all relevant materials and processes."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a comprehensive view of environmental impacts.",
+      "Helps identify opportunities for reducing carbon emissions.",
+      "Supports compliance with sustainability regulations."
+    ],
+    "weaknesses": [
+      "Can be data-intensive and time-consuming.",
+      "Results may vary significantly based on data quality.",
+      "Requires expertise in environmental impact assessment."
+    ],
+    "compared_to": [
+      {
+        "technique": "Carbon Footprint Analysis",
+        "verdict": "Use LCA for a more comprehensive assessment including all life stages, while Carbon Footprint is more focused on direct emissions."
+      }
+    ]
+  },
+  "connects_to": [
+    "Sustainability Assessment",
+    "Environmental Impact Assessment",
+    "Carbon Footprint Analysis",
+    "Life Cycle Costing"
+  ],
+  "maturity": "established"
+}

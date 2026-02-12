@@ -1,0 +1,37 @@
+{
+  "problem_name": "Behavioral Addiction Analysis",
+  "description": "Behavioral addiction analysis involves understanding the psychological and social factors that contribute to compulsive behaviors, such as gaming or internet use. This analysis is crucial for developing effective interventions and educational programs aimed at reducing the impact of these addictions.",
+  "you_have_this_if": [
+    "You observe compulsive behavior related to gaming or internet use.",
+    "Individuals show signs of distress when unable to engage in the behavior.",
+    "There is a noticeable decline in academic or social functioning.",
+    "Attempts to reduce or control the behavior have been unsuccessful.",
+    "You are conducting research on the psychological factors influencing these behaviors."
+  ],
+  "approaches": [
+    {
+      "technique": "Moderated mediation model analysis",
+      "best_for": "When developing intervention programs for youth at risk of Internet Gaming Disorder or conducting research on behavioral addictions.",
+      "paper_count": 1,
+      "max_citations": 3,
+      "key_tradeoff": "This approach provides insights into complex relationships but may require advanced statistical knowledge."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Moderated mediation model analysis",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to understand the interplay between psychological factors and behavioral outcomes in addiction."
+    }
+  ],
+  "start_here": "Start with moderated mediation model analysis as it offers a comprehensive understanding of the factors influencing behavioral addictions, particularly in youth.",
+  "related_problems": [
+    "Substance addiction analysis",
+    "Compulsive gambling behavior",
+    "Internet use disorder",
+    "Social media addiction"
+  ]
+}

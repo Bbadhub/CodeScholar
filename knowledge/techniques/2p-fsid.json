@@ -1,0 +1,81 @@
+{
+  "technique_name": "2P-FSID",
+  "aliases": [],
+  "category": "feature_selection",
+  "one_liner": "2P-FSID is a two-phase feature selection framework designed to enhance the efficiency of intrusion detection systems by balancing feature relevance and computational costs.",
+  "how_it_works": "The 2P-FSID method operates in two distinct phases. In the first phase, it identifies relevant features from the dataset using statistical measures. The second phase evaluates the computational efficiency of these selected features, ensuring that only the most effective ones are retained for use in the intrusion detection system. This dual approach optimizes both the performance and efficiency of the system.",
+  "algorithm": {
+    "steps": [
+      "Phase 1: Collect data and compute statistical measures for all features.",
+      "Phase 1: Select features based on relevance scores.",
+      "Phase 2: Evaluate the computational efficiency of the selected features.",
+      "Phase 2: Optimize the feature set based on efficiency metrics.",
+      "Final: Implement the optimized feature set in the intrusion detection system."
+    ],
+    "core_equation": "output = optimized_feature_set(selected_features)",
+    "input_format": "Raw data from network traffic or system logs.",
+    "output_format": "Optimized feature set for intrusion detection."
+  },
+  "parameters": [
+    {
+      "name": "relevance_threshold",
+      "typical_value": "0.5",
+      "effect": "Higher values may exclude potentially relevant features."
+    },
+    {
+      "name": "efficiency_metric",
+      "typical_value": "execution_time",
+      "effect": "Changing this can alter the focus on computational efficiency."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "The method shows a 20% improvement in computational efficiency over traditional feature selection methods."
+  },
+  "use_when": [
+    "You need to improve the performance of an existing intrusion detection system.",
+    "You are working with large datasets and require efficient feature selection.",
+    "You want to balance feature relevance with computational costs."
+  ],
+  "avoid_when": [
+    "The dataset is small and computational efficiency is not a concern.",
+    "You require real-time processing with minimal feature selection overhead.",
+    "You are using a different domain outside of cybersecurity."
+  ],
+  "implementation_skeleton": "def two_phase_fsid(data: List[float], relevance_threshold: float) -> List[float]:\n    # Phase 1: Compute relevance scores\n    relevance_scores = compute_relevance(data)\n    selected_features = select_features(relevance_scores, relevance_threshold)\n    # Phase 2: Evaluate efficiency\n    efficiency_scores = evaluate_efficiency(selected_features)\n    optimized_features = optimize_features(selected_features, efficiency_scores)\n    return optimized_features",
+  "common_mistakes": [
+    "Neglecting to properly set the relevance threshold, leading to poor feature selection.",
+    "Failing to evaluate the efficiency of features, resulting in suboptimal performance.",
+    "Not considering the specific context of the intrusion detection system when applying the method."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Balances feature relevance with computational efficiency.",
+      "Improves performance of intrusion detection systems.",
+      "Can handle large datasets effectively."
+    ],
+    "weaknesses": [
+      "May not be suitable for small datasets.",
+      "Requires careful tuning of parameters.",
+      "Efficiency evaluation may add overhead."
+    ],
+    "compared_to": [
+      {
+        "technique": "PCA",
+        "verdict": "Use 2P-FSID when feature relevance is critical, while PCA focuses on dimensionality reduction."
+      },
+      {
+        "technique": "Recursive Feature Elimination",
+        "verdict": "2P-FSID is more efficient in balancing relevance and computational cost."
+      }
+    ]
+  },
+  "connects_to": [
+    "Feature Selection Techniques",
+    "Intrusion Detection Systems",
+    "Statistical Measures for Feature Evaluation",
+    "Dimensionality Reduction Methods"
+  ],
+  "maturity": "proven"
+}

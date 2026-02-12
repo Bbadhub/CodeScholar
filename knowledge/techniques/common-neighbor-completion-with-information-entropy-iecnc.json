@@ -1,0 +1,86 @@
+{
+  "technique_name": "Common Neighbor Completion with Information Entropy (IECNC)",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "IECNC predicts potential links in social networks by leveraging common neighbors and quantifying uncertainty through information entropy.",
+  "how_it_works": "IECNC employs a Message Passing Neural Network (MPNN) to gather features from common neighbors of nodes in a graph. It computes the probabilities of potential links using a softmax function and assesses the uncertainty of these predictions through information entropy. By combining these probabilities with entropy measures, IECNC enhances the model's ability to predict links accurately, focusing on the logical relationships among neighbors.",
+  "algorithm": {
+    "steps": [
+      "1. Extract logical relationships of neighbors from the subgraph.",
+      "2. Compute node features using MPNN.",
+      "3. Calculate probabilities of common neighbors using softmax.",
+      "4. Assess uncertainty using information entropy.",
+      "5. Combine probabilities and entropy to predict links between nodes."
+    ],
+    "core_equation": "output = softmax(features) + entropy(features)",
+    "input_format": "Graph data represented as an adjacency matrix and node feature matrix.",
+    "output_format": "Predicted probabilities for potential links between node pairs."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A higher learning rate may speed up training but risk overshooting minima."
+    },
+    {
+      "name": "number_of_layers",
+      "typical_value": "3",
+      "effect": "Increasing layers may improve model capacity but can lead to overfitting."
+    },
+    {
+      "name": "hidden_units_per_layer",
+      "typical_value": "64",
+      "effect": "More hidden units can capture more complex patterns but increase computational cost."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated.",
+    "space": "Not stated.",
+    "practical_note": "Performance may vary based on graph size and density."
+  },
+  "use_when": [
+    "Building recommendation systems that suggest potential connections in social networks.",
+    "Analyzing social network data to uncover hidden relationships.",
+    "Developing applications that require accurate link predictions in incomplete graphs."
+  ],
+  "avoid_when": [
+    "The graph data is complete and well-structured.",
+    "Real-time predictions are required with minimal latency.",
+    "The relationships between nodes are static and do not evolve."
+  ],
+  "implementation_skeleton": "def iecnc_predict(adj_matrix: np.ndarray, feature_matrix: np.ndarray) -> np.ndarray:\n    # Step 1: Extract logical relationships\n    subgraph = extract_subgraph(adj_matrix)\n    # Step 2: Compute node features using MPNN\n    features = compute_mpn_features(subgraph, feature_matrix)\n    # Step 3: Calculate probabilities\n    probabilities = softmax(features)\n    # Step 4: Assess uncertainty\n    entropy = compute_entropy(probabilities)\n    # Step 5: Combine probabilities and entropy\n    return probabilities + entropy",
+  "common_mistakes": [
+    "Neglecting to preprocess the graph data before inputting it into the model.",
+    "Overfitting the model by using too many layers or hidden units.",
+    "Failing to properly tune the learning rate, leading to suboptimal convergence."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively captures complex relationships in social networks.",
+      "Incorporates uncertainty measures to improve prediction reliability.",
+      "Outperforms existing techniques on benchmark datasets."
+    ],
+    "weaknesses": [
+      "May require significant computational resources for large graphs.",
+      "Performance can degrade with highly dynamic graphs.",
+      "Not suitable for real-time applications due to potential latency."
+    ],
+    "compared_to": [
+      {
+        "technique": "Graph Autoencoders (GAE)",
+        "verdict": "Use IECNC for better uncertainty quantification in link predictions."
+      },
+      {
+        "technique": "Subgraph Embedding-based Link Prediction (SEAL)",
+        "verdict": "IECNC may provide more accurate predictions by focusing on logical relationships."
+      }
+    ]
+  },
+  "connects_to": [
+    "Message Passing Neural Networks (MPNN)",
+    "Graph Neural Networks (GNN)",
+    "Link Prediction Techniques",
+    "Social Network Analysis"
+  ],
+  "maturity": "emerging"
+}

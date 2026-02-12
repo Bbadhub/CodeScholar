@@ -1,0 +1,37 @@
+{
+  "problem_name": "Automatic Modulation Recognition",
+  "description": "Automatic modulation recognition involves identifying the modulation scheme of a received signal in communication systems. This is crucial for efficient spectrum management and improving communication reliability in crowded environments.",
+  "you_have_this_if": [
+    "You are working with signals in a crowded electromagnetic spectrum.",
+    "You need to classify different types of modulated signals.",
+    "You are facing challenges with traditional classification methods.",
+    "You require high accuracy in signal classification.",
+    "You want to leverage both spatial and temporal features in your analysis."
+  ],
+  "approaches": [
+    {
+      "technique": "Hybrid Deep Model with Dendritic Learning (HDM-D)",
+      "best_for": "when you need to classify modulated signals in a crowded electromagnetic spectrum with high accuracy.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach may require more computational resources compared to traditional methods."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Hybrid Deep Model with Dendritic Learning (HDM-D)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to achieve high classification accuracy in complex signal environments."
+    }
+  ],
+  "start_here": "Begin with the Hybrid Deep Model with Dendritic Learning (HDM-D) as it provides a robust framework for classifying modulated signals effectively, especially in challenging environments.",
+  "related_problems": [
+    "Signal Classification",
+    "Spectrum Sensing",
+    "Cognitive Radio Networks",
+    "Interference Mitigation"
+  ]
+}

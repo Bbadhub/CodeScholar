@@ -1,0 +1,37 @@
+{
+  "problem_name": "Galaxy Cluster Detection",
+  "description": "Galaxy cluster detection involves identifying and cataloging groups of galaxies that are bound together by gravity. This is crucial for understanding the large-scale structure of the universe and the distribution of dark matter.",
+  "you_have_this_if": [
+    "You are analyzing large astronomical datasets.",
+    "You need to identify clusters of galaxies in optical surveys.",
+    "You are working with data from large-scale astronomical surveys.",
+    "You require high accuracy in your detection methods.",
+    "You are facing challenges with existing detection techniques."
+  ],
+  "approaches": [
+    {
+      "technique": "COSMIC",
+      "best_for": "when you need to catalog galaxy clusters from large astronomical datasets with improved accuracy.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "COSMIC provides high accuracy but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "COSMIC",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have access to large datasets and need precise detection of galaxy clusters."
+    }
+  ],
+  "start_here": "Start with COSMIC as it is specifically designed for galaxy cluster detection and offers improved accuracy for large datasets.",
+  "related_problems": [
+    "Galaxy morphology classification",
+    "Supernova detection",
+    "Dark matter mapping",
+    "Large-scale structure analysis"
+  ]
+}

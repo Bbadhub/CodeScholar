@@ -1,0 +1,37 @@
+{
+  "problem_name": "Covert Communication",
+  "description": "Covert communication involves transmitting information in a way that conceals the existence of the communication itself. This is particularly important in environments where surveillance is prevalent and where the detection of communication patterns could lead to censorship or interception.",
+  "you_have_this_if": [
+    "You are operating in a high-surveillance environment.",
+    "You need to send sensitive information securely.",
+    "You want to avoid detection by censors.",
+    "You are working with IoT devices that require secure data exchange.",
+    "You have experienced issues with traditional communication methods being monitored."
+  ],
+  "approaches": [
+    {
+      "technique": "Covert Communication via MQTT",
+      "best_for": "when you need to transmit sensitive information in environments with high surveillance and avoid detection.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "While effective for covert communication, it may require specific configurations and understanding of MQTT protocols."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Covert Communication via MQTT",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to securely transmit data without raising suspicion in a monitored environment."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is Covert Communication via MQTT, as it effectively balances security and the need for covert operations in sensitive environments.",
+  "related_problems": [
+    "Data Encryption",
+    "Steganography",
+    "Secure Messaging",
+    "Anonymity in Communication"
+  ]
+}

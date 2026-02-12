@@ -1,0 +1,34 @@
+{
+  "problem_name": "Predictive Modeling for Financial Time Series Forecasting",
+  "description": "This problem involves using historical financial data to predict future market trends, such as stock prices. It is crucial for developing trading strategies and making informed investment decisions.",
+  "you_have_this_if": [
+    "You need to predict stock prices based on historical data.",
+    "You want to implement a trading strategy that adapts to market conditions.",
+    "You are dealing with high-frequency trading data."
+  ],
+  "approaches": [
+    {
+      "technique": "RNNs, LSTMs, CNNs, Autoencoders, GNNs, Transformers, Reinforcement Learning hybrids",
+      "best_for": "When you need to model complex temporal dependencies in financial data.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While powerful, these models can be computationally intensive and require large datasets."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "RNNs, LSTMs, CNNs, Autoencoders, GNNs, Transformers, Reinforcement Learning hybrids",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have a large dataset and need to capture complex patterns in time series data."
+    }
+  ],
+  "start_here": "Start with RNNs or LSTMs for their ability to handle sequential data effectively, especially if you have a moderate amount of historical data.",
+  "related_problems": [
+    "Anomaly detection in financial transactions",
+    "Portfolio optimization",
+    "Risk assessment in financial markets"
+  ]
+}

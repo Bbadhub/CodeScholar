@@ -1,0 +1,37 @@
+{
+  "problem_name": "Multi-Criteria Decision Analysis in Cooperative Game Theory",
+  "description": "This problem involves making decisions that consider multiple criteria, often in scenarios where stakeholders have different preferences and objectives. It is particularly relevant in contexts like tourism development, where balancing economic benefits and stakeholder interests is crucial.",
+  "you_have_this_if": [
+    "You are trying to optimize decisions involving multiple conflicting criteria.",
+    "You have multiple stakeholders with different priorities.",
+    "You need to evaluate the impact of decisions on various locations or groups.",
+    "You are working on strategies that require consensus among different parties.",
+    "You are looking to implement policies that affect economic development."
+  ],
+  "approaches": [
+    {
+      "technique": "Analytic Hierarchy Process and Weighted Shapley Value",
+      "best_for": "When developing tourism strategies in underdeveloped areas or balancing economic benefits across multiple locations.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach provides a structured way to evaluate complex decisions but may require significant stakeholder input and consensus."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Analytic Hierarchy Process and Weighted Shapley Value",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to balance multiple stakeholder interests while optimizing for economic benefits."
+    }
+  ],
+  "start_here": "Start with the Analytic Hierarchy Process and Weighted Shapley Value as it provides a comprehensive framework for evaluating complex decisions with multiple criteria and stakeholders.",
+  "related_problems": [
+    "Multi-Objective Optimization",
+    "Stakeholder Analysis",
+    "Resource Allocation",
+    "Game Theory in Economics"
+  ]
+}

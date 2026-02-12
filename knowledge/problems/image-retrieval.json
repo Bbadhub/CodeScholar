@@ -1,0 +1,37 @@
+{
+  "problem_name": "Image Retrieval",
+  "description": "Image retrieval is the process of searching and retrieving images from a large database based on specific queries or features. This problem often arises in applications such as digital asset management, surveillance, and content-based image retrieval systems.",
+  "you_have_this_if": [
+    "You need to find specific images based on visual content.",
+    "You are dealing with large datasets of images.",
+    "You require high accuracy in retrieving relevant images.",
+    "You are facing challenges with image quality or data privacy.",
+    "You need to enhance or anonymize images for ethical compliance."
+  ],
+  "approaches": [
+    {
+      "technique": "CycleGAN",
+      "best_for": "When you need to anonymize datasets containing identifiable human features or improve training data quality.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "CycleGAN is effective for data anonymization but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "CycleGAN",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to enhance image quality while ensuring ethical standards in data usage."
+    }
+  ],
+  "start_here": "Start with CycleGAN if you are working with sensitive images that require anonymization or if you want to improve the quality of your training data for better retrieval performance.",
+  "related_problems": [
+    "Image Classification",
+    "Object Detection",
+    "Data Anonymization",
+    "Image Segmentation"
+  ]
+}

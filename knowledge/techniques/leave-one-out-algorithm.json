@@ -1,0 +1,86 @@
+{
+  "technique_name": "Leave-one-out algorithm",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "The leave-one-out algorithm quantifies the contribution of individual treatment comparisons in network meta-analysis.",
+  "how_it_works": "This algorithm iteratively excludes each treatment comparison from a network meta-analysis (CNMA) to assess its impact on the overall estimates. By recomputing the variances of the component effects without each comparison, it calculates how much each comparison contributes to the precision of the estimates. The results are normalized to create a contribution matrix that indicates the relative importance of each comparison.",
+  "algorithm": {
+    "steps": [
+      "1. Conduct a CNMA for the full network to estimate all component effects and their variances.",
+      "2. For each direct comparison, conduct a CNMA without that comparison and recompute all component effects and their variances.",
+      "3. Calculate precision leverage for each comparison based on the change in variance when excluded.",
+      "4. Normalize the precision leverage values to create a contribution matrix."
+    ],
+    "core_equation": "Contribution = (Vfull,j - V\u2212i,j) / Vfull,j",
+    "input_format": "Data representing treatment comparisons and their effects, structured in a network format.",
+    "output_format": "A normalized contribution matrix indicating the percentage contribution of each comparison to the precision of component estimates."
+  },
+  "parameters": [
+    {
+      "name": "n",
+      "typical_value": "number of distinct components",
+      "effect": "Affects the complexity and size of the contribution matrix."
+    },
+    {
+      "name": "k",
+      "typical_value": "number of edges (comparisons)",
+      "effect": "Influences the number of iterations and computations required."
+    },
+    {
+      "name": "Vfull,j",
+      "typical_value": "variance of component effect estimates from full network",
+      "effect": "Serves as a baseline for calculating contribution."
+    },
+    {
+      "name": "V\u2212i,j",
+      "typical_value": "variance of component effect estimates after excluding comparison i",
+      "effect": "Determines the impact of excluding a comparison."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on the number of comparisons and components in the network."
+  },
+  "use_when": [
+    "You need to analyze the contribution of individual treatment comparisons in complex interventions.",
+    "You are working with multicomponent treatment data and need to disentangle effects.",
+    "You require a robust method to enhance the interpretability of CNMA results."
+  ],
+  "avoid_when": [
+    "The treatment comparisons do not exhibit overlapping components.",
+    "You are dealing with simple pairwise meta-analysis without complex interactions.",
+    "The assumptions of linear additivity and identifiability are violated."
+  ],
+  "implementation_skeleton": "def leave_one_out_analysis(data: List[Comparison]) -> ContributionMatrix:\n    full_effects, full_variances = conduct_cnma(data)\n    contribution_matrix = []\n    for comparison in data:\n        reduced_data = exclude_comparison(data, comparison)\n        effects, variances = conduct_cnma(reduced_data)\n        precision_leverage = calculate_precision_leverage(full_variances, variances)\n        contribution_matrix.append(normalize(precision_leverage))\n    return contribution_matrix",
+  "common_mistakes": [
+    "Failing to properly normalize the precision leverage values.",
+    "Not accounting for overlapping components in the treatment comparisons.",
+    "Assuming linearity without validating the assumptions of the model."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a detailed understanding of individual contributions to overall estimates.",
+      "Enhances the interpretability of complex treatment networks.",
+      "Improves precision in contribution analysis compared to traditional methods."
+    ],
+    "weaknesses": [
+      "Computationally intensive for large networks with many comparisons.",
+      "May not be applicable for simple pairwise analyses.",
+      "Assumes linear relationships which may not hold in all cases."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional network meta-analysis methods",
+        "verdict": "Use leave-one-out for more precise contribution analysis."
+      }
+    ]
+  },
+  "connects_to": [
+    "Network meta-analysis (NMA)",
+    "Bayesian meta-analysis",
+    "Meta-regression",
+    "Sensitivity analysis"
+  ],
+  "maturity": "emerging"
+}

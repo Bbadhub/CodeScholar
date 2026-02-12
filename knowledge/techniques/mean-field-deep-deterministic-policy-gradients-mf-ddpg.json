@@ -1,0 +1,102 @@
+{
+  "technique_name": "Mean Field Deep Deterministic Policy Gradients (MF-DDPG)",
+  "aliases": [],
+  "category": "reinforcement_learning",
+  "one_liner": "MF-DDPG is a reinforcement learning algorithm that enables decentralized decision-making in environments with multiple agents using mean field game theory.",
+  "how_it_works": "MF-DDPG leverages mean field game theory to allow individual agents, such as households in a power grid, to make decisions based on the average behavior of all agents rather than relying on centralized control. The algorithm combines centralized strategies with local adjustments, enabling each agent to compute optimal actions based on local information and the average state of the system. This approach enhances resilience against cyberattacks by decentralizing decision-making and reducing reliance on direct communication between agents.",
+  "algorithm": {
+    "steps": [
+      "1. Centralized optimizer calculates ideal load-shedding strategies for substations.",
+      "2. Strategies are securely broadcast to households via an emergency channel.",
+      "3. Each household uses local information to estimate the average state of all agents.",
+      "4. Households compute their optimal power consumption adjustments using the MF-DDPG algorithm.",
+      "5. The algorithm updates the actor, critic, and mass neural networks based on the loss functions derived from the Bellman equation."
+    ],
+    "core_equation": "output = actor(state) + critic(state, action)",
+    "input_format": "Power consumption data from individual households and the centralized load-shedding strategy.",
+    "output_format": "Optimal power adjustment rates for each household."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate_actor",
+      "typical_value": "0.001",
+      "effect": "A higher value may speed up learning but can lead to instability."
+    },
+    {
+      "name": "learning_rate_critic",
+      "typical_value": "0.001",
+      "effect": "Similar to actor; affects the stability of value function updates."
+    },
+    {
+      "name": "learning_rate_mass",
+      "typical_value": "0.001",
+      "effect": "Influences the convergence of the mean field approximation."
+    },
+    {
+      "name": "discount_factor",
+      "typical_value": "0.99",
+      "effect": "Affects the importance of future rewards in decision-making."
+    },
+    {
+      "name": "Q1",
+      "typical_value": "weight coefficient for power consumption alignment",
+      "effect": "Adjusting this can prioritize alignment with overall consumption goals."
+    },
+    {
+      "name": "Q2",
+      "typical_value": "weight coefficient for competitive power consumption",
+      "effect": "Influences how much agents compete for resources."
+    },
+    {
+      "name": "R",
+      "typical_value": "weight coefficient for deviation from normal consumption",
+      "effect": "Affects penalties for straying from typical consumption patterns."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated.",
+    "space": "Not explicitly stated.",
+    "practical_note": "Performance may vary based on the number of agents and the complexity of the environment."
+  },
+  "use_when": [
+    "Implementing security measures for smart grids with high penetration of distributed energy resources.",
+    "Designing systems that require decentralized decision-making under compromised communication.",
+    "Addressing hybrid cyber threats that involve both false data injection and direct load-altering attacks."
+  ],
+  "avoid_when": [
+    "The system has reliable communication channels between households and substations.",
+    "The scale of the system is small enough for centralized control to be effective.",
+    "Real-time communication and data exchange are feasible and secure."
+  ],
+  "implementation_skeleton": "def mf_ddpg_algorithm(household_data: List[float], load_shedding_strategy: List[float]) -> List[float]:\n    # Step 1: Calculate centralized strategies\n    centralized_strategies = calculate_centralized_strategies(load_shedding_strategy)\n    # Step 2: Broadcast strategies\n    broadcast_strategies(centralized_strategies)\n    # Step 3: Estimate average state\n    average_state = estimate_average_state(household_data)\n    # Step 4: Compute optimal adjustments\n    adjustments = compute_optimal_adjustments(average_state)\n    # Step 5: Update networks\n    update_networks(adjustments)\n    return adjustments",
+  "common_mistakes": [
+    "Neglecting to properly tune the learning rates, leading to unstable training.",
+    "Failing to account for the average state accurately, which can degrade performance.",
+    "Overlooking the importance of secure communication channels in decentralized systems."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Enables decentralized decision-making, reducing reliance on centralized control.",
+      "Improves resilience against cyberattacks by minimizing communication dependencies.",
+      "Adapts well to dynamic environments with multiple agents."
+    ],
+    "weaknesses": [
+      "Complexity in tuning multiple parameters can hinder performance.",
+      "May require significant computational resources for large-scale systems.",
+      "Performance can degrade if the average state is not accurately estimated."
+    ],
+    "compared_to": [
+      {
+        "technique": "Deep Deterministic Policy Gradients (DDPG)",
+        "verdict": "Use MF-DDPG when decentralized decision-making is crucial; otherwise, DDPG may suffice for centralized scenarios."
+      }
+    ]
+  },
+  "connects_to": [
+    "Deep Reinforcement Learning",
+    "Multi-Agent Reinforcement Learning",
+    "Mean Field Game Theory",
+    "Distributed Energy Resources Management"
+  ],
+  "maturity": "emerging"
+}

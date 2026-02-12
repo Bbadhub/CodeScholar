@@ -1,0 +1,37 @@
+{
+  "problem_name": "Empathy Training in Medical Education",
+  "description": "Empathy training in medical education focuses on enhancing the ability of healthcare professionals to understand and share the feelings of their patients. This is crucial for improving patient care and communication, especially in complex clinical scenarios.",
+  "you_have_this_if": [
+    "Medical students struggle to connect with patients emotionally.",
+    "There is a noticeable lack of patient-centered communication in clinical settings.",
+    "Feedback from patients indicates a feeling of being misunderstood or neglected.",
+    "Students express difficulty in relating to patients with chronic pain.",
+    "Curriculum assessments show low scores in empathy-related competencies."
+  ],
+  "approaches": [
+    {
+      "technique": "Narrative-driven Virtual Reality Experience",
+      "best_for": "Training medical students on patient empathy through immersive storytelling.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While highly immersive, it may require significant resources and technology access."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Narrative-driven Virtual Reality Experience",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You want to provide an engaging and immersive experience that allows students to practice empathy in a controlled environment."
+    }
+  ],
+  "start_here": "The recommended first approach is the Narrative-driven Virtual Reality Experience, as it offers an innovative way to engage students and enhance their empathetic skills through realistic scenarios.",
+  "related_problems": [
+    "Communication Skills Training in Healthcare",
+    "Patient-Centered Care Models",
+    "Cultural Competency in Medical Education",
+    "Chronic Pain Management Education"
+  ]
+}

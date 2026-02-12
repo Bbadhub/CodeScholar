@@ -1,0 +1,88 @@
+{
+  "technique_name": "Context-Aware Language Model for Science (CALMS)",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "CALMS enhances large language models to provide contextual assistance in scientific environments.",
+  "how_it_works": "CALMS leverages a large language model (LLM) to retrieve relevant information from a document store based on user queries related to scientific experimentation. It combines conversational memory and semantic search to enhance the context of responses. If a tool is needed, CALMS generates a tool call, executes it, and integrates the results into its final response to the user.",
+  "algorithm": {
+    "steps": [
+      "1. User inputs a query related to scientific experimentation.",
+      "2. The LLM retrieves relevant context from a document store using semantic search.",
+      "3. The LLM processes the query along with the retrieved context.",
+      "4. If a tool is required, the LLM generates a tool call based on the user input.",
+      "5. The tool executes the command and returns results to the LLM.",
+      "6. The LLM formulates a response based on the tool output and context.",
+      "7. The response is presented to the user."
+    ],
+    "core_equation": "output = LLM(query + retrieved_context + tool_output)",
+    "input_format": "User queries related to scientific experiments and instrument operations.",
+    "output_format": "Responses that provide guidance on experimental design, instrument operation, or direct control of scientific tools."
+  },
+  "parameters": [
+    {
+      "name": "context_window_size",
+      "typical_value": "4096 or 16384 tokens",
+      "effect": "Larger sizes allow for more context but may increase processing time."
+    },
+    {
+      "name": "temperature",
+      "typical_value": "0.7",
+      "effect": "Higher values increase creativity in responses."
+    },
+    {
+      "name": "top_k",
+      "typical_value": "50",
+      "effect": "Limits the number of choices during generation, affecting diversity."
+    },
+    {
+      "name": "top_p",
+      "typical_value": "0.9",
+      "effect": "Focuses on a subset of predictions, influencing response coherence."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on the size of the context window and the complexity of the queries."
+  },
+  "use_when": [
+    "Designing experiments in complex scientific environments.",
+    "Assisting new users in navigating scientific facilities.",
+    "Automating instrument operations based on user queries."
+  ],
+  "avoid_when": [
+    "When high accuracy is critical and hallucination risks are unacceptable.",
+    "For tasks requiring extensive domain-specific fine-tuning not covered by the LLM."
+  ],
+  "implementation_skeleton": "def calms_response(user_query: str) -> str:\n    context = retrieve_context(user_query)\n    tool_call = generate_tool_call(user_query)\n    tool_output = execute_tool(tool_call)\n    response = formulate_response(user_query, context, tool_output)\n    return response",
+  "common_mistakes": [
+    "Neglecting to validate the accuracy of tool outputs.",
+    "Failing to provide sufficient context for complex queries.",
+    "Overlooking the potential for hallucinations in LLM responses."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides contextualized responses tailored to scientific queries.",
+      "Enhances user experience in navigating complex scientific tools.",
+      "Automates repetitive tasks, saving time for researchers."
+    ],
+    "weaknesses": [
+      "Risk of generating inaccurate or hallucinated information.",
+      "Dependence on the quality of the underlying document store.",
+      "May require extensive tuning for specific scientific domains."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard LLMs",
+        "verdict": "Use CALMS for context-aware responses in scientific settings; standard LLMs may lack domain-specific knowledge."
+      }
+    ]
+  },
+  "connects_to": [
+    "Semantic Search",
+    "Conversational AI",
+    "Tool Automation",
+    "Large Language Models"
+  ],
+  "maturity": "emerging"
+}

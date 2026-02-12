@@ -1,0 +1,83 @@
+{
+  "technique_name": "Friendship Index",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "The Friendship Index measures the ratio of the average degree of an individual's friends to their own degree over time.",
+  "how_it_works": "The Friendship Index is calculated using smartphone communication data to analyze social interactions. It constructs undirected networks based on daily interactions, allowing for the computation of each individual's degree and the average degree of their friends. By tracking these metrics over time, the Friendship Index reveals how perceptions of social norms evolve within a network.",
+  "algorithm": {
+    "steps": [
+      "1. Collect smartphone communication data over a specified period.",
+      "2. Construct undirected networks daily based on interactions.",
+      "3. Calculate the degree of each node (individual) in the network.",
+      "4. Compute the average degree of each individual's friends.",
+      "5. Calculate the friendship index for each individual at each time point.",
+      "6. Analyze the temporal changes in the friendship index."
+    ],
+    "core_equation": "friendship_index = average_degree_of_friends / own_degree",
+    "input_format": "Smartphone communication records detailing interactions among individuals.",
+    "output_format": "Dynamic friendship index values for each individual over time."
+  },
+  "parameters": [
+    {
+      "name": "time_period",
+      "typical_value": "119 days",
+      "effect": "Longer periods may reveal more trends."
+    },
+    {
+      "name": "number_of_participants",
+      "typical_value": "692",
+      "effect": "More participants can lead to a more robust analysis."
+    },
+    {
+      "name": "communication_records",
+      "typical_value": "over 60 million",
+      "effect": "Higher volume of records improves accuracy."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "The complexity may vary based on the size of the network and the duration of data collection."
+  },
+  "use_when": [
+    "Designing social networks that aim to mitigate distorted perceptions of social norms.",
+    "Analyzing communication patterns in educational or workplace settings.",
+    "Studying the influence of highly connected individuals on group behavior."
+  ],
+  "avoid_when": [
+    "The network is static and does not evolve over time.",
+    "Data on individual interactions is not available.",
+    "The focus is solely on individual behaviors without considering network effects."
+  ],
+  "implementation_skeleton": "def calculate_friendship_index(data: List[Interaction]) -> Dict[str, float]:\n    # Step 1: Collect data\n    # Step 2: Construct daily networks\n    networks = construct_networks(data)\n    indices = {}\n    for day, network in networks.items():\n        for individual in network:\n            degree = calculate_degree(individual)\n            avg_friend_degree = calculate_avg_friend_degree(individual, network)\n            indices[individual] = avg_friend_degree / degree\n    return indices",
+  "common_mistakes": [
+    "Neglecting to account for the dynamic nature of the network.",
+    "Using static measures when the network is evolving.",
+    "Failing to validate the data quality before analysis."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a dynamic view of social interactions.",
+      "Helps in understanding the evolution of social norms.",
+      "Can reveal insights into group behavior influenced by connected individuals."
+    ],
+    "weaknesses": [
+      "Requires extensive data collection over time.",
+      "May not be applicable to static networks.",
+      "Data privacy concerns with smartphone communication records."
+    ],
+    "compared_to": [
+      {
+        "technique": "Static Friendship Index",
+        "verdict": "Use the dynamic index for evolving networks; static for fixed networks."
+      }
+    ]
+  },
+  "connects_to": [
+    "Social Network Analysis",
+    "Dynamic Graph Theory",
+    "Communication Patterns in Networks",
+    "Influence of Social Norms"
+  ],
+  "maturity": "emerging"
+}

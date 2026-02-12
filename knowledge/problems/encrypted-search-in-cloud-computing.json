@@ -1,0 +1,37 @@
+{
+  "problem_name": "Encrypted Search in Cloud Computing",
+  "description": "Encrypted search in cloud computing refers to the challenge of performing search operations on data that is stored in an encrypted format. This is crucial for maintaining data confidentiality while still allowing users to retrieve relevant information efficiently.",
+  "you_have_this_if": [
+    "You are storing sensitive data in the cloud.",
+    "You need to perform searches on this encrypted data.",
+    "Data confidentiality is a top priority.",
+    "You require high recall in your search results.",
+    "You want to support multi-keyword searches."
+  ],
+  "approaches": [
+    {
+      "technique": "Hybrid Encrypted Search Framework",
+      "best_for": "when you need to perform secure searches on sensitive data in the cloud while maintaining high recall.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach balances security and search efficiency but may introduce complexity in implementation."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Hybrid Encrypted Search Framework",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to perform secure multi-keyword searches on sensitive data without compromising recall."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Hybrid Encrypted Search Framework, as it effectively addresses the need for secure searches while maintaining high recall on sensitive data.",
+  "related_problems": [
+    "Secure Data Storage",
+    "Privacy-Preserving Data Mining",
+    "Access Control in Cloud Computing",
+    "Secure Multi-Party Computation"
+  ]
+}

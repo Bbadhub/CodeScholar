@@ -1,0 +1,112 @@
+{
+  "problem_name": "Classification",
+  "description": "Classification is the task of predicting the category or class of an object based on its features. It is widely used in various domains, such as healthcare, finance, and image recognition, to make informed decisions based on data.",
+  "you_have_this_if": [
+    "You need to categorize data into distinct classes.",
+    "You have labeled training data available.",
+    "You are facing a problem that requires predicting outcomes based on input features.",
+    "You are dealing with high-dimensional data.",
+    "You require model interpretability for decision-making."
+  ],
+  "approaches": [
+    {
+      "technique": "Multinomial Logistic Regression (MLR)",
+      "best_for": "When you need to predict the performance of IPOs based on financial data.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "MLR is simple and interpretable but may not capture complex relationships."
+    },
+    {
+      "technique": "Enhanced Multilayer Perceptron (EMLP)",
+      "best_for": "When you need to implement a machine learning model for early detection of heart disease.",
+      "paper_count": 1,
+      "max_citations": 4,
+      "key_tradeoff": "EMLP can model complex relationships but requires more computational resources."
+    },
+    {
+      "technique": "Deterministic Graph Traversal Method",
+      "best_for": "When you need a lightweight classifier for WBC classification.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This method is efficient but may lack the flexibility of more complex models."
+    },
+    {
+      "technique": "SmartScanPCOS",
+      "best_for": "When you need to predict PCOS in patients with high accuracy.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "SmartScanPCOS offers high accuracy but may require specific datasets."
+    },
+    {
+      "technique": "Random k Conditional Nearest Neighbor (RkCNN)",
+      "best_for": "When you have a high-dimensional dataset with many irrelevant features.",
+      "paper_count": 1,
+      "max_citations": 7,
+      "key_tradeoff": "RkCNN improves robustness but can be computationally intensive."
+    },
+    {
+      "technique": "Random Forest, XGBoost",
+      "best_for": "When you need to analyze patient data to improve triage accuracy.",
+      "paper_count": 1,
+      "max_citations": 3,
+      "key_tradeoff": "These ensemble methods are powerful but can be less interpretable."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Multinomial Logistic Regression (MLR)",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "easy",
+      "best_when": "You need a straightforward model for multi-class classification with interpretability."
+    },
+    {
+      "technique": "Enhanced Multilayer Perceptron (EMLP)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You require a model that can handle complex, non-linear relationships in data."
+    },
+    {
+      "technique": "Deterministic Graph Traversal Method",
+      "speed": "fast",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "easy",
+      "best_when": "You have domain knowledge that can be encoded in a graph for classification."
+    },
+    {
+      "technique": "SmartScanPCOS",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a highly accurate model for healthcare applications with interpretability."
+    },
+    {
+      "technique": "Random k Conditional Nearest Neighbor (RkCNN)",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You are dealing with high-dimensional data and need robust classification."
+    },
+    {
+      "technique": "Random Forest, XGBoost",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You want to improve classification accuracy in complex datasets."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is to start with Multinomial Logistic Regression (MLR) due to its simplicity and interpretability, especially if you are dealing with multi-class classification problems.",
+  "related_problems": [
+    "Regression",
+    "Clustering",
+    "Anomaly Detection",
+    "Time Series Forecasting"
+  ]
+}

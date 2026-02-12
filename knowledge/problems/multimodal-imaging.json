@@ -1,0 +1,37 @@
+{
+  "problem_name": "Multimodal Imaging",
+  "description": "Multimodal imaging refers to the integration of multiple imaging techniques to obtain complementary information about a subject, often used in medical diagnostics. This approach enhances the accuracy and effectiveness of imaging by combining different modalities, such as PET, MRI, and CT, to provide a more comprehensive view of the biological processes.",
+  "you_have_this_if": [
+    "You are working on cancer detection and treatment.",
+    "You need to improve the accuracy of existing imaging technologies.",
+    "You are researching targeted therapies that require precise imaging.",
+    "You are facing challenges with single-modality imaging limitations.",
+    "You require detailed anatomical and functional information simultaneously."
+  ],
+  "approaches": [
+    {
+      "technique": "FAPI Nanoparticles",
+      "best_for": "Developing cancer imaging solutions and enhancing existing imaging technologies.",
+      "paper_count": 1,
+      "max_citations": 5,
+      "key_tradeoff": "While effective for cancer imaging, it may not be suitable for all types of imaging applications."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "FAPI Nanoparticles",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a targeted approach for cancer imaging that combines functional and anatomical data."
+    }
+  ],
+  "start_here": "Start with FAPI Nanoparticles for cancer imaging solutions, as it provides a targeted approach with high accuracy.",
+  "related_problems": [
+    "Single-modality imaging",
+    "Cancer detection techniques",
+    "Targeted therapy imaging",
+    "Image fusion methods"
+  ]
+}

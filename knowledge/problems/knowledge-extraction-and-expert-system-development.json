@@ -1,0 +1,37 @@
+{
+  "problem_name": "Knowledge Extraction and Expert System Development",
+  "description": "This problem involves extracting relevant information from large datasets or documents to build systems that can provide expert-level insights in specific domains. It is particularly useful in fields where specialized knowledge is required, such as materials science or medicine.",
+  "you_have_this_if": [
+    "You need to gather detailed information from technical documents.",
+    "You are working on a project that requires domain-specific knowledge.",
+    "You are developing a system that needs to provide expert recommendations.",
+    "You are facing challenges in automating knowledge retrieval.",
+    "You require high accuracy in information extraction for niche applications."
+  ],
+  "approaches": [
+    {
+      "technique": "PDGPT",
+      "best_for": "when you need to extract specific phase diagram information for magnesium alloys or enhance LLMs with domain-specific knowledge.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This technique offers high accuracy but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "PDGPT",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to extract detailed and accurate information from specialized datasets."
+    }
+  ],
+  "start_here": "Start with PDGPT as it is tailored for extracting specific knowledge in niche domains, providing high accuracy for expert system development.",
+  "related_problems": [
+    "Information Retrieval",
+    "Natural Language Processing",
+    "Data Mining",
+    "Expert System Design"
+  ]
+}

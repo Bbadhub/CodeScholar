@@ -1,0 +1,84 @@
+{
+  "technique_name": "Round-Robin Allocation with Sunflower Whale Optimization (RRA-SWO)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "RRA-SWO optimizes resource allocation in cloud environments by dynamically balancing loads across virtual machines.",
+  "how_it_works": "RRA-SWO detects overloaded virtual machine hosts (VMHs) and reallocates virtual machines to underutilized hosts using a round-robin approach combined with sunflower whale optimization. It continuously monitors the load and adjusts resources based on real-time data and workload predictions. This technique aims to enhance performance metrics such as response time and resource utilization in distributed systems.",
+  "algorithm": {
+    "steps": [
+      "1. Detect overloaded VMHs.",
+      "2. Use RRA-SWO to allocate VMs to underutilized VMHs.",
+      "3. Schedule tasks using Hybrid Ant Genetic Algorithm (HAGA).",
+      "4. Monitor load using Least Response Time (LRT).",
+      "5. Predict workload changes using Harmony Search Algorithm with Linear Regression (LR-HSA).",
+      "6. Adjust resources dynamically based on predictions.",
+      "7. Implement Least Recently Used (LRU) for task rescheduling."
+    ],
+    "core_equation": "output = RRA-SWO(allocation) + HAGA(scheduling)",
+    "input_format": "Current load data from VMHs, task requirements, and resource availability.",
+    "output_format": "Optimally balanced load distribution across VMHs and scheduled tasks."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.01",
+      "effect": "Affects the speed of convergence in optimization."
+    },
+    {
+      "name": "population_size",
+      "typical_value": "100",
+      "effect": "Determines the number of candidate solutions in the optimization process."
+    },
+    {
+      "name": "migration_threshold",
+      "typical_value": "70%",
+      "effect": "Sets the threshold for when to initiate VM migrations."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the dynamic nature of workloads and system architecture."
+  },
+  "use_when": [
+    "You need to optimize resource utilization in a cloud environment.",
+    "You are facing performance degradation due to overloaded virtual machines.",
+    "You require real-time load monitoring and adjustment in distributed systems."
+  ],
+  "avoid_when": [
+    "The system has static workloads with predictable resource requirements.",
+    "You are working in a non-cloud environment.",
+    "The overhead of dynamic scheduling outweighs the benefits."
+  ],
+  "implementation_skeleton": "def rra_swo(allocation_data: List[float], task_requirements: List[float]) -> List[float]:\n    # Step 1: Detect overloaded VMHs\n    overloaded_vmh = detect_overloaded_vmh(allocation_data)\n    # Step 2: Allocate VMs using RRA-SWO\n    allocations = apply_rra_swo(overloaded_vmh, task_requirements)\n    # Step 3: Schedule tasks\n    scheduled_tasks = schedule_tasks_using_haga(allocations)\n    return scheduled_tasks",
+  "common_mistakes": [
+    "Neglecting to monitor load continuously, leading to outdated decisions.",
+    "Setting inappropriate thresholds for migration, causing unnecessary overhead.",
+    "Failing to account for task requirements during allocation."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves resource utilization in dynamic environments.",
+      "Reduces performance degradation from overloaded VMs.",
+      "Enables real-time adjustments to workload changes."
+    ],
+    "weaknesses": [
+      "May introduce overhead in systems with static workloads.",
+      "Complexity in implementation and tuning of parameters.",
+      "Performance gains may vary based on workload characteristics."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Load Balancing Algorithms",
+        "verdict": "Use RRA-SWO for dynamic workloads; traditional methods may suffice for static environments."
+      }
+    ]
+  },
+  "connects_to": [
+    "Hybrid Ant Genetic Algorithm (HAGA)",
+    "Least Response Time (LRT) monitoring",
+    "Harmony Search Algorithm with Linear Regression (LR-HSA)",
+    "Dynamic Resource Allocation Techniques"
+  ],
+  "maturity": "emerging"
+}

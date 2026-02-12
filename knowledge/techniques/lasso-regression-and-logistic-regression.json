@@ -1,0 +1,81 @@
+{
+  "technique_name": "LASSO Regression and Logistic Regression",
+  "aliases": [
+    "LASSO Logistic Regression"
+  ],
+  "category": "statistical_method",
+  "one_liner": "A combined approach using LASSO regression for feature selection followed by logistic regression for predictive modeling.",
+  "how_it_works": "LASSO regression is employed to identify and select significant predictors from a dataset, effectively reducing dimensionality by penalizing less important features. Once the relevant predictors are determined, logistic regression is used to model the relationship between these predictors and the outcome variable, in this case, stunting in children. The final model can be visualized using a nomogram, which helps in understanding the contributions of each predictor to the risk of stunting.",
+  "algorithm": {
+    "steps": [
+      "1. Collect data on children under three years old, including risk factors.",
+      "2. Split the dataset into training (80%) and validation (20%) sets.",
+      "3. Apply LASSO regression on the training set to identify significant predictors.",
+      "4. Use logistic regression to model the relationship between predictors and stunting.",
+      "5. Create a nomogram based on the logistic regression results.",
+      "6. Validate the model using the validation set and assess performance metrics."
+    ],
+    "core_equation": "logit(p) = \u03b20 + \u03b21*x1 + \u03b22*x2 + ... + \u03b2n*xn",
+    "input_format": "Data on children including age, gender, parental education, feeding patterns, and health status.",
+    "output_format": "A nomogram predicting the risk of stunting in children under three years old."
+  },
+  "parameters": [
+    {
+      "name": "lambda",
+      "typical_value": "optimal value determined through cross-validation",
+      "effect": "Increases regularization strength, potentially reducing overfitting but may exclude important predictors."
+    },
+    {
+      "name": "training-validation split ratio",
+      "typical_value": "80:20",
+      "effect": "Affects the model's ability to generalize; too small a training set may lead to poor performance."
+    }
+  ],
+  "complexity": {
+    "time": "O(n^2) for LASSO, O(n) for logistic regression",
+    "space": "O(p) where p is the number of predictors",
+    "practical_note": "Performance can vary based on the dataset size and the number of predictors."
+  },
+  "use_when": [
+    "You need to predict health outcomes based on multiple risk factors.",
+    "Working on interventions for childhood health issues.",
+    "Developing tools for clinicians to assess developmental risks in children."
+  ],
+  "avoid_when": [
+    "Data is limited or not representative of the target population.",
+    "The problem does not involve multiple predictors or risk factors.",
+    "Real-time predictions are required without prior model training."
+  ],
+  "implementation_skeleton": "def lasso_logistic_regression(data: pd.DataFrame) -> Nomogram:\n    # Step 1: Split data\n    train, val = train_test_split(data, test_size=0.2)\n    # Step 2: Apply LASSO\n    lasso_model = Lasso(alpha=optimal_lambda)\n    lasso_model.fit(train[X], train[y])\n    # Step 3: Logistic regression\n    logit_model = LogisticRegression()\n    logit_model.fit(train[significant_predictors], train[y])\n    # Step 4: Create nomogram\n    nomogram = create_nomogram(logit_model)\n    return nomogram",
+  "common_mistakes": [
+    "Neglecting to standardize or normalize features before applying LASSO.",
+    "Overlooking the importance of cross-validation for selecting lambda.",
+    "Failing to validate the model on a separate dataset."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effective in handling high-dimensional data.",
+      "Reduces overfitting through feature selection.",
+      "Provides interpretable results via nomograms."
+    ],
+    "weaknesses": [
+      "May exclude important predictors if lambda is too high.",
+      "Requires careful tuning of parameters.",
+      "Not suitable for real-time predictions."
+    ],
+    "compared_to": [
+      {
+        "technique": "Standard Logistic Regression",
+        "verdict": "Use LASSO when dealing with many predictors to improve model accuracy and interpretability."
+      }
+    ]
+  },
+  "connects_to": [
+    "Ridge Regression",
+    "Elastic Net",
+    "Generalized Linear Models",
+    "Feature Selection Techniques",
+    "Predictive Modeling"
+  ],
+  "maturity": "proven"
+}

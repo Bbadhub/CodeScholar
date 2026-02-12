@@ -1,0 +1,92 @@
+{
+  "technique_name": "Multifidelity Kolmogorov-Arnold Networks (MFKANs)",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "MFKANs leverage low-fidelity data to enhance predictions using a small set of high-fidelity data.",
+  "how_it_works": "MFKANs consist of three components: a low-fidelity Kolmogorov-Arnold Network (KAN) for initial predictions, a linear KAN to capture linear correlations, and a nonlinear KAN for adjustments. The low-fidelity KAN is pretrained and its weights are frozen, allowing the linear and nonlinear KANs to learn from the high-fidelity data. The outputs from both KANs are combined to produce refined high-fidelity predictions.",
+  "algorithm": {
+    "steps": [
+      "1. Pretrain the low-fidelity KAN using low-fidelity data.",
+      "2. Freeze the weights of the low-fidelity KAN.",
+      "3. Train the linear KAN to learn the linear correlation between low-fidelity predictions and high-fidelity data.",
+      "4. Train the nonlinear KAN to learn the nonlinear correction.",
+      "5. Combine outputs from the linear and nonlinear KANs to produce high-fidelity predictions.",
+      "6. Optimize the loss function that includes penalties for overfitting."
+    ],
+    "core_equation": "output = linear_KAN(low_fidelity_output) + nonlinear_KAN(low_fidelity_output)",
+    "input_format": "Low-fidelity dataset {(xi, fL(xi))} and high-fidelity dataset {(xj, fH(xj))}",
+    "output_format": "Predictions for high-fidelity data based on the learned correlations."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "Affects the speed of convergence during training."
+    },
+    {
+      "name": "penalization_weight (w)",
+      "typical_value": "0 or 1",
+      "effect": "Controls the strength of the overfitting penalty."
+    },
+    {
+      "name": "n (for penalization term)",
+      "typical_value": "typically 4",
+      "effect": "Determines the order of the penalization term."
+    },
+    {
+      "name": "number of epochs",
+      "typical_value": "preselected maximum",
+      "effect": "Sets the maximum training iterations without early stopping."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the complexity of the datasets used."
+  },
+  "use_when": [
+    "You have limited high-fidelity data but abundant low-fidelity data.",
+    "You need to model complex functions with interpretable results.",
+    "You want to reduce the cost of data collection in scientific applications."
+  ],
+  "avoid_when": [
+    "You have sufficient high-fidelity data available.",
+    "The relationship between low-fidelity and high-fidelity data is not expected to be strongly correlated.",
+    "You require real-time predictions with minimal computational overhead."
+  ],
+  "implementation_skeleton": "def mfkan(low_fidelity_data: List[Tuple], high_fidelity_data: List[Tuple]) -> List:\n    low_fidelity_kan = pretrain_low_fidelity_kan(low_fidelity_data)\n    freeze_weights(low_fidelity_kan)\n    linear_kan = train_linear_kan(low_fidelity_kan, high_fidelity_data)\n    nonlinear_kan = train_nonlinear_kan(low_fidelity_kan, high_fidelity_data)\n    return combine_outputs(linear_kan, nonlinear_kan)",
+  "common_mistakes": [
+    "Neglecting to freeze the weights of the low-fidelity KAN after pretraining.",
+    "Overfitting the linear or nonlinear KANs due to insufficient high-fidelity data.",
+    "Failing to properly tune the penalization weight, leading to poor generalization."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively combines low-fidelity and high-fidelity data.",
+      "Captures complex correlations with fewer parameters than traditional methods.",
+      "Provides interpretable results through its architecture."
+    ],
+    "weaknesses": [
+      "Performance heavily relies on the correlation between low and high-fidelity data.",
+      "May not perform well with purely high-fidelity datasets.",
+      "Training can be computationally intensive depending on the architecture."
+    ],
+    "compared_to": [
+      {
+        "technique": "Single-fidelity KANs",
+        "verdict": "Use MFKANs when low-fidelity data is abundant and high-fidelity data is scarce."
+      },
+      {
+        "technique": "Multifidelity MLPs",
+        "verdict": "MFKANs are preferable for capturing complex correlations with fewer parameters."
+      }
+    ]
+  },
+  "connects_to": [
+    "Kolmogorov-Arnold Networks (KANs)",
+    "Multifidelity Learning",
+    "Neural Networks",
+    "Regression Analysis"
+  ],
+  "maturity": "emerging"
+}

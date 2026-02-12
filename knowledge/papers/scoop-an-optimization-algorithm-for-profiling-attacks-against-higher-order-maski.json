@@ -1,0 +1,103 @@
+{
+  "summary": "The paper introduces Scoop, a novel optimization algorithm designed to enhance deep learning profiling attacks against higher-order masking schemes. It addresses the plateau effect that hampers optimization in this context, making it crucial for engineers working on side-channel analysis and cryptographic security.",
+  "key_contribution": "Scoop combines second-order optimization with sparse mirror descent to effectively reduce the plateau effect in deep learning profiling attacks.",
+  "problem_type": "profiling attacks against higher-order masking",
+  "problem_description": "The work is motivated by the need to improve the efficiency of deep learning-based side-channel attacks, which suffer from optimization challenges due to masking schemes.",
+  "domain": "Cybersecurity",
+  "sub_domain": "Side-channel Analysis",
+  "technique_name": "Scoop",
+  "technique_category": "optimization_algorithm",
+  "technique_type": "novel",
+  "method": {
+    "approach": "Scoop utilizes second-order derivatives of the loss function to navigate the loss landscape more effectively, reducing the impact of low-gradient areas. It also incorporates sparse mirror descent to leverage the intrinsic sparsity of information in side-channel attack traces.",
+    "algorithm_steps": [
+      "Initialize model parameters using a distribution (e.g., Kaiming uniform).",
+      "Compute the loss function based on the model's predictions.",
+      "Calculate the gradient and Hessian of the loss function.",
+      "Update model parameters using the second-order optimization rule.",
+      "Incorporate sparse mirror descent to enhance performance.",
+      "Repeat until convergence or a set number of iterations."
+    ],
+    "input": "Training data consisting of traces and corresponding secret values.",
+    "output": "Trained model parameters that minimize the loss function.",
+    "key_parameters": [
+      "learning_rate: 0.001",
+      "batch_size: 32",
+      "number_of_iterations: 1000"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "ASCADv1",
+      "ASCADv2"
+    ],
+    "metrics": [
+      "number of traces required to retrieve the key",
+      "perceived information",
+      "training cost",
+      "plateau length"
+    ],
+    "baselines": [
+      "Standard SGD",
+      "Adam"
+    ],
+    "improvement": "Scoop reduces the plateau length by a factor of up to 5 for a masking order of 3 and higher."
+  },
+  "concepts": [
+    "plateau effect",
+    "second-order optimization",
+    "sparse mirror descent",
+    "deep learning",
+    "profiling attacks"
+  ],
+  "use_this_when": [
+    "You need to optimize deep learning models for profiling attacks against cryptographic implementations.",
+    "You are facing challenges with the plateau effect in optimization during training.",
+    "You require a more efficient method for training models on small datasets typical in side-channel analysis."
+  ],
+  "dont_use_when": [
+    "The problem does not involve deep learning or profiling attacks.",
+    "You are working with large-scale datasets where traditional optimization methods suffice.",
+    "The application does not require handling of higher-order masking schemes."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Neural network model",
+      "Loss function representation",
+      "Gradient and Hessian matrices"
+    ],
+    "dependencies": [
+      "TensorFlow",
+      "PyTorch",
+      "NumPy"
+    ],
+    "pseudocode_hint": "for each iteration: update_parameters = parameters - learning_rate * inverse(Hessian) * gradient",
+    "gotchas": [
+      "Ensure proper initialization to avoid saddle points.",
+      "Monitor learning rate to prevent divergence.",
+      "Validate the model on multiple datasets to ensure robustness."
+    ]
+  },
+  "connects_to": [
+    "SGD",
+    "Adam",
+    "Newton's method",
+    "Sparse mirror descent",
+    "Deep learning architectures"
+  ],
+  "prerequisites": [
+    "Understanding of deep learning optimization",
+    "Familiarity with side-channel attacks",
+    "Knowledge of gradient descent methods"
+  ],
+  "limitations": [
+    "Performance may vary with different masking orders.",
+    "Requires careful tuning of hyperparameters.",
+    "Not applicable to all types of machine learning problems."
+  ],
+  "open_questions": [
+    "How can Scoop be adapted for real-time applications?",
+    "What are the implications of using Scoop in different cryptographic contexts?"
+  ]
+}

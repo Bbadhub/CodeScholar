@@ -1,0 +1,88 @@
+{
+  "technique_name": "Urban Sentiment Mapping",
+  "aliases": [
+    "BERT-based sentiment analysis",
+    "PSPNet urban feature segmentation",
+    "Mask R-CNN object detection"
+  ],
+  "category": "hybrid_model",
+  "one_liner": "This technique combines language and vision models to analyze urban sentiment from social media and street view imagery.",
+  "how_it_works": "The technique involves two main phases: first, it uses a BERT model to analyze geotagged social media posts for sentiment inference. Next, it employs computer vision models like PSPNet and Mask R-CNN to extract and classify urban design features from corresponding street view images. The results are then integrated to visualize sentiment patterns in relation to urban features.",
+  "algorithm": {
+    "steps": [
+      "1. Collect geotagged social media posts from platforms like Instagram.",
+      "2. Use BERT to analyze captions and extract sentiment scores.",
+      "3. Retrieve street view images corresponding to the locations of the posts.",
+      "4. Apply PSPNet and Mask R-CNN to segment and classify urban features from the images.",
+      "5. Integrate sentiment scores with urban design features.",
+      "6. Perform statistical analysis to evaluate relationships between sentiment and urban features."
+    ],
+    "core_equation": "output = integrate(sentiment_scores, urban_features)",
+    "input_format": "Geotagged social media posts (text) and street view images (images)",
+    "output_format": "Sentiment scores linked to urban design features, visualized sentiment patterns"
+  },
+  "parameters": [
+    {
+      "name": "BERT model",
+      "typical_value": "pre-trained on social media data",
+      "effect": "Improves sentiment analysis accuracy"
+    },
+    {
+      "name": "PSPNet",
+      "typical_value": "standard configuration",
+      "effect": "Enhances semantic segmentation of urban features"
+    },
+    {
+      "name": "Mask R-CNN",
+      "typical_value": "standard configuration",
+      "effect": "Improves object detection in street view images"
+    }
+  ],
+  "complexity": {
+    "time": "O(n + m)",
+    "space": "O(n + m)",
+    "practical_note": "Performance may vary based on the size of the dataset and model configurations."
+  },
+  "use_when": [
+    "You need to analyze public sentiment about urban spaces using social media data.",
+    "You want to correlate emotional responses with urban design features.",
+    "You are working on urban planning projects that require data-driven insights."
+  ],
+  "avoid_when": [
+    "You have limited access to social media data.",
+    "You require real-time sentiment analysis.",
+    "You are focusing on non-urban sentiment analysis."
+  ],
+  "implementation_skeleton": "def urban_sentiment_mapping(posts: List[str], images: List[Image]) -> Dict[str, Any]:\n    sentiment_scores = analyze_sentiment(posts)\n    urban_features = extract_features(images)\n    integrated_data = integrate(sentiment_scores, urban_features)\n    return visualize(integrated_data)",
+  "common_mistakes": [
+    "Neglecting to preprocess social media text data before analysis.",
+    "Using outdated models that do not capture current sentiment trends.",
+    "Failing to validate the results with ground truth data."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Combines insights from both text and visual data.",
+      "Provides a comprehensive view of urban sentiment.",
+      "Can reveal correlations between sentiment and urban design."
+    ],
+    "weaknesses": [
+      "Dependent on the availability of geotagged social media data.",
+      "May require significant computational resources.",
+      "Complexity in integrating results from different models."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional survey methods",
+        "verdict": "Use urban sentiment mapping for larger, more dynamic datasets."
+      }
+    ]
+  },
+  "connects_to": [
+    "Sentiment Analysis",
+    "Image Segmentation",
+    "Object Detection",
+    "Geospatial Analysis",
+    "Urban Planning"
+  ],
+  "maturity": "proven"
+}

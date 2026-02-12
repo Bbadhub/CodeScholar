@@ -1,0 +1,37 @@
+{
+  "problem_name": "Action Recognition",
+  "description": "Action recognition involves identifying and classifying actions or behaviors from video data. This is particularly important in fields like wildlife conservation, where understanding animal behavior can inform conservation efforts.",
+  "you_have_this_if": [
+    "You are working with video data.",
+    "You need to classify actions or behaviors.",
+    "You are dealing with complex scenarios involving multiple actions.",
+    "You require high accuracy in your predictions.",
+    "You are interested in applications related to wildlife or animal behavior."
+  ],
+  "approaches": [
+    {
+      "technique": "Mamba",
+      "best_for": "when you need to recognize complex animal behaviors in videos and improve accuracy over traditional transformer models.",
+      "paper_count": 1,
+      "max_citations": 6,
+      "key_tradeoff": "Mamba offers improved accuracy but may require more computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Mamba",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You are focused on recognizing complex animal behaviors in video data."
+    }
+  ],
+  "start_here": "Start with the Mamba technique, as it is specifically designed for recognizing complex behaviors and has shown promising results in related studies.",
+  "related_problems": [
+    "Gesture Recognition",
+    "Activity Recognition",
+    "Behavior Analysis in Videos",
+    "Video Classification"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "problem_name": "Image Classification and Object Detection in Remote Sensing",
+  "description": "This problem involves identifying and classifying objects within images captured from remote sensing technologies. It is crucial for applications such as environmental monitoring, urban planning, and disaster management.",
+  "you_have_this_if": [
+    "You are working with large datasets of satellite or aerial images.",
+    "You need to detect and classify multiple objects in real-time.",
+    "You require high accuracy in identifying features from images.",
+    "Your project involves cloud-based image processing solutions.",
+    "You are facing challenges with traditional image analysis methods."
+  ],
+  "approaches": [
+    {
+      "technique": "YOLOv5",
+      "best_for": "When you need to analyze large volumes of astronomical image data or require real-time detection in remote sensing applications.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "YOLOv5 offers high speed and accuracy but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "YOLOv5",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to process and analyze large volumes of images quickly while maintaining high accuracy."
+    }
+  ],
+  "start_here": "Start with YOLOv5 for image classification and object detection in remote sensing, as it balances speed and accuracy effectively for large datasets.",
+  "related_problems": [
+    "Image Segmentation",
+    "Feature Extraction in Remote Sensing",
+    "Anomaly Detection in Satellite Imagery"
+  ]
+}

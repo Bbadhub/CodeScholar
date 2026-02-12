@@ -1,0 +1,98 @@
+{
+  "technique_name": "SA-FDR",
+  "aliases": [
+    "Simulated Annealing for Feature Discriminant Ratio"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "SA-FDR optimizes feature selection using simulated annealing to maximize the Fisher Discriminant Ratio.",
+  "how_it_works": "SA-FDR employs simulated annealing to explore various feature subsets in a dataset. It uses the Fisher Discriminant Ratio (FDR) as a measure of model quality, iteratively refining the feature subsets through probabilistic transitions. By allowing the acceptance of worse solutions, it helps escape local minima, ultimately converging on the best subset of features that enhances model performance.",
+  "algorithm": {
+    "steps": [
+      "Initialize replicas as binary vectors representing feature subsets.",
+      "Compute FDR values for each replica.",
+      "Iteratively propose changes to feature subsets and accept or reject based on the Metropolis rule.",
+      "Adjust the temperature to control the acceptance probability of worse solutions.",
+      "Repeat until convergence or a maximum number of iterations is reached.",
+      "Evaluate the final feature subsets using logistic regression and select the best one."
+    ],
+    "core_equation": "output = maximize(FDR(features))",
+    "input_format": "Dataset with samples and features, specified number of features to select (k).",
+    "output_format": "Best subset of features that maximizes the FDR."
+  },
+  "parameters": [
+    {
+      "name": "R",
+      "typical_value": "50",
+      "effect": "Increases the diversity of feature subsets explored."
+    },
+    {
+      "name": "\u03b2steps",
+      "typical_value": "100",
+      "effect": "Controls the granularity of temperature adjustments."
+    },
+    {
+      "name": "NS",
+      "typical_value": "0.5",
+      "effect": "Determines the number of sweeps for temperature adjustments."
+    },
+    {
+      "name": "\u03b5",
+      "typical_value": "0.7",
+      "effect": "Affects the acceptance probability of worse solutions."
+    },
+    {
+      "name": "kmax",
+      "typical_value": "30",
+      "effect": "Limits the maximum number of features considered."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated.",
+    "space": "Not explicitly stated.",
+    "practical_note": "Performance may vary based on dataset size and feature dimensionality."
+  },
+  "use_when": [
+    "Working with high-dimensional datasets where feature selection is critical.",
+    "Needing a balance between model interpretability and predictive performance.",
+    "Facing challenges with overfitting due to irrelevant features."
+  ],
+  "avoid_when": [
+    "The dataset is low-dimensional and feature selection is not necessary.",
+    "Real-time performance is critical and computational resources are limited."
+  ],
+  "implementation_skeleton": "def sa_fdr(data: np.ndarray, k: int) -> List[int]:\n    # Initialize replicas\n    replicas = initialize_replicas(data, k)\n    # Compute initial FDR values\n    fdr_values = compute_fdr(replicas)\n    while not converged:\n        # Propose changes to feature subsets\n        propose_changes(replicas)\n        # Accept or reject based on Metropolis rule\n        accept_changes(replicas, fdr_values)\n    return best_subset(replicas)",
+  "common_mistakes": [
+    "Not properly tuning the temperature parameters, leading to poor convergence.",
+    "Failing to evaluate the final feature subsets adequately.",
+    "Overlooking the importance of the initial replica configuration."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively handles high-dimensional feature spaces.",
+      "Balances exploration and exploitation through probabilistic transitions.",
+      "Can escape local minima by accepting worse solutions."
+    ],
+    "weaknesses": [
+      "Computationally intensive, especially with large datasets.",
+      "Performance may vary significantly based on parameter settings.",
+      "Not suitable for low-dimensional datasets."
+    ],
+    "compared_to": [
+      {
+        "technique": "Recursive Feature Elimination (RFE)",
+        "verdict": "Use SA-FDR for larger feature sets where RFE may be computationally prohibitive."
+      },
+      {
+        "technique": "Lasso",
+        "verdict": "SA-FDR may achieve better performance with fewer features compared to Lasso."
+      }
+    ]
+  },
+  "connects_to": [
+    "Feature Selection",
+    "Simulated Annealing",
+    "Fisher Discriminant Analysis",
+    "Logistic Regression"
+  ],
+  "maturity": "emerging"
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Integer Ambiguity Resolution",
+  "description": "Integer ambiguity resolution is a challenge in positioning systems where the exact integer values of certain parameters need to be determined. This is particularly important in Global Navigation Satellite Systems (GNSS) to achieve high-precision positioning.",
+  "you_have_this_if": [
+    "You are working with GNSS data.",
+    "You need to achieve a positioning success rate above 98%.",
+    "You are facing high-dimensional optimization problems.",
+    "You encounter ambiguities in integer values during data processing.",
+    "You require a solution that balances speed and accuracy."
+  ],
+  "approaches": [
+    {
+      "technique": "Simulated Annealing Ant Lion Optimizer (SAALO)",
+      "best_for": "when you need to resolve integer ambiguities in GNSS applications with high precision.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "While SAALO can achieve high accuracy, it may require more computational resources compared to simpler methods."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Simulated Annealing Ant Lion Optimizer (SAALO)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to resolve complex integer ambiguities in GNSS applications with a focus on high precision."
+    }
+  ],
+  "start_here": "Start with the Simulated Annealing Ant Lion Optimizer (SAALO) as it is specifically designed for high-precision integer ambiguity resolution in GNSS applications.",
+  "related_problems": [
+    "Integer Least Squares (ILS) Estimation",
+    "Phase Ambiguity Resolution",
+    "High-Dimensional Optimization Problems",
+    "GNSS Positioning Accuracy Improvement"
+  ]
+}

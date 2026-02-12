@@ -1,0 +1,36 @@
+{
+  "problem_name": "Environmental Impact Assessment",
+  "description": "Environmental impact assessment involves evaluating the potential effects of a project or technology on the environment. This process is crucial for ensuring that new developments do not harm ecological systems and comply with regulations.",
+  "you_have_this_if": [
+    "You are assessing the environmental effects of a new technology.",
+    "You need to comply with environmental regulations for a project.",
+    "You are formulating policies related to technology deployment.",
+    "You are conducting a study that requires statistical analysis of environmental data."
+  ],
+  "approaches": [
+    {
+      "technique": "Dual Impact Statistical Analysis",
+      "best_for": "Evaluating the environmental impact of new AI technologies and formulating policies for AI deployment.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This technique provides a statistical framework but may require substantial data collection efforts."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Dual Impact Statistical Analysis",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have access to relevant environmental data and need a robust statistical analysis."
+    }
+  ],
+  "start_here": "Start with Dual Impact Statistical Analysis as it is specifically designed for evaluating the environmental impacts of technology and has been validated in academic literature.",
+  "related_problems": [
+    "Sustainability Assessment",
+    "Risk Assessment for Technology Projects",
+    "Regulatory Compliance Evaluation",
+    "Life Cycle Assessment"
+  ]
+}

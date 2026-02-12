@@ -1,0 +1,86 @@
+{
+  "technique_name": "Sesame Auth",
+  "aliases": [
+    "Passwordless Authentication"
+  ],
+  "category": "authentication_method",
+  "one_liner": "Sesame Auth provides a passwordless authentication solution using cryptography, steganography, and biometrics.",
+  "how_it_works": "Sesame Auth eliminates the need for passwords by combining cryptographic keys with steganography to embed credentials in images. Users register by providing a username and capturing their typing patterns for account recovery. During authentication, users verify their identity through a random string and biometric authentication, ensuring a secure and user-friendly experience.",
+  "algorithm": {
+    "steps": [
+      "1. User installs the Sesame Auth app and registers by providing a username.",
+      "2. The app captures the user's typing pattern for account recovery.",
+      "3. User uploads an image that will store their account credentials using steganography.",
+      "4. The app generates cryptographic keys and securely stores them on the device.",
+      "5. During authentication, the user enters their username and receives a random string for verification.",
+      "6. The user enters the random string in the app and completes biometric authentication.",
+      "7. The server verifies the input and grants access if it matches."
+    ],
+    "core_equation": "output = verify(username, random_string, biometric_data)",
+    "input_format": "User's username (string), typing pattern (array), image (binary data)",
+    "output_format": "Authentication success (boolean) or failure (boolean)"
+  },
+  "parameters": [
+    {
+      "name": "RSA key size",
+      "typical_value": "2048 bits",
+      "effect": "Increased security with larger keys, but may affect performance."
+    },
+    {
+      "name": "Symmetric key size",
+      "typical_value": "256 bits",
+      "effect": "Higher key sizes enhance security."
+    },
+    {
+      "name": "Typing pattern capture",
+      "typical_value": "minimum of three entries",
+      "effect": "More entries improve accuracy for account recovery."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Authentication time is within 2 seconds, comparable to traditional methods."
+  },
+  "use_when": [
+    "Building applications that require secure user authentication without passwords.",
+    "Developing systems that need to balance security and user experience.",
+    "Implementing authentication methods for mobile applications."
+  ],
+  "avoid_when": [
+    "The application requires traditional password-based authentication.",
+    "There is a need for immediate account recovery without biometric verification.",
+    "The target user base lacks biometric capabilities."
+  ],
+  "implementation_skeleton": "def sesame_auth(username: str, random_string: str, biometric_data: Any) -> bool:\n    # Step 1: Verify username\n    # Step 2: Check random string\n    # Step 3: Validate biometric data\n    return authentication_success",
+  "common_mistakes": [
+    "Neglecting to securely store cryptographic keys.",
+    "Failing to capture sufficient typing patterns for recovery.",
+    "Overlooking the need for user education on biometric usage."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Eliminates the need for passwords, enhancing user experience.",
+      "Utilizes multiple security layers (cryptography, steganography, biometrics).",
+      "Fast authentication comparable to traditional methods."
+    ],
+    "weaknesses": [
+      "Requires biometric capabilities, limiting user base.",
+      "Potentially complex implementation compared to simple password systems.",
+      "Dependency on device security for key storage."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Password Authentication",
+        "verdict": "Use Sesame Auth for enhanced security and user experience."
+      }
+    ]
+  },
+  "connects_to": [
+    "Multi-Factor Authentication",
+    "Biometric Authentication",
+    "Cryptographic Key Management",
+    "Steganography Techniques"
+  ],
+  "maturity": "emerging"
+}

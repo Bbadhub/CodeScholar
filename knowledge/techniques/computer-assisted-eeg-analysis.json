@@ -1,0 +1,66 @@
+{
+  "technique_name": "Computer-assisted EEG analysis",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "This technique systematically reviews existing literature on computer-assisted EEG analysis to identify biomarkers of epilepsy.",
+  "how_it_works": "The method involves collecting and evaluating literature on EEG analysis techniques. It assesses the effectiveness of these techniques in identifying biomarkers of epilepsy while discussing their limitations. The findings are summarized to highlight areas for improvement in current EEG analysis methods.",
+  "algorithm": {
+    "steps": [
+      "1. Collect relevant literature on EEG analysis techniques.",
+      "2. Evaluate the methodologies used in each study.",
+      "3. Analyze the reported effectiveness of these techniques.",
+      "4. Identify common limitations and gaps in the research.",
+      "5. Summarize findings and suggest areas for improvement."
+    ],
+    "core_equation": "output = comprehensive review of EEG analysis techniques",
+    "input_format": "Literature on EEG analysis techniques and their reported outcomes.",
+    "output_format": "A comprehensive review highlighting the effectiveness and limitations of current EEG analysis methods."
+  },
+  "parameters": [],
+  "complexity": {
+    "time": "Not applicable",
+    "space": "Not applicable",
+    "practical_note": "The complexity is not stated, as this is a review paper rather than an algorithmic implementation."
+  },
+  "use_when": [
+    "Evaluating the current state of EEG analysis technologies",
+    "Identifying gaps in existing research",
+    "Developing new methods for EEG analysis"
+  ],
+  "avoid_when": [
+    "When seeking a novel algorithm for EEG analysis",
+    "When requiring immediate practical applications",
+    "When looking for quantitative performance metrics"
+  ],
+  "implementation_skeleton": "def review_eeg_analysis(literature: List[str]) -> str:\n    # Step 1: Collect relevant literature\n    # Step 2: Evaluate methodologies\n    # Step 3: Analyze effectiveness\n    # Step 4: Identify limitations\n    # Step 5: Summarize findings\n    return 'Comprehensive review of EEG analysis techniques'",
+  "common_mistakes": [
+    "Neglecting to evaluate the methodologies used in the studies",
+    "Failing to identify common limitations across studies",
+    "Overlooking gaps in the research that could inform future work"
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a comprehensive overview of existing techniques",
+      "Identifies gaps in current research",
+      "Can guide future developments in EEG analysis"
+    ],
+    "weaknesses": [
+      "Does not propose novel algorithms",
+      "Lacks immediate practical applications",
+      "Does not provide quantitative performance metrics"
+    ],
+    "compared_to": [
+      {
+        "technique": "Novel EEG analysis algorithms",
+        "verdict": "Use computer-assisted EEG analysis for literature review; use novel algorithms for practical implementation."
+      }
+    ]
+  },
+  "connects_to": [
+    "EEG signal processing",
+    "Machine learning for EEG analysis",
+    "Biomarker identification techniques",
+    "Systematic review methodologies"
+  ],
+  "maturity": "established"
+}

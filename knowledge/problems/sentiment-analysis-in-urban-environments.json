@@ -1,0 +1,37 @@
+{
+  "problem_name": "Sentiment Analysis in Urban Environments",
+  "description": "Sentiment analysis in urban environments involves understanding public feelings and opinions about urban spaces, often derived from social media data. This analysis can help urban planners and designers make informed decisions based on the emotional responses of the community.",
+  "you_have_this_if": [
+    "You have access to social media data related to urban spaces.",
+    "You are interested in understanding public sentiment towards specific urban features.",
+    "You are involved in urban planning or design projects.",
+    "You need to correlate sentiment with urban design elements.",
+    "You are looking for data-driven insights to improve urban environments."
+  ],
+  "approaches": [
+    {
+      "technique": "BERT, PSPNet, Mask R-CNN",
+      "best_for": "when you need to analyze public sentiment about urban spaces using social media data.",
+      "paper_count": 1,
+      "max_citations": 9,
+      "key_tradeoff": "This approach provides high accuracy but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "BERT, PSPNet, Mask R-CNN",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to analyze complex sentiment data from social media in relation to urban design."
+    }
+  ],
+  "start_here": "Start with the BERT, PSPNet, Mask R-CNN approach as it offers a robust framework for analyzing sentiment in urban contexts, leveraging deep learning techniques for high accuracy.",
+  "related_problems": [
+    "Public opinion analysis",
+    "Urban planning data analysis",
+    "Social media sentiment analysis",
+    "Emotional response mapping in urban design"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Spatial Fisheries Management",
+  "description": "Spatial fisheries management involves the strategic allocation of marine areas to optimize fish populations and protect vulnerable species. It aims to balance ecological health with fishing industry needs, ensuring sustainable practices.",
+  "you_have_this_if": [
+    "You are facing declining fish populations in specific regions.",
+    "There is a need to protect endangered marine species.",
+    "You are integrating ecological data into fisheries management policies.",
+    "Stakeholders are concerned about the impact of fishing on marine ecosystems.",
+    "You are looking to establish conservation areas."
+  ],
+  "approaches": [
+    {
+      "technique": "National Fisheries Restricted Areas (nFRAs)",
+      "best_for": "Implementing fisheries management strategies in overexploited regions and establishing conservation areas.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "While effective in conservation, it may restrict fishing activities and impact local economies."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "National Fisheries Restricted Areas (nFRAs)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to balance ecological protection with fishing industry demands in overexploited areas."
+    }
+  ],
+  "start_here": "Begin with the National Fisheries Restricted Areas (nFRAs) approach, as it directly addresses the need for conservation while considering the socio-economic impacts on fishing communities.",
+  "related_problems": [
+    "Overfishing Management",
+    "Marine Protected Areas",
+    "Ecosystem-Based Fisheries Management",
+    "Bycatch Reduction Strategies"
+  ]
+}

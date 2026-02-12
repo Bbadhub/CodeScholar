@@ -1,0 +1,37 @@
+{
+  "problem_name": "Container Relocation Optimization",
+  "description": "Container relocation optimization involves determining the most efficient way to move containers within a storage area, such as a port or warehouse. The goal is to minimize costs and time while maximizing space utilization and operational efficiency.",
+  "you_have_this_if": [
+    "You are experiencing delays in container retrieval.",
+    "Your operational costs for container handling are increasing.",
+    "You have a high volume of containers to manage.",
+    "You are facing challenges in logistics and supply chain efficiency.",
+    "Your current methods are leading to suboptimal space utilization."
+  ],
+  "approaches": [
+    {
+      "technique": "Three-Stage Heuristic (3SH)",
+      "best_for": "Optimizing container retrieval in maritime terminals with high container volumes.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Provides a good balance between solution quality and computational efficiency."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Three-Stage Heuristic (3SH)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to optimize container movements in a busy terminal with limited resources."
+    }
+  ],
+  "start_here": "The recommended first approach is the Three-Stage Heuristic (3SH) due to its effectiveness in handling high volumes of containers while balancing cost and efficiency.",
+  "related_problems": [
+    "Warehouse Layout Optimization",
+    "Vehicle Routing Problem",
+    "Inventory Management Optimization",
+    "Supply Chain Network Design"
+  ]
+}

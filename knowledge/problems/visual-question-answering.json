@@ -1,0 +1,37 @@
+{
+  "problem_name": "Visual Question Answering",
+  "description": "Visual Question Answering (VQA) is a task where a system is required to answer questions about images. It combines natural language processing and computer vision to interpret the content of an image and provide relevant answers based on the visual information.",
+  "you_have_this_if": [
+    "You have images and corresponding questions that need answers.",
+    "You lack sufficient labeled training data for traditional VQA models.",
+    "You need to quickly prototype a VQA solution.",
+    "You are exploring the capabilities of existing language models in image contexts.",
+    "You are constrained by computational resources."
+  ],
+  "approaches": [
+    {
+      "technique": "Zero-Shot Knowledge-Based VQA",
+      "best_for": "when you need to deploy a VQA system quickly without extensive training data.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach allows for rapid deployment but may sacrifice accuracy compared to fully trained models."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Zero-Shot Knowledge-Based VQA",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "easy",
+      "best_when": "You need a quick solution for answering questions about images without extensive training."
+    }
+  ],
+  "start_here": "Start with Zero-Shot Knowledge-Based VQA as it allows for rapid deployment and leverages existing models, making it ideal for scenarios with limited resources and data.",
+  "related_problems": [
+    "Image Captioning",
+    "Object Detection",
+    "Image Classification",
+    "Natural Language Processing"
+  ]
+}

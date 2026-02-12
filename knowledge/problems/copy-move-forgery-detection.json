@@ -1,0 +1,37 @@
+{
+  "problem_name": "Copy-Move Forgery Detection",
+  "description": "Copy-move forgery detection is the process of identifying manipulated images where a portion of the image has been copied and pasted onto another part of the same image. This type of forgery is common in digital forensics and can be challenging to detect due to the subtlety of the alterations.",
+  "you_have_this_if": [
+    "You suspect that an image has been altered.",
+    "You are working in the field of digital forensics.",
+    "You need to verify the authenticity of images.",
+    "You are dealing with images that may have undergone manipulation.",
+    "You require a method to automate the detection of image forgeries."
+  ],
+  "approaches": [
+    {
+      "technique": "CNN-based Copy-Move Forgery Detection",
+      "best_for": "when you need to detect manipulated images in digital forensics and work with datasets of varying sizes.",
+      "paper_count": 1,
+      "max_citations": 12,
+      "key_tradeoff": "While CNNs can provide high accuracy, they may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "CNN-based Copy-Move Forgery Detection",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have access to a sufficient dataset and computational resources for training a CNN."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is to implement CNN-based Copy-Move Forgery Detection due to its high accuracy and effectiveness in identifying subtle manipulations in images.",
+  "related_problems": [
+    "Image splicing detection",
+    "Image retouching detection",
+    "Digital watermarking",
+    "Image authentication"
+  ]
+}

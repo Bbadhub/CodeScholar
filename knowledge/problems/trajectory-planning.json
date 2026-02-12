@@ -1,0 +1,52 @@
+{
+  "problem_name": "Trajectory Planning",
+  "description": "Trajectory planning involves determining the optimal path for a moving object, such as a robotic arm or an autonomous vehicle, to follow in a given environment. This problem is critical in robotics and autonomous systems to ensure efficient and safe movement.",
+  "you_have_this_if": [
+    "You are working on robotic systems that require precise movement.",
+    "Your application involves multiple agents interacting in a shared space.",
+    "You need to minimize energy consumption and wear on mechanical components.",
+    "Real-time decision-making is essential for your system's performance.",
+    "You are dealing with complex environments that require adaptive solutions."
+  ],
+  "approaches": [
+    {
+      "technique": "Improved Slime Mould Algorithm (ISMA)",
+      "best_for": "when you need to optimize robotic arm movements in industrial applications.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Offers adaptability to complex environments but may require more tuning for specific applications."
+    },
+    {
+      "technique": "Semi-decentralized Variational Equilibrium-based Planner (SVEP)",
+      "best_for": "when designing trajectory planners for autonomous vehicles in connected traffic environments.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Provides real-time decision-making capabilities but may be complex to implement in non-connected scenarios."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Improved Slime Mould Algorithm (ISMA)",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to optimize movements in a complex industrial environment."
+    },
+    {
+      "technique": "Semi-decentralized Variational Equilibrium-based Planner (SVEP)",
+      "speed": "fast",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "hard",
+      "best_when": "You are developing a system for autonomous vehicles that requires real-time interaction with other agents."
+    }
+  ],
+  "start_here": "Begin with the Improved Slime Mould Algorithm (ISMA) for most industrial applications, as it balances adaptability and optimization effectively.",
+  "related_problems": [
+    "Pathfinding in dynamic environments",
+    "Motion planning for robotic systems",
+    "Multi-agent coordination in robotics",
+    "Real-time navigation for autonomous vehicles"
+  ]
+}

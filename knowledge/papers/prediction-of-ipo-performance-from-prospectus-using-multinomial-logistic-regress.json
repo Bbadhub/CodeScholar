@@ -1,0 +1,97 @@
+{
+  "summary": "This paper presents a method for predicting the performance of initial public offerings (IPOs) using multinomial logistic regression (MLR) based on financial indicators extracted from prospectuses. Engineers should care because this approach can enhance investment decision-making by providing a more accurate prediction of IPO outcomes.",
+  "key_contribution": "The innovative application of multinomial logistic regression to predict IPO performance based on detailed prospectus data.",
+  "problem_type": "classification",
+  "problem_description": "The challenge of accurately predicting the performance of IPOs based on various financial indicators and prospectus characteristics.",
+  "domain": "Finance",
+  "sub_domain": "Financial prediction models",
+  "technique_name": "Multinomial Logistic Regression (MLR)",
+  "technique_category": "classification_model",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method uses MLR to classify IPO performance into three categories: BELOW AVERAGE, AVERAGE, and ABOVE AVERAGE. It leverages financial ratios and prospectus characteristics as independent variables to predict the class of IPO performance.",
+    "algorithm_steps": [
+      "1. Collect and preprocess data from prospectuses.",
+      "2. Split data into training (90%) and testing (10%) sets.",
+      "3. Normalize the training data.",
+      "4. Train the MLR model using the training data.",
+      "5. Calculate class probabilities using the trained model.",
+      "6. Assign labels based on a predetermined threshold.",
+      "7. Evaluate model performance using metrics like accuracy, recall, precision, and F1 score."
+    ],
+    "input": "Data from IPO prospectuses including financial ratios and prospectus characteristics.",
+    "output": "Predicted class of IPO performance: BELOW AVERAGE (0), AVERAGE (1), ABOVE AVERAGE (2).",
+    "key_parameters": [
+      "learning_rate: 0.01",
+      "threshold: 0.5"
+    ],
+    "complexity": "Not stated."
+  },
+  "benchmarks": {
+    "datasets": [
+      "Data from 55 IPOs in the Saudi stock market from 2010 to 2022."
+    ],
+    "metrics": [
+      "accuracy: 71.4%",
+      "AUC: 0.71"
+    ],
+    "baselines": [
+      "Other machine learning algorithms (not specified)"
+    ],
+    "improvement": "MLR model showed higher accuracy compared to other machine learning algorithms."
+  },
+  "concepts": [
+    "multinomial logistic regression",
+    "IPO performance prediction",
+    "financial ratios",
+    "prospectus analysis"
+  ],
+  "use_this_when": [
+    "You need to predict the performance of IPOs based on financial data.",
+    "You have access to detailed prospectus information for companies going public.",
+    "You want to classify outcomes into multiple categories rather than binary."
+  ],
+  "dont_use_when": [
+    "The dataset is too small to train a reliable model.",
+    "You require real-time predictions and cannot afford preprocessing time.",
+    "The IPOs have unique characteristics that cannot be generalized."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "DataFrame for storing prospectus data",
+      "Arrays for feature vectors"
+    ],
+    "dependencies": [
+      "Python",
+      "NumPy",
+      "Pandas",
+      "Scikit-learn"
+    ],
+    "pseudocode_hint": "model.fit(X_train, y_train) to train the MLR model; predictions = model.predict(X_test) to classify IPO performance.",
+    "gotchas": [
+      "Ensure data is cleaned and preprocessed to avoid skewed results.",
+      "Watch for multicollinearity among independent variables.",
+      "Be cautious of overfitting with a small dataset."
+    ]
+  },
+  "connects_to": [
+    "Logistic Regression",
+    "Random Forest",
+    "Support Vector Machines",
+    "Feature Selection Techniques"
+  ],
+  "prerequisites": [
+    "Understanding of logistic regression",
+    "Familiarity with financial ratios",
+    "Knowledge of data preprocessing techniques"
+  ],
+  "limitations": [
+    "Model performance may vary with different datasets.",
+    "Limited to the features extracted from prospectuses.",
+    "May not account for external market factors influencing IPO performance."
+  ],
+  "open_questions": [
+    "How can the model be adapted for different markets or regions?",
+    "What additional features could improve prediction accuracy?"
+  ]
+}

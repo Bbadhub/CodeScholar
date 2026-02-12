@@ -1,0 +1,36 @@
+{
+  "problem_name": "Brain Age Prediction",
+  "description": "Brain age prediction involves estimating the biological age of a person's brain based on various factors such as neuroimaging data and lifestyle choices. This can help in understanding cognitive decline and the impact of different occupational and lifestyle factors on brain health.",
+  "you_have_this_if": [
+    "You are analyzing neuroimaging data.",
+    "You want to correlate lifestyle factors with cognitive health.",
+    "You are developing tools for health monitoring.",
+    "You need to assess occupational impacts on brain health."
+  ],
+  "approaches": [
+    {
+      "technique": "Brain age prediction algorithms",
+      "best_for": "When you need to assess the impact of occupational factors on brain health or explore lifestyle relationships with cognitive decline.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach may require complex data processing but can yield valuable insights into brain health."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Brain age prediction algorithms",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have access to comprehensive neuroimaging data and want to analyze the effects of various factors on brain health."
+    }
+  ],
+  "start_here": "Start with brain age prediction algorithms as they provide a structured approach to analyzing neuroimaging data and understanding cognitive health.",
+  "related_problems": [
+    "Cognitive decline assessment",
+    "Neuroimaging analysis",
+    "Lifestyle impact on health",
+    "Occupational health studies"
+  ]
+}

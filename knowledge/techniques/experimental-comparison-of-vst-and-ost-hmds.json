@@ -1,0 +1,85 @@
+{
+  "technique_name": "Experimental comparison of VST and OST HMDs",
+  "aliases": [
+    "Virtual Spatial Technology (VST)",
+    "Optical Spatial Technology (OST)"
+  ],
+  "category": "user_experience_research",
+  "one_liner": "This technique compares the performance of tasks using Virtual Spatial Technology (VST) and Optical Spatial Technology (OST) head-mounted displays (HMDs) against unaided vision.",
+  "how_it_works": "Participants are divided into two groups, each using either VST or OST HMDs to perform specific tasks. Their performance is measured in terms of completion time, accuracy, and self-reported discomfort. The results are statistically analyzed to determine the effectiveness of each HMD type compared to unaided vision.",
+  "algorithm": {
+    "steps": [
+      "1. Recruit participants and divide them into two groups.",
+      "2. Assign each group to perform tasks with either VST or OST HMDs.",
+      "3. Each participant performs tasks twice: once with HMD and once without.",
+      "4. Record completion time, accuracy, and self-reported discomfort.",
+      "5. Analyze the collected data statistically to compare performance across conditions."
+    ],
+    "core_equation": "output = statistical_analysis(performance_data)",
+    "input_format": "Participant performance data including completion times, accuracy scores, and self-reported discomfort levels.",
+    "output_format": "Statistical analysis results comparing task performance with VST and OST HMDs against unaided vision."
+  },
+  "parameters": [
+    {
+      "name": "number_of_participants",
+      "typical_value": "80",
+      "effect": "More participants may yield more reliable results."
+    },
+    {
+      "name": "task_types",
+      "typical_value": "['dart throwing', 'bottle filling']",
+      "effect": "Different tasks may influence the effectiveness of HMDs."
+    },
+    {
+      "name": "HMD_types",
+      "typical_value": "['Meta Quest 3', 'Microsoft HoloLens']",
+      "effect": "Different HMDs may have varying impacts on performance."
+    }
+  ],
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)",
+    "practical_note": "The complexity is primarily dependent on the number of participants and tasks."
+  },
+  "use_when": [
+    "Designing AR applications that require high precision and user interaction.",
+    "Evaluating the effectiveness of different HMD technologies in real-world tasks.",
+    "Conducting user studies to assess the impact of visual technologies on task performance."
+  ],
+  "avoid_when": [
+    "Tasks that do not require precise motor control or depth perception.",
+    "When user comfort and visual fatigue are critical factors in task execution.",
+    "In environments where latency and perceptual distortion are unacceptable."
+  ],
+  "implementation_skeleton": "def compare_hmd_performance(participants: List[Participant]) -> AnalysisResult:\n    for participant in participants:\n        perform_tasks(participant)\n        record_performance(participant)\n    return analyze_results(participants)",
+  "common_mistakes": [
+    "Not accounting for individual differences in participant performance.",
+    "Failing to ensure a balanced design between VST and OST groups.",
+    "Neglecting to measure and report discomfort levels adequately."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides empirical data on HMD performance.",
+      "Helps identify user preferences and discomfort levels.",
+      "Facilitates informed decisions in AR application design."
+    ],
+    "weaknesses": [
+      "May not generalize to all types of tasks or environments.",
+      "Participant variability can introduce noise in results.",
+      "Requires careful experimental design to avoid bias."
+    ],
+    "compared_to": [
+      {
+        "technique": "User Experience Testing",
+        "verdict": "Use this technique for specific HMD comparisons, while user experience testing is broader."
+      }
+    ]
+  },
+  "connects_to": [
+    "User Experience Testing",
+    "Augmented Reality Development",
+    "Human-Computer Interaction Research",
+    "Virtual Reality Applications"
+  ],
+  "maturity": "emerging"
+}

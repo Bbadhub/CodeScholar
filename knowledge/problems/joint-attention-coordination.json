@@ -1,0 +1,36 @@
+{
+  "problem_name": "Joint Attention Coordination",
+  "description": "Joint attention coordination refers to the ability of individuals to share focus on an object or event, which is crucial for effective communication and interaction. This problem is particularly relevant in robotics, where machines must interpret and respond to human social cues to engage effectively in collaborative tasks.",
+  "you_have_this_if": [
+    "You are developing a robot intended for social interaction.",
+    "Your robot needs to understand and respond to human gestures.",
+    "You are working on educational tools that require engagement with users.",
+    "Your project involves assistive technologies for elderly individuals."
+  ],
+  "approaches": [
+    {
+      "technique": "Biologically Inspired Joint Attention System",
+      "best_for": "When developing robots for social environments where interaction with humans is essential.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "This approach may require more complex algorithms but offers better understanding of human social cues."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Biologically Inspired Joint Attention System",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a robot that can effectively engage with humans in a social context."
+    }
+  ],
+  "start_here": "Start with the Biologically Inspired Joint Attention System as it provides a robust framework for developing socially aware robots, which is essential for effective human-robot interaction.",
+  "related_problems": [
+    "Human-Robot Interaction",
+    "Social Signal Processing",
+    "Gesture Recognition in Robotics",
+    "Collaborative Robotics"
+  ]
+}

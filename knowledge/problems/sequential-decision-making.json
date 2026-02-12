@@ -1,0 +1,37 @@
+{
+  "problem_name": "Sequential Decision-Making",
+  "description": "Sequential decision-making involves making a series of decisions over time, where each decision can affect future outcomes. This type of problem is common in areas like online advertising, clinical trials, and adaptive learning systems.",
+  "you_have_this_if": [
+    "You are faced with a series of choices that depend on previous outcomes.",
+    "You need to optimize a process over time rather than in a single step.",
+    "You have limited resources and need to make decisions that minimize regret.",
+    "You have access to causal information that can guide your decisions.",
+    "You are conducting experiments that require simultaneous decision-making."
+  ],
+  "approaches": [
+    {
+      "technique": "CoBA (Causal contextual Bandits with One-shot data integration)",
+      "best_for": "when you need to conduct multiple experiments simultaneously within a budget and have causal side information.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "While CoBA can effectively minimize regret, it may require careful setup and understanding of causal relationships."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "CoBA",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have causal side information and need to optimize decisions across multiple experiments."
+    }
+  ],
+  "start_here": "Start with CoBA if you have causal information and need to minimize regret while conducting multiple experiments within a budget.",
+  "related_problems": [
+    "Multi-armed Bandit Problems",
+    "Reinforcement Learning",
+    "Adaptive Experimentation",
+    "Dynamic Pricing Strategies"
+  ]
+}

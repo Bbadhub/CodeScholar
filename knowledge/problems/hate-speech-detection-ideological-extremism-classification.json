@@ -1,0 +1,37 @@
+{
+  "problem_name": "Hate Speech Detection and Ideological Extremism Classification",
+  "description": "Hate speech detection involves identifying and classifying offensive or harmful language directed at individuals or groups based on attributes such as race, religion, or gender. Ideological extremism classification focuses on categorizing content that promotes radical beliefs or actions. Both problems are critical for maintaining safe online environments.",
+  "you_have_this_if": [
+    "You are developing a social media moderation tool.",
+    "You need to filter user-generated content for harmful language.",
+    "You are analyzing sentiment in online discussions.",
+    "You are encountering challenges with false positives in content classification.",
+    "You are working with large datasets of user comments or posts."
+  ],
+  "approaches": [
+    {
+      "technique": "Comparative analysis of detection approaches",
+      "best_for": "When you need to evaluate different methods for detecting hate speech and ideological extremism.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach may provide insights into various techniques but could be limited by the scope of existing research."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Comparative analysis of detection approaches",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You want to understand the strengths and weaknesses of different detection methods before implementation."
+    }
+  ],
+  "start_here": "Start with the comparative analysis of detection approaches to gain insights into existing methods and their effectiveness in your specific context.",
+  "related_problems": [
+    "Toxic comment classification",
+    "Cyberbullying detection",
+    "Misinformation detection",
+    "Sentiment analysis in social media"
+  ]
+}

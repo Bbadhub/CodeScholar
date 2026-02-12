@@ -1,0 +1,37 @@
+{
+  "problem_name": "Real-Time Routing Optimization",
+  "description": "Real-time routing optimization involves finding the most efficient paths for vehicles or data packets in dynamic environments. This is crucial for applications like navigation systems, emergency response, and traffic management where conditions can change rapidly.",
+  "you_have_this_if": [
+    "You need to optimize routes for vehicles in real-time.",
+    "Your application requires immediate responses to changing traffic conditions.",
+    "You are developing a system for emergency services that needs to navigate quickly.",
+    "You are facing challenges with congestion and delays in routing.",
+    "You need to integrate multiple data sources for routing decisions."
+  ],
+  "approaches": [
+    {
+      "technique": "Traffic Clearance Routing Algorithm",
+      "best_for": "When building navigation systems for emergency vehicles or applications requiring real-time route optimization.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This technique provides quick routing solutions but may not account for all traffic variables."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Traffic Clearance Routing Algorithm",
+      "speed": "fast",
+      "memory": "medium",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to optimize routes quickly for emergency vehicles in a dynamic traffic environment."
+    }
+  ],
+  "start_here": "Start with the Traffic Clearance Routing Algorithm as it is specifically designed for real-time routing needs, especially in emergency scenarios.",
+  "related_problems": [
+    "Dynamic Traffic Management",
+    "Pathfinding in Robotics",
+    "Logistics Optimization",
+    "Fleet Management Systems"
+  ]
+}

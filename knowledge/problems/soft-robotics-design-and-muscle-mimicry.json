@@ -1,0 +1,37 @@
+{
+  "problem_name": "Soft Robotics Design and Muscle Mimicry",
+  "description": "Soft robotics design focuses on creating robots that can mimic the flexibility and adaptability of biological organisms. Muscle mimicry involves replicating the dynamics of biological muscles to enhance the functionality of soft robots in various applications.",
+  "you_have_this_if": [
+    "You are working on a project that requires flexible manipulation.",
+    "You need to study the dynamics of muscle movements in robotics.",
+    "You are interested in creating devices that mimic biological systems.",
+    "You are facing challenges with traditional rigid robotic designs.",
+    "You are exploring new materials and structures for robotic applications."
+  ],
+  "approaches": [
+    {
+      "technique": "Pig Tongue Soft Robot",
+      "best_for": "Developing soft robots for manipulation tasks requiring flexibility and studying muscle dynamics.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach offers high flexibility but may have limitations in strength and control."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Pig Tongue Soft Robot",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a flexible robot that can adapt to various shapes and tasks."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Pig Tongue Soft Robot, as it effectively combines flexibility and biomimetic design, making it suitable for a variety of manipulation tasks.",
+  "related_problems": [
+    "Soft Actuator Design",
+    "Biomimetic Robotics",
+    "Flexible Gripper Development",
+    "Adaptive Robotic Systems"
+  ]
+}

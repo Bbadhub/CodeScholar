@@ -1,0 +1,78 @@
+{
+  "technique_name": "Reflective Error",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "Reflective Error is a metric that assesses predictive performance with a focus on extreme events.",
+  "how_it_works": "Reflective Error is derived from a weighted version of RMSE, which normalizes the error to facilitate comparisons across different scales. It emphasizes errors at extreme values by using a weighting function based on the empirical distribution of the target outputs. This allows for a more nuanced understanding of model performance, particularly in scenarios where extreme predictions are critical.",
+  "algorithm": {
+    "steps": [
+      "1. Fit an empirical distribution to the target outputs.",
+      "2. Define the reflective weighting function \u03a8(y) based on the fitted distribution.",
+      "3. Calculate the standard RMSE.",
+      "4. Calculate the weighted RMSE using \u03a8(y).",
+      "5. Compute Reflective Error as the ratio of weighted RMSE to standard RMSE.",
+      "6. Normalize the Reflective Error to a scale of 0 to 1."
+    ],
+    "core_equation": "Reflective Error = Weighted RMSE / Standard RMSE",
+    "input_format": "Predicted values and observed target values from regression models (arrays of floats).",
+    "output_format": "Reflective Error value (float) indicating the sensitivity of error to extremes."
+  },
+  "parameters": [
+    {
+      "name": "\u03b1",
+      "typical_value": "1 (default)",
+      "effect": "Tuning \u03b1 affects the sensitivity of the weighting function."
+    },
+    {
+      "name": "\u03b2",
+      "typical_value": "1 (default)",
+      "effect": "Tuning \u03b2 influences the reflective loss function's behavior."
+    }
+  ],
+  "complexity": {
+    "time": "O(n) for fitting the empirical distribution and calculating RMSE",
+    "space": "O(n) for storing predicted and observed values",
+    "practical_note": "Performance may vary based on the complexity of the empirical distribution fitting."
+  },
+  "use_when": [
+    "Modeling environmental systems where extreme events are critical, such as flood prediction.",
+    "Evaluating regression models where traditional metrics fail to capture performance at extremes.",
+    "Optimizing machine learning models for applications sensitive to extreme predictions."
+  ],
+  "avoid_when": [
+    "The dataset does not exhibit significant extremes or outliers.",
+    "The model performance needs to be assessed uniformly across all data points without emphasis on extremes.",
+    "Data is uniformly distributed with no significant variation in extremes."
+  ],
+  "implementation_skeleton": "def reflective_error(predictions: List[float], targets: List[float], alpha: float = 1, beta: float = 1) -> float:\n    # Step 1: Fit empirical distribution\n    distribution = fit_empirical_distribution(targets)\n    # Step 2: Define weighting function\n    weights = define_weighting_function(distribution, alpha, beta)\n    # Step 3: Calculate RMSE\n    rmse = calculate_rmse(predictions, targets)\n    # Step 4: Calculate weighted RMSE\n    weighted_rmse = calculate_weighted_rmse(predictions, targets, weights)\n    # Step 5: Compute Reflective Error\n    reflective_error = weighted_rmse / rmse\n    # Step 6: Normalize\n    return normalize(reflective_error)",
+  "common_mistakes": [
+    "Neglecting to fit the empirical distribution accurately.",
+    "Using inappropriate values for \u03b1 and \u03b2 without tuning.",
+    "Failing to interpret the Reflective Error in the context of extreme events."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a better understanding of error distribution, particularly for extremes.",
+      "Normalizes error for comparison across different scales.",
+      "Emphasizes performance in critical scenarios where extremes matter."
+    ],
+    "weaknesses": [
+      "May not be suitable for datasets without significant extremes.",
+      "Complexity in defining the empirical distribution accurately.",
+      "Potential overemphasis on extremes can obscure overall model performance."
+    ],
+    "compared_to": [
+      {
+        "technique": "Root Mean Squared Error (RMSE)",
+        "verdict": "Use Reflective Error when extremes are critical; RMSE is better for uniform performance assessment."
+      }
+    ]
+  },
+  "connects_to": [
+    "Root Mean Squared Error (RMSE)",
+    "Nash-Sutcliffe Efficiency (NSE)",
+    "Quantile Regression",
+    "Extreme Value Theory"
+  ],
+  "maturity": "emerging"
+}

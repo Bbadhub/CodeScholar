@@ -1,0 +1,79 @@
+{
+  "technique_name": "CiteSpace",
+  "aliases": [
+    "Bibliometric analysis tool",
+    "Visualization tool for scientific literature"
+  ],
+  "category": "statistical_method",
+  "one_liner": "CiteSpace is a tool for visualizing and analyzing trends and patterns in scientific literature.",
+  "how_it_works": "CiteSpace analyzes large datasets of academic articles to identify trends, collaborations, and research hotspots. It processes bibliometric data, generates visualizations, and helps researchers understand the evolution of a specific field. By focusing on co-citations and author collaborations, it provides insights into the dynamics of research areas over time.",
+  "algorithm": {
+    "steps": [
+      "1. Collect data from the Web of Science Core Collection.",
+      "2. Filter and remove duplicate articles.",
+      "3. Set time intervals and analyze the data using CiteSpace.",
+      "4. Generate visualizations for author collaborations and keyword co-citations.",
+      "5. Analyze the results to identify trends and hotspots in the research area."
+    ],
+    "core_equation": "Not applicable as this is a visualization tool.",
+    "input_format": "Data from the Web of Science Core Collection, including articles related to vehicle routing and cold chain logistics.",
+    "output_format": "Visualizations and bibliometric analysis results showing trends, collaborations, and research hotspots."
+  },
+  "parameters": [
+    {
+      "name": "time_span",
+      "typical_value": "2008-2024",
+      "effect": "Defines the period for analysis."
+    },
+    {
+      "name": "top_n",
+      "typical_value": "10",
+      "effect": "Determines the number of high-frequency nodes to visualize."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated, but depends on dataset size.",
+    "space": "Not explicitly stated, but requires memory for visualizations.",
+    "practical_note": "Performance may vary based on the size of the dataset and the complexity of visualizations."
+  },
+  "use_when": [
+    "You need to optimize delivery routes for perishable goods.",
+    "You want to understand the current state of research in cold chain logistics.",
+    "You are exploring interdisciplinary approaches to logistics problems."
+  ],
+  "avoid_when": [
+    "You require a specific algorithm for real-time routing decisions.",
+    "You are looking for a detailed mathematical model for CCVRP."
+  ],
+  "implementation_skeleton": "def analyze_cold_chain_logistics(data: List[str]) -> Visualization:\n    # Step 1: Collect data\n    filtered_data = filter_duplicates(data)\n    # Step 2: Set time intervals\n    time_intervals = set_time_intervals(filtered_data)\n    # Step 3: Analyze data using CiteSpace\n    results = cite_space_analysis(filtered_data, time_intervals)\n    # Step 4: Generate visualizations\n    visualizations = generate_visualizations(results)\n    return visualizations",
+  "common_mistakes": [
+    "Not filtering duplicate articles, leading to skewed results.",
+    "Choosing an inappropriate time span for analysis.",
+    "Ignoring the context of visualizations when interpreting results."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides clear visualizations of complex bibliometric data.",
+      "Helps identify research trends and hotspots effectively.",
+      "Facilitates collaboration analysis among authors."
+    ],
+    "weaknesses": [
+      "Does not provide specific algorithms for practical applications.",
+      "Limited to the data available in the Web of Science.",
+      "May require significant computational resources for large datasets."
+    ],
+    "compared_to": [
+      {
+        "technique": "VOSviewer",
+        "verdict": "Use CiteSpace for trend analysis and VOSviewer for detailed network visualizations."
+      }
+    ]
+  },
+  "connects_to": [
+    "Bibliometric analysis",
+    "Co-citation analysis",
+    "Network analysis",
+    "Research trend analysis"
+  ],
+  "maturity": "established"
+}

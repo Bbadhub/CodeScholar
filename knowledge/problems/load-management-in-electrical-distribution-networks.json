@@ -1,0 +1,37 @@
+{
+  "problem_name": "Load Management in Electrical Distribution Networks",
+  "description": "Load management in electrical distribution networks involves optimizing the distribution of electrical loads to ensure efficiency and reliability. This is particularly important with the increasing adoption of electric vehicles (EVs) and the need for smart grid solutions.",
+  "you_have_this_if": [
+    "You are experiencing frequent overloads in your electrical distribution system.",
+    "You are integrating electric vehicle charging stations into your network.",
+    "You notice inefficiencies in energy distribution during peak hours.",
+    "You are tasked with designing a smart grid solution.",
+    "You need to evaluate the impact of new technologies on local power distribution."
+  ],
+  "approaches": [
+    {
+      "technique": "Diversity-Integrated Load Management Model",
+      "best_for": "When implementing EV charging infrastructure and designing smart grid solutions.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "This approach optimizes load distribution but may require complex modeling and data integration."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Diversity-Integrated Load Management Model",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to manage diverse loads effectively while integrating new technologies like EVs."
+    }
+  ],
+  "start_here": "The recommended first approach is the Diversity-Integrated Load Management Model, as it effectively addresses the complexities of modern load management while accommodating new technologies.",
+  "related_problems": [
+    "Demand Response in Electrical Grids",
+    "Smart Grid Optimization Techniques",
+    "Energy Storage Management",
+    "Renewable Energy Integration Challenges"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "problem_name": "Causal Inference",
+  "description": "Causal inference is the process of determining whether a cause-and-effect relationship exists between variables. It is essential for understanding the impact of interventions and making informed decisions based on data.",
+  "you_have_this_if": [
+    "You are trying to understand the impact of a specific change in your system.",
+    "You need to identify potential causes of observed outcomes.",
+    "You are working with complex data where relationships are not immediately clear.",
+    "You want to make predictions based on causal relationships rather than mere correlations."
+  ],
+  "approaches": [
+    {
+      "technique": "Causal Graph Extraction",
+      "best_for": "when you need to diagnose failures in complex distributed systems or improve reliability in critical systems.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Provides clear causal relationships but may require significant data preparation."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Causal Graph Extraction",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have complex data and need to understand causal relationships for effective decision-making."
+    }
+  ],
+  "start_here": "Start with Causal Graph Extraction as it provides a structured way to visualize and analyze causal relationships, which is crucial for diagnosing issues and improving system reliability.",
+  "related_problems": [
+    "Correlation Analysis",
+    "Predictive Modeling",
+    "Statistical Process Control",
+    "Failure Analysis"
+  ]
+}

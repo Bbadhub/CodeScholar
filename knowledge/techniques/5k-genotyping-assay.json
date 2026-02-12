@@ -1,0 +1,78 @@
+{
+  "technique_name": "5K Genotyping Assay",
+  "aliases": [],
+  "category": "genotyping_method",
+  "one_liner": "A high-throughput genotyping assay for assessing genetic diversity and tracking allele inheritance in groundnut breeding.",
+  "how_it_works": "The 5K genotyping assay utilizes genome-wide molecular markers to evaluate genetic diversity and monitor allele inheritance in groundnut varieties. By extracting genomic DNA and amplifying specific regions, high-throughput sequencing generates comprehensive genotyping data. This data enables breeders to make informed decisions early in the selection process, even before visible phenotypic traits manifest.",
+  "algorithm": {
+    "steps": [
+      "1. Collect germplasm samples from groundnut varieties.",
+      "2. Extract genomic DNA from the samples.",
+      "3. Amplify specific genomic regions using PCR.",
+      "4. Perform high-throughput sequencing to generate genotyping data.",
+      "5. Analyze the sequencing data to identify alleles and genetic diversity.",
+      "6. Use the results to inform breeding decisions."
+    ],
+    "core_equation": "N/A",
+    "input_format": "Germplasm samples from groundnut varieties and genomic DNA.",
+    "output_format": "Genotyping data indicating allele presence and genetic diversity."
+  },
+  "parameters": [
+    {
+      "name": "cost_per_sample",
+      "typical_value": "$0.50",
+      "effect": "Lower costs can make genotyping more accessible."
+    },
+    {
+      "name": "number_of_markers",
+      "typical_value": "5000",
+      "effect": "Increasing markers can enhance resolution but may raise costs."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for sequencing analysis",
+    "space": "O(n) for storing genotyping data",
+    "practical_note": "Real-world performance is significantly improved compared to traditional breeding methods."
+  },
+  "use_when": [
+    "You need to enhance breeding efficiency in groundnut.",
+    "You want to track genetic traits early in the selection process.",
+    "You require a cost-effective solution for genotyping."
+  ],
+  "avoid_when": [
+    "Working with species that do not have a well-characterized genome.",
+    "When high accuracy in allele identification is critical and cannot be compromised.",
+    "If the budget for genotyping is significantly higher than the proposed cost."
+  ],
+  "implementation_skeleton": "def five_k_genotyping_assay(samples: List[str]) -> Dict[str, Any]:\n    genomic_dna = extract_dna(samples)\n    amplified_regions = amplify_regions(genomic_dna)\n    sequencing_data = high_throughput_sequencing(amplified_regions)\n    alleles = analyze_sequencing_data(sequencing_data)\n    return alleles",
+  "common_mistakes": [
+    "Neglecting to properly extract genomic DNA, leading to poor quality data.",
+    "Using insufficient markers for accurate genetic diversity assessment.",
+    "Failing to analyze sequencing data thoroughly, missing critical insights."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Cost-effective compared to traditional methods.",
+      "High-throughput capability allows for large sample sizes.",
+      "Early tracking of genetic traits enhances breeding decisions."
+    ],
+    "weaknesses": [
+      "May not provide the highest accuracy in allele identification.",
+      "Dependent on the availability of a well-characterized genome.",
+      "Cost may still be prohibitive for some breeding programs."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Breeding Methods",
+        "verdict": "Use 5K genotyping for efficiency and early trait tracking."
+      }
+    ]
+  },
+  "connects_to": [
+    "Genomic Selection",
+    "Marker-Assisted Selection",
+    "High-Throughput Sequencing",
+    "PCR Amplification Techniques"
+  ],
+  "maturity": "proven"
+}

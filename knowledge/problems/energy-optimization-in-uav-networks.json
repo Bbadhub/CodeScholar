@@ -1,0 +1,37 @@
+{
+  "problem_name": "Energy Optimization in UAV Networks",
+  "description": "Energy optimization in UAV networks involves finding ways to reduce energy consumption while maintaining performance and reliability. This is particularly important for UAVs operating in environments where battery life is limited and efficient energy use is critical for mission success.",
+  "you_have_this_if": [
+    "You are deploying UAVs in energy-constrained environments.",
+    "You need to optimize microservice execution for battery-operated devices.",
+    "You are designing resilient communication networks in rural areas.",
+    "You are facing challenges with UAV battery life affecting operational range.",
+    "You are looking for ways to improve the energy efficiency of UAV communication protocols."
+  ],
+  "approaches": [
+    {
+      "technique": "Energy Consumption Model for Microservices",
+      "best_for": "When deploying UAVs in energy-constrained environments and optimizing microservice execution.",
+      "paper_count": 1,
+      "max_citations": 2,
+      "key_tradeoff": "This approach may require complex modeling but can significantly enhance energy efficiency."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Energy Consumption Model for Microservices",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a detailed understanding of energy consumption patterns in UAV operations."
+    }
+  ],
+  "start_here": "The recommended first approach is to implement the Energy Consumption Model for Microservices, as it provides a structured way to analyze and optimize energy usage in UAV networks.",
+  "related_problems": [
+    "Battery life optimization in mobile devices",
+    "Resource allocation in IoT networks",
+    "Energy-efficient routing in wireless sensor networks",
+    "Load balancing in distributed systems"
+  ]
+}

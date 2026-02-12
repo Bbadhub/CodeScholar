@@ -1,0 +1,79 @@
+{
+  "technique_name": "Electrochemical Impedance Spectroscopy (EIS) based State of Charge (SoC) Estimation",
+  "aliases": [
+    "EIS SoC Estimation"
+  ],
+  "category": "statistical_method",
+  "one_liner": "This technique estimates the state of charge of solid-state batteries using electrochemical impedance spectroscopy.",
+  "how_it_works": "Electrochemical impedance spectroscopy (EIS) measures the impedance characteristics of solid-state batteries. By analyzing the impedance data, a model is developed that correlates specific impedance features with the state of charge. This model can adapt to different battery health states, allowing for accurate real-time SoC estimation.",
+  "algorithm": {
+    "steps": [
+      "1. Collect impedance data from the solid-state battery using EIS.",
+      "2. Analyze the impedance spectra to identify key characteristics.",
+      "3. Develop a model correlating impedance features with state of charge.",
+      "4. Validate the model against known SoC values.",
+      "5. Implement the model for real-time SoC estimation."
+    ],
+    "core_equation": "SoC = f(impedance_features)",
+    "input_format": "Impedance data from solid-state batteries collected via electrochemical impedance spectroscopy.",
+    "output_format": "Estimated state of charge of the battery."
+  },
+  "parameters": [
+    {
+      "name": "frequency_range",
+      "typical_value": "1 Hz to 1 MHz",
+      "effect": "Affects the resolution and accuracy of impedance measurements."
+    },
+    {
+      "name": "temperature",
+      "typical_value": "25\u00b0C to 60\u00b0C",
+      "effect": "Influences the impedance characteristics and SoC estimation accuracy."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "The method is designed for real-time applications, with a response time of approximately 2 seconds."
+  },
+  "use_when": [
+    "Developing battery management systems for solid-state batteries",
+    "Working on safety-critical applications in aerospace",
+    "Needing accurate SoC estimation in varying temperature conditions"
+  ],
+  "avoid_when": [
+    "Battery chemistry is not solid-state",
+    "High-frequency impedance data is unavailable",
+    "Real-time estimation is not required"
+  ],
+  "implementation_skeleton": "def estimate_soc(impedance_data: List[float]) -> float:\n    # Step 1: Analyze impedance data\n    features = analyze_impedance(impedance_data)\n    # Step 2: Estimate SoC using the model\n    soc_estimate = model.predict(features)\n    return soc_estimate",
+  "common_mistakes": [
+    "Neglecting to validate the model against known SoC values.",
+    "Using impedance data outside the recommended frequency range.",
+    "Failing to account for temperature variations affecting impedance."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy (up to 95%) in SoC estimation.",
+      "Adaptable to different states of health of the battery.",
+      "Real-time estimation capability."
+    ],
+    "weaknesses": [
+      "Requires high-frequency impedance data.",
+      "Limited to solid-state battery chemistry.",
+      "May not perform well if real-time estimation is not needed."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional voltage-based SoC estimation",
+        "verdict": "Use EIS for higher accuracy and adaptability."
+      }
+    ]
+  },
+  "connects_to": [
+    "Battery Management Systems (BMS)",
+    "Solid-State Battery Technology",
+    "Electrochemical Analysis Techniques",
+    "Impedance Spectroscopy Methods"
+  ],
+  "maturity": "emerging"
+}

@@ -1,0 +1,37 @@
+{
+  "problem_name": "Model Compression",
+  "description": "Model compression involves reducing the size of machine learning models while maintaining their performance. This is particularly important for deploying models on resource-constrained environments like mobile or edge devices.",
+  "you_have_this_if": [
+    "You are working with large machine learning models.",
+    "You need to deploy models on devices with limited memory.",
+    "You are experiencing slow inference times.",
+    "You want to maintain high accuracy while reducing model size.",
+    "You are facing challenges with model deployment due to resource constraints."
+  ],
+  "approaches": [
+    {
+      "technique": "Low Functional Redundancy-based Network Slimming (LFRNS)",
+      "best_for": "when you need to deploy a large model on a mobile or edge device while improving inference speed and managing memory constraints.",
+      "paper_count": 1,
+      "max_citations": 1,
+      "key_tradeoff": "This approach may reduce model accuracy slightly in exchange for significant reductions in size and speed."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Low Functional Redundancy-based Network Slimming (LFRNS)",
+      "speed": "medium",
+      "memory": "low",
+      "accuracy": "medium",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to deploy a large model efficiently on devices with limited resources."
+    }
+  ],
+  "start_here": "Start with Low Functional Redundancy-based Network Slimming (LFRNS) as it effectively balances model size and inference speed while being suitable for deployment in constrained environments.",
+  "related_problems": [
+    "Model Pruning",
+    "Quantization",
+    "Knowledge Distillation",
+    "Neural Architecture Search"
+  ]
+}

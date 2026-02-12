@@ -1,0 +1,37 @@
+{
+  "problem_name": "Distributed Graph Algorithms",
+  "description": "Distributed graph algorithms are designed to solve problems on graphs that are spread across multiple machines. These algorithms must efficiently manage communication and computation across nodes with potentially varying capabilities.",
+  "you_have_this_if": [
+    "You are working with large graphs that cannot fit on a single machine.",
+    "You are experiencing performance bottlenecks due to communication overhead.",
+    "You have a heterogeneous cluster with nodes of different processing power.",
+    "You need to perform computations that are inherently parallelizable.",
+    "You are facing challenges in scaling traditional graph algorithms."
+  ],
+  "approaches": [
+    {
+      "technique": "Heterogeneous MPC",
+      "best_for": "When you need to solve graph problems in a distributed environment with varying machine capabilities.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach minimizes communication overhead but may require more complex implementation."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Heterogeneous MPC",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You have access to a powerful machine among weaker nodes and need to optimize for communication efficiency."
+    }
+  ],
+  "start_here": "Start with the Heterogeneous MPC approach as it is specifically designed for distributed environments with varying node capabilities and can effectively minimize communication overhead.",
+  "related_problems": [
+    "Parallel Graph Processing",
+    "Distributed Computing Frameworks",
+    "Load Balancing in Distributed Systems",
+    "Scalable Machine Learning on Graphs"
+  ]
+}

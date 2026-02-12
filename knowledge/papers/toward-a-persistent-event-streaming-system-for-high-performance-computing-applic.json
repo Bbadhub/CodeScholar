@@ -1,0 +1,97 @@
+{
+  "summary": "The paper introduces Mofka, a persistent event-streaming framework specifically designed for high-performance computing (HPC) applications, addressing the limitations of traditional parallel file systems. Engineers should care because Mofka significantly improves data handling and communication efficiency in complex HPC workflows, achieving up to 8\u00d7 throughput improvement over existing solutions like Kafka and Redpanda.",
+  "key_contribution": "Mofka provides a high-performance, modular event-streaming framework tailored for HPC environments, leveraging advanced networking and data handling techniques.",
+  "problem_type": "event-streaming for high-performance computing",
+  "problem_description": "HPC applications generate vast amounts of data that require efficient management and communication, which traditional file systems struggle to handle effectively.",
+  "domain": "Software Engineering",
+  "sub_domain": "Event-Driven Architectures",
+  "technique_name": "Mofka",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "Mofka divides events into metadata and data parts, optimizing the transfer of each. It uses RDMA for high-speed data transfers and supports large payloads, making it suitable for HPC workloads.",
+    "algorithm_steps": [
+      "1. Producer creates a topic with a validator, partition selector, and serializer.",
+      "2. Producer batches metadata and sends it to the partition manager.",
+      "3. Partition manager redirects metadata to a log provider and RDMA handles for data to a storage provider.",
+      "4. Consumer subscribes to partitions and receives metadata batches.",
+      "5. Consumer uses a data selector to specify which data parts to retrieve.",
+      "6. Data broker transfers the selected data directly to the consumer's memory."
+    ],
+    "input": "Events consisting of metadata (small, structured) and data (large, scientific payloads).",
+    "output": "Streamed events with metadata and selected data parts.",
+    "key_parameters": [
+      "batch_size: 128",
+      "number_of_threads: 4"
+    ],
+    "complexity": "not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Argonne\u2019s Polaris supercomputer",
+      "Oak Ridge\u2019s Frontier supercomputer"
+    ],
+    "metrics": [
+      "throughput: up to 8\u00d7 improvement over Kafka and Redpanda"
+    ],
+    "baselines": [
+      "Kafka",
+      "Redpanda"
+    ],
+    "improvement": "8\u00d7 improvement in throughput in some scenarios"
+  },
+  "concepts": [
+    "event-driven architecture",
+    "persistent streaming",
+    "RDMA",
+    "HPC data management"
+  ],
+  "use_this_when": [
+    "You need to manage large data streams in HPC applications.",
+    "You require high throughput and low latency for data transfer in scientific workflows.",
+    "You want to leverage advanced networking capabilities of HPC systems."
+  ],
+  "dont_use_when": [
+    "Your application does not require persistence of data.",
+    "You are working with small, structured messages typical in enterprise contexts.",
+    "You need a solution that is not tailored for HPC environments."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "topic handle",
+      "partition manager",
+      "log provider",
+      "data broker"
+    ],
+    "dependencies": [
+      "Mochi suite components",
+      "RDMA-capable network"
+    ],
+    "pseudocode_hint": "producer.push(metadata, data) to send events; consumer.pull() to retrieve events.",
+    "gotchas": [
+      "Ensure proper configuration of validators and serializers for metadata.",
+      "Monitor network usage to avoid bottlenecks with multiple NICs.",
+      "Handle large payloads carefully to optimize memory usage."
+    ]
+  },
+  "connects_to": [
+    "Kafka",
+    "Redpanda",
+    "Mochi suite",
+    "HPC data services"
+  ],
+  "prerequisites": [
+    "Understanding of event-driven architectures",
+    "Familiarity with HPC systems",
+    "Knowledge of RDMA networking"
+  ],
+  "limitations": [
+    "Not suitable for applications requiring strict file consistency.",
+    "May require significant configuration for optimal performance.",
+    "Limited to environments that support the Mochi suite."
+  ],
+  "open_questions": [
+    "How can Mofka be extended to support more diverse data formats?",
+    "What optimizations can be made for even larger-scale HPC applications?"
+  ]
+}

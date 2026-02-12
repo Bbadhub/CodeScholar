@@ -1,0 +1,88 @@
+{
+  "technique_name": "Parallel Drone Scheduling Traveling Salesman Problem (PDSTSP)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "PDSTSP optimizes delivery routes for a fleet of drones and trucks operating in parallel to minimize completion time and environmental impact.",
+  "how_it_works": "PDSTSP formulates the delivery routing problem as a Mixed-Integer Linear Programming (MILP) model. It categorizes customers based on whether they can be served by drones, trucks, or both. The algorithm then optimizes the routes while considering constraints like vehicle capacities and operational parameters, ultimately minimizing total delivery time and assessing environmental and economic impacts.",
+  "algorithm": {
+    "steps": [
+      "Define the set of nodes representing the depot and customer locations.",
+      "Categorize customers into those served by trucks and those that can be served by either drones or trucks.",
+      "Formulate the problem as a Mixed-Integer Linear Programming (MILP) model.",
+      "Set constraints for load capacities, travel distances, and operational parameters.",
+      "Optimize the delivery routes to minimize total completion time.",
+      "Perform sensitivity analysis on factors like delivery density and traffic conditions."
+    ],
+    "core_equation": "output = optimized delivery routes for drones and trucks",
+    "input_format": "Set of customer locations, demand weights, vehicle capacities, and operational parameters.",
+    "output_format": "Optimized delivery routes for drones and trucks, total completion time, and environmental/economic impact metrics."
+  },
+  "parameters": [
+    {
+      "name": "drone_capacity",
+      "typical_value": "2.5 kg",
+      "effect": "Limits the weight of parcels that drones can deliver."
+    },
+    {
+      "name": "truck_capacity",
+      "typical_value": "1300 kg",
+      "effect": "Limits the weight of parcels that trucks can deliver."
+    },
+    {
+      "name": "annual_operation_days",
+      "typical_value": "300",
+      "effect": "Affects the total number of operational days in a year."
+    },
+    {
+      "name": "daily_operation_hours",
+      "typical_value": "8",
+      "effect": "Affects the total operational hours available each day."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on customer density and traffic conditions."
+  },
+  "use_when": [
+    "Implementing last-mile delivery solutions in urban areas with high demand density.",
+    "Seeking to reduce operational costs and environmental impacts in logistics.",
+    "Integrating drone technology into existing delivery systems."
+  ],
+  "avoid_when": [
+    "Delivering large, heavy parcels that exceed drone capacity.",
+    "Operating in areas with strict regulations against drone usage.",
+    "When delivery time windows are critical and cannot be accommodated."
+  ],
+  "implementation_skeleton": "def optimize_routes(customer_locations: List[Tuple[float, float]], demand_weights: List[float], vehicle_capacities: Dict[str, float]) -> Tuple[List[List[Tuple[float, float]]], float]:\n    # Define nodes and categorize customers\n    # Formulate MILP model\n    # Set constraints\n    # Optimize routes\n    # Return optimized routes and metrics\n    pass",
+  "common_mistakes": [
+    "Underestimating the impact of drone capacity on delivery options.",
+    "Neglecting to account for regulatory restrictions on drone usage.",
+    "Failing to perform sensitivity analysis on operational parameters."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Reduces total delivery time by optimizing routes.",
+      "Lowers operational costs compared to traditional delivery systems.",
+      "Minimizes environmental impact through efficient routing."
+    ],
+    "weaknesses": [
+      "Limited by drone capacity for heavier parcels.",
+      "Complexity in regulatory compliance for drone operations.",
+      "Potentially high initial setup costs for integrating drone technology."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Truck-Only Delivery Systems",
+        "verdict": "Use PDSTSP for mixed delivery scenarios to leverage both drones and trucks."
+      }
+    ]
+  },
+  "connects_to": [
+    "Mixed-Integer Linear Programming (MILP)",
+    "Last-Mile Delivery Optimization",
+    "Drone Technology in Logistics",
+    "Environmental Impact Assessment in Delivery Systems"
+  ],
+  "maturity": "emerging"
+}

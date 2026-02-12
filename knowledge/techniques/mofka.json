@@ -1,0 +1,78 @@
+{
+  "technique_name": "Mofka",
+  "aliases": [],
+  "category": "event_streaming",
+  "one_liner": "Mofka is an event-streaming system optimized for high-performance computing applications.",
+  "how_it_works": "Mofka separates event data into metadata and payloads, optimizing the transfer of each component. It utilizes Remote Direct Memory Access (RDMA) for high-speed data transfers, making it suitable for handling large scientific payloads. The system supports batching of metadata and allows consumers to selectively retrieve data, enhancing efficiency in high-performance computing environments.",
+  "algorithm": {
+    "steps": [
+      "1. Producer creates a topic with a validator, partition selector, and serializer.",
+      "2. Producer batches metadata and sends it to the partition manager.",
+      "3. Partition manager redirects metadata to a log provider and RDMA handles for data to a storage provider.",
+      "4. Consumer subscribes to partitions and receives metadata batches.",
+      "5. Consumer uses a data selector to specify which data parts to retrieve.",
+      "6. Data broker transfers the selected data directly to the consumer's memory."
+    ],
+    "core_equation": "output = streamed events with metadata and selected data parts",
+    "input_format": "Events consisting of metadata (small, structured) and data (large, scientific payloads)",
+    "output_format": "Streamed events with metadata and selected data parts"
+  },
+  "parameters": [
+    {
+      "name": "batch_size",
+      "typical_value": "128",
+      "effect": "Increasing batch size can improve throughput but may increase latency."
+    },
+    {
+      "name": "number_of_threads",
+      "typical_value": "4",
+      "effect": "More threads can enhance parallel processing capabilities."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance improvements can be significant in high-throughput scenarios."
+  },
+  "use_when": [
+    "You need to manage large data streams in HPC applications.",
+    "You require high throughput and low latency for data transfer in scientific workflows.",
+    "You want to leverage advanced networking capabilities of HPC systems."
+  ],
+  "avoid_when": [
+    "Your application does not require persistence of data.",
+    "You are working with small, structured messages typical in enterprise contexts.",
+    "You need a solution that is not tailored for HPC environments."
+  ],
+  "implementation_skeleton": "def mofka_producer(topic: str, metadata: dict, data: bytes) -> None:\n    # Create topic with validator and serializer\n    # Batch metadata and send to partition manager\n    pass\n\ndef mofka_consumer(topic: str) -> bytes:\n    # Subscribe to partitions and receive metadata\n    # Selectively retrieve data parts\n    pass",
+  "common_mistakes": [
+    "Not optimizing batch sizes for specific workloads.",
+    "Neglecting to configure RDMA settings for optimal performance.",
+    "Failing to properly manage memory allocation for large payloads."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Significantly improved throughput compared to traditional systems like Kafka.",
+      "Optimized for large payloads typical in scientific computing.",
+      "Utilizes advanced networking features for efficient data transfer."
+    ],
+    "weaknesses": [
+      "Not suitable for small, structured message scenarios.",
+      "Requires a specific HPC environment for optimal performance.",
+      "Complex setup and configuration compared to simpler messaging systems."
+    ],
+    "compared_to": [
+      {
+        "technique": "Kafka",
+        "verdict": "Use Mofka for high-throughput HPC applications; use Kafka for general-purpose messaging."
+      }
+    ]
+  },
+  "connects_to": [
+    "RDMA",
+    "Apache Kafka",
+    "Redpanda",
+    "High-Performance Computing (HPC) frameworks"
+  ],
+  "maturity": "emerging"
+}

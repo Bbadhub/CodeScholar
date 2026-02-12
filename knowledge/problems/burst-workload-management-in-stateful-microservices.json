@@ -1,0 +1,37 @@
+{
+  "problem_name": "Burst Workload Management in Stateful Microservices",
+  "description": "Burst workload management involves efficiently handling sudden spikes in demand for stateful microservices. This problem is crucial for maintaining service availability and performance during unpredictable user activity surges.",
+  "you_have_this_if": [
+    "You experience sudden spikes in user requests.",
+    "Your microservices are stateful and require consistent data management.",
+    "You notice performance degradation during peak loads.",
+    "Your resource allocation seems insufficient during high traffic periods.",
+    "You are using cloud-based infrastructure for your microservices."
+  ],
+  "approaches": [
+    {
+      "technique": "Rule-Based Burst Tolerance Method",
+      "best_for": "Handling unpredictable spikes in user activity and ensuring high availability.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This method provides a structured approach but may require fine-tuning of rules for optimal performance."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Rule-Based Burst Tolerance Method",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need a reliable method to manage sudden increases in traffic without compromising service quality."
+    }
+  ],
+  "start_here": "The recommended first approach is the Rule-Based Burst Tolerance Method, as it provides a structured way to manage burst workloads while ensuring high availability.",
+  "related_problems": [
+    "Load Balancing in Microservices",
+    "Resource Allocation in Cloud Environments",
+    "State Management in Distributed Systems",
+    "Auto-Scaling Strategies for Microservices"
+  ]
+}

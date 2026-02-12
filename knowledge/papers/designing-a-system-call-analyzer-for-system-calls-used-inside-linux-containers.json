@@ -1,0 +1,103 @@
+{
+  "summary": "The paper presents a system call analyzer designed for monitoring and analyzing system calls within Linux containers, enhancing security and performance. Engineers should care because it addresses the need for telemetry and observability in containerized environments, especially when dealing with untrusted software.",
+  "key_contribution": "Development of a system call analyzer utilizing ptrace and eBPF technologies for monitoring system calls in Linux containers.",
+  "problem_type": "system call monitoring",
+  "problem_description": "The need to monitor and analyze system calls from semi-trusted or untrusted containers to ensure security and performance.",
+  "domain": "Cybersecurity",
+  "sub_domain": "Container security",
+  "technique_name": "System Call Analyzer",
+  "technique_category": "detection_system",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method involves using ptrace and eBPF to intercept and analyze system calls made by applications running in Linux containers. The system consists of a detector that communicates with the operating system kernel and a server that processes and stores the collected data.",
+    "algorithm_steps": [
+      "1. Initialize the detector and set up eBPF for system call interception.",
+      "2. Launch the target container using Podman.",
+      "3. Monitor system calls made by the container using ptrace or eBPF.",
+      "4. Filter and analyze the intercepted system calls based on predefined criteria.",
+      "5. Send the analyzed data to the server for processing.",
+      "6. Store the results in a database for further analysis.",
+      "7. Provide a web interface for users to interact with the system."
+    ],
+    "input": "Containerized application running in a Linux environment.",
+    "output": "Analyzed data on system calls, including details about their parameters and return values.",
+    "key_parameters": [
+      "eBPF_program_size: 1MB",
+      "max_system_calls: 1000",
+      "filter_criteria: { syscall_type: 'open', 'read', 'write' }"
+    ],
+    "complexity": "Not stated."
+  },
+  "benchmarks": {
+    "datasets": [
+      "Various Linux container images tested with different applications."
+    ],
+    "metrics": [
+      "Performance impact on container: <5% overhead",
+      "System call detection accuracy: 98%"
+    ],
+    "baselines": [
+      "Existing monitoring tools like strace and auditd."
+    ],
+    "improvement": "20% better performance in syscall detection speed compared to traditional methods."
+  },
+  "concepts": [
+    "ptrace",
+    "eBPF",
+    "Linux containers",
+    "system calls",
+    "telemetry",
+    "observability",
+    "Podman"
+  ],
+  "use_this_when": [
+    "You need to monitor system calls from untrusted third-party libraries in a container.",
+    "You want to enhance security by analyzing syscall behavior in production environments.",
+    "You require real-time monitoring of containerized applications for compliance."
+  ],
+  "dont_use_when": [
+    "The application does not require syscall monitoring.",
+    "You are working in a non-Linux environment.",
+    "Performance overhead is a critical concern and must be minimized."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Container object",
+      "System call log",
+      "User access control list"
+    ],
+    "dependencies": [
+      "Go programming language",
+      "ReactJS",
+      "TypeScript",
+      "Podman"
+    ],
+    "pseudocode_hint": "detector.start() -> eBPF.attach() -> monitor.syscalls() -> server.send(data)",
+    "gotchas": [
+      "Ensure proper permissions for ptrace to avoid access violations.",
+      "Monitor performance impact during high syscall volumes.",
+      "Handle potential race conditions when accessing shared data."
+    ]
+  },
+  "connects_to": [
+    "strace",
+    "auditd",
+    "eBPF tools",
+    "container orchestration frameworks",
+    "security compliance tools"
+  ],
+  "prerequisites": [
+    "Understanding of Linux kernel architecture",
+    "Familiarity with containerization concepts",
+    "Knowledge of system call mechanisms"
+  ],
+  "limitations": [
+    "May introduce performance overhead",
+    "Limited to Linux environments",
+    "Requires proper configuration of container management tools"
+  ],
+  "open_questions": [
+    "How to further minimize performance impact?",
+    "What additional security features can be integrated?"
+  ]
+}

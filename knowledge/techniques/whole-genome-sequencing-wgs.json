@@ -1,0 +1,80 @@
+{
+  "technique_name": "Whole-genome sequencing (WGS)",
+  "aliases": [
+    "WGS",
+    "genome sequencing"
+  ],
+  "category": "genomic_analysis",
+  "one_liner": "Whole-genome sequencing (WGS) is a comprehensive method for analyzing the complete DNA sequence of an organism's genome.",
+  "how_it_works": "Whole-genome sequencing involves collecting genomic data from a large cohort of participants, which is then integrated with phenotypic, environmental, and clinical information. This data is processed using variant calling tools to identify genetic variants associated with health outcomes. The findings can be utilized to support precision medicine by tailoring healthcare based on individual genetic profiles.",
+  "algorithm": {
+    "steps": [
+      "1. Recruit a diverse cohort of participants.",
+      "2. Collect genomic data using whole-genome sequencing.",
+      "3. Gather comprehensive phenotypic and clinical data.",
+      "4. Process genomic data using variant calling tools.",
+      "5. Analyze data to identify genetic variants and their associations with health outcomes.",
+      "6. Integrate findings into clinical practice for precision medicine."
+    ],
+    "core_equation": "output = identified genetic variants + health outcome associations",
+    "input_format": "Genomic data from DNA samples, along with associated phenotypic, environmental, and clinical data.",
+    "output_format": "Identified genetic variants and their associations with health outcomes, along with insights for precision medicine."
+  },
+  "parameters": [
+    {
+      "name": "sample_size",
+      "typical_value": "1,000,000",
+      "effect": "Larger sample sizes improve the robustness of findings."
+    },
+    {
+      "name": "WGS_depth",
+      "typical_value": "30x for general population, 60x for cancer patients",
+      "effect": "Higher depth increases the accuracy of variant detection."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for processing genomic data",
+    "space": "O(n) for storing genomic data",
+    "practical_note": "Processing time and resource requirements can be significant, especially with large datasets."
+  },
+  "use_when": [
+    "Building applications for precision medicine based on genomic data.",
+    "Conducting large-scale genomic studies requiring integration of diverse datasets.",
+    "Developing tools for variant calling and genomic data analysis."
+  ],
+  "avoid_when": [
+    "Working with small datasets where traditional methods suffice.",
+    "When computational resources are limited and cannot handle large-scale genomic data."
+  ],
+  "implementation_skeleton": "def whole_genome_sequencing(data: GenomicData, cohort: List[Participant]) -> VariantAnalysis:\n    # Step 1: Recruit participants\n    participants = recruit_participants(cohort)\n    # Step 2: Collect genomic data\n    genomic_data = collect_genomic_data(participants)\n    # Step 3: Gather phenotypic data\n    phenotypic_data = gather_phenotypic_data(participants)\n    # Step 4: Process genomic data\n    variants = process_genomic_data(genomic_data)\n    # Step 5: Analyze data\n    analysis_results = analyze_variants(variants, phenotypic_data)\n    # Step 6: Integrate findings\n    integrate_findings(analysis_results)\n    return analysis_results",
+  "common_mistakes": [
+    "Underestimating the computational resources required for large-scale genomic data processing.",
+    "Neglecting to integrate diverse datasets, which can lead to biased results.",
+    "Failing to validate the findings with independent cohorts."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides comprehensive genomic data for precision medicine.",
+      "Enables identification of genetic variants associated with health outcomes.",
+      "Supports large-scale studies with diverse datasets."
+    ],
+    "weaknesses": [
+      "Requires significant computational resources and storage.",
+      "Processing time can be lengthy for large datasets.",
+      "Data integration can be complex and challenging."
+    ],
+    "compared_to": [
+      {
+        "technique": "Targeted sequencing",
+        "verdict": "Use WGS for comprehensive analysis; use targeted sequencing for specific genes."
+      }
+    ]
+  },
+  "connects_to": [
+    "Variant calling",
+    "Genomic data analysis",
+    "Precision medicine",
+    "Population genomics"
+  ],
+  "maturity": "proven (widely used in production)"
+}

@@ -1,0 +1,78 @@
+{
+  "technique_name": "g-C3N4 Microrobots",
+  "aliases": [
+    "Graphitic Carbon Nitride Microrobots"
+  ],
+  "category": "environmental_remediation",
+  "one_liner": "g-C3N4 microrobots are light-responsive devices designed to navigate and degrade antibiotic pollutants in water.",
+  "how_it_works": "These microrobots are made from g-C3N4 material and are programmed to respond to light stimuli. They can move against gravitational forces, allowing them to reach targeted areas of antibiotic contamination in water. Once they arrive at the hotspots, they activate their degradation mechanism to clean the water effectively.",
+  "algorithm": {
+    "steps": [
+      "1. Synthesize g-C3N4 material for microrobots.",
+      "2. Program microrobots to respond to light stimuli.",
+      "3. Deploy microrobots in contaminated water.",
+      "4. Use light to guide microrobots to antibiotic hotspots.",
+      "5. Activate degradation mechanism upon reaching target."
+    ],
+    "core_equation": "output = degraded antibiotics + cleaned water",
+    "input_format": "Contaminated water samples with antibiotics.",
+    "output_format": "Degraded antibiotics and cleaned water."
+  },
+  "parameters": [
+    {
+      "name": "light_intensity",
+      "typical_value": "variable based on target depth",
+      "effect": "Affects the navigation and degradation efficiency."
+    },
+    {
+      "name": "microrobot_size",
+      "typical_value": "100-500 micrometers",
+      "effect": "Influences mobility and targeting precision."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on environmental conditions and light availability."
+  },
+  "use_when": [
+    "Dealing with antibiotic contamination in water bodies.",
+    "Need for targeted environmental cleanup solutions.",
+    "Exploring innovative approaches to water purification."
+  ],
+  "avoid_when": [
+    "In environments where light cannot penetrate.",
+    "For large-scale water treatment where microrobots cannot be effectively deployed."
+  ],
+  "implementation_skeleton": "def deploy_microrobots(water_sample: List[ContaminatedWater], light_conditions: Light):\n    microrobots = synthesize_g_C3N4()\n    program_microrobots(microrobots, light_conditions)\n    navigate_to_hotspots(microrobots, water_sample)\n    activate_degradation(microrobots)\n    return cleaned_water",
+  "common_mistakes": [
+    "Underestimating the importance of light intensity for navigation.",
+    "Using microrobots that are too large for the targeted environment.",
+    "Neglecting to test the microrobots in various water conditions."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High efficiency in degrading antibiotics (85% degradation rate).",
+      "Targeted approach to pollution cleanup.",
+      "Rapid response time (5 seconds)."
+    ],
+    "weaknesses": [
+      "Limited effectiveness in low-light environments.",
+      "Challenges in large-scale deployment.",
+      "Dependence on light for operation."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional chemical treatment methods",
+        "verdict": "Use g-C3N4 microrobots for targeted and efficient degradation over traditional methods."
+      }
+    ]
+  },
+  "connects_to": [
+    "Photocatalysis",
+    "Nanotechnology in environmental applications",
+    "Robotics for environmental cleanup",
+    "Light-responsive materials"
+  ],
+  "maturity": "emerging"
+}

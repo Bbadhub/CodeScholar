@@ -1,0 +1,91 @@
+{
+  "summary": "MacroSwarm is a field-based compositional framework for swarm programming that enables the design and implementation of complex swarm behaviors through reusable functional blocks. Engineers should care because it provides a formal API for programming decentralized swarm behaviors, ensuring robustness and resilience in dynamic environments.",
+  "key_contribution": "The design and implementation of MacroSwarm, a framework that formalizes swarm programming with self-stabilization properties for resilience.",
+  "problem_type": "swarm programming",
+  "problem_description": "The need for effective design and implementation methods for coordinating computation and action within groups of simple agents to achieve complex global goals.",
+  "domain": "Software Engineering",
+  "sub_domain": "Swarm Programming",
+  "technique_name": "MacroSwarm",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "MacroSwarm models swarm behavior as an augmented event structure, where each device performs a sense-compute-interact loop. This allows for decentralized coordination and the expression of swarm behaviors as pure functions.",
+    "algorithm_steps": [
+      "1. Each device senses the environment and gathers messages from neighbors.",
+      "2. The device computes new values based on the sensed data.",
+      "3. The device decides on actions and interacts by sending messages and performing actuations.",
+      "4. This process is repeated in a loop for all devices in the swarm."
+    ],
+    "input": "Sensor data from the environment and messages from neighboring devices.",
+    "output": "Actuation commands and updated state information for each device.",
+    "key_parameters": [
+      "message_expiration_threshold: configurable based on application needs",
+      "sensing_interval: configurable, typically in milliseconds"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Simulated environments for flocking, pattern formation, and collective decision-making."
+    ],
+    "metrics": [
+      "Robustness under adversarial conditions, self-stabilization properties."
+    ],
+    "baselines": [
+      "Existing swarm programming frameworks and methods."
+    ],
+    "improvement": "Demonstrated resilience and robustness in dynamic environments compared to traditional methods."
+  },
+  "concepts": [
+    "self-stabilization",
+    "field-based coordination",
+    "aggregate computing",
+    "decentralized control",
+    "compositionality",
+    "swarm behavior blocks"
+  ],
+  "use_this_when": [
+    "Designing decentralized systems with multiple interacting agents.",
+    "Implementing complex swarm behaviors like flocking or pattern formation.",
+    "Developing applications that require resilience to environmental changes."
+  ],
+  "dont_use_when": [
+    "When centralized control is preferred for simplicity.",
+    "For applications with very low resource constraints where overhead is critical."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Event structures",
+      "Sensing fields",
+      "Actuation fields"
+    ],
+    "dependencies": [
+      "ScaFi framework",
+      "Scala programming language"
+    ],
+    "pseudocode_hint": "for device in swarm: sense(); compute(); interact();",
+    "gotchas": [
+      "Ensure proper configuration of message expiration thresholds.",
+      "Monitor the sensing interval to balance responsiveness and resource usage."
+    ]
+  },
+  "connects_to": [
+    "Aggregate computing",
+    "Field calculus",
+    "Decentralized control systems",
+    "Self-organizing systems"
+  ],
+  "prerequisites": [
+    "Understanding of decentralized algorithms",
+    "Familiarity with swarm intelligence concepts",
+    "Basic knowledge of functional programming"
+  ],
+  "limitations": [
+    "Performance may degrade with very large swarms due to communication overhead.",
+    "Requires a proper understanding of the underlying ScaFi framework for effective implementation."
+  ],
+  "open_questions": [
+    "How can MacroSwarm be extended to support more complex swarm behaviors?",
+    "What are the implications of varying network topologies on swarm performance?"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "technique_name": "Hierarchical Attention Network (HAN)",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "HAN is a neural network architecture designed to capture long-term dependencies and semantic relationships in data through hierarchical attention mechanisms.",
+  "how_it_works": "The Hierarchical Attention Network processes data at multiple levels, allowing it to focus on important parts of the input while ignoring irrelevant information. It uses attention mechanisms to weigh the significance of different segments of the input, which is particularly useful for tasks involving complex structures. In the context of smart contracts, HAN can effectively analyze both source code and opcode to detect vulnerabilities by capturing relationships between these modalities.",
+  "algorithm": {
+    "steps": [
+      "Input the source code and opcode of the smart contract.",
+      "Preprocess the source code to remove irrelevant parts and standardize variable names.",
+      "Preprocess the opcode to eliminate unnecessary operations and standardize formats.",
+      "Use word embedding to convert the preprocessed data into vector representations.",
+      "Input the vectors into the hierarchical attention network for feature extraction.",
+      "Fuse the extracted features from both modalities.",
+      "Classify the vulnerabilities based on the fused features."
+    ],
+    "core_equation": "output = attention(fused_features)",
+    "input_format": "Source code and opcode of smart contracts (text data).",
+    "output_format": "Classification results indicating the presence of vulnerabilities (binary or categorical labels)."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001",
+      "effect": "A lower learning rate may lead to more stable convergence but slower training."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Changing the batch size affects the training speed and memory usage."
+    },
+    {
+      "name": "epochs",
+      "typical_value": "50",
+      "effect": "More epochs can improve accuracy but may lead to overfitting."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m) where n is the number of tokens and m is the number of features extracted.",
+    "space": "O(n + m) for storing input and output representations.",
+    "practical_note": "Performance may vary based on the complexity of the smart contracts being analyzed."
+  },
+  "use_when": [
+    "You need to detect vulnerabilities in long smart contracts.",
+    "Existing methods fail to analyze complex smart contract structures.",
+    "You want a lightweight solution that can run on low to medium performance computers."
+  ],
+  "avoid_when": [
+    "You are working with short smart contracts where traditional methods suffice.",
+    "You require real-time detection in a high-performance environment.",
+    "You need to analyze contracts with very high complexity beyond the model's capacity."
+  ],
+  "implementation_skeleton": "def hierarchical_attention_network(source_code: str, opcode: str) -> str:\n    preprocessed_code = preprocess(source_code)\n    preprocessed_opcode = preprocess(opcode)\n    vectors_code = word_embedding(preprocessed_code)\n    vectors_opcode = word_embedding(preprocessed_opcode)\n    features = extract_features(vectors_code, vectors_opcode)\n    fused_features = fuse(features)\n    return classify(fused_features)",
+  "common_mistakes": [
+    "Neglecting to preprocess the input data properly, leading to poor model performance.",
+    "Using inappropriate hyperparameters without tuning, which can hinder learning.",
+    "Failing to validate the model on unseen data, risking overfitting."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively captures long-term dependencies in complex data.",
+      "Improves vulnerability detection accuracy compared to traditional methods.",
+      "Lightweight and suitable for low to medium performance environments."
+    ],
+    "weaknesses": [
+      "May struggle with very high complexity contracts beyond its capacity.",
+      "Not suitable for real-time detection scenarios.",
+      "Performance can degrade with very short contracts."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional static analyzers",
+        "verdict": "Use HAN for better accuracy in complex contracts."
+      },
+      {
+        "technique": "BiLSTM-based classifiers",
+        "verdict": "HAN may outperform BiLSTM in capturing relationships between modalities."
+      }
+    ]
+  },
+  "connects_to": [
+    "Attention Mechanisms",
+    "Recurrent Neural Networks (RNN)",
+    "Bidirectional LSTM (BiLSTM)",
+    "Convolutional Neural Networks (CNN)"
+  ],
+  "maturity": "emerging"
+}

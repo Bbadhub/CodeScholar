@@ -1,0 +1,37 @@
+{
+  "problem_name": "Data Recovery from Ransomware Attacks",
+  "description": "Data recovery from ransomware attacks involves restoring files that have been encrypted or compromised by malicious software. This problem is critical for organizations looking to minimize data loss and downtime after an attack.",
+  "you_have_this_if": [
+    "You have experienced a ransomware attack.",
+    "You need to recover specific files rather than a full system restore.",
+    "You are facing downtime due to inaccessible critical files.",
+    "You are using flash memory storage systems.",
+    "You have backups that are either incomplete or compromised."
+  ],
+  "approaches": [
+    {
+      "technique": "FFRecovery",
+      "best_for": "when you need to recover specific files after a ransomware attack.",
+      "paper_count": 1,
+      "max_citations": 3,
+      "key_tradeoff": "This approach allows for targeted recovery but may not restore all data if backups are incomplete."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "FFRecovery",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to quickly recover critical files from a ransomware attack without restoring the entire system."
+    }
+  ],
+  "start_here": "Start with FFRecovery as it is specifically designed for targeted file recovery in ransomware scenarios, minimizing downtime and focusing on critical data.",
+  "related_problems": [
+    "Full system recovery from ransomware attacks",
+    "Data backup and restoration strategies",
+    "File encryption and decryption issues",
+    "Malware detection and prevention techniques"
+  ]
+}

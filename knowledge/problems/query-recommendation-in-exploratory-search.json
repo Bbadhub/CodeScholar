@@ -1,0 +1,37 @@
+{
+  "problem_name": "Query Recommendation in Exploratory Search",
+  "description": "Query recommendation in exploratory search involves suggesting relevant queries to users based on their initial input, enhancing their search experience. This is particularly useful in scenarios where users may not know the exact terms to use or are exploring a broad topic.",
+  "you_have_this_if": [
+    "Users frequently refine their search queries.",
+    "Users express confusion or dissatisfaction with search results.",
+    "There is a high bounce rate on search results pages.",
+    "Users often enter vague or broad queries.",
+    "Feedback indicates users want more relevant suggestions."
+  ],
+  "approaches": [
+    {
+      "technique": "Pseudo Relevance Feedback Query Recommendation",
+      "best_for": "When building a search engine for exploratory queries and enhancing user experience in vertical search domains.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This technique improves relevance but may introduce noise from irrelevant feedback."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Pseudo Relevance Feedback Query Recommendation",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to enhance user search experience by suggesting relevant queries based on initial user input."
+    }
+  ],
+  "start_here": "Start with Pseudo Relevance Feedback Query Recommendation as it effectively utilizes user feedback to improve query suggestions, making it suitable for exploratory search scenarios.",
+  "related_problems": [
+    "Search result ranking",
+    "User intent prediction",
+    "Personalized search recommendations",
+    "Query expansion techniques"
+  ]
+}

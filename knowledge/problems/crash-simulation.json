@@ -1,0 +1,36 @@
+{
+  "problem_name": "Crash Simulation",
+  "description": "Crash simulation involves modeling and analyzing the behavior of vehicles and barriers during a collision to improve safety designs. It helps engineers evaluate the effectiveness of safety features and barriers in real-world scenarios.",
+  "you_have_this_if": [
+    "You are working on vehicle safety design.",
+    "You need to test the impact of different barrier designs.",
+    "You require rapid iterations for design modifications.",
+    "You are involved in regulatory compliance for safety standards."
+  ],
+  "approaches": [
+    {
+      "technique": "Soft-Body physics simulation",
+      "best_for": "Evaluating new safety barrier designs and conducting rapid simulations for design iterations.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "Provides realistic simulations but may require significant computational resources."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Soft-Body physics simulation",
+      "speed": "medium",
+      "memory": "high",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need detailed and realistic simulations of crash scenarios for safety evaluations."
+    }
+  ],
+  "start_here": "Start with Soft-Body physics simulation as it provides a comprehensive approach to crash simulations, allowing for accurate modeling of vehicle and barrier interactions.",
+  "related_problems": [
+    "Vehicle dynamics simulation",
+    "Impact analysis",
+    "Safety feature testing",
+    "Barrier design optimization"
+  ]
+}

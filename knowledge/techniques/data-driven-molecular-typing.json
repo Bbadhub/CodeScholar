@@ -1,0 +1,77 @@
+{
+  "technique_name": "Data-Driven Molecular Typing",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "This technique classifies tumors based on their molecular characteristics using large datasets.",
+  "how_it_works": "Data-Driven Molecular Typing leverages extensive datasets of tumor samples to uncover molecular patterns. It integrates various types of molecular data, including genomic, transcriptomic, and proteomic information, to create detailed profiles of tumors. By applying statistical methods, it identifies significant features and clusters tumors accordingly, validating these clusters against clinical outcomes for relevance.",
+  "algorithm": {
+    "steps": [
+      "1. Collect tumor samples and relevant molecular data.",
+      "2. Preprocess the data to remove noise and normalize values.",
+      "3. Apply statistical methods to identify significant molecular features.",
+      "4. Cluster tumors based on their molecular profiles.",
+      "5. Validate clusters with clinical outcomes to ensure relevance."
+    ],
+    "core_equation": "output = classify(tumor_samples, molecular_data)",
+    "input_format": "Molecular data from tumor samples, including genomic, transcriptomic, and proteomic information.",
+    "output_format": "Classified molecular types of esophageal tumors with associated profiles."
+  },
+  "parameters": [
+    {
+      "name": "clustering_algorithm",
+      "typical_value": "K-means",
+      "effect": "Changes the method of clustering tumors, affecting the results."
+    },
+    {
+      "name": "feature_selection_threshold",
+      "typical_value": "0.05",
+      "effect": "Affects the number of features considered significant for classification."
+    }
+  ],
+  "complexity": {
+    "time": "Not explicitly stated",
+    "space": "Not explicitly stated",
+    "practical_note": "Performance may vary based on dataset size and complexity."
+  },
+  "use_when": [
+    "You need to classify tumors based on molecular characteristics.",
+    "You are working on personalized medicine approaches for cancer treatment.",
+    "You want to analyze large datasets of genomic data for cancer research."
+  ],
+  "avoid_when": [
+    "The available data is insufficient or of low quality.",
+    "You require real-time analysis for immediate clinical decisions.",
+    "The focus is solely on a single type of treatment without considering molecular diversity."
+  ],
+  "implementation_skeleton": "def data_driven_typing(tumor_samples: List[Sample]) -> List[Classification]:\n    # Step 1: Collect data\n    molecular_data = collect_data(tumor_samples)\n    # Step 2: Preprocess data\n    cleaned_data = preprocess(molecular_data)\n    # Step 3: Identify features\n    significant_features = identify_features(cleaned_data)\n    # Step 4: Cluster tumors\n    clusters = cluster_tumors(significant_features)\n    # Step 5: Validate clusters\n    validated_clusters = validate_clusters(clusters)\n    return validated_clusters",
+  "common_mistakes": [
+    "Neglecting data quality during preprocessing.",
+    "Using inappropriate clustering algorithms for the dataset.",
+    "Failing to validate clusters against clinical outcomes."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves classification accuracy over traditional methods.",
+      "Integrates diverse molecular data for comprehensive profiling.",
+      "Supports personalized medicine approaches."
+    ],
+    "weaknesses": [
+      "Requires large and high-quality datasets.",
+      "May not provide real-time results.",
+      "Complexity in interpreting molecular data."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional histopathological classification",
+        "verdict": "Use Data-Driven Molecular Typing for improved accuracy and insights."
+      }
+    ]
+  },
+  "connects_to": [
+    "Genomic Data Analysis",
+    "Proteomics",
+    "Transcriptomics",
+    "Machine Learning in Healthcare"
+  ],
+  "maturity": "emerging"
+}

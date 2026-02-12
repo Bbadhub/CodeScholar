@@ -1,0 +1,37 @@
+{
+  "problem_name": "Sentiment Analysis",
+  "description": "Sentiment analysis is the process of determining the emotional tone behind a series of words, used to understand the attitudes, opinions, and emotions expressed in text. It is commonly applied in various fields such as finance, marketing, and customer service to gauge public sentiment and inform decision-making.",
+  "you_have_this_if": [
+    "You are analyzing customer feedback or reviews.",
+    "You need to assess social media sentiment about a brand.",
+    "You are working with investor communications.",
+    "You are developing chatbots that require understanding of indirect language.",
+    "You want to automate decision-making processes based on text data."
+  ],
+  "approaches": [
+    {
+      "technique": "Computational Pragmatics Approach",
+      "best_for": "Analyzing investor communications for sentiment insights and developing chatbots.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach excels in understanding nuanced language but may require extensive training data."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Computational Pragmatics Approach",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to analyze complex language and indirect expressions in text."
+    }
+  ],
+  "start_here": "The recommended first approach for most cases is the Computational Pragmatics Approach, as it effectively captures the subtleties of language necessary for accurate sentiment analysis.",
+  "related_problems": [
+    "Text Classification",
+    "Emotion Detection",
+    "Topic Modeling",
+    "Opinion Mining"
+  ]
+}

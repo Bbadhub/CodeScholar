@@ -1,0 +1,92 @@
+{
+  "technique_name": "FastSLAM 2.0",
+  "aliases": [
+    "FastSLAM",
+    "FastSLAM with GPU acceleration"
+  ],
+  "category": "optimization_algorithm",
+  "one_liner": "FastSLAM 2.0 is a particle filter-based algorithm for simultaneous localization and mapping (SLAM) that efficiently estimates a robot's pose and the map of its environment.",
+  "how_it_works": "FastSLAM 2.0 utilizes a set of particles to represent possible robot poses and corresponding maps. Each particle is updated based on motion commands and sensor measurements. The algorithm incorporates data association to match observed landmarks with those in the map, and it uses an Extended Kalman Filter (EKF) to estimate landmark positions. Finally, particles are resampled based on their importance weights to focus on the most likely states.",
+  "algorithm": {
+    "steps": [
+      "1. Initialize particles based on the robot's pose.",
+      "2. Predict the robot's pose using motion commands and a motion model.",
+      "3. Perform data association using the Joint Compatibility Branch and Bound (JCBB) method.",
+      "4. Adjust the proposal based on matched observations.",
+      "5. Estimate landmark positions using an EKF-like approach.",
+      "6. Resample particles based on their importance weights."
+    ],
+    "core_equation": "output = estimated robot pose and map of landmarks",
+    "input_format": "Sensor data including range and bearing measurements, and control inputs (linear and angular velocities).",
+    "output_format": "Estimated robot pose and map of the environment represented as landmarks."
+  },
+  "parameters": [
+    {
+      "name": "num_particles",
+      "typical_value": "100",
+      "effect": "Increasing the number of particles improves accuracy but increases computation time."
+    },
+    {
+      "name": "resampling_method",
+      "typical_value": "systematic",
+      "effect": "Different methods can affect the diversity of particles and convergence speed."
+    },
+    {
+      "name": "motion_noise",
+      "typical_value": "0.1",
+      "effect": "Higher noise values can lead to less accurate pose estimates."
+    },
+    {
+      "name": "measurement_noise",
+      "typical_value": "0.1",
+      "effect": "Higher measurement noise can degrade the accuracy of landmark estimates."
+    }
+  ],
+  "complexity": {
+    "time": "O(Np * Nl)",
+    "space": "O(Np + Nl)",
+    "practical_note": "Real-world performance is significantly improved with GPU acceleration, reducing latency by 30% compared to CPU implementations."
+  },
+  "use_when": [
+    "Developing SLAM systems for autonomous vehicles.",
+    "Implementing real-time mapping in robotics applications.",
+    "Working with environments where sensor data is uncertain or incomplete."
+  ],
+  "avoid_when": [
+    "The application requires a deterministic data association method.",
+    "The hardware does not support CUDA or GPU acceleration.",
+    "The SLAM application is not time-sensitive."
+  ],
+  "implementation_skeleton": "def fastslam_2_0(sensor_data: SensorData, control_inputs: ControlInputs) -> Tuple[Pose, Map]:\n    particles = initialize_particles()\n    for command in control_inputs:\n        predict_pose(particles, command)\n        associations = data_association(sensor_data)\n        update_particles(particles, associations)\n        resample_particles(particles)\n    return estimate_pose(particles), create_map(particles)",
+  "common_mistakes": [
+    "Neglecting to tune the number of particles for the specific environment.",
+    "Using an inappropriate resampling method that leads to particle depletion.",
+    "Failing to account for sensor noise, leading to inaccurate estimates."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Efficient handling of large state spaces through particle representation.",
+      "Robust to non-linearities in motion and measurement models.",
+      "Can be parallelized effectively on GPUs for real-time applications."
+    ],
+    "weaknesses": [
+      "Performance heavily depends on the number of particles used.",
+      "May struggle with data association in highly dynamic environments.",
+      "Computationally intensive, especially with a large number of landmarks."
+    ],
+    "compared_to": [
+      {
+        "technique": "EKF-SLAM",
+        "verdict": "Use FastSLAM when dealing with non-linearities and large environments; EKF-SLAM is better for smaller, more structured environments."
+      }
+    ]
+  },
+  "connects_to": [
+    "Particle Filters",
+    "Extended Kalman Filter (EKF)",
+    "Simultaneous Localization and Mapping (SLAM)",
+    "GPU Computing",
+    "Data Association Techniques"
+  ],
+  "maturity": "proven"
+}

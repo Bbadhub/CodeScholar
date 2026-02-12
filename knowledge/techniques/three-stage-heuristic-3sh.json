@@ -1,0 +1,84 @@
+{
+  "technique_name": "Three-Stage Heuristic (3SH)",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "3SH optimizes the arrangement of containers in maritime terminals to minimize relocations.",
+  "how_it_works": "The Three-Stage Heuristic operates in three distinct stages. First, it assigns blocking containers to stacks without causing additional relocations. Next, it assigns remaining containers that may cause relocations using an enhanced Virtual Relocation Index. Finally, it adjusts the assignments to further optimize the arrangement, ensuring minimal relocations overall.",
+  "algorithm": {
+    "steps": [
+      "1. Identify blocking containers above the target container.",
+      "2. In the first stage, assign containers to stacks without causing additional relocations.",
+      "3. In the second stage, assign remaining containers using an enhanced Virtual Relocation Index (VRI).",
+      "4. In the last stage, adjust assignments to optimize the relocation of blocking containers."
+    ],
+    "core_equation": "output = optimized arrangement of containers minimizing relocations",
+    "input_format": "Data on container stacks, their heights, and the priority of containers for retrieval.",
+    "output_format": "An optimized arrangement of containers in stacks that minimizes the number of relocations."
+  },
+  "parameters": [
+    {
+      "name": "S",
+      "typical_value": "number of stacks",
+      "effect": "More stacks can lead to better optimization."
+    },
+    {
+      "name": "H",
+      "typical_value": "maximum height limit",
+      "effect": "A higher limit allows for more containers but may complicate arrangements."
+    },
+    {
+      "name": "N",
+      "typical_value": "number of containers",
+      "effect": "Increasing the number of containers can affect the complexity of the optimization."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the number of containers and stacks."
+  },
+  "use_when": [
+    "Optimizing container retrieval in maritime terminals with high container volumes.",
+    "Reducing operational costs associated with container relocations.",
+    "Improving efficiency in logistics and supply chain management."
+  ],
+  "avoid_when": [
+    "Dealing with small-scale instances where traditional heuristics perform adequately.",
+    "When real-time decision-making is required and computational time is critical."
+  ],
+  "implementation_skeleton": "def three_stage_heuristic(container_data: List[Container]) -> List[Container]:\n    # Step 1: Identify blocking containers\n    blocking_containers = identify_blocking_containers(container_data)\n    # Step 2: Assign containers without relocations\n    assign_without_relocations(blocking_containers)\n    # Step 3: Assign remaining containers using VRI\n    remaining_containers = get_remaining_containers(container_data)\n    assign_with_vri(remaining_containers)\n    # Step 4: Adjust assignments\n    optimized_arrangement = adjust_assignments()\n    return optimized_arrangement",
+  "common_mistakes": [
+    "Failing to accurately identify blocking containers.",
+    "Neglecting to consider the impact of stack height on assignments.",
+    "Overcomplicating the VRI calculations, leading to inefficiencies."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Effectively minimizes the number of relocations.",
+      "Improves overall efficiency in container management.",
+      "Can be adapted to various terminal configurations."
+    ],
+    "weaknesses": [
+      "Not suitable for small-scale operations.",
+      "May require significant computational resources for large datasets.",
+      "Real-time applications may be challenging due to processing time."
+    ],
+    "compared_to": [
+      {
+        "technique": "Min-Max heuristic",
+        "verdict": "3SH is preferred for larger datasets where relocation costs are high."
+      },
+      {
+        "technique": "PR4 heuristic",
+        "verdict": "3SH generally outperforms PR4 in terms of relocation minimization."
+      }
+    ]
+  },
+  "connects_to": [
+    "Container stacking algorithms",
+    "Logistics optimization techniques",
+    "Supply chain management strategies",
+    "Heuristic optimization methods"
+  ],
+  "maturity": "proven (widely used in production)"
+}

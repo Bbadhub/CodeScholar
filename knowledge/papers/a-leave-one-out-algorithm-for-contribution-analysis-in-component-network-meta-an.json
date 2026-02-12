@@ -1,0 +1,94 @@
+{
+  "summary": "The paper presents a leave-one-out algorithm for contribution analysis in component network meta-analysis (CNMA), which quantifies the impact of individual comparisons on the precision of component effect estimates. This method enhances the interpretability of CNMA results, making it crucial for engineers working with complex intervention analyses.",
+  "key_contribution": "A robust, variance-based framework for quantifying the contribution of constituent direct comparisons to component effect estimates in CNMA.",
+  "problem_type": "component network meta-analysis",
+  "problem_description": "The need to disentangle individual component effects from multicomponent treatments in evidence synthesis.",
+  "domain": "Bioinformatics & Health",
+  "sub_domain": "Meta-analysis methodologies",
+  "technique_name": "Leave-one-out algorithm",
+  "technique_category": "statistical_method",
+  "technique_type": "novel",
+  "method": {
+    "approach": "The method iteratively excludes each constituent comparison from the network, recomputes the variances of all component effects, and quantifies the precision leverage of each comparison based on the induced variance inflation. Contributions are assigned via a normalized matrix.",
+    "algorithm_steps": [
+      "1. Conduct a CNMA for the full network to estimate all component effects and their variances.",
+      "2. For each direct comparison, conduct a CNMA without that comparison and recompute all component effects and their variances.",
+      "3. Calculate precision leverage for each comparison based on the change in variance when excluded.",
+      "4. Normalize the precision leverage values to create a contribution matrix."
+    ],
+    "input": "Data representing treatment comparisons and their effects, structured in a network format.",
+    "output": "A normalized contribution matrix indicating the percentage contribution of each comparison to the precision of component estimates.",
+    "key_parameters": [
+      "n: number of distinct components",
+      "k: number of edges (comparisons)",
+      "Vfull,j: variance of component effect estimates from full network",
+      "V\u2212i,j: variance of component effect estimates after excluding comparison i"
+    ],
+    "complexity": "Not stated"
+  },
+  "benchmarks": {
+    "datasets": [
+      "Real-world dataset with 66 comparisons across 21 components related to exercise modalities on lean mass proportion in adults with obesity."
+    ],
+    "metrics": [
+      "Pearson correlation (r): 1.00",
+      "Explained variance (R\u00b2): 0.99",
+      "Mean absolute error (MAE): 0.084"
+    ],
+    "baselines": [
+      "Traditional network meta-analysis methods"
+    ],
+    "improvement": "The leave-one-out algorithm provides a more precise quantification of contributions compared to traditional methods."
+  },
+  "concepts": [
+    "Component network meta-analysis",
+    "Precision leverage",
+    "Variance inflation",
+    "Contribution matrix"
+  ],
+  "use_this_when": [
+    "You need to analyze the contribution of individual treatment comparisons in complex interventions.",
+    "You are working with multicomponent treatment data and need to disentangle effects.",
+    "You require a robust method to enhance the interpretability of CNMA results."
+  ],
+  "dont_use_when": [
+    "The treatment comparisons do not exhibit overlapping components.",
+    "You are dealing with simple pairwise meta-analysis without complex interactions.",
+    "The assumptions of linear additivity and identifiability are violated."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "Network representation of treatments and comparisons",
+      "Matrix for storing variances and contributions"
+    ],
+    "dependencies": [
+      "R programming language",
+      "netmeta package (version 3.2-0)"
+    ],
+    "pseudocode_hint": "for each comparison in network: exclude comparison, recompute variances, calculate precision leverage",
+    "gotchas": [
+      "Ensure that the network is sufficiently connected to avoid unidentifiability.",
+      "Be cautious of the assumptions of linear additivity.",
+      "Check for sufficient contrasts in the design matrix to disentangle effects."
+    ]
+  },
+  "connects_to": [
+    "Network meta-analysis",
+    "Bayesian meta-analysis",
+    "Hierarchical models"
+  ],
+  "prerequisites": [
+    "Understanding of meta-analysis methodologies",
+    "Familiarity with statistical variance concepts",
+    "Knowledge of R programming"
+  ],
+  "limitations": [
+    "Assumes linear additivity of treatment effects.",
+    "Requires identifiable component effects in the full network.",
+    "May not perform well in sparse networks."
+  ],
+  "open_questions": [
+    "How to extend the method for non-linear interactions between components?",
+    "What are the implications of violating the assumptions of linear additivity?"
+  ]
+}

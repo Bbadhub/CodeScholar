@@ -1,0 +1,96 @@
+{
+  "summary": "The COSMIC algorithm utilizes machine learning techniques to efficiently detect galaxy clusters by identifying the brightest cluster galaxies and estimating cluster richness. Engineers should care because it addresses the challenge of cataloging vast amounts of astronomical data, improving the completeness and accuracy of galaxy cluster detection.",
+  "key_contribution": "COSMIC introduces a two-step machine learning approach for galaxy cluster detection, combining XGBoost for BCG classification and a deep neural network for richness estimation.",
+  "problem_type": "galaxy cluster detection",
+  "problem_description": "The need to catalog and classify galaxy clusters in the universe as telescopes collect increasingly large datasets.",
+  "domain": "Machine Learning & AI",
+  "sub_domain": "Galaxy cluster detection",
+  "technique_name": "COSMIC",
+  "technique_category": "framework",
+  "technique_type": "novel",
+  "method": {
+    "approach": "COSMIC operates in two main steps: first, it uses an XGBoost classifier to identify BCG-like galaxies from photometric and spectroscopic data. Second, it employs a deep neural network to estimate cluster richness based on the smoothed optical map around each identified BCG.",
+    "algorithm_steps": [
+      "Step 1: Use XGBoost to classify galaxies as BCG-like based on features such as r-band magnitude and colors.",
+      "Step 2: Generate a smoothed optical map (SOM) around each BCG and use a pretrained ResNet-34 model to estimate cluster richness."
+    ],
+    "input": "Photometric and spectroscopic data of galaxies, including r-band magnitude, colors, and photometric redshifts.",
+    "output": "Identified BCGs and estimated richness of galaxy clusters.",
+    "key_parameters": [
+      "learning_rate: 0.1",
+      "max_depth: 6",
+      "n_estimators: 100",
+      "sigma: 0.05 (for Gaussian smoothing)"
+    ],
+    "complexity": "Not stated."
+  },
+  "benchmarks": {
+    "datasets": [
+      "Sloan Digital Sky Survey (SDSS)",
+      "WHL galaxy cluster catalog"
+    ],
+    "metrics": [
+      "accuracy: 90.2%",
+      "recall: 93.4%",
+      "AUC: 0.9618"
+    ],
+    "baselines": [
+      "Traditional cluster detection algorithms"
+    ],
+    "improvement": "COSMIC shows improved completeness and purity compared to traditional methods."
+  },
+  "concepts": [
+    "XGBoost",
+    "Deep Neural Networks",
+    "Richness Estimation",
+    "SOM",
+    "BCG Classification"
+  ],
+  "use_this_when": [
+    "You need to catalog galaxy clusters from large astronomical datasets.",
+    "You want to improve the accuracy of galaxy cluster detection in optical surveys.",
+    "You are working with data from upcoming large-scale astronomical surveys."
+  ],
+  "dont_use_when": [
+    "You have a small dataset that does not require machine learning.",
+    "You need real-time processing with minimal computational resources.",
+    "You are focused on non-optical methods of galaxy cluster detection."
+  ],
+  "implementation_guide": {
+    "data_structures": [
+      "DataFrame for galaxy features",
+      "Image matrix for SOM"
+    ],
+    "dependencies": [
+      "XGBoost",
+      "PyTorch",
+      "NumPy",
+      "Pandas"
+    ],
+    "pseudocode_hint": "bcg_probabilities = XGBoost.predict(galaxy_features); richness = ResNet34.predict(SOM)",
+    "gotchas": [
+      "Ensure proper preprocessing of photometric data to avoid misclassification.",
+      "Watch out for overfitting in the BCG classifier; use cross-validation.",
+      "Be cautious with the choice of hyperparameters for the neural network."
+    ]
+  },
+  "connects_to": [
+    "Convolutional Neural Networks",
+    "Transfer Learning",
+    "Optical Imaging Techniques"
+  ],
+  "prerequisites": [
+    "Understanding of machine learning concepts",
+    "Familiarity with astronomical data",
+    "Knowledge of deep learning frameworks"
+  ],
+  "limitations": [
+    "Requires high-quality photometric and spectroscopic data.",
+    "Performance may degrade with clusters lacking distinctive features.",
+    "Not optimized for real-time processing."
+  ],
+  "open_questions": [
+    "How can COSMIC be adapted for other astronomical phenomena?",
+    "What improvements can be made to enhance the algorithm's robustness against data noise?"
+  ]
+}

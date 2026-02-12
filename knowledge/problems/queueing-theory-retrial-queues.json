@@ -1,0 +1,36 @@
+{
+  "problem_name": "Retrial Queues in Queueing Theory",
+  "description": "Retrial queues are a type of queueing model where customers who find all servers busy leave the system and return later to try again. This is particularly relevant in scenarios like call centers or telecommunication systems where customers may retry their requests after a certain period.",
+  "you_have_this_if": [
+    "You are experiencing high retry rates from users.",
+    "Your system has fluctuating server availability.",
+    "You need to model customer behavior in a telephony system.",
+    "You are designing a call center with proactive follow-up strategies."
+  ],
+  "approaches": [
+    {
+      "technique": "Multi-Server Two-Way Communication Retrial Queue",
+      "best_for": "Modeling telephony systems with high retry rates and fluctuating server availability.",
+      "paper_count": 1,
+      "max_citations": 0,
+      "key_tradeoff": "This approach provides detailed insights but may require complex modeling."
+    }
+  ],
+  "decision_matrix": [
+    {
+      "technique": "Multi-Server Two-Way Communication Retrial Queue",
+      "speed": "medium",
+      "memory": "medium",
+      "accuracy": "high",
+      "ease_of_implementation": "medium",
+      "best_when": "You need to analyze systems with high retry rates and variable server availability."
+    }
+  ],
+  "start_here": "Start with the Multi-Server Two-Way Communication Retrial Queue approach, as it is specifically designed for scenarios involving high retry rates and fluctuating server conditions, providing a robust framework for analysis.",
+  "related_problems": [
+    "Single-Server Queues",
+    "Priority Queues",
+    "Batch Arrival Queues",
+    "Markovian Queueing Models"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "technique_name": "Causal Graph Extraction",
+  "aliases": [],
+  "category": "statistical_method",
+  "one_liner": "This technique constructs causal graphs from communication logs to analyze subsystem interactions and identify root causes of failures.",
+  "how_it_works": "Causal Graph Extraction analyzes communication logs from systems, such as air traffic control, to identify state transitions and events. It constructs a causal graph that represents the relationships between different components and their failure modes. The graph is refined using statistical methods to establish causal relationships, allowing for effective root cause analysis of system behavior.",
+  "algorithm": {
+    "steps": [
+      "1. Collect communication logs from the air traffic control system.",
+      "2. Parse the logs to extract relevant state transition data.",
+      "3. Identify events and their timestamps for each subsystem.",
+      "4. Construct a preliminary causal graph based on identified events.",
+      "5. Refine the causal graph using statistical methods to establish causal relationships.",
+      "6. Validate the causal graph against known failure scenarios."
+    ],
+    "core_equation": "Causal Graph = f(Events, State Transitions)",
+    "input_format": "Machine-generated communication logs from air traffic control systems.",
+    "output_format": "Causal graphs representing the relationships and dependencies between subsystems."
+  },
+  "parameters": [
+    {
+      "name": "log_window_size",
+      "typical_value": "1000",
+      "effect": "Larger sizes may capture more context but increase processing time."
+    },
+    {
+      "name": "event_threshold",
+      "typical_value": "5",
+      "effect": "Higher thresholds may filter out noise but risk missing important events."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the size and quality of the logs."
+  },
+  "use_when": [
+    "You need to diagnose failures in complex distributed systems.",
+    "You want to improve the reliability of air traffic control systems.",
+    "You require explainable analysis of system behavior."
+  ],
+  "avoid_when": [
+    "The logs are incomplete or corrupted.",
+    "Real-time analysis is required without historical data.",
+    "The system is not safety-critical."
+  ],
+  "implementation_skeleton": "def extract_causal_graph(logs: List[str]) -> CausalGraph:\n    # Step 1: Parse logs\n    events = parse_logs(logs)\n    # Step 2: Construct preliminary graph\n    graph = construct_graph(events)\n    # Step 3: Refine graph\n    refined_graph = refine_graph(graph)\n    # Step 4: Validate graph\n    validate_graph(refined_graph)\n    return refined_graph",
+  "common_mistakes": [
+    "Failing to account for noise in the logs, leading to inaccurate graphs.",
+    "Overlooking the importance of validating the causal graph against known scenarios.",
+    "Not refining the graph adequately, resulting in misleading causal relationships."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Provides a clear visual representation of subsystem interactions.",
+      "Facilitates explainable root cause analysis.",
+      "Improves accuracy of failure diagnosis compared to traditional methods."
+    ],
+    "weaknesses": [
+      "Dependent on the quality and completeness of the input logs.",
+      "May require significant preprocessing of data.",
+      "Not suitable for real-time applications."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional log analysis methods",
+        "verdict": "Use Causal Graph Extraction for better accuracy and explainability."
+      },
+      {
+        "technique": "Manual root cause analysis",
+        "verdict": "Causal Graph Extraction automates and enhances the analysis process."
+      }
+    ]
+  },
+  "connects_to": [
+    "Statistical Inference",
+    "Data Mining Techniques",
+    "Fault Tree Analysis",
+    "Bayesian Networks"
+  ],
+  "maturity": "emerging"
+}

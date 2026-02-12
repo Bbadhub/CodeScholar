@@ -1,0 +1,87 @@
+{
+  "technique_name": "CNN-based Copy-Move Forgery Detection",
+  "aliases": [],
+  "category": "neural_architecture",
+  "one_liner": "This technique uses convolutional neural networks to detect copy-move image forgery.",
+  "how_it_works": "The method employs a convolutional neural network (CNN) to classify images as either authentic or tampered. It processes input images through multiple convolutional layers that extract hierarchical features, followed by pooling layers to reduce dimensionality. Finally, a dense layer with softmax activation outputs the probability of the image being authentic or tampered.",
+  "algorithm": {
+    "steps": [
+      "1. Input image is resized to 224x224 pixels.",
+      "2. Pass the image through six convolutional layers with increasing filter counts (16, 32, 64, 128, 256, 512).",
+      "3. Apply max-pooling after each convolutional layer with a pool size of 2x2.",
+      "4. Use a global average pooling layer to reduce feature maps to single values.",
+      "5. Pass the output to a dense layer with softmax activation for binary classification."
+    ],
+    "core_equation": "output = softmax(dense(global_average_pooling(max_pooling(convolutional_layers(image)))))",
+    "input_format": "Images resized to 224x224 pixels with pixel values normalized to [0, 1].",
+    "output_format": "Probability distributions between the classes: authentic images or tampered images."
+  },
+  "parameters": [
+    {
+      "name": "learning_rate",
+      "typical_value": "0.001 (reduced to 0.0005 in experiments)",
+      "effect": "Affects the speed of convergence during training."
+    },
+    {
+      "name": "batch_size",
+      "typical_value": "32",
+      "effect": "Impacts the stability of the training process."
+    },
+    {
+      "name": "L2_regularization_lambda",
+      "typical_value": "0.0005",
+      "effect": "Helps prevent overfitting."
+    },
+    {
+      "name": "dropout_rate",
+      "typical_value": "0.10-0.15",
+      "effect": "Reduces overfitting by randomly dropping units during training."
+    }
+  ],
+  "complexity": {
+    "time": "O(n * m * k) where n is the number of images, m is the number of layers, and k is the average number of operations per layer.",
+    "space": "O(m * p) where m is the number of layers and p is the number of parameters in the model.",
+    "practical_note": "Performance may vary significantly based on dataset size and complexity."
+  },
+  "use_when": [
+    "You need to detect manipulated images in digital forensics.",
+    "You are working with datasets of varying sizes and characteristics.",
+    "You want to implement a CNN for binary image classification tasks."
+  ],
+  "avoid_when": [
+    "You have a very small dataset (e.g., less than 200 images).",
+    "You require real-time processing with minimal computational resources.",
+    "You are dealing with highly complex transformations that CNNs struggle to detect."
+  ],
+  "implementation_skeleton": "def cnn_copy_move_detection(image: np.ndarray) -> np.ndarray:\n    image_resized = resize(image, (224, 224))\n    features = convolutional_layers(image_resized)\n    pooled_features = max_pooling(features)\n    global_features = global_average_pooling(pooled_features)\n    output = dense_layer(global_features)\n    return softmax(output)",
+  "common_mistakes": [
+    "Not normalizing input images, leading to poor model performance.",
+    "Using too small a dataset, which can cause overfitting.",
+    "Neglecting to tune hyperparameters, which can result in suboptimal accuracy."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "High accuracy on well-defined datasets.",
+      "Ability to learn complex features from images.",
+      "Robustness to various image transformations."
+    ],
+    "weaknesses": [
+      "Requires a large amount of training data.",
+      "Computationally intensive, may not be suitable for real-time applications.",
+      "Performance can degrade on highly complex transformations."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional block-matching algorithms",
+        "verdict": "Use CNNs for better accuracy and feature learning, but traditional methods may be faster for simple cases."
+      }
+    ]
+  },
+  "connects_to": [
+    "Image classification",
+    "Convolutional neural networks",
+    "Digital forensics",
+    "Image processing techniques"
+  ],
+  "maturity": "proven (widely used in production)"
+}

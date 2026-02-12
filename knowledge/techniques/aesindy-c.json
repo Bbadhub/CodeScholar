@@ -1,0 +1,82 @@
+{
+  "technique_name": "AE+SINDy-C",
+  "aliases": [],
+  "category": "optimization_algorithm",
+  "one_liner": "AE+SINDy-C combines autoencoders and Sparse Identification of Nonlinear Dynamics with Control for efficient learning and control of high-dimensional systems.",
+  "how_it_works": "The AE+SINDy-C framework leverages autoencoders to compress the state and action spaces into lower-dimensional latent representations. By applying the SINDy-C algorithm in this latent space, it predicts future states while minimizing reconstruction and SINDy losses. This approach allows for effective control of complex systems with fewer interactions, making it suitable for scenarios where data is limited.",
+  "algorithm": {
+    "steps": [
+      "1. Encode the observed state and control input using separate encoder networks.",
+      "2. Apply the SINDy-C algorithm in the latent space to predict the next state.",
+      "3. Decode the predicted state back to the observation space.",
+      "4. Compute the reconstruction loss and SINDy loss.",
+      "5. Optimize the model parameters to minimize the combined loss."
+    ],
+    "core_equation": "output = decode(SINDy-C(latent_state, latent_control))",
+    "input_format": "Current state and control input, both represented in high-dimensional space.",
+    "output_format": "Predicted next state in the observation space."
+  },
+  "parameters": [
+    {
+      "name": "NLat_x",
+      "typical_value": "dimension size",
+      "effect": "Increases or decreases the capacity of state representation."
+    },
+    {
+      "name": "NLat_u",
+      "typical_value": "dimension size",
+      "effect": "Increases or decreases the capacity of control representation."
+    },
+    {
+      "name": "\u03bb1, \u03bb2, \u03bb3",
+      "typical_value": "regularization parameters",
+      "effect": "Adjusts the trade-off between fitting the data and model complexity."
+    }
+  ],
+  "complexity": {
+    "time": "Not stated",
+    "space": "Not stated",
+    "practical_note": "Performance may vary based on the dimensionality of the input data and the architecture of the autoencoders."
+  },
+  "use_when": [
+    "Controlling high-dimensional nonlinear systems with limited data.",
+    "Needing interpretable models for safety-critical applications.",
+    "Reducing the computational cost of simulations in control tasks."
+  ],
+  "avoid_when": [
+    "The system dynamics are fully observable and low-dimensional.",
+    "Real-time performance is critical and cannot accommodate the training time.",
+    "The application does not require interpretability."
+  ],
+  "implementation_skeleton": "def ae_sindy_c(state: np.ndarray, control: np.ndarray) -> np.ndarray:\n    latent_state = encoder_state(state)\n    latent_control = encoder_control(control)\n    predicted_latent_state = sindy_c(latent_state, latent_control)\n    return decoder(predicted_latent_state)",
+  "common_mistakes": [
+    "Neglecting to tune the latent dimensions for optimal performance.",
+    "Overfitting the model by using inappropriate regularization parameters.",
+    "Failing to validate the model on unseen data before deployment."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves sample efficiency in learning dynamics.",
+      "Provides interpretable models suitable for critical applications.",
+      "Reduces computational costs in control tasks."
+    ],
+    "weaknesses": [
+      "May not perform well in fully observable low-dimensional systems.",
+      "Training time can be significant, affecting real-time applications.",
+      "Interpretability may not be necessary for all applications."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional SINDy",
+        "verdict": "Use AE+SINDy-C when dealing with high-dimensional data; traditional SINDy is better for simpler systems."
+      }
+    ]
+  },
+  "connects_to": [
+    "Autoencoders",
+    "Sparse Identification of Nonlinear Dynamics (SINDy)",
+    "Model Predictive Control (MPC)",
+    "Dimensionality Reduction Techniques"
+  ],
+  "maturity": "emerging"
+}

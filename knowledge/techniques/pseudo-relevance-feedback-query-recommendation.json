@@ -1,0 +1,79 @@
+{
+  "technique_name": "Pseudo Relevance Feedback Query Recommendation",
+  "aliases": [
+    "PRF Query Recommendation"
+  ],
+  "category": "information_retrieval",
+  "one_liner": "This technique recommends queries to enhance the relevance of search results based on user interaction data.",
+  "how_it_works": "The method leverages user interaction data and patterns from previous search results to recommend queries that improve relevance. It analyzes user behavior to generate potential feedback queries, ranks them based on relevance metrics, and presents the top recommendations to the user. This iterative feedback loop helps refine the recommendations over time.",
+  "algorithm": {
+    "steps": [
+      "1. Collect user interaction data from previous searches.",
+      "2. Analyze search result patterns to identify common queries.",
+      "3. Generate potential feedback queries based on user behavior.",
+      "4. Rank the recommended queries based on relevance metrics.",
+      "5. Present the top recommended queries to the user."
+    ],
+    "core_equation": "output = rank(queries, relevance_metrics)",
+    "input_format": "User search queries and interaction data (e.g., logs)",
+    "output_format": "Recommended pseudo relevance feedback queries"
+  },
+  "parameters": [
+    {
+      "name": "feedback_threshold",
+      "typical_value": "0.5",
+      "effect": "Higher values may filter out less relevant queries."
+    },
+    {
+      "name": "max_recommendations",
+      "typical_value": "5",
+      "effect": "Limits the number of queries presented to the user."
+    }
+  ],
+  "complexity": {
+    "time": "O(n log n) for ranking queries",
+    "space": "O(n) for storing user interaction data",
+    "practical_note": "Performance may vary based on the volume of user interaction data."
+  },
+  "use_when": [
+    "Building a search engine for exploratory queries",
+    "Enhancing user experience in vertical search domains",
+    "Improving relevance in search results based on user feedback"
+  ],
+  "avoid_when": [
+    "Handling strictly defined queries",
+    "When user interaction data is unavailable",
+    "In environments with low user engagement"
+  ],
+  "implementation_skeleton": "def recommend_queries(user_data: List[str], feedback_threshold: float, max_recommendations: int) -> List[str]:\n    interaction_data = collect_user_interaction(user_data)\n    common_queries = analyze_search_patterns(interaction_data)\n    feedback_queries = generate_feedback_queries(common_queries)\n    ranked_queries = rank_queries(feedback_queries)\n    return ranked_queries[:max_recommendations]",
+  "common_mistakes": [
+    "Neglecting to update the recommendation model with new user data.",
+    "Overfitting to past user behavior without considering changes in trends.",
+    "Failing to validate the relevance of recommended queries."
+  ],
+  "tradeoffs": {
+    "strengths": [
+      "Improves search result relevance based on actual user behavior.",
+      "Enhances user engagement by providing tailored recommendations.",
+      "Can adapt over time as more user interaction data is collected."
+    ],
+    "weaknesses": [
+      "Requires sufficient user interaction data to be effective.",
+      "May not perform well in low engagement scenarios.",
+      "Can introduce noise if user behavior is inconsistent."
+    ],
+    "compared_to": [
+      {
+        "technique": "Traditional Query Recommendation Systems",
+        "verdict": "Use PRF when user interaction data is available for better relevance."
+      }
+    ]
+  },
+  "connects_to": [
+    "User Interaction Analysis",
+    "Search Result Ranking",
+    "Feedback Mechanisms in Information Retrieval",
+    "Exploratory Search Techniques"
+  ],
+  "maturity": "emerging"
+}
