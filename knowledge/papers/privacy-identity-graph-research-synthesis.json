@@ -1,0 +1,174 @@
+{
+  "synthesis_title": "Privacy-Preserving Identity Graph for Advertiser Targeting: Research Synthesis",
+  "source_article": {
+    "title": "Bridging privacy-preserving approaches: a formal comparison of k-automorphism, k-isomorphism, and k-symmetry",
+    "authors": "Medkova et al.",
+    "institution": "University of Hradec Kralove, Czech Republic",
+    "journal": "EURASIP Journal on Information Security",
+    "year": 2025,
+    "doi": "10.1186/s13635-025-00220-8",
+    "url": "https://link.springer.com/article/10.1186/s13635-025-00220-8"
+  },
+  "core_techniques": {
+    "k-automorphism": {
+      "definition": "A graph G is k-automorphic if for every node v, there exist at least k-1 other nodes that occupy structurally identical positions via automorphism permutations",
+      "foundational_paper": "Zou et al. (2009) - K-Automorphism: A General Framework for Privacy Preserving Network Publication (VLDB)",
+      "url": "http://www.vldb.org/pvldb/vol2/vldb09-556.pdf",
+      "relevance_to_identity_graph": "Defines the mathematical framework for making identity graph nodes structurally indistinguishable — the privacy guarantee you apply before sharing behavioral graph data with advertisers"
+    },
+    "k-symmetry": {
+      "definition": "A graph is k-symmetric if every orbit (equivalence class under automorphism) contains at least k nodes",
+      "foundational_paper": "Wu et al. (2010) - K-Symmetry Model for Identity Anonymization in Social Networks",
+      "url": "https://www.researchgate.net/publication/221103030",
+      "relevance_to_identity_graph": "EQUIVALENT to k-automorphism (proven by Medkova 2025). Simpler to implement. Use orbit-based grouping to create anonymized audience segments where no individual is structurally unique"
+    },
+    "k-isomorphism": {
+      "definition": "An anonymized graph built from k structurally identical (isomorphic) disconnected subgraphs",
+      "foundational_paper": "Cheng et al. (2010) - K-Isomorphism: Privacy Preserving Network Publication Against Structural Attacks",
+      "url": "https://www.researchgate.net/publication/221214373",
+      "relevance_to_identity_graph": "Creates k identical copies of the graph structure. Strongest guarantee but highest information loss. Use for maximum-privacy data clean rooms"
+    }
+  },
+  "key_insight_from_article": "k-automorphism and k-symmetry are formally equivalent. k-isomorphism is related but distinct due to connectivity requirements. For practical identity graph systems, k-symmetry is the simplest to implement while providing the same guarantee as k-automorphism.",
+  "attack_this_defends_against": {
+    "paper": "Narayanan & Shmatikov (2009) - De-anonymizing Social Networks",
+    "url": "https://arxiv.org/abs/0903.3276",
+    "attack_description": "A purely structural, passive attack that re-identifies individuals in anonymized social network graphs by matching graph topology patterns against auxiliary data. Demonstrated 33% re-identification on Twitter/Flickr with only 12% error rate.",
+    "why_it_matters": "If you share behavioral graph data with advertisers (even 'anonymized'), this attack can re-identify individual users from connection patterns alone. The k-anonymity techniques from the article are specifically designed to prevent this."
+  },
+  "related_papers_from_codescholar_library": [
+    {
+      "file": "location-privacy-protection-for-the-internet-of-things-with-edge-computing-based.json",
+      "technique": "Clustering K-anonymity Algorithm (CKA)",
+      "relevance": "Demonstrates k-anonymity applied to location data — analogous to anonymizing behavioral location signals in an identity graph"
+    },
+    {
+      "file": "identifying-e-commerce-fraud-through-user-behavior-data-observations-and-insight.json",
+      "technique": "Multi-Modal Behavioral Transformer (MMBT)",
+      "relevance": "Shows how to model user behavior from mouse trajectory + page views — the behavioral signal layer that feeds into identity resolution"
+    },
+    {
+      "file": "common-neighbor-completion-with-information-entropy-for-link-prediction-in-socia.json",
+      "technique": "IECNC (Common Neighbor Completion with Information Entropy)",
+      "relevance": "Link prediction in social networks — directly applicable to probabilistic identity resolution where you predict which identifiers belong to the same person"
+    },
+    {
+      "file": "fusing-content-and-social-relationships-a-multi-modal-heterogeneous-graph-transf.json",
+      "technique": "MM-HGT-Bot (Heterogeneous Graph Transformer)",
+      "relevance": "Heterogeneous graph construction combining user metadata + content + relationships — the exact graph structure needed for identity resolution"
+    },
+    {
+      "file": "a-data-driven-kinetic-model-for-opinion-dynamics-with-social-network-contacts.json",
+      "technique": "Kinetic Model for Opinion Dynamics",
+      "relevance": "Models influence propagation through social networks — applicable to understanding how behavioral signals propagate through identity graph connections"
+    },
+    {
+      "file": "temporal-dynamics-of-the-friendship-paradox-in-a-smartphone-communication-networ.json",
+      "technique": "Dynamic Friendship Index",
+      "relevance": "Temporal network analysis on smartphone communication data — demonstrates how to analyze evolving behavioral graphs over time"
+    },
+    {
+      "file": "fairness-in-federated-learning-trends-challenges-and-opportunities.json",
+      "technique": "Federated Learning",
+      "relevance": "Train identity resolution models across data silos without centralizing private data — the architecture for multi-party identity resolution"
+    },
+    {
+      "file": "a-graph-representation-learning-based-method-for-event-prediction.json",
+      "technique": "Graph Representation Learning",
+      "relevance": "Graph neural networks for event prediction — applicable to predicting user conversion events from identity graph structure"
+    },
+    {
+      "file": "emotional-dynamics-and-engagement-cycles-in-swiping-dating-apps-an-agent-based-m.json",
+      "technique": "Agent-Based Modeling",
+      "relevance": "Models engagement dynamics and behavioral cycles — applicable to understanding advertiser-relevant engagement patterns"
+    }
+  ],
+  "external_papers_discovered": [
+    {
+      "title": "HAkAu: Hybrid Algorithm for Effective k-Automorphism Anonymization of Social Networks",
+      "year": 2023,
+      "journal": "Social Network Analysis and Mining (Springer)",
+      "url": "https://link.springer.com/article/10.1007/s13278-023-01064-1",
+      "relevance": "Practical implementation of k-automorphism using genetic algorithms — directly implementable"
+    },
+    {
+      "title": "A Dynamic Social Network Graph Anonymity Scheme with Community Structure Protection (DSNGA-CSP)",
+      "year": 2025,
+      "journal": "CMC (Computers, Materials & Continua)",
+      "url": "https://www.techscience.com/cmc/v82n2/59493/html",
+      "relevance": "Dynamic graph anonymization preserving community structure — critical for maintaining audience segment utility after anonymization"
+    },
+    {
+      "title": "Adnostic: Privacy Preserving Targeted Advertising",
+      "authors": "Toubiana, Narayanan, Boneh, Nissenbaum, Barocas",
+      "institution": "Stanford/Cornell",
+      "url": "https://crypto.stanford.edu/adnostic/adnostic.pdf",
+      "relevance": "Architecture for behavioral targeting that runs in-browser without leaking user data — the gold standard for privacy-preserving ad targeting"
+    },
+    {
+      "title": "Privacy in Targeted Advertising on Mobile Devices: A Survey",
+      "year": 2022,
+      "journal": "International Journal of Information Security (Springer)",
+      "url": "https://link.springer.com/article/10.1007/s10207-022-00655-x",
+      "relevance": "Comprehensive survey of differential privacy, k-anonymity, obfuscation, and crypto techniques for ad targeting"
+    },
+    {
+      "title": "(Almost) All of Entity Resolution",
+      "journal": "Science Advances / PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11636688/",
+      "relevance": "Definitive survey of entity resolution methods — probabilistic record linkage, Bayesian approaches, microclustering"
+    },
+    {
+      "title": "A Graph-Based Method for Identity Resolution to Assist Police Force Investigative Process",
+      "year": 2024,
+      "url": "https://www.tandfonline.com/doi/full/10.1080/23742917.2024.2354555",
+      "relevance": "Graph-based identity resolution combining attribute similarity with relational graph structure"
+    },
+    {
+      "title": "Privacy and Efficiency Guaranteed Social Subgraph Matching",
+      "journal": "VLDB Journal",
+      "url": "https://link.springer.com/article/10.1007/s00778-021-00706-0",
+      "relevance": "Combines k-automorphism for structure with t-closeness for attributes — dual privacy model"
+    },
+    {
+      "title": "Private Attributes: The Meanings and Mechanisms of Privacy-Preserving Adtech",
+      "year": 2025,
+      "journal": "New Media & Society",
+      "url": "https://journals.sagepub.com/doi/10.1177/14614448231213267",
+      "relevance": "Analysis of match keys, MPC, and identity graph mechanisms in real adtech platforms (Meta, Google)"
+    },
+    {
+      "title": "Graph Data Anonymization, De-Anonymization Attacks, and De-Anonymizability Quantification: A Survey",
+      "url": "https://nesa.zju.edu.cn/download/Graph%20Data%20Anonymization,%20De-anonymization%20Attacks,%20and%20De-anonymizability%20Quantification%20A%20Survey.pdf",
+      "relevance": "Comprehensive survey covering both attack and defense landscape for graph privacy"
+    }
+  ],
+  "data_sources_for_implementation": {
+    "first_party": [
+      "Web/app event logs (page views, clicks, conversions)",
+      "CRM data (emails, purchase history, customer segments)",
+      "Device/browser fingerprints and cookie IDs"
+    ],
+    "open_frameworks": [
+      "Unified ID 2.0 / EUID (hashed email identity, open framework)",
+      "Google Privacy Sandbox / Topics API (interest-based cohorts)",
+      "IAB Tech Lab ads.txt / sellers.json (publisher trust graph)"
+    ],
+    "public_graph_datasets": [
+      "Common Crawl (web link graph)",
+      "SNAP datasets (Stanford Network Analysis Project — social network graphs for benchmarking)",
+      "OpenAlex / Semantic Scholar (citation/co-authorship graphs for testing algorithms)"
+    ],
+    "tools": [
+      "Splink (Python, probabilistic record linkage, open source, used by Australian Bureau of Statistics)",
+      "Neo4j (graph database for identity graph storage and traversal)",
+      "NetworkX / PyTorch Geometric (graph algorithms and GNNs)"
+    ]
+  },
+  "graph_types_needed": {
+    "identity_resolution_graph": "Bipartite graph: identifiers (cookies, device IDs, emails, phone hashes) as nodes, edges link identifiers belonging to same person. Use probabilistic record linkage (Fellegi-Sunter) or GNN-based matching.",
+    "behavioral_graph": "User-touchpoint graph: users connected to events (site visits, purchases, ad views). Edges weighted by recency/frequency. Use for behavioral segmentation.",
+    "similarity_graph": "Users as nodes, edges weighted by behavioral similarity. Use community detection (Louvain, Leiden) for lookalike audience modeling.",
+    "interest_intent_graph": "Users connected to interest categories inferred from browsing/purchase/content patterns. Use heterogeneous graph transformers for multi-modal signal fusion."
+  }
+}
